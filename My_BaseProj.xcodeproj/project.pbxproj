@@ -30,6 +30,7 @@
 		8B7A554A236F0461006B12F8 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A5547236F0461006B12F8 /* FMHttpRequest.m */; };
 		8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B86E03823856093004D4C0A /* PersonalInfo.m */; };
 		8B86E03C238560C5004D4C0A /* ModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B86E03B238560C5004D4C0A /* ModelLogin.m */; };
+		8B8A0E182390D575000D7579 /* XXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A0E162390D575000D7579 /* XXTools.m */; };
 		8B8A49A022F2C42B00AFDC59 /* HQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A499F22F2C42B00AFDC59 /* HQTextField.m */; };
 		8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B90B3882379184A0023E394 /* HistoryDataListTBVCell.m */; };
 		8B90B38B2379184B0023E394 /* HistoryDataListTBV.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B90B3892379184B0023E394 /* HistoryDataListTBV.m */; };
@@ -235,6 +236,8 @@
 		8B86E03823856093004D4C0A /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		8B86E03A238560BA004D4C0A /* ModelLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLogin.h; sourceTree = "<group>"; };
 		8B86E03B238560C5004D4C0A /* ModelLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLogin.m; sourceTree = "<group>"; };
+		8B8A0E162390D575000D7579 /* XXTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTools.m; sourceTree = "<group>"; };
+		8B8A0E172390D575000D7579 /* XXTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTools.h; sourceTree = "<group>"; };
 		8B8A499E22F2C42B00AFDC59 /* HQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTextField.h; sourceTree = "<group>"; };
 		8B8A499F22F2C42B00AFDC59 /* HQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTextField.m; sourceTree = "<group>"; };
 		8B90B3862379184A0023E394 /* HistoryDataListTBV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDataListTBV.h; sourceTree = "<group>"; };
@@ -703,6 +706,15 @@
 			path = "用户信息";
 			sourceTree = "<group>";
 		};
+		8B8A0E152390D575000D7579 /* XXTools */ = {
+			isa = PBXGroup;
+			children = (
+				8B8A0E162390D575000D7579 /* XXTools.m */,
+				8B8A0E172390D575000D7579 /* XXTools.h */,
+			);
+			path = XXTools;
+			sourceTree = "<group>";
+		};
 		8B8A499C22F2C41600AFDC59 /* ZYTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,6 +989,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				8B8A0E152390D575000D7579 /* XXTools */,
 				8BCAB657238AC4F8000B0360 /* 搜索框 */,
 				8BCB98DD23715DA10063E01E /* 加密体系 */,
 				8B7A553C236F0461006B12F8 /* 🌍ZFMRACNetworkTool */,
@@ -1846,6 +1859,7 @@
 				C3F56FEF22A4F7CE009E9691 /* UIControl+XY.m in Sources */,
 				8B7A54FC236D92FF006B12F8 /* WBTableViewDataSource.m in Sources */,
 				C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */,
+				8B8A0E182390D575000D7579 /* XXTools.m in Sources */,
 				C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */,
 				8B6F2B9E234611FC00801607 /* NSString+Emoji.m in Sources */,
 				C3F56FF722A4F7CE009E9691 /* NSString+Extension.m in Sources */,

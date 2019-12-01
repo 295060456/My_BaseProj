@@ -429,14 +429,16 @@ JXCategoryListContentViewDelegate
     }return _refreshBackNormalFooter;
 }
 
--(UIButton *)backBtn{
+-(MMButton *)backBtn{
     if (!_backBtn) {
-        _backBtn = UIButton.new;
-        [_backBtn setTitleColor:kBlackColor
+        _backBtn = MMButton.new;
+        _backBtn.imageAlignment = MMImageAlignmentLeft;
+        _backBtn.spaceBetweenTitleAndImage = SCALING_RATIO(5);
+        [_backBtn setTitleColor:kWhiteColor
                        forState:UIControlStateNormal];
         [_backBtn setTitle:@"返回"
                   forState:UIControlStateNormal];
-        [_backBtn setImage:kIMG(@"返回")
+        [_backBtn setImage:kIMG(@"Back")
                   forState:UIControlStateNormal];
         [_backBtn addTarget:self
                      action:@selector(backBtnClickEvent:)

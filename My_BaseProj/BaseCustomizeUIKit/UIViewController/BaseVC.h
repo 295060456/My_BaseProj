@@ -25,6 +25,7 @@ TZImagePickerControllerDelegate
 @property(nonatomic,strong)RACSignal *reqSignal;
 @property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;
 @property(nonatomic,strong)MJRefreshGifHeader *tableViewHeader;
+@property(nonatomic,strong)MJRefreshBackNormalFooter *refreshBackNormalFooter;
 @property(nonatomic,weak)TZImagePickerController *imagePickerVC;
 @property(nonatomic,strong)BRStringPickerView *stringPickerView;
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;

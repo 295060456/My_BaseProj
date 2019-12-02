@@ -40,6 +40,7 @@
 		8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */; };
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
+		8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3117E23952E470050E1C1 /* NSObject+Sound.m */; };
 		8BCAB6CF238AF669000B0360 /* SearchVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C5238AF668000B0360 /* SearchVC+VM.m */; };
 		8BCAB6D0238AF669000B0360 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C6238AF668000B0360 /* SearchModel.m */; };
 		8BCAB6D1238AF669000B0360 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C8238AF669000B0360 /* SearchVC.m */; };
@@ -261,6 +262,8 @@
 		8BB8BD27235ED1A5008C7578 /* ZYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
 		8BB8BD28235ED1A5008C7578 /* ZYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
 		8BC2781C2359DD92004AA5F4 /* Computer_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
+		8BC3117E23952E470050E1C1 /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
+		8BC3117F23952E470050E1C1 /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		8BCAB6C5238AF668000B0360 /* SearchVC+VM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SearchVC+VM.m"; sourceTree = "<group>"; };
 		8BCAB6C6238AF668000B0360 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
 		8BCAB6C7238AF669000B0360 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
@@ -775,6 +778,15 @@
 			path = "截获导航控制器系统返回按钮的点击pop及右滑pop事件";
 			sourceTree = "<group>";
 		};
+		8BC3117D23952E470050E1C1 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				8BC3117E23952E470050E1C1 /* NSObject+Sound.m */,
+				8BC3117F23952E470050E1C1 /* NSObject+Sound.h */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
 		8BCAB657238AC4F8000B0360 /* 搜索框 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1246,6 +1258,7 @@
 				C3F5708A22A50502009E9691 /* YBGeneralFont.m */,
 				C3F5708622A504B8009E9691 /* YBGeneralColor.h */,
 				C3F5708722A504B8009E9691 /* YBGeneralColor.m */,
+				8BC3117D23952E470050E1C1 /* NSObject */,
 				8BD6DC2F234B1D70003F1EE0 /* CALayer */,
 				8B558698233C899A00132CF6 /* 👌UITableViewHeaderFooterView */,
 				8B6EB817230A713200F3995E /* NSArray */,
@@ -1870,6 +1883,7 @@
 				C3F570A322A5128A009E9691 /* IsLogin.m in Sources */,
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				8B7A554A236F0461006B12F8 /* FMHttpRequest.m in Sources */,
+				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
 				C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */,
 				C3229A8522B21D110044BB5E /* SDCycleScrollView.m in Sources */,
 				8BCAB6D3238AF669000B0360 /* CJTextField.m in Sources */,

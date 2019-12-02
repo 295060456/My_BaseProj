@@ -41,6 +41,7 @@
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
 		8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3117E23952E470050E1C1 /* NSObject+Sound.m */; };
+		8BC3118F239554970050E1C1 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3118E239554970050E1C1 /* TimeManager.m */; };
 		8BCAB6CF238AF669000B0360 /* SearchVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C5238AF668000B0360 /* SearchVC+VM.m */; };
 		8BCAB6D0238AF669000B0360 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C6238AF668000B0360 /* SearchModel.m */; };
 		8BCAB6D1238AF669000B0360 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C8238AF669000B0360 /* SearchVC.m */; };
@@ -264,6 +265,8 @@
 		8BC2781C2359DD92004AA5F4 /* Computer_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
 		8BC3117E23952E470050E1C1 /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
 		8BC3117F23952E470050E1C1 /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
+		8BC3118D239554970050E1C1 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
+		8BC3118E239554970050E1C1 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		8BCAB6C5238AF668000B0360 /* SearchVC+VM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SearchVC+VM.m"; sourceTree = "<group>"; };
 		8BCAB6C6238AF668000B0360 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
 		8BCAB6C7238AF669000B0360 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
@@ -787,6 +790,15 @@
 			path = NSObject;
 			sourceTree = "<group>";
 		};
+		8BC3118C239554840050E1C1 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8BC3118D239554970050E1C1 /* TimeManager.h */,
+				8BC3118E239554970050E1C1 /* TimeManager.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
 		8BCAB657238AC4F8000B0360 /* 搜索框 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1001,6 +1013,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				8BC3118C239554840050E1C1 /* Timer */,
 				8B8A0E152390D575000D7579 /* XXTools */,
 				8BCAB657238AC4F8000B0360 /* 搜索框 */,
 				8BCB98DD23715DA10063E01E /* 加密体系 */,
@@ -1906,6 +1919,7 @@
 				C3F5707722A4FC92009E9691 /* DHAreaPickerView.m in Sources */,
 				8B6EB80A230A6F1E00F3995E /* ZHKeyChainManager.m in Sources */,
 				8B86E03C238560C5004D4C0A /* ModelLogin.m in Sources */,
+				8BC3118F239554970050E1C1 /* TimeManager.m in Sources */,
 				C3F5704B22A4FA7F009E9691 /* YBNotificationManager.m in Sources */,
 				C3229A8722B21D110044BB5E /* SDCycleScrollView+UICollectionViewDataSource.m in Sources */,
 				8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */,

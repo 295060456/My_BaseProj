@@ -40,6 +40,7 @@ TZImagePickerControllerDelegate
 @property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
 @property(nonatomic,strong)NSArray *BRStringPickerViewDataMutArr;
 
+-(void)backBtnClickEvent:(UIButton *)sender;
 -(void)VCwillComingBlock:(DataBlock)block;//即将进来
 -(void)VCdidComingBlock:(DataBlock)block;//已经进来
 -(void)VCwillBackBlock:(DataBlock)block;//即将出去

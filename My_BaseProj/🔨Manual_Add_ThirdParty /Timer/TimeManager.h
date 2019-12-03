@@ -54,3 +54,22 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+/*
+ 
+1、在某些情况下需要在viewWillDisappear进行释放，而非dealloc 否则会崩，比如在框架JXCategoryView之下
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.timeManager endGCDTimer];
+    self.timeManager = nil;/Users/whiskey_on_the_rocks/Documents/GitHub管理文件/My_BaseProj_Carthage/MyBaseProj_Carthage/🔨Manual_Add_ThirdParty /Timer/TimeManager.h
+}
+
+2、在框架JXCategoryView之下
+- (void)listDidDisappear{//可选实现，列表消失的时候调用
+    [self.timeManager suspendGCDTimer];
+}
+-(void)viewWillDisappear:(BOOL)animated//在这种框架下几乎等同于dealloc
+
+3、本类属性化一定要被强硬用，否则其他类进行挂载的时候是为nil
+ 
+ */

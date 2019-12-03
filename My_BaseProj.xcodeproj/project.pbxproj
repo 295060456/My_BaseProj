@@ -36,6 +36,7 @@
 		8B90B38B2379184B0023E394 /* HistoryDataListTBV.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B90B3892379184B0023E394 /* HistoryDataListTBV.m */; };
 		8B9EAF9D237439B00012884C /* 专治UITableView相应链断裂 in Resources */ = {isa = PBXBuildFile; fileRef = 8B9EAF9A237439B00012884C /* 专治UITableView相应链断裂 */; };
 		8B9EAF9E237439B00012884C /* BaseTableViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9EAF9C237439B00012884C /* BaseTableViewer.m */; };
+		8BA69E532396C64800575B2F /* GettingDeviceIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA69E512396C64800575B2F /* GettingDeviceIP.m */; };
 		8BA94BFB235AE6C800B00786 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */; };
 		8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */; };
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
@@ -249,6 +250,8 @@
 		8B9EAF9A237439B00012884C /* 专治UITableView相应链断裂 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "专治UITableView相应链断裂"; sourceTree = "<group>"; };
 		8B9EAF9B237439B00012884C /* BaseTableViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewer.h; sourceTree = "<group>"; };
 		8B9EAF9C237439B00012884C /* BaseTableViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewer.m; sourceTree = "<group>"; };
+		8BA69E512396C64800575B2F /* GettingDeviceIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GettingDeviceIP.m; sourceTree = "<group>"; };
+		8BA69E522396C64800575B2F /* GettingDeviceIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GettingDeviceIP.h; sourceTree = "<group>"; };
 		8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		8BA94BFA235AE6C700B00786 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
@@ -741,6 +744,15 @@
 			path = HQTextField;
 			sourceTree = "<group>";
 		};
+		8BA69E502396C64800575B2F /* GetDeviceIP */ = {
+			isa = PBXGroup;
+			children = (
+				8BA69E512396C64800575B2F /* GettingDeviceIP.m */,
+				8BA69E522396C64800575B2F /* GettingDeviceIP.h */,
+			);
+			path = GetDeviceIP;
+			sourceTree = "<group>";
+		};
 		8BA94BF8235AE6C700B00786 /* UICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1025,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				8BA69E502396C64800575B2F /* GetDeviceIP */,
 				8BC3118C239554840050E1C1 /* Timer */,
 				8B8A0E152390D575000D7579 /* XXTools */,
 				8BCAB657238AC4F8000B0360 /* 搜索框 */,
@@ -1946,6 +1959,7 @@
 				C3229A8822B21D110044BB5E /* SDCycleScrollView+UIScrollViewDelegate.m in Sources */,
 				8B55869D233C899B00132CF6 /* ViewForHeader.m in Sources */,
 				C3F5707E22A50316009E9691 /* TouchID.m in Sources */,
+				8BA69E532396C64800575B2F /* GettingDeviceIP.m in Sources */,
 				C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */,
 				8B7A5549236F0461006B12F8 /* FMARCNetwork.m in Sources */,
 				8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */,

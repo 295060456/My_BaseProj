@@ -19,6 +19,7 @@
         @"order_code":inputStr,//搜索订单号
         @"order_type":@""//1、转转;2、批发;3、厂家;默认查全部
     };
+    TBVCell_style_01;
     [self networkingWithArgument:dic];
 }
 //正式请求

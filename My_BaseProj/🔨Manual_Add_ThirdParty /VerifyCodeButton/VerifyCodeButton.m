@@ -21,6 +21,13 @@
    [self.timer invalidate];
 }
 
+-(instancetype)init{
+    if ([super init]) {
+    [self setTitle:self.titleBeginStr
+          forState:UIControlStateNormal];
+    }return self;
+}
+
 -(void)drawRect:(CGRect)rect{
     self.backgroundColor = self.bgBeginColor;
     self.layer.borderColor = self.layerBorderColor.CGColor;
@@ -28,8 +35,6 @@
     self.titleLabel.font = self.titleLabelFont;
     self.titleColor = self.titleColor;
     self.layer.borderWidth = self.layerBorderWidth;
-    [self setTitle:self.titleBeginStr
-          forState:UIControlStateNormal];
     [self.titleLabel sizeToFit];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
 }

@@ -13,6 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GettingDeviceIP : NSObject
 
 +(NSString *)getIPaddress;//获取ip地址
++(BOOL)isValidatIP:(NSString *)ipAddress;
++(NSDictionary *)getIPAddresses;
++(NSString *)getLocalIPAddress:(BOOL)preferIPv4;
++(NSString *)getNetworkIPAddress;
+
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TBVCell_style_01.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SearchVC : BaseVC
 
 @property(nonatomic,strong)UITableView *tableView;
-@property(nonatomic,strong)NSMutableArray <OrderListModel *>*dataMutArr;
+@property(nonatomic,strong)NSMutableArray *dataMutArr;
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle

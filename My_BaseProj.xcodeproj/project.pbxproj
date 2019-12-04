@@ -39,6 +39,8 @@
 		8BA69E532396C64800575B2F /* GettingDeviceIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA69E512396C64800575B2F /* GettingDeviceIP.m */; };
 		8BA94BFB235AE6C800B00786 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */; };
 		8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */; };
+		8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217CC2397BA0B00BD1B5F /* SearchView.m */; };
+		8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */; };
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
 		8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3117E23952E470050E1C1 /* NSObject+Sound.m */; };
@@ -105,7 +107,6 @@
 		C3F5701422A4F94D009E9691 /* XLSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5701122A4F94D009E9691 /* XLSphereView.m */; };
 		C3F5703722A4F9C4009E9691 /* HAHandleDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5703522A4F9C4009E9691 /* HAHandleDemoView.m */; };
 		C3F5704422A4FA40009E9691 /* UICollectionView+YBGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5703D22A4FA3F009E9691 /* UICollectionView+YBGeneral.m */; };
-		C3F5704522A4FA40009E9691 /* TBVCell_style_01.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5703F22A4FA3F009E9691 /* TBVCell_style_01.m */; };
 		C3F5704B22A4FA7F009E9691 /* YBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5704A22A4FA7F009E9691 /* YBNotificationManager.m */; };
 		C3F5705122A4FA9F009E9691 /* sortedNameEN.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3F5704E22A4FA9F009E9691 /* sortedNameEN.plist */; };
 		C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3F5704F22A4FA9F009E9691 /* sortedNameCH.plist */; };
@@ -256,6 +257,10 @@
 		8BA94BFA235AE6C700B00786 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
 		8BB1E8162375B5E500871ECA /* SocketRocketUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
+		8BB217CC2397BA0B00BD1B5F /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		8BB217CD2397BA0B00BD1B5F /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		8BB217CF2397BA7400BD1B5F /* TBVCell_style_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVCell_style_01.h; sourceTree = "<group>"; };
+		8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVCell_style_01.m; sourceTree = "<group>"; };
 		8BB8107C22F13F3700F2FD8E /* 获取当前视图控制器.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "获取当前视图控制器.png"; sourceTree = "<group>"; };
 		8BB8107D22F13F3700F2FD8E /* cell重用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell重用.png"; sourceTree = "<group>"; };
 		8BB8107E22F13F3700F2FD8E /* 葵花宝典.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "葵花宝典.m"; sourceTree = "<group>"; };
@@ -413,8 +418,6 @@
 		C3F5703822A4F9CF009E9691 /* 高仿Uber取消叫车按钮效果(按住放大) */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿Uber取消叫车按钮效果(按住放大)"; sourceTree = "<group>"; };
 		C3F5703C22A4FA3F009E9691 /* UICollectionView+YBGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+YBGeneral.h"; sourceTree = "<group>"; };
 		C3F5703D22A4FA3F009E9691 /* UICollectionView+YBGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+YBGeneral.m"; sourceTree = "<group>"; };
-		C3F5703F22A4FA3F009E9691 /* TBVCell_style_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVCell_style_01.m; sourceTree = "<group>"; };
-		C3F5704022A4FA3F009E9691 /* TBVCell_style_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVCell_style_01.h; sourceTree = "<group>"; };
 		C3F5704822A4FA7F009E9691 /* YBNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBNotificationManager.h; sourceTree = "<group>"; };
 		C3F5704922A4FA7F009E9691 /* AABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AABlock.h; sourceTree = "<group>"; };
 		C3F5704A22A4FA7F009E9691 /* YBNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBNotificationManager.m; sourceTree = "<group>"; };
@@ -762,6 +765,15 @@
 			path = UICollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
+		8BB217CB2397BA0B00BD1B5F /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8BB217CD2397BA0B00BD1B5F /* SearchView.h */,
+				8BB217CC2397BA0B00BD1B5F /* SearchView.m */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		8BB8107B22F13F2300F2FD8E /* Doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1037,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				8BB217CB2397BA0B00BD1B5F /* SearchView */,
 				8BA69E502396C64800575B2F /* GetDeviceIP */,
 				8BC3118C239554840050E1C1 /* Timer */,
 				8B8A0E152390D575000D7579 /* XXTools */,
@@ -1315,8 +1328,8 @@
 		C3F5703E22A4FA3F009E9691 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C3F5704022A4FA3F009E9691 /* TBVCell_style_01.h */,
-				C3F5703F22A4FA3F009E9691 /* TBVCell_style_01.m */,
+				8BB217CF2397BA7400BD1B5F /* TBVCell_style_01.h */,
+				8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";
@@ -1887,7 +1900,6 @@
 				C3F56FF822A4F7CE009E9691 /* UIColor+LXExpand.m in Sources */,
 				8B9EAF9E237439B00012884C /* BaseTableViewer.m in Sources */,
 				C3B1566222AA3863009061F3 /* WaterMark.m in Sources */,
-				C3F5704522A4FA40009E9691 /* TBVCell_style_01.m in Sources */,
 				C3F570DA22A5403F009E9691 /* DeleteSystemUITabBarButton.m in Sources */,
 				8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */,
 				C3F5708822A504B8009E9691 /* YBGeneralColor.m in Sources */,
@@ -1932,6 +1944,7 @@
 				C3F5707722A4FC92009E9691 /* DHAreaPickerView.m in Sources */,
 				8B6EB80A230A6F1E00F3995E /* ZHKeyChainManager.m in Sources */,
 				8B86E03C238560C5004D4C0A /* ModelLogin.m in Sources */,
+				8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */,
 				8BC3118F239554970050E1C1 /* TimeManager.m in Sources */,
 				C3F5704B22A4FA7F009E9691 /* YBNotificationManager.m in Sources */,
 				C3229A8722B21D110044BB5E /* SDCycleScrollView+UICollectionViewDataSource.m in Sources */,
@@ -1940,6 +1953,7 @@
 				8B7A54FE236D92FF006B12F8 /* WBPopMenuSingleton.m in Sources */,
 				C3F570E822A60D0A009E9691 /* ViewController@1.m in Sources */,
 				8BCB98F623715DA20063E01E /* NSData+Base64.m in Sources */,
+				8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */,
 				C3229A7A22B0D39F0044BB5E /* XDTextBtnView.m in Sources */,
 				8B7A5548236F0461006B12F8 /* FMHttpResonse.m in Sources */,
 				C3F5700C22A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m in Sources */,

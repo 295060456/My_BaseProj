@@ -47,10 +47,7 @@ UITableViewDelegate
     SearchVC *vc = SearchVC.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
-    if ([requestParams isKindOfClass:[RCConversationModel class]]) {
 
-    }
- 
     switch (comingStyle) {
         case ComingStyle_PUSH:{
             if (rootVC.navigationController) {
@@ -120,33 +117,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath
                              animated:NO];
-    if (self.dataMutArr.count) {
-        @weakify(self)
-//        订单类型 1、转转;2、批发;3、平台
-        OrderListModel *orderListModel = self.dataMutArr[indexPath.row];
-        if ([orderListModel.order_type intValue] == 1) {//1、转转 StallListModel
-            StallListModel *model = (StallListModel *)orderListModel;
-            [OrderDetailVC ComingFromVC:self_weak_
-                              withStyle:ComingStyle_PUSH
-                          requestParams:model
-                                success:^(id data) {}
-                               animated:YES];
-        }else if ([orderListModel.order_type intValue] == 2){//2、批发 WholesaleMarket_Advance_purchaseModel
-            WholesaleMarket_Advance_purchaseModel *model = (WholesaleMarket_Advance_purchaseModel *)orderListModel;
-            [OrderDetailVC ComingFromVC:self_weak_
-                              withStyle:ComingStyle_PUSH
-                          requestParams:model
-                                success:^(id data) {}
-                               animated:YES];
-        }else if ([orderListModel.order_type intValue] == 3){//3、平台 CatFoodProducingAreaModel
-            CatFoodProducingAreaModel *model = (CatFoodProducingAreaModel *)orderListModel;
-            [OrderDetailVC ComingFromVC:self_weak_
-                              withStyle:ComingStyle_PUSH
-                          requestParams:model
-                                success:^(id data) {}
-                               animated:YES];
-        }else{}
-    }
 }
 #pragma mark —— lazyLoad
 - (UITableView *)tableView{
@@ -208,22 +178,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
                 NSString *str = [data.text stringByAppendingString:data3];
                 [self networking_type:str];
             }else{//正常的正向输入        CJTextFieldDeleteDelegate_shouldChangeCharactersInRange
-                if ([NSString isNullString:data3]) {//退
-                    if ([NSString isNullString:data.text]) {
-                        [self networking_type:data.text];
-                    }else{
-                        [self.dataMutArr removeAllObjects];//到顶了
-                    }
-                }else{//进
-                    NSString *str = [data.text stringByAppendingString:data3];
-                    [self networking_type:str];
-                }
+
             }
         }];
     }return _searchBar;
 }
 
--(NSMutableArray<OrderListModel *> *)dataMutArr{
+-(NSMutableArray *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
     }return _dataMutArr;
@@ -253,10 +214,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 - (void)richElementsInCellWithModel:(id _Nullable)model{
-    if ([model isKindOfClass:[OrderListModel class]]) {
-        OrderListModel *orderListModel = (OrderListModel *)model;
-        self.textLabel.text = orderListModel.ordercode;
-    }
+
 }
 
 @end

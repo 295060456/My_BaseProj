@@ -134,7 +134,7 @@ replacementString:(NSString *)string{//实现逐词搜索
             make.left.equalTo(self).offset(SCALING_RATIO(20));
             make.top.equalTo(self.cancelBtn);
             make.bottom.equalTo(self.cancelBtn);
-            make.width.mas_equalTo(SCREEN_WIDTH - SCALING_RATIO(20 * 2 + 10 + 50));
+            make.width.mas_equalTo(MAINSCREEN_WIDTH - SCALING_RATIO(20 * 2 + 10 + 50));
         }];
     }return _textField;
 }

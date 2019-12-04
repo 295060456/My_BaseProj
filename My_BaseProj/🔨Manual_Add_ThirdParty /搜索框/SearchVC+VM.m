@@ -26,8 +26,8 @@
     if (self.dataMutArr.count) {
         [self.dataMutArr removeAllObjects];
     }
-    
-    extern NSString *randomStr;
+
+    NSString *randomStr = [EncryptUtils shuffledAlphabet:16];
     FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST
                                                            path:buyer_CatfoodRecord_listURL
                                                      parameters:@{
@@ -38,24 +38,7 @@
     self.reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
     @weakify(self)
     [self.reqSignal subscribeNext:^(FMHttpResonse *response) {
-        if (response) {
-            NSLog(@"--%@",response);
-            if (response) {
-                if ([response isKindOfClass:[NSArray class]]) {
-                    NSArray *array = [OrderListModel mj_objectArrayWithKeyValuesArray:response];
-                    if (array) {
-                        [array enumerateObjectsUsingBlock:^(id  _Nonnull obj,
-                                                            NSUInteger idx,
-                                                            BOOL * _Nonnull stop) {
-                            @strongify(self)
-                            OrderListModel *model = array[idx];
-                            [self.dataMutArr addObject:model];
-                        }];
-                        [self.tableView reloadData];
-                    }
-                }
-            }
-        }
+
     }];
 }
 

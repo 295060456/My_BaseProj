@@ -26,6 +26,16 @@
 #import "UIControl+XY.h"
 #import "UITableView+EmptyData.h"
 
+//加密体系
+#import "RSAUtil.h"
+#import "EncryptUtils.h"
+#import "AES.h"
+#import "NSData+Base64.h"
+#import <CommonCrypto/CommonCryptor.h>
+#import "NSString+Base64.h"
+#import "AESCipher.h"
+
+#import "BaseVC.h"
 #import "ZYTextField_01.h"
 #import "MMButton.h"
 #import "YBGeneralColor.h"
@@ -74,8 +84,10 @@
 #import "TBCityIconFont.h"
 #import "UIImage+TBCityIconFont.h"
 #import "CountdownView.h"//圆形倒计时进度条（中间有字，可点击回调）
+#import "SearchVC.h"
 //#import "HQTextField.h//???
 
+#define RSA_Public_key         @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCetmJK/hpaoKgzjAqjcVE/XvWNpKhZt/m3B/tzGpn5ck+ZV5jBxp8oGuhreeHCMEqE6VQX+FIovGNL0I/5rLQpWgD1dg3PRuI324g7/wJ488i3UOTc4xpE6esy8+wR4dUEsWfvbrB6znLeduikhCqaHbElZtVFfAmC2eWcob5QzQIDAQAB"//Agou
 
 //#import "NSlogToDocumentFolder.h"//上线需要去掉
 

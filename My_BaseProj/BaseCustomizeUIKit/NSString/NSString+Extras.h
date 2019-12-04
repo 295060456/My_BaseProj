@@ -94,6 +94,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)ensureNonnullString:(id)nullableStr
                       ReplaceStr:(NSString *)replaceStr;
 
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -41,6 +41,8 @@
 		8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */; };
 		8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217CC2397BA0B00BD1B5F /* SearchView.m */; };
 		8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */; };
+		8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB217E12397E35500BD1B5F /* Snip20191204_2.png */; };
+		8BB217E42397E35500BD1B5F /* UIDevice+XMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */; };
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
 		8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3117E23952E470050E1C1 /* NSObject+Sound.m */; };
@@ -261,6 +263,9 @@
 		8BB217CD2397BA0B00BD1B5F /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
 		8BB217CF2397BA7400BD1B5F /* TBVCell_style_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVCell_style_01.h; sourceTree = "<group>"; };
 		8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVCell_style_01.m; sourceTree = "<group>"; };
+		8BB217E02397E35500BD1B5F /* UIDevice+XMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+XMUtils.h"; sourceTree = "<group>"; };
+		8BB217E12397E35500BD1B5F /* Snip20191204_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20191204_2.png; sourceTree = "<group>"; };
+		8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+XMUtils.m"; sourceTree = "<group>"; };
 		8BB8107C22F13F3700F2FD8E /* 获取当前视图控制器.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "获取当前视图控制器.png"; sourceTree = "<group>"; };
 		8BB8107D22F13F3700F2FD8E /* cell重用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell重用.png"; sourceTree = "<group>"; };
 		8BB8107E22F13F3700F2FD8E /* 葵花宝典.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "葵花宝典.m"; sourceTree = "<group>"; };
@@ -774,6 +779,16 @@
 			path = SearchView;
 			sourceTree = "<group>";
 		};
+		8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */ = {
+			isa = PBXGroup;
+			children = (
+				8BB217E12397E35500BD1B5F /* Snip20191204_2.png */,
+				8BB217E02397E35500BD1B5F /* UIDevice+XMUtils.h */,
+				8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */,
+			);
+			path = "UIDevice+XMUtils";
+			sourceTree = "<group>";
+		};
 		8BB8107B22F13F2300F2FD8E /* Doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1037,6 +1052,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */,
 				8BB217CB2397BA0B00BD1B5F /* SearchView */,
 				8BA69E502396C64800575B2F /* GetDeviceIP */,
 				8BC3118C239554840050E1C1 /* Timer */,
@@ -1730,6 +1746,7 @@
 				C3F570F322A60E1C009E9691 /* MyStore@3x.png in Resources */,
 				8B9EAF9D237439B00012884C /* 专治UITableView相应链断裂 in Resources */,
 				C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */,
+				8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */,
 				C3F5707522A4FC92009E9691 /* area.db in Resources */,
 				C3F5707622A4FC92009E9691 /* hotelcity.json in Resources */,
 				C3F56F7522A4C732009E9691 /* Assets.xcassets in Resources */,
@@ -1905,6 +1922,7 @@
 				C3F5708822A504B8009E9691 /* YBGeneralColor.m in Sources */,
 				CE1319A522CDA6F6002BA1A7 /* XLChannelItem.m in Sources */,
 				8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */,
+				8BB217E42397E35500BD1B5F /* UIDevice+XMUtils.m in Sources */,
 				C3F56FB622A4F749009E9691 /* SoundBtn.m in Sources */,
 				C3F5705C22A4FB29009E9691 /* RYCuteView.m in Sources */,
 				C3F56FEF22A4F7CE009E9691 /* UIControl+XY.m in Sources */,

@@ -17,7 +17,18 @@ PODS:
   - AwesomeMenu (1.0.0)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
-  - BRPickerView (2.3.1)
+  - BRPickerView (2.4.2):
+    - BRPickerView/AddressPickerView (= 2.4.2)
+    - BRPickerView/Base (= 2.4.2)
+    - BRPickerView/DatePickerView (= 2.4.2)
+    - BRPickerView/StringPickerView (= 2.4.2)
+  - BRPickerView/AddressPickerView (2.4.2):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.4.2)
+  - BRPickerView/DatePickerView (2.4.2):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.4.2):
+    - BRPickerView/Base
   - CocoaLumberjack (3.6.0):
     - CocoaLumberjack/Core (= 3.6.0)
   - CocoaLumberjack/Core (3.6.0)
@@ -56,6 +67,15 @@ PODS:
   - JDStatusBarNotification (1.6.0)
   - JJStockView (0.0.7)
   - JXCategoryView (1.3.14)
+  - libwebp (1.0.3):
+    - libwebp/demux (= 1.0.3)
+    - libwebp/mux (= 1.0.3)
+    - libwebp/webp (= 1.0.3)
+  - libwebp/demux (1.0.3):
+    - libwebp/webp
+  - libwebp/mux (1.0.3):
+    - libwebp/demux
+  - libwebp/webp (1.0.3)
   - LYEmptyView (1.2.5)
   - Masonry (1.1.0)
   - "MBProgressHUD+WJExtension (1.3.1)"
@@ -94,6 +114,9 @@ PODS:
   - SDWebImage (5.0.3):
     - SDWebImage/Core (= 5.0.3)
   - SDWebImage/Core (5.0.3)
+  - SDWebImageWebPCoder (0.2.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.0)
   - SGQRCode (3.0.1)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
@@ -178,6 +201,7 @@ DEPENDENCIES:
   - RegexKitLite
   - Reveal-SDK
   - SDWebImage
+  - SDWebImageWebPCoder
   - SGQRCode
   - Shimmer
   - SocketRocket
@@ -220,6 +244,7 @@ SPEC REPOS:
     - JDStatusBarNotification
     - JJStockView
     - JXCategoryView
+    - libwebp
     - LYEmptyView
     - Masonry
     - "MBProgressHUD+WJExtension"
@@ -239,6 +264,7 @@ SPEC REPOS:
     - RegexKitLite
     - Reveal-SDK
     - SDWebImage
+    - SDWebImageWebPCoder
     - SGQRCode
     - Shimmer
     - SocketRocket
@@ -263,7 +289,7 @@ SPEC CHECKSUMS:
   AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  BRPickerView: 46c9c2a5fce2590554402961acca694557521712
+  BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
@@ -282,6 +308,7 @@ SPEC CHECKSUMS:
   JDStatusBarNotification: 21b616e7432284fea6eb0ce9eadc37c8038a5544
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JXCategoryView: 008a9d2eb3ba6035eb2df9a2b3e9a4806d6601a3
+  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   LYEmptyView: b17adfc2dd9ad2988ecaf7c9606efa916e24c767
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
@@ -301,6 +328,7 @@ SPEC CHECKSUMS:
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
   SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
+  SDWebImageWebPCoder: 947093edd1349d820c40afbd9f42acb6cdecd987
   SGQRCode: bf02d60e18d6660a9d75ff1c8b9b467f064f054e
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -320,6 +348,6 @@ SPEC CHECKSUMS:
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 4b9c51b0db61cfca319b0becd62588f30daedf6d
+PODFILE CHECKSUM: 430597263926c67019c42fc551799aedd7c9be6c
 
 COCOAPODS: 1.8.4

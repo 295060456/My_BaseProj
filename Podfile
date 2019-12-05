@@ -1,5 +1,7 @@
 
 # Uncomment the next line to define a global platform for your project
+
+install!'cocoapods',:deterministic_uuids=>false#解决与私有库的冲突
  platform :ios, '12.2'
 
 target 'My_BaseProj' do
@@ -24,6 +26,7 @@ pod 'MJRefresh'
 pod 'MJExtension'    #上拉加载、下拉刷新
 pod 'YYKit'#pod 'YYText'
 pod 'SDWebImage'
+pod 'SDWebImageWebPCoder'
 pod 'IQKeyboardManager'
 pod 'OpenUDID'
 pod 'ZXingObjC/QRCode'#ZXing是一个开放源码的，用Java实现的多种格式的1D/2D条码图像处理库，目前由Google维护更新

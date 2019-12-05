@@ -37,8 +37,6 @@
 #import "Reachability.h"//检查联网情况
 #import <ReactiveObjC.h>
 #import "SDWebImage.h"//不支持图片后处理
-#import <SDImageWebPCoder.h>
-#import <SDImageCodersManager.h>
 #import "SGQRCode.h"
 #import "FBShimmering.h"
 #import "SVProgressHUD.h"

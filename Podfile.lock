@@ -111,12 +111,12 @@ PODS:
   - ReactiveObjC (3.1.1)
   - RegexKitLite (4.0)
   - Reveal-SDK (23)
-  - SDWebImage (5.0.3):
-    - SDWebImage/Core (= 5.0.3)
-  - SDWebImage/Core (5.0.3)
-  - SDWebImageWebPCoder (0.2.5):
-    - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.0)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
+  - SDWebImage/WebP (4.4.7):
+    - libwebp (< 2.0, >= 0.5)
+    - SDWebImage/Core
   - SGQRCode (3.0.1)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
@@ -201,7 +201,7 @@ DEPENDENCIES:
   - RegexKitLite
   - Reveal-SDK
   - SDWebImage
-  - SDWebImageWebPCoder
+  - SDWebImage/WebP
   - SGQRCode
   - Shimmer
   - SocketRocket
@@ -264,7 +264,6 @@ SPEC REPOS:
     - RegexKitLite
     - Reveal-SDK
     - SDWebImage
-    - SDWebImageWebPCoder
     - SGQRCode
     - Shimmer
     - SocketRocket
@@ -327,8 +326,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
-  SDWebImage: d4f87d7d36c8a4d9f9459dc282e0caa057fdf935
-  SDWebImageWebPCoder: 947093edd1349d820c40afbd9f42acb6cdecd987
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SGQRCode: bf02d60e18d6660a9d75ff1c8b9b467f064f054e
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -348,6 +346,6 @@ SPEC CHECKSUMS:
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 430597263926c67019c42fc551799aedd7c9be6c
+PODFILE CHECKSUM: 30ce0131d606b55510179e57decc6faf0efd2a0d
 
 COCOAPODS: 1.8.4

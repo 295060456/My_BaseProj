@@ -26,7 +26,7 @@ pod 'MJRefresh'
 pod 'MJExtension'    #上拉加载、下拉刷新
 pod 'YYKit'#pod 'YYText'
 pod 'SDWebImage'
-pod 'SDWebImageWebPCoder'
+pod 'SDWebImage/WebP'
 pod 'IQKeyboardManager'
 pod 'OpenUDID'
 pod 'ZXingObjC/QRCode'#ZXing是一个开放源码的，用Java实现的多种格式的1D/2D条码图像处理库，目前由Google维护更新

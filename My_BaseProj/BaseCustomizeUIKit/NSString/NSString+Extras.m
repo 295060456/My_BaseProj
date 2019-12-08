@@ -773,4 +773,71 @@
     return dic;
 }
 
++ (BOOL)isNullString:(NSString*)string{
+    
+    if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    string = StringFormat(@"%@",string);
+    NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    string = [string stringByTrimmingCharactersInSet:whitespace];
+    
+    if (string.length == 0) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+//开始时间给定 结束时间不给定就启用现在的时间戳
++(NSTimeInterval)timeIntervalstartDate:(NSString *_Nonnull)startTime
+                               endDate:(NSString *_Nullable)endTime
+                         timeFormatter:(NSDateFormatter *_Nullable)timeFormatter{
+    if (timeFormatter == nil ||
+        timeFormatter == Nil) {
+        timeFormatter = NSDateFormatter.new;
+        [timeFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    }
+    
+    NSDate* startDate = [timeFormatter dateFromString:startTime];
+    NSDate* endDate;
+    if ([NSString isNullString:endTime]) {
+        NSString *now = [timeFormatter stringFromDate:[NSDate date]];
+        endDate = [timeFormatter dateFromString:now];
+    }else{
+        endDate = [timeFormatter dateFromString:endTime];
+    }
+    NSTimeInterval time = [endDate timeIntervalSinceDate:startDate];
+    return time;
+}
+
+//传入 秒  得到 xx:xx:xx
++(NSString *)getHHMMSSFromStr:(NSString *)totalTime{
+    NSInteger seconds = [totalTime integerValue];
+    NSString *str_hour = [NSString stringWithFormat:@"%02ld",seconds / 3600];//format of hour
+    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(seconds % 3600) / 60];//format of minute
+    NSString *str_second = [NSString stringWithFormat:@"%02ld",seconds % 60];//format of second
+    NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@",str_hour,str_minute,str_second];//format of time
+    NSLog(@"format_time : %@",format_time);
+    return format_time;
+}
+
+//传入 秒  得到  xx分钟xx秒
++(NSString *)getMMSSFromStr:(NSString *)totalTime{
+    NSInteger seconds = [totalTime integerValue];
+    NSString *str_minute = [NSString stringWithFormat:@"%ld",seconds / 60];//format of minute
+    NSString *str_second = [NSString stringWithFormat:@"%ld",seconds % 60];//format of second
+    NSString *format_time = [NSString stringWithFormat:@"%@分钟%@秒",str_minute,str_second];//format of time
+    NSLog(@"format_time : %@",format_time);
+    return format_time;
+}
+
+//字符串中取数字
++(long long)getDigitsFromStr:(NSString *)str{
+    NSCharacterSet *nonDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    int remainSecond = [[str stringByTrimmingCharactersInSet:nonDigits] intValue];
+    return (long long)remainSecond;
+}
+
+
 @end

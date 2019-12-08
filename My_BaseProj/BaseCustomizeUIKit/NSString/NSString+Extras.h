@@ -96,6 +96,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
 
++ (BOOL)isNullString:(NSString*)string;
+//开始时间给定 结束时间不给定就启用现在的时间戳
++(NSTimeInterval)timeIntervalstartDate:(NSString *_Nonnull)startTime
+                               endDate:(NSString *_Nullable)endTime
+                         timeFormatter:(NSDateFormatter *_Nullable)timeFormatter;
+//传入 秒  得到 xx:xx:xx
++(NSString *)getHHMMSSFromStr:(NSString *)totalTime;
+//传入 秒  得到  xx分钟xx秒
++(NSString *)getMMSSFromStr:(NSString *)totalTime;
+//字符串中取数字
++(long long)getDigitsFromStr:(NSString *)str;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -153,6 +153,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
+  - WXSTransition (1.2.1)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -214,6 +215,7 @@ DEPENDENCIES:
   - UICountingLabel
   - WCDB
   - WebViewJavascriptBridge
+  - WXSTransition
   - YYKit
   - ZFPlayer
   - ZXingObjC/QRCode
@@ -278,6 +280,7 @@ SPEC REPOS:
     - WCDB
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
+    - WXSTransition
     - YYKit
     - ZFPlayer
     - ZXingObjC
@@ -341,11 +344,12 @@ SPEC CHECKSUMS:
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: fdc92702cc611922182a951991dea78566da7605
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 30ce0131d606b55510179e57decc6faf0efd2a0d
+PODFILE CHECKSUM: 70ec4bcfbb03abc999cf3525b52f60573a5b35ee
 
 COCOAPODS: 1.8.4

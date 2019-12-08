@@ -33,7 +33,7 @@
     self.layer.borderColor = self.layerBorderColor.CGColor;
     self.layer.cornerRadius = self.layerCornerRadius;
     self.titleLabel.font = self.titleLabelFont;
-    self.titleColor = self.titleColor;
+    [self setTitleColor:self.titleColor forState:UIControlStateNormal];
     self.layer.borderWidth = self.layerBorderWidth;
     [self.titleLabel sizeToFit];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -62,19 +62,20 @@
         switch (self.showTimeType) {
             case ShowTimeType_SS:{
                 //不做任何处理
-                str = [NSString stringWithFormat:@"剩余%ld秒", self.count];
+                str = [NSString stringWithFormat:@"%@%ld秒",self.titleRuningStr,self.count];
             }break;
             case ShowTimeType_MMSS:{
                 countStr = [self getMMSSFromStr:[NSString stringWithFormat:@"%ld",self.count]];
-                str = [@"剩余时间" stringByAppendingString:countStr];
+                str = [self.titleRuningStr stringByAppendingString:countStr];
             }break;
             case ShowTimeType_HHMMSS:{
                 countStr = [self getHHMMSSFromStr:[NSString stringWithFormat:@"%ld",self.count]];
-                str = [@"剩余时间" stringByAppendingString:countStr];
+                str = [self.titleRuningStr stringByAppendingString:countStr];
             }break;
             default:
                 str = @"异常值";
                 break;
+                NSLog(@"%@",str);
         }
         [self setTitle:str
               forState:UIControlStateNormal];
@@ -139,6 +140,12 @@
     if (!_titleEndStr) {
         _titleEndStr = @"取消";
     }return _titleEndStr;
+}
+
+-(NSString *)titleRuningStr{
+    if (!_titleRuningStr) {
+        _titleRuningStr = @"剩余时间";
+    }return _titleRuningStr;
 }
 
 -(UIColor *)bgEndColor{

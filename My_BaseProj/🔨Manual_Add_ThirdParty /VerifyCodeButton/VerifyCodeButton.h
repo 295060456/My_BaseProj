@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSTimer *timer;
 @property(nonatomic,copy)NSString *titleBeginStr;
+@property(nonatomic,copy)NSString *titleRuningStr;
 @property(nonatomic,copy)NSString *titleEndStr;
 @property(nonatomic,strong)UIColor *titleColor;
 @property(nonatomic,strong)UIColor *bgBeginColor;

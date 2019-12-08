@@ -69,6 +69,7 @@ pod 'Reveal-SDK', :configurations => ['Debug']
 pod 'MLeaksFinder' #在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
 pod 'JJStockView'#Excel
 pod 'CocoaLumberjack'
+pod 'WXSTransition'
 
 #视频相关框架
 #pod 'ZFPlayer/ControlView'

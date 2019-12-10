@@ -10,9 +10,6 @@
 
 @interface EncryptUtils : NSString
 
-+ (NSString *)getSysTimeStamp;//获取系统时间戳
-
-
 +(NSString *)sha1_64bits:(NSString *)str;//64位SHA1加密
 +(NSString *)sha1_20bits:(NSString *)str;//20位SHA1加密
 +(NSString *)md5_32bits:(NSString *)str;//32位MD5加密

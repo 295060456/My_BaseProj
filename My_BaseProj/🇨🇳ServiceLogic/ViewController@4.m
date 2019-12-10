@@ -127,8 +127,8 @@
 //    [_headerView addSubview:_lineView];
     
     //设置图像
-    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:@"http://5b0988e595225.cdn.sohucs.com/images/20180615/0920dd51bb3940fca1c440f15786d566.jpeg"]
-                       placeholderImage:[UIImage imageNamed:@"图片"]];
+//    [_headerImageView sd_setImageWithURL:[NSURL URLWithString:@"http://5b0988e595225.cdn.sohucs.com/images/20180615/0920dd51bb3940fca1c440f15786d566.jpeg"]
+//                       placeholderImage:[UIImage imageNamed:@"图片"]];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

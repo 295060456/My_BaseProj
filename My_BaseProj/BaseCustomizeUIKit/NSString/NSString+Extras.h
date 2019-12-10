@@ -11,102 +11,69 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Extras)
--(NSString *)test:(NSArray <NSString *>*)arr;
+
++(NSString *)test:(NSArray <NSString *>*)arr;
 /**
- *  判断对象 / 数组是否为空
- *  为空返回 YES
- *  不为空返回 NO
- */
-+(BOOL)isEmptyStr:(NSString *)value; 
-+(BOOL)isContainAllCharType:(NSString*)originString;
-//MD5加密🔐,加盐操作在内部进行
-+ (NSString *)MD5WithString:(NSString *)string
-                isLowercase:(BOOL)isLowercase;
-
-- (BOOL)match:(NSString *)express;
-
-+ (BOOL)isPureInt:(NSString *)string;
-
-+(BOOL)isHaveWhiteSpace:(NSString *)text;
-+(NSString* )getTimeString:(NSString *)timeStampString;
-+ (BOOL)isEmpty:(NSString *)text;
-+ (id)isValueNSStringWith:(NSString *)str;
-//+ (BOOL)getDataSuccessed:(NSDictionary *)dic;
-//+(BOOL)getLNDataSuccessed:(NSDictionary *)dic;
-+ (BOOL)isAllZeroInString:(NSString*)originString;
-+ (NSString*)getAnonymousString:(NSString* )originString;
-+ (NSString *)timeWithSecond:(NSInteger)second;
-- (NSString *)subStringFrom:(NSString *)startString to:(NSString *)endString;
-+ (NSMutableAttributedString *)attributedReverseStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont;
-+ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont;
-
-+ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont;
-+ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont subStringUnderlineColor:(UIColor*)underlineColor;
-+ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor image:(UIImage *)image;
-
-+ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor image:(UIImage *)image isImgPositionOnlyLeft:(BOOL)isOnlyLeft;
-
-+ (CGFloat)getAttributeContentHeightWithAttributeString:(NSAttributedString*)atributedString withFontSize:(float)fontSize boundingRectWithWidth:(CGFloat)width;
-+ (CGFloat)getContentHeightWithParagraphStyleLineSpacing:(CGFloat)lineSpacing fontWithString:(NSString*)fontWithString fontOfSize:(CGFloat)fontOfSize boundingRectWithWidth:(CGFloat)width;
-
-+(CGFloat)getTextWidth:(NSString *)string withFontSize:(UIFont *)font withHeight:(CGFloat)height;
-
-+(CGFloat)calculateTextWidth:(NSString *)string withFontSize:(float)fontSize withWidth:(float)width;
-+(CGFloat)calculateAttributeTextWidth:(NSAttributedString *)atributedString withFontSize:(float)fontSize withWidth:(float)width;
-+(NSString *)convertToJsonData:(NSDictionary *)dict;
-
-+(float)textHitWithStirng:(NSString*)stingS font:(float)font widt:(float)wid;
-// 根据字体大小 和高度计算文字的宽
-+(float)textWidthWithStirng:(NSString*)stingS font:(float)font hit:(float)hit;
-
-//判断是否含有表情符号 yes-有 no-没有
-+ (BOOL)stringContainsEmoji:(NSString *)string ;
-//是否是系统自带九宫格输入 yes-是 no-不是
-+ (BOOL)isNineKeyBoard:(NSString *)string;
-//判断第三方键盘中的表情
-+ (BOOL)hasEmoji:(NSString*)string;
-//去除表情
-+ (NSString *)disableEmoji:(NSString *)text;
-
-//Convert NSDictionary values to NSString
-+ (NSString*)convertDictionaryToString:(NSMutableDictionary*)dict;
-
-//计算文本的大小
-+ (CGSize)sizeWithString:(NSString*)str
-                 andFont:(UIFont*)font
-              andMaxSize:(CGSize)size;
-
-- (CGSize)sizeWithFont:(UIFont*)font
-            andMaxSize:(CGSize)size;
-
-// 判断纯整数
-+(BOOL)judgeiphoneNumberInt:(NSString*)number;
-
-
-// 金额字符串格式化
-- (NSString *)formatDecimalNumber;
-
-+(NSString *)getMMSSFromSS:(NSInteger)totalTime; // 时间转 小时 / d分 、秒
-
+*  判断对象 / 数组是否为空
+*  为空返回 YES
+*  不为空返回 NO
+*/
++ (BOOL)isNullString:(NSString *)string;
+#pragma mark —— 字符串替换
+/**
+*  有时候我们加载的URL中可能会出现中文,需要我们手动进行转码,但是同时又要保证URL中的特殊字符保持不变,那么我们就可以使用下面的方法
+*/
++(NSURL *)Url_Chinese:(NSString *)urlStr;
+//替换相关的字符为暂位符 example
 +(NSString *)numberSuitScanf:(NSString*)number;
-
-//我自己写的
+//我自己写的,服务器请求的数据为空值的时候进行替换本地默认值，因为json传输是通过对象包装来进行，所以其实归结起来就是2类，一类是基本数据类型被包装成Number、其他包装成String
 +(NSString *)ensureNonnullString:(id)nullableStr
                       ReplaceStr:(NSString *)replaceStr;
-
-+ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
-
-+ (BOOL)isNullString:(NSString*)string;
-//开始时间给定 结束时间不给定就启用现在的时间戳
-+(NSTimeInterval)timeIntervalstartDate:(NSString *_Nonnull)startTime
-                               endDate:(NSString *_Nullable)endTime
-                         timeFormatter:(NSDateFormatter *_Nullable)timeFormatter;
-//传入 秒  得到 xx:xx:xx
-+(NSString *)getHHMMSSFromStr:(NSString *)totalTime;
-//传入 秒  得到  xx分钟xx秒
-+(NSString *)getMMSSFromStr:(NSString *)totalTime;
+#pragma mark —— 转化
+//编码emoji
++(NSString *)emojiEncodeStr:(NSString *)str;
+//解码emoji
++(NSString *)emojiDecodeStr:(NSString *)str;
+//JSON 转 NSDictionary
++(NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString;
+// NSDictionary 转 json字符串方法//==[dic mj_JSONString]
++(NSString *)convertToJsonData:(NSDictionary *)dict;
+//NSDictionary 转 NSString
++ (NSString *)convertDictionaryToString:(NSMutableDictionary *)dict;
+// 判断是否为纯整数
++(BOOL)judgeiphoneNumberInt:(NSString *)number;
 //字符串中取数字
 +(long long)getDigitsFromStr:(NSString *)str;
+//是否包含空格
++(BOOL)isHaveWhiteSpace:(NSString *)text;
+/// 给定某字符串，判断里面的组成char是否全部为某个char
+/// @param originString 被判定的字符串
+/// @param standardChar 需要被检出的标准
++ (BOOL)isAllSameCharInString:(NSString *)originString
+                 standardChar:(char)standardChar;
+#pragma mark —— 时间相关
+/// 获取系统时间戳
++ (NSString *)getSysTimeStamp;
+//服务器时间转化为某固定格式
++(NSString *)getMMSSFromSS:(NSInteger)totalTime;
+//将秒数转换为字符串格式
++ (NSString *)timeWithSecond:(NSInteger)second;
+/// 以固定格式解析并返回服务器时间戳
+/// @param timeStampString 服务器返回的13位时间戳，毫秒
+/// iOS 生成的时间戳是10位
++(NSString* )getTimeString:(NSString *)timeStampString;
+#pragma mark -限宽计算AttributeString与String的高度
++ (CGFloat)getAttributeContentHeightWithAttributeString:(NSAttributedString*)atributedString
+                                           withFontSize:(float)fontSize
+                                  boundingRectWithWidth:(CGFloat)width;
+
++ (CGFloat)getContentHeightWithParagraphStyleLineSpacing:(CGFloat)lineSpacing
+                                          fontWithString:(NSString *)fontWithString
+                                              fontOfSize:(CGFloat)fontOfSize
+                                   boundingRectWithWidth:(CGFloat)width;
+
+
+
 
 @end
 

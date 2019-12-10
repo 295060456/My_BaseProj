@@ -9,8 +9,9 @@
 #import "NSArray+Extend.h"
 
 @implementation NSArray (Extend)
-
-#pragma mark  数组转字符串
+/**
+*  数组转字符串
+*/
 -(NSString *)string{
     if(!self
        ||self.count == 0) return @"";
@@ -23,7 +24,9 @@
     NSString *strForRight = [str substringWithRange:NSMakeRange(0, str.length - 1)];
     return strForRight;
 }
-#pragma mark —— 数组比较
+/**
+*  数组比较
+*/
 -(BOOL)compareIgnoreObjectOrderWithArray:(NSArray *)array{
     NSSet *set1 = [NSSet setWithArray:self];
     NSSet *set2 = [NSSet setWithArray:array];

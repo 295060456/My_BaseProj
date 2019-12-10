@@ -146,3 +146,6 @@ oc综合项目,ios综合项目,iosdemo,ocdemo,demo,百思不得姐,新浪微博,
 
 在cell里面，用[self layoutIfNeeded]刷新立即得到textLabel等的frame值，每走一次[self layoutIfNeeded]，调用一次layoutSubviews，frame有可能不准，是中间值
 最终对于cell自带的系统控件的frame都体现在-(void)drawRect:(CGRect)rect及其以后的方法里面
+
+extern 会引起计数器+
+nstimer 要在viewwilldisappear销毁 而不是dealloc

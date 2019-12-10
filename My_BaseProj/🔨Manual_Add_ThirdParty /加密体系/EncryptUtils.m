@@ -10,14 +10,6 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation EncryptUtils
-
-/// 获取系统时间戳
-+ (NSString *)getSysTimeStamp{
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-    long int timeStamp = timeInterval;
-    NSString * timStampStr = [NSString stringWithFormat:@"%ld",timeStamp];
-    return timStampStr;
-}
 /**
  *  20位SHA1加密
  */

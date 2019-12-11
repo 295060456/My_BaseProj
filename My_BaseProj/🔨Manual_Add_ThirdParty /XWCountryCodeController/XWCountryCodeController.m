@@ -29,11 +29,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self creatSubviews];
-    @weakify(self)
-    [self.view goBackButtonInSuperView:self.view leftButtonEvent:^(id data) {
-        @strongify(self)
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
 }
 
 #pragma mark - private

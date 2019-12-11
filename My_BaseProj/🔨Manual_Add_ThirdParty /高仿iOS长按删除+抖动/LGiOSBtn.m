@@ -140,25 +140,25 @@
     [super layoutSubviews];
     
     // 调整位置
-    self.imageView.x = 0;
-    self.imageView.y = 0;
+    self.imageView.mj_x = 0;
+    self.imageView.mj_y = 0;
     self.imageView.width = self.width;
     self.imageView.height = self.width;
     
-    self.titleLabel.x = 0;
+    self.titleLabel.mj_x = 0;
     self.titleLabel.width = self.width;
     if (self.width >= self.height) {
         self.titleLabel.height = 20;
-        self.titleLabel.y = self.height - self.titleLabel.height;
+        self.titleLabel.mj_y = self.height - self.titleLabel.height;
     } else {
-        self.titleLabel.y = self.imageView.height;
-        self.titleLabel.height = self.height - self.titleLabel.y;
+        self.titleLabel.mj_y = self.imageView.height;
+        self.titleLabel.height = self.height - self.titleLabel.mj_y;
     }
     
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.iconBtn.size = CGSizeMake(self.width * 0.3, self.width * 0.3);
-    self.iconBtn.x = self.width - self.iconBtn.width;
-    self.iconBtn.y = 0;
+    self.iconBtn.mj_x = self.width - self.iconBtn.width;
+    self.iconBtn.mj_y = 0;
     
     self.coverView.frame = self.bounds;
     [self bringSubviewToFront:self.iconBtn];

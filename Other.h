@@ -13,4 +13,6 @@
 //FFmpeg 需要
 #import <VideoToolbox/VideoToolbox.h>
 
+#import "IsLogin.h"
+
 #endif /* Other_h */

@@ -46,7 +46,7 @@
                     
                     make.right.mas_equalTo(self.mas_left).mas_offset(5);
                     make.bottom.mas_equalTo(self.mas_top).mas_offset(5);
-                    [NSString isEmptyStr:contentStr] ? make.size.mas_equalTo(CGSizeMake(10,10)) : make.height.mas_equalTo(10) ;
+                    [NSString isNullString:contentStr] ? make.size.mas_equalTo(CGSizeMake(10,10)) : make.height.mas_equalTo(10) ;
                 }];
             }
                 break;
@@ -56,7 +56,7 @@
                     
                     make.left.mas_equalTo(self.mas_right).mas_offset(-5);
                     make.bottom.mas_equalTo(self.mas_top).mas_offset(5);
-                    [NSString isEmptyStr:contentStr] ? make.size.mas_equalTo(CGSizeMake(10,10)) : make.height.mas_equalTo(10) ;
+                    [NSString isNullString:contentStr] ? make.size.mas_equalTo(CGSizeMake(10,10)) : make.height.mas_equalTo(10) ;
                 }];
                 [self layoutIfNeeded];
             }

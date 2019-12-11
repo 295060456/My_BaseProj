@@ -12,7 +12,7 @@
 }
 
 @property(nonatomic,strong)UILabel *infoLab;
-@property(nonatomic,copy)ActionBlock block;
+@property(nonatomic,copy)DataBlock block;
 
 @end
 

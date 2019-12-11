@@ -52,7 +52,7 @@ static PersonalInfo *personalInfo;
 -(BOOL)isLogined{
     ModelLogin *model = [self fetchLoginUserInfo];
 //    D_NSLog(@"model is %@",model);
-    if ([NSString isEmpty:model.userId]) {
+    if ([NSString isNullString:model.userId]) {
         return NO;
     }else{
         return YES;

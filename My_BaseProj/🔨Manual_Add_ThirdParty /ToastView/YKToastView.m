@@ -215,7 +215,7 @@
 #pragma mark Toast样式提示自定义内容
 + (void)showToastText:(NSString *)text
                inView:(UIView *)view{
-    if (![NSString isEmpty:text]){
+    if (![NSString isNullString:text]){
         YKToastView *toastTipView = [[YKToastView alloc] initWithFrame:CGRectMake(0,
                                                                                   0,
                                                                                   250,
@@ -246,7 +246,7 @@
 + (void)showToastText:(NSString *)text
                inView:(UIView *)view
       withDisplayTime:(NSTimeInterval)iSecond{
-    if (![NSString isEmpty:text]){
+    if (![NSString isNullString:text]){
         YKToastView *toastTipView = [[YKToastView alloc] initWithFrame:CGRectMake(0,
                                                                                   0,
                                                                                   250,
@@ -275,7 +275,7 @@
 
 #pragma mark Toast样式在Window上提示自定义内容
 + (void)showToastText:(NSString *)text{
-    if (![NSString isEmpty:text]) {
+    if (![NSString isNullString:text]) {
         [YKToastView showToastText:text
                             inView:[[[UIApplication sharedApplication] delegate] window]];
     }
@@ -283,7 +283,7 @@
 
 + (void)showToastText:(NSString *)text
       withDisplayTime:(NSTimeInterval)iSecond{
-    if (![NSString isEmpty:text]) {
+    if (![NSString isNullString:text]) {
         [YKToastView showToastText:text
                             inView:[[[UIApplication sharedApplication] delegate] window]
                    withDisplayTime:iSecond];
@@ -291,7 +291,7 @@
 }
 
 + (void)showToastTextInRandomLocation:(NSString *)text{
-    if (![NSString isEmpty:text]){
+    if (![NSString isNullString:text]){
         YKToastView *toastTipView = [[YKToastView alloc] initWithFrame:CGRectMake(0,
                                                                                   0,
                                                                                   250,

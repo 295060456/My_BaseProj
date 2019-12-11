@@ -88,7 +88,7 @@
     return editorView;
 }
 
--(void)actionBlock:(ActionBlock)block{
+-(void)actionBlock:(DataBlock)block{
     
     self.hideBlock = block;
 }
@@ -300,7 +300,7 @@
 #pragma mark —— contentView
 @interface ContentView ()
 
-@property(nonatomic,copy)ActionBlock block;
+@property(nonatomic,copy)DataBlock block;
 @property(nonatomic,assign)MoveDirection moveDirection;
 
 @end
@@ -391,7 +391,7 @@
     }
 }
 
--(void)actionBlock:(ActionBlock)block{
+-(void)actionBlock:(DataBlock)block{
     
     self.block = block;
     

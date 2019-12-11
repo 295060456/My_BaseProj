@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseTableViewer : UITableView
 
--(void)actionBlock:(ActionBlock)block;
+-(void)actionBlock:(DataBlock)block;
 
 @end
 

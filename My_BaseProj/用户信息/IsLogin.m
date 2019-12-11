@@ -97,7 +97,7 @@
 
     NSLog(@"[IsLogin getUserName] = %@",[IsLogin getUserName]);
 
-    if ([NSString isEmptyStr:[IsLogin getUserName]]) return NO;//未登录
+    if ([NSString isNullString:[IsLogin getUserName]]) return NO;//未登录
 
     return YES;//已登录
 }

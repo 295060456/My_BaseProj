@@ -116,7 +116,7 @@
 //存方法
 -(void)store:(NSString *)str{
     //为空不存
-    if (![NSString isEmptyStr:str]) {
+    if (![NSString isNullString:str]) {
         if (self.dataMutArr.count != 0) {//本地有数据
             [self.mutSet addObjectsFromArray:self.dataMutArr];
         }

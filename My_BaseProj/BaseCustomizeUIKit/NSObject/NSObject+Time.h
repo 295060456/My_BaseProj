@@ -13,23 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSObject (Time)
 
 /**
-
  *  ** 在当前日期时间加上 某个时间段(传负数即返回当前时间之前x月x日的时间)
-
  *  @param year   当前时间若干年后 （传负数为当前时间若干年前）
-
  *  @param month  当前时间若干月后  （传0即与当前时间一样）
-
  *  @param day  当前时间若干天后
-
  *  @param hour   当前时间若干小时后
-
  *  @param minute 当前时间若干分钟后
-
  *  @param second 当前时间若干秒后
-
  *  @return 处理后的时间字符串
-
  */
 
 +(NSArray *)dateStringAfterlocalDateForYear:(NSInteger)year

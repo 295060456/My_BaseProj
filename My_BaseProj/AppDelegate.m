@@ -18,19 +18,13 @@
 @implementation AppDelegate
 
 + (instancetype)sharedInstance {
-    
     static AppDelegate *_instace = nil;
-
     static dispatch_once_t onceToken;
-    
     dispatch_once(&onceToken, ^{
-        
         if (!_instace) {
-            
             _instace = [[super allocWithZone:NULL] init];
         }
-    });
-    return _instace;
+    });return _instace;
 }
 
 + (id)allocWithZone:(struct _NSZone *)zone{
@@ -38,7 +32,6 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
 #if DEBUG
     /**
      *  宏忽略警告

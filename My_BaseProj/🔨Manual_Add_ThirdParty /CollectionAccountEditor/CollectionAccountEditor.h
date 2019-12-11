@@ -39,14 +39,14 @@ typedef NS_ENUM(NSUInteger, HaveCovering){
 
 -(void)close;
 
--(void)actionBlock:(ActionBlock)block;
+-(void)actionBlock:(DataBlock)block;
 
 @end
 
 
 @interface ContentView : UIView
 
--(void)actionBlock:(ActionBlock)block;
+-(void)actionBlock:(DataBlock)block;
 
 @end
 

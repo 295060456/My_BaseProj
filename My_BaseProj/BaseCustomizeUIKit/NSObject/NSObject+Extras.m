@@ -54,7 +54,6 @@
     UIGraphicsEndImageContext();
     return image;
 }
-
 /**
  *  UIColor 转 UIImage
  */

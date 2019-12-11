@@ -14,7 +14,10 @@
 #import "ViewController@3.h"
 #import "ViewController@4.h"
 
-@interface CustomSYSUITabBarController ()<LZBTabBarViewControllerDelegate>
+@interface CustomSYSUITabBarController ()
+<
+LZBTabBarViewControllerDelegate
+>
 
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customUnselectedImgMutArr;
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customSelectedImgMutArr;
@@ -30,7 +33,6 @@ CGFloat LZB_TABBAR_HEIGHT;
 @implementation CustomSYSUITabBarController
 
 - (void)dealloc {
-    
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
 }
 
@@ -50,25 +52,19 @@ CGFloat LZB_TABBAR_HEIGHT;
 }
 
 - (void)p_setUpAllChildViewController {
-
     self.viewControllerMutArr = [NSMutableArray arrayWithObjects:ViewController_1.new,ViewController_2.new,ViewController_3.new,ViewController_4.new,nil];
-
     self.delegate = self;
-
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
         self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
         [self.mutArr addObject:self.customNavigationVC];
     }
-
     self.viewControllers = (NSArray *)self.mutArr;
-
     for (int i = 0; i <self.titleStrMutArr.count; i++) {
         [self p_setupCustomTBCWithViewController:self.viewControllerMutArr[i]
                                            Title:self.titleStrMutArr[i]
                                      SelectImage:(UIImage *)self.customSelectedImgMutArr[i]
                                    NnSelectImage:(UIImage *)self.customUnselectedImgMutArr[i]];
     }
-    
     self.lzb_tabBar.backgroundColor = kWhiteColor;
     self.isShouldAnimation = YES;
 }
@@ -77,42 +73,30 @@ CGFloat LZB_TABBAR_HEIGHT;
                                   Title:(NSString *)titleStr
                             SelectImage:(UIImage *)selectImage
                           NnSelectImage:(UIImage *)unSelectImage{
-    
     vc.lzb_tabBarItem.selectImage = selectImage;
-    
     vc.lzb_tabBarItem.unSelectImage = unSelectImage;
-    
     vc.lzb_tabBarItem.title = titleStr;//下
-    
     vc.title = titleStr;//上
 }
-
 #pragma mark ======== LZBTabBarViewControllerDelegate ======
 - (BOOL)lzb_tabBarController:(LZBTabBarViewController *)tabBarController
   shouldSelectViewController:(UIViewController *)viewController{
-    
     return YES;
 }
-
 //改1
 //点击的时候进行确认是否登录
 - (void)lzb_tabBarController:(LZBTabBarViewController *)tabBarController
      didSelectViewController:(UIViewController *)viewController{
-    
     if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_1 class]]) {
-
         //        NSLog(@"%ld",self.selectedIndex);
     }
     else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_2 class]]){
-
 //        [self presentLoginVC];
     }
     else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_3 class]]){
-
 //        [self presentLoginVC];
     }
     else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_4 class]]){
-
 //        [self presentLoginVC];
     }
 }

@@ -12,14 +12,14 @@
     
 }
 
-@property(nonatomic,copy)ActionBlock block;
+@property(nonatomic,copy)DataBlock block;
 
 @end
 
 
 @implementation BaseTableViewer
 
--(void)actionBlock:(ActionBlock)block{
+-(void)actionBlock:(DataBlock)block{
     self.block = block;
 }
 

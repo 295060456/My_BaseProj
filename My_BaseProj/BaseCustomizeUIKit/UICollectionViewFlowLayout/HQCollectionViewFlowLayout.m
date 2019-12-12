@@ -18,11 +18,9 @@
     }return self;
 }
 /*
- 
  // 作用:返回指定区域的cell布局对象
  // 什么时候调用:指定新的区域的时候调用
  - (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
- 
  */
 - (NSArray *) layoutAttributesForElementsInRect:(CGRect)rect{
     //UICollectionViewLayoutAttributes：我称它为collectionView中的item（包括cell和header、footer这些）的《结构信息》

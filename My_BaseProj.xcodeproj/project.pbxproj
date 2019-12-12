@@ -734,8 +734,8 @@
 		8BA94BF8235AE6C700B00786 /* UICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */,
 				8BA94BFA235AE6C700B00786 /* HQCollectionViewFlowLayout.h */,
+				8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */,
 			);
 			path = UICollectionViewFlowLayout;
 			sourceTree = "<group>";

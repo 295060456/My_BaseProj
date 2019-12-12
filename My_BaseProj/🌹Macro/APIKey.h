@@ -8,8 +8,6 @@
 /**
  *  本类放一些第三方常量
  */
-
-
 /* 使用高德地图API，请注册Key，注册地址：http://lbs.amap.com/console/key */
 
 static NSString *BaiduMap_APIKey = @"TWC2ybVAS387MaFmv26RdYSeExoGc5l5";//百度地图Key

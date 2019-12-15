@@ -149,3 +149,9 @@ oc综合项目,ios综合项目,iosdemo,ocdemo,demo,百思不得姐,新浪微博,
 
 extern 会引起计数器+
 nstimer 要在viewwilldisappear销毁 而不是dealloc
+
+
+https://juejin.im/post/5a9e66f6f265da23970660a9
+https://www.jianshu.com/p/2bf17335c3e9
+https://www.jianshu.com/p/e4fc6aceec49
+https://heisenbean.me/2016/09/Timer-in-iOS/

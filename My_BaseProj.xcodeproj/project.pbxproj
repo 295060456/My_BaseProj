@@ -13,6 +13,7 @@
 		8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B128BEB2345A5750039B590 /* TBCityIconFont.m */; };
 		8B128BF22345A5750039B590 /* TBCityIconInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B128BEC2345A5750039B590 /* TBCityIconInfo.m */; };
 		8B128BF32345A5750039B590 /* UIImage+TBCityIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B128BED2345A5750039B590 /* UIImage+TBCityIconFont.m */; };
+		8B163EA823A333B300F0ECEB /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B163EA723A333B300F0ECEB /* TimeManager.m */; };
 		8B29BAFB232E5E67002114A0 /* ECAuthorizationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B29BAFA232E5E67002114A0 /* ECAuthorizationTools.m */; };
 		8B55869D233C899B00132CF6 /* ViewForHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B558699233C899B00132CF6 /* ViewForHeader.m */; };
 		8B55869E233C899B00132CF6 /* ViewForFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B55869A233C899B00132CF6 /* ViewForFooter.m */; };
@@ -48,7 +49,6 @@
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
 		8BBE6979239E6772004C2932 /* NSObject+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBE6978239E6772004C2932 /* NSObject+Time.m */; };
 		8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3117E23952E470050E1C1 /* NSObject+Sound.m */; };
-		8BC3118F239554970050E1C1 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3118E239554970050E1C1 /* TimeManager.m */; };
 		8BCAB6CF238AF669000B0360 /* SearchVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C5238AF668000B0360 /* SearchVC+VM.m */; };
 		8BCAB6D0238AF669000B0360 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C6238AF668000B0360 /* SearchModel.m */; };
 		8BCAB6D1238AF669000B0360 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAB6C8238AF669000B0360 /* SearchVC.m */; };
@@ -192,6 +192,8 @@
 		8B128BEE2345A5750039B590 /* TBCityIconInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconInfo.h; sourceTree = "<group>"; };
 		8B128BEF2345A5750039B590 /* TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBCityIconFont.h; sourceTree = "<group>"; };
 		8B128BF02345A5750039B590 /* UIImage+TBCityIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TBCityIconFont.h"; sourceTree = "<group>"; };
+		8B163EA623A333B300F0ECEB /* TimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
+		8B163EA723A333B300F0ECEB /* TimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		8B16F050238690B8003941B4 /* DefineStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineStructure.h; sourceTree = "<group>"; };
 		8B29BAF9232E5E67002114A0 /* ECAuthorizationTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAuthorizationTools.h; sourceTree = "<group>"; };
 		8B29BAFA232E5E67002114A0 /* ECAuthorizationTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAuthorizationTools.m; sourceTree = "<group>"; };
@@ -573,6 +575,15 @@
 			path = IconFont;
 			sourceTree = "<group>";
 		};
+		8B163EA523A3338E00F0ECEB /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				8BC3118D239554970050E1C1 /* TimeManager.h */,
+				8BC3118E239554970050E1C1 /* TimeManager.m */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		8B29BAF8232E5E5D002114A0 /* ECAuthorizationTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,8 +817,9 @@
 		8BC3118C239554840050E1C1 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				8BC3118D239554970050E1C1 /* TimeManager.h */,
-				8BC3118E239554970050E1C1 /* TimeManager.m */,
+				8B163EA523A3338E00F0ECEB /* Old */,
+				8B163EA623A333B300F0ECEB /* TimeManager.h */,
+				8B163EA723A333B300F0ECEB /* TimeManager.m */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -1907,7 +1919,6 @@
 				8B6EB80A230A6F1E00F3995E /* ZHKeyChainManager.m in Sources */,
 				8B86E03C238560C5004D4C0A /* ModelLogin.m in Sources */,
 				8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */,
-				8BC3118F239554970050E1C1 /* TimeManager.m in Sources */,
 				C3F5704B22A4FA7F009E9691 /* YBNotificationManager.m in Sources */,
 				C3229A8722B21D110044BB5E /* SDCycleScrollView+UICollectionViewDataSource.m in Sources */,
 				8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */,
@@ -1919,6 +1930,7 @@
 				C3229A7A22B0D39F0044BB5E /* XDTextBtnView.m in Sources */,
 				8B7A5548236F0461006B12F8 /* FMHttpResonse.m in Sources */,
 				C3F5700C22A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m in Sources */,
+				8B163EA823A333B300F0ECEB /* TimeManager.m in Sources */,
 				8BD6DC4B234B23B0003F1EE0 /* CALayer+Transition.m in Sources */,
 				C3F56F6A22A4C731009E9691 /* AppDelegate.m in Sources */,
 				C301CF0E22AE72BE00C0DCCC /* YKToastView.m in Sources */,

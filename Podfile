@@ -70,6 +70,9 @@ pod 'MLeaksFinder' #在开发时在iOS应用中查找内存泄漏 https://github
 pod 'JJStockView'#Excel
 pod 'CocoaLumberjack'
 pod 'WXSTransition'
+pod 'MSWeakTimer'
+pod 'RQShineLabel'# https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
+
 
 #视频相关框架
 #pod 'ZFPlayer/ControlView'

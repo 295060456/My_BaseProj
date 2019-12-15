@@ -83,6 +83,7 @@ PODS:
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - MSWeakTimer (1.1.0)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -192,6 +193,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MLeaksFinder
+  - MSWeakTimer
   - NJKWebViewProgress
   - OpenUDID
   - PGBanner
@@ -253,6 +255,7 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - MLeaksFinder
+    - MSWeakTimer
     - NJKWebViewProgress
     - OpenUDID
     - PGBanner
@@ -317,6 +320,7 @@ SPEC CHECKSUMS:
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PGBanner: 0c52ab4ce9e04ad17f8dd0627b45951b96770c67
@@ -350,6 +354,6 @@ SPEC CHECKSUMS:
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 70ec4bcfbb03abc999cf3525b52f60573a5b35ee
+PODFILE CHECKSUM: 7a01ff66935944a5bc3ae3e4b856a430857d5a2f
 
 COCOAPODS: 1.8.4

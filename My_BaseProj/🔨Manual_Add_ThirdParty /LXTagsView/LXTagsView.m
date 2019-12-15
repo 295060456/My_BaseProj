@@ -182,7 +182,7 @@
         
         [self.btnMutArr addObject:button];
         
-        button.tag = EnumActionTag0 + i;
+        button.tag = i;
         
         [UIView cornerCutToCircleWithView:button
                             AndCornerRadius:self.cornerRadius];

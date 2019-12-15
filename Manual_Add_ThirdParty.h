@@ -20,7 +20,6 @@
 #import "UIColor+Hex.h"
 #import "NSObject+Extras.h"
 #import "UIControl+XY.h"
-#import "UITableView+EmptyData.h"
 
 //加密体系
 #import "RSAUtil.h"

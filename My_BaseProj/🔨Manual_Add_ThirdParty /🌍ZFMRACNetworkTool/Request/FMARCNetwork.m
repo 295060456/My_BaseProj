@@ -256,7 +256,7 @@ static FMARCNetwork *_instance = nil;
 - (RACSignal *)uploadNetworkPath:(NSString *)path
                           params:(NSDictionary *)params
                        fileDatas:(NSArray<NSData *> *)fileDatas
-                            name:(NSString *)name
+                         nameArr:(NSArray <NSString *>*)nameArr
                         mimeType:(NSString *)mimeType{
     return [[self UploadRequestWithPath:path
                              parameters:params
@@ -277,8 +277,8 @@ static FMARCNetwork *_instance = nil;
                       NSString *dateString = [formatter stringFromDate:[NSDate date]];
                       NSString *fileName = [NSString  stringWithFormat:@"senba_empty_%@_%d.jpg", dateString , i];
                       [formData appendPartWithFileData:fileData
-                                                  name:name
-                                              fileName:fileName
+                                                  name:nameArr[i]
+                                              fileName:fileName //自己生成
                                               mimeType:!(mimeType.length == 0 ||
                                                          mimeType == nil ||
                                                          [mimeType isKindOfClass:[NSNull class]]) ? mimeType:@"application/octet-stream"];

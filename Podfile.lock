@@ -112,6 +112,7 @@ PODS:
   - ReactiveObjC (3.1.1)
   - RegexKitLite (4.0)
   - Reveal-SDK (23)
+  - RQShineLabel (1.0.0)
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
   - SDWebImage/Core (4.4.7)
@@ -203,6 +204,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - RegexKitLite
   - Reveal-SDK
+  - RQShineLabel
   - SDWebImage
   - SDWebImage/WebP
   - SGQRCode
@@ -268,6 +270,7 @@ SPEC REPOS:
     - ReactiveObjC
     - RegexKitLite
     - Reveal-SDK
+    - RQShineLabel
     - SDWebImage
     - SGQRCode
     - Shimmer
@@ -333,6 +336,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
+  RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SGQRCode: bf02d60e18d6660a9d75ff1c8b9b467f064f054e
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
@@ -354,6 +358,6 @@ SPEC CHECKSUMS:
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 7a01ff66935944a5bc3ae3e4b856a430857d5a2f
+PODFILE CHECKSUM: 381d7aa3c749464b85c179842e6e652b78090e3a
 
 COCOAPODS: 1.8.4

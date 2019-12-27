@@ -34,8 +34,10 @@ brew install lrzsz
 brew install clang-format
 brew install git-flow
 brew install caskroom/cask/brew-cask
-
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ###################################################
+brew install oclint
+gem install xcpretty
 
 升级Ruby环境，首先需要安装rvm
 curl -L get.rvm.io | bash -s stable

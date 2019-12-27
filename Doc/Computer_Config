@@ -61,6 +61,8 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 # 5、按照提醒输入密码，完全退出iTerm2
 
+https://raw.githubusercontent.com/Tencent/wcdb/master/tools/templates/install.sh -s | sh
+
 
 
 

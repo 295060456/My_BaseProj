@@ -65,6 +65,20 @@ chsh -s /bin/zsh
 
 curl https://raw.githubusercontent.com/Tencent/wcdb/master/tools/templates/install.sh -s | sh
 
+配置Flutter
+git clone -b master https://github.com/flutter/flutter.git
+./flutter/bin/flutter --version
+
+安装到iOS设备
+要将您的Flutter应用安装到iOS真机设备，您需要一些额外的工具和一个Apple帐户，您还需要在Xcode中进行设置。
+安装 homebrew （如果已经安装了brew,跳过此步骤）.
+打开终端并运行这些命令来安装用于将Flutter应用安装到iOS设备的工具
+brew update
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller ios-deploy cocoapods
+pod setup
+如果这些命令中的任何一个失败并出现错误，请运行brew doctor并按照说明解决问题.
+
 
 
 

@@ -3,6 +3,9 @@ defaults write com.apple.Finder AppleShowAllFiles YES
 Xcode Command Line Tools
 xcode-select —install
 
+Mac OS 打开任何来源
+sudo spctl --master-disable
+
 Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -33,11 +36,16 @@ brew install coreutils
 brew install lrzsz
 brew install clang-format
 brew install git-flow
+brew install Autojump
 brew install caskroom/cask/brew-cask
+brew install tomcat
+brew install ruby
+brew install watchman
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ###################################################
 brew install oclint
 gem install xcpretty
+brew install yarn 或者 brew install yarn --without-node 如果您使用 nvm 或类似的东西，您应该排除安装 Node.js 以便使用 nvm 的 Node.js 版本。
 
 升级Ruby环境，首先需要安装rvm
 curl -L get.rvm.io | bash -s stable
@@ -79,7 +87,53 @@ brew install ideviceinstaller ios-deploy cocoapods
 pod setup
 如果这些命令中的任何一个失败并出现错误，请运行brew doctor并按照说明解决问题.
 
+配置react-native
+npm install -g expo-cli
+npm install -g react-native-cli
 
+初始化配置 WEEX
+请确保你已经安装了 Node.js，然后全局安装 weex-cli。
 
+npm install weex-toolkit -g
+这条命令会向你命令行环境中注册一个 weex 命令。你可以用 weex create 命令来创建一个空的模板项目：
+
+weex create awesome-app
+命令执行完以后，在当前目录的 awesome-app 文件夹里就有了一个空的 Weex + Vue.js 项目。
+
+http://xstarcd.github.io/wiki/MacOS/MacOS_MacPorts.html
+
+//彻底删除cocoapods
+/*
+完整的三步操作实例如下
+#罗列依赖库
+$ gem list --local | grep cocoapods
+cocoapods (1.0.1)
+cocoapods-core (1.0.1, 0.39.0)
+cocoapods-deintegrate (1.0.0)
+cocoapods-downloader (1.0.0, 0.9.3)
+cocoapods-plugins (1.0.0, 0.4.2)
+cocoapods-search (1.0.0, 0.1.0)
+cocoapods-stats (1.0.0, 0.6.2)
+cocoapods-trunk (1.0.0, 0.6.4)
+cocoapods-try (1.0.0, 0.5.1)
+
+#遍历删除依赖库
+$ for i in $( gem list --local --no-version | grep cocoapods );
+do
+   sudo   gem uninstall $i;
+done
+
+Password:
+Remove executables:
+ pod, sandbox-pod
+
+in addition to the gem? [Yn]  y
+
+等等
+
+#进一步彻底删除文件夹
+$ rm -rf ~/.cocoapods/
+
+*/
 
 

@@ -50,7 +50,7 @@ pod 'DDProgressView'            #加载状态显示
 pod 'pop'     #动画
 pod 'AYCheckVersion'            #提示更新
 pod 'UICountingLabel'           #Lable上的默认值持续变动到指定值
-pod 'RegexKitLite'  #第三方正则表达式开源库
+#pod 'RegexKitLite'  #第三方正则表达式开源库
 pod 'AwesomeMenu'
 pod 'PYSearch'  #优雅的搜索控制器取代了UISearchController for iOS（iPhone和iPad）
 pod 'TTTAttributedLabel'#替代UILabel https://github.com/TTTAttributedLabel/TTTAttributedLabel
@@ -72,6 +72,7 @@ pod 'CocoaLumberjack'
 pod 'WXSTransition'
 pod 'MSWeakTimer'
 pod 'RQShineLabel'# https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
+pod 'AWRichText' # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，并不仅仅局限于图文混排的富文本排版神器
 
 
 #视频相关框架

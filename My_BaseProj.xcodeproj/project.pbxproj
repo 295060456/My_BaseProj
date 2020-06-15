@@ -147,6 +147,7 @@
 		C3F570FF22A61052009E9691 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570FE22A61052009E9691 /* ViewController@4.m */; };
 		C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710022A612AD009E9691 /* BaseNavigationVC.m */; };
 		C3F5710922A63B0A009E9691 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */; };
+		C52284302497629E00136D0B /* 🍌Manual_Add_ThirdFont in Resources */ = {isa = PBXBuildFile; fileRef = C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -488,6 +489,7 @@
 		C3F5710622A63AC7009E9691 /* 调试时候添加日志时使用,上线需要去掉 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "调试时候添加日志时使用,上线需要去掉"; sourceTree = "<group>"; };
 		C3F5710722A63B0A009E9691 /* NSlogToDocumentFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSlogToDocumentFolder.h; sourceTree = "<group>"; };
 		C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSlogToDocumentFolder.m; sourceTree = "<group>"; };
+		C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = "🍌Manual_Add_ThirdFont"; path = "My_BaseProj/🍌Manual_Add_ThirdFont"; sourceTree = SOURCE_ROOT; };
 		C560B73424962AB5002E1D99 /* TableViewCell自适应 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TableViewCell自适应"; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
@@ -991,8 +993,8 @@
 				C3F570DE22A60B8C009E9691 /* CustomSYSUITabBarController.m */,
 				C3F56F7922A4C732009E9691 /* Info.plist */,
 				C3F5703A22A4FA13009E9691 /* BaseCustomizeUIKit */,
-				CEA4C98722C1CF18004E89B7 /* 🍌Manual_Add_ThirdFont */,
 				C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */,
+				C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */,
 				C3F56F9E22A4F38C009E9691 /* 🌹Macro */,
 				C3F570EC22A60D66009E9691 /* ⚽️PicResource */,
 				C3F5710322A61CDB009E9691 /* 🇨🇳ServiceLogic */,
@@ -1575,13 +1577,6 @@
 			path = "高仿iOS长按删除+抖动";
 			sourceTree = "<group>";
 		};
-		CEA4C98722C1CF18004E89B7 /* 🍌Manual_Add_ThirdFont */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "🍌Manual_Add_ThirdFont";
-			sourceTree = "<group>";
-		};
 		CEA4CAED22C31760004E89B7 /* FFmpeg */ = {
 			isa = PBXGroup;
 			children = (
@@ -1711,6 +1706,7 @@
 				8B9EAF9D237439B00012884C /* 专治UITableView相应链断裂 in Resources */,
 				C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */,
 				8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */,
+				C52284302497629E00136D0B /* 🍌Manual_Add_ThirdFont in Resources */,
 				C3F5707522A4FC92009E9691 /* area.db in Resources */,
 				C3F5707622A4FC92009E9691 /* hotelcity.json in Resources */,
 				C3F56F7522A4C732009E9691 /* Assets.xcassets in Resources */,

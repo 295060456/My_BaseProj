@@ -699,9 +699,9 @@
     return anonymousString;
 }
 
-- (BOOL)match:(NSString *)express {
-    return [self isMatchedByRegex:express];
-}
+//- (BOOL)match:(NSString *)express {
+//    return [self isMatchedByRegex:express];
+//}
 //MD5加密🔐,加盐操作在内部进行
 + (NSString *)MD5WithString:(NSString *)string
                        salt:(NSString *)saltStr

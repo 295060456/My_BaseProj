@@ -1,8 +1,8 @@
-
 # Uncomment the next line to define a global platform for your project
 
 install!'cocoapods',:deterministic_uuids=>false#解决与私有库的冲突
-platform :ios, '12.2'
+platform :ios, '13.5'
+inhibit_all_warnings!
 
 target 'My_BaseProj' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -61,12 +61,10 @@ pod 'EScrollPageView' # https://github.com/EasySnail/EScrollPageView 嵌套滚�
 pod 'JDStatusBarNotification' # 网络提示--> 网络监听显示，主要是展示状态
 #pod 'HWPanModal'#HWPanModal 用于从底部弹出控制器（UIViewController），并用拖拽手势来关闭控制器。提供了自定义视图大小和位置，高度自定义弹出视图的各个属性。 https://github.com/HeathWang/HWPanModal
 #pod 'SearchTextField'
-#pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
 pod 'JXCategoryView'  # https://github.com/pujiaxin33/JXCategoryView A powerful and easy to use category view (segmentedcontrol, segmentview, pagingview, pagerview, pagecontrol) (腾讯新闻、今日头条、QQ音乐、网易云音乐、京东、爱奇艺、腾讯视频、淘宝、天猫、简书、微博等所有主流APP分类切换滚动视图)
 pod 'LYEmptyView' # https://github.com/dev-liyang/LYEmptyView iOS一行代码集成空白页面占位图(无数据、无网络占位图)
 pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
-pod 'BRPickerView'
-# https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
+pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
 pod 'Reveal-SDK', :configurations => ['Debug']
 pod 'MLeaksFinder'  # 在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
 pod 'JJStockView' # https://github.com/jezzmemo/JJStockView Excel iOS股票,课程表,表格控件
@@ -76,7 +74,7 @@ pod 'MSWeakTimer' # https://github.com/mindsnacks/MSWeakTimer Thread-safe NSTime
 pod 'RQShineLabel'  # https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
 pod 'AWRichText'  # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，并不仅仅局限于图文混排的富文本排版神器
 pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-
+pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
 
 #视频相关框架
 #pod 'ZFPlayer/ControlView'
@@ -102,5 +100,10 @@ pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云
     inherit! :search_paths
     # Pods for testing
   end
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    puts "!!!! #{target.name}"
+  end
 end

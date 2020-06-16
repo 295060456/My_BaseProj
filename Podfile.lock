@@ -162,6 +162,9 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
+  - ZFPlayer (3.3.3):
+    - ZFPlayer/Core (= 3.3.3)
+  - ZFPlayer/Core (3.3.3)
   - ZXingObjC/Core (3.6.5)
   - ZXingObjC/QRCode (3.6.5):
     - ZXingObjC/Core
@@ -222,6 +225,7 @@ DEPENDENCIES:
   - WebViewJavascriptBridge
   - WXSTransition
   - YYKit
+  - ZFPlayer
   - ZXingObjC/QRCode
   - ZYSuspensionView/SuspensionView
 
@@ -289,6 +293,7 @@ SPEC REPOS:
     - WebViewJavascriptBridge
     - WXSTransition
     - YYKit
+    - ZFPlayer
     - ZXingObjC
     - ZYSuspensionView
 
@@ -355,9 +360,10 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZFPlayer: 1310252c253b9958e4fcd411e706b99c31834eaf
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: c9b67203541b0b067f7e19ea64734c7157c55b13
+PODFILE CHECKSUM: 941db271ff251cb1e1c09213e1f28769549f967a
 
 COCOAPODS: 1.9.3

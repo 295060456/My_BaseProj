@@ -147,7 +147,10 @@
 		C3F570FF22A61052009E9691 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570FE22A61052009E9691 /* ViewController@4.m */; };
 		C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710022A612AD009E9691 /* BaseNavigationVC.m */; };
 		C3F5710922A63B0A009E9691 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */; };
-		C52284302497629E00136D0B /* 🍌Manual_Add_ThirdFont in Resources */ = {isa = PBXBuildFile; fileRef = C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */; };
+		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
+		C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887742498B49F00C8A3E7 /* SceneDelegate.m */; };
+		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
+		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -489,7 +492,12 @@
 		C3F5710622A63AC7009E9691 /* 调试时候添加日志时使用,上线需要去掉 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "调试时候添加日志时使用,上线需要去掉"; sourceTree = "<group>"; };
 		C3F5710722A63B0A009E9691 /* NSlogToDocumentFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSlogToDocumentFolder.h; sourceTree = "<group>"; };
 		C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSlogToDocumentFolder.m; sourceTree = "<group>"; };
-		C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = "🍌Manual_Add_ThirdFont"; path = "My_BaseProj/🍌Manual_Add_ThirdFont"; sourceTree = SOURCE_ROOT; };
+		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C55887742498B49F00C8A3E7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		C55887752498B49F00C8A3E7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		C55887A82498E46200C8A3E7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		C55887A92498E46200C8A3E7 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
+		C55887AA2498E46200C8A3E7 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
 		C560B73424962AB5002E1D99 /* TableViewCell自适应 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TableViewCell自适应"; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
@@ -517,6 +525,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */,
 				CEF7C40D22C31E600068AF35 /* libiconv.tbd in Frameworks */,
 				CEF7C40B22C31E580068AF35 /* libbz2.tbd in Frameworks */,
 				CEF7C40922C31E4F0068AF35 /* libz.tbd in Frameworks */,
@@ -546,6 +555,7 @@
 		473FE5B56C6760D4864A3383 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C52289CE2497A36C00136D0B /* libc++.tbd */,
 				CEF7C40C22C31E600068AF35 /* libiconv.tbd */,
 				CEF7C40A22C31E580068AF35 /* libbz2.tbd */,
 				CEF7C40822C31E4F0068AF35 /* libz.tbd */,
@@ -986,15 +996,17 @@
 		C3F56F6722A4C731009E9691 /* My_BaseProj */ = {
 			isa = PBXGroup;
 			children = (
-				8B86E0362385606C004D4C0A /* 用户信息 */,
 				C3F56F6822A4C731009E9691 /* AppDelegate.h */,
 				C3F56F6922A4C731009E9691 /* AppDelegate.m */,
+				C55887752498B49F00C8A3E7 /* SceneDelegate.h */,
+				C55887742498B49F00C8A3E7 /* SceneDelegate.m */,
 				C3F570DD22A60B8C009E9691 /* CustomSYSUITabBarController.h */,
 				C3F570DE22A60B8C009E9691 /* CustomSYSUITabBarController.m */,
 				C3F56F7922A4C732009E9691 /* Info.plist */,
-				C3F5703A22A4FA13009E9691 /* BaseCustomizeUIKit */,
+				8B86E0362385606C004D4C0A /* 用户信息 */,
 				C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */,
-				C522842F2497629E00136D0B /* 🍌Manual_Add_ThirdFont */,
+				C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */,
+				C3F5703A22A4FA13009E9691 /* BaseCustomizeUIKit */,
 				C3F56F9E22A4F38C009E9691 /* 🌹Macro */,
 				C3F570EC22A60D66009E9691 /* ⚽️PicResource */,
 				C3F5710322A61CDB009E9691 /* 🇨🇳ServiceLogic */,
@@ -1042,6 +1054,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C55887A72498E46200C8A3E7 /* AddressPickerView */,
 				8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */,
 				8BB217CB2397BA0B00BD1B5F /* SearchView */,
 				8BA69E502396C64800575B2F /* GetDeviceIP */,
@@ -1539,6 +1552,23 @@
 			path = ../Log;
 			sourceTree = "<group>";
 		};
+		C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "🍌Manual_Add_ThirdFont";
+			sourceTree = "<group>";
+		};
+		C55887A72498E46200C8A3E7 /* AddressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C55887A82498E46200C8A3E7 /* area.plist */,
+				C55887A92498E46200C8A3E7 /* AddressPickerView.h */,
+				C55887AA2498E46200C8A3E7 /* AddressPickerView.m */,
+			);
+			path = AddressPickerView;
+			sourceTree = "<group>";
+		};
 		C55CB09E4B41ABD8B535A2B2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1695,6 +1725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F56F7822A4C732009E9691 /* LaunchScreen.storyboard in Resources */,
+				C55887AB2498E46200C8A3E7 /* area.plist in Resources */,
 				CEF8255022C5B2A800A50884 /* 图片@2x.png in Resources */,
 				C3F570FC22A60E5F009E9691 /* My@2x.png in Resources */,
 				C3F570F022A60DF3009E9691 /* Home@3x.png in Resources */,
@@ -1706,7 +1737,6 @@
 				8B9EAF9D237439B00012884C /* 专治UITableView相应链断裂 in Resources */,
 				C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */,
 				8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */,
-				C52284302497629E00136D0B /* 🍌Manual_Add_ThirdFont in Resources */,
 				C3F5707522A4FC92009E9691 /* area.db in Resources */,
 				C3F5707622A4FC92009E9691 /* hotelcity.json in Resources */,
 				C3F56F7522A4C732009E9691 /* Assets.xcassets in Resources */,
@@ -1885,6 +1915,7 @@
 				C3F56FEF22A4F7CE009E9691 /* UIControl+XY.m in Sources */,
 				8B7A54FC236D92FF006B12F8 /* WBTableViewDataSource.m in Sources */,
 				C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */,
+				C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */,
 				8B8A0E182390D575000D7579 /* XXTools.m in Sources */,
 				C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */,
 				C3F56FF722A4F7CE009E9691 /* NSString+Extension.m in Sources */,
@@ -1896,6 +1927,7 @@
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				8B7A554A236F0461006B12F8 /* FMHttpRequest.m in Sources */,
 				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
+				C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */,
 				C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */,
 				C3229A8522B21D110044BB5E /* SDCycleScrollView.m in Sources */,
 				8BCAB6D3238AF669000B0360 /* CJTextField.m in Sources */,

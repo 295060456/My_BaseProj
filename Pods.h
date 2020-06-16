@@ -46,7 +46,7 @@
 #import "AwesomeMenu.h"
 #import "EScrollPageView.h"
 #import "ENestScrollPageView.h"
-#import "ZFPlayer.h"
+//#import "ZFPlayer.h"
 #import "JXCategoryView.h"
 #import <GKNavigationBarViewController/GKNavigationBarViewController.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"

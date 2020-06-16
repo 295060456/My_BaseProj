@@ -32,7 +32,9 @@
 @interface DHAreasProvinceModel : NSObject
 
 @property (nonatomic, copy) NSString *privinceId;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *
+
+name;
 @property (nonatomic, copy) NSString *parentId;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSArray *childList;

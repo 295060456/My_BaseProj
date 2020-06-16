@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - AwesomeMenu (1.0.0)
+  - AWRichText (1.0.1)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
   - BRPickerView (2.4.2):
@@ -67,6 +68,9 @@ PODS:
   - JDStatusBarNotification (1.6.0)
   - JJStockView (0.0.7)
   - JXCategoryView (1.3.14)
+  - KSYMediaPlayer_iOS (3.0.3):
+    - KSYMediaPlayer_iOS/KSYMediaPlayer_live (= 3.0.3)
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_live (3.0.3)
   - libwebp (1.0.3):
     - libwebp/demux (= 1.0.3)
     - libwebp/mux (= 1.0.3)
@@ -158,9 +162,6 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
-  - ZFPlayer (3.2.12):
-    - ZFPlayer/Core (= 3.2.12)
-  - ZFPlayer/Core (3.2.12)
   - ZXingObjC/Core (3.6.5)
   - ZXingObjC/QRCode (3.6.5):
     - ZXingObjC/Core
@@ -169,6 +170,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AwesomeMenu
+  - AWRichText
   - AYCheckVersion
   - BEMCheckBox
   - BRPickerView
@@ -187,6 +189,7 @@ DEPENDENCIES:
   - JDStatusBarNotification
   - JJStockView
   - JXCategoryView
+  - KSYMediaPlayer_iOS
   - LYEmptyView
   - Masonry
   - "MBProgressHUD+WJExtension"
@@ -219,7 +222,6 @@ DEPENDENCIES:
   - WebViewJavascriptBridge
   - WXSTransition
   - YYKit
-  - ZFPlayer
   - ZXingObjC/QRCode
   - ZYSuspensionView/SuspensionView
 
@@ -227,6 +229,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - AwesomeMenu
+    - AWRichText
     - AYCheckVersion
     - BEMCheckBox
     - BRPickerView
@@ -248,6 +251,7 @@ SPEC REPOS:
     - JDStatusBarNotification
     - JJStockView
     - JXCategoryView
+    - KSYMediaPlayer_iOS
     - libwebp
     - LYEmptyView
     - Masonry
@@ -285,13 +289,13 @@ SPEC REPOS:
     - WebViewJavascriptBridge
     - WXSTransition
     - YYKit
-    - ZFPlayer
     - ZXingObjC
     - ZYSuspensionView
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
+  AWRichText: 7adc57ff591ef9365cfb3f35aac98b2e97db015d
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
@@ -313,6 +317,7 @@ SPEC CHECKSUMS:
   JDStatusBarNotification: 21b616e7432284fea6eb0ce9eadc37c8038a5544
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JXCategoryView: 008a9d2eb3ba6035eb2df9a2b3e9a4806d6601a3
+  KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   LYEmptyView: b17adfc2dd9ad2988ecaf7c9606efa916e24c767
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -350,10 +355,9 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
-  ZFPlayer: fdc92702cc611922182a951991dea78566da7605
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 1d92bf952d6f594367cbaf3145eb4d24c4e6868d
+PODFILE CHECKSUM: c9b67203541b0b067f7e19ea64734c7157c55b13
 
 COCOAPODS: 1.9.3

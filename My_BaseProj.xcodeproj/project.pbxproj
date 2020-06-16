@@ -498,6 +498,7 @@
 		C55887A82498E46200C8A3E7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		C55887A92498E46200C8A3E7 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
 		C55887AA2498E46200C8A3E7 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
+		C55887AD2499013C00C8A3E7 /* 本地流服务器 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地流服务器"; sourceTree = "<group>"; };
 		C560B73424962AB5002E1D99 /* TableViewCell自适应 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TableViewCell自适应"; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
@@ -793,6 +794,7 @@
 				C3EDA78E22B740E8002F49D6 /* readme */,
 				8BC2781C2359DD92004AA5F4 /* Computer_Config */,
 				C560B73424962AB5002E1D99 /* TableViewCell自适应 */,
+				C55887AD2499013C00C8A3E7 /* 本地流服务器 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

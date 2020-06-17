@@ -275,7 +275,6 @@
 		8BB8BD28235ED1A5008C7578 /* ZYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
 		8BBE6977239E6772004C2932 /* NSObject+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Time.h"; sourceTree = "<group>"; };
 		8BBE6978239E6772004C2932 /* NSObject+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Time.m"; sourceTree = "<group>"; };
-		8BC2781C2359DD92004AA5F4 /* Computer_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
 		8BC3117E23952E470050E1C1 /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
 		8BC3117F23952E470050E1C1 /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		8BC3118D239554970050E1C1 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
@@ -500,6 +499,14 @@
 		C55887AA2498E46200C8A3E7 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
 		C55887AD2499013C00C8A3E7 /* 本地流服务器 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地流服务器"; sourceTree = "<group>"; };
 		C560B73424962AB5002E1D99 /* TableViewCell自适应 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TableViewCell自适应"; sourceTree = "<group>"; };
+		C5C97348249A0AE100AB4429 /* Flutter_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Flutter_Config; sourceTree = "<group>"; };
+		C5C97349249A0AE100AB4429 /* Cocoapods_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cocoapods_Config; sourceTree = "<group>"; };
+		C5C9734A249A0AE100AB4429 /* Weex_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weex_Config; sourceTree = "<group>"; };
+		C5C9734B249A0AE100AB4429 /* React-native_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = "React-native_Config"; sourceTree = "<group>"; };
+		C5C9734C249A0AE100AB4429 /* Homebrew_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Homebrew_Config; sourceTree = "<group>"; };
+		C5C9734D249A0AE100AB4429 /* Oh-my-zsh_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Oh-my-zsh_Config"; sourceTree = "<group>"; };
+		C5C9734E249A0AE200AB4429 /* Computer_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
+		C5C9734F249A0F9C00AB4429 /* MacPorts_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = MacPorts_Config; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -792,9 +799,9 @@
 				8BB8107D22F13F3700F2FD8E /* cell重用.png */,
 				826DFEC822EAAE3D00464D1B /* Jose */,
 				C3EDA78E22B740E8002F49D6 /* readme */,
-				8BC2781C2359DD92004AA5F4 /* Computer_Config */,
 				C560B73424962AB5002E1D99 /* TableViewCell自适应 */,
 				C55887AD2499013C00C8A3E7 /* 本地流服务器 */,
+				C5C97347249A0AB600AB4429 /* Computer_Config */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
@@ -1582,6 +1589,21 @@
 				6034DD6DF7212D7FC23F03FC /* Pods-My_BaseProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5C97347249A0AB600AB4429 /* Computer_Config */ = {
+			isa = PBXGroup;
+			children = (
+				C5C9734E249A0AE200AB4429 /* Computer_Config */,
+				C5C97349249A0AE100AB4429 /* Cocoapods_Config */,
+				C5C97348249A0AE100AB4429 /* Flutter_Config */,
+				C5C9734C249A0AE100AB4429 /* Homebrew_Config */,
+				C5C9734D249A0AE100AB4429 /* Oh-my-zsh_Config */,
+				C5C9734B249A0AE100AB4429 /* React-native_Config */,
+				C5C9734A249A0AE100AB4429 /* Weex_Config */,
+				C5C9734F249A0F9C00AB4429 /* MacPorts_Config */,
+			);
+			path = Computer_Config;
 			sourceTree = "<group>";
 		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {

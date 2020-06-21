@@ -151,6 +151,13 @@
 		C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887742498B49F00C8A3E7 /* SceneDelegate.m */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
 		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
+		C5CF107A249F54640084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */; };
+		C5CF107B249F54640084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1079249F54640084E7A7 /* libstdc++.6.0.9.tbd */; };
+		C5CF1081249F54770084E7A7 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107C249F54760084E7A7 /* libstdc++.6.dylib */; };
+		C5CF1082249F54770084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107D249F54770084E7A7 /* libstdc++.6.0.9.tbd */; };
+		C5CF1083249F54770084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107E249F54770084E7A7 /* libstdc++.6.tbd */; };
+		C5CF1084249F54770084E7A7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107F249F54770084E7A7 /* libstdc++.6.0.9.dylib */; };
+		C5CF1085249F54770084E7A7 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1080249F54770084E7A7 /* libstdc++.dylib */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -507,6 +514,13 @@
 		C5C9734D249A0AE100AB4429 /* Oh-my-zsh_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Oh-my-zsh_Config"; sourceTree = "<group>"; };
 		C5C9734E249A0AE200AB4429 /* Computer_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
 		C5C9734F249A0F9C00AB4429 /* MacPorts_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = MacPorts_Config; sourceTree = "<group>"; };
+		C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.tbd"; sourceTree = "<group>"; };
+		C5CF1079249F54640084E7A7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
+		C5CF107C249F54760084E7A7 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.dylib"; sourceTree = "<group>"; };
+		C5CF107D249F54770084E7A7 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
+		C5CF107E249F54770084E7A7 /* libstdc++.6.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.tbd"; sourceTree = "<group>"; };
+		C5CF107F249F54770084E7A7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		C5CF1080249F54770084E7A7 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.dylib"; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -535,8 +549,15 @@
 			files = (
 				C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */,
 				CEF7C40D22C31E600068AF35 /* libiconv.tbd in Frameworks */,
+				C5CF1081249F54770084E7A7 /* libstdc++.6.dylib in Frameworks */,
+				C5CF1084249F54770084E7A7 /* libstdc++.6.0.9.dylib in Frameworks */,
+				C5CF107A249F54640084E7A7 /* libstdc++.6.tbd in Frameworks */,
+				C5CF1082249F54770084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */,
 				CEF7C40B22C31E580068AF35 /* libbz2.tbd in Frameworks */,
 				CEF7C40922C31E4F0068AF35 /* libz.tbd in Frameworks */,
+				C5CF1085249F54770084E7A7 /* libstdc++.dylib in Frameworks */,
+				C5CF107B249F54640084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */,
+				C5CF1083249F54770084E7A7 /* libstdc++.6.tbd in Frameworks */,
 				014874CCC2B5911781B42F74 /* libPods-My_BaseProj.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1053,9 +1074,8 @@
 		C3F56FA222A4F43A009E9691 /* Sys */ = {
 			isa = PBXGroup;
 			children = (
-				C3F56FA322A4F43A009E9691 /* LYLUnicode.m */,
-				C3F56FA422A4F43A009E9691 /* LYLUnicode.h */,
-				C3F56FA622A4F458009E9691 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */,
+				C5CF1075249F54440084E7A7 /* libstdc++ */,
+				C5CF1074249F54320084E7A7 /* LYLUnicode */,
 			);
 			path = Sys;
 			sourceTree = "<group>";
@@ -1604,6 +1624,46 @@
 				C5C9734F249A0F9C00AB4429 /* MacPorts_Config */,
 			);
 			path = Computer_Config;
+			sourceTree = "<group>";
+		};
+		C5CF1074249F54320084E7A7 /* LYLUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				C3F56FA322A4F43A009E9691 /* LYLUnicode.m */,
+				C3F56FA422A4F43A009E9691 /* LYLUnicode.h */,
+				C3F56FA622A4F458009E9691 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */,
+			);
+			path = LYLUnicode;
+			sourceTree = "<group>";
+		};
+		C5CF1075249F54440084E7A7 /* libstdc++ */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF1077249F54550084E7A7 /* iPhone-Device */,
+				C5CF1076249F544C0084E7A7 /* iPhone-Simulator */,
+			);
+			path = "libstdc++";
+			sourceTree = "<group>";
+		};
+		C5CF1076249F544C0084E7A7 /* iPhone-Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF107F249F54770084E7A7 /* libstdc++.6.0.9.dylib */,
+				C5CF107D249F54770084E7A7 /* libstdc++.6.0.9.tbd */,
+				C5CF107C249F54760084E7A7 /* libstdc++.6.dylib */,
+				C5CF107E249F54770084E7A7 /* libstdc++.6.tbd */,
+				C5CF1080249F54770084E7A7 /* libstdc++.dylib */,
+			);
+			path = "iPhone-Simulator";
+			sourceTree = "<group>";
+		};
+		C5CF1077249F54550084E7A7 /* iPhone-Device */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF1079249F54640084E7A7 /* libstdc++.6.0.9.tbd */,
+				C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */,
+			);
+			path = "iPhone-Device";
 			sourceTree = "<group>";
 		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {
@@ -2194,6 +2254,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Device",
+					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Simulator",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Whiskey-On-The-Rocks.My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2211,6 +2276,11 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Device",
+					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Simulator",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Whiskey-On-The-Rocks.My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";

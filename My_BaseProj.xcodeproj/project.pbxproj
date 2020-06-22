@@ -147,6 +147,7 @@
 		C3F570FF22A61052009E9691 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570FE22A61052009E9691 /* ViewController@4.m */; };
 		C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710022A612AD009E9691 /* BaseNavigationVC.m */; };
 		C3F5710922A63B0A009E9691 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */; };
+		C503248224A05AA5007B9985 /* FSAppIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248024A05AA5007B9985 /* FSAppIconManager.m */; };
 		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
 		C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887742498B49F00C8A3E7 /* SceneDelegate.m */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
@@ -498,6 +499,9 @@
 		C3F5710622A63AC7009E9691 /* 调试时候添加日志时使用,上线需要去掉 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "调试时候添加日志时使用,上线需要去掉"; sourceTree = "<group>"; };
 		C3F5710722A63B0A009E9691 /* NSlogToDocumentFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSlogToDocumentFolder.h; sourceTree = "<group>"; };
 		C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSlogToDocumentFolder.m; sourceTree = "<group>"; };
+		C503248024A05AA5007B9985 /* FSAppIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppIconManager.m; sourceTree = "<group>"; };
+		C503248124A05AA5007B9985 /* FSAppIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppIconManager.h; sourceTree = "<group>"; };
+		C503248324A05B0B007B9985 /* 本地推送 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地推送"; sourceTree = "<group>"; };
 		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C55887742498B49F00C8A3E7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		C55887752498B49F00C8A3E7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -815,6 +819,7 @@
 		8BB8107B22F13F2300F2FD8E /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C503248324A05B0B007B9985 /* 本地推送 */,
 				8BB8107C22F13F3700F2FD8E /* 获取当前视图控制器.png */,
 				8BB8107E22F13F3700F2FD8E /* 葵花宝典.m */,
 				8BB8107D22F13F3700F2FD8E /* cell重用.png */,
@@ -1083,6 +1088,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C503247F24A05A99007B9985 /* FSAppIconManager */,
 				C55887A72498E46200C8A3E7 /* AddressPickerView */,
 				8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */,
 				8BB217CB2397BA0B00BD1B5F /* SearchView */,
@@ -1581,6 +1587,15 @@
 			path = ../Log;
 			sourceTree = "<group>";
 		};
+		C503247F24A05A99007B9985 /* FSAppIconManager */ = {
+			isa = PBXGroup;
+			children = (
+				C503248124A05AA5007B9985 /* FSAppIconManager.h */,
+				C503248024A05AA5007B9985 /* FSAppIconManager.m */,
+			);
+			path = FSAppIconManager;
+			sourceTree = "<group>";
+		};
 		C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -1979,6 +1994,7 @@
 				8B6EB81A230A713900F3995E /* NSArray+Extension.m in Sources */,
 				C3F56FFB22A4F7CE009E9691 /* XDSDropDownMenu.m in Sources */,
 				8BD6DC28234B1C61003F1EE0 /* NSString+File.m in Sources */,
+				C503248224A05AA5007B9985 /* FSAppIconManager.m in Sources */,
 				8BA94BFB235AE6C800B00786 /* HQCollectionViewFlowLayout.m in Sources */,
 				8B128BF22345A5750039B590 /* TBCityIconInfo.m in Sources */,
 				C3F570E522A60CEF009E9691 /* ViewController@2.m in Sources */,

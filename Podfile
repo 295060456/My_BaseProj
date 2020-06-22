@@ -75,6 +75,7 @@ pod 'RQShineLabel'  # https://github.com/zipme/RQShineLabel 一个类似Secret�
 pod 'AWRichText'  # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，并不仅仅局限于图文混排的富文本排版神器
 pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
 pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
+pod 'JJException' # https://github.com/jezzmemo/JJException Protect the objective-c application(保护App不闪退)
 
 #视频相关框架
 #pod 'ZFPlayer/ControlView'

@@ -66,6 +66,24 @@ PODS:
   - HCSStarRatingView (1.5)
   - IQKeyboardManager (6.3.0)
   - JDStatusBarNotification (1.6.0)
+  - JJException (0.2.7):
+    - JJException/All (= 0.2.7)
+  - JJException/All (0.2.7):
+    - JJException/ARC
+    - JJException/DeallocBlock
+    - JJException/Main
+    - JJException/MRC
+    - JJException/Swizzle
+  - JJException/ARC (0.2.7):
+    - JJException/DeallocBlock
+    - JJException/Main
+    - JJException/Swizzle
+  - JJException/DeallocBlock (0.2.7)
+  - JJException/Main (0.2.7)
+  - JJException/MRC (0.2.7):
+    - JJException/Main
+    - JJException/Swizzle
+  - JJException/Swizzle (0.2.7)
   - JJStockView (0.0.7)
   - JXCategoryView (1.3.14)
   - KSYMediaPlayer_iOS (3.0.3):
@@ -190,6 +208,7 @@ DEPENDENCIES:
   - HCSStarRatingView
   - IQKeyboardManager
   - JDStatusBarNotification
+  - JJException
   - JJStockView
   - JXCategoryView
   - KSYMediaPlayer_iOS
@@ -253,6 +272,7 @@ SPEC REPOS:
     - HCSStarRatingView
     - IQKeyboardManager
     - JDStatusBarNotification
+    - JJException
     - JJStockView
     - JXCategoryView
     - KSYMediaPlayer_iOS
@@ -320,6 +340,7 @@ SPEC CHECKSUMS:
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManager: 2ca9d64893247556f53523dcd8d78641f0ba7c23
   JDStatusBarNotification: 21b616e7432284fea6eb0ce9eadc37c8038a5544
+  JJException: 6d987840193b7ef59e778d41bca463401a80a79b
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JXCategoryView: 008a9d2eb3ba6035eb2df9a2b3e9a4806d6601a3
   KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
@@ -364,6 +385,6 @@ SPEC CHECKSUMS:
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 941db271ff251cb1e1c09213e1f28769549f967a
+PODFILE CHECKSUM: e9da63b1e186fb0ad2c7cdbb5fa6f14eaf623528
 
 COCOAPODS: 1.9.3

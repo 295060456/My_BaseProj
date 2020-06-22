@@ -82,7 +82,6 @@
 		C3B1566222AA3863009061F3 /* WaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B1566122AA3863009061F3 /* WaterMark.m */; };
 		C3B1566622AB555C009061F3 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B1566522AB555C009061F3 /* HotLabel.m */; };
 		C3EDA78F22B740E8002F49D6 /* readme in Resources */ = {isa = PBXBuildFile; fileRef = C3EDA78E22B740E8002F49D6 /* readme */; };
-		C3F56F6A22A4C731009E9691 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56F6922A4C731009E9691 /* AppDelegate.m */; };
 		C3F56F7322A4C731009E9691 /* My_BaseProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F56F7122A4C731009E9691 /* My_BaseProj.xcdatamodeld */; };
 		C3F56F7522A4C732009E9691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F56F7422A4C732009E9691 /* Assets.xcassets */; };
 		C3F56F7822A4C732009E9691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F56F7622A4C732009E9691 /* LaunchScreen.storyboard */; };
@@ -151,8 +150,9 @@
 		C503248B24A06166007B9985 /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248624A06166007B9985 /* BWItemModel.m */; };
 		C503248C24A06166007B9985 /* BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248924A06166007B9985 /* BWShareView.m */; };
 		C503248D24A06166007B9985 /* BWItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */; };
+		C50324AD24A0A7B5007B9985 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C50324AA24A0A7B5007B9985 /* AppDelegate.m */; };
+		C50324AE24A0A7B5007B9985 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C50324AB24A0A7B5007B9985 /* SceneDelegate.m */; };
 		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
-		C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887742498B49F00C8A3E7 /* SceneDelegate.m */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
 		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
 		C5CF107A249F54640084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */; };
@@ -358,8 +358,6 @@
 		C3B1566522AB555C009061F3 /* HotLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotLabel.m; sourceTree = "<group>"; };
 		C3EDA78E22B740E8002F49D6 /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		C3F56F6522A4C731009E9691 /* My_BaseProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My_BaseProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3F56F6822A4C731009E9691 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C3F56F6922A4C731009E9691 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3F56F7222A4C731009E9691 /* My_BaseProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_BaseProj.xcdatamodel; sourceTree = "<group>"; };
 		C3F56F7422A4C732009E9691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3F56F7722A4C732009E9691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -513,9 +511,11 @@
 		C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemCollectionViewCell.m; sourceTree = "<group>"; };
 		C503248E24A061B1007B9985 /* 分享控件的用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "分享控件的用法"; sourceTree = "<group>"; };
 		C503248F24A06257007B9985 /* App图标更换 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App图标更换"; sourceTree = "<group>"; };
+		C50324A924A0A7B5007B9985 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C50324AA24A0A7B5007B9985 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C50324AB24A0A7B5007B9985 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		C50324AC24A0A7B5007B9985 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		C55887742498B49F00C8A3E7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		C55887752498B49F00C8A3E7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		C55887A82498E46200C8A3E7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		C55887A92498E46200C8A3E7 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
 		C55887AA2498E46200C8A3E7 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
@@ -1042,10 +1042,10 @@
 		C3F56F6722A4C731009E9691 /* My_BaseProj */ = {
 			isa = PBXGroup;
 			children = (
-				C3F56F6822A4C731009E9691 /* AppDelegate.h */,
-				C3F56F6922A4C731009E9691 /* AppDelegate.m */,
-				C55887752498B49F00C8A3E7 /* SceneDelegate.h */,
-				C55887742498B49F00C8A3E7 /* SceneDelegate.m */,
+				C50324A924A0A7B5007B9985 /* AppDelegate.h */,
+				C50324AA24A0A7B5007B9985 /* AppDelegate.m */,
+				C50324AC24A0A7B5007B9985 /* SceneDelegate.h */,
+				C50324AB24A0A7B5007B9985 /* SceneDelegate.m */,
 				C3F570DD22A60B8C009E9691 /* CustomSYSUITabBarController.h */,
 				C3F570DE22A60B8C009E9691 /* CustomSYSUITabBarController.m */,
 				C3F56F7922A4C732009E9691 /* Info.plist */,
@@ -2033,6 +2033,7 @@
 				8B9EAF9E237439B00012884C /* BaseTableViewer.m in Sources */,
 				C3B1566222AA3863009061F3 /* WaterMark.m in Sources */,
 				C3F570DA22A5403F009E9691 /* DeleteSystemUITabBarButton.m in Sources */,
+				C50324AE24A0A7B5007B9985 /* SceneDelegate.m in Sources */,
 				8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */,
 				CE1319A522CDA6F6002BA1A7 /* XLChannelItem.m in Sources */,
 				8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */,
@@ -2043,7 +2044,6 @@
 				C3F56FEF22A4F7CE009E9691 /* UIControl+XY.m in Sources */,
 				8B7A54FC236D92FF006B12F8 /* WBTableViewDataSource.m in Sources */,
 				C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */,
-				C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */,
 				C503248B24A06166007B9985 /* BWItemModel.m in Sources */,
 				8B8A0E182390D575000D7579 /* XXTools.m in Sources */,
 				C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */,
@@ -2092,12 +2092,12 @@
 				C3F5700C22A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				8B163EA823A333B300F0ECEB /* TimeManager.m in Sources */,
 				8BD6DC4B234B23B0003F1EE0 /* CALayer+Transition.m in Sources */,
-				C3F56F6A22A4C731009E9691 /* AppDelegate.m in Sources */,
 				C301CF0E22AE72BE00C0DCCC /* YKToastView.m in Sources */,
 				C3F5707922A4FC92009E9691 /* DHAreaPickerView+DelegateProtocal.m in Sources */,
 				C3F5706122A4FBA7009E9691 /* Judgement_Environment.m in Sources */,
 				C301CEF822ADF94E00C0DCCC /* ArcTBVCell.m in Sources */,
 				CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */,
+				C50324AD24A0A7B5007B9985 /* AppDelegate.m in Sources */,
 				C3F5703722A4F9C4009E9691 /* HAHandleDemoView.m in Sources */,
 				8BCB98F023715DA20063E01E /* EncryptUtils.m in Sources */,
 				C3229A9422B21D400044BB5E /* TAPageControl.m in Sources */,

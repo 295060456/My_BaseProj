@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  My_BaseProj
+//  MonkeyKingVideo
 //
-//  Created by Administrator on 03/06/2019.
-//  Copyright © 2019 Administrator. All rights reserved.
+//  Created by Jobs on 2020/6/16.
+//  Copyright © 2020 Jobs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,11 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer;
 
-+ (instancetype)sharedInstance;
-
-//- (void)saveContext;
+- (void)saveContext;
 
 
 @end

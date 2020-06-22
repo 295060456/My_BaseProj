@@ -148,6 +148,9 @@
 		C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710022A612AD009E9691 /* BaseNavigationVC.m */; };
 		C3F5710922A63B0A009E9691 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */; };
 		C503248224A05AA5007B9985 /* FSAppIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248024A05AA5007B9985 /* FSAppIconManager.m */; };
+		C503248B24A06166007B9985 /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248624A06166007B9985 /* BWItemModel.m */; };
+		C503248C24A06166007B9985 /* BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248924A06166007B9985 /* BWShareView.m */; };
+		C503248D24A06166007B9985 /* BWItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */; };
 		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
 		C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887742498B49F00C8A3E7 /* SceneDelegate.m */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
@@ -502,6 +505,13 @@
 		C503248024A05AA5007B9985 /* FSAppIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppIconManager.m; sourceTree = "<group>"; };
 		C503248124A05AA5007B9985 /* FSAppIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppIconManager.h; sourceTree = "<group>"; };
 		C503248324A05B0B007B9985 /* 本地推送 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地推送"; sourceTree = "<group>"; };
+		C503248524A06166007B9985 /* BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWShareView.h; sourceTree = "<group>"; };
+		C503248624A06166007B9985 /* BWItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemModel.m; sourceTree = "<group>"; };
+		C503248724A06166007B9985 /* BWItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWItemCollectionViewCell.h; sourceTree = "<group>"; };
+		C503248824A06166007B9985 /* BWItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWItemModel.h; sourceTree = "<group>"; };
+		C503248924A06166007B9985 /* BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWShareView.m; sourceTree = "<group>"; };
+		C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemCollectionViewCell.m; sourceTree = "<group>"; };
+		C503248E24A061B1007B9985 /* 分享控件的用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "分享控件的用法"; sourceTree = "<group>"; };
 		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C55887742498B49F00C8A3E7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		C55887752498B49F00C8A3E7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -1088,6 +1098,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C503248424A06152007B9985 /* 分享控件 */,
 				C503247F24A05A99007B9985 /* FSAppIconManager */,
 				C55887A72498E46200C8A3E7 /* AddressPickerView */,
 				8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */,
@@ -1596,6 +1607,20 @@
 			path = FSAppIconManager;
 			sourceTree = "<group>";
 		};
+		C503248424A06152007B9985 /* 分享控件 */ = {
+			isa = PBXGroup;
+			children = (
+				C503248524A06166007B9985 /* BWShareView.h */,
+				C503248924A06166007B9985 /* BWShareView.m */,
+				C503248724A06166007B9985 /* BWItemCollectionViewCell.h */,
+				C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */,
+				C503248824A06166007B9985 /* BWItemModel.h */,
+				C503248624A06166007B9985 /* BWItemModel.m */,
+				C503248E24A061B1007B9985 /* 分享控件的用法 */,
+			);
+			path = "分享控件";
+			sourceTree = "<group>";
+		};
 		C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -2011,11 +2036,13 @@
 				8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */,
 				8BB217E42397E35500BD1B5F /* UIDevice+XMUtils.m in Sources */,
 				C3F56FB622A4F749009E9691 /* SoundBtn.m in Sources */,
+				C503248D24A06166007B9985 /* BWItemCollectionViewCell.m in Sources */,
 				C3F5705C22A4FB29009E9691 /* RYCuteView.m in Sources */,
 				C3F56FEF22A4F7CE009E9691 /* UIControl+XY.m in Sources */,
 				8B7A54FC236D92FF006B12F8 /* WBTableViewDataSource.m in Sources */,
 				C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */,
 				C55887762498B4A000C8A3E7 /* SceneDelegate.m in Sources */,
+				C503248B24A06166007B9985 /* BWItemModel.m in Sources */,
 				8B8A0E182390D575000D7579 /* XXTools.m in Sources */,
 				C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */,
 				C3F56FF722A4F7CE009E9691 /* NSString+Extension.m in Sources */,
@@ -2026,6 +2053,7 @@
 				C3F570A322A5128A009E9691 /* IsLogin.m in Sources */,
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				8B7A554A236F0461006B12F8 /* FMHttpRequest.m in Sources */,
+				C503248C24A06166007B9985 /* BWShareView.m in Sources */,
 				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
 				C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */,
 				C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */,

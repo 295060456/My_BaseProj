@@ -512,6 +512,7 @@
 		C503248924A06166007B9985 /* BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWShareView.m; sourceTree = "<group>"; };
 		C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemCollectionViewCell.m; sourceTree = "<group>"; };
 		C503248E24A061B1007B9985 /* 分享控件的用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "分享控件的用法"; sourceTree = "<group>"; };
+		C503248F24A06257007B9985 /* App图标更换 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App图标更换"; sourceTree = "<group>"; };
 		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C55887742498B49F00C8A3E7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		C55887752498B49F00C8A3E7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -1603,6 +1604,7 @@
 			children = (
 				C503248124A05AA5007B9985 /* FSAppIconManager.h */,
 				C503248024A05AA5007B9985 /* FSAppIconManager.m */,
+				C503248F24A06257007B9985 /* App图标更换 */,
 			);
 			path = FSAppIconManager;
 			sourceTree = "<group>";

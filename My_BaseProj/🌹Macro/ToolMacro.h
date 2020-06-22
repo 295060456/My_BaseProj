@@ -188,13 +188,6 @@ return; \
 
 #pragma mark - 色彩相关
 #define kTableViewBackgroundColor HEXCOLOR(0xf6f5fa)
-///RGB颜色转换（16进制->10进制）
-#define UIColorFromRGB(rgbValue)\
-\
-[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
-blue:((float)(rgbValue & 0xFF))/255.0 \
-alpha:1.0]
 ///常见颜色
 #define kClearColor     [UIColor clearColor]
 #define kBlackColor     [UIColor blackColor]
@@ -213,7 +206,6 @@ alpha:1.0]
 #define KLightGrayColor [UIColor lightGrayColor]
 #define KGreenColor     [UIColor greenColor]
 #define KMagentaColor   [UIColor magentaColor]
-
 ///RGB颜色
 #define RGBSAMECOLOR(x) [UIColor colorWithRed:(x)/255.0 green:(x)/255.0 blue:(x)/255.0 alpha:1]
 #define COLOR_RGB(r,g,b,a)  [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]

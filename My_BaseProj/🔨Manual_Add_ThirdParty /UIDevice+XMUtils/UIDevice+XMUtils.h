@@ -45,6 +45,10 @@ typedef enum : NSUInteger {
  */
 + (NSString *)deviceName;
 
++(BOOL)judgementUpperIphone6;//判断当前机型是否是iphone6 及其以上机型,过滤掉对ipad的判断
+
++(BOOL)isSimulator;
+
 @end
 
 static inline iPhoneScreen iPhone_seriesScreen(){

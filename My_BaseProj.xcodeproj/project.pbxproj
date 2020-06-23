@@ -43,7 +43,7 @@
 		8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1E8152375B5E400871ECA /* SocketRocketUtility.m */; };
 		8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217CC2397BA0B00BD1B5F /* SearchView.m */; };
 		8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */; };
-		8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB217E12397E35500BD1B5F /* Snip20191204_2.png */; };
+		8BB217E32397E35500BD1B5F /* iOS 获取手机型号、系统版本.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB217E12397E35500BD1B5F /* iOS 获取手机型号、系统版本.png */; };
 		8BB217E42397E35500BD1B5F /* UIDevice+XMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */; };
 		8BB8108622F1404900F2FD8E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8108422F1404900F2FD8E /* UIViewController+BackButtonHandler.m */; };
 		8BB8BD29235ED1A5008C7578 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB8BD27235ED1A5008C7578 /* ZYTextField.m */; };
@@ -112,7 +112,6 @@
 		C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3F5704F22A4FA9F009E9691 /* sortedNameCH.plist */; };
 		C3F5705322A4FA9F009E9691 /* XWCountryCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5705022A4FA9F009E9691 /* XWCountryCodeController.m */; };
 		C3F5705C22A4FB29009E9691 /* RYCuteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5705A22A4FB29009E9691 /* RYCuteView.m */; };
-		C3F5706122A4FBA7009E9691 /* Judgement_Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5706022A4FBA7009E9691 /* Judgement_Environment.m */; };
 		C3F5706922A4FC71009E9691 /* LongPressToDeleteImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5706822A4FC71009E9691 /* LongPressToDeleteImageView.m */; };
 		C3F5707522A4FC92009E9691 /* area.db in Resources */ = {isa = PBXBuildFile; fileRef = C3F5706C22A4FC91009E9691 /* area.db */; };
 		C3F5707622A4FC92009E9691 /* hotelcity.json in Resources */ = {isa = PBXBuildFile; fileRef = C3F5706D22A4FC91009E9691 /* hotelcity.json */; };
@@ -273,7 +272,7 @@
 		8BB217CF2397BA7400BD1B5F /* TBVCell_style_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVCell_style_01.h; sourceTree = "<group>"; };
 		8BB217D02397BA7400BD1B5F /* TBVCell_style_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVCell_style_01.m; sourceTree = "<group>"; };
 		8BB217E02397E35500BD1B5F /* UIDevice+XMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+XMUtils.h"; sourceTree = "<group>"; };
-		8BB217E12397E35500BD1B5F /* Snip20191204_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20191204_2.png; sourceTree = "<group>"; };
+		8BB217E12397E35500BD1B5F /* iOS 获取手机型号、系统版本.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS 获取手机型号、系统版本.png"; sourceTree = "<group>"; };
 		8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+XMUtils.m"; sourceTree = "<group>"; };
 		8BB8107C22F13F3700F2FD8E /* 获取当前视图控制器.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "获取当前视图控制器.png"; sourceTree = "<group>"; };
 		8BB8107D22F13F3700F2FD8E /* cell重用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell重用.png"; sourceTree = "<group>"; };
@@ -436,9 +435,6 @@
 		C3F5705922A4FB1E009E9691 /* Q弹 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Q弹"; sourceTree = "<group>"; };
 		C3F5705A22A4FB29009E9691 /* RYCuteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYCuteView.m; sourceTree = "<group>"; };
 		C3F5705B22A4FB29009E9691 /* RYCuteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYCuteView.h; sourceTree = "<group>"; };
-		C3F5705F22A4FBA7009E9691 /* Judgement_Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Judgement_Environment.h; sourceTree = "<group>"; };
-		C3F5706022A4FBA7009E9691 /* Judgement_Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Judgement_Environment.m; sourceTree = "<group>"; };
-		C3F5706222A4FBB9009E9691 /* iOS 获取手机型号、系统版本 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS 获取手机型号、系统版本"; sourceTree = "<group>"; };
 		C3F5706522A4FBD3009E9691 /* 仿iOS图标抖动、iOS删除App效果 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "仿iOS图标抖动、iOS删除App效果"; sourceTree = "<group>"; };
 		C3F5706722A4FC71009E9691 /* LongPressToDeleteImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressToDeleteImageView.h; sourceTree = "<group>"; };
 		C3F5706822A4FC71009E9691 /* LongPressToDeleteImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressToDeleteImageView.m; sourceTree = "<group>"; };
@@ -820,7 +816,7 @@
 		8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */ = {
 			isa = PBXGroup;
 			children = (
-				8BB217E12397E35500BD1B5F /* Snip20191204_2.png */,
+				8BB217E12397E35500BD1B5F /* iOS 获取手机型号、系统版本.png */,
 				8BB217E02397E35500BD1B5F /* UIDevice+XMUtils.h */,
 				8BB217E22397E35500BD1B5F /* UIDevice+XMUtils.m */,
 			);
@@ -1128,7 +1124,6 @@
 				C3F5703422A4F9BA009E9691 /* HAHandleDemoView */,
 				C3B1565622A7E20E009061F3 /* HistoryDataList */,
 				C3B1566322AB551F009061F3 /* HotLabel */,
-				C3F5705E22A4FB93009E9691 /* Judgement_Environment */,
 				C3F5706422A4FBC6009E9691 /* LongPressToDeleteImageView */,
 				C3F56FD722A4F7CD009E9691 /* LXTagsView */,
 				C3F56FA822A4F4C5009E9691 /* LZBTabbarViewController */,
@@ -1429,16 +1424,6 @@
 				C3F5705A22A4FB29009E9691 /* RYCuteView.m */,
 			);
 			path = RYCuteView;
-			sourceTree = "<group>";
-		};
-		C3F5705E22A4FB93009E9691 /* Judgement_Environment */ = {
-			isa = PBXGroup;
-			children = (
-				C3F5705F22A4FBA7009E9691 /* Judgement_Environment.h */,
-				C3F5706022A4FBA7009E9691 /* Judgement_Environment.m */,
-				C3F5706222A4FBB9009E9691 /* iOS 获取手机型号、系统版本 */,
-			);
-			path = Judgement_Environment;
 			sourceTree = "<group>";
 		};
 		C3F5706422A4FBC6009E9691 /* LongPressToDeleteImageView */ = {
@@ -1862,7 +1847,7 @@
 				C3F570F322A60E1C009E9691 /* MyStore@3x.png in Resources */,
 				8B9EAF9D237439B00012884C /* 专治UITableView相应链断裂 in Resources */,
 				C3F5705222A4FA9F009E9691 /* sortedNameCH.plist in Resources */,
-				8BB217E32397E35500BD1B5F /* Snip20191204_2.png in Resources */,
+				8BB217E32397E35500BD1B5F /* iOS 获取手机型号、系统版本.png in Resources */,
 				C3F5707522A4FC92009E9691 /* area.db in Resources */,
 				C3F5707622A4FC92009E9691 /* hotelcity.json in Resources */,
 				C3F56F7522A4C732009E9691 /* Assets.xcassets in Resources */,
@@ -2094,7 +2079,6 @@
 				8BD6DC4B234B23B0003F1EE0 /* CALayer+Transition.m in Sources */,
 				C301CF0E22AE72BE00C0DCCC /* YKToastView.m in Sources */,
 				C3F5707922A4FC92009E9691 /* DHAreaPickerView+DelegateProtocal.m in Sources */,
-				C3F5706122A4FBA7009E9691 /* Judgement_Environment.m in Sources */,
 				C301CEF822ADF94E00C0DCCC /* ArcTBVCell.m in Sources */,
 				CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */,
 				C50324AD24A0A7B5007B9985 /* AppDelegate.m in Sources */,

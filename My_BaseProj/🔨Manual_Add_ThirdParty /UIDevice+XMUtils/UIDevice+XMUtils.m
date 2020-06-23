@@ -13,13 +13,22 @@
 
 + (NSString *)platform {
     size_t size;
-    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+    sysctlbyname("hw.machine",
+                 NULL,
+                 &size,
+                 NULL,
+                 0);
     char *machine = (char *)malloc(size);
     if (machine == NULL) {
         return nil;
     }
-    sysctlbyname("hw.machine", machine, &size, NULL, 0);
-    NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
+    sysctlbyname("hw.machine",
+                 machine,
+                 &size,
+                 NULL,
+                 0);
+    NSString *platform = [NSString stringWithCString:machine
+                                            encoding:NSUTF8StringEncoding];
     free(machine);
     return platform;
 }
@@ -113,7 +122,13 @@
     if ([platform isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
     if ([platform isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
     if ([platform isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
+    if ([platform isEqualToString:@"iPad1,2"])      return @"iPad 3G";
     if ([platform isEqualToString:@"iPad1,1"])      return @"iPad";
+    
+    if ([platform isEqualToString:@"AppleTV2,1"])    return @"Apple TV 2";
+    if ([platform isEqualToString:@"AppleTV3,1"])    return @"Apple TV 3";
+    if ([platform isEqualToString:@"AppleTV3,2"])    return @"Apple TV 3";
+    if ([platform isEqualToString:@"AppleTV5,3"])    return @"Apple TV 4";
     
     // Simulator
     if ([platform isEqualToString:@"i386"])         return [NSString stringWithFormat:@"%@ Simulator", [UIDevice currentDevice].model];
@@ -121,6 +136,26 @@
     
     // For new device, return the hardware string directly.
     return platform;
+}
+
+#pragma mark —— 判断当前机型是否是iphone6 及其以上机型,过滤掉对ipad的判断
++(BOOL)judgementUpperIphone6{
+    NSString *str = [UIDevice platformString];
+    if ([str isEqualToString:@"iPhone 2G"]) return NO;
+    if ([str isEqualToString:@"iPhone 3G"]) return NO;
+    if ([str isEqualToString:@"iPhone 3GS"]) return NO;
+    if ([str isEqualToString:@"iPhone 4"]) return NO;
+    if ([str isEqualToString:@"iPhone 4S"]) return NO;
+    if ([str isEqualToString:@"iPhone 5"]) return NO;
+    if ([str isEqualToString:@"iPhone 5c"]) return NO;
+    if ([str isEqualToString:@"iPhone 5s"]) return NO;
+    if ([str isEqualToString:@"iPhone Simulator"]) return NO;//test
+    return YES;
+}
+
++(BOOL)isSimulator{
+    NSString *str = [UIDevice platformString];
+    return [str isEqualToString:@"iPhone Simulator"]?YES:NO;
 }
 
 + (NSString *)deviceName {

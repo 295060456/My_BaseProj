@@ -102,7 +102,7 @@ JXCategoryListContentViewDelegate
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [SVProgressHUD dismiss];
+//    [SVProgressHUD dismiss];
     printf("retain count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(self)));//打印对象的引用计数器
 }
 

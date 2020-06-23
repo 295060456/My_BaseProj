@@ -364,7 +364,9 @@ JXCategoryListContentViewDelegate
 -(void)pushToSysConfig{
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+        [[UIApplication sharedApplication] openURL:url
+                                           options:@{UIApplicationOpenURLOptionUniversalLinksOnly : @YES}
+                                 completionHandler:nil];
     }
 }
 //KVO 监听 MJRefresh + 震动特效反馈

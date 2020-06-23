@@ -97,9 +97,7 @@ configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
                 }
             }];
         }
-    }
-    
-    return _persistentContainer;
+    }return _persistentContainer;
 }
 
 #pragma mark - Core Data Saving support

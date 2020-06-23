@@ -9,40 +9,7 @@
 #ifndef ToolMacro_h
 #define ToolMacro_h
 
-//// 判断是真机还是模拟器
-#if TARGET_OS_IPHONE
-// iPhone Device
-#endif
-
-#if TARGET_IPHONE_SIMULATOR
-// iPhone Simulator
-#endif
-
-/** DEBUG LOG **/
-#ifdef DEBUG
-
-#define DLog( s, ... ) NSLog( @"< %@:(%d) > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-
-#else
-
-#define DLog( s, ... )
-
-#endif
-
-#pragma mark - 其他
-#define FaceAuthAutoPhotoCount 3
-#define ReuseIdentifier NSStringFromClass ([self class])
-
-#pragma mark - 本地化字符串
-/** NSLocalizedString宏做的其实就是在当前bundle中查找资源文件名“Localizable.strings”(参数:键＋注释) */
-#define LocalString(x, ...)     NSLocalizedString(x, nil)
-#define StringFormat(format,...) [NSString stringWithFormat:format, ##__VA_ARGS__]
-/** NSLocalizedStringFromTable宏做的其实就是在当前bundle中查找资源文件名“xxx.strings”(参数:键＋文件名＋注释) */
-#define AppLocalString(x, ...)  NSLocalizedStringFromTable(x, @"someName", nil)
-#define LRToast(str) [NSString stringWithFormat:@"%@",@#str]
-
-#pragma mark - Sys.
-
+#pragma mark ======================================== Sys.========================================
 #define HDAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]//标识应用程序的发布版本号
 #define HDAppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]//APP BUILD 版本号
 #define HDAppDisplayName [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]// APP名字
@@ -63,86 +30,18 @@
 #define isiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)//是否iPhone
 #define isRetina ([[UIScreen mainScreen] scale] >= 2.0)// 非Retain屏幕 1.0
 
-///单例模式宏
-#define MACRO_SHARED_INSTANCE_INTERFACE +(instancetype)sharedInstance;
-#define MACRO_SHARED_INSTANCE_IMPLEMENTATION(CLASS) \
-+(instancetype)sharedInstance \
-{ \
-static CLASS * sharedInstance = nil; \
-static dispatch_once_t onceToken; \
-dispatch_once(&onceToken, ^{ \
-sharedInstance = [[CLASS alloc] init]; \
-}); \
-return sharedInstance; \
-}
+#define isiPhoneX       (((kScreenHeight  == 812.0) || (kScreenHeight  == 896.0))  ? 1 : 0)
+#define isiPhoneXR__XMax      ((kScreenHeight  == 896.0) ? 1 : 0)
 
-///宏替换代码
-#define SuppressPerformSelectorLeakWarning(Stuff) \
-do { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-Stuff; \
-_Pragma("clang diagnostic pop") \
-} while (0)\
-
-///断点Assert
-#define ITTAssert(condition, ...)\
-\
-do {\
-if (!(condition))\
-{\
-[[NSAssertionHandler currentHandler]\
-handleFailureInFunction:[NSString stringWithFormat:@"< %s >", __PRETTY_FUNCTION__]\
-file:[[NSString stringWithUTF8String:__FILE__] lastPathComponent]\
-lineNumber:__LINE__\
-description:__VA_ARGS__];\
-}\
-} while(0)
-
-///条件LOG
-#ifdef ITTDEBUG
-#define ITTDCONDITIONLOG(condition, xx, ...)\
-\
-{\
-if ((condition))\
-{\
-ITTDPRINT(xx, ##__VA_ARGS__);\
-}\
-}
-#else
-#define ITTDCONDITIONLOG(condition, xx, ...)\
-\
-((void)0)
-#endif
-
-#define kAPPDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
-
-#pragma mark - 重写NSLog,Debug模式下打印日志和当前行数
-#if DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-
-#else
-#define NSLog(FORMAT, ...) nil
-#endif
-
-///DEBUG模式
-#define ITTDEBUG
-
-///LOG等级
-#define ITTLOGLEVEL_INFO        10
-#define ITTLOGLEVEL_WARNING     3
-#define ITTLOGLEVEL_ERROR       1
-
-///LOG最高等级
-#ifndef ITTMAXLOGLEVEL
-
-#ifdef DEBUG
-#define ITTMAXLOGLEVEL ITTLOGLEVEL_INFO
-#else
-#define ITTMAXLOGLEVEL ITTLOGLEVEL_ERROR
-#endif
-
-#endif
+#define MainWindow UIWindow* mainWindow = nil;\
+if (@available(iOS 13.0, *)){ \
+    for (UIWindowScene* wScene in [UIApplication sharedApplication].connectedScenes){ \
+        if (wScene.activationState == UISceneActivationStateForegroundActive){ \
+            mainWindow = wScene.windows.firstObject; \
+            break; \
+        } \
+    } \
+} \
 
 /**
  是否是iPhoneX系列（X/XS/XR/XS Max)
@@ -154,16 +53,15 @@ static inline BOOL isiPhoneX_series() {
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
         return iPhoneXSeries;
     }
-    
+
     if (@available(iOS 11.0, *)) {
-        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        MainWindow
         if (mainWindow.safeAreaInsets.bottom > 0.0) {
             iPhoneXSeries = YES;
         }
-    }
-    
-    return iPhoneXSeries;
+    }return iPhoneXSeries;
 }
+
 
 //判断是否登录,没有登录进行跳转
 #define kGuardLogin if ([IsLogin isLogin]) { \
@@ -174,19 +72,17 @@ UINavigationController *nav = [[UINavigationController alloc] initWithRootViewCo
 return; \
 } \
 
-#pragma mark - 尺寸相关
-#define isiPhoneX_seriesBottom 30
-#define isiPhoneX_seriesTop 34
-///自读屏宽高
-#define MAINSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
-#define MAINSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
-///系统控件高度
-#define rectOfStatusbar [[UIApplication sharedApplication] statusBarFrame].size.height//获取状态栏的高
-#define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高
-///缩放比例
-#define SCALING_RATIO(UISize) (UISize)*([[UIScreen mainScreen] bounds].size.width)/375.0f//全局比例尺
+#define LoadMsg @"加载中..."
+#define Toast(msg)  [YKToastView showToastText:msg]
+#endif /* ToolMacro_h */
 
-#pragma mark - 色彩相关
+#define kApplyShadowForView(view, radius) view.layer.masksToBounds = NO; \
+view.layer.shadowOffset = CGSizeMake(0, 1.5); \
+view.layer.shadowRadius = radius; \
+view.layer.shadowOpacity = 0.4; \
+view.layer.shadowColor = [UIColor lightGrayColor].CGColor; \
+
+#pragma mark ======================================== 色彩相关 ========================================
 #define kTableViewBackgroundColor HEXCOLOR(0xf6f5fa)
 ///常见颜色
 #define kClearColor     [UIColor clearColor]
@@ -219,13 +115,99 @@ alpha:1] \
 #define HEXCOLOR(hexValue)  [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1]
 #define COLOR_HEX(hexValue, al)  [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:al]
 
-#pragma mark - 字体
+#pragma mark ======================================== 字体 ========================================
 #define kFontSize(x) [UIFont systemFontOfSize:x]
 
-#pragma mark - 图片
+#pragma mark ======================================== 图片 ========================================
 #define kIMG(imgName) [UIImage imageNamed:imgName]
 
-#pragma mark - 时间相关
+#pragma mark ======================================== 尺寸相关 ========================================
+#define isiPhoneX_seriesBottom 30
+#define isiPhoneX_seriesTop 34
+#define kUIWindow    [[[UIApplication sharedApplication] delegate] window] //获得window
+
+#define MianScreen           [[UIScreen mainScreen] bounds].size
+#define Device_Width    [[UIScreen mainScreen] bounds].size.width//获取屏幕宽高
+#define Device_Height       [[UIScreen mainScreen] bounds].size.height
+
+#define SCREEN_MAX_LENGTH   (MAX(Device_Width, Device_Height))
+#define SCREEN_MIN_LENGTH   (MIN(Device_Width, Device_Height))
+///自读屏宽高
+#define MAINSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define MAINSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+///系统控件高度
+#define rectOfStatusbar UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height//获取状态栏的高
+#define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高
+///缩放比例
+#define SCALING_RATIO(UISize) (UISize)*([[UIScreen mainScreen] bounds].size.width)/375.0f//全局比例尺
+//#define KDeviceScale ((Device_Width/375)>1.3?1.3:(Device_Width/375))
+#define KDeviceScale [[MKTools shared] deviceScaleMetod]
+#define KDeviceHeightScale Device_Height / 812    //獲取屏幕高度比例
+#define KDeviceRealScale [[MKTools shared] deviceRealScaleMetod]
+#define kButtonDefaultWidth (kIPhone4s ? 278 : 288)   //默认输入框宽
+#define kButtonDefaultHeight 45  //默认输入框&按钮高
+#define ELSareArea  (MAX(Device_Width, Device_Height)  == 812 ? 34.00 : 0.00)
+#define NAVH (MAX(Device_Width, Device_Height)  == 812 ? 88 : 64)
+#define TABBARH (MAX(Device_Width, Device_Height)  == 812 ? 83 : 49)
+#define ELSareArea  (MAX(Device_Width, Device_Height)  == 812 ? 34.00 : 0.00)
+#define kStatusBarHeight        (isiPhoneX ? 44 :20)
+#define kNavigationBarHeight     44
+#define kNavigationheightForIOS7 64
+#define kContentHeight           (Device_Height - kNavigationheightForIOS7 - kTabBarHeight)
+#define kTabBarHeight             (isiPhoneX ? 83 : 49)
+#define KNavigationItemSpace     -15
+#define KTOPBAR_HEIGHT       ([[UIApplication sharedApplication] statusBarFrame].size.height + [UINavigationController new].navigationBar.frame.size.height)
+#define KBottomHeight (isiPhoneX ? 34 :0)
+#define Height_For_Section_Header 10.0   //Cell Header分隔
+#define Height_For_Section_Footer 0.0001 //Cell Footer分隔
+#define KCellLeftGap   12  //左边对齐间隙
+#define KCellRightGap  12  //右边对齐间隙
+
+#pragma mark ======================================== 强弱引用 ========================================
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define StrongSelf __strong typeof(self) strongSelf = self;
+
+#pragma mark ======================================== 其他 ========================================
+#define ReuseIdentifier NSStringFromClass ([self class])
+
+#pragma mark ======================================== 本地化字符串 ========================================
+/** NSLocalizedString宏做的其实就是在当前bundle中查找资源文件名“Localizable.strings”(参数:键＋注释) */
+#define LocalString(x, ...)     NSLocalizedString(x, nil)
+#define StringFormat(format,...) [NSString stringWithFormat:format, ##__VA_ARGS__]
+/** NSLocalizedStringFromTable宏做的其实就是在当前bundle中查找资源文件名“xxx.strings”(参数:键＋文件名＋注释) */
+#define AppLocalString(x, ...)  NSLocalizedStringFromTable(x, @"someName", nil)
+#define LRToast(str) [NSString stringWithFormat:@"%@",@#str]
+
+#pragma mark ======================================== UserDefault ========================================
+#define SetUserDefaultKeyWithValue(key,value) [[NSUserDefaults standardUserDefaults] setValue:value forKey:key]
+#define SetUserDefaultKeyWithObject(key,object) [[NSUserDefaults standardUserDefaults] setObject:object forKey:key]
+#define SetUserBoolKeyWithObject(key,object) [[NSUserDefaults standardUserDefaults] setBool:object forKey:key]
+#define GetUserDefaultValueForKey(key) [[NSUserDefaults standardUserDefaults] valueForKey:key]
+#define GetUserDefaultObjForKey(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+#define GetUserDefaultBoolForKey(key) [[NSUserDefaults standardUserDefaults] boolForKey:key]
+#define DeleUserDefaultWithKey(key) [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
+#define UserDefaultSynchronize  [[NSUserDefaults standardUserDefaults] synchronize]
+
+#pragma mark ======================================== 沙盒路径 ========================================
+#define PATH_OF_APP_HOME    NSHomeDirectory()
+#define PATH_OF_TEMP        NSTemporaryDirectory()
+#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#pragma mark ======================================== MD5加盐 ========================================
+//#define MD5_Salt(String) [NSString stringWithFormat:@"*bub#{%@}#fly*",String]
+
+#pragma mark ======================================== 队列相关 ========================================
+///异步获取某个队列
+#define GET_QUEUE_ASYNC(queue, block)\
+if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(queue)) == 0) {\
+block();\
+} else {\
+dispatch_async(queue, block);\
+}
+///获取主队列
+#define GET_MAIN_QUEUE_ASYNC(block) GET_QUEUE_ASYNC(dispatch_get_main_queue(), block)
+
+#pragma mark ======================================== 时间相关 ========================================
 /** 时间间隔 */
 #define kHUDDuration            (1.f)
 /** 一天的秒数 */
@@ -237,41 +219,94 @@ alpha:1] \
 /** 毫秒数 */
 #define Milliseconds(Days)      (24.f * 60.f * 60.f * 1000.f * (Days))
 
-#pragma mark - 队列相关
-///异步获取某个队列
-#define GET_QUEUE_ASYNC(queue, block)\
-if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(queue)) == 0) {\
-block();\
-} else {\
-dispatch_async(queue, block);\
+//// 判断是真机还是模拟器
+#if TARGET_OS_IPHONE
+// iPhone Device
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+// iPhone Simulator
+#endif
+
+/** DEBUG LOG **/
+#ifdef DEBUG
+
+#define DLog( s, ... ) NSLog( @"< %@:(%d) > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+#else
+
+#define DLog( s, ... )
+
+#endif
+///单例模式宏
+#define MACRO_SHARED_INSTANCE_INTERFACE +(instancetype)sharedInstance;
+#define MACRO_SHARED_INSTANCE_IMPLEMENTATION(CLASS) \
++(instancetype)sharedInstance \
+{ \
+static CLASS * sharedInstance = nil; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+sharedInstance = [[CLASS alloc] init]; \
+}); \
+return sharedInstance; \
 }
-///获取主队列
-#define GET_MAIN_QUEUE_ASYNC(block) GET_QUEUE_ASYNC(dispatch_get_main_queue(), block)
+///宏替换代码
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)\
+///断点Assert
+#define ITTAssert(condition, ...)\
+\
+do {\
+if (!(condition))\
+{\
+[[NSAssertionHandler currentHandler]\
+handleFailureInFunction:[NSString stringWithFormat:@"< %s >", __PRETTY_FUNCTION__]\
+file:[[NSString stringWithUTF8String:__FILE__] lastPathComponent]\
+lineNumber:__LINE__\
+description:__VA_ARGS__];\
+}\
+} while(0)
+///条件LOG
+#ifdef ITTDEBUG
+#define ITTDCONDITIONLOG(condition, xx, ...)\
+\
+{\
+if ((condition))\
+{\
+ITTDPRINT(xx, ##__VA_ARGS__);\
+}\
+}
+#else
+#define ITTDCONDITIONLOG(condition, xx, ...)\
+\
+((void)0)
+#endif
 
-#pragma mark - UserDefault
-#define SetUserDefaultKeyWithValue(key,value) [[NSUserDefaults standardUserDefaults] setValue:value forKey:key]
-#define SetUserDefaultKeyWithObject(key,object) [[NSUserDefaults standardUserDefaults] setObject:object forKey:key]
-#define SetUserBoolKeyWithObject(key,object) [[NSUserDefaults standardUserDefaults] setBool:object forKey:key]
-#define GetUserDefaultValueForKey(key) [[NSUserDefaults standardUserDefaults] valueForKey:key]
-#define GetUserDefaultObjForKey(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
-#define GetUserDefaultBoolForKey(key) [[NSUserDefaults standardUserDefaults] boolForKey:key]
-#define DeleUserDefaultWithKey(key) [[NSUserDefaults standardUserDefaults] removeObjectForKey:key]
-#define UserDefaultSynchronize  [[NSUserDefaults standardUserDefaults] synchronize]
+#define kAPPDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 
-#pragma mark - 沙盒路径
-#define PATH_OF_APP_HOME    NSHomeDirectory()
-#define PATH_OF_TEMP        NSTemporaryDirectory()
-#define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#pragma mark ======================================== 重写NSLog,Debug模式下打印日志和当前行数 ========================================
+#if DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
-#pragma mark - MD5加盐
-//#define MD5_Salt(String) [NSString stringWithFormat:@"*bub#{%@}#fly*",String]
-
-#define LoadMsg @"加载中..."
-#define Toast(msg)  [YKToastView showToastText:msg]
-#endif /* ToolMacro_h */
-
-#define kApplyShadowForView(view, radius) view.layer.masksToBounds = NO; \
-view.layer.shadowOffset = CGSizeMake(0, 1.5); \
-view.layer.shadowRadius = radius; \
-view.layer.shadowOpacity = 0.4; \
-view.layer.shadowColor = [UIColor lightGrayColor].CGColor; \
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+///DEBUG模式
+#define ITTDEBUG
+///LOG等级
+#define ITTLOGLEVEL_INFO        10
+#define ITTLOGLEVEL_WARNING     3
+#define ITTLOGLEVEL_ERROR       1
+///LOG最高等级
+#ifndef ITTMAXLOGLEVEL
+#ifdef DEBUG
+#define ITTMAXLOGLEVEL ITTLOGLEVEL_INFO
+#else
+#define ITTMAXLOGLEVEL ITTLOGLEVEL_ERROR
+#endif
+#endif

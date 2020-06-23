@@ -39,7 +39,7 @@
 //#import "SDWebImage.h"//不支持图片后处理
 #import "SGQRCode.h"
 #import "FBShimmering.h"
-#import "SVProgressHUD.h"
+//#import "SVProgressHUD.h"//和sceneDelegate冲突
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
 #import "TXScrollLabelView.h"
 #import "ZXingObjC.h"

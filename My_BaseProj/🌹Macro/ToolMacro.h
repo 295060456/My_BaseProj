@@ -136,6 +136,7 @@ alpha:1] \
 #define MAINSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
 #define MAINSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 ///系统控件高度
+#define sceneDelegate UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate//获取系统SceneDelegate
 #define rectOfStatusbar UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height//获取状态栏的高
 #define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高
 ///缩放比例

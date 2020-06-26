@@ -17,7 +17,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LZBTabBarViewController : UIViewController
+@interface LZBTabBarViewController : BaseVC
 
 @property(nonatomic,weak)id<LZBTabBarViewControllerDelegate> delegate;
 

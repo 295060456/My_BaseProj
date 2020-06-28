@@ -30,8 +30,6 @@ pod 'SDWebImage'  # https://github.com/SDWebImage/SDWebImage Asynchronous image 
 pod 'SDWebImage/WebP' # https://github.com/SDWebImage/SDWebImageWebPCoder A WebP coder plugin for SDWebImage, use libwebp
 pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
 pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
-pod 'ZXingObjC/QRCode'  # ZXing是一个开放源码的，用Java实现的多种格式的1D/2D条码图像处理库，目前由Google维护更新
-pod 'SGQRCode'  # https://github.com/kingsic/SGQRCode 二维码生成、扫描及页面跳转
 pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView
 #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
 pod 'FDFullscreenPopGesture'# https://github.com/forkingdog/FDFullscreenPopGesture 一个丝滑的全屏滑动返回手势 A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.
@@ -76,7 +74,11 @@ pod 'AWRichText'  # https://github.com/hardman/AWRichText 基于CoreText，面�
 pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
 pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
 pod 'JJException' # https://github.com/jezzmemo/JJException Protect the objective-c application(保护App不闪退)
-
+#  pod 'LBXScan' #÷https://github.com/MxABC/LBXScan iOS 二维码、条形码
+pod 'LBXScan/LBXNative'
+pod 'LBXScan/LBXZXing'
+pod 'LBXScan/LBXZBar'
+pod 'LBXScan/UI'
 #视频相关框架
 #pod 'ZFPlayer/ControlView'
 #pod 'ZFPlayer/AVPlayer'

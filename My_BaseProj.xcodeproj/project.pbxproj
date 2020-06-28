@@ -145,7 +145,6 @@
 		C3F570FF22A61052009E9691 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570FE22A61052009E9691 /* ViewController@4.m */; };
 		C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710022A612AD009E9691 /* BaseNavigationVC.m */; };
 		C3F5710922A63B0A009E9691 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */; };
-		C503248224A05AA5007B9985 /* FSAppIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248024A05AA5007B9985 /* FSAppIconManager.m */; };
 		C503248B24A06166007B9985 /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248624A06166007B9985 /* BWItemModel.m */; };
 		C503248C24A06166007B9985 /* BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248924A06166007B9985 /* BWShareView.m */; };
 		C503248D24A06166007B9985 /* BWItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */; };
@@ -161,6 +160,14 @@
 		C5CF1083249F54770084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107E249F54770084E7A7 /* libstdc++.6.tbd */; };
 		C5CF1084249F54770084E7A7 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107F249F54770084E7A7 /* libstdc++.6.0.9.dylib */; };
 		C5CF1085249F54770084E7A7 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1080249F54770084E7A7 /* libstdc++.dylib */; };
+		C5F0CB7524A87AE9001B01D8 /* StyleDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB6724A87AE9001B01D8 /* StyleDIY.m */; };
+		C5F0CB7624A87AE9001B01D8 /* LBXScanDIYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB6824A87AE9001B01D8 /* LBXScanDIYViewController.m */; };
+		C5F0CB7724A87AE9001B01D8 /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB6A24A87AE9001B01D8 /* ScanResultViewController.m */; };
+		C5F0CB7824A87AE9001B01D8 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB6F24A87AE9001B01D8 /* Global.m */; };
+		C5F0CB7924A87AE9001B01D8 /* CreateBarCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7024A87AE9001B01D8 /* CreateBarCodeVC.m */; };
+		C5F0CB7A24A87AE9001B01D8 /* FSAppIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7224A87AE9001B01D8 /* FSAppIconManager.m */; };
+		C5F0CB7B24A87AE9001B01D8 /* App图标更换 in Resources */ = {isa = PBXBuildFile; fileRef = C5F0CB7324A87AE9001B01D8 /* App图标更换 */; };
+		C5F0CB7E24A87B09001B01D8 /* DIYScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -496,8 +503,6 @@
 		C3F5710622A63AC7009E9691 /* 调试时候添加日志时使用,上线需要去掉 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "调试时候添加日志时使用,上线需要去掉"; sourceTree = "<group>"; };
 		C3F5710722A63B0A009E9691 /* NSlogToDocumentFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSlogToDocumentFolder.h; sourceTree = "<group>"; };
 		C3F5710822A63B0A009E9691 /* NSlogToDocumentFolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSlogToDocumentFolder.m; sourceTree = "<group>"; };
-		C503248024A05AA5007B9985 /* FSAppIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppIconManager.m; sourceTree = "<group>"; };
-		C503248124A05AA5007B9985 /* FSAppIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppIconManager.h; sourceTree = "<group>"; };
 		C503248324A05B0B007B9985 /* 本地推送 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地推送"; sourceTree = "<group>"; };
 		C503248524A06166007B9985 /* BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWShareView.h; sourceTree = "<group>"; };
 		C503248624A06166007B9985 /* BWItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemModel.m; sourceTree = "<group>"; };
@@ -506,7 +511,6 @@
 		C503248924A06166007B9985 /* BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWShareView.m; sourceTree = "<group>"; };
 		C503248A24A06166007B9985 /* BWItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemCollectionViewCell.m; sourceTree = "<group>"; };
 		C503248E24A061B1007B9985 /* 分享控件的用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "分享控件的用法"; sourceTree = "<group>"; };
-		C503248F24A06257007B9985 /* App图标更换 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App图标更换"; sourceTree = "<group>"; };
 		C50324A924A0A7B5007B9985 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C50324AA24A0A7B5007B9985 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C50324AB24A0A7B5007B9985 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
@@ -532,6 +536,21 @@
 		C5CF107E249F54770084E7A7 /* libstdc++.6.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.tbd"; sourceTree = "<group>"; };
 		C5CF107F249F54770084E7A7 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		C5CF1080249F54770084E7A7 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.dylib"; sourceTree = "<group>"; };
+		C5F0CB6724A87AE9001B01D8 /* StyleDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleDIY.m; sourceTree = "<group>"; };
+		C5F0CB6824A87AE9001B01D8 /* LBXScanDIYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXScanDIYViewController.m; sourceTree = "<group>"; };
+		C5F0CB6924A87AE9001B01D8 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		C5F0CB6A24A87AE9001B01D8 /* ScanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
+		C5F0CB6B24A87AE9001B01D8 /* CreateBarCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBarCodeVC.h; sourceTree = "<group>"; };
+		C5F0CB6C24A87AE9001B01D8 /* LBXScanDIYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanDIYViewController.h; sourceTree = "<group>"; };
+		C5F0CB6D24A87AE9001B01D8 /* StyleDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleDIY.h; sourceTree = "<group>"; };
+		C5F0CB6E24A87AE9001B01D8 /* ScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultViewController.h; sourceTree = "<group>"; };
+		C5F0CB6F24A87AE9001B01D8 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
+		C5F0CB7024A87AE9001B01D8 /* CreateBarCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBarCodeVC.m; sourceTree = "<group>"; };
+		C5F0CB7224A87AE9001B01D8 /* FSAppIconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppIconManager.m; sourceTree = "<group>"; };
+		C5F0CB7324A87AE9001B01D8 /* App图标更换 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "App图标更换"; sourceTree = "<group>"; };
+		C5F0CB7424A87AE9001B01D8 /* FSAppIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppIconManager.h; sourceTree = "<group>"; };
+		C5F0CB7C24A87B08001B01D8 /* DIYScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYScanVC.h; sourceTree = "<group>"; };
+		C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYScanVC.m; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -1095,8 +1114,9 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5F0CB6624A87AE9001B01D8 /* 扫一扫组件 */,
+				C5F0CB7124A87AE9001B01D8 /* FSAppIconManager */,
 				C503248424A06152007B9985 /* 分享控件 */,
-				C503247F24A05A99007B9985 /* FSAppIconManager */,
 				C55887A72498E46200C8A3E7 /* AddressPickerView */,
 				8BB217DF2397E35500BD1B5F /* UIDevice+XMUtils */,
 				8BB217CB2397BA0B00BD1B5F /* SearchView */,
@@ -1584,16 +1604,6 @@
 			path = ../Log;
 			sourceTree = "<group>";
 		};
-		C503247F24A05A99007B9985 /* FSAppIconManager */ = {
-			isa = PBXGroup;
-			children = (
-				C503248124A05AA5007B9985 /* FSAppIconManager.h */,
-				C503248024A05AA5007B9985 /* FSAppIconManager.m */,
-				C503248F24A06257007B9985 /* App图标更换 */,
-			);
-			path = FSAppIconManager;
-			sourceTree = "<group>";
-		};
 		C503248424A06152007B9985 /* 分享控件 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1691,6 +1701,36 @@
 				C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */,
 			);
 			path = "iPhone-Device";
+			sourceTree = "<group>";
+		};
+		C5F0CB6624A87AE9001B01D8 /* 扫一扫组件 */ = {
+			isa = PBXGroup;
+			children = (
+				C5F0CB6B24A87AE9001B01D8 /* CreateBarCodeVC.h */,
+				C5F0CB7024A87AE9001B01D8 /* CreateBarCodeVC.m */,
+				C5F0CB7C24A87B08001B01D8 /* DIYScanVC.h */,
+				C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */,
+				C5F0CB6924A87AE9001B01D8 /* Global.h */,
+				C5F0CB6F24A87AE9001B01D8 /* Global.m */,
+				C5F0CB6C24A87AE9001B01D8 /* LBXScanDIYViewController.h */,
+				C5F0CB6824A87AE9001B01D8 /* LBXScanDIYViewController.m */,
+				C5F0CB6E24A87AE9001B01D8 /* ScanResultViewController.h */,
+				C5F0CB6A24A87AE9001B01D8 /* ScanResultViewController.m */,
+				C5F0CB6D24A87AE9001B01D8 /* StyleDIY.h */,
+				C5F0CB6724A87AE9001B01D8 /* StyleDIY.m */,
+			);
+			path = "扫一扫组件";
+			sourceTree = "<group>";
+		};
+		C5F0CB7124A87AE9001B01D8 /* FSAppIconManager */ = {
+			isa = PBXGroup;
+			children = (
+				C5F0CB7224A87AE9001B01D8 /* FSAppIconManager.m */,
+				C5F0CB7324A87AE9001B01D8 /* App图标更换 */,
+				C5F0CB7424A87AE9001B01D8 /* FSAppIconManager.h */,
+			);
+			name = FSAppIconManager;
+			path = "../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/Manual_Add_ThirdParty /FSAppIconManager";
 			sourceTree = "<group>";
 		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {
@@ -1858,6 +1898,7 @@
 				C3F56FB722A4F749009E9691 /* Sound.wav in Resources */,
 				C3F570F722A60E46009E9691 /* ShoppingCart@3x.png in Resources */,
 				CEF8254F22C5B2A800A50884 /* 图片.png in Resources */,
+				C5F0CB7B24A87AE9001B01D8 /* App图标更换 in Resources */,
 				CEF8255122C5B2A800A50884 /* 图片@3x.png in Resources */,
 				C3F570F822A60E46009E9691 /* ShoppingCart@2x.png in Resources */,
 			);
@@ -1999,6 +2040,7 @@
 				C3F56F7322A4C731009E9691 /* My_BaseProj.xcdatamodeld in Sources */,
 				8BD6DC4A234B23B0003F1EE0 /* CALayer+Anim.m in Sources */,
 				8B90B38B2379184B0023E394 /* HistoryDataListTBV.m in Sources */,
+				C5F0CB7524A87AE9001B01D8 /* StyleDIY.m in Sources */,
 				C3F5709D22A50EB2009E9691 /* PlaySound.m in Sources */,
 				C3229A9522B21D400044BB5E /* TAAnimatedDotView.m in Sources */,
 				8B128BF32345A5750039B590 /* UIImage+TBCityIconFont.m in Sources */,
@@ -2006,7 +2048,6 @@
 				8B6EB81A230A713900F3995E /* NSArray+Extension.m in Sources */,
 				C3F56FFB22A4F7CE009E9691 /* XDSDropDownMenu.m in Sources */,
 				8BD6DC28234B1C61003F1EE0 /* NSString+File.m in Sources */,
-				C503248224A05AA5007B9985 /* FSAppIconManager.m in Sources */,
 				8BA94BFB235AE6C800B00786 /* HQCollectionViewFlowLayout.m in Sources */,
 				8B128BF22345A5750039B590 /* TBCityIconInfo.m in Sources */,
 				C3F570E522A60CEF009E9691 /* ViewController@2.m in Sources */,
@@ -2022,6 +2063,8 @@
 				8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */,
 				CE1319A522CDA6F6002BA1A7 /* XLChannelItem.m in Sources */,
 				8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */,
+				C5F0CB7A24A87AE9001B01D8 /* FSAppIconManager.m in Sources */,
+				C5F0CB7824A87AE9001B01D8 /* Global.m in Sources */,
 				8BB217E42397E35500BD1B5F /* UIDevice+XMUtils.m in Sources */,
 				C3F56FB622A4F749009E9691 /* SoundBtn.m in Sources */,
 				C503248D24A06166007B9985 /* BWItemCollectionViewCell.m in Sources */,
@@ -2042,6 +2085,7 @@
 				8B7A554A236F0461006B12F8 /* FMHttpRequest.m in Sources */,
 				C503248C24A06166007B9985 /* BWShareView.m in Sources */,
 				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
+				C5F0CB7624A87AE9001B01D8 /* LBXScanDIYViewController.m in Sources */,
 				C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */,
 				C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */,
 				C3229A8522B21D110044BB5E /* SDCycleScrollView.m in Sources */,
@@ -2061,6 +2105,7 @@
 				8B29BAFB232E5E67002114A0 /* ECAuthorizationTools.m in Sources */,
 				C3B1566622AB555C009061F3 /* HotLabel.m in Sources */,
 				C3F5707722A4FC92009E9691 /* DHAreaPickerView.m in Sources */,
+				C5F0CB7E24A87B09001B01D8 /* DIYScanVC.m in Sources */,
 				8B6EB80A230A6F1E00F3995E /* ZHKeyChainManager.m in Sources */,
 				8B86E03C238560C5004D4C0A /* ModelLogin.m in Sources */,
 				8BB217D12397BA7400BD1B5F /* TBVCell_style_01.m in Sources */,
@@ -2089,6 +2134,7 @@
 				C3F56FC222A4F783009E9691 /* AESCrypt.m in Sources */,
 				C3229A8822B21D110044BB5E /* SDCycleScrollView+UIScrollViewDelegate.m in Sources */,
 				8B55869D233C899B00132CF6 /* ViewForHeader.m in Sources */,
+				C5F0CB7924A87AE9001B01D8 /* CreateBarCodeVC.m in Sources */,
 				C3F5707E22A50316009E9691 /* TouchID.m in Sources */,
 				8BA69E532396C64800575B2F /* GettingDeviceIP.m in Sources */,
 				C3F5710222A612AD009E9691 /* BaseNavigationVC.m in Sources */,
@@ -2105,6 +2151,7 @@
 				C3F5705322A4FA9F009E9691 /* XWCountryCodeController.m in Sources */,
 				C3F570AE22A521E7009E9691 /* ZYTextField_01.m in Sources */,
 				C3F56FA522A4F43A009E9691 /* LYLUnicode.m in Sources */,
+				C5F0CB7724A87AE9001B01D8 /* ScanResultViewController.m in Sources */,
 				8B8A49A022F2C42B00AFDC59 /* HQTextField.m in Sources */,
 				CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */,
 				C3F5700022A4F7CE009E9691 /* BadgeButton.m in Sources */,

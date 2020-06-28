@@ -340,6 +340,30 @@ JXCategoryListContentViewDelegate
         }
     }];
 }
+//访问摄像头
+-(void)camera:(NSString *)doSth{
+    //先鉴权
+    @weakify(self)
+    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Camera
+                                          accessStatus:^(ECAuthorizationStatus status,
+                                                         ECPrivacyType type) {
+        @strongify(self)
+        // status 即为权限状态，
+        //状态类型参考：ECAuthorizationStatus
+        NSLog(@"%lu",(unsigned long)status);
+        if (status == ECAuthorizationStatus_Authorized) {
+            //允许访问摄像头后需要做的操作
+            [self performSelector:NSSelectorFromString(doSth)
+                       withObject:Nil];
+        }else{
+            NSLog(@"摄像头不可用:%lu",(unsigned long)status);
+            [self showAlertViewTitle:@"获取摄像头权限"
+                                   message:@""
+                               btnTitleArr:@[@"去获取"]
+                            alertBtnAction:@[@"pushToSysConfig"]];
+        }
+    }];
+}
 #pragma mark —— 子类需要覆写
 -(void)backBtnClickEvent:(UIButton *)sender{
     if (self.navigationController) {

@@ -10,6 +10,7 @@
 #define Other_h
 
 #import "AppDelegate.h"
+#import "SceneDelegate.h"
 //FFmpeg 需要
 #import <VideoToolbox/VideoToolbox.h>
 

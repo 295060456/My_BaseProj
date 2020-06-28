@@ -58,6 +58,8 @@ TZImagePickerControllerDelegate
 -(void)locateTabBar:(NSInteger)index;
 -(void)setStatusBarBackgroundColor:(UIColor *)color;
 -(void)choosePic;//选择图片
+-(void)camera:(NSString *)doSth;//访问摄像头
+-(void)feedbackGenerator;//震动特效反馈
 
 + (instancetype)CominngFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle

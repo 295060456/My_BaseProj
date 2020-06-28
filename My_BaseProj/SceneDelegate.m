@@ -14,7 +14,6 @@ API_AVAILABLE(ios(13.0))
 @interface SceneDelegate ()
 
 @property(nonatomic,strong)UIWindowScene *windowScene;
-@property(nonatomic,strong)CustomSYSUITabBarController *customSYSUITabBarController;
 @property(nonatomic,strong)UINavigationController *navigationController;
 
 @end

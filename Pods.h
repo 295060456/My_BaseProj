@@ -37,7 +37,6 @@
 #import "Reachability.h"//检查联网情况
 #import <ReactiveObjC.h>
 //#import "SDWebImage.h"//不支持图片后处理
-#import "SGQRCode.h"
 #import "FBShimmering.h"
 //#import "SVProgressHUD.h"//和sceneDelegate冲突
 #import <AsyncDisplayKit/AsyncDisplayKit.h>
@@ -56,5 +55,6 @@
 #import <YYKit/YYKit.h>
 #import "BRPickerView.h"
 #import "JJStockView.h"
+#import "LBXScanView.h"
 
 #endif /* Pods_h */

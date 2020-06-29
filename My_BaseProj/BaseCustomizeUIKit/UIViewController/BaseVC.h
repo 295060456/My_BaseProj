@@ -61,7 +61,7 @@ TZImagePickerControllerDelegate
 -(void)camera:(NSString *)doSth;//访问摄像头
 -(void)feedbackGenerator;//震动特效反馈
 
-+ (instancetype)CominngFromVC:(UIViewController *)rootVC
++ (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle
                 requestParams:(nullable id)requestParams
                       success:(DataBlock)block

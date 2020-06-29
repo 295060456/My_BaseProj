@@ -51,7 +51,7 @@ JXCategoryListContentViewDelegate
     }return self;
 }
 
-+ (instancetype)CominngFromVC:(UIViewController *)rootVC
++ (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle
              requestParams:(nullable id)requestParams
                    success:(DataBlock)block

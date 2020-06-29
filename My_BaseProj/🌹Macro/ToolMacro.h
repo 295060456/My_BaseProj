@@ -33,21 +33,11 @@
 #define isiPhoneX       (((kScreenHeight  == 812.0) || (kScreenHeight  == 896.0))  ? 1 : 0)
 #define isiPhoneXR__XMax      ((kScreenHeight  == 896.0) ? 1 : 0)
 
-#define MainWindow UIWindow* mainWindow = nil;\
-if (@available(iOS 13.0, *)){ \
-    for (UIWindowScene* wScene in [UIApplication sharedApplication].connectedScenes){ \
-        if (wScene.activationState == UISceneActivationStateForegroundActive){ \
-            mainWindow = wScene.windows.firstObject; \
-            break; \
-        } \
-    } \
-} \
-
+#import "SceneDelegate.h"
 /**
- 是否是iPhoneX系列（X/XS/XR/XS Max)
- 
- @return YES 是该系列 NO 不是该系列
- */
+是否是iPhone刘海屏系列：   X系列（X/XS/XR/XS Max)、11系列（11、pro、pro max）
+@return YES 是该系列 NO 不是该系列
+*/
 static inline BOOL isiPhoneX_series() {
     BOOL iPhoneXSeries = NO;
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
@@ -55,14 +45,13 @@ static inline BOOL isiPhoneX_series() {
     }
 
     if (@available(iOS 11.0, *)) {
-        MainWindow
+        UIWindow *mainWindow = nil;
+        mainWindow = [SceneDelegate sharedInstance].window;
         if (mainWindow.safeAreaInsets.bottom > 0.0) {
             iPhoneXSeries = YES;
         }
     }return iPhoneXSeries;
 }
-
-
 //判断是否登录,没有登录进行跳转
 #define kGuardLogin if ([IsLogin isLogin]) { \
 UIViewController *rootViewController = kKeyWindow.rootViewController; \

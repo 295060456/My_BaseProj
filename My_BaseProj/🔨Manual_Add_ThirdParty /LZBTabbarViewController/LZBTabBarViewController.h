@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BaseVC.h"
 #import "LZBTabBar.h"
 
 /**

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomSYSUITabBarController.h"
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 

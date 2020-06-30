@@ -33,6 +33,7 @@ TZImagePickerControllerDelegate
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;
 //@property(nonatomic,strong)ViewForFooter *viewForFooter;
 @property(nonatomic,strong)MMButton *backBtn;
+@property(nonatomic,strong)UIAlertController *alertController;
 @property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕
 @property(nonatomic,copy)void (^UnknownNetWorking)(void);
 @property(nonatomic,copy)void (^NotReachableNetWorking)(void);
@@ -50,11 +51,18 @@ TZImagePickerControllerDelegate
 -(void)BRStringPickerViewBlock:(DataBlock)block;
 
 -(void)AFNReachability;
+
 -(void)showLoginAlertView;
 -(void)showAlertViewTitle:(NSString *)title
                   message:(NSString *)message
               btnTitleArr:(NSArray <NSString*>*)btnTitleArr
            alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr;
+-(void)showActionSheetTitle:(NSString *)title
+                    message:(NSString *)message
+                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+                     sender:(UIButton *)sender;
+
 -(void)locateTabBar:(NSInteger)index;
 -(void)setStatusBarBackgroundColor:(UIColor *)color;
 -(void)choosePic;//选择图片

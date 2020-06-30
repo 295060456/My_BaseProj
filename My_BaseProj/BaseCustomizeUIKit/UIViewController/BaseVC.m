@@ -42,10 +42,7 @@ JXCategoryListContentViewDelegate
         GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
         [configure setupDefaultConfigure];
         // 设置自定义样式
-        configure.backgroundColor = [UIColor colorWithRed:(212 / 255.0)
-                                                    green:(25 /255.0)
-                                                     blue:(37 / 255.0)
-                                                    alpha:1.0];
+        configure.backgroundColor = kClearColor;
         configure.titleColor = kWhiteColor;
         configure.titleFont  = [UIFont systemFontOfSize:18];
     }return self;
@@ -285,6 +282,37 @@ JXCategoryListContentViewDelegate
                      completion:nil];
 }
 
+-(void)showActionSheetTitle:(NSString *)title
+                    message:(NSString *)message
+                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+                     sender:(UIButton *)sender{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+
+    @weakify(self)
+    for (int i = 0; i < alertBtnActionArr.count; i++) {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:btnTitleArr[i]
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             @strongify(self)
+                                                             [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
+                                                                        withObject:Nil];
+                                                         }];
+        [alertController addAction:okAction];
+    }
+    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+    if (popover){
+        popover.sourceView = sender;
+        popover.sourceRect = sender.bounds;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
+}
+
 - (void)alertUserAccountInfoDidChange:(UITextField *)sender{
     UIAlertController *alertController = (UIAlertController *)self.presentedViewController;
     if (alertController){
@@ -317,7 +345,7 @@ JXCategoryListContentViewDelegate
         statusBar.backgroundColor = color;
     }
 }
-//选择图片
+//访问相册 —— 选择图片
 -(void)choosePic{
     @weakify(self)
     [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Photos
@@ -369,7 +397,8 @@ JXCategoryListContentViewDelegate
     if (self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
     }
 }
 // 下拉刷新
@@ -408,8 +437,8 @@ JXCategoryListContentViewDelegate
         [self feedbackGenerator];
     }
 }
-
-- (void)feedbackGenerator{
+//震动特效反馈
+-(void)feedbackGenerator{
     if (@available(iOS 10.0, *)) {
         UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
         [generator prepare];
@@ -424,13 +453,13 @@ JXCategoryListContentViewDelegate
         _tableViewHeader =  [MJRefreshGifHeader headerWithRefreshingTarget:self
                                                           refreshingAction:@selector(pullToRefresh)];
         // 设置普通状态的动画图片
-        [_tableViewHeader setImages:@[kIMG(@"猫粮")]
+        [_tableViewHeader setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewHeader setImages:@[kIMG(@"猫咪")]
+        [_tableViewHeader setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewHeader setImages:@[kIMG(@"猫爪")]
+        [_tableViewHeader setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateRefreshing];
         // 设置文字
         [_tableViewHeader setTitle:@"Click or drag down to refresh"
@@ -456,13 +485,13 @@ JXCategoryListContentViewDelegate
         _tableViewFooter = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self
                                                                 refreshingAction:@selector(loadMoreRefresh)];
         // 设置普通状态的动画图片
-        [_tableViewFooter setImages:@[kIMG(@"猫粮")]
+        [_tableViewFooter setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewFooter setImages:@[kIMG(@"猫咪")]
+        [_tableViewFooter setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewFooter setImages:@[kIMG(@"猫爪")]
+        [_tableViewFooter setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateRefreshing];
         // 设置文字
         [_tableViewFooter setTitle:@"Click or drag up to refresh"
@@ -526,7 +555,7 @@ JXCategoryListContentViewDelegate
 
 -(BRStringPickerView *)stringPickerView{
     if (!_stringPickerView) {
-        _stringPickerView = [[BRStringPickerView alloc]initWithPickerMode:self.brStringPickerMode];
+        _stringPickerView = [[BRStringPickerView alloc] initWithPickerMode:self.brStringPickerMode];
         if (self.BRStringPickerViewDataMutArr.count > 2) {
             _stringPickerView.title = self.BRStringPickerViewDataMutArr[0];
             NSMutableArray *temp = NSMutableArray.array;
@@ -536,7 +565,7 @@ JXCategoryListContentViewDelegate
         }
         @weakify(self)
         _stringPickerView.resultModelBlock = ^(BRResultModel *resultModel) {
-            NSLog(@"选择的值：%@", resultModel.selectValue);
+//            NSLog(@"选择的值：%@", resultModel.selectValue);
             @strongify(self)
             if (self.brStringPickerViewBlock) {
                 self.brStringPickerViewBlock(resultModel);

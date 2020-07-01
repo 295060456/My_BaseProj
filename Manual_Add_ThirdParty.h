@@ -21,6 +21,9 @@
 #import "NSObject+Extras.h"
 #import "UIControl+XY.h"
 
+#import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
+#import "UIImage+YBGIF.h"
+
 //加密体系
 #import "RSAUtil.h"
 #import "EncryptUtils.h"

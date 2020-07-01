@@ -14,9 +14,15 @@
 #import "ViewController@3.h"
 #import "ViewController@4.h"
 
+static NSString * const sampleDescription1 = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+static NSString * const sampleDescription2 = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";
+static NSString * const sampleDescription3 = @"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+static NSString * const sampleDescription4 = @"Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.";
+
 @interface CustomSYSUITabBarController ()
 <
-LZBTabBarViewControllerDelegate
+LZBTabBarViewControllerDelegate,
+EAIntroDelegate
 >
 
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customUnselectedImgMutArr;
@@ -25,6 +31,12 @@ LZBTabBarViewControllerDelegate
 @property(nonatomic,strong)NSMutableArray<UIViewController *> *viewControllerMutArr;
 @property(nonatomic,strong)BaseNavigationVC *customNavigationVC;
 @property(nonatomic,strong)NSMutableArray *mutArr;
+
+@property(nonatomic,strong)EAIntroPage *page1;
+@property(nonatomic,strong)EAIntroPage *page2;
+@property(nonatomic,strong)EAIntroPage *page3;
+@property(nonatomic,strong)EAIntroPage *page4;
+@property(nonatomic,strong)EAIntroView *intro;
 
 @end
 
@@ -49,6 +61,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setUpAllChildViewController];
+    self.intro.alpha = 1;
 }
 
 - (void)p_setUpAllChildViewController {
@@ -100,7 +113,15 @@ CGFloat LZB_TABBAR_HEIGHT;
 //        [self presentLoginVC];
     }
 }
-
+#pragma mark - EAIntroView delegate
+- (void)introDidFinish:(EAIntroView *)introView
+            wasSkipped:(BOOL)wasSkipped {
+    if(wasSkipped) {
+        NSLog(@"Intro skipped");
+    } else {
+        NSLog(@"Intro finished");
+    }
+}
 #pragma mark —— lazyLoad
 -(NSMutableArray *)mutArr{
     if (!_mutArr) {
@@ -137,5 +158,62 @@ CGFloat LZB_TABBAR_HEIGHT;
         [_customSelectedImgMutArr addObject:kIMG(@"My")];
     }return _customSelectedImgMutArr;
 }
+
+-(EAIntroPage *)page1{
+    if (!_page1) {
+        _page1 = EAIntroPage.page;
+        _page1.title = @"Hello world";
+        _page1.desc = sampleDescription1;
+        _page1.bgImage = kIMG(@"bg1");
+        _page1.titleIconView = [[UIImageView alloc] initWithImage:kIMG(@"title1")];
+    }return _page1;
+}
+
+-(EAIntroPage *)page2{
+    if (!_page2) {
+        _page2 = EAIntroPage.page;
+        _page2.title = @"This is page 2";
+        _page2.desc = sampleDescription2;
+        _page2.bgImage = kIMG(@"bg2");
+        _page2.titleIconView = [[UIImageView alloc] initWithImage:kIMG(@"title2")];
+    }return _page2;
+}
+
+-(EAIntroPage *)page3{
+    if (!_page3) {
+        _page3 = EAIntroPage.page;
+        _page3.title = @"This is page 3";
+        _page3.desc = sampleDescription3;
+        _page3.bgImage = kIMG(@"bg3");
+        _page3.titleIconView = [[UIImageView alloc] initWithImage:kIMG(@"title3")];
+    }return _page3;
+}
+
+-(EAIntroPage *)page4{
+    if (!_page4) {
+        _page4 = EAIntroPage.page;
+        _page4.title = @"This is page 4";
+        _page4.desc = sampleDescription4;
+        _page4.bgImage = kIMG(@"bg4");
+        _page4.titleIconView = [[UIImageView alloc] initWithImage:kIMG(@"title4")];
+    }return _page4;
+}
+
+-(EAIntroView *)intro{
+    if (!_intro) {
+        _intro = [[EAIntroView alloc] initWithFrame:[SceneDelegate sharedInstance].window.bounds
+                                           andPages:@[self.page1,
+                                                      self.page2,
+                                                      self.page3,
+                                                      self.page4]];//
+        _intro.skipButtonAlignment = EAViewAlignmentCenter;
+        _intro.skipButtonY = 80.f;
+        _intro.pageControlY = 42.f;
+        [_intro setDelegate:self];
+        [_intro showInView:[SceneDelegate sharedInstance].window
+           animateDuration:0.3f];
+    }return _intro;
+}
+
 
 @end

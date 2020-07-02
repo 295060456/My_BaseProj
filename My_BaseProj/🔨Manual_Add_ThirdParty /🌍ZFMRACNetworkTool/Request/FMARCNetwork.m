@@ -493,9 +493,7 @@ static FMARCNetwork *_instance = nil;
            failure(error);
     }
     self.manager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD", nil];
-    //开始请求内容
-    [self.manager DELETE:<#(nonnull NSString *)#> parameters:<#(nullable id)#> success:<#^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)success#> failure:<#^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)failure#>];
-    
+    //开始请求内容    
     [self.manager DELETE:url
               parameters:parameters
                  headers:nil

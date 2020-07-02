@@ -2367,6 +2367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K92UCMVH8G;
 				INFOPLIST_FILE = My_BaseProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2378,7 +2379,7 @@
 					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Device",
 					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Simulator",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Whiskey-On-The-Rocks.My-BaseProj";
+				PRODUCT_BUNDLE_IDENTIFIER = WhiskeyOnTheRocks.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2390,6 +2391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K92UCMVH8G;
 				INFOPLIST_FILE = My_BaseProj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2401,7 +2403,7 @@
 					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Device",
 					"$(PROJECT_DIR)/Other/Sys/libstdc++/iPhone-Simulator",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Whiskey-On-The-Rocks.My-BaseProj";
+				PRODUCT_BUNDLE_IDENTIFIER = WhiskeyOnTheRocks.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

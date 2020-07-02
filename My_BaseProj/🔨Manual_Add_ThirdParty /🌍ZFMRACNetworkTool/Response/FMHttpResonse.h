@@ -49,7 +49,7 @@
  @return FMHttpResonse
  */
 - (instancetype)initWithResponseSuccess:(id)result
-                                   code:(NSInteger )code;
+                                   code:(NSInteger)code;
 /**
  请求错误的初始化
 
@@ -59,7 +59,7 @@
  @return FMHttpResonse
  */
 - (instancetype)initWithResponseError:(NSError *)error
-                                 code:(NSInteger )code
+                                 code:(NSInteger)code
                                   msg:(NSString *)message;
 
 

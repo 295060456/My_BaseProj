@@ -11,7 +11,8 @@
 
 //UI
 #ifdef LBXScan_Define_UI
-#import "LBXScanView.h"
+//#import "LBXScanView.h"
+#import "LBXScanDIYView.h"//
 #endif
 //原生扫码封装
 #ifdef LBXScan_Define_Native
@@ -115,7 +116,7 @@ typedef NS_ENUM(NSInteger, SCANCODETYPE) {
 
 #ifdef LBXScan_Define_UI
 
-@property (nonatomic,strong) LBXScanView* qRScanView;
+@property (nonatomic,strong) LBXScanDIYView* qRScanView;
 #endif
 /**
  @brief  扫码存储的当前图片

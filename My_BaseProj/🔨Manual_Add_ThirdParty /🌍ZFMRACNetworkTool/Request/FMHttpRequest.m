@@ -54,9 +54,9 @@
 +(instancetype)urlParametersWithMethod:(NSString *)method
                                   path:(NSString *)path
                             parameters:(NSDictionary *)parameters{
-    return [[self alloc]initUrlParametersWithMethod:method
-                                               path:path
-                                         parameters:parameters];
+    return [[self alloc] initUrlParametersWithMethod:method
+                                                path:path
+                                          parameters:parameters];
 }
 
 -(instancetype)initUrlParametersWithMethod:(NSString *)method

@@ -50,11 +50,10 @@
 //绘制扫描区域
 - (void)drawScanView{
 #ifdef LBXScan_Define_UI
-    
     if (!_qRScanView){
         CGRect rect = self.view.frame;
         rect.origin = CGPointMake(0, 0);
-        self.qRScanView = [[LBXScanView alloc] initWithFrame:CGRectZero
+        self.qRScanView = [[LBXScanDIYView alloc] initWithFrame:CGRectZero
                                                        style:_style];
         [self.view addSubview:_qRScanView];
 //        _qRScanView.frame = rect;
@@ -64,7 +63,7 @@
         }];
     }
     if (!_cameraInvokeMsg) {
-//        _cameraInvokeMsg = NSLocalizedString(@"wating...", nil);
+        _cameraInvokeMsg = NSLocalizedString(@"设备启动中...", nil);
     }
     [_qRScanView startDeviceReadyingWithText:_cameraInvokeMsg];
 #endif
@@ -111,7 +110,8 @@
                 CGRect cropRect = CGRectZero;
                 if (_isOpenInterestRect) {
                     //设置只识别框内区域
-                    cropRect = [LBXScanView getScanRectWithPreView:self.view style:_style];
+                    cropRect = [LBXScanDIYView getScanRectWithPreView:self.view
+                                                                style:_style];
                 }
                 NSString *strCode = AVMetadataObjectTypeQRCode;
                 if (_scanCodeType != SCT_BarCodeITF ) {
@@ -122,7 +122,7 @@
                                                            ObjectType:@[strCode]
                                                              cropRect:cropRect
                                                               success:^(NSArray<LBXScanResult *> *array) {
-                    [self_weak_ scanResultWithArray:array];
+                    [weak_self scanResultWithArray:array];
                 }];
                 [_scanObj setNeedCaptureImage:_isNeedScanImage];
             }
@@ -145,8 +145,8 @@
                 }];
                 if (_isOpenInterestRect) {
                     //设置只识别框内区域
-                    CGRect cropRect = [LBXScanView getZXingScanRectWithPreView:videoView
-                                                                         style:_style];
+                    CGRect cropRect = [LBXScanDIYView getZXingScanRectWithPreView:videoView
+                                                                            style:_style];
                     [_zxingObj setScanRect:cropRect];
                 }
             }

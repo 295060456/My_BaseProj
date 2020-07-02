@@ -13,6 +13,10 @@
 #define HTTTP_METHOD_GET @"GET"
 /// POST
 #define HTTTP_METHOD_POST @"POST"
+/// PUT
+#define HTTTP_METHOD_PUT @"PUT"
+/// DELETE
+#define HTTTP_METHOD_DELETE @"DELETE"
 
 @interface ExtendsParameters : NSObject
 

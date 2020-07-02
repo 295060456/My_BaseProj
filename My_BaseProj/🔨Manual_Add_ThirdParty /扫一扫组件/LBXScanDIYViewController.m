@@ -122,7 +122,7 @@
                                                            ObjectType:@[strCode]
                                                              cropRect:cropRect
                                                               success:^(NSArray<LBXScanResult *> *array) {
-                    [weak_self scanResultWithArray:array];
+                    [self_weak_ scanResultWithArray:array];
                 }];
                 [_scanObj setNeedCaptureImage:_isNeedScanImage];
             }

@@ -30,7 +30,7 @@
 
     NSString *randomStr = [EncryptUtils shuffledAlphabet:16];
     FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST
-                                                           path:buyer_CatfoodRecord_listURL
+                                                           path:CatfoodManageURL
                                                      parameters:@{
                                                          @"data":dic,
                                                          @"key":[RSAUtil encryptString:randomStr

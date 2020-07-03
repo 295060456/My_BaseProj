@@ -86,8 +86,6 @@
 		C3F56F8522A4C732009E9691 /* My_BaseProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56F8422A4C732009E9691 /* My_BaseProjTests.m */; };
 		C3F56F9022A4C732009E9691 /* My_BaseProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56F8F22A4C732009E9691 /* My_BaseProjUITests.m */; };
 		C3F56FA522A4F43A009E9691 /* LYLUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FA322A4F43A009E9691 /* LYLUnicode.m */; };
-		C3F56FAE22A4F4E7009E9691 /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FAA22A4F4E7009E9691 /* LZBTabBar.m */; };
-		C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FAC22A4F4E7009E9691 /* LZBTabBarViewController.m */; };
 		C3F56FB622A4F749009E9691 /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FB322A4F749009E9691 /* SoundBtn.m */; };
 		C3F56FB722A4F749009E9691 /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3F56FB522A4F749009E9691 /* Sound.wav */; };
 		C3F56FC222A4F783009E9691 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FBA22A4F782009E9691 /* AESCrypt.m */; };
@@ -152,6 +150,8 @@
 		C516467E24AE138D0090A274 /* FMARCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C516467A24AE138D0090A274 /* FMARCNetwork.m */; };
 		C516467F24AE138D0090A274 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C516467D24AE138D0090A274 /* FMHttpRequest.m */; };
 		C516468224AE139B0090A274 /* FMHttpResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = C516468024AE139B0090A274 /* FMHttpResonse.m */; };
+		C516468924AE2E220090A274 /* LZBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C516468524AE2E210090A274 /* LZBTabBarViewController.m */; };
+		C516468A24AE2E220090A274 /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C516468824AE2E220090A274 /* LZBTabBar.m */; };
 		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
 		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
@@ -377,10 +377,6 @@
 		C3F56FA422A4F43A009E9691 /* LYLUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLUnicode.h; sourceTree = "<group>"; };
 		C3F56FA622A4F458009E9691 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "解决打印日志对于Unicode编码不能正常显示中文的问题"; sourceTree = "<group>"; };
 		C3F56FA922A4F4D8009E9691 /* 替换系统的UITabBarViewController */ = {isa = PBXFileReference; lastKnownFileType = text; path = "替换系统的UITabBarViewController"; sourceTree = "<group>"; };
-		C3F56FAA22A4F4E7009E9691 /* LZBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBar.m; sourceTree = "<group>"; };
-		C3F56FAB22A4F4E7009E9691 /* LZBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarViewController.h; sourceTree = "<group>"; };
-		C3F56FAC22A4F4E7009E9691 /* LZBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarViewController.m; sourceTree = "<group>"; };
-		C3F56FAD22A4F4E7009E9691 /* LZBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBar.h; sourceTree = "<group>"; };
 		C3F56FB222A4F738009E9691 /* 带有按键音的按钮 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "带有按键音的按钮"; sourceTree = "<group>"; };
 		C3F56FB322A4F749009E9691 /* SoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBtn.m; sourceTree = "<group>"; };
 		C3F56FB422A4F749009E9691 /* SoundBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBtn.h; sourceTree = "<group>"; };
@@ -522,6 +518,10 @@
 		C516468124AE139B0090A274 /* FMHttpResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHttpResonse.h; sourceTree = "<group>"; };
 		C516468324AE13AA0090A274 /* FMHttpConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHttpConstant.h; sourceTree = "<group>"; };
 		C516468424AE13B20090A274 /* ZFMRACNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFMRACNetworkTool.h; sourceTree = "<group>"; };
+		C516468524AE2E210090A274 /* LZBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarViewController.m; sourceTree = "<group>"; };
+		C516468624AE2E220090A274 /* LZBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarViewController.h; sourceTree = "<group>"; };
+		C516468724AE2E220090A274 /* LZBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBar.h; sourceTree = "<group>"; };
+		C516468824AE2E220090A274 /* LZBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBar.m; sourceTree = "<group>"; };
 		C52289CE2497A36C00136D0B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C55887A82498E46200C8A3E7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		C55887A92498E46200C8A3E7 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
@@ -1140,10 +1140,10 @@
 			isa = PBXGroup;
 			children = (
 				C3F56FA922A4F4D8009E9691 /* 替换系统的UITabBarViewController */,
-				C3F56FAD22A4F4E7009E9691 /* LZBTabBar.h */,
-				C3F56FAA22A4F4E7009E9691 /* LZBTabBar.m */,
-				C3F56FAB22A4F4E7009E9691 /* LZBTabBarViewController.h */,
-				C3F56FAC22A4F4E7009E9691 /* LZBTabBarViewController.m */,
+				C516468724AE2E220090A274 /* LZBTabBar.h */,
+				C516468824AE2E220090A274 /* LZBTabBar.m */,
+				C516468624AE2E220090A274 /* LZBTabBarViewController.h */,
+				C516468524AE2E210090A274 /* LZBTabBarViewController.m */,
 			);
 			path = LZBTabbarViewController;
 			sourceTree = "<group>";
@@ -2116,7 +2116,6 @@
 				C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */,
 				C503248B24A06166007B9985 /* BWItemModel.m in Sources */,
 				8B8A0E182390D575000D7579 /* XXTools.m in Sources */,
-				C3F56FAF22A4F4E7009E9691 /* LZBTabBarViewController.m in Sources */,
 				C3F56FF722A4F7CE009E9691 /* NSString+Extension.m in Sources */,
 				C3229A9322B21D400044BB5E /* TADotView.m in Sources */,
 				C3F5700D22A4F8B1009E9691 /* AnimateToSpecifiedDateView.m in Sources */,
@@ -2140,7 +2139,6 @@
 				C3F5709122A50D60009E9691 /* NSString+Extras.m in Sources */,
 				8BCAB6D0238AF669000B0360 /* SearchModel.m in Sources */,
 				C3F5706922A4FC71009E9691 /* LongPressToDeleteImageView.m in Sources */,
-				C3F56FAE22A4F4E7009E9691 /* LZBTabBar.m in Sources */,
 				C3F56FFD22A4F7CE009E9691 /* MMButton.m in Sources */,
 				C3F56FFC22A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
 				8B29BAFB232E5E67002114A0 /* ECAuthorizationTools.m in Sources */,
@@ -2167,6 +2165,7 @@
 				C3F5707922A4FC92009E9691 /* DHAreaPickerView+DelegateProtocal.m in Sources */,
 				C301CEF822ADF94E00C0DCCC /* ArcTBVCell.m in Sources */,
 				CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */,
+				C516468A24AE2E220090A274 /* LZBTabBar.m in Sources */,
 				C50324AD24A0A7B5007B9985 /* AppDelegate.m in Sources */,
 				C3F5703722A4F9C4009E9691 /* HAHandleDemoView.m in Sources */,
 				8BCB98F023715DA20063E01E /* EncryptUtils.m in Sources */,
@@ -2176,6 +2175,7 @@
 				C3229A8822B21D110044BB5E /* SDCycleScrollView+UIScrollViewDelegate.m in Sources */,
 				8B55869D233C899B00132CF6 /* ViewForHeader.m in Sources */,
 				C5F0CB7924A87AE9001B01D8 /* CreateBarCodeVC.m in Sources */,
+				C516468924AE2E220090A274 /* LZBTabBarViewController.m in Sources */,
 				C3F5707E22A50316009E9691 /* TouchID.m in Sources */,
 				8BA69E532396C64800575B2F /* GettingDeviceIP.m in Sources */,
 				C5E96F0024ACD42800CFD927 /* UIImageView+GIF.m in Sources */,

@@ -96,7 +96,6 @@
 		C3F56FF922A4F7CE009E9691 /* LXTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FDF22A4F7CD009E9691 /* LXTagsView.m */; };
 		C3F56FFB22A4F7CE009E9691 /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FE422A4F7CE009E9691 /* XDSDropDownMenu.m */; };
 		C3F56FFC22A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FE522A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m */; };
-		C3F56FFD22A4F7CE009E9691 /* MMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FE822A4F7CE009E9691 /* MMButton.m */; };
 		C3F5700022A4F7CE009E9691 /* BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F56FED22A4F7CE009E9691 /* BadgeButton.m */; };
 		C3F5700C22A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5700822A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m */; };
 		C3F5700D22A4F8B1009E9691 /* AnimateToSpecifiedDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5700922A4F8B1009E9691 /* AnimateToSpecifiedDateView.m */; };
@@ -155,6 +154,8 @@
 		C52289CF2497A36D00136D0B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C52289CE2497A36C00136D0B /* libc++.tbd */; };
 		C55887AB2498E46200C8A3E7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C55887A82498E46200C8A3E7 /* area.plist */; };
 		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
+		C573892E24AF7AEF00749969 /* CALayer+FSUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C573892A24AF7AEF00749969 /* CALayer+FSUI.m */; };
+		C573892F24AF7AEF00749969 /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C573892B24AF7AEF00749969 /* FSCustomButton.m */; };
 		C5CF107A249F54640084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */; };
 		C5CF107B249F54640084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1079249F54640084E7A7 /* libstdc++.6.0.9.tbd */; };
 		C5CF1081249F54770084E7A7 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107C249F54760084E7A7 /* libstdc++.6.dylib */; };
@@ -402,9 +403,6 @@
 		C3F56FE322A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XDSDropDownMenu+DelegateProtocol.h"; sourceTree = "<group>"; };
 		C3F56FE422A4F7CE009E9691 /* XDSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSDropDownMenu.m; sourceTree = "<group>"; };
 		C3F56FE522A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XDSDropDownMenu+DelegateProtocol.m"; sourceTree = "<group>"; };
-		C3F56FE722A4F7CE009E9691 /* MMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMButton.h; sourceTree = "<group>"; };
-		C3F56FE822A4F7CE009E9691 /* MMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMButton.m; sourceTree = "<group>"; };
-		C3F56FE922A4F7CE009E9691 /* MMButton（自定义图文位置 \ 距离） */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MMButton（自定义图文位置 \\ 距离）"; sourceTree = "<group>"; };
 		C3F56FEB22A4F7CE009E9691 /* BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeButton.h; sourceTree = "<group>"; };
 		C3F56FEC22A4F7CE009E9691 /* Button按钮右上角文字 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Button按钮右上角文字"; sourceTree = "<group>"; };
 		C3F56FED22A4F7CE009E9691 /* BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeButton.m; sourceTree = "<group>"; };
@@ -528,6 +526,11 @@
 		C55887AA2498E46200C8A3E7 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
 		C55887AD2499013C00C8A3E7 /* 本地流服务器 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "本地流服务器"; sourceTree = "<group>"; };
 		C560B73424962AB5002E1D99 /* TableViewCell自适应 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "TableViewCell自适应"; sourceTree = "<group>"; };
+		C573892924AF7AEF00749969 /* FSCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomButton.h; sourceTree = "<group>"; };
+		C573892A24AF7AEF00749969 /* CALayer+FSUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSUI.m"; sourceTree = "<group>"; };
+		C573892B24AF7AEF00749969 /* FSCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomButton.m; sourceTree = "<group>"; };
+		C573892C24AF7AEF00749969 /* FSCommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommenDefine.h; sourceTree = "<group>"; };
+		C573892D24AF7AEF00749969 /* CALayer+FSUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSUI.h"; sourceTree = "<group>"; };
 		C5C97348249A0AE100AB4429 /* Flutter_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Flutter_Config; sourceTree = "<group>"; };
 		C5C97349249A0AE100AB4429 /* Cocoapods_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cocoapods_Config; sourceTree = "<group>"; };
 		C5C9734A249A0AE100AB4429 /* Weex_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weex_Config; sourceTree = "<group>"; };
@@ -1035,8 +1038,8 @@
 				C3F570DE22A60B8C009E9691 /* CustomSYSUITabBarController.m */,
 				C3F56F7922A4C732009E9691 /* Info.plist */,
 				8B86E0362385606C004D4C0A /* 用户信息 */,
+				C573893124AF7B2D00749969 /* 🍌Manual_Add_ThirdFont */,
 				C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */,
-				C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */,
 				C3F5703A22A4FA13009E9691 /* BaseCustomizeUIKit */,
 				C3F56F9E22A4F38C009E9691 /* 🌹Macro */,
 				C3F570EC22A60D66009E9691 /* ⚽️PicResource */,
@@ -1084,6 +1087,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C573892824AF7AE300749969 /* 高度自定义的按钮 */,
 				C516467624AE13570090A274 /* 🌍ZFMRACNetworkTool */,
 				C5F0CB6624A87AE9001B01D8 /* 扫一扫组件 */,
 				C5F0CB7124A87AE9001B01D8 /* FSAppIconManager */,
@@ -1117,7 +1121,6 @@
 				C3F5706422A4FBC6009E9691 /* LongPressToDeleteImageView */,
 				C3F56FD722A4F7CD009E9691 /* LXTagsView */,
 				C3F56FA822A4F4C5009E9691 /* LZBTabbarViewController */,
-				C3F56FE622A4F7CE009E9691 /* MMButton */,
 				C3F5705522A4FAF8009E9691 /* RYCuteView */,
 				C3F5701522A4F96E009E9691 /* SDCycleScrollView */,
 				C3F56FB122A4F728009E9691 /* SoundBtn */,
@@ -1248,16 +1251,6 @@
 				C3F56FE522A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m */,
 			);
 			path = XDSDropDownMenu;
-			sourceTree = "<group>";
-		};
-		C3F56FE622A4F7CE009E9691 /* MMButton */ = {
-			isa = PBXGroup;
-			children = (
-				C3F56FE722A4F7CE009E9691 /* MMButton.h */,
-				C3F56FE822A4F7CE009E9691 /* MMButton.m */,
-				C3F56FE922A4F7CE009E9691 /* MMButton（自定义图文位置 \ 距离） */,
-			);
-			path = MMButton;
 			sourceTree = "<group>";
 		};
 		C3F56FEA22A4F7CE009E9691 /* BadgeButton */ = {
@@ -1626,13 +1619,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		C55887732498B42000C8A3E7 /* 🍌Manual_Add_ThirdFont */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "🍌Manual_Add_ThirdFont";
-			sourceTree = "<group>";
-		};
 		C55887A72498E46200C8A3E7 /* AddressPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1654,6 +1640,25 @@
 				6034DD6DF7212D7FC23F03FC /* Pods-My_BaseProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C573892824AF7AE300749969 /* 高度自定义的按钮 */ = {
+			isa = PBXGroup;
+			children = (
+				C573892C24AF7AEF00749969 /* FSCommenDefine.h */,
+				C573892924AF7AEF00749969 /* FSCustomButton.h */,
+				C573892B24AF7AEF00749969 /* FSCustomButton.m */,
+				C573892D24AF7AEF00749969 /* CALayer+FSUI.h */,
+				C573892A24AF7AEF00749969 /* CALayer+FSUI.m */,
+			);
+			path = "高度自定义的按钮";
+			sourceTree = "<group>";
+		};
+		C573893124AF7B2D00749969 /* 🍌Manual_Add_ThirdFont */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "🍌Manual_Add_ThirdFont";
 			sourceTree = "<group>";
 		};
 		C5C97347249A0AB600AB4429 /* Computer_Config */ = {
@@ -2070,6 +2075,7 @@
 				8BCB98F223715DA20063E01E /* NSString+Base64.m in Sources */,
 				8BB1E8172375B5E500871ECA /* SocketRocketUtility.m in Sources */,
 				8B7A54FD236D92FF006B12F8 /* WBTableViewDelegate.m in Sources */,
+				C573892E24AF7AEF00749969 /* CALayer+FSUI.m in Sources */,
 				C3229A9622B21D400044BB5E /* TAAbstractDotView.m in Sources */,
 				C3F570A022A50F83009E9691 /* UIColor+Hex.m in Sources */,
 				8B63FA4023A13C7700588B2F /* UIView+Extras.m in Sources */,
@@ -2125,6 +2131,7 @@
 				C516468224AE139B0090A274 /* FMHttpResonse.m in Sources */,
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				C503248C24A06166007B9985 /* BWShareView.m in Sources */,
+				C573892F24AF7AEF00749969 /* FSCustomButton.m in Sources */,
 				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
 				C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */,
 				C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */,
@@ -2139,7 +2146,6 @@
 				C3F5709122A50D60009E9691 /* NSString+Extras.m in Sources */,
 				8BCAB6D0238AF669000B0360 /* SearchModel.m in Sources */,
 				C3F5706922A4FC71009E9691 /* LongPressToDeleteImageView.m in Sources */,
-				C3F56FFD22A4F7CE009E9691 /* MMButton.m in Sources */,
 				C3F56FFC22A4F7CE009E9691 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
 				8B29BAFB232E5E67002114A0 /* ECAuthorizationTools.m in Sources */,
 				C3B1566622AB555C009061F3 /* HotLabel.m in Sources */,

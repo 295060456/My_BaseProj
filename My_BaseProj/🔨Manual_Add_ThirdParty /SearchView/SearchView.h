@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SearchView : UIView
 
 @property(nonatomic,strong)UIScrollView *scrollView;
-@property(nonatomic,strong)NSMutableArray <MMButton *>*btnMutArr;
+@property(nonatomic,strong)NSMutableArray <FSCustomButton *>*btnMutArr;
 @property(nonatomic,strong)NSArray <NSString *>*btnTitleArr;
 
 -(void)actionBlock:(DataBlock)block;

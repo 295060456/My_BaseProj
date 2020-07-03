@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MMButton.h"
+#import "FSCustomButton.h"
 #import "AABlock.h"
 
 typedef enum : NSUInteger {
@@ -32,7 +32,7 @@ TZImagePickerControllerDelegate
 @property(nonatomic,strong)BRStringPickerView *stringPickerView;
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;
 //@property(nonatomic,strong)ViewForFooter *viewForFooter;
-@property(nonatomic,strong)MMButton *backBtn;
+@property(nonatomic,strong)FSCustomButton *backBtn;
 @property(nonatomic,strong)UIAlertController *alertController;
 @property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕
 @property(nonatomic,copy)void (^UnknownNetWorking)(void);

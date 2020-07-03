@@ -35,7 +35,6 @@
 
 #import "BaseVC.h"
 #import "ZYTextField_01.h"
-#import "MMButton.h"
 #import "AABlock.h"
 #import "YBNotificationManager.h"
 #import "CollectionAccountEditor.h"//弹窗小控件（高仿今日头条App评论弹窗框架）
@@ -84,6 +83,8 @@
 #import "LBXScanDIYViewController.h"
 #import "Global.h"
 #import "StyleDIY.h"
+
+#import "FSCustomButton.h"
 
 #define RSA_Public_key         @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCetmJK/hpaoKgzjAqjcVE/XvWNpKhZt/m3B/tzGpn5ck+ZV5jBxp8oGuhreeHCMEqE6VQX+FIovGNL0I/5rLQpWgD1dg3PRuI324g7/wJ488i3UOTc4xpE6esy8+wR4dUEsWfvbrB6znLeduikhCqaHbElZtVFfAmC2eWcob5QzQIDAQAB"//Agou
 

@@ -520,11 +520,14 @@ JXCategoryListContentViewDelegate
     }return _refreshBackNormalFooter;
 }
 
--(MMButton *)backBtn{
+-(FSCustomButton *)backBtn{
     if (!_backBtn) {
-        _backBtn = MMButton.new;
-        _backBtn.imageAlignment = MMImageAlignmentLeft;
-        _backBtn.spaceBetweenTitleAndImage = SCALING_RATIO(5);
+        _backBtn = FSCustomButton.new;
+        _backBtn.buttonImagePosition = FSCustomButtonImagePositionLeft;
+        _backBtn.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                    SCALING_RATIO(5),
+                                                    0,
+                                                    0);
         [_backBtn setTitleColor:kWhiteColor
                        forState:UIControlStateNormal];
         [_backBtn setTitle:@"返回"

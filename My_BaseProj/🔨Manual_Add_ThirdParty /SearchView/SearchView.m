@@ -17,7 +17,7 @@ UIScrollViewDelegate
 
 @property(nonatomic,copy)DataBlock block;
 @property(nonatomic,assign)CGFloat BtnWidth;
-@property(nonatomic,strong)MMButton *tempBtn;
+@property(nonatomic,strong)FSCustomButton *tempBtn;
 
 @end
 
@@ -36,7 +36,7 @@ UIScrollViewDelegate
         }
         
         for (int i = 0; i < btnTitleMutArr.count; i++) {
-            MMButton *btn = MMButton.new;
+            FSCustomButton *btn = FSCustomButton.new;
 //            btn.backgroundColor = RandomColor;
             [UIView cornerCutToCircleWithView:btn
                               AndCornerRadius:7.f];
@@ -59,13 +59,15 @@ UIScrollViewDelegate
                 [btn setTitleColor:kRedColor
                           forState:UIControlStateSelected];
             }else{}
-            
-            btn.imageAlignment = MMImageAlignmentRight;
-            btn.spaceBetweenTitleAndImage = SCALING_RATIO(2);
+            btn.buttonImagePosition = FSCustomButtonImagePositionRight;
+            btn.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                   0,
+                                                   0,
+                                                   SCALING_RATIO(10));
             [btn.titleLabel sizeToFit];
             btn.titleLabel.adjustsFontSizeToFitWidth = YES;
             [btn addTarget:self
-                    action:@selector(MMButtonClickEvent:)
+                    action:@selector(FSCustomButtonClickEvent:)
           forControlEvents:UIControlEventTouchUpInside];
             [btn setTitleColor:kBlackColor
                       forState:UIControlStateNormal];
@@ -83,12 +85,12 @@ UIScrollViewDelegate
     self.block = block;
 }
 
--(void)MMButtonClickEvent:(MMButton *)sender{
+-(void)FSCustomButtonClickEvent:(FSCustomButton *)sender{
     if ([self.tempBtn isEqual:sender]) {//同一个btn
         sender.selected = !sender.selected;
     }else{//不同一个btn
         //点击不同的btn
-        for (MMButton *btn in self.btnMutArr) {
+        for (FSCustomButton *btn in self.btnMutArr) {
             btn.selected = NO;
         }
         sender.selected = YES;
@@ -120,7 +122,7 @@ UIScrollViewDelegate
     }return _scrollView;
 }
 
--(NSMutableArray<MMButton *> *)btnMutArr{
+-(NSMutableArray<FSCustomButton *> *)btnMutArr{
     if (!_btnMutArr) {
         _btnMutArr = NSMutableArray.array;
     }return _btnMutArr;

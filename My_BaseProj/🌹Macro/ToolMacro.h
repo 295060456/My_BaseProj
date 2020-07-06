@@ -145,8 +145,17 @@ static inline CGFloat rectOfStatusbar(){
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     CGFloat RectOfStatusbar = 0.0f;
-    if (@available(iOS 13.0, *)) {
-        RectOfStatusbar = UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
+    if (@available(iOS 13.0, *)){
+        id WINDOW = UIApplication.sharedApplication.windows.firstObject;
+        if ([WINDOW isKindOfClass:UIWindow.class]) {
+            UIWindow *window = (UIWindow *)WINDOW;
+            UIWindowScene *windowScene = window.windowScene;
+            UIStatusBarManager *statusBarManager = windowScene.statusBarManager;
+            if (statusBarManager.statusBarHidden == NO) {
+                RectOfStatusbar = statusBarManager.statusBarFrame.size.height;
+//                statusBarManager.statusBarFrame.mj_h
+            }else{}
+        }
     }else{
         RectOfStatusbar = UIApplication.sharedApplication.statusBarFrame.size.height;
     }return RectOfStatusbar;

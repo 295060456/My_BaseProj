@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <FBAllocationTracker/FBAllocationTrackerManager.h>
 
 int main(int argc, char * argv[]) {
+    NSString *appDelegateClassName;
+    [[FBAllocationTrackerManager sharedManager] startTrackingAllocations];
+    [[FBAllocationTrackerManager sharedManager] enableGenerations];
     @autoreleasepool {
         //        image list -o -f
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
+        appDelegateClassName = NSStringFromClass([AppDelegate class]);
+    }return UIApplicationMain(argc,
+                              argv,
+                              nil,
+                              NSStringFromClass([AppDelegate class]));
 }

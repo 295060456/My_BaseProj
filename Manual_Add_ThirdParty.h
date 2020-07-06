@@ -41,7 +41,6 @@
 #import "FSCustomButton.h"
 #import "AABlock.h"
 #import "YBNotificationManager.h"
-#import "CollectionAccountEditor.h"//弹窗小控件（高仿今日头条App评论弹窗框架）
 #import "LongPressToDeleteImageView.h"
 #import "RYCuteView.h"
 #import "XWCountryCodeController.h"

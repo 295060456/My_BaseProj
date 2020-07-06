@@ -121,7 +121,6 @@
 		C3F570A022A50F83009E9691 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F5709F22A50F83009E9691 /* UIColor+Hex.m */; };
 		C3F570A322A5128A009E9691 /* IsLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570A122A5128A009E9691 /* IsLogin.m */; };
 		C3F570AE22A521E7009E9691 /* ZYTextField_01.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570AC22A521E7009E9691 /* ZYTextField_01.m */; };
-		C3F570B622A534E7009E9691 /* CollectionAccountEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570B422A534E7009E9691 /* CollectionAccountEditor.m */; };
 		C3F570BE22A538D2009E9691 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570B922A538D1009E9691 /* BaseVC.m */; };
 		C3F570DA22A5403F009E9691 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570D822A5403E009E9691 /* DeleteSystemUITabBarButton.m */; };
 		C3F570DF22A60B8C009E9691 /* CustomSYSUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F570DE22A60B8C009E9691 /* CustomSYSUITabBarController.m */; };
@@ -177,6 +176,7 @@
 		C5F0CB7A24A87AE9001B01D8 /* FSAppIconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7224A87AE9001B01D8 /* FSAppIconManager.m */; };
 		C5F0CB7B24A87AE9001B01D8 /* App图标更换 in Resources */ = {isa = PBXBuildFile; fileRef = C5F0CB7324A87AE9001B01D8 /* App图标更换 */; };
 		C5F0CB7E24A87B09001B01D8 /* DIYScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */; };
+		C5FE998424B37115007B9878 /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE998324B37115007B9878 /* PopUpVC.m */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -466,9 +466,6 @@
 		C3F570A222A5128A009E9691 /* IsLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsLogin.h; sourceTree = "<group>"; };
 		C3F570AC22A521E7009E9691 /* ZYTextField_01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField_01.m; sourceTree = "<group>"; };
 		C3F570AD22A521E7009E9691 /* ZYTextField_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField_01.h; sourceTree = "<group>"; };
-		C3F570B322A534D8009E9691 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "弹窗小控件（高仿今日头条App评论弹窗框架）"; sourceTree = "<group>"; };
-		C3F570B422A534E7009E9691 /* CollectionAccountEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAccountEditor.m; sourceTree = "<group>"; };
-		C3F570B522A534E7009E9691 /* CollectionAccountEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAccountEditor.h; sourceTree = "<group>"; };
 		C3F570B822A538D1009E9691 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		C3F570B922A538D1009E9691 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		C3F570D822A5403E009E9691 /* DeleteSystemUITabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteSystemUITabBarButton.m; sourceTree = "<group>"; };
@@ -578,6 +575,8 @@
 		C5F0CB7424A87AE9001B01D8 /* FSAppIconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppIconManager.h; sourceTree = "<group>"; };
 		C5F0CB7C24A87B08001B01D8 /* DIYScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYScanVC.h; sourceTree = "<group>"; };
 		C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYScanVC.m; sourceTree = "<group>"; };
+		C5FE998224B37115007B9878 /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
+		C5FE998324B37115007B9878 /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -1104,6 +1103,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE998124B37115007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5BEE17224B304E500A49BBD /* 验证码组件 */,
 				C573892824AF7AE300749969 /* 高度自定义的按钮 */,
 				C516467624AE13570090A274 /* 🌍ZFMRACNetworkTool */,
@@ -1130,7 +1130,6 @@
 				C3F56FB822A4F762009E9691 /* AESCrypt-ObjC */,
 				C3F5700622A4F892009E9691 /* AnimateToSpecifiedDateView */,
 				C3F56FEA22A4F7CE009E9691 /* BadgeButton */,
-				C3F570B222A534C3009E9691 /* CollectionAccountEditor */,
 				C3F5706A22A4FC86009E9691 /* DHAreaPickerView */,
 				CEA4CAED22C31760004E89B7 /* FFmpeg */,
 				C3F5703422A4F9BA009E9691 /* HAHandleDemoView */,
@@ -1483,16 +1482,6 @@
 			path = UITableView;
 			sourceTree = "<group>";
 		};
-		C3F570B222A534C3009E9691 /* CollectionAccountEditor */ = {
-			isa = PBXGroup;
-			children = (
-				C3F570B322A534D8009E9691 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
-				C3F570B522A534E7009E9691 /* CollectionAccountEditor.h */,
-				C3F570B422A534E7009E9691 /* CollectionAccountEditor.m */,
-			);
-			path = CollectionAccountEditor;
-			sourceTree = "<group>";
-		};
 		C3F570B722A53857009E9691 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1816,6 +1805,15 @@
 			);
 			name = FSAppIconManager;
 			path = "../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/Manual_Add_ThirdParty /FSAppIconManager";
+			sourceTree = "<group>";
+		};
+		C5FE998124B37115007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE998224B37115007B9878 /* PopUpVC.h */,
+				C5FE998324B37115007B9878 /* PopUpVC.m */,
+			);
+			path = "弹窗小控件（高仿今日头条App评论弹窗框架）";
 			sourceTree = "<group>";
 		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {
@@ -2142,7 +2140,6 @@
 				CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */,
 				C3F5708E22A5055C009E9691 /* NSObject+Extras.m in Sources */,
 				C5BEE17124B3044E00A49BBD /* UIButton+Block.m in Sources */,
-				C3F570B622A534E7009E9691 /* CollectionAccountEditor.m in Sources */,
 				C516467F24AE138D0090A274 /* FMHttpRequest.m in Sources */,
 				C3F56FF822A4F7CE009E9691 /* UIColor+LXExpand.m in Sources */,
 				8B9EAF9E237439B00012884C /* BaseTableViewer.m in Sources */,
@@ -2175,6 +2172,7 @@
 				C5BEE17B24B304EF00A49BBD /* HWTFCodeView.m in Sources */,
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				C503248C24A06166007B9985 /* BWShareView.m in Sources */,
+				C5FE998424B37115007B9878 /* PopUpVC.m in Sources */,
 				C573892F24AF7AEF00749969 /* FSCustomButton.m in Sources */,
 				8BC3118023952E470050E1C1 /* NSObject+Sound.m in Sources */,
 				C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */,

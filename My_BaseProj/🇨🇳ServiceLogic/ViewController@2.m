@@ -95,7 +95,7 @@
 
         make.left.equalTo(self.mainView).offset(SCALING_RATIO(30));
 
-        make.top.equalTo(self.mainView).offset(SCALING_RATIO(30) + rectOfStatusbar + rectOfNavigationbar);
+        make.top.equalTo(self.mainView).offset(SCALING_RATIO(30) + rectOfStatusbar() + rectOfNavigationbar);
 
         make.right.equalTo(self.mainView).offset(-SCALING_RATIO(30));
 
@@ -145,8 +145,12 @@
     if (!_mainView) {
         
         _mainView = UIView.new;
-        
-        _mainView.frame = kAPPDelegate.window.frame;
+   
+        if (@available(iOS 13.0, *)) {
+            _mainView.frame = [SceneDelegate sharedInstance].window.frame;
+        }else{
+            _mainView.frame = UIApplication.sharedApplication.delegate.window.frame;
+        }
     }
     
     return _mainView;

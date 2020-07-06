@@ -34,10 +34,19 @@
 #define isiPhoneXR__XMax      ((kScreenHeight  == 896.0) ? 1 : 0)
 
 #import "SceneDelegate.h"
+
+static inline UIWindow * getMainWindow(){
+    UIWindow *window = nil;
+    if (@available(iOS 13.0, *)) {
+        window = [SceneDelegate sharedInstance].window;
+    }else{
+        window = UIApplication.sharedApplication.delegate.window;
+    }return window;
+}
 /**
-是否是iPhone刘海屏系列：   X系列（X/XS/XR/XS Max)、11系列（11、pro、pro max）
-@return YES 是该系列 NO 不是该系列
-*/
+ 是否是iPhone刘海屏系列：   X系列（X/XS/XR/XS Max)、11系列（11、pro、pro max）
+ @return YES 是该系列 NO 不是该系列
+ */
 static inline BOOL isiPhoneX_series() {
     BOOL iPhoneXSeries = NO;
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
@@ -45,13 +54,13 @@ static inline BOOL isiPhoneX_series() {
     }
 
     if (@available(iOS 11.0, *)) {
-        UIWindow *mainWindow = nil;
-        mainWindow = [SceneDelegate sharedInstance].window;
+        UIWindow *mainWindow = getMainWindow();
         if (mainWindow.safeAreaInsets.bottom > 0.0) {
             iPhoneXSeries = YES;
         }
     }return iPhoneXSeries;
 }
+
 //判断是否登录,没有登录进行跳转
 #define kGuardLogin if ([IsLogin isLogin]) { \
 UIViewController *rootViewController = kKeyWindow.rootViewController; \
@@ -113,23 +122,40 @@ alpha:1] \
 #pragma mark ======================================== 尺寸相关 ========================================
 #define isiPhoneX_seriesBottom 30
 #define isiPhoneX_seriesTop 34
-#define kUIWindow    [[[UIApplication sharedApplication] delegate] window] //获得window
 
-#define MianScreen           [[UIScreen mainScreen] bounds].size
-#define Device_Width    [[UIScreen mainScreen] bounds].size.width//获取屏幕宽高
-#define Device_Height       [[UIScreen mainScreen] bounds].size.height
+#define MianScreen          UIScreen.mainScreen.bounds.size
+#define Device_Width        MianScreen.width//获取屏幕宽高
+#define Device_Height       MianScreen.height
+#define MAINSCREEN_WIDTH    Device_Width
+#define MAINSCREEN_HEIGHT   Device_Height
 
 #define SCREEN_MAX_LENGTH   (MAX(Device_Width, Device_Height))
 #define SCREEN_MIN_LENGTH   (MIN(Device_Width, Device_Height))
-///自读屏宽高
-#define MAINSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
-#define MAINSCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+
 ///系统控件高度
-#define sceneDelegate UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate//获取系统SceneDelegate
-#define rectOfStatusbar UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height//获取状态栏的高
+static inline id getSceneDelegate(){
+    id sceneDelegate = nil;
+    
+    if (@available(iOS 13.0, *)) {
+        sceneDelegate = UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+    }return sceneDelegate;
+}
+
+static inline CGFloat rectOfStatusbar(){
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+    CGFloat RectOfStatusbar = 0.0f;
+    if (@available(iOS 13.0, *)) {
+        RectOfStatusbar = UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
+    }else{
+        RectOfStatusbar = UIApplication.sharedApplication.statusBarFrame.size.height;
+    }return RectOfStatusbar;
+}
+
 #define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高
+
 ///缩放比例
-#define SCALING_RATIO(UISize) (UISize)*([[UIScreen mainScreen] bounds].size.width)/375.0f//全局比例尺
+#define SCALING_RATIO(UISize) (UISize) * Device_Width / 375.0f//全局比例尺
 //#define KDeviceScale ((Device_Width/375)>1.3?1.3:(Device_Width/375))
 #define KDeviceScale [[MKTools shared] deviceScaleMetod]
 #define KDeviceHeightScale Device_Height / 812    //獲取屏幕高度比例
@@ -146,7 +172,6 @@ alpha:1] \
 #define kContentHeight           (Device_Height - kNavigationheightForIOS7 - kTabBarHeight)
 #define kTabBarHeight             (isiPhoneX ? 83 : 49)
 #define KNavigationItemSpace     -15
-#define KTOPBAR_HEIGHT       ([[UIApplication sharedApplication] statusBarFrame].size.height + [UINavigationController new].navigationBar.frame.size.height)
 #define KBottomHeight (isiPhoneX ? 34 :0)
 #define Height_For_Section_Header 10.0   //Cell Header分隔
 #define Height_For_Section_Footer 0.0001 //Cell Footer分隔
@@ -276,8 +301,6 @@ ITTDPRINT(xx, ##__VA_ARGS__);\
 \
 ((void)0)
 #endif
-
-#define kAPPDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 
 #pragma mark ======================================== 重写NSLog,Debug模式下打印日志和当前行数 ========================================
 #if DEBUG

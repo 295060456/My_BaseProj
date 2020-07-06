@@ -149,7 +149,7 @@
         //整体移动
         _headerView.mj_h = KHeaderHeight;
         //headerView 最小 y 值
-        CGFloat min = KHeaderHeight - rectOfNavigationbar - rectOfStatusbar;
+        CGFloat min = KHeaderHeight - rectOfNavigationbar - rectOfStatusbar();
         _headerView.mj_y = -MIN(min,offset);
         
         //设置透明度 offset / min == 1 不可见

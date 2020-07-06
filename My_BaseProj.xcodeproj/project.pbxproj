@@ -156,6 +156,11 @@
 		C55887AC2498E46200C8A3E7 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55887AA2498E46200C8A3E7 /* AddressPickerView.m */; };
 		C573892E24AF7AEF00749969 /* CALayer+FSUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C573892A24AF7AEF00749969 /* CALayer+FSUI.m */; };
 		C573892F24AF7AEF00749969 /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C573892B24AF7AEF00749969 /* FSCustomButton.m */; };
+		C5BEE17124B3044E00A49BBD /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BEE16F24B3044E00A49BBD /* UIButton+Block.m */; };
+		C5BEE17924B304EF00A49BBD /* HWTextCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BEE17424B304EE00A49BBD /* HWTextCodeView.m */; };
+		C5BEE17A24B304EF00A49BBD /* HWTFCodeBView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BEE17624B304EF00A49BBD /* HWTFCodeBView.m */; };
+		C5BEE17B24B304EF00A49BBD /* HWTFCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BEE17724B304EF00A49BBD /* HWTFCodeView.m */; };
+		C5BEE17E24B3051500A49BBD /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BEE17D24B3051500A49BBD /* LMHWaterFallLayout.m */; };
 		C5CF107A249F54640084E7A7 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1078249F54640084E7A7 /* libstdc++.6.tbd */; };
 		C5CF107B249F54640084E7A7 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF1079249F54640084E7A7 /* libstdc++.6.0.9.tbd */; };
 		C5CF1081249F54770084E7A7 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CF107C249F54760084E7A7 /* libstdc++.6.dylib */; };
@@ -531,6 +536,16 @@
 		C573892B24AF7AEF00749969 /* FSCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomButton.m; sourceTree = "<group>"; };
 		C573892C24AF7AEF00749969 /* FSCommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommenDefine.h; sourceTree = "<group>"; };
 		C573892D24AF7AEF00749969 /* CALayer+FSUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSUI.h"; sourceTree = "<group>"; };
+		C5BEE16F24B3044E00A49BBD /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
+		C5BEE17024B3044E00A49BBD /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
+		C5BEE17324B304EE00A49BBD /* HWTFCodeBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTFCodeBView.h; sourceTree = "<group>"; };
+		C5BEE17424B304EE00A49BBD /* HWTextCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTextCodeView.m; sourceTree = "<group>"; };
+		C5BEE17524B304EE00A49BBD /* HWTextCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTextCodeView.h; sourceTree = "<group>"; };
+		C5BEE17624B304EF00A49BBD /* HWTFCodeBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTFCodeBView.m; sourceTree = "<group>"; };
+		C5BEE17724B304EF00A49BBD /* HWTFCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTFCodeView.m; sourceTree = "<group>"; };
+		C5BEE17824B304EF00A49BBD /* HWTFCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTFCodeView.h; sourceTree = "<group>"; };
+		C5BEE17C24B3051500A49BBD /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
+		C5BEE17D24B3051500A49BBD /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
 		C5C97348249A0AE100AB4429 /* Flutter_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Flutter_Config; sourceTree = "<group>"; };
 		C5C97349249A0AE100AB4429 /* Cocoapods_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cocoapods_Config; sourceTree = "<group>"; };
 		C5C9734A249A0AE100AB4429 /* Weex_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Weex_Config; sourceTree = "<group>"; };
@@ -790,6 +805,8 @@
 		8BA94BF8235AE6C700B00786 /* UICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				C5BEE17C24B3051500A49BBD /* LMHWaterFallLayout.h */,
+				C5BEE17D24B3051500A49BBD /* LMHWaterFallLayout.m */,
 				8BA94BFA235AE6C700B00786 /* HQCollectionViewFlowLayout.h */,
 				8BA94BF9235AE6C700B00786 /* HQCollectionViewFlowLayout.m */,
 			);
@@ -1087,6 +1104,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5BEE17224B304E500A49BBD /* 验证码组件 */,
 				C573892824AF7AE300749969 /* 高度自定义的按钮 */,
 				C516467624AE13570090A274 /* 🌍ZFMRACNetworkTool */,
 				C5F0CB6624A87AE9001B01D8 /* 扫一扫组件 */,
@@ -1329,6 +1347,7 @@
 		C3F5703A22A4FA13009E9691 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C5BEE16E24B3044100A49BBD /* UIButton */,
 				C5E96EFD24ACD41B00CFD927 /* UIColor */,
 				C5E96EFC24ACD3F900CFD927 /* UIImageView */,
 				C5E96EFB24ACD3ED00CFD927 /* UIImage */,
@@ -1659,6 +1678,28 @@
 			children = (
 			);
 			path = "🍌Manual_Add_ThirdFont";
+			sourceTree = "<group>";
+		};
+		C5BEE16E24B3044100A49BBD /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				C5BEE17024B3044E00A49BBD /* UIButton+Block.h */,
+				C5BEE16F24B3044E00A49BBD /* UIButton+Block.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		C5BEE17224B304E500A49BBD /* 验证码组件 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BEE17524B304EE00A49BBD /* HWTextCodeView.h */,
+				C5BEE17424B304EE00A49BBD /* HWTextCodeView.m */,
+				C5BEE17324B304EE00A49BBD /* HWTFCodeBView.h */,
+				C5BEE17624B304EF00A49BBD /* HWTFCodeBView.m */,
+				C5BEE17824B304EF00A49BBD /* HWTFCodeView.h */,
+				C5BEE17724B304EF00A49BBD /* HWTFCodeView.m */,
+			);
+			path = "验证码组件";
 			sourceTree = "<group>";
 		};
 		C5C97347249A0AB600AB4429 /* Computer_Config */ = {
@@ -2096,9 +2137,11 @@
 				8BA94BFB235AE6C800B00786 /* HQCollectionViewFlowLayout.m in Sources */,
 				8B128BF22345A5750039B590 /* TBCityIconInfo.m in Sources */,
 				C3F570E522A60CEF009E9691 /* ViewController@2.m in Sources */,
+				C5BEE17E24B3051500A49BBD /* LMHWaterFallLayout.m in Sources */,
 				C3F570EB22A60D1C009E9691 /* ViewController@3.m in Sources */,
 				CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */,
 				C3F5708E22A5055C009E9691 /* NSObject+Extras.m in Sources */,
+				C5BEE17124B3044E00A49BBD /* UIButton+Block.m in Sources */,
 				C3F570B622A534E7009E9691 /* CollectionAccountEditor.m in Sources */,
 				C516467F24AE138D0090A274 /* FMHttpRequest.m in Sources */,
 				C3F56FF822A4F7CE009E9691 /* UIColor+LXExpand.m in Sources */,
@@ -2129,6 +2172,7 @@
 				8B55869E233C899B00132CF6 /* ViewForFooter.m in Sources */,
 				C3F570A322A5128A009E9691 /* IsLogin.m in Sources */,
 				C516468224AE139B0090A274 /* FMHttpResonse.m in Sources */,
+				C5BEE17B24B304EF00A49BBD /* HWTFCodeView.m in Sources */,
 				8B90B38A2379184B0023E394 /* HistoryDataListTBVCell.m in Sources */,
 				C503248C24A06166007B9985 /* BWShareView.m in Sources */,
 				C573892F24AF7AEF00749969 /* FSCustomButton.m in Sources */,
@@ -2164,6 +2208,7 @@
 				8BCB98F623715DA20063E01E /* NSData+Base64.m in Sources */,
 				8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */,
 				C3229A7A22B0D39F0044BB5E /* XDTextBtnView.m in Sources */,
+				C5BEE17924B304EF00A49BBD /* HWTextCodeView.m in Sources */,
 				C3F5700C22A4F8B1009E9691 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				8B163EA823A333B300F0ECEB /* TimeManager.m in Sources */,
 				8BD6DC4B234B23B0003F1EE0 /* CALayer+Transition.m in Sources */,
@@ -2201,6 +2246,7 @@
 				C5F0CB7724A87AE9001B01D8 /* ScanResultViewController.m in Sources */,
 				8B8A49A022F2C42B00AFDC59 /* HQTextField.m in Sources */,
 				CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */,
+				C5BEE17A24B304EF00A49BBD /* HWTFCodeBView.m in Sources */,
 				C3F5700022A4F7CE009E9691 /* BadgeButton.m in Sources */,
 				8BCB98EF23715DA20063E01E /* RSAUtil.m in Sources */,
 				C3229A8622B21D110044BB5E /* UIView+SDExtension.m in Sources */,

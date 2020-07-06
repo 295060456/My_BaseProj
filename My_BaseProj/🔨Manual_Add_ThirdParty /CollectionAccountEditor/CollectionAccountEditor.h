@@ -12,20 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, MoveDirection){
     MoveDirection_none = 0,
-    
     MoveDirection_horizont,//水平方向滑动
-    
     MoveDirection_vertical//垂直方向滑动
-
 };
 
 typedef NS_ENUM(NSUInteger, HaveCovering){
     HaveCovering_none = 0,
-    
     HaveCovering_yes,//有遮罩物
-    
     HaveCovering_no//无遮罩物
-    
 };
 
 @interface CollectionAccountEditor : NSObject
@@ -36,13 +30,10 @@ typedef NS_ENUM(NSUInteger, HaveCovering){
                     finishBlock:(NoResultBlock)finishBlock;
 
 -(void)launch;
-
 -(void)close;
-
 -(void)actionBlock:(DataBlock)block;
 
 @end
-
 
 @interface ContentView : UIView
 

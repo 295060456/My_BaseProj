@@ -55,6 +55,10 @@ PODS:
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
   - EScrollPageView (1.0.0)
+  - FBAllocationTracker (0.1.5)
+  - FBMemoryProfiler (0.1.3):
+    - FBAllocationTracker (~> 0.1)
+    - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
   - FLEX (3.0.0)
@@ -189,9 +193,7 @@ PODS:
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
   - ZBarSDK (1.3.1)
-  - ZFPlayer (3.3.3):
-    - ZFPlayer/Core (= 3.3.3)
-  - ZFPlayer/Core (3.3.3)
+  - ZFJTreeViewKit (1.0.1)
   - ZYSuspensionView/SuspensionView (0.2.4)
 
 DEPENDENCIES:
@@ -206,6 +208,7 @@ DEPENDENCIES:
   - DTCoreText
   - EAIntroView
   - EScrollPageView
+  - FBMemoryProfiler
   - FDFullscreenPopGesture
   - FLEX
   - FMDB
@@ -252,7 +255,7 @@ DEPENDENCIES:
   - WebViewJavascriptBridge
   - WXSTransition
   - YYKit
-  - ZFPlayer
+  - ZFJTreeViewKit
   - ZYSuspensionView/SuspensionView
 
 SPEC REPOS:
@@ -270,6 +273,8 @@ SPEC REPOS:
     - EAIntroView
     - EARestrictedScrollView
     - EScrollPageView
+    - FBAllocationTracker
+    - FBMemoryProfiler
     - FBRetainCycleDetector
     - FDFullscreenPopGesture
     - FLEX
@@ -320,7 +325,7 @@ SPEC REPOS:
     - WXSTransition
     - YYKit
     - ZBarSDK
-    - ZFPlayer
+    - ZFJTreeViewKit
     - ZYSuspensionView
 
 SPEC CHECKSUMS:
@@ -337,6 +342,8 @@ SPEC CHECKSUMS:
   EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   EScrollPageView: 6fd67fd563fa0a806f58d9c0c14ebceef9788164
+  FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
+  FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: d66c759bce0f6ebbbf472c742380874d846f2883
@@ -387,9 +394,9 @@ SPEC CHECKSUMS:
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
-  ZFPlayer: 1310252c253b9958e4fcd411e706b99c31834eaf
+  ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 4f215a64517f7db94039ff0df5a9b05fb5dbb4c9
+PODFILE CHECKSUM: 783a4b62664852470de522556ae6fd4ef3c6dc4f
 
 COCOAPODS: 1.9.3

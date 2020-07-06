@@ -10,9 +10,6 @@
 #import "SearchVC+VM.h"
 #import "SearchBar.h"
 
-#define rectOfStatusbar [[UIApplication sharedApplication] statusBarFrame].size.height//获取状态栏的高
-#define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高
-
 @interface SearchTBVCell ()
 
 @end
@@ -142,7 +139,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         _searchBar.textField.keyboardType = UIKeyboardTypeDecimalPad;
         [self.view addSubview:_searchBar];
         [_searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view).offset(rectOfStatusbar);
+            make.top.equalTo(self.view).offset(rectOfStatusbar());
             make.left.right.equalTo(self.view);
             make.height.mas_equalTo(SCALING_RATIO(50));
         }];

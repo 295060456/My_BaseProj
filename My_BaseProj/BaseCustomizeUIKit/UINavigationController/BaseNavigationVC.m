@@ -20,7 +20,14 @@
 }
 
 +(UINavigationController *)rootNavigationController{
-    CustomSYSUITabBarController *tabC = (CustomSYSUITabBarController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored"-Wdeprecated-declarations"
+    CustomSYSUITabBarController *tabC = nil;
+    if(@available(iOS 13.0, *)){
+        tabC = (CustomSYSUITabBarController *)UIApplication.sharedApplication.windows.firstObject.rootViewController;
+    }else{
+        tabC = (CustomSYSUITabBarController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
+    }
     UINavigationController *navigationController = (UINavigationController *)tabC.lzb_selectedViewController;
     return navigationController;
 }
@@ -44,8 +51,8 @@
  */
 -(void)configBackgroundImage{
     if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-        [self.navigationBar setBarTintColor:[UIColor colorWithHexString:@"#00A7FF"]];
-        self.navigationBar.tintColor = kWhiteColor;
+        [self.navigationBar setBarTintColor:kWhiteColor];//一般的业务是全局设置，因为一个App里面只有一个主题
+        self.navigationBar.tintColor = kBlackColor;//系统的组件着色（返回按钮——箭头图标 和 上面的字）
     }
 }
 /**
@@ -56,7 +63,7 @@
     NSShadow *shadow = NSShadow.new;
     shadow.shadowColor = COLOR_RGB(0, 0, 0, 0.8);
     shadow.shadowOffset = CGSizeZero;
-    UIColor *textColor = kWhiteColor;
+    UIColor *textColor = kBlackColor;
     [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                 textColor,NSForegroundColorAttributeName,
                                                 shadow,NSShadowAttributeName,

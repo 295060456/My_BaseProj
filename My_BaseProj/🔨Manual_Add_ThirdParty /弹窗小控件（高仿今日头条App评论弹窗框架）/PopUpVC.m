@@ -84,9 +84,10 @@
 }
 
 -(void)viewDidLoad{
-    self.gk_navigationBar.hidden = YES;
+    [super viewDidLoad];
+    self.gk_navigationBar.hidden = NO;
     self.view.backgroundColor = kRedColor;
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{

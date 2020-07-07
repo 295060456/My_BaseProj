@@ -577,6 +577,7 @@
 		C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYScanVC.m; sourceTree = "<group>"; };
 		C5FE998224B37115007B9878 /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
 		C5FE998324B37115007B9878 /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
+		C5FE999024B4A705007B9878 /* Runtime 获取.m文件的属性（指针） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Runtime 获取.m文件的属性（指针）"; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -834,6 +835,7 @@
 		8BB8107B22F13F2300F2FD8E /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE999024B4A705007B9878 /* Runtime 获取.m文件的属性（指针） */,
 				C503248324A05B0B007B9985 /* 本地推送 */,
 				8BB8107C22F13F3700F2FD8E /* 获取当前视图控制器.png */,
 				8BB8107E22F13F3700F2FD8E /* 葵花宝典.m */,

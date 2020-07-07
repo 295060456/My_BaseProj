@@ -1,0 +1,7 @@
+
+-(void)test{
+    Ivar ivar = class_getInstanceVariable([ZFJTreeView class], "_tableView");//必须是下划线接属性
+    UITableView *tableView = object_getIvar(self.treeView, ivar);
+    tableView.mj_header = self.tableViewHeader;
+    tableView.mj_footer = self.tableViewFooter;
+}

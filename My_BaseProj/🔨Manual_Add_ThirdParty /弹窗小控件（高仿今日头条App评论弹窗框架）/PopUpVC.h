@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_END
     BOOL isOpen;
     CGFloat liftingHeight;
 }
-@property(nonatomic,strong)PopUpVC *popUpVC;
+@property(nonatomic,weak)PopUpVC *popUpVC;
 
 -(instancetype)init{
     if (self = [super init]) {
@@ -57,64 +57,61 @@ NS_ASSUME_NONNULL_END
     }
 }
 
--(void)willOpen{
-    @weakify(self)
-    [self.popUpVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(self->liftingHeight);
-        make.bottom.mas_equalTo(self->liftingHeight);
-    }];
-    [self.view layoutIfNeeded];
-    
-    [UIView animateWithDuration:0.3f
-                     animations:^{
-        @strongify(self)
-        [self.popUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(0);
-        }];
-        // 注意需要再执行一次更新约束
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        self->isOpen = !self->isOpen;
-    }];
-}
+ -(void)willOpen{
+     @weakify(self)
+     [self.commentPopUpVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.left.right.equalTo(self.view);
+         make.height.mas_equalTo(self->liftingHeight);
+         make.bottom.mas_equalTo(self->liftingHeight);
+     }];
+     [self.view layoutIfNeeded];
+     
+     [UIView animateWithDuration:0.3f
+                      animations:^{
+         @strongify(self)
+         [self.commentPopUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
+             make.bottom.mas_equalTo(0);
+         }];
+         // 注意需要再执行一次更新约束
+         [self.view layoutIfNeeded];
+     } completion:^(BOOL finished) {
+         @strongify(self)
+         self->isOpen = !self->isOpen;
+     }];
+ }
 
--(void)willClose_vertical{
-    @weakify(self)
-    [UIView animateWithDuration:0.3f
-                     animations:^{
-        @strongify(self)
-        [self.popUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(self->liftingHeight);
-        }];
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        @strongify(self)
-        [self.popUpVC.view removeFromSuperview];
-        self.popUpVC.view = nil;
-        self.popUpVC = nil;//不写这一句，反复暴力点击的时候会崩
-        self->isOpen = !self->isOpen;
-    }];
-}
+ -(void)willClose_vertical{
+     @weakify(self)
+     [UIView animateWithDuration:0.3f
+                      animations:^{
+         @strongify(self)
+         [self.commentPopUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
+             make.bottom.mas_equalTo(self->liftingHeight);
+         }];
+         [self.view layoutIfNeeded];
+     } completion:^(BOOL finished) {
+ //        @strongify(self)
+         weak_self.commentPopUpVC = nil;//不写这一句，反复暴力点击的时候会崩
+         self->isOpen = !self->isOpen;
+     }];
+ }
 
--(void)willClose_horizont{
-    @weakify(self)
-    [UIView animateWithDuration:0.3f
-                     animations:^{
-        @strongify(self)
-        [self.popUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.bottom.mas_equalTo(self->liftingHeight);
-            make.left.mas_equalTo(SCREEN_WIDTH);
-        }];
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        @strongify(self)
-        [self.popUpVC.view removeFromSuperview];
-        self.popUpVC.view = nil;
-        self.popUpVC = nil;//不写这一句，反复暴力点击的时候会崩
-        self->isOpen = !self->isOpen;
-    }];
-}
+ -(void)willClose_horizont{
+     @weakify(self)
+     [UIView animateWithDuration:0.3f
+                      animations:^{
+         @strongify(self)
+         [self.commentPopUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
+ //            make.bottom.mas_equalTo(self->liftingHeight);
+             make.left.mas_equalTo(SCREEN_WIDTH);
+         }];
+         [self.view layoutIfNeeded];
+     } completion:^(BOOL finished) {
+         @strongify(self)
+         weak_self.commentPopUpVC = nil;//不写这一句，反复暴力点击的时候会崩
+         self->isOpen = !self->isOpen;
+     }];
+ }
 
 -(PopUpVC *)popUpVC{
     if (!_popUpVC) {

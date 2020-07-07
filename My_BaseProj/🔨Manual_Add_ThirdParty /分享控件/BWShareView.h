@@ -16,11 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 有/无标题的单层分享
 */
-- (instancetype)initWithFrame:(CGRect)frame shareTitle:(NSString *)shareTitle shareArray:(NSArray *)shareArray;
+- (instancetype)initWithFrame:(CGRect)frame
+                   shareTitle:(NSString *)shareTitle
+                   shareArray:(NSArray *)shareArray;
 /**
  有/无标题的双层分享
  */
-- (instancetype)initWithFrame:(CGRect)frame shareTitle:(NSString *)shareTitle firstArray:(NSArray *)firstArray secondArray:(NSArray *)secondArray;
+- (instancetype)initWithFrame:(CGRect)frame
+                   shareTitle:(NSString *)shareTitle
+                   firstArray:(NSArray *)firstArray
+                  secondArray:(NSArray *)secondArray;
 /**
  显示
  */

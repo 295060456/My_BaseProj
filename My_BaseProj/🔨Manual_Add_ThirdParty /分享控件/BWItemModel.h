@@ -12,10 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BWItemModel : NSObject
 
-@property (nonatomic, strong) NSString *img;
-@property (nonatomic, strong) NSString *text;
+@property(nonatomic,strong)NSString *img;
+@property(nonatomic,strong)NSString *text;
 
-- (instancetype)initWithImg:(NSString *)img text:(NSString *)text;
+- (instancetype)initWithImg:(NSString *)img
+                       text:(NSString *)text;
 
 
 @end

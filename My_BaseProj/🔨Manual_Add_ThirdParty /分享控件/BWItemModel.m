@@ -10,14 +10,12 @@
 
 @implementation BWItemModel
 
-- (instancetype)initWithImg:(NSString *)img text:(NSString *)text
-{
-    self = [super init];
-    if (self) {
+- (instancetype)initWithImg:(NSString *)img
+                       text:(NSString *)text{
+    if (self = [super init]) {
         self.img = img;
         self.text = text;
-    }
-    return self;
+    }return self;
 }
 
 

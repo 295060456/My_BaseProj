@@ -177,6 +177,9 @@
 		C5F0CB7B24A87AE9001B01D8 /* App图标更换 in Resources */ = {isa = PBXBuildFile; fileRef = C5F0CB7324A87AE9001B01D8 /* App图标更换 */; };
 		C5F0CB7E24A87B09001B01D8 /* DIYScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CB7D24A87B09001B01D8 /* DIYScanVC.m */; };
 		C5FE998424B37115007B9878 /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE998324B37115007B9878 /* PopUpVC.m */; };
+		C5FE999324B4AA59007B9878 /* CommentPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE999224B4AA59007B9878 /* CommentPopUpVC.m */; };
+		C5FE99A124B4AAD5007B9878 /* MyNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE99A024B4AAD5007B9878 /* MyNodeModel.m */; };
+		C5FE99A424B4AAE4007B9878 /* MyNodeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE99A324B4AAE4007B9878 /* MyNodeViewCell.m */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -578,6 +581,12 @@
 		C5FE998224B37115007B9878 /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
 		C5FE998324B37115007B9878 /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
 		C5FE999024B4A705007B9878 /* Runtime 获取.m文件的属性（指针） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Runtime 获取.m文件的属性（指针）"; sourceTree = "<group>"; };
+		C5FE999124B4AA59007B9878 /* CommentPopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentPopUpVC.h; sourceTree = "<group>"; };
+		C5FE999224B4AA59007B9878 /* CommentPopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpVC.m; sourceTree = "<group>"; };
+		C5FE999F24B4AAD5007B9878 /* MyNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNodeModel.h; sourceTree = "<group>"; };
+		C5FE99A024B4AAD5007B9878 /* MyNodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeModel.m; sourceTree = "<group>"; };
+		C5FE99A224B4AAE4007B9878 /* MyNodeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNodeViewCell.h; sourceTree = "<group>"; };
+		C5FE99A324B4AAE4007B9878 /* MyNodeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeViewCell.m; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -1105,6 +1114,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE999424B4AA78007B9878 /* 评论页 */,
 				C5FE998124B37115007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5BEE17224B304E500A49BBD /* 验证码组件 */,
 				C573892824AF7AE300749969 /* 高度自定义的按钮 */,
@@ -1818,6 +1828,35 @@
 			path = "弹窗小控件（高仿今日头条App评论弹窗框架）";
 			sourceTree = "<group>";
 		};
+		C5FE999424B4AA78007B9878 /* 评论页 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE999E24B4AACE007B9878 /* 自定义Model */,
+				C5FE999D24B4AAC4007B9878 /* 自定义Cell */,
+				C5FE999124B4AA59007B9878 /* CommentPopUpVC.h */,
+				C5FE999224B4AA59007B9878 /* CommentPopUpVC.m */,
+			);
+			path = "评论页";
+			sourceTree = "<group>";
+		};
+		C5FE999D24B4AAC4007B9878 /* 自定义Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE99A224B4AAE4007B9878 /* MyNodeViewCell.h */,
+				C5FE99A324B4AAE4007B9878 /* MyNodeViewCell.m */,
+			);
+			path = "自定义Cell";
+			sourceTree = "<group>";
+		};
+		C5FE999E24B4AACE007B9878 /* 自定义Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE999F24B4AAD5007B9878 /* MyNodeModel.h */,
+				C5FE99A024B4AAD5007B9878 /* MyNodeModel.m */,
+			);
+			path = "自定义Model";
+			sourceTree = "<group>";
+		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -2150,6 +2189,7 @@
 				C50324AE24A0A7B5007B9985 /* SceneDelegate.m in Sources */,
 				8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */,
 				CE1319A522CDA6F6002BA1A7 /* XLChannelItem.m in Sources */,
+				C5FE99A424B4AAE4007B9878 /* MyNodeViewCell.m in Sources */,
 				8B86E03923856093004D4C0A /* PersonalInfo.m in Sources */,
 				C5F0CB7A24A87AE9001B01D8 /* FSAppIconManager.m in Sources */,
 				C5F0CB7824A87AE9001B01D8 /* Global.m in Sources */,
@@ -2204,6 +2244,7 @@
 				C3F56F7B22A4C732009E9691 /* main.m in Sources */,
 				8B7A54FE236D92FF006B12F8 /* WBPopMenuSingleton.m in Sources */,
 				C5E96F0324ACD43900CFD927 /* UIImage+YBGIF.m in Sources */,
+				C5FE99A124B4AAD5007B9878 /* MyNodeModel.m in Sources */,
 				C3F570E822A60D0A009E9691 /* ViewController@1.m in Sources */,
 				8BCB98F623715DA20063E01E /* NSData+Base64.m in Sources */,
 				8BB217CE2397BA0C00BD1B5F /* SearchView.m in Sources */,
@@ -2253,6 +2294,7 @@
 				C516465E24ADC4E00090A274 /* LBXScanDIYView.m in Sources */,
 				8B7A54FF236D92FF006B12F8 /* WBPopMenuView.m in Sources */,
 				CE1319C022CDB7DB002BA1A7 /* LGiOSBtn.m in Sources */,
+				C5FE999324B4AA59007B9878 /* CommentPopUpVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

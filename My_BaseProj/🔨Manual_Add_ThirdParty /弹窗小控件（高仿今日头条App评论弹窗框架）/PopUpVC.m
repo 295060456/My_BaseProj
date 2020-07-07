@@ -85,15 +85,13 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.gk_navigationBar.hidden = NO;
-    self.view.backgroundColor = kRedColor;
-    self.navigationController.navigationBar.hidden = NO;
+    NSLog(@"");
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = YES;
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
     NSLog(@"");
 }
 
@@ -146,7 +144,7 @@
           withEvent:(UIEvent *)event{
     if (self.block) {
         self.block(@(self.moveDirection));
-    } 
+    }
 }
 
 @end

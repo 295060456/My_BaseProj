@@ -68,7 +68,6 @@
 #import "XDTextBtnView.h"//自适应文字按钮
 #import "TWPageViewController.h"//https://www.jianshu.com/p/25b1a3888bb8
 #import "WebViewJavascriptBridge.h"
-#import "ZYSuspensionView.h"
 #import "BaseNavigationVC.h"
 #import "CustomSYSUITabBarController.h"
 #import "XLChannelControl.h"//https://github.com/mengxianliang/XLChannelControl

@@ -34,6 +34,10 @@ PODS:
     - CocoaLumberjack/Core (= 3.6.0)
   - CocoaLumberjack/Core (3.6.0)
   - DDProgressView (0.1)
+  - Debugo (0.2.9):
+    - Debugo/Core (= 0.2.9)
+  - Debugo/Core (0.2.9):
+    - FMDB (>= 2.7.2)
   - DTCoreText (1.6.21):
     - DTCoreText/Core (= 1.6.21)
     - DTFoundation/Core (~> 1.7.5)
@@ -194,7 +198,6 @@ PODS:
   - YYKit/no-arc (1.0.9)
   - ZBarSDK (1.3.1)
   - ZFJTreeViewKit (1.0.1)
-  - ZYSuspensionView/SuspensionView (0.2.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -205,6 +208,7 @@ DEPENDENCIES:
   - BRPickerView
   - CocoaLumberjack
   - DDProgressView
+  - Debugo
   - DTCoreText
   - EAIntroView
   - EScrollPageView
@@ -256,7 +260,6 @@ DEPENDENCIES:
   - WXSTransition
   - YYKit
   - ZFJTreeViewKit
-  - ZYSuspensionView/SuspensionView
 
 SPEC REPOS:
   trunk:
@@ -268,6 +271,7 @@ SPEC REPOS:
     - BRPickerView
     - CocoaLumberjack
     - DDProgressView
+    - Debugo
     - DTCoreText
     - DTFoundation
     - EAIntroView
@@ -326,7 +330,6 @@ SPEC REPOS:
     - YYKit
     - ZBarSDK
     - ZFJTreeViewKit
-    - ZYSuspensionView
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -337,6 +340,7 @@ SPEC CHECKSUMS:
   BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
+  Debugo: 59d56859957bae9afdaf29c7d253c4ee6f92fb96
   DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
   DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
   EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
@@ -395,8 +399,7 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
-  ZYSuspensionView: 40731a4c873d67f5c4aa4b2c3172aeae9a776440
 
-PODFILE CHECKSUM: 783a4b62664852470de522556ae6fd4ef3c6dc4f
+PODFILE CHECKSUM: 33b27c24ac2f99d9a33338e5c0105d67402e3ba1
 
 COCOAPODS: 1.9.3

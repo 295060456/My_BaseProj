@@ -15,8 +15,8 @@ target 'My_BaseProj' do
   pod 'ReactiveObjC'  # https://github.com/ReactiveCocoa/ReactiveObjC 重量级框架
   pod 'EAIntroView' # https://github.com/ealeksandrov/EAIntroView 启动图
   pod 'Texture' #Facebook出品的一款界面框架
-  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
-#  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
+#  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
+  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
   #pod 'MyLayout'

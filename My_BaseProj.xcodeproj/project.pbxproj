@@ -235,6 +235,7 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
 		C5FE9A3424B5EF2B007B9878 /* My_BaseProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My_BaseProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FE9A4124B5EF2B007B9878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5FE9A4424B5EF2B007B9878 /* My_BaseProj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_BaseProj.xcdatamodel; sourceTree = "<group>"; };
@@ -708,13 +709,13 @@
 				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
 				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
 				C5FE9A4B24B5EF2C007B9878 /* Info.plist */,
-				C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */,
 				C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */,
 				C5FE9ABB24B5F182007B9878 /* 🌹Macro */,
 				C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */,
 				C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */,
 				C5FE9AB824B5F16A007B9878 /* 🍌Manual_Add_ThirdFont */,
 				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
+				C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */,
 			);
 			path = My_BaseProj;
 			sourceTree = "<group>";
@@ -783,6 +784,7 @@
 				C5FE9A8924B5F0C6007B9878 /* React-native_Config */,
 				C5FE9A8C24B5F0C6007B9878 /* Weex_Config */,
 				C5FE9A8A24B5F0C6007B9878 /* MacPorts_Config */,
+				C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */,
 			);
 			path = Computer_Config;
 			sourceTree = "<group>";

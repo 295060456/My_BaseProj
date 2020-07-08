@@ -47,7 +47,8 @@
 #import "ENestScrollPageView.h"
 //#import "ZFPlayer.h"
 #import "JXCategoryView.h"
-#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
+//#import <GKNavigationBarViewController/GKNavigationBarViewController.h>
+#import "GKNavigationBar.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import <HBDNavigationBar/HBDNavigationController.h>
 #import "TZImagePickerController.h"

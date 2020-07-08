@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseVC : GKNavigationBarViewController
+@interface BaseVC : UIViewController
 <
 UIGestureRecognizerDelegate
 ,UINavigationControllerDelegate,

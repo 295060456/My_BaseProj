@@ -69,7 +69,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GKNavigationBarViewController (2.5.2)
+  - GKNavigationBar (1.0.8)
   - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
   - IQKeyboardManager (6.5.5)
@@ -216,7 +216,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - FLEX
   - FMDB
-  - GKNavigationBarViewController
+  - GKNavigationBar
   - HBDNavigationBar
   - HCSStarRatingView
   - IQKeyboardManager
@@ -283,7 +283,7 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - FLEX
     - FMDB
-    - GKNavigationBarViewController
+    - GKNavigationBar
     - HBDNavigationBar
     - HCSStarRatingView
     - IQKeyboardManager
@@ -352,7 +352,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GKNavigationBarViewController: 4e84e75245b6e819d8375eb9106eb05cbfa59ca1
+  GKNavigationBar: b88553e9a973b38724b57ac6d177e210199a3e3e
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
@@ -400,6 +400,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 33b27c24ac2f99d9a33338e5c0105d67402e3ba1
+PODFILE CHECKSUM: bae60fbd3160bf7d0e64d51f8bbbac4944069385
 
 COCOAPODS: 1.9.3

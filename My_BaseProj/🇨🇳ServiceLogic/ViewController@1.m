@@ -67,7 +67,7 @@
 
 -(void)viewDidLoad{
     
-    
+    self.gk_navBackgroundColor = kRedColor;
     LGiOSBtn *button = [[LGiOSBtn alloc] init];
     [button setImage:[UIImage imageNamed:@"图片"] forState:UIControlStateNormal];
     [button setTitle:@"百思" forState:UIControlStateNormal];

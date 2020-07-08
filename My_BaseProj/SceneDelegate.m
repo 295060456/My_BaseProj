@@ -21,13 +21,13 @@ API_AVAILABLE(ios(13.0))
 @implementation SceneDelegate
 
 + (instancetype)sharedInstance {
-    static SceneDelegate *_instace = nil;
+    static SceneDelegate *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (!_instace) {
-            _instace = [[super allocWithZone:NULL] init];
+        if (!_instance) {
+            _instance = [[super allocWithZone:NULL] init];
         }
-    });return _instace;
+    });return _instance;
 }
 
 + (id)allocWithZone:(struct _NSZone *)zone{
@@ -83,18 +83,6 @@ willConnectToSession:(UISceneSession *)session
     [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
 
--(UIWindow *)window{
-    if (!_window) {
-        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        if (@available(iOS 13.0, *)) {
-            [_window setWindowScene:self.windowScene];
-        } else {
-            // Fallback on earlier versions
-        }
-        [_window setBackgroundColor:[UIColor whiteColor]];
-    }return _window;
-}
-
 -(CustomSYSUITabBarController *)customSYSUITabBarController{
     if (!_customSYSUITabBarController) {
         _customSYSUITabBarController = CustomSYSUITabBarController.new;
@@ -103,7 +91,8 @@ willConnectToSession:(UISceneSession *)session
 
 -(UINavigationController *)navigationController{
     if (!_navigationController) {
-        _navigationController = [[UINavigationController alloc]initWithRootViewController:self.customSYSUITabBarController];
+        _navigationController = [[UINavigationController alloc] initWithRootViewController:self.customSYSUITabBarController];
+        _navigationController.navigationBar.hidden = YES;
     }return _navigationController;
 }
 

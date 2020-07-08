@@ -61,7 +61,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setUpAllChildViewController];
-//    self.intro.alpha = 1;
+    self.intro.alpha = 1;
 }
 
 - (void)p_setUpAllChildViewController {

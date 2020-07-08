@@ -18,42 +18,42 @@ PODS:
   - AWRichText (1.0.1)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
-  - BRPickerView (2.4.2):
-    - BRPickerView/AddressPickerView (= 2.4.2)
-    - BRPickerView/Base (= 2.4.2)
-    - BRPickerView/DatePickerView (= 2.4.2)
-    - BRPickerView/StringPickerView (= 2.4.2)
-  - BRPickerView/AddressPickerView (2.4.2):
+  - BRPickerView (2.6.3):
+    - BRPickerView/AddressPickerView (= 2.6.3)
+    - BRPickerView/Base (= 2.6.3)
+    - BRPickerView/DatePickerView (= 2.6.3)
+    - BRPickerView/StringPickerView (= 2.6.3)
+  - BRPickerView/AddressPickerView (2.6.3):
     - BRPickerView/Base
-  - BRPickerView/Base (2.4.2)
-  - BRPickerView/DatePickerView (2.4.2):
+  - BRPickerView/Base (2.6.3)
+  - BRPickerView/DatePickerView (2.6.3):
     - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.4.2):
+  - BRPickerView/StringPickerView (2.6.3):
     - BRPickerView/Base
-  - CocoaLumberjack (3.6.0):
-    - CocoaLumberjack/Core (= 3.6.0)
-  - CocoaLumberjack/Core (3.6.0)
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
   - DDProgressView (0.1)
   - Debugo (0.2.9):
     - Debugo/Core (= 0.2.9)
   - Debugo/Core (0.2.9):
     - FMDB (>= 2.7.2)
-  - DTCoreText (1.6.21):
-    - DTCoreText/Core (= 1.6.21)
+  - DTCoreText (1.6.23):
+    - DTCoreText/Core (= 1.6.23)
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTCoreText/Core (1.6.21):
+  - DTCoreText/Core (1.6.23):
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.13)
-  - DTFoundation/DTAnimatedGIF (1.7.13)
-  - DTFoundation/DTHTMLParser (1.7.13):
+  - DTFoundation/Core (1.7.14)
+  - DTFoundation/DTAnimatedGIF (1.7.14)
+  - DTFoundation/DTHTMLParser (1.7.14):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.13):
+  - DTFoundation/UIKit (1.7.14):
     - DTFoundation/Core
   - EAIntroView (2.12.0):
     - EARestrictedScrollView (~> 1.1.0)
@@ -65,15 +65,15 @@ PODS:
     - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
-  - FLEX (3.0.0)
+  - FLEX (4.1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GKNavigationBarViewController (2.3.4)
-  - HBDNavigationBar (1.5.2)
+  - GKNavigationBarViewController (2.5.2)
+  - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
-  - IQKeyboardManager (6.3.0)
-  - JDStatusBarNotification (1.6.0)
+  - IQKeyboardManager (6.5.5)
+  - JDStatusBarNotification (1.6.1)
   - JJException (0.2.7):
     - JJException/All (= 0.2.7)
   - JJException/All (0.2.7):
@@ -93,7 +93,7 @@ PODS:
     - JJException/Swizzle
   - JJException/Swizzle (0.2.7)
   - JJStockView (0.0.7)
-  - JXCategoryView (1.3.14)
+  - JXCategoryView (1.5.5)
   - KSYMediaPlayer_iOS (3.0.3):
     - KSYMediaPlayer_iOS/KSYMediaPlayer_live (= 3.0.3)
   - KSYMediaPlayer_iOS/KSYMediaPlayer_live (3.0.3)
@@ -107,20 +107,20 @@ PODS:
   - LBXScan/Types (2.3)
   - LBXScan/UI (2.3):
     - LBXScan/Types (~> 2.2)
-  - libwebp (1.0.3):
-    - libwebp/demux (= 1.0.3)
-    - libwebp/mux (= 1.0.3)
-    - libwebp/webp (= 1.0.3)
-  - libwebp/demux (1.0.3):
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
     - libwebp/webp
-  - libwebp/mux (1.0.3):
+  - libwebp/mux (1.1.0):
     - libwebp/demux
-  - libwebp/webp (1.0.3)
-  - LYEmptyView (1.2.5)
+  - libwebp/webp (1.1.0)
+  - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - "MBProgressHUD+WJExtension (1.3.1)"
-  - MJExtension (3.0.17)
-  - MJRefresh (3.2.0)
+  - MJExtension (3.2.2)
+  - MJRefresh (3.4.3)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - MSWeakTimer (1.1.0)
@@ -138,7 +138,7 @@ PODS:
     - PINCache/Core
   - PINCache/Core (3.0.1-beta.6):
     - PINOperation (~> 1.1.0)
-  - PINOperation (1.1.1)
+  - PINOperation (1.1.2)
   - PINRemoteImage/Core (3.0.0-beta.13):
     - PINOperation
   - PINRemoteImage/iOS (3.0.0-beta.13):
@@ -150,12 +150,12 @@ PODS:
   - PYSearch (0.9.1)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
-  - Reveal-SDK (23)
+  - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
-  - SDWebImage (4.4.7):
-    - SDWebImage/Core (= 4.4.7)
-  - SDWebImage/Core (4.4.7)
-  - SDWebImage/WebP (4.4.7):
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
+  - SDWebImage/WebP (4.4.8):
     - libwebp (< 2.0, >= 0.5)
     - SDWebImage/Core
   - Shimmer (1.0.2)
@@ -185,7 +185,7 @@ PODS:
   - TTTAttributedLabel (2.0.0)
   - TWPageViewController (0.0.2)
   - TXScrollLabelView (1.3.2)
-  - TZImagePickerController (3.2.3)
+  - TZImagePickerController (3.3.2)
   - UICountingLabel (1.4.1)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
@@ -337,12 +337,12 @@ SPEC CHECKSUMS:
   AWRichText: 7adc57ff591ef9365cfb3f35aac98b2e97db015d
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  BRPickerView: 4bb8d37b590ba3b06c5affe84de669aea6d091a1
-  CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
+  BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   Debugo: 59d56859957bae9afdaf29c7d253c4ee6f92fb96
-  DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
-  DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
+  DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
+  DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
   EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   EScrollPageView: 6fd67fd563fa0a806f58d9c0c14ebceef9788164
@@ -350,39 +350,39 @@ SPEC CHECKSUMS:
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FLEX: d66c759bce0f6ebbbf472c742380874d846f2883
+  FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GKNavigationBarViewController: 92f856c67ec7f21a3d9466ddb1521315a0e13856
-  HBDNavigationBar: 1c470db0183d1aa8cbb4912196cfb10752eebcc8
+  GKNavigationBarViewController: 4e84e75245b6e819d8375eb9106eb05cbfa59ca1
+  HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
-  IQKeyboardManager: 2ca9d64893247556f53523dcd8d78641f0ba7c23
-  JDStatusBarNotification: 21b616e7432284fea6eb0ce9eadc37c8038a5544
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
   JJException: 6d987840193b7ef59e778d41bca463401a80a79b
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
-  JXCategoryView: 008a9d2eb3ba6035eb2df9a2b3e9a4806d6601a3
+  JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
-  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
-  LYEmptyView: b17adfc2dd9ad2988ecaf7c9606efa916e24c767
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
-  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
-  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   PGBanner: 0c52ab4ce9e04ad17f8dd0627b45951b96770c67
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
-  PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
+  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  Reveal-SDK: bb223749b198a2b9bad6043ec6ad748f99e7abe5
+  Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
-  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
@@ -390,7 +390,7 @@ SPEC CHECKSUMS:
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
   TXScrollLabelView: 0e1650caf61198bf5dc0938ea6493254aeb80f90
-  TZImagePickerController: f321e8db6cd18dc6ac8e23694961c158a9345a87
+  TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1

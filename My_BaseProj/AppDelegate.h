@@ -11,14 +11,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
 @property (readonly, strong) NSPersistentCloudKitContainer *persistentContainer;
 
 - (void)saveContext;
 
 + (instancetype)sharedInstance;
-
 
 @end
 

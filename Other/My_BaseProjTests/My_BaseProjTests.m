@@ -2,8 +2,8 @@
 //  My_BaseProjTests.m
 //  My_BaseProjTests
 //
-//  Created by Administrator on 03/06/2019.
-//  Copyright © 2019 Administrator. All rights reserved.
+//  Created by Jobs on 2020/7/8.
+//  Copyright © 2020 Jobs. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

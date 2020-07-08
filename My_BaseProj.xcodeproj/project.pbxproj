@@ -180,6 +180,7 @@
 		C5FE999324B4AA59007B9878 /* CommentPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE999224B4AA59007B9878 /* CommentPopUpVC.m */; };
 		C5FE99A124B4AAD5007B9878 /* MyNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE99A024B4AAD5007B9878 /* MyNodeModel.m */; };
 		C5FE99A424B4AAE4007B9878 /* MyNodeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE99A324B4AAE4007B9878 /* MyNodeViewCell.m */; };
+		C5FE99CB24B5ADF0007B9878 /* CFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE99CA24B5ADF0007B9878 /* CFGradientLabel.m */; };
 		CE1319A222CDA6F6002BA1A7 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */; };
 		CE1319A322CDA6F6002BA1A7 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199E22CDA6F6002BA1A7 /* XLChannelHeader.m */; };
 		CE1319A422CDA6F6002BA1A7 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE13199F22CDA6F6002BA1A7 /* XLChannelView.m */; };
@@ -587,6 +588,8 @@
 		C5FE99A024B4AAD5007B9878 /* MyNodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeModel.m; sourceTree = "<group>"; };
 		C5FE99A224B4AAE4007B9878 /* MyNodeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNodeViewCell.h; sourceTree = "<group>"; };
 		C5FE99A324B4AAE4007B9878 /* MyNodeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeViewCell.m; sourceTree = "<group>"; };
+		C5FE99C924B5ADF0007B9878 /* CFGradientLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFGradientLabel.h; sourceTree = "<group>"; };
+		C5FE99CA24B5ADF0007B9878 /* CFGradientLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFGradientLabel.m; sourceTree = "<group>"; };
 		CE13199A22CDA6F6002BA1A7 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
 		CE13199B22CDA6F6002BA1A7 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
 		CE13199C22CDA6F6002BA1A7 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
@@ -1114,6 +1117,7 @@
 		C3F56FA722A4F4B9009E9691 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE99C824B5ADBD007B9878 /* 文字颜色渐变Label */,
 				C5FE999424B4AA78007B9878 /* 评论页 */,
 				C5FE998124B37115007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5BEE17224B304E500A49BBD /* 验证码组件 */,
@@ -1857,6 +1861,15 @@
 			path = "自定义Model";
 			sourceTree = "<group>";
 		};
+		C5FE99C824B5ADBD007B9878 /* 文字颜色渐变Label */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE99C924B5ADF0007B9878 /* CFGradientLabel.h */,
+				C5FE99CA24B5ADF0007B9878 /* CFGradientLabel.m */,
+			);
+			path = "文字颜色渐变Label";
+			sourceTree = "<group>";
+		};
 		CE13199922CDA6F6002BA1A7 /* XLChannelControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -2187,6 +2200,7 @@
 				C3B1566222AA3863009061F3 /* WaterMark.m in Sources */,
 				C3F570DA22A5403F009E9691 /* DeleteSystemUITabBarButton.m in Sources */,
 				C50324AE24A0A7B5007B9985 /* SceneDelegate.m in Sources */,
+				C5FE99CB24B5ADF0007B9878 /* CFGradientLabel.m in Sources */,
 				8B128BF12345A5750039B590 /* TBCityIconFont.m in Sources */,
 				CE1319A522CDA6F6002BA1A7 /* XLChannelItem.m in Sources */,
 				C5FE99A424B4AAE4007B9878 /* MyNodeViewCell.m in Sources */,

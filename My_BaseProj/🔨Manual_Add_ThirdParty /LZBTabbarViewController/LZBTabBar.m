@@ -23,7 +23,7 @@
     _title = @"";
     _titleOffest = UIOffsetZero;
     _unselectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12],
-                                 NSForegroundColorAttributeName: [UIColor blackColor],};
+                                 NSForegroundColorAttributeName: kWhiteColor,};
     _selectTitleAttributes = [_unselectTitleAttributes copy];
     _badgeValue = @"";
     _badgeTextColor = [UIColor whiteColor];
@@ -38,73 +38,81 @@
     NSDictionary *titleAttributes = nil;
     UIImage *backgroundImage = nil;
     UIImage *image = nil;
-    //判断是否选中
-    if(self.isSelected){
-        image = self.selectImage;
-        backgroundImage = self.selectBackgroundImage;
-        titleAttributes = self.selectTitleAttributes;
-    }else{
-        image = self.unSelectImage;
-        backgroundImage = self.unselectBackgroundImage;
-        titleAttributes = self.unselectTitleAttributes;
-    }
-    imageSize =(image== nil) ? CGSizeZero : image.size;
     //获得处理的上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-    if(backgroundImage)
-        [backgroundImage drawInRect:self.bounds];
-    if(self.title.length == 0){//只有图片
-        [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
-                                     (frameSize.height - imageSize.height) * 0.5 + self.imageOffest.vertical,
-                                     imageSize.width,
-                                     imageSize.height)];
-    }else{//图文
-        titleSize = [self.title sizeWithAttributes:titleAttributes];
-        CGFloat imageTopMaigin = (frameSize.height - imageSize.height - titleSize.height) * 0.5;
-        [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
-                                     imageTopMaigin,
-                                     imageSize.width,
-                                     imageSize.height)];
-        //必须先设置颜色
-        CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
-        [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width)*0.5+self.titleOffest.horizontal,
-                                          imageTopMaigin+imageSize.height+self.titleOffest.vertical,
-                                          titleSize.width,
-                                          titleSize.height)
-                withAttributes:titleAttributes];
+    {
+        //判断是否选中
+        if(self.isSelected){
+            image = self.selectImage;
+            backgroundImage = self.selectBackgroundImage;
+            titleAttributes = self.selectTitleAttributes;
+        }else{
+            image = self.unSelectImage;
+            backgroundImage = self.unselectBackgroundImage;
+            titleAttributes = self.unselectTitleAttributes;
+        }
+        imageSize = (image== nil) ? CGSizeZero : image.size;
     }
-    //角标
-    CGRect  bageBackFrame = CGRectZero;
-    if(self.badgeBackgroundColor){
-        CGFloat badgeBackWidthHeight = 10;
-        bageBackFrame  = CGRectMake(frameSize.width - badgeBackWidthHeight -
-                                    self.badgeBackgroundOffset.horizontal,
-                                    self.badgeBackgroundOffset.vertical,
-                                    badgeBackWidthHeight,
-                                    badgeBackWidthHeight);
-        CGContextSetFillColorWithColor(context, self.badgeBackgroundColor.CGColor);
-        CGContextFillEllipseInRect(context, bageBackFrame);
-    }else if(self.badgeBackgroundImage){
-        bageBackFrame  = CGRectMake(frameSize.width - self.badgeBackgroundImage.size.width - self.badgeBackgroundOffset.horizontal,
-                                    self.badgeBackgroundOffset.vertical,
-                                    self.badgeBackgroundImage.size.width,
-                                    self.badgeBackgroundImage.size.height);
-        [self.badgeBackgroundImage drawInRect:bageBackFrame];
+
+    {
+        if(backgroundImage) [backgroundImage drawInRect:self.bounds];
+        if(self.title.length == 0){//只有图片
+            [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
+                                         (frameSize.height - imageSize.height) * 0.5 + self.imageOffest.vertical,
+                                         imageSize.width,
+                                         imageSize.height)];
+        }else{//图文
+            titleSize = [self.title sizeWithAttributes:titleAttributes];
+            CGFloat imageTopMaigin = (frameSize.height - imageSize.height - titleSize.height) * 0.5;
+            [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
+                                         imageTopMaigin,
+                                         imageSize.width,
+                                         imageSize.height)];
+            //必须先设置颜色
+            CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
+            [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width) * 0.5 + self.titleOffest.horizontal,
+                                              imageTopMaigin+imageSize.height+self.titleOffest.vertical,
+                                              titleSize.width,
+                                              titleSize.height)
+                    withAttributes:titleAttributes];
+        }
     }
-    //角标文字
-    if(self.badgeValue){
-       NSDictionary *badgeAttrubute = @{NSFontAttributeName : self.badgeTextFont,
-                                        NSForegroundColorAttributeName : self.badgeTextColor};
-       CGSize  badgeValueSize = [self.badgeValue sizeWithAttributes:badgeAttrubute];
-        //必须先设置颜色
-        CGContextSetFillColorWithColor(context, self.badgeTextColor.CGColor);
-        [self.badgeValue drawInRect:CGRectMake(frameSize.width - badgeValueSize.width - self.badgeOffset.horizontal,
-                                               self.badgeOffset.vertical,
-                                               badgeValueSize.width,
-                                               badgeValueSize.height)
-                     withAttributes:badgeAttrubute];
-    }CGContextRestoreGState(context);
+
+    {
+        //角标
+        CGRect bageBackFrame = CGRectZero;
+        if(self.badgeBackgroundColor){
+            CGFloat badgeBackWidthHeight = 10;
+            bageBackFrame = CGRectMake(frameSize.width - badgeBackWidthHeight - self.badgeBackgroundOffset.horizontal,
+                                       self.badgeBackgroundOffset.vertical,
+                                       badgeBackWidthHeight,
+                                       badgeBackWidthHeight);
+            CGContextSetFillColorWithColor(context, self.badgeBackgroundColor.CGColor);
+            CGContextFillEllipseInRect(context, bageBackFrame);
+        }else if(self.badgeBackgroundImage){
+            bageBackFrame = CGRectMake(frameSize.width - self.badgeBackgroundImage.size.width - self.badgeBackgroundOffset.horizontal,
+                                       self.badgeBackgroundOffset.vertical,
+                                       self.badgeBackgroundImage.size.width,
+                                       self.badgeBackgroundImage.size.height);
+            [self.badgeBackgroundImage drawInRect:bageBackFrame];
+        }else{}
+        //角标文字
+        if(self.badgeValue){
+            NSDictionary *badgeAttrubute = @{NSFontAttributeName : self.badgeTextFont,
+                                            NSForegroundColorAttributeName : self.badgeTextColor};
+            CGSize badgeValueSize = [self.badgeValue sizeWithAttributes:badgeAttrubute];
+            //必须先设置颜色
+            CGContextSetFillColorWithColor(context, self.badgeTextColor.CGColor);
+            [self.badgeValue drawInRect:CGRectMake(frameSize.width - badgeValueSize.width - self.badgeOffset.horizontal,
+                                                   self.badgeOffset.vertical,
+                                                   badgeValueSize.width,
+                                                   badgeValueSize.height)
+                         withAttributes:badgeAttrubute];
+        }
+    }
+
+    CGContextRestoreGState(context);
 }
 
 #pragma mark - config

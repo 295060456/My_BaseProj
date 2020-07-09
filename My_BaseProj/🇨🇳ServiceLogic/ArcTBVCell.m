@@ -11,7 +11,6 @@
 
 @interface ArcTBVCell (){
     
-    
 }
 
 @end
@@ -19,22 +18,15 @@
 @implementation ArcTBVCell
 
 +(instancetype)cellWith:(UITableView *)tableView{
-    
     ArcTBVCell *cell = [tableView dequeueReusableCellWithIdentifier:ReuseIdentifier];
-    
     if (!cell) {
-        
         cell = [[ArcTBVCell alloc]initWithStyle:UITableViewCellStyleDefault
                                 reuseIdentifier:ReuseIdentifier];
-        
 //        [UIView cornerCutToCircleWithView:<#(UIView *)#> AndCornerRadius:<#(CGFloat)#>];
-    }
-    
-    return cell;
+    }return cell;
 }
 
 +(CGFloat)cellHeight:(nullable id)model{
-
     return 30;
 }
 
@@ -44,15 +36,12 @@
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style
              reuseIdentifier:(NSString *)reuseIdentifier{
-    
     if (self = [super initWithStyle:style
                     reuseIdentifier:reuseIdentifier]) {
         
 //        self.backgroundColor = RandomColor;
         
-    }
-    
-    return self;
+    }return self;
 }
 
 @end

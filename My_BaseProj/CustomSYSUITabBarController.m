@@ -68,8 +68,12 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.viewControllerMutArr = [NSMutableArray arrayWithObjects:ViewController_1.new,ViewController_2.new,ViewController_3.new,ViewController_4.new,nil];
     self.delegate = self;
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
-        self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
-        [self.mutArr addObject:self.customNavigationVC];
+//        self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
+//        self.customNavigationVC.navigationBar.hidden = YES;
+//        [self.mutArr addObject:self.customNavigationVC];
+        
+        
+        [self.mutArr addObject:self.viewControllerMutArr[i]];
     }
     self.viewControllers = (NSArray *)self.mutArr;
     for (int i = 0; i <self.titleStrMutArr.count; i++) {

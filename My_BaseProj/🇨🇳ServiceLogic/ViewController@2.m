@@ -41,70 +41,69 @@
 }
 
 
-+ (instancetype)pushFromVC:(UIViewController *)rootVC
-             requestParams:(nullable id)requestParams
-                   success:(DataBlock)block
-                  animated:(BOOL)animated{
-
++ (instancetype)ComingFromVC:(UIViewController *)rootVC
+                    withStyle:(ComingStyle)comingStyle
+                requestParams:(nullable id)requestParams
+                      success:(DataBlock)block
+                     animated:(BOOL)animated{
     ViewController_2 *vc = ViewController_2.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
-
-    if (rootVC.navigationController) {
-        vc.isPush = YES;
-        vc.isPresent = NO;
-        [rootVC.navigationController pushViewController:vc
-                                               animated:animated];
-    }else{
-        vc.isPush = NO;
-        vc.isPresent = YES;
-        [rootVC presentViewController:vc
-                             animated:animated
-                           completion:^{}];
+    switch (comingStyle) {
+        case ComingStyle_PUSH:{
+            if (rootVC.navigationController) {
+                vc.isPush = YES;
+                vc.isPresent = NO;
+                [rootVC.navigationController pushViewController:vc
+                                                       animated:animated];
+            }else{
+                vc.isPush = NO;
+                vc.isPresent = YES;
+                [rootVC presentViewController:vc
+                                     animated:animated
+                                   completion:^{}];
+            }
+        }break;
+        case ComingStyle_PRESENT:{
+            vc.isPush = NO;
+            vc.isPresent = YES;
+            [rootVC presentViewController:vc
+                                 animated:animated
+                               completion:^{}];
+        }break;
+        default:
+            NSLog(@"错误的推进方式");
+            break;
     }return vc;
 }
 
 #pragma mark - Lifecycle
 -(instancetype)init{
-
     if (self = [super init]) {
         [self value];
     }return self;
 }
 
 -(void)value{
-    
     [self.dataMutArr addObject:@"111"];
-    
     [self.dataMutArr addObject:@"222"];
-    
     [self.dataMutArr addObject:@"333"];
-    
     [self.dataMutArr addObject:@"444"];
 }
 
 -(void)viewDidLoad{
-    
     self.view.backgroundColor = kRedColor;//RandomColor;
-    
     [self setView:self.mainView];
-
     [self.mainView addSubview:self.btn];
-
     [self.btn mas_makeConstraints:^(MASConstraintMaker *make) {
-
         make.left.equalTo(self.mainView).offset(SCALING_RATIO(30));
-
         make.top.equalTo(self.mainView).offset(SCALING_RATIO(30) + rectOfStatusbar() + rectOfNavigationbar);
-
         make.right.equalTo(self.mainView).offset(-SCALING_RATIO(30));
-
         make.height.mas_equalTo((SCALING_RATIO(100)));
     }];
     
-    BaseNavigationVC *nav = (BaseNavigationVC *)self.navigationController;
-
-    [nav setupEditBtn:self];
+//    BaseNavigationVC *nav = (BaseNavigationVC *)self.navigationController;
+//    [nav setupEditBtn:self];
     
     //视频相关
 //    av_register_all();
@@ -125,11 +124,9 @@
 }
 
 -(void)btnClickEvent:(UIButton *)sender{
-    
     if (self.dataMutArr.count > 0) {
         //添加到父视图上
         [self.mainView addSubview:self.historyDataListTBV];
-        
         self.historyDataListTBV.frame = CGRectMake(self.btn.mj_x,
                                                    self.btn.mj_y + self.btn.mj_h,
                                                    self.btn.mj_w,
@@ -141,92 +138,61 @@
 
 #pragma mark ======== LazyLoad ======
 -(UIView *)mainView{
-    
     if (!_mainView) {
-        
         _mainView = UIView.new;
-   
         if (@available(iOS 13.0, *)) {
             _mainView.frame = [SceneDelegate sharedInstance].window.frame;
         }else{
             _mainView.frame = UIApplication.sharedApplication.delegate.window.frame;
         }
-    }
-    
-    return _mainView;
+    }return _mainView;
 }
 
 -(UIButton *)btn{
-    
     if (!_btn) {
-        
         _btn = UIButton.new;
-        
         [_btn setTitle:@"我是Btn"
               forState:UIControlStateNormal];
-        
         [_btn setTitleColor:kBlackColor
                    forState:UIControlStateNormal];
-        
         [_btn addTarget:self
                  action:@selector(btnClickEvent:)
        forControlEvents:UIControlEventTouchUpInside];
-        
         [UIView cornerCutToCircleWithView:_btn
                           AndCornerRadius:4];
-        
         [UIView colourToLayerOfView:_btn
                          WithColour:kRedColor
                      AndBorderWidth:1.0f];
-    }
-    
-    return _btn;
+    }return _btn;
 }
 
 -(NSMutableArray *)dataMutArr{
-    
     if (!_dataMutArr) {
-        
         _dataMutArr = NSMutableArray.array;
-    }
-    
-    return _dataMutArr;
+    }return _dataMutArr;
 }
 
 -(HistoryDataListTBV *)historyDataListTBV{
-    
     if (!_historyDataListTBV) {
-        
         _historyDataListTBV = [HistoryDataListTBV initWithRequestParams:self.dataMutArr
                                                               triggerBy:self.btn];
         
         @weakify(self)
-//
 //        [_historyDataListTBV deleteData:^(id  _Nullable data) {
-//
 //            @strongify(self)
-//
 //            NSLog(@"%@",data);
-//
 //            [self.dataMutArr removeObject:data];
-//
 //            [self->_historyDataListTBV reloadData];
 //        }];
         [_historyDataListTBV showSelectedData:^(id data, id data2) {
             @strongify(self)
-            
             [self.btn setTitle:(NSString *)data
                       forState:UIControlStateNormal];
-            
             [self.historyDataListTBV removeFromSuperview];
-            
             self->_historyDataListTBV = Nil;
         }];
-        
         _historyDataListTBV.tableFooterView = UIView.new;
-    }
-    
-    return _historyDataListTBV;
+    }return _historyDataListTBV;
 }
 
 @end

@@ -58,4 +58,6 @@
 #import "JJStockView.h"
 #import "LBXScanView.h"
 
+#import "Debugo.h"
+
 #endif /* Pods_h */

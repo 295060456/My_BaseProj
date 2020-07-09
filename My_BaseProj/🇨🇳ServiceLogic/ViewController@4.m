@@ -28,26 +28,39 @@
 
 @implementation ViewController_4
 
-+ (instancetype)pushFromVC:(UIViewController *)rootVC
-             requestParams:(nullable id)requestParams
-                   success:(DataBlock)block
-                  animated:(BOOL)animated{
-
++ (instancetype)ComingFromVC:(UIViewController *)rootVC
+                    withStyle:(ComingStyle)comingStyle
+                requestParams:(nullable id)requestParams
+                      success:(DataBlock)block
+                     animated:(BOOL)animated{
     ViewController_4 *vc = ViewController_4.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
-
-    if (rootVC.navigationController) {
-        vc.isPush = YES;
-        vc.isPresent = NO;
-        [rootVC.navigationController pushViewController:vc
-                                               animated:animated];
-    }else{
-        vc.isPush = NO;
-        vc.isPresent = YES;
-        [rootVC presentViewController:vc
-                             animated:animated
-                           completion:^{}];
+    switch (comingStyle) {
+        case ComingStyle_PUSH:{
+            if (rootVC.navigationController) {
+                vc.isPush = YES;
+                vc.isPresent = NO;
+                [rootVC.navigationController pushViewController:vc
+                                                       animated:animated];
+            }else{
+                vc.isPush = NO;
+                vc.isPresent = YES;
+                [rootVC presentViewController:vc
+                                     animated:animated
+                                   completion:^{}];
+            }
+        }break;
+        case ComingStyle_PRESENT:{
+            vc.isPush = NO;
+            vc.isPresent = YES;
+            [rootVC presentViewController:vc
+                                 animated:animated
+                               completion:^{}];
+        }break;
+        default:
+            NSLog(@"错误的推进方式");
+            break;
     }return vc;
 }
 
@@ -81,28 +94,17 @@
 }
 
 -(void)prepareTableView{
-    
     _tbv = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
     _tbv.dataSource = self;
-    
     _tbv.delegate = self;
-
     _tbv.contentInset = UIEdgeInsetsMake(KHeaderHeight, 0, 0, 0 );
-
     _tbv.scrollIndicatorInsets = _tbv.contentInset;
-
     [self.view addSubview:self.tbv];
-    
 //    [self.tbv mas_makeConstraints:^(MASConstraintMaker *make) {
-//
 //        make.top.equalTo(self.view).offset(164);
-//
 //        make.left.right.equalTo(self.view);
-//
 //        make.height.mas_equalTo(MAINSCREEN_HEIGHT / 2);
 //    }];
-
 }
 
 -(void)prepareHeaderView{
@@ -132,11 +134,8 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
     CGFloat offset = scrollView.contentOffset.y + scrollView.contentInset.top;
-    
 //    NSLog(@"kkk%f",scrollView.contentInset.top);//200
-    
     //放大
     if (offset <= 0) {
         NSLog(@"1-%f",offset);
@@ -151,60 +150,42 @@
         //headerView 最小 y 值
         CGFloat min = KHeaderHeight - rectOfNavigationbar - rectOfStatusbar();
         _headerView.mj_y = -MIN(min,offset);
-        
         //设置透明度 offset / min == 1 不可见
         CGFloat progress = 1 - (offset / min);
         _headerImageView.alpha = progress;
-        
         //根据透明度来修改状态栏的颜色
         _statusBarStyle = (progress < 0.5) ? UIStackViewSpacingUseDefault:UIStatusBarStyleLightContent;
-        
         //主动更新状态栏
         [self.navigationController setNeedsStatusBarAppearanceUpdate];
     }
-    
     //设置图像高度
     _headerImageView.mj_h = _headerView.mj_h;
-    
     //设置分割线位置
     _lineView.mj_y = _headerView.mj_h - _lineView.mj_h;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     return [ArcTBVCell cellHeight:NULL];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     ArcTBVCell *cell = [ArcTBVCell cellWith:tableView];
-    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return 300;
 }
 
 //-(UITableView *)tbv{
-//
 //    if (!_tbv) {
-//
 //        _tbv = UITableView.new;
-//
 ////        _tbv.style = UITableViewStylePlain;//err
-//
 //        _tbv.dataSource = self;
-//
 //        _tbv.delegate = self;
-//
 //        _tbv.backgroundColor = kRedColor;
-//
 //        _tbv.contentInset = UIEdgeInsetsMake(KHeaderHeight, 0, 0, 0 );
-//
 //        _tbv.scrollIndicatorInsets = _tbv.contentInset;
-//
 //    }
 //
 //    return _tbv;

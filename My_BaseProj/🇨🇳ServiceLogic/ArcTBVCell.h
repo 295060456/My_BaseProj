@@ -13,9 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ArcTBVCell : UITableViewCell
 
 +(instancetype)cellWith:(UITableView *)tableView;
-
 +(CGFloat)cellHeight:(nullable id)model;
-
 -(void)richElementsInCellWithModel:(nullable id)model;
 
 @end

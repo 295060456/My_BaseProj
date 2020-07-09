@@ -12,6 +12,8 @@
 
 #import "LGiOSBtn.h"
 
+#import "ViewController@2.h"
+
 @interface ViewController_1 ()<UITextFieldDelegate,DZDeleteButtonDelegate>{
 
 }
@@ -34,26 +36,39 @@
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
 }
 
-+ (instancetype)pushFromVC:(UIViewController *)rootVC
-             requestParams:(nullable id)requestParams
-                   success:(DataBlock)block
-                  animated:(BOOL)animated{
-
++ (instancetype)ComingFromVC:(UIViewController *)rootVC
+                    withStyle:(ComingStyle)comingStyle
+                requestParams:(nullable id)requestParams
+                      success:(DataBlock)block
+                     animated:(BOOL)animated{
     ViewController_1 *vc = ViewController_1.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
-
-    if (rootVC.navigationController) {
-        vc.isPush = YES;
-        vc.isPresent = NO;
-        [rootVC.navigationController pushViewController:vc
-                                               animated:animated];
-    }else{
-        vc.isPush = NO;
-        vc.isPresent = YES;
-        [rootVC presentViewController:vc
-                             animated:animated
-                           completion:^{}];
+    switch (comingStyle) {
+        case ComingStyle_PUSH:{
+            if (rootVC.navigationController) {
+                vc.isPush = YES;
+                vc.isPresent = NO;
+                [rootVC.navigationController pushViewController:vc
+                                                       animated:animated];
+            }else{
+                vc.isPush = NO;
+                vc.isPresent = YES;
+                [rootVC presentViewController:vc
+                                     animated:animated
+                                   completion:^{}];
+            }
+        }break;
+        case ComingStyle_PRESENT:{
+            vc.isPush = NO;
+            vc.isPresent = YES;
+            [rootVC presentViewController:vc
+                                 animated:animated
+                               completion:^{}];
+        }break;
+        default:
+            NSLog(@"错误的推进方式");
+            break;
     }return vc;
 }
 
@@ -65,9 +80,22 @@
     }return self;
 }
 
+- (void)closeAction {
+    @weakify(self)
+    [ViewController_2 ComingFromVC:self_weak_
+                         withStyle:ComingStyle_PUSH
+                     requestParams:nil
+                           success:^(id data) {}
+                          animated:YES];
+}
+
 -(void)viewDidLoad{
     
-    self.gk_navBackgroundColor = kRedColor;
+    self.gk_navBackgroundColor = KGreenColor;
+//    self.gk_navigationBar.hidden = YES;
+    
+    self.gk_navRightBarButtonItem = [UIBarButtonItem gk_itemWithTitle:@"关闭" target:self action:@selector(closeAction)];
+    
     LGiOSBtn *button = [[LGiOSBtn alloc] init];
     [button setImage:[UIImage imageNamed:@"图片"] forState:UIControlStateNormal];
     [button setTitle:@"百思" forState:UIControlStateNormal];

@@ -188,6 +188,12 @@
     self.topLine.backgroundColor  = [UIColor colorWithHexString:@"#37A6F0"];
 }
 
+-(LZBTabBarStyleType)tabBarStyleType{
+    if (!_tabBarStyleType) {
+        _tabBarStyleType = LZBTabBarStyleType_sysNormal;//默认系统样式
+    }return _tabBarStyleType;
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGSize frameSize = self.bounds.size;
@@ -198,6 +204,8 @@
                                     default_TopLine_Height);
     //布局
     NSInteger index = 0;
+    Boolean isOddItems = self.items.count % 2;//items为奇数个，那么就最中间的作为突出的大头
+    int y = (int)ceil(self.items.count / 2.0);//向上取整，求中位数
     self.itemWidth = frameSize.width / self.items.count;
     for (LZBTabBarItem *item in self.items) {
         CGFloat itemHeight = [item itemHeight];
@@ -205,10 +213,25 @@
             itemHeight = frameSize.height;
         CGFloat itemW = self.itemWidth;
         CGFloat itemH = itemHeight;
-        CGFloat itemCenterX = index *itemW + itemW *0.5;
-        CGFloat itemCenterY = frameSize.height * 0.5;
-        item.bounds = CGRectMake(0, 0, itemW, itemH);
-        item.center = CGPointMake(itemCenterX, itemCenterY);
+        if (isOddItems && y == index + 1 && self.tabBarStyleType) {
+            [item mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(itemW, itemH * 4 / 3));
+                LZBTabBarItem *item_ = (LZBTabBarItem *)self.items[index - 1];
+                make.left.equalTo(item_.mas_right);
+                make.bottom.equalTo(self);
+            }];
+        }else{
+            [item mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(itemW, itemH));
+                if (index == 0) {
+                    make.left.equalTo(self);
+                }else{
+                    LZBTabBarItem *item = (LZBTabBarItem *)self.items[index - 1];
+                    make.left.equalTo(item.mas_right);
+                }
+                make.bottom.equalTo(self);
+            }];
+        }
         [item setNeedsDisplay];
         index++;
     }

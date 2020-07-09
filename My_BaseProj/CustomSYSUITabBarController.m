@@ -11,6 +11,9 @@
 
 #import "ViewController@1.h"
 #import "ViewController@2.h"
+
+#import "ViewController@5.h"
+
 #import "ViewController@3.h"
 #import "ViewController@4.h"
 
@@ -65,7 +68,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 }
 
 - (void)p_setUpAllChildViewController {
-    self.viewControllerMutArr = [NSMutableArray arrayWithObjects:ViewController_1.new,ViewController_2.new,ViewController_3.new,ViewController_4.new,nil];
+    self.viewControllerMutArr = [NSMutableArray arrayWithObjects:ViewController_1.new,ViewController_2.new,ViewController_5.new,ViewController_3.new,ViewController_4.new,nil];
     self.delegate = self;
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
 //        self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
@@ -82,7 +85,7 @@ CGFloat LZB_TABBAR_HEIGHT;
                                      SelectImage:(UIImage *)self.customSelectedImgMutArr[i]
                                    NnSelectImage:(UIImage *)self.customUnselectedImgMutArr[i]];
     }
-    self.lzb_tabBar.backgroundColor = kWhiteColor;
+//    self.lzb_tabBar.backgroundColor = kWhiteColor;
     self.isShouldAnimation = YES;
 }
 
@@ -116,6 +119,10 @@ CGFloat LZB_TABBAR_HEIGHT;
     else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_4 class]]){
 //        [self presentLoginVC];
     }
+    else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_5 class]]){
+    //        [self presentLoginVC];
+    }
+    
 }
 #pragma mark - EAIntroView delegate
 - (void)introDidFinish:(EAIntroView *)introView
@@ -138,6 +145,7 @@ CGFloat LZB_TABBAR_HEIGHT;
         _titleStrMutArr = NSMutableArray.array;
         [_titleStrMutArr addObject:@"CASINO"];
         [_titleStrMutArr addObject:@"POKER"];
+        [_titleStrMutArr addObject:@"Center"];
         [_titleStrMutArr addObject:@"VIET LOTTO"];
         [_titleStrMutArr addObject:@"PROMOTION"];
     }return _titleStrMutArr;
@@ -148,6 +156,7 @@ CGFloat LZB_TABBAR_HEIGHT;
         _customUnselectedImgMutArr = NSMutableArray.array;
         [_customUnselectedImgMutArr addObject:kIMG(@"Home")];
         [_customUnselectedImgMutArr addObject:kIMG(@"MyStore")];
+        [_customUnselectedImgMutArr addObject:kIMG(@"摄像机")];
         [_customUnselectedImgMutArr addObject:kIMG(@"ShoppingCart")];
         [_customUnselectedImgMutArr addObject:kIMG(@"My")];
     }return _customUnselectedImgMutArr;
@@ -158,6 +167,7 @@ CGFloat LZB_TABBAR_HEIGHT;
         _customSelectedImgMutArr = NSMutableArray.array;
         [_customSelectedImgMutArr addObject:kIMG(@"Home")];
         [_customSelectedImgMutArr addObject:kIMG(@"MyStore")];
+        [_customSelectedImgMutArr addObject:kIMG(@"摄像机")];
         [_customSelectedImgMutArr addObject:kIMG(@"ShoppingCart")];
         [_customSelectedImgMutArr addObject:kIMG(@"My")];
     }return _customSelectedImgMutArr;

@@ -108,7 +108,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LZBTabBarDelegate;
 
+typedef enum : NSUInteger {
+    LZBTabBarStyleType_sysNormal = 0,//系统默认样式，平的
+    LZBTabBarStyleType_middleItemUp//最中间的按钮凸起中间(前提条件是存在奇数个item)
+} LZBTabBarStyleType;
+
 @interface LZBTabBar : UIView
+
+@property(nonatomic,assign)LZBTabBarStyleType tabBarStyleType;
+
 /**
  *  自定义tabbar的delegate
  */

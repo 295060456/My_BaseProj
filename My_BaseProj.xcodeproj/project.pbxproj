@@ -10,6 +10,8 @@
 		26F5FB2DED1306A0D077CBF9 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
+		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
+		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9A4024B5EF2B007B9878 /* Main.storyboard */; };
 		C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9A4324B5EF2B007B9878 /* My_BaseProj.xcdatamodeld */; };
 		C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9A4624B5EF2C007B9878 /* Assets.xcassets */; };
@@ -76,8 +78,6 @@
 		C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4224B5F203007B9878 /* UIView+Extras.m */; };
 		C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4424B5F203007B9878 /* ViewForHeader.m */; };
 		C5FE9B7224B5F204007B9878 /* ViewForFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4524B5F203007B9878 /* ViewForFooter.m */; };
-		C5FE9B7324B5F204007B9878 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4924B5F203007B9878 /* NSArray+Extension.m */; };
-		C5FE9B7424B5F204007B9878 /* NSArray+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4C24B5F203007B9878 /* NSArray+Extend.m */; };
 		C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */; };
 		C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */; };
 		C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */; };
@@ -235,6 +235,9 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
+		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
+		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
 		C5FE9A3424B5EF2B007B9878 /* My_BaseProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My_BaseProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FE9A4124B5EF2B007B9878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -871,6 +874,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
 				C5FE9B8A24B5F298007B9878 /* 🌍ZFMRACNetworkTool */,
 				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5FE9BFF24B5F299007B9878 /* 分享控件 */,
@@ -899,7 +903,6 @@
 				C5FE9B7E24B5F298007B9878 /* KeyChainManager */,
 				C5FE9C0724B5F299007B9878 /* LongPressToDeleteImageView */,
 				C5FE9C8E24B5F29B007B9878 /* LXTagsView */,
-				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
 				C5FE9C4F24B5F29A007B9878 /* PopMenuView */,
 				C5FE9BD524B5F299007B9878 /* RYCuteView */,
 				C5FE9BBD24B5F298007B9878 /* SDCycleScrollView */,
@@ -962,6 +965,7 @@
 		C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */ = {
 			isa = PBXGroup;
 			children = (
+				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9AF424B5F1D4007B9878 /* 开屏页面 */,
 				C5FE9ACF24B5F1B3007B9878 /* 图片.png */,
 				C5FE9AD524B5F1B3007B9878 /* 图片@2x.png */,
@@ -983,6 +987,8 @@
 			children = (
 				C5FE9AC024B5F19E007B9878 /* ArcTBVCell.h */,
 				C5FE9AC324B5F19E007B9878 /* ArcTBVCell.m */,
+				C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */,
+				C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */,
 				C5FE9AC624B5F19E007B9878 /* ViewController@1.h */,
 				C5FE9AC124B5F19E007B9878 /* ViewController@1.m */,
 				C5FE9AC424B5F19E007B9878 /* ViewController@2.h */,
@@ -1174,10 +1180,10 @@
 		C5FE9B4824B5F203007B9878 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B4924B5F203007B9878 /* NSArray+Extension.m */,
 				C5FE9B4A24B5F203007B9878 /* NSArray+Extend.h */,
-				C5FE9B4B24B5F203007B9878 /* NSArray+Extension.h */,
 				C5FE9B4C24B5F203007B9878 /* NSArray+Extend.m */,
+				C5FE9B4B24B5F203007B9878 /* NSArray+Extension.h */,
+				C5FE9B4924B5F203007B9878 /* NSArray+Extension.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
@@ -1679,11 +1685,11 @@
 		C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
-				C5FE9C4224B5F29A007B9878 /* LZBTabBarViewController.m */,
-				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
 				C5FE9C4424B5F29A007B9878 /* 替换系统的UITabBarViewController */,
+				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
+				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
 				C5FE9C4524B5F29A007B9878 /* LZBTabBarViewController.h */,
+				C5FE9C4224B5F29A007B9878 /* LZBTabBarViewController.m */,
 			);
 			path = LZBTabbarViewController;
 			sourceTree = "<group>";
@@ -2029,6 +2035,7 @@
 				C5FE9B0424B5F1DC007B9878 /* bg3@2x.png in Resources */,
 				C5FE9D1C24B5F29C007B9878 /* area.plist in Resources */,
 				C5FE9B0224B5F1DC007B9878 /* bg2@2x.png in Resources */,
+				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9CAE24B5F29C007B9878 /* XDSDropDownMenu（下拉菜单） in Resources */,
 				C5FE9CBB24B5F29C007B9878 /* File in Resources */,
@@ -2236,7 +2243,6 @@
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
 				C5FE9D3124B5F29C007B9878 /* CountDownBtn.m in Sources */,
-				C5FE9B7324B5F204007B9878 /* NSArray+Extension.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
@@ -2255,7 +2261,6 @@
 				C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */,
 				C5FE9CDC24B5F29C007B9878 /* LBXScanDIYViewController.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
-				C5FE9B7424B5F204007B9878 /* NSArray+Extend.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C5FE9CDE24B5F29C007B9878 /* LBXScanDIYView.m in Sources */,
 				C5FE9CFE24B5F29C007B9878 /* SearchVC.m in Sources */,
@@ -2317,6 +2322,7 @@
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
+				C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */,
 				C5FE9D0024B5F29C007B9878 /* SearchVC+VM.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,

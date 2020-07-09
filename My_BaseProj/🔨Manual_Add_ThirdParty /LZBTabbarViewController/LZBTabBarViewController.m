@@ -205,7 +205,8 @@ didSelectItemAtIndex:(NSInteger)index{
 
 - (LZBTabBar *)tabbar{
    if(_tabbar == nil){
-       _tabbar = [[LZBTabBar alloc] init];
+       _tabbar = LZBTabBar.new;
+       _tabbar.tabBarStyleType = LZBTabBarStyleType_middleItemUp;
        _tabbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|
                                   UIViewAutoresizingFlexibleTopMargin|
                                   UIViewAutoresizingFlexibleLeftMargin|

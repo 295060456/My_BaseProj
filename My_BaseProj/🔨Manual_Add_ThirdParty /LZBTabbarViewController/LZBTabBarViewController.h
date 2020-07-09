@@ -20,18 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LZBTabBarViewController : BaseVC
 
 @property(nonatomic,weak)id<LZBTabBarViewControllerDelegate> delegate;
-
 /**
  *  子控制数组
  */
 @property(nonatomic,strong)NSArray <UIViewController *>*viewControllers;//NSMutableArray
-
 /**
  *  当前选中的控制器
  */
 @property(nonatomic,strong,readonly)UIViewController *lzb_selectedViewController;
-
-
 /**
  当前选中的控制器,是否包含动画效果
 
@@ -40,13 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setSelectedViewController:(UIViewController *)selectedViewController
                         animation:(BOOL)animation;
-
-
 /**
  *  当前选中的控制器的索引
  */
 @property(nonatomic,assign)NSUInteger selectedIndex;
-
 /**
   当前选中的控制器索引,是否包含动画效果
 
@@ -55,18 +48,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setSelectedIndex:(NSUInteger)selectedIndex
                animation:(BOOL)animation;
-
-
 /**
     是否允许动画
  */
 @property(nonatomic,assign)BOOL isShouldAnimation;
-
 /**
  *  获得当前tabbar
  */
 @property(nonatomic,strong,readonly)LZBTabBar *lzb_tabBar;
-
 /**
  *   隐藏导航条
  */
@@ -86,7 +75,6 @@ NS_ASSUME_NONNULL_END
 @protocol LZBTabBarViewControllerDelegate <NSObject>
 
 @optional
-
 /**
  是否点击控制器
 
@@ -96,8 +84,6 @@ NS_ASSUME_NONNULL_END
  */
 - (BOOL)lzb_tabBarController:(LZBTabBarViewController *_Null_unspecified)tabBarController
   shouldSelectViewController:(UIViewController *_Null_unspecified)viewController;
-
-
 /**
  选择tabbar控制器
  
@@ -114,7 +100,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController(LZBTabBarViewControllerItem)
 
 @property(nonatomic,strong)LZBTabBarItem *lzb_tabBarItem;
-
 @property(nonatomic,strong)LZBTabBarViewController *lzb_tabBarController;
 
 @end

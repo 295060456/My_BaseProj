@@ -136,7 +136,6 @@
 		C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BF524B5F299007B9878 /* Global.m */; };
 		C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BF724B5F299007B9878 /* CreateBarCodeVC.m */; };
 		C5FE9CE124B5F29C007B9878 /* DIYScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BF824B5F299007B9878 /* DIYScanVC.m */; };
-		C5FE9CE224B5F29C007B9878 /* YKToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BFB24B5F299007B9878 /* YKToastView.m */; };
 		C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BFD24B5F299007B9878 /* WaterMark.m */; };
 		C5FE9CE424B5F29C007B9878 /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C0024B5F299007B9878 /* BWItemModel.m */; };
 		C5FE9CE524B5F29C007B9878 /* BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C0124B5F299007B9878 /* BWShareView.m */; };
@@ -477,8 +476,6 @@
 		C5FE9BF624B5F299007B9878 /* LBXScanDIYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXScanDIYView.h; sourceTree = "<group>"; };
 		C5FE9BF724B5F299007B9878 /* CreateBarCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBarCodeVC.m; sourceTree = "<group>"; };
 		C5FE9BF824B5F299007B9878 /* DIYScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYScanVC.m; sourceTree = "<group>"; };
-		C5FE9BFA24B5F299007B9878 /* YKToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKToastView.h; sourceTree = "<group>"; };
-		C5FE9BFB24B5F299007B9878 /* YKToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKToastView.m; sourceTree = "<group>"; };
 		C5FE9BFD24B5F299007B9878 /* WaterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterMark.m; sourceTree = "<group>"; };
 		C5FE9BFE24B5F299007B9878 /* WaterMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterMark.h; sourceTree = "<group>"; };
 		C5FE9C0024B5F299007B9878 /* BWItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemModel.m; sourceTree = "<group>"; };
@@ -909,7 +906,6 @@
 				C5FE9B8724B5F298007B9878 /* SearchView */,
 				C5FE9BE324B5F299007B9878 /* SoundBtn */,
 				C5FE9C4624B5F29A007B9878 /* Timer */,
-				C5FE9BF924B5F299007B9878 /* ToastView */,
 				C5FE9C2E24B5F29A007B9878 /* TouchID */,
 				C5FE9C7A24B5F29B007B9878 /* UIControl+XY */,
 				C5FE9C1624B5F299007B9878 /* UIDevice+XMUtils */,
@@ -1519,15 +1515,6 @@
 				C5FE9BF824B5F299007B9878 /* DIYScanVC.m */,
 			);
 			path = "扫一扫组件";
-			sourceTree = "<group>";
-		};
-		C5FE9BF924B5F299007B9878 /* ToastView */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BFA24B5F299007B9878 /* YKToastView.h */,
-				C5FE9BFB24B5F299007B9878 /* YKToastView.m */,
-			);
-			path = ToastView;
 			sourceTree = "<group>";
 		};
 		C5FE9BFC24B5F299007B9878 /* WaterMark */ = {
@@ -2300,7 +2287,6 @@
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
-				C5FE9CE224B5F29C007B9878 /* YKToastView.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9CCD24B5F29C007B9878 /* SDCycleScrollView+UIScrollViewDelegate.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,

@@ -14,8 +14,6 @@
 #import "AFNetworking.h"
 #import "AFNetworkActivityIndicatorManager.h"
 
-#import "YKToastView.h"
-
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {//KKK
     ///请求成功
@@ -311,7 +309,8 @@ static FMARCNetwork *_instance = nil;
             NSString *str = [NSString stringWithFormat:@"上传图片中...%.2f",_percent];
             NSLog(@"%@",str);
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                Toast(str);
+                [MBProgressHUD wj_showPlainText:str
+                                           view:nil];
             }];
         } completionHandler:^(NSURLResponse * _Nonnull response,
                               id  _Nullable responseObject,
@@ -552,9 +551,11 @@ static FMARCNetwork *_instance = nil;
         [_manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             if (status == AFNetworkReachabilityStatusUnknown) {
                 NSLog(@"--- 未知网络 ---");
-                [YKToastView showToastText:@"网络状态未知"];
+                [MBProgressHUD wj_showPlainText:@"网络状态未知"
+                                           view:nil];
             }else if (status == AFNetworkReachabilityStatusNotReachable) {
-                [YKToastView showToastText:@"网络不给力，请检查网络"];
+                [MBProgressHUD wj_showPlainText:@"网络不给力，请检查网络"
+                                           view:nil];
             }else{
                 NSLog(@"--- 有网络 ---");
             }

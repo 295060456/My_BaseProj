@@ -22,6 +22,7 @@ typedef enum : NSUInteger {
 @interface FMARCNetwork : NSObject
 
 @property(nonatomic,assign)RsponseStyle rsponseStyle;
+@property(nonatomic,assign)Boolean isEncryption;
 
 +(instancetype) sharedInstance;
 /**
@@ -35,7 +36,7 @@ typedef enum : NSUInteger {
                                  params:(NSDictionary *)params;
 /**
  网络请求,返回信号 POST
- 按照， FMHttpRequest 参数化设置
+ 按照， FMHttpRequest 参数化设置  区分加密与不加密
  @param req FMHttpRequest
  @return RACSignal
  */

@@ -13,14 +13,16 @@
 #define FMHttpConstant_h
 
 /*******URL******/
-#define BaseUrl @"http://10.1.41.158:8080"
+#define BaseUrl_1 @"http://172.24.137.213:8011"
+
 /********ImgBaseURL*****/
 #define ImgBaseURL @""
 
 #define CatfoodManageURL @"/user/seller/Catfoodmanage.htm"//喵粮管理 post 1
+#define MKLogin @"/app/login/do"
 
 #pragma mark - api拼接
-#define API(DomainName,api) [NSString stringWithFormat:@"%@%@",BaseUrl,api]
+#define API(DomainName,api) [NSString stringWithFormat:@"%@%@",DomainName,api]
 
 /********如果需要存储，相应的的 key 宏定义********/
 /// 服务器相关

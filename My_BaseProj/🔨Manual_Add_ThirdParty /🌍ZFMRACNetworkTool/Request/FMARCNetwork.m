@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, HTTPResponseCode) {//KKK
     ///未登录 & 被踢 401
     HTTPResponseCodeNotLogin = 401,
     ///550 后台业务代码参数异常 参数异常
-    HTTPResponseCodeAnomalous = 300,
+    HTTPResponseCodeAnomalous = 550,
     ///后台代码异常 999
     HTTPResponseCodeError = 999,
 };

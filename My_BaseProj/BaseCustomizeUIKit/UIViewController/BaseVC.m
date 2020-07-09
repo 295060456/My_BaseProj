@@ -85,11 +85,14 @@ JXCategoryListContentViewDelegate
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:NO];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-//    [SVProgressHUD dismiss];
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:NO];
     printf("retain count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(self)));//打印对象的引用计数器
 }
 

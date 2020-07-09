@@ -48,6 +48,24 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         // 沙盒路径
     NSString *directory = NSHomeDirectory();
     NSLog(@"沙盒路径 : %@", directory);
+    // 配置导航栏属性
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure * _Nonnull configure) {
+        configure.gk_translationX = 15;
+        configure.gk_translationY = 20;
+        configure.gk_scaleX = 0.90;
+        configure.gk_scaleY = 0.92;
+        // 导航栏背景色
+        configure.backgroundColor = kClearColor;
+        // 导航栏标题颜色
+        configure.titleColor = kWhiteColor;
+        // 导航栏标题字体
+        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        // 导航栏返回按钮样式
+        configure.backStyle = GKNavigationBarBackStyleBlack;
+        // 导航栏左右item间距
+        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemRightSpace = 12.0f;
+    }];
     return YES;
 }
 

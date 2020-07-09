@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseVC : UIViewController
 <
 UIGestureRecognizerDelegate
-,UINavigationControllerDelegate,
-TZImagePickerControllerDelegate
+,UINavigationControllerDelegate
+,TZImagePickerControllerDelegate
 >
 
 @property(nonatomic,strong)RACSignal *reqSignal;
@@ -61,7 +61,7 @@ TZImagePickerControllerDelegate
                     message:(NSString *)message
                 btnTitleArr:(NSArray <NSString*>*)btnTitleArr
              alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(UIButton *)sender;
+                     sender:(nullable UIButton *)sender;
 
 -(void)locateTabBar:(NSInteger)index;
 -(void)setStatusBarBackgroundColor:(UIColor *)color;

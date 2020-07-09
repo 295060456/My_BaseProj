@@ -38,13 +38,7 @@ JXCategoryListContentViewDelegate
 
 -(instancetype)init{
     if (self = [super init]) {
-        // 统一设置导航栏样式
-        GKNavigationBarConfigure *configure = [GKNavigationBarConfigure sharedInstance];
-        [configure setupDefaultConfigure];
-        // 设置自定义样式
-        configure.backgroundColor = kClearColor;
-        configure.titleColor = kWhiteColor;
-        configure.titleFont  = [UIFont systemFontOfSize:18];
+
     }return self;
 }
 
@@ -56,10 +50,6 @@ JXCategoryListContentViewDelegate
     BaseVC *vc = BaseVC.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
-
-//    if ([requestParams isKindOfClass:[RCConversationModel class]]) {
-//
-//    }
     switch (comingStyle) {
         case ComingStyle_PUSH:{
             if (rootVC.navigationController) {
@@ -104,8 +94,9 @@ JXCategoryListContentViewDelegate
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;   //状态栏字体白色 UIStatusBarStyleDefault黑色
+    return UIStatusBarStyleLightContent;//状态栏字体白色 UIStatusBarStyleDefault黑色
 }
+
 #pragma mark —— 截取 UIViewController 手势返回事件 这两个方法进出均调用，只不过进场的时候parent有值，出场的时候是nil
 - (void)willMoveToParentViewController:(UIViewController*)parent{
     [super willMoveToParentViewController:parent];
@@ -286,7 +277,7 @@ JXCategoryListContentViewDelegate
                     message:(NSString *)message
                 btnTitleArr:(NSArray <NSString*>*)btnTitleArr
              alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(UIButton *)sender{
+                     sender:(nullable UIButton *)sender{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
@@ -524,15 +515,11 @@ JXCategoryListContentViewDelegate
     if (!_backBtn) {
         _backBtn = FSCustomButton.new;
         _backBtn.buttonImagePosition = FSCustomButtonImagePositionLeft;
-        _backBtn.titleEdgeInsets = UIEdgeInsetsMake(0,
-                                                    SCALING_RATIO(5),
-                                                    0,
-                                                    0);
         [_backBtn setTitleColor:kWhiteColor
                        forState:UIControlStateNormal];
         [_backBtn setTitle:@"返回"
                   forState:UIControlStateNormal];
-        [_backBtn setImage:kIMG(@"Back")
+        [_backBtn setImage:kIMG(@"back_black")
                   forState:UIControlStateNormal];
         [_backBtn addTarget:self
                      action:@selector(backBtnClickEvent:)

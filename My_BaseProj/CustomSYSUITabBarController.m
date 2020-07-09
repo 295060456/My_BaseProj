@@ -107,19 +107,19 @@ CGFloat LZB_TABBAR_HEIGHT;
 //点击的时候进行确认是否登录
 - (void)lzb_tabBarController:(LZBTabBarViewController *)tabBarController
      didSelectViewController:(UIViewController *)viewController{
-    if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_1 class]]) {
+    if ([viewController isKindOfClass:[ViewController_1 class]]) {
         //        NSLog(@"%ld",self.selectedIndex);
     }
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_2 class]]){
+    else if ([viewController isKindOfClass:[ViewController_2 class]]){
 //        [self presentLoginVC];
     }
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_3 class]]){
+    else if ([viewController isKindOfClass:[ViewController_3 class]]){
 //        [self presentLoginVC];
     }
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_4 class]]){
+    else if ([viewController isKindOfClass:[ViewController_4 class]]){
 //        [self presentLoginVC];
     }
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[ViewController_5 class]]){
+    else if ([viewController isKindOfClass:[ViewController_5 class]]){
     //        [self presentLoginVC];
     }
     

@@ -15,5 +15,7 @@
 #import <VideoToolbox/VideoToolbox.h>
 
 #import "IsLogin.h"
+#import "URL_Manager.h"
+
 
 #endif /* Other_h */

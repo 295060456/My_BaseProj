@@ -10,6 +10,7 @@
 		26F5FB2DED1306A0D077CBF9 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
+		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9A4024B5EF2B007B9878 /* Main.storyboard */; };
@@ -234,6 +235,8 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C5B1C71F24B894E8001923FB /* URL_Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL_Manager.h; sourceTree = "<group>"; };
+		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
@@ -680,6 +683,7 @@
 				C5FE9A7324B5F084007B9878 /* Other.h */,
 				C5FE9A7124B5F084007B9878 /* Pods.h */,
 				C5FE9A7224B5F084007B9878 /* PrefixHeader.pch */,
+				C5FE9ABB24B5F182007B9878 /* 🌹Macro */,
 				C5FE9A7524B5F0AA007B9878 /* Doc */,
 				C5FE9A3624B5EF2B007B9878 /* My_BaseProj */,
 				C5FE9A6F24B5F04A007B9878 /* Other */,
@@ -710,7 +714,6 @@
 				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
 				C5FE9A4B24B5EF2C007B9878 /* Info.plist */,
 				C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */,
-				C5FE9ABB24B5F182007B9878 /* 🌹Macro */,
 				C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */,
 				C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */,
 				C5FE9AB824B5F16A007B9878 /* 🍌Manual_Add_ThirdFont */,
@@ -954,6 +957,8 @@
 			children = (
 				C5FE9B0524B5F1F2007B9878 /* APIKey.h */,
 				C5FE9B0624B5F1F2007B9878 /* ToolMacro.h */,
+				C5B1C71F24B894E8001923FB /* URL_Manager.h */,
+				C5B1C72024B894E8001923FB /* URL_Manager.m */,
 			);
 			path = "🌹Macro";
 			sourceTree = "<group>";
@@ -961,8 +966,8 @@
 		C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */ = {
 			isa = PBXGroup;
 			children = (
-				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9AF424B5F1D4007B9878 /* 开屏页面 */,
+				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9ACF24B5F1B3007B9878 /* 图片.png */,
 				C5FE9AD524B5F1B3007B9878 /* 图片@2x.png */,
 				C5FE9ACE24B5F1B3007B9878 /* 图片@3x.png */,
@@ -2266,6 +2271,7 @@
 				C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,
+				C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C5FE9CC324B5F29C007B9878 /* CommentPopUpVC.m in Sources */,

@@ -177,99 +177,86 @@ static FMARCNetwork *_instance = nil;
                                                           code:-1
                                                       userInfo:nil]];/// request 必须的有值
     @weakify(self);
-    //网络监测反馈
-    [self AFNReachability];
-    __block RACSignal *signal = nil;
-    self.ReachableNetWorking = ^{
-        /// 创建信号
-        signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
-            @strongify(self);
-            /// 获取request KKK
-            NSError *serializationError = nil;
-            NSString *url = [[URL_Manager sharedInstance].BaseUrl_1 stringByAppendingString:req.path];//KKK
-            NSLog(@"%@",url);//
-            NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method
-                                                                                   URLString:url
-                                                                                  parameters:req.parameters
-                                                                                       error:&serializationError];
-            if (serializationError) {
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wgnu"
-                dispatch_async(self.manager.completionQueue ?: dispatch_get_main_queue(), ^{
-                    [subscriber sendError:serializationError];
-                });
-    #pragma clang diagnostic pop
-                return [RACDisposable disposableWithBlock:^{
-                }];
-            }
-            __block NSURLSessionDataTask *task = nil;
-            task = [self.manager dataTaskWithRequest:request
-                                      uploadProgress:nil
-                                    downloadProgress:nil
-                                   completionHandler:^(NSURLResponse * _Nonnull response,
-                                                       id  _Nullable responseObject,
-                                                       NSError * _Nullable error) {
-                @strongify(self);
-                if (!error) {//网络OK
-                    NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
-                    if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200 只有在200的时候才有data
-                        
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
-                                                                                            code:statusCode];
-                        
-                        [subscriber sendNext:response];//
-                        [subscriber sendCompleted];
-                    }else if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
-                              statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
-                              statusCode == HTTPResponseCodeError){//后台代码异常 999
-                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                                   view:nil];
-                        
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
-                                                                                            code:statusCode];
-                        
-                        [subscriber sendNext:response];
-                        [subscriber sendCompleted];
-                    }else{//抛其他异常
-                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                                   view:nil];
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
-                                                                                            code:statusCode];
-                                                   
-                        [subscriber sendNext:response];
-                        [subscriber sendCompleted];
-                    }
-                } else {//网络问题
-                    NSError *parseError = [self errorFromRequestWithTask:task
-                                                            httpResponse:(NSHTTPURLResponse *)response
-                                                          responseObject:responseObject
-                                                                   error:error];
-                    NSInteger code = [parseError.userInfo[HTTPServiceErrorHTTPStatusCodeKey] integerValue];
-                    NSString *msgStr = parseError.userInfo[HTTPServiceErrorDescriptionKey];
-                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
-                                                                                      code:code
-                                                                                       msg:msgStr];//初始化、返回数据模型
-                    [subscriber sendNext:response];//同样也返回到,调用的地址，也可处理，自己选择
-            //                [subscriber sendError:parseError];
-                    [subscriber sendCompleted];
-                    //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
-                    [MBProgressHUD wj_showPlainText:msgStr
-                                               view:nil];
-                }
-            }];
-            [task resume];/// 开启请求任务
+    RACSignal *signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
+        @strongify(self);
+        /// 获取request KKK
+        NSError *serializationError = nil;
+        NSString *url = [[URL_Manager sharedInstance].BaseUrl_1 stringByAppendingString:req.path];//KKK
+        NSLog(@"%@",url);//
+        NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method
+                                                                               URLString:url
+                                                                              parameters:req.parameters
+                                                                                   error:&serializationError];
+        if (serializationError) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(self.manager.completionQueue ?: dispatch_get_main_queue(), ^{
+                [subscriber sendError:serializationError];
+            });
+#pragma clang diagnostic pop
             return [RACDisposable disposableWithBlock:^{
-                [task cancel];
             }];
+        }
+        __block NSURLSessionDataTask *task = nil;
+        task = [self.manager dataTaskWithRequest:request
+                                  uploadProgress:nil
+                                downloadProgress:nil
+                               completionHandler:^(NSURLResponse * _Nonnull response,
+                                                   id  _Nullable responseObject,
+                                                   NSError * _Nullable error) {
+            @strongify(self);
+            if (!error) {//网络OK
+                NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
+                if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200 只有在200的时候才有data
+                    
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
+                                                                                        code:statusCode];
+                    
+                    [subscriber sendNext:response];//
+                    [subscriber sendCompleted];
+                }else if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
+                          statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
+                          statusCode == HTTPResponseCodeError){//后台代码异常 999
+                    [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                               view:nil];
+                    
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                        code:statusCode];
+                    
+                    [subscriber sendNext:response];
+                    [subscriber sendCompleted];
+                }else{//抛其他异常
+                    [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                               view:nil];
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                        code:statusCode];
+                                               
+                    [subscriber sendNext:response];
+                    [subscriber sendCompleted];
+                }
+            } else {//网络问题
+                NSError *parseError = [self errorFromRequestWithTask:task
+                                                        httpResponse:(NSHTTPURLResponse *)response
+                                                      responseObject:responseObject
+                                                               error:error];
+                NSInteger code = [parseError.userInfo[HTTPServiceErrorHTTPStatusCodeKey] integerValue];
+                NSString *msgStr = parseError.userInfo[HTTPServiceErrorDescriptionKey];
+                FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
+                                                                                  code:code
+                                                                                   msg:msgStr];//初始化、返回数据模型
+                [subscriber sendNext:response];//同样也返回到,调用的地址，也可处理，自己选择
+        //                [subscriber sendError:parseError];
+                [subscriber sendCompleted];
+                //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
+                [MBProgressHUD wj_showPlainText:msgStr
+                                           view:nil];
+            }
         }];
-    };
-    
-    self.NotReachableNetWorking = ^{
-        [MBProgressHUD wj_showPlainText:@"没有网络连接"
-                                   view:nil];
-    };
-    
-    return [signal replayLazily]; //多次订阅同样的信号，执行一次
+        [task resume];/// 开启请求任务
+        return [RACDisposable disposableWithBlock:^{
+            [task cancel];
+        }];
+    }];return [signal replayLazily]; //多次订阅同样的信号，执行一次
 }
 /**
 文件上传、可以当个文件、也可以多个文件

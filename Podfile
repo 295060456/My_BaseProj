@@ -9,6 +9,7 @@ target 'My_BaseProj' do
   # use_frameworks!
 
   # Pods for My_BaseProj
+#  pod 'lottie-ios' # 这个是swift版本
   pod 'SocketRocket'  # https://github.com/facebookarchive/SocketRocket
   pod 'FLEX'  # https://github.com/Flipboard/FLEX 调试界面相关插件
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果

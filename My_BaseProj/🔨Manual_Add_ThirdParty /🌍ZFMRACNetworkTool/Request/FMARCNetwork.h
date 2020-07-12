@@ -24,7 +24,18 @@ typedef enum : NSUInteger {
 @property(nonatomic,assign)RsponseStyle rsponseStyle;
 @property(nonatomic,assign)Boolean isEncryption;
 
+@property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕
+
+@property(nonatomic,copy)void (^ReachableViaWWANNetWorking)(void);//3G网络
+@property(nonatomic,copy)void (^ReachableViaWiFiNetWorking)(void);//WiFi
+@property(nonatomic,copy)void (^UnknownNetWorking)(void);//未知网络
+
+@property(nonatomic,copy)void (^NotReachableNetWorking)(void);//无任何网络连接
+@property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
+
 +(instancetype) sharedInstance;
+
+- (void)AFNReachability;
 /**
  网络请求，简便方案 POST
 

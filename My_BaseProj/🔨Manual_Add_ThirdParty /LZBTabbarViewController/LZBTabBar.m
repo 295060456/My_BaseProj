@@ -234,7 +234,26 @@
         }
         [item setNeedsDisplay];
         index++;
+        {
+            //Lottie
+            LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
+            [self addSubview:animation];
+            [animation playWithCompletion:^(BOOL animationFinished) {
+              // Do Something
+            }];
+        }
     }
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+    }return _lottieJsonNameStrMutArr;
 }
 
 #pragma mark —— API

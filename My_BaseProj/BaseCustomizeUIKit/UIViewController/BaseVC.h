@@ -34,13 +34,15 @@ UIGestureRecognizerDelegate
 //@property(nonatomic,strong)ViewForFooter *viewForFooter;
 @property(nonatomic,strong)FSCustomButton *backBtn;
 @property(nonatomic,strong)UIAlertController *alertController;
-@property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕
-@property(nonatomic,copy)void (^UnknownNetWorking)(void);
-@property(nonatomic,copy)void (^NotReachableNetWorking)(void);
-@property(nonatomic,copy)void (^ReachableViaWWANNetWorking)(void);
-@property(nonatomic,copy)void (^ReachableViaWiFiNetWorking)(void);
 @property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
 @property(nonatomic,strong)NSArray *BRStringPickerViewDataMutArr;
+
+@property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕
+@property(nonatomic,copy)void (^ReachableViaWWANNetWorking)(void);//3G网络
+@property(nonatomic,copy)void (^ReachableViaWiFiNetWorking)(void);//WiFi
+@property(nonatomic,copy)void (^UnknownNetWorking)(void);//未知网络
+@property(nonatomic,copy)void (^NotReachableNetWorking)(void);//无任何网络连接
+@property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
 
 -(void)backBtnClickEvent:(UIButton *)sender;
 -(void)VCwillComingBlock:(DataBlock)block;//即将进来

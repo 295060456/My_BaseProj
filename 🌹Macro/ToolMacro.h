@@ -30,7 +30,7 @@
 #define isiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)//是否iPhone
 #define isRetina ([[UIScreen mainScreen] scale] >= 2.0)// 非Retain屏幕 1.0
 
-#define isiPhoneX       (((kScreenHeight  == 812.0) || (kScreenHeight  == 896.0))  ? 1 : 0)
+#define isiPhoneX       (((kScreenHeight  == 812.0) || (kScreenHeight  == 896.0) || (kScreenHeight  == 852.0)) ? 1 : 0)
 #define isiPhoneXR__XMax      ((kScreenHeight  == 896.0) ? 1 : 0)
 
 #import "SceneDelegate.h"
@@ -41,6 +41,7 @@ static inline UIWindow * getMainWindow(){
         window = [SceneDelegate sharedInstance].window;
     }else{
         window = UIApplication.sharedApplication.delegate.window;
+//        [UIApplication sharedApplication].keyWindow
     }return window;
 }
 /**
@@ -70,8 +71,6 @@ UINavigationController *nav = [[UINavigationController alloc] initWithRootViewCo
 return; \
 } \
 
-#define LoadMsg @"加载中..."
-#define Toast(msg)  [YKToastView showToastText:msg]
 #endif /* ToolMacro_h */
 
 #define kApplyShadowForView(view, radius) view.layer.masksToBounds = NO; \
@@ -201,6 +200,7 @@ static inline CGFloat rectOfStatusbar(){
 /** NSLocalizedStringFromTable宏做的其实就是在当前bundle中查找资源文件名“xxx.strings”(参数:键＋文件名＋注释) */
 #define AppLocalString(x, ...)  NSLocalizedStringFromTable(x, @"someName", nil)
 #define LRToast(str) [NSString stringWithFormat:@"%@",@#str]
+#define API(DomainName,api) [NSString stringWithFormat:@"%@%@",DomainName,api]
 
 #pragma mark ======================================== UserDefault ========================================
 #define SetUserDefaultKeyWithValue(key,value) [[NSUserDefaults standardUserDefaults] setValue:value forKey:key]

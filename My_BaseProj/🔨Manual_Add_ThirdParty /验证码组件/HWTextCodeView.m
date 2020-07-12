@@ -106,12 +106,12 @@
     // 动画效果，这里是删除时，不要动画，输入时显示动画
     if (self.tempStr.length < textField.text.length) {
         if (textField.text == nil || textField.text.length <= 0) {
-            [self.lines.firstObject animation];
+            [self.lines.firstObject HWTC_lineViewAnimation];
         } else if (textField.text.length >= self.itemCount) {
-            [self.lines.lastObject animation];
+            [self.lines.lastObject HWTC_lineViewAnimation];
             [self animation:self.labels.lastObject];
         } else {
-            [self.lines[self.textField.text.length - 1] animation];
+            [self.lines[self.textField.text.length - 1] HWTC_lineViewAnimation];
             UILabel *ff = self.labels[self.textField.text.length - 1];
             [self animation:ff];
         }
@@ -184,7 +184,7 @@
     self.colorView.backgroundColor = backgroundColor;
 }
 
-- (void)animation{
+- (void)HWTC_lineViewAnimation{
     [self.colorView.layer removeAllAnimations];
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.x"];
     animation.duration = 0.18;

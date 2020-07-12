@@ -40,6 +40,7 @@ NSString *const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";//�
 @property(nonatomic,strong)AFJSONResponseSerializer *JSONResponseSerializer;
 @property(nonatomic,strong)AFXMLParserResponseSerializer *XMLParserResponseSerializer;
 @property(nonatomic,strong)AFSecurityPolicy *securityPolicy;//安全策略
+@property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
 
 @end
 
@@ -97,6 +98,59 @@ static FMARCNetwork *_instance = nil;
     return _instance;
 }
 
+- (void)AFNReachability {
+    //2.监听网络状态的改变
+    /*
+     AFNetworkReachabilityStatusUnknown          = 未知
+     AFNetworkReachabilityStatusNotReachable     = 没有网络
+     AFNetworkReachabilityStatusReachableViaWWAN = 3G
+     AFNetworkReachabilityStatusReachableViaWiFi = WIFI
+     */
+    @weakify(self)
+    if (!_isRequestFinish) {
+        //如果没有请求完成就检测网络
+        [self.afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            @strongify(self)
+            switch (status) {
+                case AFNetworkReachabilityStatusUnknown:
+                    DLog(@"未知网络");
+                    if (self.UnknownNetWorking) {
+                        self.UnknownNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
+                    }
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+                    DLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
+                    if (self.ReachableViaWWANNetWorking) {
+                        self.ReachableViaWWANNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
+                    }
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    DLog(@"WIFI网络");
+                    if (self.ReachableViaWiFiNetWorking) {
+                        self.ReachableViaWiFiNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
+                    }
+                    break;
+                case AFNetworkReachabilityStatusNotReachable:
+                    DLog(@"没有网络");
+                    if (self.NotReachableNetWorking) {
+                        self.NotReachableNetWorking();
+                    }
+                    break;
+                default:
+                    break;
+            }}];
+    }
+    [self.afNetworkReachabilityManager startMonitoring];
+}
 /**
 网络请求，简便方案
 
@@ -127,7 +181,7 @@ static FMARCNetwork *_instance = nil;
         @strongify(self);
         /// 获取request KKK
         NSError *serializationError = nil;
-        NSString *url = [BaseUrl_1 stringByAppendingString:req.path];//KKK
+        NSString *url = [[URL_Manager sharedInstance].BaseUrl_1 stringByAppendingString:req.path];//KKK
         NSLog(@"%@",url);//
         NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method
                                                                                URLString:url
@@ -285,7 +339,7 @@ static FMARCNetwork *_instance = nil;
     RACSignal *signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
         @strongify(self);
         NSError *serializationError = nil;
-        NSString *url = [ImgBaseURL stringByAppendingString:path];
+        NSString *url = [[URL_Manager sharedInstance].ImgBaseURL stringByAppendingString:path];
         NSMutableURLRequest *request = [self.manager.requestSerializer multipartFormRequestWithMethod:HTTTP_METHOD_POST
                                                                                             URLString:url
                                                                                            parameters:parameters
@@ -576,7 +630,12 @@ static FMARCNetwork *_instance = nil;
     }return _securityPolicy;
 }
 
-
+-(AFNetworkReachabilityManager *)afNetworkReachabilityManager{
+    if (!_afNetworkReachabilityManager) {
+//        1.创建网络监听管理者
+        _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    }return _afNetworkReachabilityManager;
+}
 //用例
 -(void)demo{
     

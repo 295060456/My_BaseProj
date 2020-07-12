@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) UIView *colorView;
 
-- (void)animation;
+- (void)HWTC_lineViewAnimation;
 
 @end
 

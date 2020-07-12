@@ -28,19 +28,19 @@
         [self.dataMutArr removeAllObjects];
     }
 
-    NSString *randomStr = [EncryptUtils shuffledAlphabet:16];
-    FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST
-                                                           path:CatfoodManageURL
-                                                     parameters:@{
-                                                         @"data":dic,
-                                                         @"key":[RSAUtil encryptString:randomStr
-                                                                             publicKey:RSA_Public_key]
-                                                     }];
-    self.reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
-    @weakify(self)
-    [self.reqSignal subscribeNext:^(FMHttpResonse *response) {
-
-    }];
+//    NSString *randomStr = [EncryptUtils shuffledAlphabet:16];
+//    FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST
+//                                                           path:CatfoodManageURL
+//                                                     parameters:@{
+//                                                         @"data":dic,
+//                                                         @"key":[RSAUtil encryptString:randomStr
+//                                                                             publicKey:RSA_Public_key]
+//                                                     }];
+//    self.reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
+//    @weakify(self)
+//    [self.reqSignal subscribeNext:^(FMHttpResonse *response) {
+//
+//    }];
 }
 
 @end

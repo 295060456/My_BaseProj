@@ -26,6 +26,7 @@ JXCategoryListContentViewDelegate
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 @property(nonatomic,assign)BOOL isFirstComing;
+@property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
 
 @end
 
@@ -114,6 +115,8 @@ JXCategoryListContentViewDelegate
             self.willBackBlock(parent);
         }
     }
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:NO];
 }
 
 - (void)didMoveToParentViewController:(UIViewController*)parent{
@@ -130,6 +133,8 @@ JXCategoryListContentViewDelegate
             self.didBackBlock(parent);
         }
     }
+    [self.navigationController setNavigationBarHidden:YES
+                                             animated:NO];
 }
 
 -(void)VCwillComingBlock:(DataBlock)block{//即将进来
@@ -167,8 +172,6 @@ JXCategoryListContentViewDelegate
 }
 
 - (void)AFNReachability {
-    //1.创建网络监听管理者
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     //2.监听网络状态的改变
     /*
      AFNetworkReachabilityStatusUnknown          = 未知
@@ -176,14 +179,37 @@ JXCategoryListContentViewDelegate
      AFNetworkReachabilityStatusReachableViaWWAN = 3G
      AFNetworkReachabilityStatusReachableViaWiFi = WIFI
      */
+    @weakify(self)
     if (!_isRequestFinish) {
         //如果没有请求完成就检测网络
-        [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        [self.afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+            @strongify(self)
             switch (status) {
                 case AFNetworkReachabilityStatusUnknown:
                     DLog(@"未知网络");
                     if (self.UnknownNetWorking) {
                         self.UnknownNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
+                    }
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+                    DLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
+                    if (self.ReachableViaWWANNetWorking) {
+                        self.ReachableViaWWANNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
+                    }
+                    break;
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    DLog(@"WIFI网络");
+                    if (self.ReachableViaWiFiNetWorking) {
+                        self.ReachableViaWiFiNetWorking();
+                    }
+                    if (self.ReachableNetWorking) {
+                        self.ReachableNetWorking();
                     }
                     break;
                 case AFNetworkReachabilityStatusNotReachable:
@@ -192,23 +218,11 @@ JXCategoryListContentViewDelegate
                         self.NotReachableNetWorking();
                     }
                     break;
-                case AFNetworkReachabilityStatusReachableViaWWAN:
-                    DLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
-                    if (self.ReachableViaWWANNetWorking) {
-                        self.ReachableViaWWANNetWorking();
-                    }
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWiFi:
-                    DLog(@"WIFI网络");
-                    if (self.ReachableViaWiFiNetWorking) {
-                        self.ReachableViaWiFiNetWorking();
-                    }
-                    break;
                 default:
                     break;
             }}];
     }
-    [manager startMonitoring];
+    [self.afNetworkReachabilityManager startMonitoring];
 }
 
 -(void)showAlertViewTitle:(NSString *)title
@@ -565,6 +579,13 @@ JXCategoryListContentViewDelegate
             }
         };
     }return _stringPickerView;
+}
+
+-(AFNetworkReachabilityManager *)afNetworkReachabilityManager{
+    if (!_afNetworkReachabilityManager) {
+//        1.创建网络监听管理者
+        _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    }return _afNetworkReachabilityManager;
 }
 
 @end

@@ -72,10 +72,11 @@ UIGestureRecognizerDelegate
 -(void)feedbackGenerator;//震动特效反馈
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
-                    withStyle:(ComingStyle)comingStyle
-                requestParams:(nullable id)requestParams
-                      success:(DataBlock)block
-                     animated:(BOOL)animated;
+                 comingStyle:(ComingStyle)comingStyle
+           presentationStyle:(UIModalPresentationStyle)presentationStyle
+               requestParams:(nullable id)requestParams
+                     success:(DataBlock)block
+                    animated:(BOOL)animated;
 
 @end
 

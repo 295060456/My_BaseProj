@@ -37,10 +37,11 @@
 }
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
-                    withStyle:(ComingStyle)comingStyle
-                requestParams:(nullable id)requestParams
-                      success:(DataBlock)block
-                     animated:(BOOL)animated{
+                 comingStyle:(ComingStyle)comingStyle
+           presentationStyle:(UIModalPresentationStyle)presentationStyle
+               requestParams:(nullable id)requestParams
+                     success:(DataBlock)block
+                    animated:(BOOL)animated{
     ViewController_1 *vc = ViewController_1.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
@@ -62,6 +63,8 @@
         case ComingStyle_PRESENT:{
             vc.isPush = NO;
             vc.isPresent = YES;
+            //iOS_13中modalPresentationStyle的默认改为UIModalPresentationAutomatic,而在之前默认是UIModalPresentationFullScreen
+            vc.modalPresentationStyle = presentationStyle;
             [rootVC presentViewController:vc
                                  animated:animated
                                completion:^{}];
@@ -83,7 +86,8 @@
 - (void)closeAction {
     @weakify(self)
     [ViewController_2 ComingFromVC:self_weak_
-                         withStyle:ComingStyle_PUSH
+                       comingStyle:ComingStyle_PUSH
+                 presentationStyle:UIModalPresentationAutomatic
                      requestParams:nil
                            success:^(id data) {}
                           animated:YES];

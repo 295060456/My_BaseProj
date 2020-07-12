@@ -26,7 +26,6 @@ UITableViewDelegate
 @property(nonatomic,copy)DataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
-@property(nonatomic,assign)BOOL isFirstComing;
 
 @end
 
@@ -50,7 +49,6 @@ UITableViewDelegate
             if (rootVC.navigationController) {
                 vc.isPush = YES;
                 vc.isPresent = NO;
-                vc.isFirstComing = YES;
                 [rootVC.navigationController pushViewController:vc
                                                        animated:animated];
             }else{

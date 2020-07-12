@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ViewController_3 : BaseVC
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
-                   withStyle:(ComingStyle)comingStyle
+                 comingStyle:(ComingStyle)comingStyle
+           presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
                      success:(DataBlock)block
                     animated:(BOOL)animated;

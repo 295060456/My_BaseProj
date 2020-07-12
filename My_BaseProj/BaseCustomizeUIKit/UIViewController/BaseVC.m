@@ -25,7 +25,6 @@ JXCategoryListContentViewDelegate
 @property(nonatomic,copy)DataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
-@property(nonatomic,assign)BOOL isFirstComing;
 @property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
 
 @end
@@ -44,10 +43,11 @@ JXCategoryListContentViewDelegate
 }
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
-                    withStyle:(ComingStyle)comingStyle
-             requestParams:(nullable id)requestParams
-                   success:(DataBlock)block
-                  animated:(BOOL)animated{
+                 comingStyle:(ComingStyle)comingStyle
+           presentationStyle:(UIModalPresentationStyle)presentationStyle
+               requestParams:(nullable id)requestParams
+                     success:(DataBlock)block
+                    animated:(BOOL)animated{
     BaseVC *vc = BaseVC.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;
@@ -56,7 +56,6 @@ JXCategoryListContentViewDelegate
             if (rootVC.navigationController) {
                 vc.isPush = YES;
                 vc.isPresent = NO;
-                vc.isFirstComing = YES;
                 [rootVC.navigationController pushViewController:vc
                                                        animated:animated];
             }else{
@@ -70,6 +69,8 @@ JXCategoryListContentViewDelegate
         case ComingStyle_PRESENT:{
             vc.isPush = NO;
             vc.isPresent = YES;
+            //iOS_13中modalPresentationStyle的默认改为UIModalPresentationAutomatic,而在之前默认是UIModalPresentationFullScreen
+            vc.modalPresentationStyle = presentationStyle;
             [rootVC presentViewController:vc
                                  animated:animated
                                completion:^{}];

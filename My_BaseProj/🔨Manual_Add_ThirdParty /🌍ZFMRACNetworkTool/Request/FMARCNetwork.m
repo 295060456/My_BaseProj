@@ -16,7 +16,7 @@
 
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {//KKK
-    ///请求成功
+    ///请求成功 200
     HTTPResponseCodeSuccess = 200,
     ///未登录 & 被踢 401
     HTTPResponseCodeNotLogin = 401,
@@ -151,6 +151,7 @@ static FMARCNetwork *_instance = nil;
     }
     [self.afNetworkReachabilityManager startMonitoring];
 }
+
 /**
 网络请求，简便方案
 
@@ -176,119 +177,99 @@ static FMARCNetwork *_instance = nil;
                                                           code:-1
                                                       userInfo:nil]];/// request 必须的有值
     @weakify(self);
-    /// 创建信号
-    RACSignal *signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
-        @strongify(self);
-        /// 获取request KKK
-        NSError *serializationError = nil;
-        NSString *url = [[URL_Manager sharedInstance].BaseUrl_1 stringByAppendingString:req.path];//KKK
-        NSLog(@"%@",url);//
-        NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method
-                                                                               URLString:url
-                                                                              parameters:req.parameters
-                                                                                   error:&serializationError];
-        if (serializationError) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wgnu"
-            dispatch_async(self.manager.completionQueue ?: dispatch_get_main_queue(), ^{
-                [subscriber sendError:serializationError];
-            });
-#pragma clang diagnostic pop
-            return [RACDisposable disposableWithBlock:^{
-            }];
-        }
-        __block NSURLSessionDataTask *task = nil;
-        task = [self.manager dataTaskWithRequest:request
-                                  uploadProgress:nil
-                                downloadProgress:nil
-                               completionHandler:^(NSURLResponse * _Nonnull response,
-                                                   id  _Nullable responseObject,
-                                                   NSError * _Nullable error) {
+    //网络监测反馈
+    [self AFNReachability];
+    __block RACSignal *signal = nil;
+    self.ReachableNetWorking = ^{
+        /// 创建信号
+        signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
             @strongify(self);
-            if (!error) {
-                if (responseObject[HTTPServiceResponseDataKey]) {//data 存在
-                    FMHttpResonse *httpResponse = nil;
-                    id ResponseSuccess = nil;
-                    if (self.isEncryption) {//加密
-                        NSString *randomStr = req.parameters[@"randomStr"];
-                        ResponseSuccess = [NSString dictionaryWithJsonString:aesDecryptString(responseObject,
-                                                                                              randomStr)];
-                    }else{
-                        ResponseSuccess = responseObject[HTTPServiceResponseDataKey];
-                    }
-                    httpResponse = [[FMHttpResonse alloc] initWithResponseSuccess:ResponseSuccess
-                                                                             code:1];
-                    NSInteger statusCode = [httpResponse.reqResult[HTTPServiceResponseCodeKey] integerValue];
-                    if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200
-                        if (httpResponse.isSuccess) {
-                            if (httpResponse.reqResult[HTTPServiceResponseDataKey]) {
-                                [subscriber sendNext:httpResponse.reqResult[HTTPServiceResponseDataKey]];//
-                            }else{
-                                [subscriber sendNext:@""];
-                            }
-                            [subscriber sendCompleted];
-                        }
-                    }else if (statusCode == HTTPResponseCodeNotLogin){//用户尚未登录 401
-                        //可以在此处理需要登录的逻辑、比如说弹出登录框，但是，一般请求某个 api 判断了是否需要登录就不会进入
-                        //如果进入可一做错误处理
-                        if (httpResponse.isSuccess){
-                            [MBProgressHUD wj_showPlainText:httpResponse.reqResult[HTTPServiceResponseMsgKey]
-                                                       view:nil];
-                            NSMutableDictionary *userInfo = NSMutableDictionary.dictionary;
-                            userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(statusCode);
-                            userInfo[HTTPServiceErrorDescriptionKey] = httpResponse.reqResult[HTTPServiceResponseMsgKey];
-                            NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain
-                                                                        code:statusCode
-                                                                    userInfo:userInfo];
-                            FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError
-                                                                                              code:statusCode
-                                                                                               msg:httpResponse.reqResult[HTTPServiceResponseMsgKey]];
-                            [subscriber sendNext:response];
-                            [subscriber sendCompleted];
-                          }
-                      }else if (statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
-                                statusCode == HTTPResponseCodeError){//后台代码异常 999
-                          if (httpResponse.isSuccess) {
-                              [MBProgressHUD wj_showPlainText:httpResponse.reqResult[HTTPServiceResponseMsgKey]
-                                                         view:nil];
-                              [subscriber sendNext:httpResponse.reqResult[HTTPServiceResponseMsgKey]];//
-                              [subscriber sendCompleted];
-                          }
-                      }else{//抛其他异常
-                          if (httpResponse.isSuccess) {
-                              [MBProgressHUD wj_showPlainText:httpResponse.reqResult[HTTPServiceResponseMsgKey]
-                                                         view:nil];
-                              [subscriber sendNext:httpResponse.reqResult[HTTPServiceResponseMsgKey]];
-                              [subscriber sendCompleted];
-                          }
-                      }
-                }
-                else{//data 不存在
-                    [subscriber sendNext:@""];
-                }
-            } else {//网络问题
-                NSError *parseError = [self errorFromRequestWithTask:task
-                                                        httpResponse:(NSHTTPURLResponse *)response
-                                                      responseObject:responseObject
-                                                               error:error];
-                NSInteger code = [parseError.userInfo[HTTPServiceErrorHTTPStatusCodeKey] integerValue];
-                NSString *msgStr = parseError.userInfo[HTTPServiceErrorDescriptionKey];
-                FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
-                                                                                  code:code
-                                                                                   msg:msgStr];//初始化、返回数据模型
-                [subscriber sendNext:response];//同样也返回到,调用的地址，也可处理，自己选择
-        //                [subscriber sendError:parseError];
-                [subscriber sendCompleted];
-                //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
-                [MBProgressHUD wj_showPlainText:msgStr
-                                           view:nil];
+            /// 获取request KKK
+            NSError *serializationError = nil;
+            NSString *url = [[URL_Manager sharedInstance].BaseUrl_1 stringByAppendingString:req.path];//KKK
+            NSLog(@"%@",url);//
+            NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method
+                                                                                   URLString:url
+                                                                                  parameters:req.parameters
+                                                                                       error:&serializationError];
+            if (serializationError) {
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wgnu"
+                dispatch_async(self.manager.completionQueue ?: dispatch_get_main_queue(), ^{
+                    [subscriber sendError:serializationError];
+                });
+    #pragma clang diagnostic pop
+                return [RACDisposable disposableWithBlock:^{
+                }];
             }
+            __block NSURLSessionDataTask *task = nil;
+            task = [self.manager dataTaskWithRequest:request
+                                      uploadProgress:nil
+                                    downloadProgress:nil
+                                   completionHandler:^(NSURLResponse * _Nonnull response,
+                                                       id  _Nullable responseObject,
+                                                       NSError * _Nullable error) {
+                @strongify(self);
+                if (!error) {//网络OK
+                    NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
+                    if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200 只有在200的时候才有data
+                        
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
+                                                                                            code:statusCode];
+                        
+                        [subscriber sendNext:response];//
+                        [subscriber sendCompleted];
+                    }else if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
+                              statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
+                              statusCode == HTTPResponseCodeError){//后台代码异常 999
+                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                                   view:nil];
+                        
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                            code:statusCode];
+                        
+                        [subscriber sendNext:response];
+                        [subscriber sendCompleted];
+                    }else{//抛其他异常
+                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                                   view:nil];
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                            code:statusCode];
+                                                   
+                        [subscriber sendNext:response];
+                        [subscriber sendCompleted];
+                    }
+                } else {//网络问题
+                    NSError *parseError = [self errorFromRequestWithTask:task
+                                                            httpResponse:(NSHTTPURLResponse *)response
+                                                          responseObject:responseObject
+                                                                   error:error];
+                    NSInteger code = [parseError.userInfo[HTTPServiceErrorHTTPStatusCodeKey] integerValue];
+                    NSString *msgStr = parseError.userInfo[HTTPServiceErrorDescriptionKey];
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
+                                                                                      code:code
+                                                                                       msg:msgStr];//初始化、返回数据模型
+                    [subscriber sendNext:response];//同样也返回到,调用的地址，也可处理，自己选择
+            //                [subscriber sendError:parseError];
+                    [subscriber sendCompleted];
+                    //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
+                    [MBProgressHUD wj_showPlainText:msgStr
+                                               view:nil];
+                }
+            }];
+            [task resume];/// 开启请求任务
+            return [RACDisposable disposableWithBlock:^{
+                [task cancel];
+            }];
         }];
-        [task resume];/// 开启请求任务
-        return [RACDisposable disposableWithBlock:^{
-            [task cancel];
-        }];
-    }];return [signal replayLazily]; //多次订阅同样的信号，执行一次
+    };
+    
+    self.NotReachableNetWorking = ^{
+        [MBProgressHUD wj_showPlainText:@"没有网络连接"
+                                   view:nil];
+    };
+    
+    return [signal replayLazily]; //多次订阅同样的信号，执行一次
 }
 /**
 文件上传、可以当个文件、也可以多个文件
@@ -607,6 +588,7 @@ static FMARCNetwork *_instance = nil;
                 NSLog(@"--- 未知网络 ---");
                 [MBProgressHUD wj_showPlainText:@"网络状态未知"
                                            view:nil];
+                
             }else if (status == AFNetworkReachabilityStatusNotReachable) {
                 [MBProgressHUD wj_showPlainText:@"网络不给力，请检查网络"
                                            view:nil];
@@ -636,6 +618,7 @@ static FMARCNetwork *_instance = nil;
         _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     }return _afNetworkReachabilityManager;
 }
+
 //用例
 -(void)demo{
     

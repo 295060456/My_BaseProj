@@ -233,15 +233,15 @@
             }];
         }
         [item setNeedsDisplay];
-        index++;
         {
             //Lottie
-            LOTAnimationView *animation = [LOTAnimationView animationNamed:@"Lottie"];
-            [self addSubview:animation];
+            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
+            [item addSubview:animation];
             [animation playWithCompletion:^(BOOL animationFinished) {
               // Do Something
             }];
         }
+        index++;
     }
 }
 

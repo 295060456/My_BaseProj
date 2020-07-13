@@ -78,7 +78,10 @@ target 'My_BaseProj' do
 #  pod 'QMUIKit' # https://github.com/Tencent/QMUI_iOS 「很遗憾，没有对iOS 13进行适配」 QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。不管是新项目的创建，或是已有项目的维护，均可使开发效率和项目质量得到大幅度提升。
   #  pod 'DZNEmptyDataSet' # https://github.com/dzenbot/DZNEmptyDataSet 空白数据集显示框架
   pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
-  #  pod 'LBXScan' #÷https://github.com/MxABC/LBXScan iOS 二维码、条形码
+  #  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
+  pod 'FMDB/SQLCipher' # 数据库加解密
+  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
+  
   pod 'LBXScan/LBXNative'
   pod 'LBXScan/LBXZXing'
   pod 'LBXScan/LBXZBar'

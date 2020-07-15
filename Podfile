@@ -79,8 +79,8 @@ target 'My_BaseProj' do
   #  pod 'DZNEmptyDataSet' # https://github.com/dzenbot/DZNEmptyDataSet 空白数据集显示框架
   pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
   #  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
-  pod 'FMDB/SQLCipher' # 数据库加解密
-  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
+#  pod 'FMDB/SQLCipher' # 数据库加解密
+#  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   
   pod 'LBXScan/LBXNative'
   pod 'LBXScan/LBXZXing'

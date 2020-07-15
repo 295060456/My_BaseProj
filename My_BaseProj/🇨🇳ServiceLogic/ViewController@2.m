@@ -46,6 +46,8 @@
                requestParams:(nullable id)requestParams
                      success:(DataBlock)block
                     animated:(BOOL)animated{
+   [[[self class] alloc]init];
+    
     ViewController_2 *vc = ViewController_2.new;
     vc.successBlock = block;
     vc.requestParams = requestParams;

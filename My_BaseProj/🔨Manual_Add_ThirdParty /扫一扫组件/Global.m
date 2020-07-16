@@ -12,9 +12,9 @@
 
 @implementation Global
 
+static Global *_sharedInstance = nil;
+static dispatch_once_t onceToken;
 + (instancetype)sharedManager{
-    static Global *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedInstance = [[Global alloc] init];
         _sharedInstance.libraryType = SLT_Native;

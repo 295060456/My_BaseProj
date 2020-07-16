@@ -10,18 +10,14 @@
 
 @implementation URL_Manager
 
+static URL_Manager *_instance = nil;
+static dispatch_once_t onceToken;
 + (instancetype)sharedInstance {
-    static URL_Manager *_instance = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!_instance) {
-            _instance = [[super allocWithZone:NULL] init];
+            _instance = [[self alloc] init];
         }
     });return _instance;
-}
-
-+ (id)allocWithZone:(struct _NSZone *)zone{
-    return [self sharedInstance];
 }
 
 -(NSString *)BaseUrl_1{

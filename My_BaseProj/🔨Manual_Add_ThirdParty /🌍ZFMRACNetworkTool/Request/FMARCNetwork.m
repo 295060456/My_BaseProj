@@ -52,7 +52,7 @@ static FMARCNetwork *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!_instance) {
-            _instance = [[super allocWithZone:NULL] init];
+            _instance = [[self alloc] init];
             AFNetworkActivityIndicatorManager.sharedManager.enabled = YES;//开启网络监测
         }
     });return _instance;

@@ -21,9 +21,7 @@ typedef NS_ENUM(NSUInteger, MoveDirection){
                    withStyle:(ComingStyle)comingStyle
                requestParams:(nullable id)requestParams
                      success:(DataBlock)block
-                    animated:(BOOL)animated;//用单例
-
-+ (instancetype)sharedInstance;
+                    animated:(BOOL)animated;
 -(void)actionBlock:(DataBlock)block;
 
 @end

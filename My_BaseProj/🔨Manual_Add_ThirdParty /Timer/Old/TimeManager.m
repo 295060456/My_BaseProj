@@ -19,13 +19,12 @@
 @implementation TimeManager
 
 static TimeManager *instance = nil;
+static dispatch_once_t onceToken;
 + (instancetype)sharedInstance {
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = TimeManager.new;
     });return instance;
 }
-
 #pragma mark —— GCD
 -(void)GCDTimer:(SEL)wantToDo
          caller:(id)caller

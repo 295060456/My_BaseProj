@@ -17,9 +17,9 @@
 @implementation PersonalInfo
 
 static PersonalInfo *personalInfo;
+static dispatch_once_t longOnce;
 //单例实例化
 + (PersonalInfo *)sharedInstance{
-    static dispatch_once_t longOnce;
     dispatch_once(&longOnce, ^{
         personalInfo = [[PersonalInfo alloc] init];
     });return personalInfo;

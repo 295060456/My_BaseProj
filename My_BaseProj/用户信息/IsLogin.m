@@ -10,27 +10,17 @@
 
 @implementation IsLogin
 
+
+static IsLogin *_instace = nil;
+static dispatch_once_t onceToken;
 + (instancetype)sharedInstance {
-    
-    static IsLogin *_instace = nil;
-    
-    static dispatch_once_t onceToken;
-    
     dispatch_once(&onceToken, ^{
-        
         if (!_instace) {
-            
-            _instace = [[super allocWithZone:NULL] init];
+            _instance = [[self alloc] init];
         }
     });
     return _instace;
 }
-
-+ (id)allocWithZone:(struct _NSZone *)zone{
-    return [self sharedInstance];
-}
-
-
 //登陆成功,保存用户名、Member_id（以手机号绑定，唯一）、User_token（需要加在请求头上）、IsVip（会员身份）
 +(void)recordLoginInfoWithUserName:(NSString *)username
                          Member_id:(NSNumber *)member_id

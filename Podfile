@@ -18,6 +18,7 @@ target 'My_BaseProj' do
   pod 'Texture' #Facebook出品的一款界面框架
 #  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
   pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
+  pod 'GKPageScrollView' # https://github.com/QuintGao/GKPageScrollView iOS类似微博、抖音、网易云等个人详情页滑动嵌套效果
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
   #pod 'MyLayout'

@@ -10,6 +10,7 @@ target 'My_BaseProj' do
 
   # Pods for My_BaseProj
 #  pod 'lottie-ios' # 这个是swift版本
+  pod 'CWLateralSlide' # https://github.com/ChavezChen/CWLateralSlide 打破传统侧滑抽屉框架LeftVC，RightVC，CenterVC模式，使用自定义转场动画实现的0耦合、0侵入、0污染的抽屉框架，抽屉控制器拥有完整的生命周期函数调用，关闭抽屉时抽屉不会展示在我们看不见的地方（屏幕外，或者根控制器下边）,最重要的是简单：只要一行代码就能拥有一个侧滑抽屉。
   pod 'SocketRocket'  # https://github.com/facebookarchive/SocketRocket
   pod 'FLEX'  # https://github.com/Flipboard/FLEX 调试界面相关插件
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果

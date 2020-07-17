@@ -58,6 +58,7 @@
 #import "JJStockView.h"
 #import "LBXScanView.h"
 #import "Debugo.h"
+#import "UIViewController+CWLateralSlide.h"
 
 
 #endif /* Pods_h */

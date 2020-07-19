@@ -87,21 +87,20 @@ static const void *rightButtonEventBlockKey = &rightButtonEventBlockKey;
  *  指定圆切角
  */
 +(void)appointCornerCutToCircleWithTargetView:(UIView *)targetView
-                         TargetCorner_TopLeft:(UIRectCorner)targetCorner_TopLeft
-                        TargetCorner_TopRight:(UIRectCorner)targetCorner_TopRight
-                      TargetCorner_BottomLeft:(UIRectCorner)targetCorner_BottomLeft
-                     TargetCorner_BottomRight:(UIRectCorner)targetCorner_BottomRight{
-    
+                            byRoundingCorners:(UIRectCorner)corners
+                                  cornerRadii:(CGSize)cornerRadii{
     //设置切哪个直角
     //    UIRectCornerTopLeft     = 1 << 0,  左上角
     //    UIRectCornerTopRight    = 1 << 1,  右上角
     //    UIRectCornerBottomLeft  = 1 << 2,  左下角
     //    UIRectCornerBottomRight = 1 << 3,  右下角
     //    UIRectCornerAllCorners  = ~0UL     全部角
-    
+    if (CGSizeEqualToSize(cornerRadii, CGSizeZero)) {
+        cornerRadii = CGSizeMake(10,10);
+    }
     //得到view的遮罩路径
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:targetView.bounds
-                                                   byRoundingCorners:targetCorner_TopLeft | targetCorner_TopRight | targetCorner_BottomLeft | targetCorner_BottomRight
+                                                   byRoundingCorners:corners
                                                          cornerRadii:CGSizeMake(10,10)];
     //创建 layer
     CAShapeLayer *maskLayer = [CAShapeLayer new];

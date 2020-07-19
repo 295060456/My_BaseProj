@@ -50,10 +50,8 @@ typedef NS_OPTIONS(NSUInteger, UIBorderSideType) {
  *  指定圆切角
  */
 +(void)appointCornerCutToCircleWithTargetView:(UIView *)targetView
-                         TargetCorner_TopLeft:(UIRectCorner)targetCorner_TopLeft
-                        TargetCorner_TopRight:(UIRectCorner)targetCorner_TopRight
-                      TargetCorner_BottomLeft:(UIRectCorner)targetCorner_BottomLeft
-                     TargetCorner_BottomRight:(UIRectCorner)targetCorner_BottomRight;
+                            byRoundingCorners:(UIRectCorner)corners
+                                  cornerRadii:(CGSize)cornerRadii;
 //旋转
 +(void)setTransform:(float)radians
             forView:(UIView *)view;

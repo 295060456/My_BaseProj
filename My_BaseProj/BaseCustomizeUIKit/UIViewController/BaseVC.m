@@ -14,6 +14,10 @@
 JXCategoryListContentViewDelegate
 >
 
+@property(nonatomic,strong)UIImageView *gifImageView;
+@property(nonatomic,strong)UIImage *image;
+@property(nonatomic,strong)NSData *data;
+
 @property(nonatomic,copy)DataBlock willComingBlock;
 @property(nonatomic,copy)DataBlock didComingBlock;
 @property(nonatomic,copy)DataBlock willBackBlock;
@@ -83,6 +87,8 @@ JXCategoryListContentViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //    self.view.backgroundColor = [UIColor colorWithPatternImage:kIMG(@"兴发街")];
+    self.gifImageView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -587,6 +593,36 @@ JXCategoryListContentViewDelegate
 //        1.创建网络监听管理者
         _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     }return _afNetworkReachabilityManager;
+}
+
+-(UIImageView *)gifImageView{
+    if (!_gifImageView) {
+        _gifImageView = UIImageView.new;
+        _gifImageView.image = self.image;
+        [self.view addSubview:_gifImageView];
+        [_gifImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }return _gifImageView;
+}
+
+-(NSString *)path{
+    if (!_path) {
+        _path = [[NSBundle mainBundle] pathForResource:@"GIF大图"
+                                                ofType:@"gif"];
+    }return _path;
+}
+
+-(NSData *)data{
+    if (!_data) {
+        _data = [NSData dataWithContentsOfFile:self.path];
+    }return _data;
+}
+
+-(UIImage *)image{
+    if (!_image) {
+        _image = [UIImage sd_animatedGIFWithData:self.data];
+    }return _image;
 }
 
 @end

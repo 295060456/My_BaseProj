@@ -24,6 +24,7 @@ UIGestureRecognizerDelegate
 ,TZImagePickerControllerDelegate
 >
 
+@property(nonatomic,strong)NSString *path;
 @property(nonatomic,strong)RACSignal *reqSignal;
 @property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;
 @property(nonatomic,strong)MJRefreshGifHeader *tableViewHeader;

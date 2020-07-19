@@ -10,6 +10,9 @@
 #define Pods_h
 
 #import "AFNetworking.h"
+#import "SDWebImageManager.h"
+#import "SDImageCache.h"
+#import "SDWebImage-umbrella.h"//不支持图片后处理
 #import "AYCheckManager.h"
 #import "BEMCheckBox.h"
 #import "DDProgressView.h"

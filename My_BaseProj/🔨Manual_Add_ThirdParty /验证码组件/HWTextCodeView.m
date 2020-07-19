@@ -36,6 +36,8 @@
     self.labels = @[].mutableCopy;
     self.lines = @[].mutableCopy;
     UITextField *textField = [[UITextField alloc] init];
+    textField.textColor = kClearColor;
+    textField.tintColor = kClearColor;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.keyboardType = UIKeyboardTypeNumberPad;
     [textField addTarget:self

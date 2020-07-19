@@ -91,9 +91,12 @@ static dispatch_once_t onceToken;
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.panGestureRecognizer.enabled = YES;
-    //self.swipeGestureRecognizerUp.enabled = YES;
-    //self.swipeGestureRecognizerDown.enabled = YES;
+    self.swipeGestureRecognizerUp.enabled = YES;
+    self.swipeGestureRecognizerDown.enabled = YES;
     NSLog(@"");
+    
+    [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerUp];
+    [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerDown];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -115,7 +118,9 @@ static dispatch_once_t onceToken;
 - (void)swipeGestureRecognizerDirection:(UISwipeGestureRecognizer *)swipe{
     switch (swipe.direction) {
         case UISwipeGestureRecognizerDirectionRight:{
-            
+            if (self.block) {
+                self.block(@(MoveDirection_horizont_right));//消失
+            }
         }break;
         case UISwipeGestureRecognizerDirectionLeft:{
             
@@ -145,8 +150,18 @@ static dispatch_once_t onceToken;
 }
 //是否接收一个手势触摸事件，默认为YES，返回NO为不接收
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+
     return YES;
 }
+
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+//{
+//    if ([gestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
+//        return NO;
+//    }else{
+//        return YES;
+//    }
+//}
 //拖拽手势
 - (void)pan:(UIPanGestureRecognizer *)panGestureRecognizer{
 //    NSLog(@"拖拽手势");
@@ -205,15 +220,17 @@ static dispatch_once_t onceToken;
         }
     }else if (gestureRecognizerState == UIGestureRecognizerStateChanged) {
         NSLog(@"UIGestureRecognizerStateChanged point:%@",NSStringFromCGPoint(translatePoint));
-        if (self.isMove) {
+            
             if (self.isMove == 1) {
                 self.view.center = CGPointMake(self.view.center.x + translatePoint.x,self.view.center.y);
-            }else{
-                self.view.center = CGPointMake(self.view.center.x ,self.view.center.y + translatePoint.y);
+            }else if (self.isMove == -1){
+                if (translatePoint.y > 0) {
+                    self.view.center = CGPointMake(self.view.center.x ,self.view.center.y + translatePoint.y);
+                }
             }
             
             [panGestureRecognizer setTranslation:CGPointZero inView:self.view];
-        }
+    
         
     }else if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
         NSLog(@"UIGestureRecognizerStateEnded point:%@",NSStringFromCGPoint(translatePoint));
@@ -313,7 +330,7 @@ static dispatch_once_t onceToken;
                                                                         action:@selector(pan:)];
         _panGestureRecognizer.minimumNumberOfTouches = 1;//default = 1
         [self.view addGestureRecognizer:_panGestureRecognizer];
-        self.panGestureRecognizer.delegate = self;
+        _panGestureRecognizer.delegate = self;
     }return _panGestureRecognizer;
 }
 
@@ -322,7 +339,7 @@ static dispatch_once_t onceToken;
         _swipeGestureRecognizerUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                             action:@selector(swipeGestureRecognizerDirection:)];
         // 轻扫方向:默认是右边
-        _swipeGestureRecognizerUp.direction = UISwipeGestureRecognizerDirectionUp;
+        _swipeGestureRecognizerUp.direction = UISwipeGestureRecognizerDirectionRight;
         [self.view addGestureRecognizer:_swipeGestureRecognizerUp];
         _swipeGestureRecognizerUp.delegate = self;
     }return _swipeGestureRecognizerUp;
@@ -330,12 +347,12 @@ static dispatch_once_t onceToken;
 
 -(UISwipeGestureRecognizer *)swipeGestureRecognizerDown{
     if (!_swipeGestureRecognizerDown) {
-        _swipeGestureRecognizerUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+        _swipeGestureRecognizerDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                             action:@selector(swipeGestureRecognizerDirection:)];
         // 轻扫方向:默认是右边
-        _swipeGestureRecognizerUp.direction = UISwipeGestureRecognizerDirectionDown;
-        _swipeGestureRecognizerUp.delegate = self;
-        [self.view addGestureRecognizer:_swipeGestureRecognizerUp];
+        _swipeGestureRecognizerDown.direction = UISwipeGestureRecognizerDirectionDown;
+        _swipeGestureRecognizerDown.delegate = self;
+        [self.view addGestureRecognizer:_swipeGestureRecognizerDown];
     }return _swipeGestureRecognizerDown;
 }
 

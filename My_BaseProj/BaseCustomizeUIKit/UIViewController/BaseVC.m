@@ -14,7 +14,6 @@
 JXCategoryListContentViewDelegate
 >
 
-@property(nonatomic,strong)UIImageView *gifImageView;
 @property(nonatomic,strong)UIImage *image;
 @property(nonatomic,strong)NSData *data;
 

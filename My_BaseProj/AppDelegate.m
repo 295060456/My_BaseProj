@@ -17,14 +17,19 @@
 
 @implementation AppDelegate
 
-static AppDelegate *_instance = nil;
-static dispatch_once_t onceToken;
-+ (instancetype)sharedInstance {
-    dispatch_once(&onceToken, ^{
-        if (!_instance) {
-            _instance = [[self alloc] init];
+static AppDelegate *static_appDelegate = nil;
++(AppDelegate *)sharedInstance{
+    @synchronized(self){
+        if (!static_appDelegate) {
+            static_appDelegate = AppDelegate.new;
         }
-    });return _instance;
+    }return static_appDelegate;
+}
+
+-(instancetype)init{
+    if (self = [super init]) {
+        static_appDelegate = self;
+    }return self;
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -32,16 +37,16 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     #if DEBUG
         /**
-         *  宏忽略警告
-         */
+         *  宏忽略警告-+         */
         SuppressPerformSelectorLeakWarning(
-                                           
                                            id overlayClass = NSClassFromString(@"UIDebuggingInformationOverlay");
                                            [overlayClass performSelector:NSSelectorFromString(@"prepareDebuggingOverlay")];
                                            );
     #endif
+#pragma mark —— 网络监控
+    [FMARCNetwork.sharedInstance AFNReachability];
 //    [GKConfigure setupDefaultConfigure];
-        // 沙盒路径
+// 沙盒路径
     NSString *directory = NSHomeDirectory();
     NSLog(@"沙盒路径 : %@", directory);
     // 配置导航栏属性

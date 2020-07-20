@@ -46,20 +46,20 @@ NSString *const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";//�
 
 @implementation FMARCNetwork
 
-static FMARCNetwork *_instance = nil;
+@synthesize manager = _manager;
 
-+ (instancetype)sharedInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (!_instance) {
-            _instance = [[self alloc] init];
-            AFNetworkActivityIndicatorManager.sharedManager.enabled = YES;//开启网络监测
+static FMARCNetwork *static_FMARCNetwork = nil;
++(FMARCNetwork *)sharedInstance{
+    @synchronized(self){
+        if (!static_FMARCNetwork) {
+            static_FMARCNetwork = FMARCNetwork.new;
         }
-    });return _instance;
+    }return static_FMARCNetwork;
 }
 
 -(instancetype)init{
     if (self = [super init]) {
+        static_FMARCNetwork = self;
         self.manager = AFHTTPSessionManager.manager;//初始化 网络管理器
         switch (self.rsponseStyle) {
             case RsponseStyle_JSON:{
@@ -83,21 +83,6 @@ static FMARCNetwork *_instance = nil;
     }return self;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)zone{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [super allocWithZone:zone];
-    });return _instance;
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-    return _instance;
-}
-
--(id)mutableCopyWithZone:(NSZone *)zone{
-    return _instance;
-}
-
 - (void)AFNReachability {
     //2.监听网络状态的改变
     /*
@@ -112,7 +97,7 @@ static FMARCNetwork *_instance = nil;
         [self.afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             @strongify(self)
             switch (status) {
-                case AFNetworkReachabilityStatusUnknown:
+                case AFNetworkReachabilityStatusUnknown:{
                     DLog(@"未知网络");
                     if (self.UnknownNetWorking) {
                         self.UnknownNetWorking();
@@ -120,8 +105,10 @@ static FMARCNetwork *_instance = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWWAN:
+                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+                                                                        object:@(AFNetworkReachabilityStatusUnknown)];
+                }break;
+                case AFNetworkReachabilityStatusReachableViaWWAN:{
                     DLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
                     if (self.ReachableViaWWANNetWorking) {
                         self.ReachableViaWWANNetWorking();
@@ -129,8 +116,10 @@ static FMARCNetwork *_instance = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWiFi:
+                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+                                                                        object:@(AFNetworkReachabilityStatusReachableViaWWAN)];
+                }break;
+                case AFNetworkReachabilityStatusReachableViaWiFi:{
                     DLog(@"WIFI网络");
                     if (self.ReachableViaWiFiNetWorking) {
                         self.ReachableViaWiFiNetWorking();
@@ -138,15 +127,25 @@ static FMARCNetwork *_instance = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    break;
-                case AFNetworkReachabilityStatusNotReachable:
+                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+                                                                        object:@(AFNetworkReachabilityStatusReachableViaWiFi)];
+                } break;
+                case AFNetworkReachabilityStatusNotReachable:{
                     DLog(@"没有网络");
                     if (self.NotReachableNetWorking) {
                         self.NotReachableNetWorking();
                     }
-                    break;
-                default:
-                    break;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
+                }break;
+                default:{
+                    DLog(@"没有网络");
+                    if (self.NotReachableNetWorking) {
+                        self.NotReachableNetWorking();
+                    }
+                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
+                }break;
             }}];
     }
     [self.afNetworkReachabilityManager startMonitoring];
@@ -187,6 +186,11 @@ static FMARCNetwork *_instance = nil;
                                                                                URLString:url
                                                                               parameters:req.parameters
                                                                                    error:&serializationError];
+         
+        if ([MKPublickDataManager sharedPublicDataManage].mkLoginModel.token) {
+              [request setValue:[MKPublickDataManager sharedPublicDataManage].mkLoginModel.token
+             forHTTPHeaderField:@"Authorization"];//token
+        }
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
@@ -198,19 +202,22 @@ static FMARCNetwork *_instance = nil;
             }];
         }
         __block NSURLSessionDataTask *task = nil;
-        task = [self.manager dataTaskWithRequest:request
+        NSLog(@"%@",request.allHTTPHeaderFields);
+        task = [self.manager
+                dataTaskWithRequest:request
                                   uploadProgress:nil
                                 downloadProgress:nil
                                completionHandler:^(NSURLResponse * _Nonnull response,
                                                    id  _Nullable responseObject,
-                                                   NSError * _Nullable error) {
+                                                   NSError * _Nullable error){
             @strongify(self);
             if (!error) {//网络OK
                 NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
                 if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200 只有在200的时候才有data
                     
                     FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
-                                                                                        code:statusCode];
+                                                                                        code:statusCode
+                                               ];
                     
                     [subscriber sendNext:response];//
                     [subscriber sendCompleted];
@@ -551,14 +558,31 @@ static FMARCNetwork *_instance = nil;
 -(AFHTTPSessionManager *)manager{
     if (!_manager) {
         _manager = AFHTTPSessionManager.manager;
-        _manager.requestSerializer = AFHTTPRequestSerializer.serializer;
-        _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        
+        AFHTTPRequestSerializer *serializer = AFHTTPRequestSerializer.serializer;
+        [serializer setValue:@"e6c171fa601c0464b35b7732a6c61b59"
+        forHTTPHeaderField:@"Authorization"];
+        [serializer setStringEncoding:NSUTF8StringEncoding];
+        
+        
+//        _manager.requestSerializer = AFHTTPRequestSerializer.serializer;
+//        _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        
+        [_manager setRequestSerializer:serializer];
         _manager.securityPolicy = self.securityPolicy;
         //设置token
-        [_manager.requestSerializer setValue:@"token"
-                          forHTTPHeaderField:@"Authorization"];
+//        [_manager.requestSerializer setValue:@"e6c171fa601c0464b35b7732a6c61b59"
+//                          forHTTPHeaderField:@"Authorization"];
         // 设置请求超时
         _manager.requestSerializer.timeoutInterval = 10.f;
+        
+        [_manager.requestSerializer setValue:@"e6c171fa601c0464b35b7732a6c61b59" forHTTPHeaderField:@"Authorization"];
+        
+        
+        NSLog(@"%@",_manager.requestSerializer.HTTPRequestHeaders);
+        
+//        _manager.requestSerializer.HTTPRequestHeaders = @{@"Authorization":@"e6c171fa601c0464b35b7732a6c61b59"};
+//
         // 设置允许同时最大并发数量,过大容易出问题
         _manager.operationQueue.maxConcurrentOperationCount = 4;
         _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",

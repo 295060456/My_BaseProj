@@ -72,16 +72,6 @@ UIGestureRecognizerDelegate
     }return vc;
 }
 
-static PopUpVC *_instance = nil;
-static dispatch_once_t onceToken;
-+ (instancetype)sharedInstance {
-    dispatch_once(&onceToken, ^{
-        if (!_instance) {
-            _instance = [[self alloc] init];
-        }
-    });return _instance;
-}
-
 #pragma mark - Lifecycle
 -(instancetype)init{
     if (self = [super init]) {

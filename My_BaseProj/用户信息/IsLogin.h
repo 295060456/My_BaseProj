@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(void)logout;
 
-+ (instancetype)sharedInstance;
++ (IsLogin *)sharedInstance;
 
 @end
 

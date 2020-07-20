@@ -33,7 +33,7 @@ typedef enum : NSUInteger {
 @property(nonatomic,copy)void (^NotReachableNetWorking)(void);//无任何网络连接
 @property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
 
-+(instancetype) sharedInstance;
++(FMARCNetwork *) sharedInstance;
 
 - (void)AFNReachability;
 /**

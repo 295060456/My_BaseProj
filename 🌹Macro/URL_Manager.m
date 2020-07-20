@@ -10,23 +10,54 @@
 
 @implementation URL_Manager
 
-static URL_Manager *_instance = nil;
-static dispatch_once_t onceToken;
-+ (instancetype)sharedInstance {
-    dispatch_once(&onceToken, ^{
-        if (!_instance) {
-            _instance = [[self alloc] init];
+static URL_Manager *static_URL_Manager = nil;
++(URL_Manager *)sharedInstance{
+    @synchronized(self){
+        if (!static_URL_Manager) {
+            static_URL_Manager = URL_Manager.new;
         }
-    });return _instance;
+    }return static_URL_Manager;
 }
 
 -(NSString *)BaseUrl_1{
-    return @"http://172.24.137.213:8011";
+//    return @"http://172.24.135.30:8011";
+    return @"http://172.24.135.204:8011"; //测试服务
+}
+-(NSString *)BaseUrl_H5{
+//    return @"http://172.24.135.30:8011";
+    return @"http://172.24.135.208"; //测试服务
+}
+/// 帮助中心
+- (NSString *)MKH5HelpCenter{
+    return @"/taskpage/#/helpCenter";
 }
 
+/// 填写邀请码
+- (NSString *)MKH5InvitationCode{
+    return @"/taskpage/#/invitationcode";
+}
+
+/// 邀请好友
+- (NSString *)MKH5Invit{
+    return @"/taskpage/#/invit";
+}
+
+/// 银行卡
+- (NSString *)MKH5BankCard{
+    return @"/taskpage/#/bandcard";
+}
+/// 开屏广告
+- (NSString *)MKH5OpenScrennAD{
+    return @"/taskpage/#/adverti";
+}
+/// 任务
+- (NSString *)MKH5Task{
+    return @"/taskpage/#/task";
+}
 -(NSString *)ImgBaseURL{
     return @"";
 }
+#pragma mark —— 成员管理相关接口
 ///PUT 员工启用接口
 -(NSString *)MKEmployeeDoValidPUT{
     return @"/back/employee/doValid";
@@ -39,14 +70,13 @@ static dispatch_once_t onceToken;
 -(NSString *)MKEmployeeInfoPUT{
     return @"/back/employee/info";
 }
-
+///员工查询列表
 -(NSString *)MKQueryEmployeeInfoListGET{
     return @"/back/employee/queryEmployeeInfoList";
 }
-#pragma mark —— 导出相关接口
-///GET 导出管理列表
--(NSString *)MKExportUserListGET{
-    return @"/back/export/userList";
+///删除员工
+-(NSString *)MKEmployeeRemoveDELETE{
+    return @"/back/employee/remove";
 }
 #pragma mark —— 后台登录信息相关接口
 ///GET 后台退出登录
@@ -58,16 +88,12 @@ static dispatch_once_t onceToken;
     return @"/back/user/login";
 }
 #pragma mark —— 后台广告相关接口
-/// GET 随机查询一条广告
--(NSString *)MKAdInfoGET{
-    return @"/back/adInfo/adInfo";
-}
 /// POST 添加广告
 -(NSString *)MKAdInfoAddSpreadPOST{
     return @"/back/adInfo/addSpread";
 }
-///GET 删除广告
--(NSString *)MKAdInfoDeleteGET{
+///POST 删除广告
+-(NSString *)MKAdInfoDeletePOST{
     return @"/back/adInfo/delete";
 }
 ///GET 广告列表
@@ -82,7 +108,19 @@ static dispatch_once_t onceToken;
 -(NSString *)MKAdInfoUpdateStatusPOST{
     return @"/back/adInfo/updateStatus";
 }
+///广告图片上传上传
+-(NSString *)MKAdInfoUploadImagePOST{
+    return @"/back/adInfo/uploadImage";
+}
+///广告视频上传
+-(NSString *)MKAdInfoUploadVideoPOST{
+    return @"/back/adInfo/uploadVideo";
+}
 #pragma mark —— 后台用户管理相关接口
+///GET获取权限详情
+-(NSString *)MKUserListPermissionInfoGET{
+    return @"/back/userList/PermissionInfo";
+}
 ///GET 获取用户详情
 -(NSString *)MKUserListUserInfoGET{
     return @"/back/userList/UserInfo";
@@ -95,11 +133,19 @@ static dispatch_once_t onceToken;
 -(NSString *)MKUserListDeletePOST{
     return @"/back/userList/delete";
 }
-///GET 用户管理列表
+///GET用户管理列表导出
+-(NSString *)MKUserListQueryExportListGET{
+    return @"/back/userList/queryExportList";
+}
+///GET登录日志列表
+-(NSString *)MKUserListQueryLoginLogGET{
+    return @"/back/userList/queryLoginLog";
+}
+///GET用户管理列表
 -(NSString *)MKUserListQueryUserListGET{
     return @"/back/userList/queryUserList";
 }
-///POST
+///POST编辑用户信息
 -(NSString *)MKUserListUpdatePOST{
     return @"/back/userList/update";
 }
@@ -108,9 +154,17 @@ static dispatch_once_t onceToken;
     return @"/back/userList/updateStatus";
 }
 #pragma mark —— 角色管理信息接口
+///POST删除菜单
+-(NSString *)MKRoleDelMenuPOST{
+    return @"/back/role/delMenu";
+}
 ///PUT 角色启用接口
 -(NSString *)MKRoleDoValidPUT{
     return @"/back/role/doValid";
+}
+///POST权限设置
+-(NSString *)MKRoleEditRoleMenuPOST{
+    return @"/back/role/editRoleMenu";
 }
 ///DELETE 删除
 -(NSString *)MKRoleInfoDELETE{
@@ -136,14 +190,27 @@ static dispatch_once_t onceToken;
 -(NSString *)MKRoleMenuPUT{
     return @"/back/role/menu";
 }
-///GET 角色查询列表 & 角色下拉框
+///GET 角色查询列表
 -(NSString *)MKRoleQueryRoleListGET{
     return @"/back/role/queryRoleList";
+}
+///GET角色下拉框
+-(NSString *)MKRoleSelectRoleListGET{
+    return @"/back/role/selectRoleList";
+}
+#pragma mark —— 评论相关接口
+///GET我的评论用户列表
+-(NSString *)MKCommentListGET{
+    return @"/app/comment/list";
 }
 #pragma mark —— 视频标签相关接口
 ///POST 新増标签
 -(NSString *)MKVideoLabelAddVideoLabelPOST{
     return @"/back/videoLabel/addVideoLabel";
+}
+///POST删除标签
+-(NSString *)MKVideoLabelDelLabel{
+    return @"/back/videoLabel/delLabel";
 }
 ///POST 修改标签
 -(NSString *)MKVideoLabelModifyLabelPOST{
@@ -164,11 +231,15 @@ static dispatch_once_t onceToken;
 }
 ///POST 视频删除
 -(NSString *)MKVideoManageDelVideoPOST{
-    return @"/back/videoManage/upVideoToTop";
+    return @"/back/videoManage/delVideo";
 }
 ///POST 视频置顶
 -(NSString *)MKVideoManageUpVideoToTopPOST{
-    return @"";
+    return @"/back/videoManage/upVideoToTop";
+}
+///POST 视频上传(仅支持flv/mp4类型)
+-(NSString *)MKVideoManageUploadVideo{
+    return @"/back/videoManage/uploadVideo";
 }
 ///POST 视频列表
 -(NSString *)MKVideoManageVideoListPOST{
@@ -192,34 +263,51 @@ static dispatch_once_t onceToken;
     return @"/back/sysParam/setValid";
 }
 #pragma mark —— APP登录信息相关接口
-///注册/登录接口
+///POST 注册/登录接口
 -(NSString *)MKLoginDo{
     return @"/app/login/do";
 }
-///发送短信
--(NSString *)MKSendSmsCode{
-    return @"/app/login/sendSmsCode";
-}
-///退出接口
+///GET退出接口
 -(NSString *)MKOut{
     return @"/app/login/out";
 }
-#pragma mark —— APP好友关系相关接口 ..
+///POST发送短信
+-(NSString *)MKSendSmsCode{
+    return @"/app/login/sendSmsCode";
+}
+#pragma mark —— App广告相关接口
+///GET 查询开屏或视频广告
+-(NSString *)MKadInfoAdInfoGET{
+    return @"/app/adInfo/adInfo";
+}
+#pragma mark —— APP好友关系相关接口
+///GET手动执行奖励记录
+-(NSString *)MKUserFriendAddAwardInfoGET{
+    return @"/app/userFriend/addAwardInfo";
+}
 ///GET 获取活跃用户
--(NSString *)MKUserFirendAwardListGET{
-    return @"/app/userFirend/awardList";
+-(NSString *)MKUserFriendAwardListGET{
+    return @"/app/userFriend/awardList";
 }
 ///GET 最新四个好友
--(NSString *)MKUserFirendFourListGET{
-    return @"/app/userFirend/fourList";
+-(NSString *)MKUserFriendFourListGET{
+    return @"/app/userFriend/fourList";
 }
 ///GET selectUrl
--(NSString *)MKUserFirendFriendUrlselectUrlGET{
-    return @"/app/userFirend/friendUrlselectUrl";
+-(NSString *)MKUserFriendSelectUrlGET{
+    return @"/app/userFriend/friendUrlselectUrl";
 }
-///GET list
--(NSString *)MKUserFirendListlistGET{
-    return @"/app/userFirend/listlist";
+///GET 好友列表
+-(NSString *)MKUserFriendListlistGET{
+    return @"/app/userFriend/list";
+}
+///GET统计我的收益
+-(NSString *)MKUserFriendMyInComeGET{
+    return @"/app/userFriend/myInCome";
+}
+///POST面对面邀请保存好友手机号码
+-(NSString *)MKUserFriendsavePhonePOST{
+    return @"/app/userFriend/savePhone";
 }
 #pragma mark —— APP黑名单相关接口
 ///POST 添加
@@ -251,27 +339,48 @@ static dispatch_once_t onceToken;
 -(NSString *)MKWalletMyWalletPOST{
     return @"/app/wallet/myWallet";
 }
+///POST 权限启用关闭
+#pragma mark —— APP权限用户接口相关信息
+-(NSString *)MKAppRoleSetValuePOST{
+    return @"/back/appRole/setValue";
+}
 #pragma mark —— APP视频相关接口
+///POST 评论
+-(NSString *)MKVideosCommentVideoPOST{
+    return @"/app/videos/commentVideo";
+}
 ///POST 指定用户的视频列表(关注、点赞)
 -(NSString *)MKVideosLoadVideosPOST{
     return @"/app/videos/loadVideos";
+}
+///POST 视频点赞or取消
+-(NSString *)MKVideosPraiseVideoPOST{
+    return @"/app/videos/praiseVideo";
 }
 ///POST 推荐的视频列表
 -(NSString *)MKVideosRecommendVideosPOST{
     return @"/app/videos/recommendVideos";
 }
 #pragma mark —— App消息相关接口
+///GET 获取用户粉丝详情
+-(NSString *)MKMessageFansInfoGET{
+    return @"/app/message/fansInfo";
+}
 ///GET 消息一级列表
 -(NSString *)MKMessageList_1_GET{
     return @"/app/message/list";
 }
-///GET 获取系统消息详情
+///GET 获取系统消息详情视频列表
 -(NSString *)MKMessageInfoGET{
     return @"/app/message/messageInfo";
 }
 ///GET 消息二级级列表
 -(NSString *)MKMessageList_2_GET{
     return @"/app/message/messageList";
+}
+///GET 消息开关列表
+-(NSString *)MKmessageTurnOffListGET{
+    return @"/app/message/turnOffList";
 }
 ///POST 修改消息开关
 -(NSString *)MKmessageUpdateOffPOST{
@@ -341,13 +450,21 @@ static dispatch_once_t onceToken;
     return @"/app/userFocus/selectFocusList";
 }
 #pragma mark —— APP用户信息相关接口
+///GET 查询身份信息
+-(NSString *)MKUserInfoIdCardInfoGET{
+    return @"/app/userInfo/IdCardInfo";
+}
 ///POST 进行签到
--(NSString *)MKUserInfoDoSign{
+-(NSString *)MKUserInfoDoSignPOST{
     return @"/app/userInfo/doSign";
 }
 ///POST 载入首页
 -(NSString *)MkUserInfoLoadHomePagePOST{
     return @"/app/userInfo/loadHomePage";
+}
+//GET 滚动数据
+-(NSString *)MKUserInfoRollDateGET{
+    return @"/app/userInfo/rollDate";
 }
 ///GET 我的签到列表
 -(NSString *)MKUserInfoSignListGET{
@@ -369,8 +486,12 @@ static dispatch_once_t onceToken;
 -(NSString *)MKUserInfoUpdateRealInfoPOST{
     return @"/app/userInfo/updateRealInfo";
 }
+///POST 上传头像
+-(NSString *)MKUserInfoUploadImagePOST{
+    return @"/app/userInfo/uploadImage";
+}
 #pragma mark —— demo信息相关接口
-//GET 添加
+///GET 添加
 -(NSString *)MKDemoAddGET{
     return @"/demo/add";
 }
@@ -397,6 +518,10 @@ static dispatch_once_t onceToken;
 ///GET update
 -(NSString *)MkDemoUpdateGET{
     return @"/demo/update";
+}
+///POST uploadVideo
+-(NSString *)MKDemoUploadPOST{
+    return @"/demo/upload";
 }
 
 @end

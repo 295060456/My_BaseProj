@@ -14,7 +14,7 @@
 @property(nonatomic,strong)UIWindow *window;
 @property(nonatomic,strong)CustomSYSUITabBarController *customSYSUITabBarController;
 
-+ (instancetype)sharedInstance;
++ (SceneDelegate *)sharedInstance;
 
 @end
 

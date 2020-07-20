@@ -20,14 +20,19 @@ API_AVAILABLE(ios(13.0))
 
 @implementation SceneDelegate
 
-static SceneDelegate *_instance = nil;
-static dispatch_once_t onceToken;
-+ (instancetype)sharedInstance {
-    dispatch_once(&onceToken, ^{
-        if (!_instance) {
-            _instance = [[self alloc] init];
+static SceneDelegate *static_sceneDelegate = nil;
++(SceneDelegate *)sharedInstance{
+    @synchronized(self){
+        if (!static_sceneDelegate) {
+            static_sceneDelegate = SceneDelegate.new;
         }
-    });return _instance;
+    }return static_sceneDelegate;
+}
+
+-(instancetype)init{
+    if (self = [super init]) {
+        static_sceneDelegate = self;
+    }return self;
 }
 
 - (void)scene:(UIScene *)scene
@@ -79,6 +84,15 @@ willConnectToSession:(UISceneSession *)session
     [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
 
+-(void)KKK:(NSNotification *)noti{
+    NSNumber *b = noti.object;
+    if (b.intValue == AFNetworkReachabilityStatusNotReachable) {
+        [MBProgressHUD wj_showPlainText:@"没有网络连接"
+                                   view:nil];
+    }
+}
+
+#pragma mark —— lazyLoad
 -(CustomSYSUITabBarController *)customSYSUITabBarController{
     if (!_customSYSUITabBarController) {
         _customSYSUITabBarController = CustomSYSUITabBarController.new;

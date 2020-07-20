@@ -10,20 +10,19 @@
 
 @implementation IsLogin
 
-static IsLogin *_instace = nil;
-static dispatch_once_t onceToken;
-
-+ (instancetype)sharedInstance {
-    dispatch_once(&onceToken, ^{
-        if (!_instace) {
-            _instace = [[self alloc] init];
+static IsLogin *static_isLogin = nil;
++(IsLogin *)sharedInstance{
+    @synchronized(self){
+        if (!static_isLogin) {
+            static_isLogin = IsLogin.new;
         }
-    });
-    return _instace;
+    }return static_isLogin;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)zone{
-    return [self sharedInstance];
+-(instancetype)init{
+    if (self = [super init]) {
+        static_isLogin = self;
+    }return self;
 }
 
 //登陆成功,保存用户名、Member_id（以手机号绑定，唯一）、User_token（需要加在请求头上）、IsVip（会员身份）

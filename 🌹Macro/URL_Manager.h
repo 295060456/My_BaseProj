@@ -12,9 +12,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface URL_Manager : NSObject
 
-+ (instancetype)sharedInstance;
++ (URL_Manager *)sharedInstance;
 
 -(NSString *)BaseUrl_1;
+-(NSString *)BaseUrl_H5;
+#pragma mark - H5 地址
+/// 帮助中心
+- (NSString *)MKH5HelpCenter;
+
+/// 填写邀请码
+- (NSString *)MKH5InvitationCode;
+
+/// 邀请好友
+- (NSString *)MKH5Invit;
+
+/// 银行卡
+- (NSString *)MKH5BankCard;
+
+/// 开屏广告
+- (NSString *)MKH5OpenScrennAD;
+/// 任务
+- (NSString *)MKH5Task;
 -(NSString *)ImgBaseURL;
 #pragma mark —— 成员管理相关接口
 ///PUT 员工启用接口
@@ -23,45 +41,56 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKEmployeeInfoPOST;
 ///PUT 修改
 -(NSString *)MKEmployeeInfoPUT;
-
+///员工查询列表
 -(NSString *)MKQueryEmployeeInfoListGET;
-#pragma mark —— 导出相关接口
-///GET 导出管理列表
--(NSString *)MKExportUserListGET;
+///删除员工
+-(NSString *)MKEmployeeRemoveDELETE;
 #pragma mark —— 后台登录信息相关接口
 ///GET 后台退出登录
 -(NSString *)MKLogoutGET;
 ///POST 登录接口
 -(NSString *)MKLoginPOST;
 #pragma mark —— 后台广告相关接口
-/// GET 随机查询一条广告
--(NSString *)MKAdInfoGET;
 /// POST 添加广告
 -(NSString *)MKAdInfoAddSpreadPOST;
 ///GET 删除广告
--(NSString *)MKAdInfoDeleteGET;
+-(NSString *)MKAdInfoDeletePOST;
 ///GET 广告列表
 -(NSString *)MKAdInfoListGET;
 ///POST 修改开屏广告或者视频广告
 -(NSString *)MKAdInfoUpdatePOST;
 ///POST 修改是否显示
 -(NSString *)MKAdInfoUpdateStatusPOST;
+///广告图片上传上传
+-(NSString *)MKAdInfoUploadImagePOST;
+///广告视频上传
+-(NSString *)MKAdInfoUploadVideoPOST;
 #pragma mark —— 后台用户管理相关接口
+///GET获取权限详情
+-(NSString *)MKUserListPermissionInfoGET;
 ///GET 获取用户详情
 -(NSString *)MKUserListUserInfoGET;
 ///GET 用户视频列表
 -(NSString *)MKUserListUserVideoListGET;
 ///POST 删除用户
 -(NSString *)MKUserListDeletePOST;
-///GET 用户管理列表
+///GET用户管理列表导出
+-(NSString *)MKUserListQueryExportListGET;
+///GET登录日志列表
+-(NSString *)MKUserListQueryLoginLogGET;
+///GET用户管理列表
 -(NSString *)MKUserListQueryUserListGET;
-///POST
+///POST编辑用户信息
 -(NSString *)MKUserListUpdatePOST;
 ///POST 修改是否开启
 -(NSString *)MKUserListUpdateStatusPOST;
 #pragma mark —— 角色管理信息接口
+///POST删除菜单
+-(NSString *)MKRoleDelMenuPOST;
 ///PUT 角色启用接口
 -(NSString *)MKRoleDoValidPUT;
+///POST权限设置
+-(NSString *)MKRoleEditRoleMenuPOST;
 ///DELETE 删除
 -(NSString *)MKRoleInfoDELETE;
 ///POST 添加
@@ -74,11 +103,18 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKRoleMenuPOST;
 ///PUT 修改菜单
 -(NSString *)MKRoleMenuPUT;
-///GET 角色查询列表 & 角色下拉框
+///GET 角色查询列表
 -(NSString *)MKRoleQueryRoleListGET;
+///GET角色下拉框
+-(NSString *)MKRoleSelectRoleListGET;
+#pragma mark —— 评论相关接口
+///GET我的评论用户列表
+-(NSString *)MKCommentListGET;
 #pragma mark —— 视频标签相关接口
 ///POST 新増标签
 -(NSString *)MKVideoLabelAddVideoLabelPOST;
+///POST删除标签
+-(NSString *)MKVideoLabelDelLabel;
 ///POST 修改标签
 -(NSString *)MKVideoLabelModifyLabelPOST;
 ///GET 标签列表
@@ -92,6 +128,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKVideoManageDelVideoPOST;
 ///POST 视频置顶
 -(NSString *)MKVideoManageUpVideoToTopPOST;
+///POST 视频上传(仅支持flv/mp4类型)
+-(NSString *)MKVideoManageUploadVideo;
 ///POST 视频列表
 -(NSString *)MKVideoManageVideoListPOST;
 #pragma mark —— 系统配置接口
@@ -104,21 +142,30 @@ NS_ASSUME_NONNULL_BEGIN
 ///POST 系统参数启用
 -(NSString *)MKSysParamSetValidPOST;
 #pragma mark —— APP登录信息相关接口
-///注册/登录接口
+///POST注册/登录接口
 -(NSString *)MKLoginDo;
-///发送短信
--(NSString *)MKSendSmsCode;
-///退出接口
+///GET退出接口
 -(NSString *)MKOut;
+///POST发送短信
+-(NSString *)MKSendSmsCode;
+#pragma mark —— App广告相关接口
+///GET 查询开屏或视频广告
+-(NSString *)MKadInfoAdInfoGET;
 #pragma mark —— APP好友关系相关接口 ..
+///GET手动执行奖励记录
+-(NSString *)MKUserFriendAddAwardInfoGET;
 ///GET 获取活跃用户
--(NSString *)MKUserFirendAwardListGET;
+-(NSString *)MKUserFriendAwardListGET;
 ///GET 最新四个好友
--(NSString *)MKUserFirendFourListGET;
+-(NSString *)MKUserFriendFourListGET;
 ///GET selectUrl
--(NSString *)MKUserFirendFriendUrlselectUrlGET;
-///GET list
--(NSString *)MKUserFirendListlistGET;
+-(NSString *)MKUserFriendSelectUrlGET;
+///GET  好友列表
+-(NSString *)MKUserFriendListlistGET;
+///GET统计我的收益
+-(NSString *)MKUserFriendMyInComeGET;
+///POST面对面邀请保存好友手机号码
+-(NSString *)MKUserFriendsavePhonePOST;
 #pragma mark —— APP黑名单相关接口
 ///POST 添加
 -(NSString *)MKBlackAddPOST;
@@ -135,18 +182,29 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKWalletMyFlowsPOST;
 ///POST 获取个人钱包数据
 -(NSString *)MKWalletMyWalletPOST;
+///POST 权限启用关闭
+#pragma mark —— APP权限用户接口相关信息
+-(NSString *)MKAppRoleSetValuePOST;
 #pragma mark —— APP视频相关接口
+///POST 评论
+-(NSString *)MKVideosCommentVideoPOST;
 ///POST 指定用户的视频列表(关注、点赞)
 -(NSString *)MKVideosLoadVideosPOST;
+///POST 视频点赞or取消
+-(NSString *)MKVideosPraiseVideoPOST;
 ///POST 推荐的视频列表
 -(NSString *)MKVideosRecommendVideosPOST;
 #pragma mark —— App消息相关接口
+///GET 获取用户粉丝详情
+-(NSString *)MKMessageFansInfoGET;
 ///GET 消息一级列表
 -(NSString *)MKMessageList_1_GET;
-///GET 获取系统消息详情
+///GET 获取系统消息详情视频列表
 -(NSString *)MKMessageInfoGET;
 ///GET 消息二级级列表
 -(NSString *)MKMessageList_2_GET;
+///GET 消息开关列表
+-(NSString *)MKmessageTurnOffListGET;
 ///POST 修改消息开关
 -(NSString *)MKmessageUpdateOffPOST;
 #pragma mark —— APP银行卡相关接口
@@ -183,10 +241,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///GET 被关注人视频记录
 -(NSString *)MKUserFocusSelectFocusListGET;
 #pragma mark —— APP用户信息相关接口
+///GET 查询身份信息
+-(NSString *)MKUserInfoIdCardInfoGET;
 ///POST 进行签到
--(NSString *)MKUserInfoDoSign;
+-(NSString *)MKUserInfoDoSignPOST;
 ///POST 载入首页
 -(NSString *)MkUserInfoLoadHomePagePOST;
+//GET 滚动数据
+-(NSString *)MKUserInfoRollDateGET;
 ///GET 我的签到列表
 -(NSString *)MKUserInfoSignListGET;
 ///POST 编辑个人资料
@@ -197,8 +259,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKUserInfoUpdateIDCardInfoPOST;
 ///POST 完善实名信息
 -(NSString *)MKUserInfoUpdateRealInfoPOST;
+///POST 上传头像
+-(NSString *)MKUserInfoUploadImagePOST;
 #pragma mark —— demo信息相关接口
-//GET 添加
+///GET 添加
 -(NSString *)MKDemoAddGET;
 ///GET async
 -(NSString *)MKDemoAsyncGET;
@@ -212,6 +276,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKDemoSendMqGET;
 ///GET update
 -(NSString *)MkDemoUpdateGET;
+///POST uploadVideo
+-(NSString *)MKDemoUploadPOST;
+
+
 
 @end
 

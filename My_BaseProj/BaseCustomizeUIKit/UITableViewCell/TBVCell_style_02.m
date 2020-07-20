@@ -6,23 +6,26 @@
 //  Copyright © 2019 GT. All rights reserved.
 //
 
-#import "TBVCell_style_01.h"
+#import "TBVCell_style_02.h"
 
-@interface TBVCell_style_01()
+@interface TBVCell_style_02()
 
-@property(nonatomic,assign)CGFloat margin;
+@property(nonatomic,assign)CGFloat marginX;
+@property(nonatomic,assign)CGFloat marginY;
 
 @end
 
-@implementation TBVCell_style_01
+@implementation TBVCell_style_02
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style
              reuseIdentifier:(NSString *)reuseIdentifier
-                      margin:(CGFloat)margin{
+                      marginX:(CGFloat)marginX
+                      marginY:(CGFloat)marginY{
     if (self = [super initWithStyle:style
                     reuseIdentifier:reuseIdentifier]) {
-        
-        self.margin = margin;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.marginX = marginX;
+        self.marginY = marginY;
     }return self;
 }
 
@@ -38,10 +41,10 @@
 }
 
 - (void)setFrame:(CGRect)frame{
-    frame.origin.x += self.margin;
-    frame.origin.y += self.margin;
-    frame.size.height -= self.margin;
-    frame.size.width -= self.margin * 2;
+    frame.origin.x += self.marginX;
+    frame.origin.y += self.marginY;
+    frame.size.height -= self.marginY;
+    frame.size.width -= self.marginX * 2;
     [super setFrame:frame];
 }
 
@@ -59,6 +62,7 @@
 - (void)loadMoreRefresh{
     NSLog(@"上拉加载更多");
 }
+
 #pragma mark —— lazyLoad
 -(MJRefreshGifHeader *)tableViewHeader{
     if (!_tableViewHeader) {
@@ -108,5 +112,6 @@
         _tableViewFooter.hidden = YES;
     }return _tableViewFooter;
 }
+
 
 @end

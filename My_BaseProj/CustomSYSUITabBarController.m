@@ -53,7 +53,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 
 -(instancetype)init{
     if (self = [super init]) {
-        LZB_TABBAR_HEIGHT = isiPhoneX_series()?80:49;
+        LZB_TABBAR_HEIGHT = isiPhoneX_series() ? 80 + isiPhoneX_seriesBottom : 49;
     }return self;
 }
 

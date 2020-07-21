@@ -38,6 +38,19 @@ JXCategoryListContentViewDelegate
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+//用这样的方法来对其他方法进行屏蔽
+//-(instancetype)init{
+//    @throw [NSException exceptionWithName:NSGenericException
+//                                   reason:@"`-init` unavailable. Use `-initWithFrame:` instead"
+//                                 userInfo:nil];
+//    return [self initWithFrame:CGRectZero];
+//}
+//
+//-(instancetype)initWithFrame:(CGRect)frame{
+//    if(self = [super init]){
+//
+//    }return self;
+//}
 
 -(instancetype)init{
     if (self = [super init]) {

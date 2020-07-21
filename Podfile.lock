@@ -30,6 +30,7 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.6.3):
     - BRPickerView/Base
+  - CocoaAsyncSocket (7.6.4)
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
   - CocoaLumberjack/Core (3.6.1)
@@ -56,9 +57,6 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.14):
     - DTFoundation/Core
-  - EAIntroView (2.12.0):
-    - EARestrictedScrollView (~> 1.1.0)
-  - EARestrictedScrollView (1.1.0)
   - EScrollPageView (1.0.0)
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
@@ -66,12 +64,16 @@ PODS:
     - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
+  - FLAnimatedImage (1.0.12)
+  - "FLAnimatedImageView+RGWrapper (1.0.0)":
+    - FLAnimatedImage
   - FLEX (4.1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - GKNavigationBar (1.0.8)
   - GKPageScrollView (1.3.6)
+  - GPUImage (0.1.7)
   - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
   - IQKeyboardManager (6.5.5)
@@ -95,10 +97,12 @@ PODS:
     - JJException/Swizzle
   - JJException/Swizzle (0.2.7)
   - JJStockView (0.0.7)
+  - JSONModel (1.8.0)
   - JXCategoryView (1.5.5)
-  - KSYMediaPlayer_iOS (3.0.3):
-    - KSYMediaPlayer_iOS/KSYMediaPlayer_live (= 3.0.3)
-  - KSYMediaPlayer_iOS/KSYMediaPlayer_live (3.0.3)
+  - ksyhttpcache (1.2.4):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_vod (3.0.3)
   - LBXScan/LBXNative (2.3):
     - LBXScan/Types (~> 2.2)
   - LBXScan/LBXZBar (2.3):
@@ -118,6 +122,10 @@ PODS:
   - libwebp/mux (1.1.0):
     - libwebp/demux
   - libwebp/webp (1.1.0)
+  - LKDBHelper (2.5.3):
+    - LKDBHelper/standard (= 2.5.3)
+  - LKDBHelper/standard (2.5.3):
+    - FMDB
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - "MBProgressHUD+WJExtension (1.3.1)"
@@ -164,6 +172,7 @@ PODS:
   - SocketRocket (0.5.1)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - SZTextView (1.3.0)
   - Texture (2.8.1):
     - Texture/AssetsLibrary (= 2.8.1)
     - Texture/Core (= 2.8.1)
@@ -213,26 +222,30 @@ DEPENDENCIES:
   - DDProgressView
   - Debugo
   - DTCoreText
-  - EAIntroView
   - EScrollPageView
   - FBMemoryProfiler
   - FDFullscreenPopGesture
+  - "FLAnimatedImageView+RGWrapper"
   - FLEX
   - FMDB
   - GKNavigationBar
   - GKPageScrollView
+  - GPUImage
   - HBDNavigationBar
   - HCSStarRatingView
   - IQKeyboardManager
   - JDStatusBarNotification
   - JJException
   - JJStockView
+  - JSONModel
   - JXCategoryView
-  - KSYMediaPlayer_iOS
+  - ksyhttpcache
+  - KSYMediaPlayer_iOS/KSYMediaPlayer_vod
   - LBXScan/LBXNative
   - LBXScan/LBXZBar
   - LBXScan/LBXZXing
   - LBXScan/UI
+  - LKDBHelper
   - LYEmptyView
   - Masonry
   - "MBProgressHUD+WJExtension"
@@ -253,6 +266,7 @@ DEPENDENCIES:
   - SDWebImage/WebP
   - Shimmer
   - SocketRocket
+  - SZTextView
   - Texture
   - TTTAttributedLabel
   - TWPageViewController
@@ -273,33 +287,38 @@ SPEC REPOS:
     - AYCheckVersion
     - BEMCheckBox
     - BRPickerView
+    - CocoaAsyncSocket
     - CocoaLumberjack
     - CWLateralSlide
     - DDProgressView
     - Debugo
     - DTCoreText
     - DTFoundation
-    - EAIntroView
-    - EARestrictedScrollView
     - EScrollPageView
     - FBAllocationTracker
     - FBMemoryProfiler
     - FBRetainCycleDetector
     - FDFullscreenPopGesture
+    - FLAnimatedImage
+    - "FLAnimatedImageView+RGWrapper"
     - FLEX
     - FMDB
     - GKNavigationBar
     - GKPageScrollView
+    - GPUImage
     - HBDNavigationBar
     - HCSStarRatingView
     - IQKeyboardManager
     - JDStatusBarNotification
     - JJException
     - JJStockView
+    - JSONModel
     - JXCategoryView
+    - ksyhttpcache
     - KSYMediaPlayer_iOS
     - LBXScan
     - libwebp
+    - LKDBHelper
     - LYEmptyView
     - Masonry
     - "MBProgressHUD+WJExtension"
@@ -323,6 +342,7 @@ SPEC REPOS:
     - Shimmer
     - SocketRocket
     - SQLiteRepairKit
+    - SZTextView
     - Texture
     - TTTAttributedLabel
     - TWPageViewController
@@ -344,33 +364,38 @@ SPEC CHECKSUMS:
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   Debugo: 59d56859957bae9afdaf29c7d253c4ee6f92fb96
   DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
   DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
-  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
-  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   EScrollPageView: 6fd67fd563fa0a806f58d9c0c14ebceef9788164
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GKNavigationBar: b88553e9a973b38724b57ac6d177e210199a3e3e
   GKPageScrollView: 155a509102e5f26f4b1b033a7f890540c4c896ea
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
   JJException: 6d987840193b7ef59e778d41bca463401a80a79b
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
+  ksyhttpcache: b7f7d9b215e74b49deb4b138e59b3d3b80a05f3d
   KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  LKDBHelper: 26b47fdd6f4c800ef83c478554829ff8a1da20c5
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
@@ -394,6 +419,7 @@ SPEC CHECKSUMS:
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
@@ -408,6 +434,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 46de4f138fc3d48c1a11b0ea7a973aea7fb2de33
+PODFILE CHECKSUM: 4254e579e5d50cb59dba5cbfd72ecb2f2e0164dc
 
 COCOAPODS: 1.9.3

@@ -6,15 +6,12 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
-#import "SceneDelegate.h"
 #import "AppDelegate.h"
-#import "CustomSYSUITabBarController.h"
+#import "SceneDelegate.h"
+#import "SceneDelegate+LaunchingAd.h"
 
 API_AVAILABLE(ios(13.0))
 @interface SceneDelegate ()
-
-@property(nonatomic,strong)UIWindowScene *windowScene;
-@property(nonatomic,strong)UINavigationController *navigationController;
 
 @end
 
@@ -44,9 +41,11 @@ willConnectToSession:(UISceneSession *)session
         //在这里手动创建新的window
         if (@available(iOS 13.0, *)) {
             self.windowScene = (UIWindowScene *)scene;
-            [self.window setRootViewController:self.navigationController];
-            [self.window makeKeyAndVisible];
         }
+#pragma mark —— 启动图
+//        [self netWorkingAd];
+    //    [self fixedAdPicsUrl];
+        [self localAdPic];
 }
 
 - (void)sceneDidDisconnect:(UIScene *)scene  API_AVAILABLE(ios(13.0)){

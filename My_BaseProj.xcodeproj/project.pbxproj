@@ -21,6 +21,11 @@
 		C54F104124C4709A00EE1E67 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; };
 		C54F104224C4709A00EE1E67 /* libstdc++.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
+		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
+		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
+		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
+		C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */; };
+		C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B1C72624BAB54D001923FB /* green_lottie_tab_news.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B1C72224BAB54C001923FB /* green_lottie_tab_news.json */; };
 		C5B1C72724BAB54D001923FB /* green_lottie_tab_discover.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B1C72324BAB54C001923FB /* green_lottie_tab_discover.json */; };
@@ -314,6 +319,16 @@
 		C54F104624C4728300EE1E67 /* SDWebImage.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SDWebImage-Info.plist"; sourceTree = "<group>"; };
 		C54F104924C472E100EE1E67 /* 使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "使用说明"; sourceTree = "<group>"; };
+		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
+		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
+		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
+		C5A7CE9224C7051800E502A9 /* NSObject+LBLaunchImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LBLaunchImage.h"; sourceTree = "<group>"; };
+		C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SceneDelegate+LaunchingAd.m"; sourceTree = "<group>"; };
+		C5A7CE9624C7055400E502A9 /* SceneDelegate+LaunchingAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SceneDelegate+LaunchingAd.h"; sourceTree = "<group>"; };
+		C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLoginModel.m; sourceTree = "<group>"; };
+		C5A7CE9B24C70B7500E502A9 /* MKLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLoginModel.h; sourceTree = "<group>"; };
+		C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPublickDataManager.m; sourceTree = "<group>"; };
+		C5A7CE9D24C70B7600E502A9 /* MKPublickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPublickDataManager.h; sourceTree = "<group>"; };
 		C5B1C71F24B894E8001923FB /* URL_Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL_Manager.h; sourceTree = "<group>"; };
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B1C72224BAB54C001923FB /* green_lottie_tab_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_lottie_tab_news.json; sourceTree = "<group>"; };
@@ -942,6 +957,26 @@
 			path = "Pod 不进去的";
 			sourceTree = "<group>";
 		};
+		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */,
+				C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */,
+				C5A7CE9224C7051800E502A9 /* NSObject+LBLaunchImage.h */,
+				C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */,
+			);
+			path = LBLaunchImageAd.;
+			sourceTree = "<group>";
+		};
+		C5A7CE9924C70AA600E502A9 /* URL_Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C5B1C71F24B894E8001923FB /* URL_Manager.h */,
+				C5B1C72024B894E8001923FB /* URL_Manager.m */,
+			);
+			path = URL_Manager;
+			sourceTree = "<group>";
+		};
 		C5B1C72A24BAB552001923FB /* LottieResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,6 +1208,8 @@
 				C5FE9D3B24B5F3C6007B9878 /* AppDelegate.m */,
 				C5FE9D3D24B5F3C6007B9878 /* SceneDelegate.h */,
 				C5FE9D3C24B5F3C6007B9878 /* SceneDelegate.m */,
+				C5A7CE9624C7055400E502A9 /* SceneDelegate+LaunchingAd.h */,
+				C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */,
 				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
 				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
 				C5FE9A4B24B5EF2C007B9878 /* Info.plist */,
@@ -1324,6 +1361,10 @@
 				C5FE9D3724B5F2E7007B9878 /* ModelLogin.m */,
 				C5FE9D3224B5F2E6007B9878 /* PersonalInfo.h */,
 				C5FE9D3324B5F2E6007B9878 /* PersonalInfo.m */,
+				C5A7CE9D24C70B7600E502A9 /* MKPublickDataManager.h */,
+				C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */,
+				C5A7CE9B24C70B7500E502A9 /* MKLoginModel.h */,
+				C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */,
 			);
 			path = "用户信息";
 			sourceTree = "<group>";
@@ -1338,6 +1379,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */,
 				C5F78AD224BF273B008A46EC /* 评论列表 */,
 				C5B1C72B24BAB8FF001923FB /* Lottie-iOS(OC) */,
 				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
@@ -1421,10 +1463,11 @@
 		C5FE9ABB24B5F182007B9878 /* 🌹Macro */ = {
 			isa = PBXGroup;
 			children = (
+				C5A7CE9924C70AA600E502A9 /* URL_Manager */,
+				C5FE9B4E24B5F203007B9878 /* Notification */,
+				C5FE9B5024B5F203007B9878 /* AABlock.h */,
 				C5FE9B0524B5F1F2007B9878 /* APIKey.h */,
 				C5FE9B0624B5F1F2007B9878 /* ToolMacro.h */,
-				C5B1C71F24B894E8001923FB /* URL_Manager.h */,
-				C5B1C72024B894E8001923FB /* URL_Manager.m */,
 			);
 			path = "🌹Macro";
 			sourceTree = "<group>";
@@ -1651,7 +1694,6 @@
 		C5FE9B4D24B5F203007B9878 /* RedefineSys */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B4E24B5F203007B9878 /* Notification */,
 				C5FE9B5224B5F203007B9878 /* DeleteSystemUITabBarButton */,
 			);
 			path = RedefineSys;
@@ -1661,7 +1703,6 @@
 			isa = PBXGroup;
 			children = (
 				C5FE9B4F24B5F203007B9878 /* YBNotificationManager.h */,
-				C5FE9B5024B5F203007B9878 /* AABlock.h */,
 				C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */,
 			);
 			path = Notification;
@@ -1670,9 +1711,9 @@
 		C5FE9B5224B5F203007B9878 /* DeleteSystemUITabBarButton */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */,
-				C5FE9B5424B5F203007B9878 /* DeleteSystemUITabBarButton.h */,
 				C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */,
+				C5FE9B5424B5F203007B9878 /* DeleteSystemUITabBarButton.h */,
+				C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */,
 			);
 			path = DeleteSystemUITabBarButton;
 			sourceTree = "<group>";
@@ -2633,6 +2674,7 @@
 				C5FE9CB624B5F29C007B9878 /* RSAUtil.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C5FE9CB824B5F29C007B9878 /* AES.m in Sources */,
+				C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */,
 				C5FE9CC624B5F29C007B9878 /* SDCycleScrollView.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5FE9B5D24B5F203007B9878 /* UIImage+Extras.m in Sources */,
@@ -2721,6 +2763,7 @@
 				C5B1C7D624BAB91A001923FB /* LOTGradientFillRender.m in Sources */,
 				C5B1C7DB24BAB91A001923FB /* LOTPointInterpolator.m in Sources */,
 				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
+				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */,
 				C5FE9B7824B5F204007B9878 /* BaseVC.m in Sources */,
@@ -2736,11 +2779,13 @@
 				C5B1C7C924BAB91A001923FB /* LOTAnimatedSwitch.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
+				C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */,
 				C5B1C7E324BAB91A001923FB /* LOTRenderGroup.m in Sources */,
 				C5FE9CDE24B5F29C007B9878 /* LBXScanDIYView.m in Sources */,
 				C5FE9CFE24B5F29C007B9878 /* SearchVC.m in Sources */,
 				C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */,
 				C5B1C7BB24BAB919001923FB /* LOTSizeInterpolator.m in Sources */,
+				C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
 				C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
@@ -2823,6 +2868,7 @@
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,
 				C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */,
+				C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
 				C5B1C7DF24BAB91A001923FB /* UIBezierPath.m in Sources */,
 				C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */,

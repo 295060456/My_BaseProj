@@ -27,3 +27,5 @@ static NSString *BaiduMap_APIKey = @"TWC2ybVAS387MaFmv26RdYSeExoGc5l5";//百度�
 //NSString * const WechatPay_RESULT = @"weChat_pay_result";
 //微信App_id
 //NSString * const WechatPay_AppID = @"wx6a81e31edc698b3d";
+
+#define RSA_Public_key         @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCetmJK/hpaoKgzjAqjcVE/XvWNpKhZt/m3B/tzGpn5ck+ZV5jBxp8oGuhreeHCMEqE6VQX+FIovGNL0I/5rLQpWgD1dg3PRuI324g7/wJ488i3UOTc4xpE6esy8+wR4dUEsWfvbrB6znLeduikhCqaHbElZtVFfAmC2eWcob5QzQIDAQAB"//Agou

@@ -290,6 +290,8 @@ static inline CGFloat rectOfStatusbar(){
 
 #pragma mark ======================================== 其他 ========================================
 #define ReuseIdentifier NSStringFromClass ([self class])
+//- (void)add:(NSString *)txt{}
+#define addText(fmt, ...) [self add:[NSString stringWithFormat:fmt, ##__VA_ARGS__]]//多参数
 
 #pragma mark ======================================== 本地化字符串 ========================================
 /** NSLocalizedString宏做的其实就是在当前bundle中查找资源文件名“Localizable.strings”(参数:键＋注释) */

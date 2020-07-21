@@ -15,7 +15,9 @@ target 'My_BaseProj' do
   pod 'FLEX'  # https://github.com/Flipboard/FLEX 调试界面相关插件
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果
   pod 'ReactiveObjC'  # https://github.com/ReactiveCocoa/ReactiveObjC 重量级框架
-  pod 'EAIntroView' # https://github.com/ealeksandrov/EAIntroView 启动图
+#  pod 'EAIntroView' # https://github.com/ealeksandrov/EAIntroView 启动图 框架有点老了
+#  pod 'LBLaunchImageAd' # https://github.com/AllLuckly/LBLaunchImageAd 启动图 未适配iOS 13 拖动到手动Pod自己改
+  pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
   pod 'Texture' #Facebook出品的一款界面框架
 #  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
   pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
@@ -65,6 +67,7 @@ target 'My_BaseProj' do
   #pod 'SearchTextField'
   pod 'JXCategoryView'  # https://github.com/pujiaxin33/JXCategoryView A powerful and easy to use category view (segmentedcontrol, segmentview, pagingview, pagerview, pagecontrol) (腾讯新闻、今日头条、QQ音乐、网易云音乐、京东、爱奇艺、腾讯视频、淘宝、天猫、简书、微博等所有主流APP分类切换滚动视图)
   pod 'LYEmptyView' # https://github.com/dev-liyang/LYEmptyView iOS一行代码集成空白页面占位图(无数据、无网络占位图)
+  pod 'SZTextView' # https://github.com/glaszig/SZTextView SZTextView 用于替代内置的 UITextView，实现了 placeholder 功能。
   pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
   pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
   pod 'Reveal-SDK', :configurations => ['Debug']
@@ -82,8 +85,10 @@ target 'My_BaseProj' do
   pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
   #  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
 #  pod 'FMDB/SQLCipher' # 数据库加解密
-#  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
+  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   
+  pod 'GPUImage' # https://github.com/BradLarson/GPUImage
+  pod 'JSONModel' # https://github.com/jsonmodel/jsonmodel
   pod 'LBXScan/LBXNative'
   pod 'LBXScan/LBXZXing'
   pod 'LBXScan/LBXZBar'
@@ -96,8 +101,9 @@ target 'My_BaseProj' do
   #pod 'ZFPlayer/KSYMediaPlayer'
 
   #pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_live' # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-  pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-#  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
+#  pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
+  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
+  pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
 
 
   target 'My_BaseProjTests' do

@@ -138,7 +138,10 @@
 }
 ///倒计时完成后的回调
 -(void)overtimeAd{
-    
+    if (@available(iOS 13.0, *)){
+        [self.window setRootViewController:self.navigationController];
+        [self.window makeKeyAndVisible];
+    }
 }
 
 @end

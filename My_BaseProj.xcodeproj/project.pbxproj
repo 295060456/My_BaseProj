@@ -21,6 +21,7 @@
 		C54F104124C4709A00EE1E67 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; };
 		C54F104224C4709A00EE1E67 /* libstdc++.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
+		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
@@ -319,6 +320,10 @@
 		C54F104624C4728300EE1E67 /* SDWebImage.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SDWebImage-Info.plist"; sourceTree = "<group>"; };
 		C54F104924C472E100EE1E67 /* 使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "使用说明"; sourceTree = "<group>"; };
+		C557DC1524C805DF00754760 /* MJExtension用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MJExtension用法"; sourceTree = "<group>"; };
+		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
+		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
+		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -957,6 +962,17 @@
 			path = "Pod 不进去的";
 			sourceTree = "<group>";
 		};
+		C557DC1724C8063700754760 /* MJExtension用法 */ = {
+			isa = PBXGroup;
+			children = (
+				C557DC1524C805DF00754760 /* MJExtension用法 */,
+				C557DC1824C8065C00754760 /* MyVCModel.h */,
+				C557DC1924C8065C00754760 /* MyVCModel.m */,
+				C557DC1A24C806AA00754760 /* data.json */,
+			);
+			path = "MJExtension用法";
+			sourceTree = "<group>";
+		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1256,6 +1272,7 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C557DC1724C8063700754760 /* MJExtension用法 */,
 				C5FE9A8824B5F0BE007B9878 /* Computer_Config */,
 				C5FE9D4124B5FCC9007B9878 /* Snip20191119_1.png */,
 				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
@@ -2510,6 +2527,7 @@
 				C5FE9ADF24B5F1B3007B9878 /* MyStore@2x.png in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
+				C557DC1624C805DF00754760 /* MJExtension用法 in Resources */,
 				C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */,
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
 				C5FE9ADE24B5F1B3007B9878 /* Home@3x.png in Resources */,

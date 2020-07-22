@@ -9,6 +9,8 @@
 #ifndef DefineStructure_h
 #define DefineStructure_h
 
+#import <UIKit/UIKit.h>
+
 typedef enum : NSUInteger {
     BusinessType_HadPaid = 0,//已支付
     BusinessType_HadBilled,//已发单

@@ -19,29 +19,33 @@ static URL_Manager *static_URL_Manager = nil;
     }return static_URL_Manager;
 }
 
--(NSString *)BaseUrl_1{
-//    return @"http://172.24.135.30:8011";
-    return @"http://172.24.135.204:8011"; //测试服务
+- (NSString *)append:(NSString *)txt{
+    return txt;
 }
+
+-(NSString *)BaseUrl_1{
+    return append(@"%@%@",HTTP,@"172.24.135.204:8011");//测试服务;
+}
+
 -(NSString *)BaseUrl_H5{
-//    return @"http://172.24.135.30:8011";
-    return @"http://172.24.135.208"; //测试服务
+    return append(@"%@%@",HTTP,@"172.24.135.208");//测试服务;
+}
+
+-(NSString *)BaseUrl_eddy{
+    return append(@"%@%@",HTTP,@"172.24.135.30:8011");//测试服务;
 }
 /// 帮助中心
 - (NSString *)MKH5HelpCenter{
     return @"/taskpage/#/helpCenter";
 }
-
 /// 填写邀请码
 - (NSString *)MKH5InvitationCode{
     return @"/taskpage/#/invitationcode";
 }
-
 /// 邀请好友
 - (NSString *)MKH5Invit{
     return @"/taskpage/#/invit";
 }
-
 /// 银行卡
 - (NSString *)MKH5BankCard{
     return @"/taskpage/#/bandcard";
@@ -54,6 +58,7 @@ static URL_Manager *static_URL_Manager = nil;
 - (NSString *)MKH5Task{
     return @"/taskpage/#/task";
 }
+///
 -(NSString *)ImgBaseURL{
     return @"";
 }
@@ -335,7 +340,7 @@ static URL_Manager *static_URL_Manager = nil;
 -(NSString *)MKWalletMyFlowsPOST{
     return @"/app/wallet/myFlows";
 }
-///POST 获取个人钱包数据
+///POST 获取用户信息
 -(NSString *)MKWalletMyWalletPOST{
     return @"/app/wallet/myWallet";
 }
@@ -523,5 +528,10 @@ static URL_Manager *static_URL_Manager = nil;
 -(NSString *)MKDemoUploadPOST{
     return @"/demo/upload";
 }
+#pragma mark —— 临时添加,为了保证视频源一定有数据,App不崩溃
+-(NSString *)MKAppSysInitData{
+    return [NSString stringWithFormat:@"%@/app/sys/initData",[self BaseUrl_1]];
+}
+
 
 @end

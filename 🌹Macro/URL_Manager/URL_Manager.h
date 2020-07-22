@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define HTTP @"http://"
+#define append(fmt, ...) [self append:[NSString stringWithFormat:fmt, ##__VA_ARGS__]]//多参数
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface URL_Manager : NSObject
@@ -16,23 +19,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSString *)BaseUrl_1;
 -(NSString *)BaseUrl_H5;
+-(NSString *)BaseUrl_eddy;//临时测试服
 #pragma mark - H5 地址
 /// 帮助中心
-- (NSString *)MKH5HelpCenter;
-
+-(NSString *)MKH5HelpCenter;
 /// 填写邀请码
-- (NSString *)MKH5InvitationCode;
-
+-(NSString *)MKH5InvitationCode;
 /// 邀请好友
-- (NSString *)MKH5Invit;
-
+-(NSString *)MKH5Invit;
 /// 银行卡
-- (NSString *)MKH5BankCard;
-
+-(NSString *)MKH5BankCard;
 /// 开屏广告
-- (NSString *)MKH5OpenScrennAD;
+-(NSString *)MKH5OpenScrennAD;
 /// 任务
-- (NSString *)MKH5Task;
+-(NSString *)MKH5Task;
+///
 -(NSString *)ImgBaseURL;
 #pragma mark —— 成员管理相关接口
 ///PUT 员工启用接口
@@ -180,7 +181,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MKWalletChargeVIPPOST;
 ///POST 我的钱包流水
 -(NSString *)MKWalletMyFlowsPOST;
-///POST 获取个人钱包数据
+///POST 获取用户信息
 -(NSString *)MKWalletMyWalletPOST;
 ///POST 权限启用关闭
 #pragma mark —— APP权限用户接口相关信息
@@ -278,8 +279,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)MkDemoUpdateGET;
 ///POST uploadVideo
 -(NSString *)MKDemoUploadPOST;
-
-
+#pragma mark —— 临时添加,为了保证视频源一定有数据,App不崩溃
+-(NSString *)MKAppSysInitData;
 
 @end
 

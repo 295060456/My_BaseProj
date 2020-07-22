@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "DefineStructure.h"
 #import "Pods.h"
 #import "Manual_Add_ThirdParty.h"
 #import "Other.h"

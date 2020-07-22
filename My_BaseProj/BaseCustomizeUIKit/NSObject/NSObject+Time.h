@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param second 当前时间若干秒后
  *  @return 处理后的时间字符串
  */
-
 +(NSArray *)dateStringAfterlocalDateForYear:(NSInteger)year
                                        Month:(NSInteger)month
                                          Day:(NSInteger)day
@@ -32,18 +31,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSDate *)getDate:(NSDate *)date
          afterTime:(NSInteger)afterTime;
-
+///当前时间
 +(NSDate *)currentTime;
 
-//传入 秒  得到 xx:xx:xx
++(NSString *)getToday;
+///传入 秒  得到 xx:xx:xx
 +(NSString *)getHHMMSSFromStr:(NSString *)totalTime;
-//传入 秒  得到  xx分钟xx秒
+///传入 秒  得到  xx分钟xx秒
 +(NSString *)getMMSSFromStr:(NSString *)totalTime;
-
-//开始时间给定 结束时间不给定就启用现在的时间戳
+///开始时间给定 结束时间不给定就启用现在的时间戳
 +(NSTimeInterval)timeIntervalstartDate:(NSString *_Nonnull)startTime
                                endDate:(NSString *_Nullable)endTime
                          timeFormatter:(NSDateFormatter *_Nullable)timeFormatter;
+///时间戳转字符串
++(NSString *)timeStampConversionNSString:(NSString *)timeStamp;
+///时间转时间戳
++(NSString *)dateConversionTimeStamp:(NSDate *)date;
+///字符串转时间
++(NSDate *)nsstringConversionNSDate:(NSString *)dateStr;
 
 @end
 

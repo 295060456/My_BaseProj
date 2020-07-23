@@ -483,10 +483,14 @@ JXCategoryListContentViewDelegate
         [_tableViewHeader setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewHeader setImages:@[kIMG(@"官方")]
+        [_tableViewHeader setImages:@[kIMG(@"header")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewHeader setImages:@[kIMG(@"官方")]
+        [_tableViewHeader setImages:@[kIMG(@"gif_header_1"),
+                                      kIMG(@"gif_header_2"),
+                                      kIMG(@"gif_header_3"),
+                                      kIMG(@"gif_header_4")]
+                           duration:0.4
                            forState:MJRefreshStateRefreshing];
         // 设置文字
         [_tableViewHeader setTitle:@"Click or drag down to refresh"
@@ -495,6 +499,7 @@ JXCategoryListContentViewDelegate
                           forState:MJRefreshStateRefreshing];
         [_tableViewHeader setTitle:@"No more data"
                           forState:MJRefreshStateNoMoreData];
+
         // 设置字体
         _tableViewHeader.stateLabel.font = [UIFont systemFontOfSize:17];
         // 设置颜色
@@ -518,7 +523,11 @@ JXCategoryListContentViewDelegate
         [_tableViewFooter setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewFooter setImages:@[kIMG(@"官方")]
+        [_tableViewFooter setImages:@[kIMG(@"gif_header_1"),
+                                      kIMG(@"gif_header_2"),
+                                      kIMG(@"gif_header_3"),
+                                      kIMG(@"gif_header_4")]
+                           duration:0.4
                            forState:MJRefreshStateRefreshing];
         // 设置文字
         [_tableViewFooter setTitle:@"Click or drag up to refresh"

@@ -1708,9 +1708,9 @@
 			isa = PBXGroup;
 			children = (
 				C5FE9B3C24B5F203007B9878 /* ZYTextField_01.h */,
-				C5FE9B3D24B5F203007B9878 /* ZYTextField.m */,
 				C5FE9B3E24B5F203007B9878 /* ZYTextField_01.m */,
 				C5FE9B3F24B5F203007B9878 /* ZYTextField.h */,
+				C5FE9B3D24B5F203007B9878 /* ZYTextField.m */,
 			);
 			path = ZYTextField;
 			sourceTree = "<group>";

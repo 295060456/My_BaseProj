@@ -13,6 +13,20 @@
     [super awakeFromNib];
     [self setUpUI];
 }
+// 重写此方法
+-(void)drawPlaceholderInRect:(CGRect)rect {
+    // 计算占位文字的 Size
+    CGSize placeholderSize = [self.placeholder sizeWithAttributes:
+                              @{NSFontAttributeName : self.font}];
+    [self.placeholder drawInRect:CGRectMake(0,
+                                            (rect.size.height - placeholderSize.height) / 2,
+                                            rect.size.width,
+                                            rect.size.height)
+                  withAttributes:@{NSForegroundColorAttributeName : RGBCOLOR(167,
+                                                                             167,
+                                                                             167),
+                                   NSFontAttributeName : self.font}];
+}
 
 - (void)setUpUI{
 //    设置border

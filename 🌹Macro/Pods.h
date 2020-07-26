@@ -60,6 +60,7 @@
 #import "LBXScanView.h"
 #import "Debugo.h"
 #import "UIViewController+CWLateralSlide.h"
+#import <YXAlertController.h>
 #import <LKDBHelper.h>
 
 

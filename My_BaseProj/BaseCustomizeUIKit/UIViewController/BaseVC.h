@@ -15,6 +15,11 @@ typedef enum : NSUInteger {
     ComingStyle_PRESENT
 } ComingStyle;
 
+typedef enum : NSUInteger {
+    SYS_AlertController = 0,//UIAlertController
+    YX_AlertController//Pod
+} AlertControllerStyle;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseVC : UIViewController
@@ -57,16 +62,19 @@ UIGestureRecognizerDelegate
 -(void)AFNReachability;
 
 -(void)showLoginAlertView;
--(void)showAlertViewTitle:(NSString *)title
-                  message:(NSString *)message
-              btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-           alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr;
--(void)showActionSheetTitle:(NSString *)title
-                    message:(NSString *)message
-                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(nullable UIButton *)sender;
-
+-(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle
+         showAlertViewTitle:(nullable NSString *)title
+                    message:(nullable NSString *)message
+            isSeparateStyle:(BOOL)isSeparateStyle
+                btnTitleArr:(NSArray <NSString *> *)btnTitleArr
+             alertBtnAction:(NSArray <NSString *> *)alertBtnActionArr;
+-(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle
+       showActionSheetTitle:(nullable NSString *)title
+                    message:(nullable NSString *)message
+            isSeparateStyle:(BOOL)isSeparateStyle
+                btnTitleArr:(NSArray <NSString *> *)btnTitleArr
+             alertBtnAction:(NSArray <NSString *> *)alertBtnActionArr
+                     sender:(nullable UIControl *)sender;
 -(void)locateTabBar:(NSInteger)index;
 -(void)setStatusBarBackgroundColor:(UIColor *)color;
 -(void)choosePic;//选择图片

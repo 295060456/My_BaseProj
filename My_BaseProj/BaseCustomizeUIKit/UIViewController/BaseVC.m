@@ -38,19 +38,6 @@ JXCategoryListContentViewDelegate
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-//用这样的方法来对其他方法进行屏蔽
-//-(instancetype)init{
-//    @throw [NSException exceptionWithName:NSGenericException
-//                                   reason:@"`-init` unavailable. Use `-initWithFrame:` instead"
-//                                 userInfo:nil];
-//    return [self initWithFrame:CGRectZero];
-//}
-//
-//-(instancetype)initWithFrame:(CGRect)frame{
-//    if(self = [super init]){
-//
-//    }return self;
-//}
 
 -(instancetype)init{
     if (self = [super init]) {
@@ -99,8 +86,6 @@ JXCategoryListContentViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.view.backgroundColor = [UIColor colorWithPatternImage:kIMG(@"兴发街")];
-    self.gifImageView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -244,25 +229,125 @@ JXCategoryListContentViewDelegate
     [self.afNetworkReachabilityManager startMonitoring];
 }
 
--(void)showAlertViewTitle:(NSString *)title
-                  message:(NSString *)message
-              btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-           alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr{
-    @weakify(self)
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    for (int i = 0; i < alertBtnActionArr.count; i++) {
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:btnTitleArr[i]
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                             @strongify(self)
-                                                             [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
-                                                                        withObject:Nil];
-                                                         }];
-        [alertController addAction:okAction];
+-(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle
+         showAlertViewTitle:(nullable NSString *)title
+                    message:(nullable NSString *)message
+            isSeparateStyle:(BOOL)isSeparateStyle
+                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr{
+    switch (alertControllerStyle) {
+        case SYS_AlertController:{
+            @weakify(self)
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                     message:message
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            for (int i = 0; i < alertBtnActionArr.count; i++) {
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:btnTitleArr[i]
+                                                                   style:isSeparateStyle ? (i == alertBtnActionArr.count - 1 ? UIAlertActionStyleCancel : UIAlertActionStyleDefault) : UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     @strongify(self)
+                                                                     [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
+                                                                                withObject:Nil];
+                                                                 }];
+                [alertController addAction:okAction];
+            }
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+        }break;
+        case YX_AlertController:{
+            @weakify(self)
+            YXAlertController *alertController = [YXAlertController alertControllerWithTitle:title
+                                                                                     message:message
+                                                                                       style:YXAlertControllerStyleAlert];
+            //            //自定义颜色设置
+            //            alertController.layout.doneActionTitleColor = [UIColor redColor];
+            //            alertController.layout.cancelActionBackgroundColor = [UIColor whiteColor];
+            //            alertController.layout.doneActionBackgroundColor = [UIColor yellowColor];
+            //            alertController.layout.lineColor = [UIColor redColor];
+            //            alertController.layout.topViewBackgroundColor = [UIColor orangeColor];
+            //            alertController.layout.titleColor = [UIColor whiteColor];
+            //            [alertController layoutSettings];
+            for (int i = 0; i < alertBtnActionArr.count; i++) {
+                YXAlertAction *okAction = [YXAlertAction actionWithTitle:btnTitleArr[i]
+                                                                   style:isSeparateStyle ? (i == alertBtnActionArr.count - 1 ? YXAlertActionStyleCancel : YXAlertActionStyleDefault) : YXAlertActionStyleDefault
+                                                                 handler:^(YXAlertAction * _Nonnull action) {
+                                                                     @strongify(self)
+                                                                     [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
+                                                                                withObject:Nil];
+                                                                 }];
+                [alertController addAction:okAction];
+            }
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
+        }break;
+        default:
+            break;
     }
-    [self presentViewController:alertController
+}
+
+-(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle
+       showActionSheetTitle:(nullable NSString *)title
+                    message:(nullable NSString *)message
+            isSeparateStyle:(BOOL)isSeparateStyle
+                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+                     sender:(nullable UIControl *)sender{
+    UIViewController *vc = nil;
+    switch (alertControllerStyle) {
+        case SYS_AlertController:{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                     message:message
+                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+            vc = alertController;
+            @weakify(self)
+            for (int i = 0; i < alertBtnActionArr.count; i++) {
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:btnTitleArr[i]
+                                                                   style:isSeparateStyle ? (i == alertBtnActionArr.count - 1 ? UIAlertActionStyleCancel : UIAlertActionStyleDefault) : UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                                     @strongify(self)
+                                                                     [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
+                                                                                withObject:Nil];
+                                                                 }];
+                [alertController addAction:okAction];
+            }
+        } break;
+        case YX_AlertController:{
+            YXAlertController *alertController = [YXAlertController alertControllerWithTitle:title
+                                                                                     message:message
+                                                                                       style:YXAlertControllerStyleActionSheet];
+            vc = alertController;
+            //            //自定义颜色设置
+            //            alertController.layout.doneActionTitleColor = [UIColor redColor];
+            //            alertController.layout.cancelActionBackgroundColor = [UIColor whiteColor];
+            //            alertController.layout.doneActionBackgroundColor = [UIColor yellowColor];
+            //            alertController.layout.lineColor = [UIColor redColor];
+            //            alertController.layout.topViewBackgroundColor = [UIColor orangeColor];
+            //            alertController.layout.titleColor = [UIColor whiteColor];
+            //            [alertController layoutSettings];
+            @weakify(self)
+            for (int i = 0; i < alertBtnActionArr.count; i++) {
+                YXAlertAction *okAction = [YXAlertAction actionWithTitle:btnTitleArr[i]
+                                                                   style:isSeparateStyle ? (i == alertBtnActionArr.count - 1 ? YXAlertActionStyleCancel : YXAlertActionStyleDefault) : YXAlertActionStyleDefault
+                                                                 handler:^(YXAlertAction * _Nonnull action) {
+                                                                     @strongify(self)
+                                                                     [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
+                                                                                withObject:Nil];
+                                                                 }];
+                [alertController addAction:okAction];
+            }
+        } break;
+        default:
+            break;
+    }
+    UIPopoverPresentationController *popover = vc.popoverPresentationController;
+    if (popover){
+        popover.sourceView = sender;
+        popover.sourceRect = sender.bounds;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    [self presentViewController:vc
                        animated:YES
                      completion:nil];
 }
@@ -304,37 +389,6 @@ JXCategoryListContentViewDelegate
     loginAction.enabled = NO;   // 禁用Login按钮
     [alertController addAction:cancelAction];
     [alertController addAction:loginAction];
-    [self presentViewController:alertController
-                       animated:YES
-                     completion:nil];
-}
-
--(void)showActionSheetTitle:(NSString *)title
-                    message:(NSString *)message
-                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(nullable UIButton *)sender{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
-
-    @weakify(self)
-    for (int i = 0; i < alertBtnActionArr.count; i++) {
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:btnTitleArr[i]
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                             @strongify(self)
-                                                             [self performSelector:NSSelectorFromString((NSString *)alertBtnActionArr[i])
-                                                                        withObject:Nil];
-                                                         }];
-        [alertController addAction:okAction];
-    }
-    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
-    if (popover){
-        popover.sourceView = sender;
-        popover.sourceRect = sender.bounds;
-        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    }
     [self presentViewController:alertController
                        animated:YES
                      completion:nil];
@@ -388,10 +442,12 @@ JXCategoryListContentViewDelegate
                                    completion:nil];
         }else{
             NSLog(@"相册不可用:%lu",(unsigned long)status);
-            [self showAlertViewTitle:@"获取相册权限"
-                                   message:@""
-                               btnTitleArr:@[@"去获取"]
-                            alertBtnAction:@[@"pushToSysConfig"]];
+            [self alertControllerStyle:SYS_AlertController
+                    showAlertViewTitle:@"获取相册权限"
+                               message:nil
+                       isSeparateStyle:YES
+                           btnTitleArr:@[@"去获取"]
+                        alertBtnAction:@[@"pushToSysConfig"]];
         }
     }];
 }
@@ -412,10 +468,12 @@ JXCategoryListContentViewDelegate
                        withObject:Nil];
         }else{
             NSLog(@"摄像头不可用:%lu",(unsigned long)status);
-            [self showAlertViewTitle:@"获取摄像头权限"
-                                   message:@""
-                               btnTitleArr:@[@"去获取"]
-                            alertBtnAction:@[@"pushToSysConfig"]];
+            [self alertControllerStyle:SYS_AlertController
+                    showAlertViewTitle:@"获取摄像头权限"
+                               message:nil
+                       isSeparateStyle:YES
+                           btnTitleArr:@[@"去获取"]
+                        alertBtnAction:@[@"pushToSysConfig"]];
         }
     }];
 }
@@ -483,15 +541,25 @@ JXCategoryListContentViewDelegate
         [_tableViewHeader setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewHeader setImages:@[kIMG(@"header")]
+        [_tableViewHeader setImages:@[kIMG(@"Indeterminate Spinner - Small")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewHeader setImages:@[kIMG(@"gif_header_1"),
-                                      kIMG(@"gif_header_2"),
-                                      kIMG(@"gif_header_3"),
-                                      kIMG(@"gif_header_4")]
-                           duration:0.4
+//        [_tableViewHeader setImages:@[kIMG(@"gif_header_1"),
+//                                      kIMG(@"gif_header_2"),
+//                                      kIMG(@"gif_header_3"),
+//                                      kIMG(@"gif_header_4")]
+//                           duration:0.4
+//                           forState:MJRefreshStateRefreshing];
+        NSMutableArray *dataMutArr = NSMutableArray.array;
+        for (int i = 1; i <= 55; i++) {
+            NSString *str = [NSString stringWithFormat:@"gif_header_%d",i];
+            [dataMutArr addObject:kIMG(str)];
+        }
+
+        [_tableViewHeader setImages:dataMutArr
+                           duration:0.7
                            forState:MJRefreshStateRefreshing];
+        
         // 设置文字
         [_tableViewHeader setTitle:@"Click or drag down to refresh"
                           forState:MJRefreshStateIdle];
@@ -520,15 +588,26 @@ JXCategoryListContentViewDelegate
         [_tableViewFooter setImages:@[kIMG(@"官方")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewFooter setImages:@[kIMG(@"官方")]
+        [_tableViewFooter setImages:@[kIMG(@"Indeterminate Spinner - Small")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
-        [_tableViewFooter setImages:@[kIMG(@"gif_header_1"),
-                                      kIMG(@"gif_header_2"),
-                                      kIMG(@"gif_header_3"),
-                                      kIMG(@"gif_header_4")]
+//        [_tableViewFooter setImages:@[kIMG(@"gif_header_1"),
+//                                      kIMG(@"gif_header_2"),
+//                                      kIMG(@"gif_header_3"),
+//                                      kIMG(@"gif_header_4")]
+//                           duration:0.4
+//                           forState:MJRefreshStateRefreshing];
+        
+        NSMutableArray *dataMutArr = NSMutableArray.array;
+        for (int i = 1; i <= 55; i++) {
+            NSString *str = [NSString stringWithFormat:@"gif_header_%d",i];
+            [dataMutArr addObject:kIMG(str)];
+        }
+
+        [_tableViewHeader setImages:dataMutArr
                            duration:0.4
                            forState:MJRefreshStateRefreshing];
+        
         // 设置文字
         [_tableViewFooter setTitle:@"Click or drag up to refresh"
                           forState:MJRefreshStateIdle];
@@ -616,6 +695,7 @@ JXCategoryListContentViewDelegate
     }return _afNetworkReachabilityManager;
 }
 
+
 -(UIImageView *)gifImageView{
     if (!_gifImageView) {
         _gifImageView = UIImageView.new;
@@ -645,6 +725,7 @@ JXCategoryListContentViewDelegate
         _image = [UIImage sd_animatedGIFWithData:self.data];
     }return _image;
 }
+
 
 @end
 

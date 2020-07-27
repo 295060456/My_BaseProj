@@ -36,6 +36,7 @@ NSString *const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";//�
 @interface FMARCNetwork()
 
 @property(nonatomic,strong)AFHTTPSessionManager *manager;//网络管理工具
+@property(nonatomic,strong)AFURLSessionManager *downLoadManager;
 @property(nonatomic,strong)AFHTTPResponseSerializer *HTTPResponseSerializers;
 @property(nonatomic,strong)AFJSONResponseSerializer *JSONResponseSerializer;
 @property(nonatomic,strong)AFXMLParserResponseSerializer *XMLParserResponseSerializer;
@@ -462,32 +463,22 @@ static FMARCNetwork *static_FMARCNetwork = nil;
     //设置请求
     NSURLRequest *request = [NSURLRequest requestWithURL:downloadURL];
     //下载操作
-    [_manager downloadTaskWithRequest:request
-                             progress:^(NSProgress * _Nonnull downloadProgress) {
-
+    NSURLSessionDownloadTask *downloadTask = [self.downLoadManager downloadTaskWithRequest:request
+                                                                                  progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"KKK = %@",downloadProgress);
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath,
                                     NSURLResponse * _Nonnull response) {
-        //拼接缓存目录
-        NSString *downloadPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
-                                                                       NSUserDomainMask,
-                                                                       YES) lastObject]
-                                  stringByAppendingPathComponent:downloadFilePath ? downloadFilePath : @"Download"];
-        //打开文件管理器
-        NSFileManager *fileManager = NSFileManager.defaultManager;
-        //创建Download目录
-        [fileManager createDirectoryAtPath:downloadPath
-               withIntermediateDirectories:YES
-                                attributes:nil
-                                     error:nil];
-        //拼接文件路径
-        NSString *filePath = [downloadPath stringByAppendingPathComponent:response.suggestedFilename];
-        //返回文件位置的URL路径
+    //文件夹创建等操作在外层完成
+    NSString *filePath = [downloadFilePath stringByAppendingPathComponent:response.suggestedFilename];
+    //返回文件位置的URL路径
         return [NSURL fileURLWithPath:filePath];
     } completionHandler:^(NSURLResponse * _Nonnull response,
                           NSURL * _Nullable filePath,
                           NSError * _Nullable error) {
         failure(error);
     }];
+    //开始下载任务
+    [downloadTask resume];
 }
 
 - (void)PUTUrl:(NSString *)url
@@ -553,6 +544,12 @@ static FMARCNetwork *static_FMARCNetwork = nil;
     if (!_XMLParserResponseSerializer) {
         _XMLParserResponseSerializer = AFXMLParserResponseSerializer.serializer;
     }return _XMLParserResponseSerializer;
+}
+
+-(AFURLSessionManager *)downLoadManager{
+    if (!_downLoadManager) {
+        _downLoadManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    }return _downLoadManager;
 }
 
 -(AFHTTPSessionManager *)manager{

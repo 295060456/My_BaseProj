@@ -63,6 +63,7 @@
 #import <YXAlertController.h>
 #import <LKDBHelper.h>
 #import "YQImageCompressTool.h"
+#import <TXFileOperation.h>
 
 
 #endif /* Pods_h */

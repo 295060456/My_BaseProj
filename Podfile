@@ -81,6 +81,7 @@ target 'My_BaseProj' do
   pod 'LYXAlertController' # https://github.com/liuyunxinok/LYXAlertController 为解决UIAlertController的UI（字体颜色，action背景色,字体大小等）设置局限，故自己封装一个YXAlertController，可以随意进行颜色和字体设置。样式大小，title和message的行距缩进与系统样式保持一致。 
   pod 'JJException' # https://github.com/jezzmemo/JJException Protect the objective-c application(保护App不闪退)
   pod 'ZFJTreeViewKit'
+  pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具
 #  pod 'QMUIKit' # https://github.com/Tencent/QMUI_iOS 「很遗憾，没有对iOS 13进行适配」 QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。不管是新项目的创建，或是已有项目的维护，均可使开发效率和项目质量得到大幅度提升。
   #  pod 'DZNEmptyDataSet' # https://github.com/dzenbot/DZNEmptyDataSet 空白数据集显示框架

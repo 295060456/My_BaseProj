@@ -196,6 +196,7 @@ PODS:
     - Texture/Core
   - TTTAttributedLabel (2.0.0)
   - TWPageViewController (0.0.2)
+  - TXFileOperation (1.0)
   - TXScrollLabelView (1.3.2)
   - TZImagePickerController (3.3.2)
   - UICountingLabel (1.4.1)
@@ -273,6 +274,7 @@ DEPENDENCIES:
   - Texture
   - TTTAttributedLabel
   - TWPageViewController
+  - TXFileOperation
   - TXScrollLabelView
   - TZImagePickerController
   - UICountingLabel
@@ -351,6 +353,7 @@ SPEC REPOS:
     - Texture
     - TTTAttributedLabel
     - TWPageViewController
+    - TXFileOperation
     - TXScrollLabelView
     - TZImagePickerController
     - UICountingLabel
@@ -430,6 +433,7 @@ SPEC CHECKSUMS:
   Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
+  TXFileOperation: 99bc7e3763678fdea8e8c407e2b87fb18038385f
   TXScrollLabelView: 0e1650caf61198bf5dc0938ea6493254aeb80f90
   TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
@@ -442,6 +446,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: c5bbe2b96a644773a7b181df55a5cd921151bc63
+PODFILE CHECKSUM: 9295e0bc23fb30012e069b6c4e1fd90d8eae867d
 
 COCOAPODS: 1.9.3

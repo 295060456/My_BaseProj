@@ -107,6 +107,15 @@
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5D4FBA424CE88010024A292 /* UIImage+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBA324CE88010024A292 /* UIImage+helper.m */; };
+		C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */; };
+		C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB424CEC5690024A292 /* spark_red@3x.png */; };
+		C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB524CEC5690024A292 /* spark_red@2x.png */; };
+		C5D4FBBD24CEC5690024A292 /* spark_red.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB624CEC5690024A292 /* spark_red.png */; };
+		C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB724CEC5690024A292 /* day_like_red@2x.png */; };
+		C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB824CEC5690024A292 /* day_like@3x.png */; };
+		C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB924CEC5690024A292 /* day_like_red@3x.png */; };
+		C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBBA24CEC5690024A292 /* day_like@2x.png */; };
+		C5D4FBC424CEC5700024A292 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBC324CEC5700024A292 /* RBCLikeButton.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -499,6 +508,17 @@
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
 		C5D4FBA224CE88010024A292 /* UIImage+helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+helper.h"; sourceTree = "<group>"; };
 		C5D4FBA324CE88010024A292 /* UIImage+helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+helper.m"; sourceTree = "<group>"; };
+		C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileFolderHandleTool.m; sourceTree = "<group>"; };
+		C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFolderHandleTool.h; sourceTree = "<group>"; };
+		C5D4FBB424CEC5690024A292 /* spark_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spark_red@3x.png"; sourceTree = "<group>"; };
+		C5D4FBB524CEC5690024A292 /* spark_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spark_red@2x.png"; sourceTree = "<group>"; };
+		C5D4FBB624CEC5690024A292 /* spark_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark_red.png; sourceTree = "<group>"; };
+		C5D4FBB724CEC5690024A292 /* day_like_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day_like_red@2x.png"; sourceTree = "<group>"; };
+		C5D4FBB824CEC5690024A292 /* day_like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day_like@3x.png"; sourceTree = "<group>"; };
+		C5D4FBB924CEC5690024A292 /* day_like_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day_like_red@3x.png"; sourceTree = "<group>"; };
+		C5D4FBBA24CEC5690024A292 /* day_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day_like@2x.png"; sourceTree = "<group>"; };
+		C5D4FBC224CEC5700024A292 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
+		C5D4FBC324CEC5700024A292 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -1183,6 +1203,39 @@
 			path = "Lottie-iOS(OC)";
 			sourceTree = "<group>";
 		};
+		C5D4FBAE24CEC5230024A292 /* 文件夹操作 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */,
+				C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */,
+			);
+			path = "文件夹操作";
+			sourceTree = "<group>";
+		};
+		C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBB324CEC55D0024A292 /* resource */,
+				C5D4FBC224CEC5700024A292 /* RBCLikeButton.h */,
+				C5D4FBC324CEC5700024A292 /* RBCLikeButton.m */,
+			);
+			path = "高仿抖音点赞动画";
+			sourceTree = "<group>";
+		};
+		C5D4FBB324CEC55D0024A292 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBB724CEC5690024A292 /* day_like_red@2x.png */,
+				C5D4FBB924CEC5690024A292 /* day_like_red@3x.png */,
+				C5D4FBBA24CEC5690024A292 /* day_like@2x.png */,
+				C5D4FBB824CEC5690024A292 /* day_like@3x.png */,
+				C5D4FBB624CEC5690024A292 /* spark_red.png */,
+				C5D4FBB524CEC5690024A292 /* spark_red@2x.png */,
+				C5D4FBB424CEC5690024A292 /* spark_red@3x.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		C5F78AD224BF273B008A46EC /* 评论列表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1434,6 +1487,8 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
+				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
 				C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */,
 				C5F78AD224BF273B008A46EC /* 评论列表 */,
 				C5B1C72B24BAB8FF001923FB /* Lottie-iOS(OC) */,
@@ -2569,6 +2624,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */,
+				C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */,
 				C5FE9ADD24B5F1B3007B9878 /* ShoppingCart@3x.png in Resources */,
 				C5FE9AFF24B5F1DC007B9878 /* title2@2x.png in Resources */,
 				C5FE9AD924B5F1B3007B9878 /* 图片@3x.png in Resources */,
@@ -2581,10 +2638,13 @@
 				C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */,
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
 				C5FE9ADE24B5F1B3007B9878 /* Home@3x.png in Resources */,
+				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
 				C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */,
 				C54AE7D224C941D300121233 /* gif_header_3@2x.png in Resources */,
+				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C5FE9AFE24B5F1DC007B9878 /* title1@2x.png in Resources */,
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
+				C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */,
 				C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */,
 				C5FE9AE224B5F1B3007B9878 /* My@3x.png in Resources */,
 				C54AE7D724C941D300121233 /* gif_header_1@3x.png in Resources */,
@@ -2602,6 +2662,7 @@
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
 				C5FE9B0024B5F1DC007B9878 /* title3@2x.png in Resources */,
+				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
 				C5FE9ADC24B5F1B3007B9878 /* My@2x.png in Resources */,
 				C54AE7D624C941D300121233 /* gif_header_4@2x.png in Resources */,
@@ -2616,6 +2677,7 @@
 				C5FE9B0324B5F1DC007B9878 /* bg4@2x.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
 				C5FE9CD324B5F29C007B9878 /* sortedNameCH.plist in Resources */,
+				C5D4FBBD24CEC5690024A292 /* spark_red.png in Resources */,
 				C5B1C72624BAB54D001923FB /* green_lottie_tab_news.json in Resources */,
 				C54AE7D124C941D300121233 /* header@3x.png in Resources */,
 				C5FE9AD824B5F1B3007B9878 /* Home@2x.png in Resources */,
@@ -2911,6 +2973,7 @@
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5B1C7AF24BAB919001923FB /* LOTPathInterpolator.m in Sources */,
 				C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */,
+				C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */,
 				C5D4FBA424CE88010024A292 /* UIImage+helper.m in Sources */,
 				C5B1C7CA24BAB91A001923FB /* NSValue+Compat.m in Sources */,
 				C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */,
@@ -2950,6 +3013,7 @@
 				C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
 				C5B1C7DF24BAB91A001923FB /* UIBezierPath.m in Sources */,
+				C5D4FBC424CEC5700024A292 /* RBCLikeButton.m in Sources */,
 				C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */,
 				C5FE9D0024B5F29C007B9878 /* SearchVC+VM.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,

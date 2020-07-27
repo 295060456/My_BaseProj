@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray <FSCustomButton *>*btnMutArr;
 @property(nonatomic,strong)NSArray <NSString *>*btnTitleArr;
 
--(void)actionBlock:(DataBlock)block;
+-(void)actionBlock:(MKDataBlock)block;
 -(instancetype)initWithBtnTitleMutArr:(NSArray *)btnTitleMutArr;
 
 @end

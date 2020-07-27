@@ -23,7 +23,7 @@ UITableViewDelegate
 @property(nonatomic,strong)SearchBar *searchBar;
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -38,7 +38,7 @@ UITableViewDelegate
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle
                 requestParams:(nullable id)requestParams
-                      success:(DataBlock)block
+                      success:(MKDataBlock)block
                      animated:(BOOL)animated{
     SearchVC *vc = SearchVC.new;
     vc.successBlock = block;

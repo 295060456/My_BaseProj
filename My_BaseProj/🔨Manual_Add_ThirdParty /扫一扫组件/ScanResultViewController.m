@@ -16,7 +16,7 @@
 @property(nonatomic,strong)LBXScanResult *scanResult;
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -31,7 +31,7 @@
 + (instancetype _Nullable )ComingFromVC:(UIViewController *_Nullable)rootVC
                               withStyle:(ComingStyle)comingStyle
                           requestParams:(nullable id)requestParams
-                                success:(DataBlock _Nullable )block
+                                success:(MKDataBlock _Nullable )block
                                animated:(BOOL)animated;{
     ScanResultViewController *vc = ScanResultViewController.new;
     vc.successBlock = block;

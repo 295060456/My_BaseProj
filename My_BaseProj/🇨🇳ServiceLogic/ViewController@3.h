@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated;
 
 @end

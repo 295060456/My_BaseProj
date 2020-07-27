@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                    withStyle:(ComingStyle)comingStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated;
 
 @end

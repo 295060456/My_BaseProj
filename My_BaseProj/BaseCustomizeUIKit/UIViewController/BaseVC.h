@@ -52,12 +52,12 @@ UIGestureRecognizerDelegate
 @property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
 
 -(void)backBtnClickEvent:(UIButton *)sender;
--(void)VCwillComingBlock:(DataBlock)block;//即将进来
--(void)VCdidComingBlock:(DataBlock)block;//已经进来
--(void)VCwillBackBlock:(DataBlock)block;//即将出去
--(void)VCdidBackBlock:(DataBlock)block;//已经出去
--(void)GettingPicBlock:(DataBlock)block;//点选的图片
--(void)BRStringPickerViewBlock:(DataBlock)block;
+-(void)VCwillComingBlock:(MKDataBlock)block;//即将进来
+-(void)VCdidComingBlock:(MKDataBlock)block;//已经进来
+-(void)VCwillBackBlock:(MKDataBlock)block;//即将出去
+-(void)VCdidBackBlock:(MKDataBlock)block;//已经出去
+-(void)GettingPicBlock:(MKDataBlock)block;//点选的图片
+-(void)BRStringPickerViewBlock:(MKDataBlock)block;
 
 -(void)AFNReachability;
 
@@ -85,7 +85,7 @@ UIGestureRecognizerDelegate
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated;
 
 @end

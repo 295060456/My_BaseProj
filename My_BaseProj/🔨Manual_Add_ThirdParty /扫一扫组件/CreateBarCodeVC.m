@@ -12,7 +12,7 @@
 @interface CreateBarCodeVC ()
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -37,7 +37,7 @@
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle
                 requestParams:(nullable id)requestParams
-                      success:(DataBlock)block
+                      success:(MKDataBlock)block
                      animated:(BOOL)animated{
     CreateBarCodeVC *vc = CreateBarCodeVC.new;
     vc.successBlock = block;

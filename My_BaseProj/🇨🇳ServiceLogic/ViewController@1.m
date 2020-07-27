@@ -23,7 +23,7 @@
 @property(nonatomic,strong)ZYTextField_01 *textField;
 @property(nonatomic,strong)UIView *mainView;
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -40,7 +40,7 @@
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated{
     ViewController_1 *vc = ViewController_1.new;
     vc.successBlock = block;

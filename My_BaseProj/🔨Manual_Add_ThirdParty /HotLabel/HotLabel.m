@@ -21,7 +21,7 @@
 //动态运算值————当前状态下最后一个label,右下角的x轴坐标
 @property(nonatomic,assign)CGFloat lastPoint;
 
-@property(nonatomic,copy)DataBlock heightBlock;
+@property(nonatomic,copy)MKDataBlock heightBlock;
 
 @end
 
@@ -43,7 +43,7 @@
     }return self;
 }
 
--(void)actionBlock:(DataBlock)Block{
+-(void)actionBlock:(MKDataBlock)Block{
     
     self.heightBlock = Block;
 }

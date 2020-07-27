@@ -15,7 +15,7 @@
 UIScrollViewDelegate
 >
 
-@property(nonatomic,copy)DataBlock block;
+@property(nonatomic,copy)MKDataBlock block;
 @property(nonatomic,assign)CGFloat BtnWidth;
 @property(nonatomic,strong)FSCustomButton *tempBtn;
 
@@ -81,7 +81,7 @@ UIScrollViewDelegate
     }return self;
 }
 
--(void)actionBlock:(DataBlock)block{
+-(void)actionBlock:(MKDataBlock)block{
     self.block = block;
 }
 

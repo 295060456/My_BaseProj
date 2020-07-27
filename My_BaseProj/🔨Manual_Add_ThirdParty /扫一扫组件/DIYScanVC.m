@@ -17,7 +17,7 @@
 @property(nonatomic,strong)LBXScanVideoZoomView *zoomView;
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -32,7 +32,7 @@
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                     withStyle:(ComingStyle)comingStyle
                 requestParams:(nullable id)requestParams
-                      success:(DataBlock)block
+                      success:(MKDataBlock)block
                      animated:(BOOL)animated{
     DIYScanVC *vc = DIYScanVC.new;
     vc.successBlock = block;
@@ -121,10 +121,12 @@
 }
 
 - (void)showError:(NSString*)str{
-    [self showAlertViewTitle:@"提示"
-                     message:str
-                 btnTitleArr:@[@"知道了"]
-              alertBtnAction:@[@"OK"]];
+    [self alertControllerStyle:SYS_AlertController
+            showAlertViewTitle:@"提示"
+                       message:str
+               isSeparateStyle:YES
+                   btnTitleArr:@[@"知道了"]
+                alertBtnAction:@[@"OK"]];
 }
 
 -(void)OK{}
@@ -159,10 +161,13 @@
     if (!strResult) {
         strResult = @"识别失败";
     }
-    [self showAlertViewTitle:@"扫码内容"
-                     message:strResult
-                 btnTitleArr:@[@"知道了"]
-              alertBtnAction:@[@"reStartDevice"]];
+    
+    [self alertControllerStyle:SYS_AlertController
+            showAlertViewTitle:@"扫码内容"
+                       message:strResult
+               isSeparateStyle:YES
+                   btnTitleArr:@[@"知道了"]
+                alertBtnAction:@[@"reStartDevice"]];
 }
 
 - (void)showNextVCWithScanResult:(LBXScanResult *)strResult{
@@ -236,10 +241,12 @@
                     }
                 
             }else{
-                [self showAlertViewTitle:@"选择一张相片就够啦"
-                                 message:@"不要画蛇添足"
-                             btnTitleArr:@[@"好的"]
-                          alertBtnAction:@[@"OK"]];
+                [self alertControllerStyle:SYS_AlertController
+                        showAlertViewTitle:@"选择一张相片就够啦"
+                                   message:nil
+                           isSeparateStyle:YES
+                               btnTitleArr:@[@"知道了"]
+                            alertBtnAction:@[@"OK"]];
             }
         }
     }];

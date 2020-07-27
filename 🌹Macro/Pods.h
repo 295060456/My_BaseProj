@@ -62,6 +62,7 @@
 #import "UIViewController+CWLateralSlide.h"
 #import <YXAlertController.h>
 #import <LKDBHelper.h>
+#import "YQImageCompressTool.h"
 
 
 #endif /* Pods_h */

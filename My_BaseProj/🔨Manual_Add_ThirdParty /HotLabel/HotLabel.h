@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)hotLabelWithDataArr:(NSArray *)dataArr;
 
--(void)actionBlock:(DataBlock)Block;
+-(void)actionBlock:(MKDataBlock)Block;
 
 @end
 

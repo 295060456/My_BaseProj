@@ -10,7 +10,7 @@
 
 @interface ViewForHeader()
 
-@property(nonatomic,copy)DataBlock block;
+@property(nonatomic,copy)MKDataBlock block;
 
 @end
 
@@ -28,7 +28,7 @@
     }
 }
 
--(void)actionBlock:(DataBlock)block{
+-(void)actionBlock:(MKDataBlock)block{
     _block = block;
 }
 

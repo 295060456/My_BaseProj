@@ -15,7 +15,7 @@
 @property(nonatomic,strong)dispatch_queue_t queue;
 @property(nonatomic,assign)uint64_t startTime;
 @property(nonatomic,assign)uint64_t intervalTime;
-@property(nonatomic,copy)DataBlock block;
+@property(nonatomic,copy)MKDataBlock block;
 
 @end
 
@@ -53,7 +53,7 @@ static GCDTimerManager *instance = nil;
     });
 }
 
--(void)actionBlock:(DataBlock)block{
+-(void)actionBlock:(MKDataBlock)block{
     _block = block;
 }
 

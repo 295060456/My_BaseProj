@@ -13,7 +13,7 @@
 + (instancetype _Nullable )ComingFromVC:(UIViewController *_Nullable)rootVC
                               withStyle:(ComingStyle)comingStyle
                           requestParams:(nullable id)requestParams
-                                success:(DataBlock _Nullable )block
+                                success:(MKDataBlock _Nullable )block
                                animated:(BOOL)animated;
 
 @end

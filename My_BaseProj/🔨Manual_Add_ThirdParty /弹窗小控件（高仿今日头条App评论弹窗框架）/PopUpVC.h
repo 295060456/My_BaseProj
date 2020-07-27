@@ -20,15 +20,15 @@ typedef NS_ENUM(NSUInteger, MoveDirection){
 @interface PopUpVC : BaseVC
 
 @property(nonatomic,assign)CGFloat liftingHeight;
-@property(nonatomic,copy)DataBlock block;
+@property(nonatomic,copy)MKDataBlock block;
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated;
--(void)actionBlock:(DataBlock)block;
+-(void)actionBlock:(MKDataBlock)block;
 
 @end
 

@@ -10,7 +10,7 @@
 
 @interface ViewForFooter()
 
-@property(nonatomic,weak)DataBlock block;
+@property(nonatomic,weak)MKDataBlock block;
 
 @end
 
@@ -28,7 +28,7 @@
     }
 }
 
--(void)actionBlock:(DataBlock)block{
+-(void)actionBlock:(MKDataBlock)block{
     _block = block;
 }
 

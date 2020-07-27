@@ -10,6 +10,7 @@
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		5E869FA0B5123EB1A2FC1F0B /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
+		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
 		C54AE7CF24C941D300121233 /* gif_header_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7C524C941D300121233 /* gif_header_1@2x.png */; };
 		C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7C624C941D300121233 /* gif_header_2@2x.png */; };
 		C54AE7D124C941D300121233 /* header@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7C724C941D300121233 /* header@3x.png */; };
@@ -105,6 +106,7 @@
 		C5B1C7E924BAB91A001923FB /* LOTCompositionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C7AC24BAB919001923FB /* LOTCompositionContainer.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
+		C5D4FBA424CE88010024A292 /* UIImage+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBA324CE88010024A292 /* UIImage+helper.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -324,6 +326,8 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
+		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C54AE7C524C941D300121233 /* gif_header_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_1@2x.png"; sourceTree = "<group>"; };
 		C54AE7C624C941D300121233 /* gif_header_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_2@2x.png"; sourceTree = "<group>"; };
 		C54AE7C724C941D300121233 /* header@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@3x.png"; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
+		C5D4FBA224CE88010024A292 /* UIImage+helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+helper.h"; sourceTree = "<group>"; };
+		C5D4FBA324CE88010024A292 /* UIImage+helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+helper.m"; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -1586,10 +1592,12 @@
 		C5FE9B0D24B5F203007B9878 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B0E24B5F203007B9878 /* UIImage+YBGIF.m */,
-				C5FE9B0F24B5F203007B9878 /* UIImage+Extras.m */,
-				C5FE9B1024B5F203007B9878 /* UIImage+YBGIF.h */,
 				C5FE9B1124B5F203007B9878 /* UIImage+Extras.h */,
+				C5FE9B0F24B5F203007B9878 /* UIImage+Extras.m */,
+				C5D4FBA224CE88010024A292 /* UIImage+helper.h */,
+				C5D4FBA324CE88010024A292 /* UIImage+helper.m */,
+				C5FE9B1024B5F203007B9878 /* UIImage+YBGIF.h */,
+				C5FE9B0E24B5F203007B9878 /* UIImage+YBGIF.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -1682,6 +1690,8 @@
 				C5FE9B3524B5F203007B9878 /* TBVCell_style_01.m */,
 				C5FAC32F24C5747900372BCD /* TBVCell_style_02.h */,
 				C5FAC33024C5747900372BCD /* TBVCell_style_02.m */,
+				C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */,
+				C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";
@@ -2859,6 +2869,7 @@
 				C5FE9CC724B5F29C007B9878 /* UIView+SDExtension.m in Sources */,
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
 				C5FE9B5C24B5F203007B9878 /* UIImage+YBGIF.m in Sources */,
+				C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */,
 				C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */,
 				C5FE9CFB24B5F29C007B9878 /* WJItemsControlView.m in Sources */,
 				C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */,
@@ -2900,6 +2911,7 @@
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5B1C7AF24BAB919001923FB /* LOTPathInterpolator.m in Sources */,
 				C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */,
+				C5D4FBA424CE88010024A292 /* UIImage+helper.m in Sources */,
 				C5B1C7CA24BAB91A001923FB /* NSValue+Compat.m in Sources */,
 				C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */,
 				C5B1C7DD24BAB91A001923FB /* LOTAnimatedControl.m in Sources */,

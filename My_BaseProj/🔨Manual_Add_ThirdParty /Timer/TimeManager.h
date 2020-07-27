@@ -23,7 +23,7 @@ dispatch_source_t精度很高,系统自动触发,系统级别的源.
 
 
 //timer回调方法
--(void)actionBlock:(DataBlock)block;
+-(void)actionBlock:(MKDataBlock)block;
 
 //开启定时器
 -(void)startGCDTimer;

@@ -20,7 +20,7 @@
 @property(nonatomic,strong)UIView *lineView;
 @property(nonatomic,assign)UIStatusBarStyle statusBarStyle;
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -32,7 +32,7 @@
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated{
     ViewController_4 *vc = ViewController_4.new;
     vc.successBlock = block;

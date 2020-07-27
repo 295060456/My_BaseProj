@@ -17,15 +17,15 @@ JXCategoryListContentViewDelegate
 @property(nonatomic,strong)UIImage *image;
 @property(nonatomic,strong)NSData *data;
 
-@property(nonatomic,copy)DataBlock willComingBlock;
-@property(nonatomic,copy)DataBlock didComingBlock;
-@property(nonatomic,copy)DataBlock willBackBlock;
-@property(nonatomic,copy)DataBlock didBackBlock;
-@property(nonatomic,copy)DataBlock picBlock;
-@property(nonatomic,copy)DataBlock brStringPickerViewBlock;
+@property(nonatomic,copy)MKDataBlock willComingBlock;
+@property(nonatomic,copy)MKDataBlock didComingBlock;
+@property(nonatomic,copy)MKDataBlock willBackBlock;
+@property(nonatomic,copy)MKDataBlock didBackBlock;
+@property(nonatomic,copy)MKDataBlock picBlock;
+@property(nonatomic,copy)MKDataBlock brStringPickerViewBlock;
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 @property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
@@ -49,7 +49,7 @@ JXCategoryListContentViewDelegate
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated{
     BaseVC *vc = BaseVC.new;
     vc.successBlock = block;
@@ -141,27 +141,27 @@ JXCategoryListContentViewDelegate
                                              animated:NO];
 }
 
--(void)VCwillComingBlock:(DataBlock)block{//即将进来
+-(void)VCwillComingBlock:(MKDataBlock)block{//即将进来
     self.willComingBlock = block;
 }
 
--(void)VCdidComingBlock:(DataBlock)block{//已经进来
+-(void)VCdidComingBlock:(MKDataBlock)block{//已经进来
     self.didComingBlock = block;
 }
 
--(void)VCwillBackBlock:(DataBlock)block{//即将出去
+-(void)VCwillBackBlock:(MKDataBlock)block{//即将出去
     self.willBackBlock = block;
 }
 
--(void)VCdidBackBlock:(DataBlock)block{//已经出去
+-(void)VCdidBackBlock:(MKDataBlock)block{//已经出去
     self.didBackBlock = block;
 }
 
--(void)GettingPicBlock:(DataBlock)block{//点选的图片
+-(void)GettingPicBlock:(MKDataBlock)block{//点选的图片
     self.picBlock = block;
 }
 
--(void)BRStringPickerViewBlock:(DataBlock)block{
+-(void)BRStringPickerViewBlock:(MKDataBlock)block{
     self.brStringPickerViewBlock = block;
 }
 #pragma mark —— JXCategoryListContentViewDelegate

@@ -18,7 +18,7 @@
 @property(nonatomic,strong)UIImageView *imgView;
 @property(nonatomic,strong)HotLabel *hotLabel;
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -30,7 +30,7 @@
                  comingStyle:(ComingStyle)comingStyle
            presentationStyle:(UIModalPresentationStyle)presentationStyle
                requestParams:(nullable id)requestParams
-                     success:(DataBlock)block
+                     success:(MKDataBlock)block
                     animated:(BOOL)animated{
     ViewController_3 *vc = ViewController_3.new;
     vc.successBlock = block;

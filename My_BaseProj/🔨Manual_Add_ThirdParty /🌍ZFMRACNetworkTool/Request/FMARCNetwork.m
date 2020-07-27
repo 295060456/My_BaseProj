@@ -468,14 +468,17 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         NSLog(@"KKK = %@",downloadProgress);
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath,
                                     NSURLResponse * _Nonnull response) {
-    //文件夹创建等操作在外层完成
-    NSString *filePath = [downloadFilePath stringByAppendingPathComponent:response.suggestedFilename];
-    //返回文件位置的URL路径
+        //文件夹创建等操作在外层完成
+        NSString *filePath = [downloadFilePath stringByAppendingPathComponent:response.suggestedFilename];
+        //返回文件位置的URL路径
+        successful(filePath);
         return [NSURL fileURLWithPath:filePath];
     } completionHandler:^(NSURLResponse * _Nonnull response,
                           NSURL * _Nullable filePath,
                           NSError * _Nullable error) {
-        failure(error);
+        if(error){
+            failure(error);
+        }
     }];
     //开始下载任务
     [downloadTask resume];

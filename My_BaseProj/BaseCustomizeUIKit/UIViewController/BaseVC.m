@@ -722,7 +722,7 @@ JXCategoryListContentViewDelegate
 
 -(UIImage *)image{
     if (!_image) {
-        _image = [UIImage sd_animatedGIFWithData:self.data];
+        _image = [UIImage sd_imageWithGIFData:self.data];
     }return _image;
 }
 

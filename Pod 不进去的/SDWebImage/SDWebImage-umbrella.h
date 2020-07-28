@@ -12,19 +12,12 @@
 
 #import "NSButton+WebCache.h"
 #import "NSData+ImageContentType.h"
-#import "NSImage+WebCache.h"
 #import "SDAnimatedImageRep.h"
 #import "SDImageCache.h"
 #import "SDImageCacheConfig.h"
-#import "SDWebImageCoder.h"
-#import "SDWebImageCoderHelper.h"
-#import "SDWebImageCodersManager.h"
 #import "SDWebImageCompat.h"
 #import "SDWebImageDownloader.h"
 #import "SDWebImageDownloaderOperation.h"
-#import "SDWebImageFrame.h"
-#import "SDWebImageGIFCoder.h"
-#import "SDWebImageImageIOCoder.h"
 #import "SDWebImageManager.h"
 #import "SDWebImageOperation.h"
 #import "SDWebImagePrefetcher.h"
@@ -40,6 +33,17 @@
 #import "UIView+WebCacheOperation.h"
 #import "UIImage+WebP.h"
 #import "SDWebImageWebPCoder.h"
+
+//新版本和之前缺乏的
+#import "SDWebImageFrame.h"
+#import "SDWebImageGIFCoder.h"
+#import "SDWebImageImageIOCoder.h"
+#import "SDWebImageCoder.h"
+#import "SDWebImageCoderHelper.h"
+#import "SDWebImageCodersManager.h"
+#import "NSImage+WebCache.h"
+
+#import "UIImage+WebP_Diff.h"
 
 FOUNDATION_EXPORT double SDWebImageVersionNumber;
 FOUNDATION_EXPORT const unsigned char SDWebImageVersionString[];

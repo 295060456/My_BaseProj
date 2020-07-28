@@ -113,15 +113,6 @@ PODS:
   - LBXScan/Types (2.3)
   - LBXScan/UI (2.3):
     - LBXScan/Types (~> 2.2)
-  - libwebp (1.1.0):
-    - libwebp/demux (= 1.1.0)
-    - libwebp/mux (= 1.1.0)
-    - libwebp/webp (= 1.1.0)
-  - libwebp/demux (1.1.0):
-    - libwebp/webp
-  - libwebp/mux (1.1.0):
-    - libwebp/demux
-  - libwebp/webp (1.1.0)
   - LKDBHelper (2.5.3):
     - LKDBHelper/standard (= 2.5.3)
   - LKDBHelper/standard (2.5.3):
@@ -163,12 +154,9 @@ PODS:
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
-  - SDWebImage (4.4.8):
-    - SDWebImage/Core (= 4.4.8)
-  - SDWebImage/Core (4.4.8)
-  - SDWebImage/WebP (4.4.8):
-    - libwebp (< 2.0, >= 0.5)
-    - SDWebImage/Core
+  - SDWebImage (5.8.1):
+    - SDWebImage/Core (= 5.8.1)
+  - SDWebImage/Core (5.8.1)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
   - SQLiteRepairKit (1.2.2):
@@ -267,7 +255,6 @@ DEPENDENCIES:
   - Reveal-SDK
   - RQShineLabel
   - SDWebImage
-  - SDWebImage/WebP
   - Shimmer
   - SocketRocket
   - SZTextView
@@ -323,7 +310,6 @@ SPEC REPOS:
     - ksyhttpcache
     - KSYMediaPlayer_iOS
     - LBXScan
-    - libwebp
     - LKDBHelper
     - LYEmptyView
     - LYXAlertController
@@ -403,7 +389,6 @@ SPEC CHECKSUMS:
   ksyhttpcache: b7f7d9b215e74b49deb4b138e59b3d3b80a05f3d
   KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
-  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   LKDBHelper: 26b47fdd6f4c800ef83c478554829ff8a1da20c5
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   LYXAlertController: b1459683e9d3622f697bd1ee6a9e584253b0c8b3
@@ -425,7 +410,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
-  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
@@ -446,6 +431,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 9295e0bc23fb30012e069b6c4e1fd90d8eae867d
+PODFILE CHECKSUM: ddaf0cfac24cea11671f6b8021edf3cbb88e064c
 
 COCOAPODS: 1.9.3

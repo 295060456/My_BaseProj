@@ -32,7 +32,7 @@ target 'My_BaseProj' do
   pod 'YYKit' # https://github.com/ibireme/YYKit A collection of iOS components.
   #pod 'YYText'
   pod 'SDWebImage'  # https://github.com/SDWebImage/SDWebImage Asynchronous image downloader with cache support as a UIImageView category
-  pod 'SDWebImage/WebP' # https://github.com/SDWebImage/SDWebImageWebPCoder A WebP coder plugin for SDWebImage, use libwebp
+#  pod 'SDWebImage/WebP' # https://github.com/SDWebImage/SDWebImageWebPCoder A WebP coder plugin for SDWebImage, use libwebp
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
   pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView

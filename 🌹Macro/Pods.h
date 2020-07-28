@@ -21,6 +21,7 @@
 #import "FMDB.h"
 #import "HCSStarRatingView.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
+#import "BSYTextFiled.h"
 #import <Masonry/Masonry.h>
 //#import "PureLayout.h"
 //#import "MyLayout.h"

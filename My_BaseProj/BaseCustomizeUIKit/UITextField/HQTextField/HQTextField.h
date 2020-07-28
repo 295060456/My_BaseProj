@@ -9,10 +9,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CJTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HQTextField : UITextField
+@interface HQTextField : CJTextField
 
 
 /**

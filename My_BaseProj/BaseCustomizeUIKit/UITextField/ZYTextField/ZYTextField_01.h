@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CJTextField.h"
 #import "HistoryDataListTBV.h"
 #import "HistoryDataListTBVCell.h"
 
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSUInteger,isStoreHistoryInfo){
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZYTextField_01 : UITextField
+@interface ZYTextField_01 : CJTextField
 
 @property(nonatomic,strong)HistoryDataListTBV *historyDataListTBV;
 @property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;

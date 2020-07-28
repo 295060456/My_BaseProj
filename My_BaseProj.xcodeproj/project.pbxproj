@@ -1161,6 +1161,15 @@
 			path = "一些新版本废弃的类 但是WebP需要的";
 			sourceTree = "<group>";
 		};
+		C590FF7124D06B75000F36C9 /* CJTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9C3D24B5F29A007B9878 /* CJTextField.h */,
+				C5FE9C3624B5F29A007B9878 /* CJTextField.m */,
+			);
+			path = CJTextField;
+			sourceTree = "<group>";
+		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1941,6 +1950,7 @@
 		C5FE9B3724B5F203007B9878 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				C590FF7124D06B75000F36C9 /* CJTextField */,
 				C5FE9B3824B5F203007B9878 /* HQTextField */,
 				C5FE9B3B24B5F203007B9878 /* ZYTextField */,
 			);
@@ -2438,8 +2448,6 @@
 		C5FE9C3524B5F29A007B9878 /* 搜索框 */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9C3D24B5F29A007B9878 /* CJTextField.h */,
-				C5FE9C3624B5F29A007B9878 /* CJTextField.m */,
 				C5FE9C3C24B5F29A007B9878 /* SearchBar.h */,
 				C5FE9C3724B5F29A007B9878 /* SearchBar.m */,
 				C5FE9C3824B5F29A007B9878 /* SearchModel.h */,

@@ -30,6 +30,7 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.6.3):
     - BRPickerView/Base
+  - BSYKeyBoard (1.1.2)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
@@ -208,6 +209,7 @@ DEPENDENCIES:
   - AYCheckVersion
   - BEMCheckBox
   - BRPickerView
+  - BSYKeyBoard
   - CocoaLumberjack
   - CWLateralSlide
   - DDProgressView
@@ -280,6 +282,7 @@ SPEC REPOS:
     - AYCheckVersion
     - BEMCheckBox
     - BRPickerView
+    - BSYKeyBoard
     - CocoaAsyncSocket
     - CocoaLumberjack
     - CWLateralSlide
@@ -359,6 +362,7 @@ SPEC CHECKSUMS:
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
+  BSYKeyBoard: 777eb83fc0aca335f4d94d83eced12c797c654c6
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
@@ -431,6 +435,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: ddaf0cfac24cea11671f6b8021edf3cbb88e064c
+PODFILE CHECKSUM: 0ef2dca713e90b648c9f45f34584c383c5272c6f
 
 COCOAPODS: 1.9.3

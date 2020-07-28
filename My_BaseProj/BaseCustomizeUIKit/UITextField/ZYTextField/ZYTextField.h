@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "CJTextField.h"
 
-@interface ZYTextField : UITextField
+@interface ZYTextField : CJTextField
 
 @end

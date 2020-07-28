@@ -25,6 +25,9 @@ UIGestureRecognizerDelegate
 /// move 0 不动 1 右 -1 下
 @property (nonatomic, assign) NSInteger isMove;
 
+/// move
+@property (nonatomic, assign) CGFloat moveDistance;
+
 @end
 
 @implementation PopUpVC
@@ -81,12 +84,13 @@ UIGestureRecognizerDelegate
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.panGestureRecognizer.enabled = YES;
-    self.swipeGestureRecognizerUp.enabled = YES;
-    self.swipeGestureRecognizerDown.enabled = YES;
+    //self.swipeGestureRecognizerUp.enabled = YES;
+    //self.swipeGestureRecognizerDown.enabled = YES;
     NSLog(@"");
     
-    [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerUp];
-    [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerDown];
+    //[self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerUp];
+   // [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerDown];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -213,19 +217,31 @@ UIGestureRecognizerDelegate
             
             if (self.isMove == 1) {
                 self.view.center = CGPointMake(self.view.center.x + translatePoint.x,self.view.center.y);
+                self.moveDistance = translatePoint.x;
             }else if (self.isMove == -1){
                 if (translatePoint.y > 0) {
                     self.view.center = CGPointMake(self.view.center.x ,self.view.center.y + translatePoint.y);
+                    self.moveDistance = translatePoint.y;
+                }else{
+                    self.moveDistance = 0;
                 }
+            }else{
+                self.moveDistance = 0;
             }
-            
             [panGestureRecognizer setTranslation:CGPointZero inView:self.view];
-    
-        
+
     }else if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
         NSLog(@"UIGestureRecognizerStateEnded point:%@",NSStringFromCGPoint(translatePoint));
+
             if (self.view.left < SCREEN_WIDTH / 2) {
-                self.view.left = 0;
+                if (self.isMove == 1 && self.moveDistance > 20) {
+                    if (self.block) {
+                        self.block(@(MoveDirection_horizont_right));//消失
+                        return;
+                    }
+                }else{
+                    self.view.left = 0;
+                }
             }else{
                 if (self.block) {
                     self.block(@(MoveDirection_horizont_right));//消失
@@ -237,9 +253,15 @@ UIGestureRecognizerDelegate
                     self.block(@(MoveDirection_vertical_down));//消失
                 }
             }else{
-                self.view.top = self.liftingHeight;
+                if (self.moveDistance > 20) {
+                    if (self.block) {
+                        self.block(@(MoveDirection_vertical_down));//消失
+                        return;
+                    }
+                }else{
+                    self.view.top = self.liftingHeight;
+                }
             }
-        
     }
     
 //     if (velocity.x < 0){
@@ -330,7 +352,7 @@ UIGestureRecognizerDelegate
                                                                             action:@selector(swipeGestureRecognizerDirection:)];
         // 轻扫方向:默认是右边
         _swipeGestureRecognizerUp.direction = UISwipeGestureRecognizerDirectionRight;
-        [self.view addGestureRecognizer:_swipeGestureRecognizerUp];
+        //[self.view addGestureRecognizer:_swipeGestureRecognizerUp];
         _swipeGestureRecognizerUp.delegate = self;
     }return _swipeGestureRecognizerUp;
 }
@@ -342,7 +364,7 @@ UIGestureRecognizerDelegate
         // 轻扫方向:默认是右边
         _swipeGestureRecognizerDown.direction = UISwipeGestureRecognizerDirectionDown;
         _swipeGestureRecognizerDown.delegate = self;
-        [self.view addGestureRecognizer:_swipeGestureRecognizerDown];
+        //[self.view addGestureRecognizer:_swipeGestureRecognizerDown];
     }return _swipeGestureRecognizerDown;
 }
 

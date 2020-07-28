@@ -116,6 +116,12 @@
 		C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB924CEC5690024A292 /* day_like_red@3x.png */; };
 		C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBBA24CEC5690024A292 /* day_like@2x.png */; };
 		C5D4FBC424CEC5700024A292 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBC324CEC5700024A292 /* RBCLikeButton.m */; };
+		C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBC724CFDCF90024A292 /* CommentPopUpCarryOnVC.m */; };
+		C5D4FBCE24CFDECC0024A292 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBCC24CFDECC0024A292 /* InputView.m */; };
+		C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD024CFDEDC0024A292 /* CommentPopUpVC.m */; };
+		C5D4FBD624CFDFE70024A292 /* MKCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD524CFDFE70024A292 /* MKCommentModel.m */; };
+		C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD924CFE0840024A292 /* BaseModel.m */; };
+		C5D4FBDE24CFE0C40024A292 /* CommentPopUpVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -206,9 +212,6 @@
 		C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BAD24B5F298007B9878 /* LGiOSBtn.m */; };
 		C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB024B5F298007B9878 /* ECAuthorizationTools.m */; };
 		C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB224B5F298007B9878 /* CFGradientLabel.m */; };
-		C5FE9CC124B5F29C007B9878 /* MyNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB624B5F298007B9878 /* MyNodeModel.m */; };
-		C5FE9CC224B5F29C007B9878 /* MyNodeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB924B5F298007B9878 /* MyNodeViewCell.m */; };
-		C5FE9CC324B5F29C007B9878 /* CommentPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BBB24B5F298007B9878 /* CommentPopUpVC.m */; };
 		C5FE9CC424B5F29C007B9878 /* SDCycleScrollView+UICollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BC124B5F298007B9878 /* SDCycleScrollView+UICollectionViewDataSource.m */; };
 		C5FE9CC624B5F29C007B9878 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BC424B5F298007B9878 /* SDCycleScrollView.m */; };
 		C5FE9CC724B5F29C007B9878 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BC524B5F298007B9878 /* UIView+SDExtension.m */; };
@@ -357,6 +360,7 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -519,7 +523,19 @@
 		C5D4FBBA24CEC5690024A292 /* day_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "day_like@2x.png"; sourceTree = "<group>"; };
 		C5D4FBC224CEC5700024A292 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
 		C5D4FBC324CEC5700024A292 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
-		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表"; sourceTree = "<group>"; };
+		C5D4FBC624CFDCF90024A292 /* CommentPopUpCarryOnVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpCarryOnVC.h; sourceTree = "<group>"; };
+		C5D4FBC724CFDCF90024A292 /* CommentPopUpCarryOnVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpCarryOnVC.m; sourceTree = "<group>"; };
+		C5D4FBCC24CFDECC0024A292 /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
+		C5D4FBCD24CFDECC0024A292 /* InputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputView.h; sourceTree = "<group>"; };
+		C5D4FBCF24CFDEDC0024A292 /* CommentPopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentPopUpVC.h; sourceTree = "<group>"; };
+		C5D4FBD024CFDEDC0024A292 /* CommentPopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpVC.m; sourceTree = "<group>"; };
+		C5D4FBD424CFDFE70024A292 /* MKCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCommentModel.h; sourceTree = "<group>"; };
+		C5D4FBD524CFDFE70024A292 /* MKCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCommentModel.m; sourceTree = "<group>"; };
+		C5D4FBD924CFE0840024A292 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		C5D4FBDA24CFE0840024A292 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		C5D4FBDC24CFE0C40024A292 /* CommentPopUpVC+VM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommentPopUpVC+VM.h"; sourceTree = "<group>"; };
+		C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CommentPopUpVC+VM.m"; sourceTree = "<group>"; };
+		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表（PopUpVC上面加盖内容物完成）"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
 		C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoveringHeaderView.m; sourceTree = "<group>"; };
@@ -718,12 +734,6 @@
 		C5FE9BB024B5F298007B9878 /* ECAuthorizationTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAuthorizationTools.m; sourceTree = "<group>"; };
 		C5FE9BB224B5F298007B9878 /* CFGradientLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGradientLabel.m; sourceTree = "<group>"; };
 		C5FE9BB324B5F298007B9878 /* CFGradientLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFGradientLabel.h; sourceTree = "<group>"; };
-		C5FE9BB624B5F298007B9878 /* MyNodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeModel.m; sourceTree = "<group>"; };
-		C5FE9BB724B5F298007B9878 /* MyNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNodeModel.h; sourceTree = "<group>"; };
-		C5FE9BB924B5F298007B9878 /* MyNodeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNodeViewCell.m; sourceTree = "<group>"; };
-		C5FE9BBA24B5F298007B9878 /* MyNodeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNodeViewCell.h; sourceTree = "<group>"; };
-		C5FE9BBB24B5F298007B9878 /* CommentPopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpVC.m; sourceTree = "<group>"; };
-		C5FE9BBC24B5F298007B9878 /* CommentPopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentPopUpVC.h; sourceTree = "<group>"; };
 		C5FE9BBE24B5F298007B9878 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		C5FE9BBF24B5F298007B9878 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
 		C5FE9BC024B5F298007B9878 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1036,6 +1046,36 @@
 			path = "MJExtension用法";
 			sourceTree = "<group>";
 		};
+		C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBD424CFDFE70024A292 /* MKCommentModel.h */,
+				C5D4FBD524CFDFE70024A292 /* MKCommentModel.m */,
+			);
+			path = "数据模型层 真实";
+			sourceTree = "<group>";
+		};
+		C590FE0624CFE2F9000F36C9 /* 怎么使用 */ = {
+			isa = PBXGroup;
+			children = (
+				C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */,
+				C5D4FBC924CFDE190024A292 /* 用于承接的页面Demo */,
+				C5D4FBD324CFDFC40024A292 /* 真实业务场景 */,
+				C5D4FBD224CFDFB90024A292 /* 手动模拟 */,
+			);
+			path = "怎么使用";
+			sourceTree = "<group>";
+		};
+		C590FE0724CFE314000F36C9 /* 相关视图类 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBCB24CFDEA80024A292 /* 输入框部分 */,
+				C5F78AD424BF297D008A46EC /* 取消悬停 */,
+				C5F78AE224BF297D008A46EC /* TBVCell */,
+			);
+			path = "相关视图类";
+			sourceTree = "<group>";
+		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1236,15 +1276,77 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
+		C5D4FBC924CFDE190024A292 /* 用于承接的页面Demo */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBC624CFDCF90024A292 /* CommentPopUpCarryOnVC.h */,
+				C5D4FBC724CFDCF90024A292 /* CommentPopUpCarryOnVC.m */,
+			);
+			path = "用于承接的页面Demo";
+			sourceTree = "<group>";
+		};
+		C5D4FBCA24CFDE9F0024A292 /* 评论页 CommentPopUpVC */ = {
+			isa = PBXGroup;
+			children = (
+				C590FE0624CFE2F9000F36C9 /* 怎么使用 */,
+				C590FE0724CFE314000F36C9 /* 相关视图类 */,
+			);
+			path = "评论页 CommentPopUpVC";
+			sourceTree = "<group>";
+		};
+		C5D4FBCB24CFDEA80024A292 /* 输入框部分 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBCD24CFDECC0024A292 /* InputView.h */,
+				C5D4FBCC24CFDECC0024A292 /* InputView.m */,
+			);
+			path = "输入框部分";
+			sourceTree = "<group>";
+		};
+		C5D4FBD224CFDFB90024A292 /* 手动模拟 */ = {
+			isa = PBXGroup;
+			children = (
+				C5F78ADD24BF297D008A46EC /* 数据模型层 程肖斌demo */,
+				C5F78ADB24BF297D008A46EC /* ViewController.h */,
+				C5F78ADC24BF297D008A46EC /* ViewController.m */,
+			);
+			path = "手动模拟";
+			sourceTree = "<group>";
+		};
+		C5D4FBD324CFDFC40024A292 /* 真实业务场景 */ = {
+			isa = PBXGroup;
+			children = (
+				C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */,
+				C5D4FBCF24CFDEDC0024A292 /* CommentPopUpVC.h */,
+				C5D4FBD024CFDEDC0024A292 /* CommentPopUpVC.m */,
+				C5D4FBDC24CFE0C40024A292 /* CommentPopUpVC+VM.h */,
+				C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */,
+			);
+			path = "真实业务场景";
+			sourceTree = "<group>";
+		};
+		C5D4FBD724CFE0740024A292 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBD824CFE07E0024A292 /* BaseModel */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C5D4FBD824CFE07E0024A292 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5D4FBDA24CFE0840024A292 /* BaseModel.h */,
+				C5D4FBD924CFE0840024A292 /* BaseModel.m */,
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
 		C5F78AD224BF273B008A46EC /* 评论列表 */ = {
 			isa = PBXGroup;
 			children = (
-				C5F78AD424BF297D008A46EC /* 取消悬停 */,
-				C5F78ADD24BF297D008A46EC /* 数据模型层 */,
-				C5F78AE224BF297D008A46EC /* TBVCell */,
-				C5F78ADB24BF297D008A46EC /* ViewController.h */,
-				C5F78ADC24BF297D008A46EC /* ViewController.m */,
-				C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表 */,
+				C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */,
+				C5D4FBCA24CFDE9F0024A292 /* 评论页 CommentPopUpVC */,
 			);
 			path = "评论列表";
 			sourceTree = "<group>";
@@ -1262,7 +1364,7 @@
 			path = "取消悬停";
 			sourceTree = "<group>";
 		};
-		C5F78ADD24BF297D008A46EC /* 数据模型层 */ = {
+		C5F78ADD24BF297D008A46EC /* 数据模型层 程肖斌demo */ = {
 			isa = PBXGroup;
 			children = (
 				C5F78ADF24BF297D008A46EC /* FirstClassModel.h */,
@@ -1270,7 +1372,7 @@
 				C5F78AE024BF297D008A46EC /* SecondClassModel.h */,
 				C5F78ADE24BF297D008A46EC /* SecondClassModel.m */,
 			);
-			path = "数据模型层";
+			path = "数据模型层 程肖斌demo";
 			sourceTree = "<group>";
 		};
 		C5F78AE224BF297D008A46EC /* TBVCell */ = {
@@ -1490,17 +1592,16 @@
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
 				C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */,
+				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5F78AD224BF273B008A46EC /* 评论列表 */,
 				C5B1C72B24BAB8FF001923FB /* Lottie-iOS(OC) */,
 				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
 				C5FE9B8A24B5F298007B9878 /* 🌍ZFMRACNetworkTool */,
-				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5FE9BFF24B5F299007B9878 /* 分享控件 */,
 				C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */,
 				C5FE9BAB24B5F298007B9878 /* 高仿iOS长按删除+抖动 */,
 				C5FE9B9924B5F298007B9878 /* 加密体系 */,
 				C5FE9BD224B5F298007B9878 /* 截获导航控制器系统返回按钮的点击pop及右滑pop事件 */,
-				C5FE9BB424B5F298007B9878 /* 评论页 */,
 				C5FE9BEA24B5F299007B9878 /* 扫一扫组件 */,
 				C5FE9C3524B5F29A007B9878 /* 搜索框 */,
 				C5FE9BB124B5F298007B9878 /* 文字颜色渐变Label */,
@@ -1602,6 +1703,7 @@
 		C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5D4FBD724CFE0740024A292 /* Common */,
 				C5FE9AC024B5F19E007B9878 /* ArcTBVCell.h */,
 				C5FE9AC324B5F19E007B9878 /* ArcTBVCell.m */,
 				C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */,
@@ -2002,35 +2104,6 @@
 				C5FE9BB224B5F298007B9878 /* CFGradientLabel.m */,
 			);
 			path = "文字颜色渐变Label";
-			sourceTree = "<group>";
-		};
-		C5FE9BB424B5F298007B9878 /* 评论页 */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BB824B5F298007B9878 /* 自定义Cell */,
-				C5FE9BB524B5F298007B9878 /* 自定义Model */,
-				C5FE9BBC24B5F298007B9878 /* CommentPopUpVC.h */,
-				C5FE9BBB24B5F298007B9878 /* CommentPopUpVC.m */,
-			);
-			path = "评论页";
-			sourceTree = "<group>";
-		};
-		C5FE9BB524B5F298007B9878 /* 自定义Model */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BB724B5F298007B9878 /* MyNodeModel.h */,
-				C5FE9BB624B5F298007B9878 /* MyNodeModel.m */,
-			);
-			path = "自定义Model";
-			sourceTree = "<group>";
-		};
-		C5FE9BB824B5F298007B9878 /* 自定义Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BBA24B5F298007B9878 /* MyNodeViewCell.h */,
-				C5FE9BB924B5F298007B9878 /* MyNodeViewCell.m */,
-			);
-			path = "自定义Cell";
 			sourceTree = "<group>";
 		};
 		C5FE9BBD24B5F298007B9878 /* SDCycleScrollView */ = {
@@ -2833,7 +2906,6 @@
 				C5FE9CF324B5F29C007B9878 /* XLSphereView.m in Sources */,
 				C5FE9B6324B5F203007B9878 /* NSObject+Extras.m in Sources */,
 				C5B1C7C724BAB91A001923FB /* LOTLayerGroup.m in Sources */,
-				C5FE9CC224B5F29C007B9878 /* MyNodeViewCell.m in Sources */,
 				C5B1C7D324BAB91A001923FB /* LOTShapeStroke.m in Sources */,
 				C5B1C7CF24BAB91A001923FB /* LOTAnimationTransitionController.m in Sources */,
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
@@ -2848,7 +2920,6 @@
 				C5FE9D0524B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9CFF24B5F29C007B9878 /* SearchModel.m in Sources */,
 				C5FE9CEB24B5F29C007B9878 /* TBCityIconInfo.m in Sources */,
-				C5FE9CC124B5F29C007B9878 /* MyNodeModel.m in Sources */,
 				C5B1C7B624BAB919001923FB /* UIColor+Expanded.m in Sources */,
 				C5B1C7B324BAB919001923FB /* LOTValueInterpolator.m in Sources */,
 				C5FE9CE724B5F29C007B9878 /* BWItemCollectionViewCell.m in Sources */,
@@ -2880,6 +2951,7 @@
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
 				C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */,
+				C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
 				C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */,
 				C5B1C7DE24BAB91A001923FB /* LOTTrimPathNode.m in Sources */,
@@ -2948,7 +3020,6 @@
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C5FAC33124C5747900372BCD /* TBVCell_style_02.m in Sources */,
-				C5FE9CC324B5F29C007B9878 /* CommentPopUpVC.m in Sources */,
 				C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C5FE9CBD24B5F29C007B9878 /* NSData+Base64.m in Sources */,
@@ -2967,6 +3038,7 @@
 				C5FE9CC924B5F29C007B9878 /* TADotView.m in Sources */,
 				C5FE9ACB24B5F19E007B9878 /* ArcTBVCell.m in Sources */,
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
+				C5D4FBCE24CFDECC0024A292 /* InputView.m in Sources */,
 				C5B1C7BE24BAB91A001923FB /* LOTShapeCircle.m in Sources */,
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C5FE9D1D24B5F29C007B9878 /* AddressPickerView.m in Sources */,
@@ -2996,13 +3068,16 @@
 				C5FE9CE824B5F29C007B9878 /* LongPressToDeleteImageView.m in Sources */,
 				C5B1C7C624BAB91A001923FB /* LOTPathAnimator.m in Sources */,
 				C5B1C7C024BAB91A001923FB /* LOTShapeRepeater.m in Sources */,
+				C5D4FBD624CFDFE70024A292 /* MKCommentModel.m in Sources */,
 				C5B1C7D024BAB91A001923FB /* LOTCircleAnimator.m in Sources */,
+				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
 				C5FE9B6D24B5F203007B9878 /* HQTextField.m in Sources */,
 				C5FE9D1324B5F29C007B9878 /* HWTFCodeView.m in Sources */,
 				C5FE9CBC24B5F29C007B9878 /* NSData+CommonCrypto.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5B1C7E624BAB91A001923FB /* LOTKeyframe.m in Sources */,
 				C5B1C7D824BAB91A001923FB /* LOTBlockCallback.m in Sources */,
+				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
 				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
 				C5FE9B6824B5F203007B9878 /* NSString+File.m in Sources */,
@@ -3022,6 +3097,7 @@
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
 				C5FE9B6224B5F203007B9878 /* NSObject+Sound.m in Sources */,
 				C5FE9CC824B5F29C007B9878 /* SDCollectionViewCell.m in Sources */,
+				C5D4FBDE24CFE0C40024A292 /* CommentPopUpVC+VM.m in Sources */,
 				C5B1C7E924BAB91A001923FB /* LOTCompositionContainer.m in Sources */,
 				C5B1C7E524BAB91A001923FB /* LOTShapeStar.m in Sources */,
 				C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */,

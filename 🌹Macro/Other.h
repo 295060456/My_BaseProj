@@ -22,6 +22,7 @@
 //公用的类库：
 #import "YBNotificationManager.h"
 #import "APIKey.h"
+#import "BaseModel.h"
 
 
 #endif /* Other_h */

@@ -10,10 +10,12 @@
 
 @interface NonHoveringHeaderView : UITableViewHeaderFooterView
 
+@property(nonatomic,strong)UIControl * _Nullable result;
+
 - (instancetype _Nullable )initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
                                           withData:(id _Nullable )data;
+-(void)actionBlock:(MKDataBlock _Nullable )actionBlock;
 
-@property(nonatomic,strong)UIControl * _Nullable result;
 
 @end
 

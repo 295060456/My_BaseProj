@@ -118,9 +118,9 @@ replacementString:(NSString *)string{//实现逐词搜索
     }return _cancelBtn;
 }
 
--(CJTextField *)textField{
+-(ZYTextField *)textField{
     if (!_textField) {
-        _textField = CJTextField.new;
+        _textField = ZYTextField.new;
         _textField.delegate = self;
         _textField.cj_delegate = self;
         _textField.placeholder = self.placeholderStr;

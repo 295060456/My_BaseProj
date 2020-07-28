@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJTextField.h"
+#import "ZYTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchBar : UIView
 
-@property(nonatomic,strong)CJTextField *textField;
+@property(nonatomic,strong)ZYTextField *textField;
 @property(nonatomic,copy)NSString *placeholderStr;
 @property(nonatomic,strong)NSMutableArray *dataMutArr;
 

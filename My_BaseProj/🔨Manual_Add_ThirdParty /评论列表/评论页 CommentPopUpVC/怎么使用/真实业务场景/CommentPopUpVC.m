@@ -28,6 +28,8 @@ UITableViewDelegate
 
 @property(nonatomic,strong)MKFirstCommentModel *firstCommentModel;
 @property(nonatomic,strong)MKChildCommentModel *childCommentModel;
+@property(nonatomic,copy)MKDataBlock CommentPopUpBlock;
+
 
 @end
 
@@ -110,6 +112,11 @@ UITableViewDelegate
         }
     }
 }
+
+-(void)commentPopUpActionBlock:(MKDataBlock)commentPopUpBlock{
+    self.CommentPopUpBlock = commentPopUpBlock;
+}
+
 //一级标题的：
 -(void)Reply{
     NSLog(@"%@",self.firstCommentModel.content);
@@ -327,12 +334,16 @@ viewForHeaderInSection:(NSInteger)section{
         _inputView = InputView.new;
         _inputView.backgroundColor = HEXCOLOR(0x20242F);
         @weakify(self)
-        [_inputView actionBlock:^(id data) {
+        [_inputView inputViewActionBlock:^(id data) {
             @strongify(self)
             if ([data isKindOfClass:UITextField.class]) {
                 UITextField *tf = (UITextField *)data;
                 self.inputContentStr = tf.text;
                 [self netWorking_MKCommentVideoPOST];
+                
+                if (self.CommentPopUpBlock) {
+                    self.CommentPopUpBlock(@1);
+                }
             }
         }];
         [self.view addSubview:_inputView];

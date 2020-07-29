@@ -14,7 +14,6 @@
 #import "NSArray+Extension.h"
 #import "NSArray+Extend.h"
 #import "NSString+Extras.h"
-#import "NSString+File.h"
 #import "UIView+Extras.h"
 #import "UIImage+Extras.h"
 #import "UIButton+Block.h"

@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InputView : UIView
 
-@property(nonatomic,copy)MKDataBlock block;
--(void)actionBlock:(MKDataBlock)block;
+-(void)inputViewActionBlock:(MKDataBlock)block;
 
 @end
 

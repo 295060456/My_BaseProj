@@ -14,7 +14,7 @@ UIGestureRecognizerDelegate
 >
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)MKDataBlock successBlock;
+@property(nonatomic,copy)DataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -105,7 +105,7 @@ UIGestureRecognizerDelegate
     self.tabBarController.tabBar.hidden = NO;
 }
 
--(void)actionBlock:(MKDataBlock)block{
+-(void)popUpActionBlock:(MKDataBlock)block{
     self.block = block;
 }
 

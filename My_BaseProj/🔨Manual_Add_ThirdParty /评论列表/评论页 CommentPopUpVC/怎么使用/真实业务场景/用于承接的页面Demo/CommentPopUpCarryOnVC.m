@@ -233,7 +233,7 @@
                                            cornerRadii:CGSizeMake(20, 20)];
         [self addChildViewController:_commentPopUpVC];
         [self.view addSubview:_commentPopUpVC.view];
-        [_commentPopUpVC actionBlock:^(id data) {
+        [_commentPopUpVC popUpActionBlock:^(id data) {
             MoveDirection moveDirection = [data intValue];
             if (moveDirection == MoveDirection_vertical_down) {
                 [self willClose_vertical];

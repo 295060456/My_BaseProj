@@ -17,8 +17,9 @@ UITextFieldDelegate
 
 @property(nonatomic,strong)UIImageView *headerImgV;
 @property(nonatomic,strong)ZYTextField *textField;
-@property(nonatomic,strong)UIButton *sendBtn;
 //@property(nonatomic,strong)BSYTextFiled *textField;
+@property(nonatomic,strong)UIButton *sendBtn;
+@property(nonatomic,copy)MKDataBlock block;
 
 @end
 
@@ -31,7 +32,7 @@ UITextFieldDelegate
     }return self;
 }
 
--(void)actionBlock:(MKDataBlock)block{
+-(void)inputViewActionBlock:(MKDataBlock)block{
     self.block = block;
 }
 
@@ -55,12 +56,14 @@ UITextFieldDelegate
 //- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
 //告诉委托人对指定的文本字段停止编辑
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    self.sendBtn.alpha = 1;
-    [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.headerImgV.mas_right).offset(SCALING_RATIO(13));
-        make.top.bottom.equalTo(self.headerImgV);
-        make.right.equalTo(self.sendBtn.mas_left).offset(SCALING_RATIO(-13));
-    }];
+    if (![NSString isNullString:textField.text]) {
+        self.sendBtn.alpha = 1;
+        [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.headerImgV.mas_right).offset(SCALING_RATIO(13));
+            make.top.bottom.equalTo(self.headerImgV);
+            make.right.equalTo(self.sendBtn.mas_left).offset(SCALING_RATIO(-13));
+        }];
+    }
 }
 //告诉委托人对指定的文本字段停止编辑
 //- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason;

@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, MoveDirection){
                requestParams:(nullable id)requestParams
                      success:(MKDataBlock)block
                     animated:(BOOL)animated;
--(void)actionBlock:(MKDataBlock)block;
+-(void)popUpActionBlock:(MKDataBlock)block;
 
 @end
 

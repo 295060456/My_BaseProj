@@ -7,7 +7,6 @@
 //
 
 #import "PopUpVC.h"
-#import "MKCommentModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray <MKFirstCommentModel *>*firstCommentModelMutArr;
 @property(nonatomic,strong)__block NSString *inputContentStr;
 
+-(void)commentPopUpActionBlock:(MKDataBlock)commentPopUpBlock;
 
 @end
 

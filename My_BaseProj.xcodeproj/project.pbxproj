@@ -189,7 +189,6 @@
 		C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2224B5F203007B9878 /* UIColor+Hex.m */; };
 		C5FE9B6624B5F203007B9878 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2524B5F203007B9878 /* BaseNavigationVC.m */; };
 		C5FE9B6724B5F203007B9878 /* NSString+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2924B5F203007B9878 /* NSString+Extras.m */; };
-		C5FE9B6824B5F203007B9878 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2A24B5F203007B9878 /* NSString+File.m */; };
 		C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */; };
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
 		C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */; };
@@ -688,9 +687,7 @@
 		C5FE9B2324B5F203007B9878 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		C5FE9B2524B5F203007B9878 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5FE9B2624B5F203007B9878 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
-		C5FE9B2824B5F203007B9878 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
 		C5FE9B2924B5F203007B9878 /* NSString+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extras.m"; sourceTree = "<group>"; };
-		C5FE9B2A24B5F203007B9878 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
 		C5FE9B2B24B5F203007B9878 /* NSString+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extras.h"; sourceTree = "<group>"; };
 		C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Transition.m"; sourceTree = "<group>"; };
 		C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
@@ -1010,6 +1007,21 @@
 				FC704087AA0F2431943F2CE4 /* Pods-My_BaseProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5379EAF24D149370078880F /* AppDelegate & SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9D3E24B5F3C6007B9878 /* AppDelegate.h */,
+				C5FE9D3B24B5F3C6007B9878 /* AppDelegate.m */,
+				C5FE9D3D24B5F3C6007B9878 /* SceneDelegate.h */,
+				C5FE9D3C24B5F3C6007B9878 /* SceneDelegate.m */,
+				C5A7CE9624C7055400E502A9 /* SceneDelegate+LaunchingAd.h */,
+				C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */,
+				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
+				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
+			);
+			path = "AppDelegate & SceneDelegate";
 			sourceTree = "<group>";
 		};
 		C54AE7C424C941CA00121233 /* 刷新 */ = {
@@ -1507,15 +1519,8 @@
 		C5FE9A3624B5EF2B007B9878 /* My_BaseProj */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9D3E24B5F3C6007B9878 /* AppDelegate.h */,
-				C5FE9D3B24B5F3C6007B9878 /* AppDelegate.m */,
-				C5FE9D3D24B5F3C6007B9878 /* SceneDelegate.h */,
-				C5FE9D3C24B5F3C6007B9878 /* SceneDelegate.m */,
-				C5A7CE9624C7055400E502A9 /* SceneDelegate+LaunchingAd.h */,
-				C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */,
-				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
-				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
 				C5FE9A4B24B5EF2C007B9878 /* Info.plist */,
+				C5379EAF24D149370078880F /* AppDelegate & SceneDelegate */,
 				C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */,
 				C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */,
 				C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */,
@@ -1906,10 +1911,8 @@
 		C5FE9B2724B5F203007B9878 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B2824B5F203007B9878 /* NSString+File.h */,
-				C5FE9B2924B5F203007B9878 /* NSString+Extras.m */,
-				C5FE9B2A24B5F203007B9878 /* NSString+File.m */,
 				C5FE9B2B24B5F203007B9878 /* NSString+Extras.h */,
+				C5FE9B2924B5F203007B9878 /* NSString+Extras.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -3184,7 +3187,6 @@
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
 				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
-				C5FE9B6824B5F203007B9878 /* NSString+File.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,

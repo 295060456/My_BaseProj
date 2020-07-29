@@ -184,6 +184,7 @@
 -(void)willClose_vertical{
     [UIView animateWithDuration:0.3f
                      animations:^{
+        [self.commentPopUpVC.inputView endEditing:YES];
         [self.commentPopUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(self->liftingHeight);
         }];
@@ -201,6 +202,7 @@
 -(void)willClose_horizont{
     [UIView animateWithDuration:0.3f
                      animations:^{
+        [self.commentPopUpVC.inputView endEditing:YES];
         [self.commentPopUpVC.view mas_updateConstraints:^(MASConstraintMaker *make) {
 //            make.bottom.mas_equalTo(self->liftingHeight);
             make.left.mas_equalTo(SCREEN_WIDTH);
@@ -242,6 +244,12 @@
                                            cornerRadii:CGSizeMake(20, 20)];
         [self addChildViewController:_commentPopUpVC];
         [self.view addSubview:_commentPopUpVC.view];
+        
+        [_commentPopUpVC commentPopUpActionBlock:^(id data) {
+            NSLog(@"");
+            [self willClose_vertical];
+        }];
+        
         [_commentPopUpVC popUpActionBlock:^(id data) {
             MoveDirection moveDirection = [data intValue];
             if (moveDirection == MoveDirection_vertical_down) {

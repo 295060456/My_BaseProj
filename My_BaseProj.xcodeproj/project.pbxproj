@@ -1117,13 +1117,13 @@
 			path = "相关视图类";
 			sourceTree = "<group>";
 		};
-		C590FE0824CFE770000F36C9 /* 用于承接的页面Demo */ = {
+		C590FE0824CFE770000F36C9 /* 🌶用于承接的页面Demo */ = {
 			isa = PBXGroup;
 			children = (
 				C5F78ADB24BF297D008A46EC /* ViewController.h */,
 				C5F78ADC24BF297D008A46EC /* ViewController.m */,
 			);
-			path = "用于承接的页面Demo";
+			path = "🌶用于承接的页面Demo";
 			sourceTree = "<group>";
 		};
 		C590FF2124D009D5000F36C9 /* SDWebImage_WebP */ = {
@@ -1382,13 +1382,13 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
-		C5D4FBC924CFDE190024A292 /* 用于承接的页面Demo */ = {
+		C5D4FBC924CFDE190024A292 /* 🌹用于承接的页面Demo */ = {
 			isa = PBXGroup;
 			children = (
 				C5D4FBC624CFDCF90024A292 /* CommentPopUpCarryOnVC.h */,
 				C5D4FBC724CFDCF90024A292 /* CommentPopUpCarryOnVC.m */,
 			);
-			path = "用于承接的页面Demo";
+			path = "🌹用于承接的页面Demo";
 			sourceTree = "<group>";
 		};
 		C5D4FBCA24CFDE9F0024A292 /* 评论页 CommentPopUpVC */ = {
@@ -1412,7 +1412,7 @@
 		C5D4FBD224CFDFB90024A292 /* 手动模拟 */ = {
 			isa = PBXGroup;
 			children = (
-				C590FE0824CFE770000F36C9 /* 用于承接的页面Demo */,
+				C590FE0824CFE770000F36C9 /* 🌶用于承接的页面Demo */,
 				C5F78ADD24BF297D008A46EC /* 数据模型层 程肖斌demo */,
 			);
 			path = "手动模拟";
@@ -1421,7 +1421,7 @@
 		C5D4FBD324CFDFC40024A292 /* 真实业务场景 */ = {
 			isa = PBXGroup;
 			children = (
-				C5D4FBC924CFDE190024A292 /* 用于承接的页面Demo */,
+				C5D4FBC924CFDE190024A292 /* 🌹用于承接的页面Demo */,
 				C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */,
 				C5D4FBCF24CFDEDC0024A292 /* CommentPopUpVC.h */,
 				C5D4FBD024CFDEDC0024A292 /* CommentPopUpVC.m */,

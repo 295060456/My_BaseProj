@@ -141,13 +141,14 @@
 }
 // 点击输入框 弹出软键盘commentPopUpVC.view 整体向上弹出一段软键盘高度的距离 self.commentPopUpVC.view.frame = (0 102; 414 448) ——> self.commentPopUpVC.view.frame = (0 448; 414 448)
 // 软键盘失去焦点，键盘消失，commentPopUpVC.view回归正常位置 self.commentPopUpVC.view.frame = (0 448; 414 448);
+#warning 因为是通知，这个地方如果写self.commentPopUpVC,可能引起其他地方键盘事件，比如登录的时候，对它进行影响，所以必须用_commentPopUpVC
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)notification{
     NSDictionary *userInfo = notification.userInfo;
     CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];//(origin = (x = 0, y = 896), size = (width = 414, height = 346))
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];//(origin = (x = 0, y = 550), size = (width = 414, height = 346))
     CGFloat KeyboardOffsetY = beginFrame.origin.y - endFrame.origin.y;
-    self.commentPopUpVC.view.mj_y -= KeyboardOffsetY;
-    CommentPopUpVC_Y = self.commentPopUpVC.view.mj_y;//开102 关448
+    _commentPopUpVC.view.mj_y -= KeyboardOffsetY;
+    CommentPopUpVC_Y = _commentPopUpVC.view.mj_y;//开102 关448
     NSLog(@"键盘弹出");//self.commentPopUpVC.view.frame = (0 102; 414 448);
     NSLog(@"键盘关闭");//self.commentPopUpVC.view.frame = (0 448; 414 448);
 }

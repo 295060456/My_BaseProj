@@ -21,6 +21,7 @@
 		C54AE7D624C941D300121233 /* gif_header_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CC24C941D300121233 /* gif_header_4@2x.png */; };
 		C54AE7D724C941D300121233 /* gif_header_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CD24C941D300121233 /* gif_header_1@3x.png */; };
 		C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CE24C941D300121233 /* gif_header_2@3x.png */; };
+		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
 		C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */ = {isa = PBXBuildFile; fileRef = C54F101D24C469E900EE1E67 /* GIF大图.gif */; };
 		C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C54F101F24C46A9100EE1E67 /* 兴发街.jpg */; };
 		C54F103B24C4709A00EE1E67 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA224B5F0EF007B9878 /* libstdc++.6.0.9.dylib */; };
@@ -238,7 +239,6 @@
 		C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BDE24B5F299007B9878 /* XWCountryCodeController.m */; };
 		C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BE124B5F299007B9878 /* AESCrypt.m */; };
 		C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BE424B5F299007B9878 /* PlaySound.m */; };
-		C5FE9CD924B5F29C007B9878 /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9BE624B5F299007B9878 /* Sound.wav */; };
 		C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BE724B5F299007B9878 /* SoundBtn.m */; };
 		C5FE9CDB24B5F29C007B9878 /* StyleDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BEB24B5F299007B9878 /* StyleDIY.m */; };
 		C5FE9CDC24B5F29C007B9878 /* LBXScanDIYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BEC24B5F299007B9878 /* LBXScanDIYViewController.m */; };
@@ -360,6 +360,7 @@
 		C54AE7CC24C941D300121233 /* gif_header_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_4@2x.png"; sourceTree = "<group>"; };
 		C54AE7CD24C941D300121233 /* gif_header_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_1@3x.png"; sourceTree = "<group>"; };
 		C54AE7CE24C941D300121233 /* gif_header_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_2@3x.png"; sourceTree = "<group>"; };
+		C54C78A024D2AD460052BE0B /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
 		C54F101D24C469E900EE1E67 /* GIF大图.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "GIF大图.gif"; sourceTree = "<group>"; };
 		C54F101F24C46A9100EE1E67 /* 兴发街.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "兴发街.jpg"; sourceTree = "<group>"; };
 		C54F104524C4720C00EE1E67 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
@@ -797,7 +798,6 @@
 		C5FE9BE224B5F299007B9878 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
 		C5FE9BE424B5F299007B9878 /* PlaySound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySound.m; sourceTree = "<group>"; };
 		C5FE9BE524B5F299007B9878 /* 带有按键音的按钮 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "带有按键音的按钮"; sourceTree = "<group>"; };
-		C5FE9BE624B5F299007B9878 /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
 		C5FE9BE724B5F299007B9878 /* SoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBtn.m; sourceTree = "<group>"; };
 		C5FE9BE824B5F299007B9878 /* PlaySound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySound.h; sourceTree = "<group>"; };
 		C5FE9BE924B5F299007B9878 /* SoundBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBtn.h; sourceTree = "<group>"; };
@@ -2284,8 +2284,8 @@
 			children = (
 				C5FE9BE524B5F299007B9878 /* 带有按键音的按钮 */,
 				C5FE9BE824B5F299007B9878 /* PlaySound.h */,
+				C54C78A024D2AD460052BE0B /* Sound.wav */,
 				C5FE9BE424B5F299007B9878 /* PlaySound.m */,
-				C5FE9BE624B5F299007B9878 /* Sound.wav */,
 				C5FE9BE924B5F299007B9878 /* SoundBtn.h */,
 				C5FE9BE724B5F299007B9878 /* SoundBtn.m */,
 			);
@@ -2839,11 +2839,11 @@
 				C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */,
 				C5FE9ADB24B5F1B3007B9878 /* MyStore@3x.png in Resources */,
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
+				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
-				C5FE9CD924B5F29C007B9878 /* Sound.wav in Resources */,
 				C5FE9B0324B5F1DC007B9878 /* bg4@2x.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
 				C5FE9CD324B5F29C007B9878 /* sortedNameCH.plist in Resources */,

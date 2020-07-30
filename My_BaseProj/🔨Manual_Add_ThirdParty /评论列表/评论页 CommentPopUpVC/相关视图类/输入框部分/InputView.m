@@ -135,6 +135,7 @@ replacementString:(NSString *)string{//实现逐词搜索
         [_sendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.equalTo(self.textField);
             make.right.equalTo(self).offset(SCALING_RATIO(-13));
+            make.width.mas_equalTo(SCALING_RATIO(80));
         }];
         [self layoutIfNeeded];
         [UIView cornerCutToCircleWithView:_sendBtn

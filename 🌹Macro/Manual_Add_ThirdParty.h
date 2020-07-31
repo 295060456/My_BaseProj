@@ -88,6 +88,7 @@
 #import "Lottie.h"
 
 #import "RBCLikeButton.h"
+#import "EmptyView.h"
 
 //评论列表的
 #import "FirstClassModel.h"

@@ -368,9 +368,14 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         _tableView.mj_footer = self.tableViewFooter;
         _tableView.mj_footer.hidden = NO;
         _tableView.tableFooterView = UIView.new;
-        _tableView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"noData"
-                                                            titleStr:@"还没有评论哦"
-                                                           detailStr:@""];
+        _tableView.ly_emptyView = [EmptyView emptyViewWithImageStr:@"Indeterminate Spinner - Small"
+                                                          titleStr:@"没有评论"
+                                                         detailStr:@"来发布第一条吧"];
+        if (self.commentModel.listMytArr.count) {
+            [_tableView ly_hideEmptyView];
+        }else{
+            [_tableView ly_showEmptyView];
+        }
         [self.view addSubview:_tableView];
         extern CGFloat LZB_TABBAR_HEIGHT;
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {

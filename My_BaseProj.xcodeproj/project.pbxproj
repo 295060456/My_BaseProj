@@ -134,6 +134,7 @@
 		C5D4FBD624CFDFE70024A292 /* MKCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD524CFDFE70024A292 /* MKCommentModel.m */; };
 		C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD924CFE0840024A292 /* BaseModel.m */; };
 		C5D4FBDE24CFE0C40024A292 /* CommentPopUpVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */; };
+		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -567,6 +568,8 @@
 		C5D4FBDA24CFE0840024A292 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		C5D4FBDC24CFE0C40024A292 /* CommentPopUpVC+VM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommentPopUpVC+VM.h"; sourceTree = "<group>"; };
 		C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CommentPopUpVC+VM.m"; sourceTree = "<group>"; };
+		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表（PopUpVC上面加盖内容物完成）"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -1448,6 +1451,15 @@
 			path = BaseModel;
 			sourceTree = "<group>";
 		};
+		C5DD001624D46B3C00307DFA /* LYEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				C5DD001724D46B4700307DFA /* EmptyView.h */,
+				C5DD001824D46B4800307DFA /* EmptyView.m */,
+			);
+			path = LYEmptyView;
+			sourceTree = "<group>";
+		};
 		C5F78AD224BF273B008A46EC /* 评论列表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1688,6 +1700,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5DD001624D46B3C00307DFA /* LYEmptyView */,
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
 				C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */,
@@ -3162,6 +3175,7 @@
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
 				C590FF3B24D00D23000F36C9 /* SDWebImageCodersManager.m in Sources */,
 				C5B1C7BD24BAB91A001923FB /* CGGeometry+LOTAdditions.m in Sources */,
+				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
 				C5B1C7E124BAB91A001923FB /* LOTShapeTrimPath.m in Sources */,
 				C5B1C7AD24BAB919001923FB /* LOTRoundedRectAnimator.m in Sources */,

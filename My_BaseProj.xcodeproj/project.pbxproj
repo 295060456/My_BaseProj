@@ -116,6 +116,19 @@
 		C5B1C7E724BAB91A001923FB /* LOTShapePath.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C7A924BAB919001923FB /* LOTShapePath.m */; };
 		C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C7AA24BAB919001923FB /* CALayer+Compat.m */; };
 		C5B1C7E924BAB91A001923FB /* LOTCompositionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C7AC24BAB919001923FB /* LOTCompositionContainer.m */; };
+		C5B5203A24D6BCC400579178 /* GKTransitionDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5201E24D6BCC400579178 /* GKTransitionDelegateHandler.m */; };
+		C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5201F24D6BCC400579178 /* GKPopAnimatedTransition.m */; };
+		C5B5203C24D6BCC400579178 /* GKPushAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5202024D6BCC400579178 /* GKPushAnimatedTransition.m */; };
+		C5B5203D24D6BCC400579178 /* GKBaseAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5202124D6BCC400579178 /* GKBaseAnimatedTransition.m */; };
+		C5B5203E24D6BCC400579178 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5202724D6BCC400579178 /* GKNavigationBarConfigure.m */; };
+		C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5B5202824D6BCC400579178 /* GKNavigationBar.bundle */; };
+		C5B5204024D6BCC400579178 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5202B24D6BCC400579178 /* UINavigationController+GKCategory.m */; };
+		C5B5204124D6BCC400579178 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5202E24D6BCC400579178 /* UIBarButtonItem+GKCategory.m */; };
+		C5B5204224D6BCC400579178 /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203024D6BCC400579178 /* UIScrollView+GKCategory.m */; };
+		C5B5204324D6BCC400579178 /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203224D6BCC400579178 /* UINavigationItem+GKCategory.m */; };
+		C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203424D6BCC400579178 /* UIImage+GKCategory.m */; };
+		C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203524D6BCC400579178 /* GKCustomNavigationBar.m */; };
+		C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5D4FBA424CE88010024A292 /* UIImage+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBA324CE88010024A292 /* UIImage+helper.m */; };
@@ -539,6 +552,34 @@
 		C5B1C7AA24BAB919001923FB /* CALayer+Compat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Compat.m"; sourceTree = "<group>"; };
 		C5B1C7AB24BAB919001923FB /* CALayer+Compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Compat.h"; sourceTree = "<group>"; };
 		C5B1C7AC24BAB919001923FB /* LOTCompositionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTCompositionContainer.m; sourceTree = "<group>"; };
+		C5B5201C24D6BCC400579178 /* GKPushAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPushAnimatedTransition.h; sourceTree = "<group>"; };
+		C5B5201D24D6BCC400579178 /* GKBaseAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseAnimatedTransition.h; sourceTree = "<group>"; };
+		C5B5201E24D6BCC400579178 /* GKTransitionDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTransitionDelegateHandler.m; sourceTree = "<group>"; };
+		C5B5201F24D6BCC400579178 /* GKPopAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPopAnimatedTransition.m; sourceTree = "<group>"; };
+		C5B5202024D6BCC400579178 /* GKPushAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushAnimatedTransition.m; sourceTree = "<group>"; };
+		C5B5202124D6BCC400579178 /* GKBaseAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseAnimatedTransition.m; sourceTree = "<group>"; };
+		C5B5202224D6BCC400579178 /* GKPopAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPopAnimatedTransition.h; sourceTree = "<group>"; };
+		C5B5202324D6BCC400579178 /* GKTransitionDelegateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTransitionDelegateHandler.h; sourceTree = "<group>"; };
+		C5B5202524D6BCC400579178 /* GKNavigationBarConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarConfigure.h; sourceTree = "<group>"; };
+		C5B5202624D6BCC400579178 /* GKNavigationBarDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarDefine.h; sourceTree = "<group>"; };
+		C5B5202724D6BCC400579178 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarConfigure.m; sourceTree = "<group>"; };
+		C5B5202824D6BCC400579178 /* GKNavigationBar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKNavigationBar.bundle; sourceTree = "<group>"; };
+		C5B5202A24D6BCC400579178 /* UIImage+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5202B24D6BCC400579178 /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5202C24D6BCC400579178 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5202D24D6BCC400579178 /* GKCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCustomNavigationBar.h; sourceTree = "<group>"; };
+		C5B5202E24D6BCC400579178 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5202F24D6BCC400579178 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5203024D6BCC400579178 /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5203124D6BCC400579178 /* GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
+		C5B5203224D6BCC400579178 /* UINavigationItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5203324D6BCC400579178 /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5203424D6BCC400579178 /* UIImage+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5203524D6BCC400579178 /* GKCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCustomNavigationBar.m; sourceTree = "<group>"; };
+		C5B5203624D6BCC400579178 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5203724D6BCC400579178 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
+		C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCategory.m"; sourceTree = "<group>"; };
+		C5B5203924D6BCC400579178 /* GKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
@@ -1075,6 +1116,7 @@
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
+				C5B5201A24D6BCB700579178 /* GKNavigationBar */,
 				C590FF2A24D00A23000F36C9 /* SDWebImage */,
 			);
 			path = "Pod 不进去的";
@@ -1350,6 +1392,65 @@
 				C5B1C73F24BAB911001923FB /* UIColor+Expanded.m */,
 			);
 			path = "Lottie-iOS(OC)";
+			sourceTree = "<group>";
+		};
+		C5B5201A24D6BCB700579178 /* GKNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5203924D6BCC400579178 /* GKNavigationBar.h */,
+				C5B5202824D6BCC400579178 /* GKNavigationBar.bundle */,
+				C5B5202924D6BCC400579178 /* GKCategory */,
+				C5B5202424D6BCC400579178 /* GKConfigure */,
+				C5B5201B24D6BCC400579178 /* GKTransition */,
+			);
+			path = GKNavigationBar;
+			sourceTree = "<group>";
+		};
+		C5B5201B24D6BCC400579178 /* GKTransition */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5201C24D6BCC400579178 /* GKPushAnimatedTransition.h */,
+				C5B5201D24D6BCC400579178 /* GKBaseAnimatedTransition.h */,
+				C5B5201E24D6BCC400579178 /* GKTransitionDelegateHandler.m */,
+				C5B5201F24D6BCC400579178 /* GKPopAnimatedTransition.m */,
+				C5B5202024D6BCC400579178 /* GKPushAnimatedTransition.m */,
+				C5B5202124D6BCC400579178 /* GKBaseAnimatedTransition.m */,
+				C5B5202224D6BCC400579178 /* GKPopAnimatedTransition.h */,
+				C5B5202324D6BCC400579178 /* GKTransitionDelegateHandler.h */,
+			);
+			path = GKTransition;
+			sourceTree = "<group>";
+		};
+		C5B5202424D6BCC400579178 /* GKConfigure */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5202524D6BCC400579178 /* GKNavigationBarConfigure.h */,
+				C5B5202624D6BCC400579178 /* GKNavigationBarDefine.h */,
+				C5B5202724D6BCC400579178 /* GKNavigationBarConfigure.m */,
+			);
+			path = GKConfigure;
+			sourceTree = "<group>";
+		};
+		C5B5202924D6BCC400579178 /* GKCategory */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5202A24D6BCC400579178 /* UIImage+GKCategory.h */,
+				C5B5202B24D6BCC400579178 /* UINavigationController+GKCategory.m */,
+				C5B5202C24D6BCC400579178 /* UINavigationItem+GKCategory.h */,
+				C5B5202D24D6BCC400579178 /* GKCustomNavigationBar.h */,
+				C5B5202E24D6BCC400579178 /* UIBarButtonItem+GKCategory.m */,
+				C5B5202F24D6BCC400579178 /* UIViewController+GKCategory.h */,
+				C5B5203024D6BCC400579178 /* UIScrollView+GKCategory.m */,
+				C5B5203124D6BCC400579178 /* GKCategory.h */,
+				C5B5203224D6BCC400579178 /* UINavigationItem+GKCategory.m */,
+				C5B5203324D6BCC400579178 /* UINavigationController+GKCategory.h */,
+				C5B5203424D6BCC400579178 /* UIImage+GKCategory.m */,
+				C5B5203524D6BCC400579178 /* GKCustomNavigationBar.m */,
+				C5B5203624D6BCC400579178 /* UIBarButtonItem+GKCategory.h */,
+				C5B5203724D6BCC400579178 /* UIScrollView+GKCategory.h */,
+				C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */,
+			);
+			path = GKCategory;
 			sourceTree = "<group>";
 		};
 		C5D4FBAE24CEC5230024A292 /* 文件夹操作 */ = {
@@ -2857,6 +2958,7 @@
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
+				C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */,
 				C5FE9B0324B5F1DC007B9878 /* bg4@2x.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
 				C5FE9CD324B5F29C007B9878 /* sortedNameCH.plist in Resources */,
@@ -3004,8 +3106,10 @@
 				C5FE9B5D24B5F203007B9878 /* UIImage+Extras.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
 				C5F78AEE24BF297D008A46EC /* LoadMoreTBVCell.m in Sources */,
+				C5B5204124D6BCC400579178 /* UIBarButtonItem+GKCategory.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C5B1C7C824BAB91A001923FB /* LOTShapeGroup.m in Sources */,
+				C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */,
 				C5B1C7CE24BAB91A001923FB /* LOTLayer.m in Sources */,
 				C5B1C7C524BAB91A001923FB /* LOTAssetGroup.m in Sources */,
 				C5B1C7B024BAB919001923FB /* LOTShapeFill.m in Sources */,
@@ -3029,6 +3133,7 @@
 				C5B1C7CC24BAB91A001923FB /* LOTLayerContainer.m in Sources */,
 				C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C5B1C7B224BAB919001923FB /* LOTTransformInterpolator.m in Sources */,
+				C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */,
 				C5FE9D0524B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9CFF24B5F29C007B9878 /* SearchModel.m in Sources */,
 				C5FE9CEB24B5F29C007B9878 /* TBCityIconInfo.m in Sources */,
@@ -3056,6 +3161,8 @@
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
 				C5FE9D3824B5F2E7007B9878 /* PersonalInfo.m in Sources */,
 				C5FE9B6C24B5F203007B9878 /* TBVCell_style_01.m in Sources */,
+				C5B5204324D6BCC400579178 /* UINavigationItem+GKCategory.m in Sources */,
+				C5B5203A24D6BCC400579178 /* GKTransitionDelegateHandler.m in Sources */,
 				C5B1C7BA24BAB919001923FB /* LOTMask.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
@@ -3076,6 +3183,7 @@
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5B1C7E424BAB91A001923FB /* LOTArrayInterpolator.m in Sources */,
 				C5B1C7CD24BAB91A001923FB /* LOTInterpolatorCallback.m in Sources */,
+				C5B5203E24D6BCC400579178 /* GKNavigationBarConfigure.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
 				C5B1C7AE24BAB919001923FB /* LOTAnimationCache.m in Sources */,
@@ -3086,10 +3194,13 @@
 				C5FE9D1024B5F29C007B9878 /* XLChannelView.m in Sources */,
 				C590FF4024D00D23000F36C9 /* NSImage+WebCache.m in Sources */,
 				C5B1C7D624BAB91A001923FB /* LOTGradientFillRender.m in Sources */,
+				C5B5203D24D6BCC400579178 /* GKBaseAnimatedTransition.m in Sources */,
 				C5B1C7DB24BAB91A001923FB /* LOTPointInterpolator.m in Sources */,
+				C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */,
 				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
 				C590FF3C24D00D23000F36C9 /* SDWebImageGIFCoder.m in Sources */,
 				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,
+				C5B5204224D6BCC400579178 /* UIScrollView+GKCategory.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */,
 				C5FE9B7824B5F204007B9878 /* BaseVC.m in Sources */,
@@ -3107,6 +3218,7 @@
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C590FF3E24D00D23000F36C9 /* SDWebImageCoder.m in Sources */,
+				C5B5204024D6BCC400579178 /* UINavigationController+GKCategory.m in Sources */,
 				C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */,
 				C5B1C7E324BAB91A001923FB /* LOTRenderGroup.m in Sources */,
 				C5FE9CDE24B5F29C007B9878 /* LBXScanDIYView.m in Sources */,
@@ -3169,6 +3281,7 @@
 				C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */,
 				C5B1C7DD24BAB91A001923FB /* LOTAnimatedControl.m in Sources */,
 				C5B1C7C324BAB91A001923FB /* LOTAnimatorNode.m in Sources */,
+				C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9CCD24B5F29C007B9878 /* SDCycleScrollView+UIScrollViewDelegate.m in Sources */,
@@ -3221,6 +3334,7 @@
 				C5B1C7E924BAB91A001923FB /* LOTCompositionContainer.m in Sources */,
 				C5B1C7E524BAB91A001923FB /* LOTShapeStar.m in Sources */,
 				C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */,
+				C5B5203C24D6BCC400579178 /* GKPushAnimatedTransition.m in Sources */,
 				C5FE9B7224B5F204007B9878 /* ViewForFooter.m in Sources */,
 				C5FE9CFD24B5F29C007B9878 /* SearchBar.m in Sources */,
 			);

@@ -22,9 +22,7 @@
                                             (rect.size.height - placeholderSize.height) / 2,
                                             rect.size.width,
                                             rect.size.height)
-                  withAttributes:@{NSForegroundColorAttributeName : RGBCOLOR(167,
-                                                                             167,
-                                                                             167),
+                  withAttributes:@{NSForegroundColorAttributeName : kWhiteColor,
                                    NSFontAttributeName : self.font}];
 }
 
@@ -36,7 +34,8 @@
 //    self.layer.borderColor = [UIColor blackColor].CGColor;
 //    self.layer.borderWidth = 1;
     //字体大小
-    self.font = [UIFont systemFontOfSize:15];
+    self.font = [UIFont fontWithName:@"PingFangSC"
+                                size: 17];
     //字体颜色
     self.textColor = RGBCOLOR(77,
                               150,
@@ -44,7 +43,9 @@
     //光标颜色
     self.tintColor = self.textColor;
     //占位符的颜色和大小
-    UILabel *placeholderLabel = object_getIvar(self, class_getInstanceVariable([UITextField class], "_placeholderLabel"));
+    UILabel *placeholderLabel = object_getIvar(self,
+                                               class_getInstanceVariable([UITextField class],
+                                                                         "_placeholderLabel"));
     placeholderLabel.textColor = RGBCOLOR(167,
                                           167,
                                           167);
@@ -58,7 +59,9 @@
  */
 - (BOOL)becomeFirstResponder{
     // 修改占位文字颜色
-    UILabel *placeholderLabel = object_getIvar(self, class_getInstanceVariable([UITextField class], "_placeholderLabel"));
+    UILabel *placeholderLabel = object_getIvar(self,
+                                               class_getInstanceVariable([UITextField class],
+                                                                         "_placeholderLabel"));
     placeholderLabel.textColor = self.textColor;
     return [super becomeFirstResponder];
 }
@@ -67,8 +70,10 @@
  */
 - (BOOL)resignFirstResponder{
     // 修改占位文字颜色
-    UILabel *placeholderLabel = object_getIvar(self, class_getInstanceVariable([UITextField class], "_placeholderLabel"));
-    placeholderLabel.textColor = [UIColor grayColor];
+    UILabel *placeholderLabel = object_getIvar(self,
+                                               class_getInstanceVariable([UITextField class],
+                                                                         "_placeholderLabel"));
+    placeholderLabel.textColor = COLOR_RGB(131, 145, 175, 1);
     return [super resignFirstResponder];
 }
 //控制placeHolder的位置

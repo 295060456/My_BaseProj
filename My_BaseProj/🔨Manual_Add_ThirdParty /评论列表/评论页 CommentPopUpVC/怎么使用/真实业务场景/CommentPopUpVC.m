@@ -11,7 +11,6 @@
 
 #import "LoadMoreTBVCell.h"
 #import "InfoTBVCell.h"
-#import "InputView.h"
 
 #import "NonHoveringHeaderView.h"
 #import "HoveringHeaderView.h"
@@ -24,12 +23,11 @@ UITableViewDelegate
 >
 
 @property(nonatomic,strong)UIBarButtonItem *closeItem;
-@property(nonatomic,strong)InputView *inputView;
 
 @property(nonatomic,strong)MKFirstCommentModel *firstCommentModel;
 @property(nonatomic,strong)MKChildCommentModel *childCommentModel;
-@property(nonatomic,copy)MKDataBlock CommentPopUpBlock;
-
+@property(nonatomic,strong)NSString *commentId;
+@property(nonatomic,strong)NSString *ID;
 
 @end
 
@@ -53,7 +51,6 @@ UITableViewDelegate
     self.gk_navBackgroundColor = HEXCOLOR(0x242A37);
     self.gk_navigationBar.backgroundColor = HEXCOLOR(0x242A37);
     self.gk_statusBarHidden = YES;
-    self.gk_navTitle = [NSString stringWithFormat:@"%d条评论",self.commentModel.total.intValue];
     self.gk_navLineHidden = YES;
     self.gk_navRightBarButtonItem = self.closeItem;
     self.inputView.alpha = 1;
@@ -117,9 +114,17 @@ UITableViewDelegate
     self.CommentPopUpBlock = commentPopUpBlock;
 }
 
+-(void)SureDeleteSelfComment{
+    [self netWorking_MKCommentDelCommentPOSTWithCommentId:self.commentId
+                                                       ID:self.ID];
+}
 //一级标题的：
 -(void)Reply{
     NSLog(@"%@",self.firstCommentModel.content);
+    [self.inputView.textField becomeFirstResponder];
+    [self netWorking_MKCommentReplyCommentPOSTWithCommentId:self.commentId
+                                                         ID:self.ID
+                                                    content:self.inputContentStr];
 }
 
 -(void)CopyIt{
@@ -137,6 +142,10 @@ UITableViewDelegate
 //二级标题的：
 -(void)reply{
     NSLog(@"%@",self.childCommentModel.content);
+    [self.inputView.textField becomeFirstResponder];
+    [self netWorking_MKCommentReplyCommentPOSTWithCommentId:self.commentId
+                                                         ID:self.ID
+                                                    content:self.inputContentStr];
 }
 
 -(void)copyIt{
@@ -208,6 +217,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     }else if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:InfoTBVCell.class]){
         InfoTBVCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         self.childCommentModel = cell.childCommentModel;
+        self.commentId = self.childCommentModel.commentId;
+        self.ID = self.childCommentModel.ID;
+//        self.inputContentStr;
         [self alertControllerStyle:SYS_AlertController
               showActionSheetTitle:nil
                            message:nil
@@ -268,8 +280,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
                         [self likeBtnClickAction:btn];
                     }
                 }
-            }];
-            return cell;
+            }];return cell;
         }
     }
 }
@@ -298,15 +309,27 @@ viewForHeaderInSection:(NSInteger)section{
                 NSDictionary *dic = (NSDictionary *)data;
                 if ([dic[@"sender"] isMemberOfClass:UIControl.class]){
                     NSLog(@"");
-                    UIControl *control = (UIControl *)dic[@"sender"];
-                    self.firstCommentModel = dic[@"model"];
-                    [self alertControllerStyle:SYS_AlertController
-                          showActionSheetTitle:nil
-                                       message:nil
-                               isSeparateStyle:YES
-                                   btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
-                                alertBtnAction:@[@"Reply",@"CopyIt",@"Report",@"Cancel"]
-                                        sender:control];
+                    self.commentId = firstCommentModel.commentId;
+                    self.ID = firstCommentModel.ID;
+//                    self.inputContentStr;
+                    if ([[MKPublickDataManager sharedPublicDataManage].mkLoginModel.uid isEqualToString:firstCommentModel.userId]) {
+                        [self alertControllerStyle:SYS_AlertController
+                                showAlertViewTitle:@"确认删除自己的评论？"
+                                           message:nil
+                                   isSeparateStyle:NO
+                                       btnTitleArr:@[@"确认",@"手滑啦"]
+                                    alertBtnAction:@[@"SureDeleteSelfComment",@"Cancel"]];
+                    }else{
+                        UIControl *control = (UIControl *)dic[@"sender"];
+                        self.firstCommentModel = dic[@"model"];
+                        [self alertControllerStyle:SYS_AlertController
+                              showActionSheetTitle:nil
+                                           message:nil
+                                   isSeparateStyle:YES
+                                       btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
+                                    alertBtnAction:@[@"Reply",@"CopyIt",@"Report",@"Cancel"]
+                                            sender:control];
+                    }
                 }else if ([dic[@"sender"] isMemberOfClass:RBCLikeButton.class]){
                     NSLog(@"");
                     RBCLikeButton *btn = (RBCLikeButton *)dic[@"sender"];
@@ -315,6 +338,10 @@ viewForHeaderInSection:(NSInteger)section{
             }
         }];
     }
+    
+//
+//
+    
 //    {//第二种创建方式
 //        //viewForHeaderInSection 悬停与否
 //        Class headerClass = NonHoveringHeaderView.class;
@@ -334,15 +361,24 @@ viewForHeaderInSection:(NSInteger)section{
         _inputView = InputView.new;
         _inputView.backgroundColor = HEXCOLOR(0x20242F);
         @weakify(self)
-        [_inputView inputViewActionBlock:^(id data) {
+        [_inputView actionInputViewBlock:^(id data) {
             @strongify(self)
-            if ([data isKindOfClass:UITextField.class]) {
-                UITextField *tf = (UITextField *)data;
+            if ([data isKindOfClass:ZYTextField.class]) {
+                ZYTextField *tf = (ZYTextField *)data;
                 self.inputContentStr = tf.text;
-                [self netWorking_MKCommentVideoPOST];
-                
+                //如果登录,那么直接发送
+                if (1) {
+                    [self netWorking_MKCommentVideoPOST];
+                }
+            }
+        }];
+        
+        [_inputView actionisInputtingBlock:^(id data) {
+            @strongify(self)
+            if ([data isKindOfClass:ZYTextField.class]) {
+                ZYTextField *tf = (ZYTextField *)data;
                 if (self.CommentPopUpBlock) {
-                    self.CommentPopUpBlock(@1);
+                    self.CommentPopUpBlock(tf);
                 }
             }
         }];
@@ -368,6 +404,7 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         _tableView.mj_footer = self.tableViewFooter;
         _tableView.mj_footer.hidden = NO;
         _tableView.tableFooterView = UIView.new;
+        
         _tableView.ly_emptyView = [EmptyView emptyViewWithImageStr:@"Indeterminate Spinner - Small"
                                                           titleStr:@"没有评论"
                                                          detailStr:@"来发布第一条吧"];
@@ -376,6 +413,7 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         }else{
             [_tableView ly_showEmptyView];
         }
+
         [self.view addSubview:_tableView];
         extern CGFloat LZB_TABBAR_HEIGHT;
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {

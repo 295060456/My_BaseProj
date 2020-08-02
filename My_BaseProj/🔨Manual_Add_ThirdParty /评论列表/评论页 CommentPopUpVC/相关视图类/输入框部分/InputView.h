@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InputView : UIView
 
--(void)inputViewActionBlock:(MKDataBlock)block;
+@property(nonatomic,strong)ZYTextField *textField;
+
+-(void)actionInputViewBlock:(MKDataBlock)inputViewActionBlock;
+
+-(void)actionisInputtingBlock:(MKDataBlock)isInputtingActionBlock;
 
 @end
 

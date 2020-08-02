@@ -45,8 +45,6 @@
 #import "TXScrollLabelView.h"
 #import "ZXingObjC.h"
 #import "AwesomeMenu.h"
-#import "EScrollPageView.h"
-#import "ENestScrollPageView.h"
 //#import "ZFPlayer.h"
 #import "JXCategoryView.h"
 //#import <GKNavigationBarViewController/GKNavigationBarViewController.h>

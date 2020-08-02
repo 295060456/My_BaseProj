@@ -7,6 +7,7 @@
 //
 
 #import "PopUpVC.h"
+#import "InputView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,10 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UITableView *tableView;
 
 @property(nonatomic,strong)MKCommentModel *commentModel;
+@property(nonatomic,strong)MKCommentVideoModel *commentVideoModel;
 @property(nonatomic,strong)NSMutableArray <MKFirstCommentModel *>*firstCommentModelMutArr;
 @property(nonatomic,strong)__block NSString *inputContentStr;
+@property(nonatomic,copy)MKDataBlock CommentPopUpBlock;
+@property(nonatomic,strong)NSString *videoID;
+@property(nonatomic,strong)NSString *commentNumStr;
+@property(nonatomic,strong)InputView *inputView;
 
--(void)commentPopUpActionBlock:(MKDataBlock)commentPopUpBlock;
+-(void)commentPopUpActionBlock:(MKDataBlock)commentPopUpBlock;//在VM里面
 
 @end
 

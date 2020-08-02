@@ -35,7 +35,7 @@ UIGestureRecognizerDelegate
 @property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;
 @property(nonatomic,strong)MJRefreshGifHeader *tableViewHeader;
 @property(nonatomic,strong)MJRefreshBackNormalFooter *refreshBackNormalFooter;
-@property(nonatomic,weak)TZImagePickerController *imagePickerVC;
+@property(nonatomic,strong)TZImagePickerController *imagePickerVC;
 @property(nonatomic,strong)BRStringPickerView *stringPickerView;
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;
 //@property(nonatomic,strong)ViewForFooter *viewForFooter;

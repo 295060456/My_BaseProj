@@ -20,7 +20,7 @@ target 'My_BaseProj' do
   pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
   pod 'Texture' #Facebook出品的一款界面框架
 #  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
-  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
+#  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
   pod 'GKPageScrollView' # https://github.com/QuintGao/GKPageScrollView iOS类似微博、抖音、网易云等个人详情页滑动嵌套效果
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
@@ -62,7 +62,6 @@ target 'My_BaseProj' do
   pod 'TTTAttributedLabel'  # https://github.com/TTTAttributedLabel/TTTAttributedLabel 替代UILabel
   pod 'WebViewJavascriptBridge' # https://github.com/marcuswestin/WebViewJavascriptBridge An iOS/OSX bridge for sending messages between Obj-C and JavaScript in UIWebViews/WebViews
   pod 'HBDNavigationBar'  # https://github.com/listenzz/HBDNavigationBar 自定义UINavigationBar，用于在各种状态之间平滑切换，包括条形样式，条形色调，背景图像，背景alpha，条形隐藏，标题文本属性，色调颜色，阴影隐藏...
-  pod 'EScrollPageView' # https://github.com/EasySnail/EScrollPageView 嵌套滚动,分页滚动
   pod 'JDStatusBarNotification' # 网络提示--> 网络监听显示，主要是展示状态
   #pod 'HWPanModal'#HWPanModal 用于从底部弹出控制器（UIViewController），并用拖拽手势来关闭控制器。提供了自定义视图大小和位置，高度自定义弹出视图的各个属性。 https://github.com/HeathWang/HWPanModal
   #pod 'SearchTextField'

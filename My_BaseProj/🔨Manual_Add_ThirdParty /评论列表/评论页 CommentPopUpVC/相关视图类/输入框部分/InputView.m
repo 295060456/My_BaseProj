@@ -16,10 +16,11 @@ UITextFieldDelegate
 >
 
 @property(nonatomic,strong)UIImageView *headerImgV;
-@property(nonatomic,strong)ZYTextField *textField;
+//@property(nonatomic,strong)ZYTextField *textField;
 //@property(nonatomic,strong)BSYTextFiled *textField;
 @property(nonatomic,strong)UIButton *sendBtn;
-@property(nonatomic,copy)MKDataBlock block;
+@property(nonatomic,copy)MKDataBlock inputViewActionBlock;
+@property(nonatomic,copy)MKDataBlock isInputtingActionBlock;
 
 @end
 
@@ -28,34 +29,54 @@ UITextFieldDelegate
 -(instancetype)init{
     if (self = [super init]) {
         self.headerImgV.alpha = 1;
-        self.textField.alpha = 1;
+//        self.textField.alpha = 1;
+        self.textField.isInputting = NO;
     }return self;
 }
 
--(void)inputViewActionBlock:(MKDataBlock)block{
-    self.block = block;
+-(void)actionInputViewBlock:(MKDataBlock)inputViewActionBlock{
+    self.inputViewActionBlock = inputViewActionBlock;
+}
+
+-(void)actionisInputtingBlock:(MKDataBlock)isInputtingActionBlock{
+    self.isInputtingActionBlock = isInputtingActionBlock;
 }
 
 -(void)sendBtnClickEvent:(UIButton *)sender{
-    if (self.block) {
-        self.block(self.textField);
+    self.textField.isInputting = NO;
+    [self.textField endEditing:YES];
+    if (self.inputViewActionBlock) {
+        self.inputViewActionBlock(self.textField);
     }
 }
 #pragma mark —— CJTextFieldDeleteDelegate
-- (void)cjTextFieldDeleteBackward:(CJTextField *)textField{//已经删除的结果
-    NSLog(@"");
+- (void)cjTextFieldDeleteBackward:(ZYTextField *)textField{//已经删除的结果
+    self.textField.isInputting = YES;
+     if (self.isInputtingActionBlock) {
+         self.isInputtingActionBlock(self.textField);
+     }
 }
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField;
+- (BOOL)textFieldShouldBeginEditing:(ZYTextField *)textField{
+    self.textField.isInputting = YES;
+    if (self.isInputtingActionBlock) {
+        self.isInputtingActionBlock(self.textField);
+    }return YES;
+}
 //告诉委托人在指定的文本字段中开始编辑
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSLog(@"");
+- (void)textFieldDidBeginEditing:(ZYTextField *)textField{
+    self.textField.isInputting = YES;
+    if (self.isInputtingActionBlock) {
+        self.isInputtingActionBlock(self.textField);
+    }
 }
 //询问委托人是否应在指定的文本字段中停止编辑
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField;
+//- (BOOL)textFieldShouldEndEditing:(ZYTextField *)textField{
+//}
 //告诉委托人对指定的文本字段停止编辑
-- (void)textFieldDidEndEditing:(UITextField *)textField{
+- (void)textFieldDidEndEditing:(ZYTextField *)textField{
+    self.textField.isInputting = NO;
     if (![NSString isNullString:textField.text]) {
         self.sendBtn.alpha = 1;
         [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -66,21 +87,30 @@ UITextFieldDelegate
     }
 }
 //告诉委托人对指定的文本字段停止编辑
-//- (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason;
+//- (void)textFieldDidEndEditing:(ZYTextField *)textField
+//                        reason:(UITextFieldDidEndEditingReason)reason{
+//}
 //询问委托人是否应该更改指定的文本
-- (BOOL)textField:(UITextField *)textField
+- (BOOL)textField:(ZYTextField *)textField
 shouldChangeCharactersInRange:(NSRange)range
 replacementString:(NSString *)string{//实现逐词搜索
-    return YES;
+    self.textField.isInputting = YES;
+    if (self.isInputtingActionBlock) {
+        self.isInputtingActionBlock(self.textField);
+    }return YES;
 }
 //询问委托人是否应删除文本字段的当前内容
-- (BOOL)textFieldShouldClear:(UITextField *)textField{
-    return YES;;
+- (BOOL)textFieldShouldClear:(ZYTextField *)textField{
+    self.textField.isInputting = YES;
+    if (self.isInputtingActionBlock) {
+        self.isInputtingActionBlock(self.textField);
+    }return YES;;
 }
 //询问委托人文本字段是否应处理按下返回按钮
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if (self.block) {
-        self.block(textField);
+- (BOOL)textFieldShouldReturn:(ZYTextField *)textField{
+    self.textField.isInputting = NO;
+    if (self.inputViewActionBlock) {
+        self.inputViewActionBlock(textField);
     }return YES;
 }
 #pragma mark —— lazyLoad

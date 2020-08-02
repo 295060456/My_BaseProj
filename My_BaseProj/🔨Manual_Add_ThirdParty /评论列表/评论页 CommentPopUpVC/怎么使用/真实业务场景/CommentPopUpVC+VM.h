@@ -1,8 +1,8 @@
 //
 //  CommentPopUpVC+VM.h
-//  My_BaseProj
+//  MonkeyKingVideo
 //
-//  Created by Jobs on 2020/7/28.
+//  Created by Jobs on 2020/7/13.
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
@@ -16,7 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///POST 评论视频
 -(void)netWorking_MKCommentVideoPOST;
 ///POST 回复评论
--(void)netWorking_MKCommentReplyCommentPOST;
+-(void)netWorking_MKCommentReplyCommentPOSTWithCommentId:(NSString *)commentId
+                                                      ID:(NSString *)ID
+                                                 content:(NSString *)content;
+///POST 删除评论
+-(void)netWorking_MKCommentDelCommentPOSTWithCommentId:(NSString *)commentId
+                                                    ID:(NSString *)ID;
 
 @end
 

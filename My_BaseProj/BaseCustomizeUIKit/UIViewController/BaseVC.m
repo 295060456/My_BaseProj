@@ -695,7 +695,6 @@ JXCategoryListContentViewDelegate
     }return _afNetworkReachabilityManager;
 }
 
-
 -(UIImageView *)gifImageView{
     if (!_gifImageView) {
         _gifImageView = UIImageView.new;

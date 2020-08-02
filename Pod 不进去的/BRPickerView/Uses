@@ -1,0 +1,73 @@
+-(BRDatePickerView *)datePickerView{
+    if (!_datePickerView) {
+        _datePickerView = BRDatePickerView.new;
+        _datePickerView.pickerMode = BRDatePickerModeYMD;
+        _datePickerView.title = @"选择年月日";
+        // datePickerView.selectValue = @"2019-10-30";
+        _datePickerView.selectDate = [NSDate br_setYear:2019
+                                                  month:10
+                                                    day:30];
+        _datePickerView.minDate = [NSDate br_setYear:1949
+                                               month:3
+                                                 day:12];
+        _datePickerView.maxDate = [NSDate date];
+        _datePickerView.isAutoSelect = YES;
+        @weakify(self)
+        _datePickerView.doneBlock = ^{
+            @strongify(self)
+            [self requestWithUserID:self.dateStr
+                           WithType:UpdateUserInfoType_Birthday
+                              Block:^(id data) {
+                
+            }];
+        };
+        
+        _datePickerView.resultBlock = ^(NSDate *selectDate,
+                                        NSString *selectValue) {
+            @strongify(self)
+            NSLog(@"选择的值：%@", selectValue);
+            self.dateStr = selectValue;
+        };
+        // 设置自定义样式
+        _datePickerView.pickerStyle = self.customStyle;
+    }return _datePickerView;
+}
+
+-(BRPickerStyle *)customStyle{
+    if (!_customStyle) {
+        _customStyle = BRPickerStyle.new;
+        _customStyle.pickerColor = BR_RGB_HEX(0xd9dbdf, 1.0f);
+        _customStyle.pickerTextColor = kRedColor;
+        _customStyle.separatorColor = kRedColor;
+        _customStyle.cancelBtnTitle = @"取消";
+        _customStyle.doneBtnTitle = @"确定";
+    }return _customStyle;
+}
+
+-(BRAddressPickerView *)addressPickerView{
+    if (!_addressPickerView) {
+        _addressPickerView = BRAddressPickerView.new;
+        _addressPickerView.pickerMode = BRAddressPickerModeArea;
+        _addressPickerView.title = @"请选择地区";
+        //_addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];
+        _addressPickerView.selectIndexs = @[@10, @0, @4];
+        _addressPickerView.isAutoSelect = YES;
+        @weakify(self)
+        _addressPickerView.doneBlock = ^{
+            @strongify(self)
+            [self requestWithUserID:self.addressStr
+                           WithType:UpdateUserInfoType_Area
+                              Block:^(id data) {
+                
+            }];
+        };
+        
+        _addressPickerView.resultBlock = ^(BRProvinceModel *province,
+                                           BRCityModel *city,
+                                           BRAreaModel *area) {
+            @strongify(self)
+            NSLog(@"选择的值：%@", [NSString stringWithFormat:@"%@-%@-%@", province.name, city.name, area.name]);
+            self.addressStr = [NSString stringWithFormat:@"%@-%@-%@", province.name, city.name, area.name];
+        };
+    }return _addressPickerView;
+}

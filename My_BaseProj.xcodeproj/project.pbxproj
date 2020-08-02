@@ -34,6 +34,9 @@
 		C54F104224C4709A00EE1E67 /* libstdc++.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
+		C56FE92224D701BF00EC342E /* NSDate+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56FE91E24D701BF00EC342E /* NSDate+BRPickerView.m */; };
+		C56FE92324D701BF00EC342E /* BRDatePickerView+BR.m in Sources */ = {isa = PBXBuildFile; fileRef = C56FE91F24D701BF00EC342E /* BRDatePickerView+BR.m */; };
+		C56FE92424D701BF00EC342E /* BRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56FE92124D701BF00EC342E /* BRDatePickerView.m */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -385,6 +388,13 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C56FE91C24D701BF00EC342E /* NSDate+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BRPickerView.h"; sourceTree = "<group>"; };
+		C56FE91D24D701BF00EC342E /* BRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerView.h; sourceTree = "<group>"; };
+		C56FE91E24D701BF00EC342E /* NSDate+BRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+BRPickerView.m"; sourceTree = "<group>"; };
+		C56FE91F24D701BF00EC342E /* BRDatePickerView+BR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BRDatePickerView+BR.m"; sourceTree = "<group>"; };
+		C56FE92024D701BF00EC342E /* BRDatePickerView+BR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BRDatePickerView+BR.h"; sourceTree = "<group>"; };
+		C56FE92124D701BF00EC342E /* BRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerView.m; sourceTree = "<group>"; };
+		C56FE92524D7036A00EC342E /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -1116,6 +1126,7 @@
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
+				C56FE91B24D701B500EC342E /* BRPickerView */,
 				C5B5201A24D6BCB700579178 /* GKNavigationBar */,
 				C590FF2A24D00A23000F36C9 /* SDWebImage */,
 			);
@@ -1131,6 +1142,20 @@
 				C557DC1A24C806AA00754760 /* data.json */,
 			);
 			path = "MJExtension用法";
+			sourceTree = "<group>";
+		};
+		C56FE91B24D701B500EC342E /* BRPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C56FE92524D7036A00EC342E /* Uses */,
+				C56FE91D24D701BF00EC342E /* BRDatePickerView.h */,
+				C56FE92124D701BF00EC342E /* BRDatePickerView.m */,
+				C56FE92024D701BF00EC342E /* BRDatePickerView+BR.h */,
+				C56FE91F24D701BF00EC342E /* BRDatePickerView+BR.m */,
+				C56FE91C24D701BF00EC342E /* NSDate+BRPickerView.h */,
+				C56FE91E24D701BF00EC342E /* NSDate+BRPickerView.m */,
+			);
+			path = BRPickerView;
 			sourceTree = "<group>";
 		};
 		C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */ = {
@@ -3129,6 +3154,7 @@
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,
 				C5FE9CCA24B5F29C007B9878 /* TAPageControl.m in Sources */,
 				C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */,
+				C56FE92224D701BF00EC342E /* NSDate+BRPickerView.m in Sources */,
 				C5FE9D1224B5F29C007B9878 /* GettingDeviceIP.m in Sources */,
 				C5B1C7CC24BAB91A001923FB /* LOTLayerContainer.m in Sources */,
 				C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */,
@@ -3228,6 +3254,7 @@
 				C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
 				C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */,
+				C56FE92424D701BF00EC342E /* BRDatePickerView.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
 				C5FE9CC724B5F29C007B9878 /* UIView+SDExtension.m in Sources */,
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
@@ -3290,6 +3317,7 @@
 				C5B1C7BD24BAB91A001923FB /* CGGeometry+LOTAdditions.m in Sources */,
 				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
+				C56FE92324D701BF00EC342E /* BRDatePickerView+BR.m in Sources */,
 				C5B1C7E124BAB91A001923FB /* LOTShapeTrimPath.m in Sources */,
 				C5B1C7AD24BAB919001923FB /* LOTRoundedRectAnimator.m in Sources */,
 				C5FE9CE424B5F29C007B9878 /* BWItemModel.m in Sources */,

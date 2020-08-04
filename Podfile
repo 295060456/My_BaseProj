@@ -45,7 +45,7 @@ target 'My_BaseProj' do
   pod 'WCDB'  # https://github.com/Tencent/wcdb WCDB is a cross-platform database framework developed by WeChat.
   pod 'Shimmer' # Facebook 推出的一款具有闪烁效果的第三方控件
   pod 'BEMCheckBox' # https://github.com/Boris-Em/BEMCheckBox 复选框 更炫 Tasteful Checkbox for iOS
-  pod 'PGBanner'  # https://github.com/xiaozhuxiong121/PGBanner 自定义控件无限轮播
+#  pod 'PGBanner'  # https://github.com/xiaozhuxiong121/PGBanner 自定义控件无限轮播
   pod 'TXScrollLabelView' # https://github.com/tingxins/TXScrollLabelView “走马灯”效果 TXScrollLabelView, the best way to show & display information such as adverts / boardcast / onsale e.g. with a customView.
   pod 'HCSStarRatingView' # https://github.com/hsousa/HCSStarRatingView 星级评分显示 Simple star rating view for iOS written in Objective-C
   pod 'NJKWebViewProgress'  # https://github.com/ninjinkun/NJKWebViewProgress Web_View进度条 UIWebView progress interface

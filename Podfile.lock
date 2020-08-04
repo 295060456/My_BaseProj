@@ -18,28 +18,28 @@ PODS:
   - AWRichText (1.0.1)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
-  - BRPickerView (2.6.3):
-    - BRPickerView/AddressPickerView (= 2.6.3)
-    - BRPickerView/Base (= 2.6.3)
-    - BRPickerView/DatePickerView (= 2.6.3)
-    - BRPickerView/StringPickerView (= 2.6.3)
-  - BRPickerView/AddressPickerView (2.6.3):
+  - BRPickerView (2.6.5):
+    - BRPickerView/AddressPickerView (= 2.6.5)
+    - BRPickerView/Base (= 2.6.5)
+    - BRPickerView/DatePickerView (= 2.6.5)
+    - BRPickerView/StringPickerView (= 2.6.5)
+  - BRPickerView/AddressPickerView (2.6.5):
     - BRPickerView/Base
-  - BRPickerView/Base (2.6.3)
-  - BRPickerView/DatePickerView (2.6.3):
+  - BRPickerView/Base (2.6.5)
+  - BRPickerView/DatePickerView (2.6.5):
     - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.6.3):
+  - BRPickerView/StringPickerView (2.6.5):
     - BRPickerView/Base
   - BSYKeyBoard (1.1.2)
   - CocoaAsyncSocket (7.6.4)
-  - CocoaLumberjack (3.6.1):
-    - CocoaLumberjack/Core (= 3.6.1)
-  - CocoaLumberjack/Core (3.6.1)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
   - CWLateralSlide (1.6.5)
   - DDProgressView (0.1)
-  - Debugo (0.2.9):
-    - Debugo/Core (= 0.2.9)
-  - Debugo/Core (0.2.9):
+  - Debugo (0.3.0):
+    - Debugo/Core (= 0.3.0)
+  - Debugo/Core (0.3.0):
     - FMDB (>= 2.7.2)
   - DTCoreText (1.6.23):
     - DTCoreText/Core (= 1.6.23)
@@ -71,33 +71,33 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GKPageScrollView (1.3.6)
+  - GKPageScrollView (1.3.7)
   - GPUImage (0.1.7)
   - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
   - IQKeyboardManager (6.5.5)
   - JDStatusBarNotification (1.6.1)
-  - JJException (0.2.7):
-    - JJException/All (= 0.2.7)
-  - JJException/All (0.2.7):
+  - JJException (0.2.8):
+    - JJException/All (= 0.2.8)
+  - JJException/All (0.2.8):
     - JJException/ARC
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/MRC
     - JJException/Swizzle
-  - JJException/ARC (0.2.7):
+  - JJException/ARC (0.2.8):
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/Swizzle
-  - JJException/DeallocBlock (0.2.7)
-  - JJException/Main (0.2.7)
-  - JJException/MRC (0.2.7):
+  - JJException/DeallocBlock (0.2.8)
+  - JJException/Main (0.2.8)
+  - JJException/MRC (0.2.8):
     - JJException/Main
     - JJException/Swizzle
-  - JJException/Swizzle (0.2.7)
+  - JJException/Swizzle (0.2.8)
   - JJStockView (0.0.7)
   - JSONModel (1.8.0)
-  - JXCategoryView (1.5.5)
+  - JXCategoryView (1.5.6)
   - ksyhttpcache (1.2.4):
     - CocoaAsyncSocket
     - CocoaLumberjack
@@ -131,21 +131,20 @@ PODS:
   - NJKWebViewProgress/Core (0.2.3)
   - NJKWebViewProgress/ProgressView (0.2.3)
   - OpenUDID (1.0.0)
-  - PGBanner (1.0.4)
-  - PINCache (3.0.1-beta.6):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
-    - PINCache/Core (= 3.0.1-beta.6)
-  - PINCache/Arc-exception-safe (3.0.1-beta.6):
+  - PINCache (3.0.1-beta.8):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
+    - PINCache/Core (= 3.0.1-beta.8)
+  - PINCache/Arc-exception-safe (3.0.1-beta.8):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.6):
-    - PINOperation (~> 1.1.0)
+  - PINCache/Core (3.0.1-beta.8):
+    - PINOperation (~> 1.1.1)
   - PINOperation (1.1.2)
-  - PINRemoteImage/Core (3.0.0-beta.13):
+  - PINRemoteImage/Core (3.0.0):
     - PINOperation
-  - PINRemoteImage/iOS (3.0.0-beta.13):
+  - PINRemoteImage/iOS (3.0.0):
     - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.13):
-    - PINCache (= 3.0.1-beta.6)
+  - PINRemoteImage/PINCache (3.0.0):
+    - PINCache (= 3.0.1-beta.8)
     - PINRemoteImage/Core
   - pop (1.0.12)
   - PYSearch (0.9.1)
@@ -153,39 +152,39 @@ PODS:
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
-  - SDWebImage (5.8.1):
-    - SDWebImage/Core (= 5.8.1)
-  - SDWebImage/Core (5.8.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SZTextView (1.3.0)
-  - Texture (2.8.1):
-    - Texture/AssetsLibrary (= 2.8.1)
-    - Texture/Core (= 2.8.1)
-    - Texture/MapKit (= 2.8.1)
-    - Texture/Photos (= 2.8.1)
-    - Texture/PINRemoteImage (= 2.8.1)
-    - Texture/Video (= 2.8.1)
-  - Texture/AssetsLibrary (2.8.1):
+  - Texture (3.0.0):
+    - Texture/AssetsLibrary (= 3.0.0)
+    - Texture/Core (= 3.0.0)
+    - Texture/MapKit (= 3.0.0)
+    - Texture/Photos (= 3.0.0)
+    - Texture/PINRemoteImage (= 3.0.0)
+    - Texture/Video (= 3.0.0)
+  - Texture/AssetsLibrary (3.0.0):
     - Texture/Core
-  - Texture/Core (2.8.1)
-  - Texture/MapKit (2.8.1):
+  - Texture/Core (3.0.0)
+  - Texture/MapKit (3.0.0):
     - Texture/Core
-  - Texture/Photos (2.8.1):
+  - Texture/Photos (3.0.0):
     - Texture/Core
-  - Texture/PINRemoteImage (2.8.1):
-    - PINRemoteImage/iOS (= 3.0.0-beta.13)
+  - Texture/PINRemoteImage (3.0.0):
+    - PINRemoteImage/iOS (~> 3.0.0)
     - PINRemoteImage/PINCache
     - Texture/Core
-  - Texture/Video (2.8.1):
+  - Texture/Video (3.0.0):
     - Texture/Core
   - TTTAttributedLabel (2.0.0)
   - TWPageViewController (0.0.2)
   - TXFileOperation (1.0)
   - TXScrollLabelView (1.3.2)
-  - TZImagePickerController (3.3.2)
+  - TZImagePickerController (3.4.1)
   - UICountingLabel (1.4.1)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
@@ -245,7 +244,6 @@ DEPENDENCIES:
   - MSWeakTimer
   - NJKWebViewProgress
   - OpenUDID
-  - PGBanner
   - pop
   - PYSearch
   - Reachability
@@ -318,7 +316,6 @@ SPEC REPOS:
     - MSWeakTimer
     - NJKWebViewProgress
     - OpenUDID
-    - PGBanner
     - PINCache
     - PINOperation
     - PINRemoteImage
@@ -355,13 +352,13 @@ SPEC CHECKSUMS:
   AWRichText: 7adc57ff591ef9365cfb3f35aac98b2e97db015d
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  BRPickerView: 67ce855d07ff61771b586fea719053612bfeb1d6
+  BRPickerView: 70e2e38b6441d4b43e9d14727aea662756476367
   BSYKeyBoard: 777eb83fc0aca335f4d94d83eced12c797c654c6
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
-  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
-  Debugo: 59d56859957bae9afdaf29c7d253c4ee6f92fb96
+  Debugo: ae9d6a6e0c33dcb061db331bd0aead971756a204
   DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
   DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
@@ -372,16 +369,16 @@ SPEC CHECKSUMS:
   "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GKPageScrollView: 155a509102e5f26f4b1b033a7f890540c4c896ea
+  GKPageScrollView: decb0db666d879d31c513e968c2ecc824546c504
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
-  JJException: 6d987840193b7ef59e778d41bca463401a80a79b
+  JJException: 2c21abbd65fb977c0acc191ec2bfbb7a2aa0c540
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
+  JXCategoryView: 603ccd8277a89b1a73e9cedb9d8ed4b294576008
   ksyhttpcache: b7f7d9b215e74b49deb4b138e59b3d3b80a05f3d
   KSYMediaPlayer_iOS: bd163c277487e99df58941f10f090af2fb53fd6d
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
@@ -396,27 +393,26 @@ SPEC CHECKSUMS:
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
-  PGBanner: 0c52ab4ce9e04ad17f8dd0627b45951b96770c67
-  PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
+  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
   PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
-  PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
-  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
-  Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
+  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
   TXFileOperation: 99bc7e3763678fdea8e8c407e2b87fb18038385f
   TXScrollLabelView: 0e1650caf61198bf5dc0938ea6493254aeb80f90
-  TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
+  TZImagePickerController: 4e7a7b3d314f8a75f11042931dfd9d34c270c7db
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
@@ -427,6 +423,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 8f1d5ecbfce316713dbf059546f2a77d6db4f408
+PODFILE CHECKSUM: 8c6400de378acb6122896aca12543491261d3f4b
 
 COCOAPODS: 1.9.3

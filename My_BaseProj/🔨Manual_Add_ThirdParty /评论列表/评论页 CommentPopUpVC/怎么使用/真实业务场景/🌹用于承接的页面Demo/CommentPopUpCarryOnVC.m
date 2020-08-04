@@ -195,7 +195,7 @@
         [self.commentPopUpVC.view removeFromSuperview];
         //vc为0
         [self.commentPopUpVC removeFromParentViewController];
-        self->_commentPopUpVC = nil;
+        self.commentPopUpVC = nil;
         self->isOpen = !self->isOpen;
     }];
 }
@@ -214,7 +214,7 @@
         [self.commentPopUpVC.view removeFromSuperview];
         //vc为0
         [self.commentPopUpVC removeFromParentViewController];
-        self->_commentPopUpVC = nil;
+        self.commentPopUpVC = nil;
         self->isOpen = !self->isOpen;
     }];
 }

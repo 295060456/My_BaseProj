@@ -27,38 +27,19 @@ NS_ASSUME_NONNULL_BEGIN
 UIGestureRecognizerDelegate
 ,UINavigationControllerDelegate
 >
+
 #pragma mark ——RACSignal
 @property(nonatomic,strong)RACSignal *reqSignal;
-//#pragma mark —— BaseVC+GifImageView
-//@property(nonatomic,strong)UIImageView *gifImageView;
-//@property(nonatomic,strong)NSString *path;
-//@property(nonatomic,strong)UIImage *image;
-//@property(nonatomic,strong)NSData *data;
-#pragma mark —— BaseVC+BRStringPickerView
-//@property(nonatomic,strong)BRStringPickerView *stringPickerView;
-@property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
-@property(nonatomic,copy)MKDataBlock brStringPickerViewBlock;
-@property(nonatomic,strong)NSArray *BRStringPickerViewDataMutArr;
-#pragma mark —— BaseVC+JXCategoryListContentViewDelegate
-
-//#pragma mark —— BaseVC+FSCustomButton
-//@property(nonatomic,strong)FSCustomButton *backBtn;
-#pragma mark —— BaseVC+AFNReachability
-//@property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
+#pragma mark —— BaseVC+FSCustomButton
+@property(nonatomic,strong)FSCustomButton *backBtnBaseVC;
 @property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕 !!!
 @property(nonatomic,copy)void (^ReachableViaWWANNetWorking)(void);//3G网络
 @property(nonatomic,copy)void (^ReachableViaWiFiNetWorking)(void);//WiFi
 @property(nonatomic,copy)void (^UnknownNetWorking)(void);//未知网络
 @property(nonatomic,copy)void (^NotReachableNetWorking)(void);//无任何网络连接
 @property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
-//#pragma mark —— BaseVC+AlertController
-//@property(nonatomic,strong)UIAlertController *alertController;
-//#pragma mark —— BaseVC+MJRefresh
-//@property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;
-//@property(nonatomic,strong)MJRefreshGifHeader *tableViewHeader;
-//@property(nonatomic,strong)MJRefreshBackNormalFooter *refreshBackNormalFooter;
 #pragma mark —— BaseVC+TZImagePickerController
-//@property(nonatomic,strong)TZImagePickerController *imagePickerVC;
+
 @property(nonatomic,copy)MKDataBlock picBlock;
 #pragma mark —— Sys_LifeCycle
 -(void)VCwillComingBlock:(MKDataBlock)block;//即将进来

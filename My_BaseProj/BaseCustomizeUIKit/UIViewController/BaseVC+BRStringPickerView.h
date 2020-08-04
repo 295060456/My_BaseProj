@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark —— BaseVC+BRStringPickerView
 @property(nonatomic,strong)BRStringPickerView *stringPickerView;
+@property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
+@property(nonatomic,copy)MKDataBlock brStringPickerViewBlock;
+@property(nonatomic,strong)NSArray *BRStringPickerViewDataMutArr;
 
 -(void)BRStringPickerViewBlock:(MKDataBlock)block;
 

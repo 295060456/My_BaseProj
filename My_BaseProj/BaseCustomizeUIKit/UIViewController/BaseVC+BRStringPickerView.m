@@ -12,7 +12,12 @@
 @implementation BaseVC (BRStringPickerView)
 
 static char *BaseVC_BRStringPickerView_stringPickerView;
+static char *BaseVC_BRStringPickerView_brStringPickerMode;
+static char *BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr;
+
 @dynamic stringPickerView;
+@dynamic brStringPickerMode;
+@dynamic BRStringPickerViewDataMutArr;
 
 -(void)BRStringPickerViewBlock:(MKDataBlock)block{
     self.brStringPickerViewBlock = block;
@@ -42,6 +47,28 @@ static char *BaseVC_BRStringPickerView_stringPickerView;
                                  StringPickerView,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return StringPickerView;
+}
+
+-(BRStringPickerMode)brStringPickerMode{
+    NSInteger BrStringPickerMode = [objc_getAssociatedObject(self, BaseVC_BRStringPickerView_brStringPickerMode) integerValue];
+    if (BrStringPickerMode == 0) {
+//        BrStringPickerMode = 1;
+        objc_setAssociatedObject(self,
+                                 BaseVC_BRStringPickerView_brStringPickerMode,
+                                 [NSNumber numberWithInteger:BrStringPickerMode],
+                                 OBJC_ASSOCIATION_ASSIGN);
+    }return BrStringPickerMode;
+}
+
+-(NSArray *)BRStringPickerViewDataMutArr{
+    NSArray *bRStringPickerViewDataMutArr = objc_getAssociatedObject(self, BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr);
+    if (!bRStringPickerViewDataMutArr) {
+        bRStringPickerViewDataMutArr = NSArray.array;
+        objc_setAssociatedObject(self,
+                                 BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr,
+                                 bRStringPickerViewDataMutArr,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }return bRStringPickerViewDataMutArr;
 }
 
 @end

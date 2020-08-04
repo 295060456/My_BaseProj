@@ -222,9 +222,31 @@
         // Fallback on earlier versions
     }
 }
+#pragma mark —— 子类需要覆写
+-(void)backBtnClickEvent:(UIButton *)sender{
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+    }
+}
 #pragma mark —— lazyLoad
-
-
+-(FSCustomButton *)backBtnBaseVC{
+    if (!_backBtnBaseVC) {
+        _backBtnBaseVC = FSCustomButton.new;
+        _backBtnBaseVC.buttonImagePosition = FSCustomButtonImagePositionLeft;
+        [_backBtnBaseVC setTitleColor:kWhiteColor
+                       forState:UIControlStateNormal];
+        [_backBtnBaseVC setTitle:@"返回"
+                  forState:UIControlStateNormal];
+        [_backBtnBaseVC setImage:kIMG(@"back_white")
+                  forState:UIControlStateNormal];
+        [_backBtnBaseVC addTarget:self
+                     action:@selector(backBtnClickEvent:)
+           forControlEvents:UIControlEventTouchUpInside];
+    }return _backBtnBaseVC;
+}
 
 @end
 

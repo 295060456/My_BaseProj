@@ -71,6 +71,8 @@ target 'My_BaseProj' do
   pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
   pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
   pod 'Reveal-SDK', :configurations => ['Debug']
+  pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView
+  pod 'TKCarouselView' # https://github.com/libtinker/TKCarouselView
   pod 'MLeaksFinder'  # 在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
   pod 'JJStockView' # https://github.com/jezzmemo/JJStockView Excel iOS股票,课程表,表格控件
   pod 'CocoaLumberjack' # https://github.com/CocoaLumberjack/CocoaLumberjack A fast & simple, yet powerful & flexible logging framework for Mac and iOS

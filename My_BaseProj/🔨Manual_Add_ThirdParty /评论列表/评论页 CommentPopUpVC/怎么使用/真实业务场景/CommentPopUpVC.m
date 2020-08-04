@@ -39,7 +39,7 @@ UITableViewDelegate
 
 - (instancetype)init{
     if (self = [super init]) {
-
+        self.isClickExitBtn = NO;
     }return self;
 }
 
@@ -52,7 +52,7 @@ UITableViewDelegate
     self.gk_navigationBar.backgroundColor = HEXCOLOR(0x242A37);
     self.gk_statusBarHidden = YES;
     self.gk_navLineHidden = YES;
-    self.gk_navRightBarButtonItem = self.closeItem;
+    self.gk_navLeftBarButtonItem = self.closeItem;
     self.inputView.alpha = 1;
     self.tableView.alpha = 1;
     [self netWorking_MKCommentQueryInitListGET];
@@ -118,6 +118,8 @@ UITableViewDelegate
     [self netWorking_MKCommentDelCommentPOSTWithCommentId:self.commentId
                                                        ID:self.ID];
 }
+
+-(void)Sure{}
 //一级标题的：
 -(void)Reply{
     NSLog(@"%@",self.firstCommentModel.content);
@@ -361,18 +363,29 @@ viewForHeaderInSection:(NSInteger)section{
         _inputView = InputView.new;
         _inputView.backgroundColor = HEXCOLOR(0x20242F);
         @weakify(self)
+        ///发送
         [_inputView actionInputViewBlock:^(id data) {
             @strongify(self)
             if ([data isKindOfClass:ZYTextField.class]) {
                 ZYTextField *tf = (ZYTextField *)data;
-                self.inputContentStr = tf.text;
-                //如果登录,那么直接发送
-                if (1) {
-                    [self netWorking_MKCommentVideoPOST];
+                //校验空字符串
+                if (![NSString isNullString:tf.text]) {
+                    self.inputContentStr = tf.text;
+                    //如果登录,那么直接发送
+                    if (1) {
+                        [self netWorking_MKCommentVideoPOST];
+                    }
+                }else{
+                    [self alertControllerStyle:SYS_AlertController
+                            showAlertViewTitle:@"总的说点什么吧"
+                                       message:nil
+                               isSeparateStyle:NO
+                                   btnTitleArr:@[@"好哒"]
+                                alertBtnAction:@[@"Sure"]];
                 }
             }
         }];
-        
+        ///删除
         [_inputView actionisInputtingBlock:^(id data) {
             @strongify(self)
             if ([data isKindOfClass:ZYTextField.class]) {
@@ -382,6 +395,11 @@ viewForHeaderInSection:(NSInteger)section{
                 }
             }
         }];
+        ///当前输入框是否失去焦点（是否活跃）
+        [_inputView actionisInputViewActiveBlock:^(id data) {
+            @strongify(self)
+        }];
+        
         [self.view addSubview:_inputView];
         [_inputView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self.view);

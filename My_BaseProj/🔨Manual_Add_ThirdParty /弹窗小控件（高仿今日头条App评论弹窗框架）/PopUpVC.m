@@ -14,7 +14,7 @@ UIGestureRecognizerDelegate
 >
 
 @property(nonatomic,strong)id requestParams;
-@property(nonatomic,copy)DataBlock successBlock;
+@property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
 
@@ -84,13 +84,6 @@ UIGestureRecognizerDelegate
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.panGestureRecognizer.enabled = YES;
-    //self.swipeGestureRecognizerUp.enabled = YES;
-    //self.swipeGestureRecognizerDown.enabled = YES;
-    NSLog(@"");
-    
-    //[self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerUp];
-   // [self.panGestureRecognizer requireGestureRecognizerToFail:self.swipeGestureRecognizerDown];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -126,7 +119,6 @@ UIGestureRecognizerDelegate
         }break;
         case UISwipeGestureRecognizerDirectionDown:{
             if (self.block) {
-                
                 self.block(@(MoveDirection_vertical_down));
             }
         }break;
@@ -147,59 +139,14 @@ UIGestureRecognizerDelegate
 
     return YES;
 }
-
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-//{
-//    if ([gestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
-//        return NO;
-//    }else{
-//        return YES;
-//    }
-//}
 //拖拽手势
 - (void)pan:(UIPanGestureRecognizer *)panGestureRecognizer{
-//    NSLog(@"拖拽手势");
-    {
-        //    //判断手势状态
-        //    switch (panGestureRecognizer.state) {
-        //            // 手势当前不确定,可能是其他手势,也可能是无用的点击,这个是最开始的默认状态.
-        //        case UIGestureRecognizerStatePossible:{
-        //
-        //        }break;
-        //            // 已经确定是手势,且接收到touch,触发这个之后,就会在下一个时钟周期时向target发送消息
-        //        case UIGestureRecognizerStateBegan:{
-        //
-        //        }break;
-        //            // 手势状态改变,发生了移动,调用targetAction
-        //        case UIGestureRecognizerStateChanged:{
-        //
-        //        }break;
-        //            // 手势结束,状态改为Possible,依旧调用target
-        //        case UIGestureRecognizerStateEnded:{
-        //            NSLog(@"拖拽手势结束");
-        //        }break;
-        //            // 取消,状态改为Possible ,调用target
-        //        case UIGestureRecognizerStateCancelled:{
-        //
-        //        }break;
-        //            // 手势失败,这次手势序列结束,targetAction不会被调用,状态改为Possible
-        //        case UIGestureRecognizerStateFailed:{
-        //
-        //        }break;
-        //
-        //        default:
-        //            break;
-        //    }
-    }
-
-    
-    
     // 获取手势状态
     UIGestureRecognizerState gestureRecognizerState = panGestureRecognizer.state;
     // 获取手指的偏移量
     CGPoint translatePoint = [panGestureRecognizer translationInView:self.view];
     // 移动方向
-    CGPoint velocity = [self.panGestureRecognizer velocityInView:self.view];
+//    CGPoint velocity = [self.panGestureRecognizer velocityInView:self.view];
     NSLog(@"point:%@",NSStringFromCGPoint(translatePoint));
     if (gestureRecognizerState == UIGestureRecognizerStateBegan) {
         NSLog(@"UIGestureRecognizerStateBegan point:%@",NSStringFromCGPoint(translatePoint));
@@ -263,76 +210,6 @@ UIGestureRecognizerDelegate
                 }
             }
     }
-    
-//     if (velocity.x < 0){
-//        NSLog(@"向左◀️移动");
-//        //不能移动
-//        self.view.left = 0;
-//    }else if (velocity.x > 0){
-//        NSLog(@"向右➡️移动");
-//        if (gestureRecognizerState == UIGestureRecognizerStateChanged) {
-//            //消失阶段
-////            self.view.transform = CGAffineTransformTranslate(self.view.transform,
-////                                                             translatePoint.x,
-////                                                             0);
-////            if (self.view.mj_x < 0) {
-////                self.view.mj_x = 0;
-////            }
-//
-//            self.view.center = CGPointMake(
-//                                           self.view.center.x + translatePoint.x,
-////                                           self.orginY
-//                                           self.view.center.y //+ translatePoint.y
-//                                           );
-//            [panGestureRecognizer setTranslation:CGPointZero
-//                                          inView:self.view];
-//        }
-//
-//        if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
-//            if (self.view.left < SCREEN_WIDTH / 2) {
-//                self.view.left = 0;
-//            }else{
-//                if (self.block) {
-//                    self.block(@(MoveDirection_horizont_right));//消失
-//                }
-//            }
-//        }
-//    }else{}
-//
-//    if (velocity.y < 0){
-//        NSLog(@"向上⤴️移动");
-//        //不能移动
-//        self.view.top = self.liftingHeight;
-//    }else if (velocity.y > 0){
-//        NSLog(@"向下⤵️移动");
-//        if (gestureRecognizerState == UIGestureRecognizerStateChanged) {
-//            //消失阶段
-////            self.view.transform = CGAffineTransformTranslate(self.view.transform,
-////                                                             0,
-////                                                             translatePoint.y);
-////            if (self.view.mj_y < self.view.mj_h) {
-////                self.view.mj_y = self.view.mj_h;
-////            }
-//
-//            self.view.center = CGPointMake(
-//                                           self.view.center.x ,//+ translatePoint.x,
-////                                           self.orginX,
-//                                           self.view.center.y + translatePoint.y
-//                                           );
-//            [panGestureRecognizer setTranslation:CGPointZero
-//                                          inView:self.view];
-//        }
-//
-//        if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
-//            if (self.view.top > self.liftingHeight * 1.5) {
-//                if (self.block) {
-//                    self.block(@(MoveDirection_vertical_down));//消失
-//                }
-//            }else{
-//                self.view.top = self.liftingHeight;
-//            }
-//        }
-//    }else{}
 }
 
 #pragma mark —— lazyLoad
@@ -352,7 +229,6 @@ UIGestureRecognizerDelegate
                                                                             action:@selector(swipeGestureRecognizerDirection:)];
         // 轻扫方向:默认是右边
         _swipeGestureRecognizerUp.direction = UISwipeGestureRecognizerDirectionRight;
-        //[self.view addGestureRecognizer:_swipeGestureRecognizerUp];
         _swipeGestureRecognizerUp.delegate = self;
     }return _swipeGestureRecognizerUp;
 }
@@ -373,8 +249,5 @@ UIGestureRecognizerDelegate
         
     }return _liftingHeight;
 }
-
-
-
 
 @end

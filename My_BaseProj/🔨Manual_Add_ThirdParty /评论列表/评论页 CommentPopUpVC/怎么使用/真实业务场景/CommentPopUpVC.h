@@ -14,15 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CommentPopUpVC : PopUpVC
 
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)InputView *inputView;
 
-@property(nonatomic,strong)MKCommentModel *commentModel;
-@property(nonatomic,strong)MKCommentVideoModel *commentVideoModel;
-@property(nonatomic,strong)NSMutableArray <MKFirstCommentModel *>*firstCommentModelMutArr;
 @property(nonatomic,strong)__block NSString *inputContentStr;
-@property(nonatomic,copy)MKDataBlock CommentPopUpBlock;
 @property(nonatomic,strong)NSString *videoID;
 @property(nonatomic,strong)NSString *commentNumStr;
-@property(nonatomic,strong)InputView *inputView;
+@property(nonatomic,assign)BOOL isClickExitBtn;
+@property(nonatomic,strong)NSMutableArray <MKFirstCommentModel *>*firstCommentModelMutArr;
+@property(nonatomic,copy)MKDataBlock CommentPopUpBlock;
+@property(nonatomic,strong)MKCommentModel *commentModel;
+@property(nonatomic,strong)MKCommentVideoModel *commentVideoModel;
 
 -(void)commentPopUpActionBlock:(MKDataBlock)commentPopUpBlock;//在VM里面
 

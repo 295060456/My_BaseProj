@@ -21,6 +21,7 @@ UITextFieldDelegate
 @property(nonatomic,strong)UIButton *sendBtn;
 @property(nonatomic,copy)MKDataBlock inputViewActionBlock;
 @property(nonatomic,copy)MKDataBlock isInputtingActionBlock;
+@property(nonatomic,copy)MKDataBlock isInputViewActiveBlock;
 
 @end
 
@@ -33,13 +34,17 @@ UITextFieldDelegate
         self.textField.isInputting = NO;
     }return self;
 }
-
+///发送
 -(void)actionInputViewBlock:(MKDataBlock)inputViewActionBlock{
     self.inputViewActionBlock = inputViewActionBlock;
 }
-
+///删除
 -(void)actionisInputtingBlock:(MKDataBlock)isInputtingActionBlock{
     self.isInputtingActionBlock = isInputtingActionBlock;
+}
+///当前输入框是否失去焦点（是否活跃）
+-(void)actionisInputViewActiveBlock:(MKDataBlock)isInputViewActiveBlock{
+    self.isInputViewActiveBlock = isInputViewActiveBlock;
 }
 
 -(void)sendBtnClickEvent:(UIButton *)sender{
@@ -49,12 +54,44 @@ UITextFieldDelegate
         self.inputViewActionBlock(self.textField);
     }
 }
+
+-(void)AAA{
+    self.sendBtn.alpha = 1;
+    [UIView animateWithDuration:3
+                     animations:^{
+        [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.headerImgV.mas_right).offset(SCALING_RATIO(13));
+            make.top.bottom.equalTo(self.headerImgV);
+            make.right.equalTo(self.sendBtn.mas_left).offset(SCALING_RATIO(-13));
+        }];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(void)BBB{
+    self.sendBtn.alpha = 0;
+    [UIView animateWithDuration:3
+                     animations:^{
+        [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.headerImgV.mas_right).offset(SCALING_RATIO(13));
+            make.top.bottom.equalTo(self.headerImgV);
+            make.right.equalTo(self).offset(SCALING_RATIO(-13));
+        }];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
 #pragma mark —— CJTextFieldDeleteDelegate
 - (void)cjTextFieldDeleteBackward:(ZYTextField *)textField{//已经删除的结果
     self.textField.isInputting = YES;
-     if (self.isInputtingActionBlock) {
-         self.isInputtingActionBlock(self.textField);
-     }
+    if ([NSString isNullString:textField.text] && self.sendBtn.alpha) {
+        [self BBB];
+    }
+    if (self.isInputtingActionBlock) {
+        self.isInputtingActionBlock(self.textField);
+    }
 }
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
@@ -77,13 +114,13 @@ UITextFieldDelegate
 //告诉委托人对指定的文本字段停止编辑
 - (void)textFieldDidEndEditing:(ZYTextField *)textField{
     self.textField.isInputting = NO;
+    if (self.isInputViewActiveBlock) {
+        self.isInputViewActiveBlock(textField);
+    }
     if (![NSString isNullString:textField.text]) {
-        self.sendBtn.alpha = 1;
-        [self.textField mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.headerImgV.mas_right).offset(SCALING_RATIO(13));
-            make.top.bottom.equalTo(self.headerImgV);
-            make.right.equalTo(self.sendBtn.mas_left).offset(SCALING_RATIO(-13));
-        }];
+        [self AAA];
+    }else{
+        [self BBB];
     }
 }
 //告诉委托人对指定的文本字段停止编辑

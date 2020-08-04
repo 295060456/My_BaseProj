@@ -55,14 +55,12 @@ CGFloat LZB_TABBAR_HEIGHT;
 }
 
 - (void)p_setUpAllChildViewController {
-    self.viewControllerMutArr = [NSMutableArray arrayWithObjects:ViewController_1.new,ViewController_2.new,ViewController_5.new,ViewController_3.new,ViewController_4.new,nil];
     self.delegate = self;
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
 //        self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
 //        self.customNavigationVC.navigationBar.hidden = YES;
 //        [self.mutArr addObject:self.customNavigationVC];
-        
-        
+
         [self.mutArr addObject:self.viewControllerMutArr[i]];
     }
     self.viewControllers = (NSArray *)self.mutArr;
@@ -149,6 +147,16 @@ CGFloat LZB_TABBAR_HEIGHT;
         [_customSelectedImgMutArr addObject:kIMG(@"ShoppingCart")];
         [_customSelectedImgMutArr addObject:kIMG(@"My")];
     }return _customSelectedImgMutArr;
+}
+
+-(NSMutableArray<UIViewController *> *)viewControllerMutArr{
+    if (!_viewControllerMutArr) {
+        [_viewControllerMutArr addObject:ViewController_1.new];
+        [_viewControllerMutArr addObject:ViewController_2.new];
+        [_viewControllerMutArr addObject:ViewController_5.new];
+        [_viewControllerMutArr addObject:ViewController_3.new];
+        [_viewControllerMutArr addObject:ViewController_4.new];
+    }return _viewControllerMutArr;
 }
 
 @end

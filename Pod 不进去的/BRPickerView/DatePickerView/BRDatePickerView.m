@@ -1060,6 +1060,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     if (self.isAutoSelect) {
         // 滚动完成后，执行block回调
         if (self.resultBlock) {
+            [self doneBtnCanBeClick:YES];
             self.resultBlock(self.mSelectDate, self.mSelectValue);
         }
     }
@@ -1096,6 +1097,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     if (self.isAutoSelect) {
         // 滚动完成后，执行block回调
         if (self.resultBlock) {
+            [self doneBtnCanBeClick:YES];
             self.resultBlock(self.mSelectDate, self.mSelectValue);
         }
     }
@@ -1159,13 +1161,13 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
         [weakSelf removePickerFromView:view];
         
         if (weakSelf.resultBlock) {
+            [weakSelf doneBtnCanBeClick:YES];
             weakSelf.resultBlock(weakSelf.mSelectDate, weakSelf.mSelectValue);
         }
     };
     
     [super addPickerToView:view];
 }
-
 #pragma mark - 添加时间单位到选择器
 - (void)addUnitLabel {
     if (self.unitLabelArr.count > 0) {
@@ -1188,6 +1190,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 
 #pragma mark - 弹出选择器视图
 - (void)show {
+    [self doneBtnCanBeClick:NO];
     [self addPickerToView:nil];
 }
 
@@ -1427,9 +1430,9 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 - (NSArray<NSString *> *)monthNames {
     if (!_monthNames) {
         if (self.monthNameType == BRMonthNameTypeFullName) {
-            _monthNames = @[@"January", @"February", @"March", @"April", @"May", @"June", @"July", @"August", @"September", @"October", @"November", @"December"];
+            _monthNames = @[@"一月份", @"二月份", @"三月份", @"四月份", @"五月份", @"六月份", @"七月份", @"八月份", @"九月份", @"十月份", @"十一月份", @"十二月份"];
         } else {
-            _monthNames = @[@"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun", @"Jul", @"Aug", @"Sep", @"Oct", @"Nov", @"Dec"];
+            _monthNames = @[@"一月", @"二月", @"三月", @"四月", @"五月", @"六月", @"七月", @"八月", @"九月", @"十月", @"十一月", @"十二月"];
         }
     }
     return _monthNames;

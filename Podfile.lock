@@ -18,18 +18,6 @@ PODS:
   - AWRichText (1.0.1)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
-  - BRPickerView (2.6.5):
-    - BRPickerView/AddressPickerView (= 2.6.5)
-    - BRPickerView/Base (= 2.6.5)
-    - BRPickerView/DatePickerView (= 2.6.5)
-    - BRPickerView/StringPickerView (= 2.6.5)
-  - BRPickerView/AddressPickerView (2.6.5):
-    - BRPickerView/Base
-  - BRPickerView/Base (2.6.5)
-  - BRPickerView/DatePickerView (2.6.5):
-    - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.6.5):
-    - BRPickerView/Base
   - BSYKeyBoard (1.1.2)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLumberjack (3.6.2):
@@ -152,6 +140,8 @@ PODS:
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
@@ -180,6 +170,7 @@ PODS:
     - Texture/Core
   - Texture/Video (3.0.0):
     - Texture/Core
+  - TKCarouselView (1.1.7)
   - TTTAttributedLabel (2.0.0)
   - TWPageViewController (0.0.2)
   - TXFileOperation (1.0)
@@ -205,7 +196,6 @@ DEPENDENCIES:
   - AWRichText
   - AYCheckVersion
   - BEMCheckBox
-  - BRPickerView
   - BSYKeyBoard
   - CocoaLumberjack
   - CWLateralSlide
@@ -250,11 +240,13 @@ DEPENDENCIES:
   - ReactiveObjC
   - Reveal-SDK
   - RQShineLabel
+  - SDCycleScrollView
   - SDWebImage
   - Shimmer
   - SocketRocket
   - SZTextView
   - Texture
+  - TKCarouselView
   - TTTAttributedLabel
   - TWPageViewController
   - TXFileOperation
@@ -275,7 +267,6 @@ SPEC REPOS:
     - AWRichText
     - AYCheckVersion
     - BEMCheckBox
-    - BRPickerView
     - BSYKeyBoard
     - CocoaAsyncSocket
     - CocoaLumberjack
@@ -325,12 +316,14 @@ SPEC REPOS:
     - ReactiveObjC
     - Reveal-SDK
     - RQShineLabel
+    - SDCycleScrollView
     - SDWebImage
     - Shimmer
     - SocketRocket
     - SQLiteRepairKit
     - SZTextView
     - Texture
+    - TKCarouselView
     - TTTAttributedLabel
     - TWPageViewController
     - TXFileOperation
@@ -352,7 +345,6 @@ SPEC CHECKSUMS:
   AWRichText: 7adc57ff591ef9365cfb3f35aac98b2e97db015d
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
-  BRPickerView: 70e2e38b6441d4b43e9d14727aea662756476367
   BSYKeyBoard: 777eb83fc0aca335f4d94d83eced12c797c654c6
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
@@ -402,12 +394,14 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
+  TKCarouselView: 9a4e4d9d42394f1d351f8b54e9c6c89b17f051da
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
   TXFileOperation: 99bc7e3763678fdea8e8c407e2b87fb18038385f
@@ -423,6 +417,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 8c6400de378acb6122896aca12543491261d3f4b
+PODFILE CHECKSUM: 2b08cbbaa457283a0eae5cf658e5cab35f929a89
 
 COCOAPODS: 1.9.3

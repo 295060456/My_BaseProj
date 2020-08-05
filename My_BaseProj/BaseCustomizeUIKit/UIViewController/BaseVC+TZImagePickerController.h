@@ -9,6 +9,14 @@
 #import "BaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
+///分别对应 TZImagePickerController 的五种初始化方法
+typedef enum : NSInteger {
+    TZImagePickerControllerType_1,//initWithMaxImagesCount/delegate/
+    TZImagePickerControllerType_2,//initWithMaxImagesCount/columnNumber/delegate
+    TZImagePickerControllerType_3,//initWithMaxImagesCount/columnNumber/delegate/pushPhotoPickerVc
+    TZImagePickerControllerType_4,//initWithSelectedAssets/selectedPhotos/index
+    TZImagePickerControllerType_5//initCropTypeWithAsset/photo/completion
+} TZImagePickerControllerType;
 
 @interface BaseVC (TZImagePickerController)
 <
@@ -16,10 +24,21 @@ TZImagePickerControllerDelegate
 >
 #pragma mark —— BaseVC+TZImagePickerController
 @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
+@property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
+
+@property(nonatomic,assign)NSInteger maxImagesCount;
+@property(nonatomic,assign)NSInteger columnNumber;
+@property(nonatomic,assign)NSInteger index;
+@property(nonatomic,assign)BOOL isPushPhotoPickerVc;
+@property(nonatomic,strong)NSMutableArray *selectedAssets;
+@property(nonatomic,strong)NSMutableArray *selectedPhotos;
+@property(nonatomic,strong)UIImage *photo;
+@property(nonatomic,strong)PHAsset *asset;
+
 ///点选的图片
 -(void)GettingPicBlock:(MKDataBlock)block;
 ///访问相册 —— 选择图片
--(void)choosePic;
+-(void)choosePic:(TZImagePickerControllerType)tzImagePickerControllerType;
 ///访问摄像头
 -(void)camera:(NSString *)doSth;
 

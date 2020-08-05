@@ -27,31 +27,47 @@ CLLocationManagerDelegate
 
 #pragma mark - checkAndRequestAccessForType
 + (void)checkAndRequestAccessForType:(ECPrivacyType)type
-                        accessStatus:(AccessForTypeResultBlock)accessStatusCallBack;{
+                        accessStatus:(AccessForTypeResultBlock)accessStatusCallBack{
     if (type == ECPrivacyType_LocationServices) {           // 定位服务
 //        [self checkAndRequestAccessForLocationServicesWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_Contacts) {             // 联系人
-        [self checkAndRequestAccessForContactsWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForContactsWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_Calendars) {            // 日历
-        [self checkAndRequestAccessForCalendarsWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForCalendarsWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_Reminders) {            // 提醒事项
-        [self checkAndRequestAccessForRemindersWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForRemindersWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type ==  ECPrivacyType_Photos) {              // 照片
-        [self checkAndRequestAccessForPhotosWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForPhotosWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_BluetoothSharing) {     // 蓝牙
 //        [self checkAndRequestAccessForBluetoothSharingWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_Microphone) {           // 麦克风
-        [self checkAndRequestAccessForMicrophoneWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForMicrophoneWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_SpeechRecognition) {    // 语音识别
-        [self checkAndRequestAccessForSpeechRecognitionWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForSpeechRecognitionWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_Camera) {               // 相机
-        [self checkAndRequestAccessForCameraWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForCameraWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_Health) {               // 健康
 //        [self checkAndRequestAccessForHealthWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_HomeKit) {              // home
 //        [self checkAndRequestAccessForHomeWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_MediaAndAppleMusic) {   // Apple Music
-        [self checkAndRequestAccessForAppleMusicWithAccessStatus:accessStatusCallBack];
+        [self checkAndRequestAccessForAppleMusicWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+            return nil;
+        }];
     }else if (type == ECPrivacyType_MotionAndFitness) {     // Motion
 //        [self checkAndRequestAccessForMotionAndFitnessWtihAccessStatus:accessStatusCallBack];
     }else{
@@ -59,7 +75,7 @@ CLLocationManagerDelegate
     }
 }
 #pragma mark -------------------- LocationServices --------------------
-- (void)checkAndRequestAccessForLocationServicesWithAccessStatus:(AccessForLocationResultBlock)accessStatusCallBack;{
+- (void)checkAndRequestAccessForLocationServicesWithAccessStatus:(AccessForLocationResultBlock)accessStatusCallBack{
     BOOL isLocationServicesEnabled = [CLLocationManager locationServicesEnabled];
     if (!isLocationServicesEnabled) {
         NSLog(@"定位服务不可用，例如定位没有打开...");
@@ -331,7 +347,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 }
 
 #pragma mark -------------------- BluetoothSharing --------------------
-- (void)checkAndRequestAccessForBluetoothSharingWithAccessStatus:(AccessForBluetoothResultBlock)accessStatusCallBack;{
+- (void)checkAndRequestAccessForBluetoothSharingWithAccessStatus:(AccessForBluetoothResultBlock)accessStatusCallBack{
     self.cMgr = [[CBCentralManager alloc] initWithDelegate:self
                                                      queue:nil];
     if (@available(iOS 10.0, *)) {
@@ -712,7 +728,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     });
 }
 #pragma mark -------------------- Public Methods --------------------
-+ (NSString *)stringForPrivacyType:(ECPrivacyType)privacyType;{
++ (NSString *)stringForPrivacyType:(ECPrivacyType)privacyType{
     if (privacyType == ECPrivacyType_LocationServices) {
         return @"LocationServices";
     }else if (privacyType == ECPrivacyType_Contacts) {
@@ -741,7 +757,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
         return @"Motion And Fitness";
     }else return @"";
 }
-+ (NSString *)stringForAuthorizationStatus:(ECAuthorizationStatus)authorizationStatus;{
++ (NSString *)stringForAuthorizationStatus:(ECAuthorizationStatus)authorizationStatus{
     if (authorizationStatus == ECAuthorizationStatus_Authorized) {
         return @"Authorized";
     }else if (authorizationStatus == ECAuthorizationStatus_Denied) {
@@ -752,7 +768,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
         return @"NotSupport";
     }else return @"NotDetermined";
 }
-+ (NSString *)stringForLocationAuthorizationStatus:(ECLocationAuthorizationStatus)locationAuthorizationStatus;{
++ (NSString *)stringForLocationAuthorizationStatus:(ECLocationAuthorizationStatus)locationAuthorizationStatus{
     if (locationAuthorizationStatus == ECLocationAuthorizationStatus_Authorized) {
         return @"Location Authorized, < ios8";
     }else if (locationAuthorizationStatus == ECLocationAuthorizationStatus_Denied) {

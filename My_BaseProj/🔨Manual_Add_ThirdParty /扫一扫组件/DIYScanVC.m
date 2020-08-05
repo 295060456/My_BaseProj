@@ -182,7 +182,7 @@
 #pragma mark —— 底部功能项
 //打开相册
 - (void)openPhoto{
-    [self choosePic];
+    [self choosePic:TZImagePickerControllerType_1];
     @weakify(self)
     [self GettingPicBlock:^(id data) {
         @strongify(self)

@@ -81,11 +81,10 @@ typedef NS_ENUM(NSUInteger, ECCBManagerStatus){
 /*
  定义权限状态回调block
  */
-typedef void(^AccessForTypeResultBlock)(ECAuthorizationStatus status, ECPrivacyType type);
+typedef id(^AccessForTypeResultBlock)(ECAuthorizationStatus status, ECPrivacyType type);
 typedef void(^AccessForLocationResultBlock)(ECLocationAuthorizationStatus status);
 typedef void(^AccessForBluetoothResultBlock)(ECCBManagerStatus status);
 typedef void(^AccessForHomeResultBlock)(BOOL isHaveHomeAccess);
-typedef void(^AccessForMotionResultBlock)(BOOL isHaveMotionAccess);
 
 @interface ECAuthorizationTools : NSObject
 
@@ -157,17 +156,3 @@ typedef void(^AccessForMotionResultBlock)(BOOL isHaveMotionAccess);
 - (void)checkAndRequestAccessForMotionAndFitness;
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-

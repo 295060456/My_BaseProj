@@ -126,7 +126,10 @@
                        message:str
                isSeparateStyle:YES
                    btnTitleArr:@[@"知道了"]
-                alertBtnAction:@[@"OK"]];
+                alertBtnAction:@[@"OK"]
+                  alertVCBlock:^(id data) {
+        //DIY
+    }];
 }
 
 -(void)OK{}
@@ -167,7 +170,10 @@
                        message:strResult
                isSeparateStyle:YES
                    btnTitleArr:@[@"知道了"]
-                alertBtnAction:@[@"reStartDevice"]];
+                alertBtnAction:@[@"reStartDevice"]
+                  alertVCBlock:^(id data) {
+        //DIY
+    }];
 }
 
 - (void)showNextVCWithScanResult:(LBXScanResult *)strResult{
@@ -246,7 +252,10 @@
                                    message:nil
                            isSeparateStyle:YES
                                btnTitleArr:@[@"知道了"]
-                            alertBtnAction:@[@"OK"]];
+                            alertBtnAction:@[@"OK"]
+                              alertVCBlock:^(id data) {
+                                //DIY
+                }];
             }
         }
     }];

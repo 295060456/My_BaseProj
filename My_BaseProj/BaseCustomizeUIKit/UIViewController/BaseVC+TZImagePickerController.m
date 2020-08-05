@@ -60,7 +60,10 @@ static char *BaseVC_TZImagePickerController_asset;
                                message:nil
                        isSeparateStyle:YES
                            btnTitleArr:@[@"去获取"]
-                        alertBtnAction:@[@"pushToSysConfig"]];
+                        alertBtnAction:@[@"pushToSysConfig"]
+                          alertVCBlock:^(id data) {
+                //DIY
+            }];
             return nil;
         }
     }];
@@ -87,7 +90,10 @@ static char *BaseVC_TZImagePickerController_asset;
                                message:nil
                        isSeparateStyle:YES
                            btnTitleArr:@[@"去获取"]
-                        alertBtnAction:@[@"pushToSysConfig"]];
+                        alertBtnAction:@[@"pushToSysConfig"]
+                          alertVCBlock:^(id data) {
+                //DIY
+            }];
         }
         return nil;
     }];

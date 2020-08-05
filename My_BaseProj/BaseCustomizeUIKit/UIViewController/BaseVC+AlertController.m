@@ -19,7 +19,8 @@ static char *BaseVC_AlertController;
                     message:(nullable NSString *)message
             isSeparateStyle:(BOOL)isSeparateStyle
                 btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr{
+             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+               alertVCBlock:(MKDataBlock)alertVCBlock{
     switch (alertControllerStyle) {
         case SYS_AlertController:{
             @weakify(self)
@@ -78,7 +79,8 @@ static char *BaseVC_AlertController;
             isSeparateStyle:(BOOL)isSeparateStyle
                 btnTitleArr:(NSArray <NSString*>*)btnTitleArr
              alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(nullable UIControl *)sender{
+                     sender:(nullable UIControl *)sender
+               alertVCBlock:(MKDataBlock)alertVCBlock{
     UIViewController *vc = nil;
     switch (alertControllerStyle) {
         case SYS_AlertController:{

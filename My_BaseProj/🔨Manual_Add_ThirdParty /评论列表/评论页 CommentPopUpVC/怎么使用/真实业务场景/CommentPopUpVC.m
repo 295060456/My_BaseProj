@@ -228,7 +228,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
                    isSeparateStyle:YES
                        btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
                     alertBtnAction:@[@"reply",@"copyIt",@"report",@"cancel"]
-                            sender:nil];
+                            sender:nil
+                      alertVCBlock:^(id data) {
+            //DIY
+        }];
     }else{}
 }
 
@@ -320,7 +323,10 @@ viewForHeaderInSection:(NSInteger)section{
                                            message:nil
                                    isSeparateStyle:NO
                                        btnTitleArr:@[@"确认",@"手滑啦"]
-                                    alertBtnAction:@[@"SureDeleteSelfComment",@"Cancel"]];
+                                    alertBtnAction:@[@"SureDeleteSelfComment",@"Cancel"]
+                                      alertVCBlock:^(id data) {
+                            //DIY
+                        }];
                     }else{
                         UIControl *control = (UIControl *)dic[@"sender"];
                         self.firstCommentModel = dic[@"model"];
@@ -330,7 +336,10 @@ viewForHeaderInSection:(NSInteger)section{
                                    isSeparateStyle:YES
                                        btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
                                     alertBtnAction:@[@"Reply",@"CopyIt",@"Report",@"Cancel"]
-                                            sender:control];
+                                            sender:control
+                                      alertVCBlock:^(id data) {
+                            //DIY
+                        }];
                     }
                 }else if ([dic[@"sender"] isMemberOfClass:RBCLikeButton.class]){
                     NSLog(@"");
@@ -381,7 +390,10 @@ viewForHeaderInSection:(NSInteger)section{
                                        message:nil
                                isSeparateStyle:NO
                                    btnTitleArr:@[@"好哒"]
-                                alertBtnAction:@[@"Sure"]];
+                                alertBtnAction:@[@"Sure"]
+                                  alertVCBlock:^(id data) {
+                        //DIY
+                    }];
                 }
             }
         }];

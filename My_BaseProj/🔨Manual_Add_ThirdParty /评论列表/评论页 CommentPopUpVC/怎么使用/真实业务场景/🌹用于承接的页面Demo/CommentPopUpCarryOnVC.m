@@ -282,7 +282,10 @@
                                        message:@"确定放弃评论吗？"
                                isSeparateStyle:NO
                                    btnTitleArr:@[@"我不回复了",@"手滑啦"]
-                                alertBtnAction:@[@"GiveUpComment",@"Sorry"]];
+                                alertBtnAction:@[@"GiveUpComment",@"Sorry"]
+                                  alertVCBlock:^(id data) {
+                        //DIY
+                    }];
                 }
             }else{
                 //弹出键盘的时候 没做处理

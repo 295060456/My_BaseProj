@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
                     message:(nullable NSString *)message
             isSeparateStyle:(BOOL)isSeparateStyle
                 btnTitleArr:(NSArray <NSString *> *)btnTitleArr
-             alertBtnAction:(NSArray <NSString *> *)alertBtnActionArr;
+             alertBtnAction:(NSArray <NSString *> *)alertBtnActionArr
+               alertVCBlock:(MKDataBlock)alertVCBlock;
 ///
 -(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle
        showActionSheetTitle:(nullable NSString *)title
@@ -28,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
             isSeparateStyle:(BOOL)isSeparateStyle
                 btnTitleArr:(NSArray <NSString *> *)btnTitleArr
              alertBtnAction:(NSArray <NSString *> *)alertBtnActionArr
-                     sender:(nullable UIControl *)sender;
+                     sender:(nullable UIControl *)sender
+               alertVCBlock:(MKDataBlock)alertVCBlock;
 
 @end
 

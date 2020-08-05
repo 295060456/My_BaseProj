@@ -25,6 +25,7 @@ TZImagePickerControllerDelegate
 #pragma mark —— BaseVC+TZImagePickerController
 @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
 @property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
+@property(nonatomic,copy)MKDataBlock picBlock;
 
 @property(nonatomic,assign)NSInteger maxImagesCount;
 @property(nonatomic,assign)NSInteger columnNumber;

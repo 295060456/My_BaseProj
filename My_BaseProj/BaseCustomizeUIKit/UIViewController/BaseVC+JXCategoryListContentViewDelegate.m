@@ -10,7 +10,7 @@
 
 @implementation BaseVC (JXCategoryListContentViewDelegate)
 
-static char *BaseVC_JXCategoryListContentViewDelegate;
+//static char *BaseVC_JXCategoryListContentViewDelegate = "BaseVC_JXCategoryListContentViewDelegate";
 
 #pragma mark —— JXCategoryListContentViewDelegate
 /**

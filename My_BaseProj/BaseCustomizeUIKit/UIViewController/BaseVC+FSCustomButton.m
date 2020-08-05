@@ -11,8 +11,8 @@
 
 @implementation BaseVC (FSCustomButton)
 
-static char *BaseVC_FSCustomButton_backBtn;
-@dynamic backBtn;
+static char *BaseVC_FSCustomButton_backBtnCategory = "BaseVC_FSCustomButton_backBtnCategory";
+@dynamic backBtnCategory;
 
 #pragma mark —— 子类需要覆写
 -(void)backBtnClickEvent:(UIButton *)sender{
@@ -23,26 +23,34 @@ static char *BaseVC_FSCustomButton_backBtn;
                                  completion:nil];
     }
 }
-#pragma mark —— lazyLoad
--(FSCustomButton *)backBtn{
-    FSCustomButton *BackBtn = objc_getAssociatedObject(self, BaseVC_FSCustomButton_backBtn);
-    if (!BackBtn) {
-        BackBtn = FSCustomButton.new;
-        BackBtn.buttonImagePosition = FSCustomButtonImagePositionLeft;
-        [BackBtn setTitleColor:kWhiteColor
-                       forState:UIControlStateNormal];
-        [BackBtn setTitle:@"返回"
-                  forState:UIControlStateNormal];
-        [BackBtn setImage:kIMG(@"back_white")
-                  forState:UIControlStateNormal];
-        [BackBtn addTarget:self
-                     action:@selector(backBtnClickEvent:)
-           forControlEvents:UIControlEventTouchUpInside];
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)FSCustomButton *backBtnCategory;
+-(FSCustomButton *)backBtnCategory{
+    FSCustomButton *BackBtnCategory = objc_getAssociatedObject(self, BaseVC_FSCustomButton_backBtnCategory);
+    if (!BackBtnCategory) {
+        BackBtnCategory = FSCustomButton.new;
+        BackBtnCategory.buttonImagePosition = FSCustomButtonImagePositionLeft;
+        [BackBtnCategory setTitleColor:kWhiteColor
+                              forState:UIControlStateNormal];
+        [BackBtnCategory setTitle:@"返回"
+                         forState:UIControlStateNormal];
+        [BackBtnCategory setImage:kIMG(@"back_white")
+                         forState:UIControlStateNormal];
+        [BackBtnCategory addTarget:self
+                            action:@selector(backBtnClickEvent:)
+                  forControlEvents:UIControlEventTouchUpInside];
         objc_setAssociatedObject(self,
-                                 BaseVC_FSCustomButton_backBtn,
-                                 BackBtn,
+                                 BaseVC_FSCustomButton_backBtnCategory,
+                                 BackBtnCategory,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return BackBtn;
+    }return BackBtnCategory;
+}
+
+-(void)setBackBtnCategory:(FSCustomButton *)backBtnCategory{
+    objc_setAssociatedObject(self,
+                             BaseVC_FSCustomButton_backBtnCategory,
+                             backBtnCategory,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

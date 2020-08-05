@@ -11,17 +11,18 @@
 
 @implementation BaseVC (GifImageView)
 
-static char *BaseVC_GifImageView_gifImageView;
-static char *BaseVC_GifImageView_path;
-static char *BaseVC_GifImageView_data;
-static char *BaseVC_GifImageView_image;
+static char *BaseVC_GifImageView_gifImageView = "BaseVC_GifImageView_gifImageView";
+static char *BaseVC_GifImageView_path = "BaseVC_GifImageView_path";
+static char *BaseVC_GifImageView_data = "BaseVC_GifImageView_data";
+static char *BaseVC_GifImageView_image = "BaseVC_GifImageView_image";
 
 @dynamic gifImageView;
 @dynamic path;
 @dynamic data;
 @dynamic image;
 
-#pragma mark —— lazyLoad
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)UIImageView *gifImageView;
 -(UIImageView *)gifImageView{
     UIImageView *GifImageView = objc_getAssociatedObject(self, BaseVC_GifImageView_gifImageView);
     if (!GifImageView) {
@@ -38,11 +39,19 @@ static char *BaseVC_GifImageView_image;
     }return GifImageView;
 }
 
+-(void)setGifImageView:(UIImageView *)gifImageView{
+    objc_setAssociatedObject(self,
+                             BaseVC_GifImageView_gifImageView,
+                             gifImageView,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+#pragma mark —— @property(nonatomic,strong)NSString *path;
 -(NSString *)path{
     NSString *Path = objc_getAssociatedObject(self, BaseVC_GifImageView_path);
-    if (!Path) {
+    if (![NSString isNullString:Path]) {
         Path = [[NSBundle mainBundle] pathForResource:@"GIF大图"
-                                                ofType:@"gif"];
+                                               ofType:@"gif"];
         objc_setAssociatedObject(self,
                                  BaseVC_GifImageView_path,
                                  Path,
@@ -50,6 +59,13 @@ static char *BaseVC_GifImageView_image;
     }return Path;
 }
 
+-(void)setPath:(NSString *)path{
+    objc_setAssociatedObject(self,
+                             BaseVC_GifImageView_path,
+                             path,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSData *data;
 -(NSData *)data{
     NSData *Data = objc_getAssociatedObject(self, BaseVC_GifImageView_data);
     if (!Data) {
@@ -61,15 +77,29 @@ static char *BaseVC_GifImageView_image;
     }return Data;
 }
 
+-(void)setData:(NSData *)data{
+    objc_setAssociatedObject(self,
+                             BaseVC_GifImageView_data,
+                             data,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)UIImage *image;
 -(UIImage *)image{
-    UIImage *Image = objc_getAssociatedObject(self, BaseVC_GifImageView_image);
-    if (!Image) {
-        Image = [UIImage sd_imageWithGIFData:self.data];
+    UIImage *img = objc_getAssociatedObject(self, BaseVC_GifImageView_image);
+    if (!img) {
+        img = [UIImage sd_imageWithGIFData:self.data];
         objc_setAssociatedObject(self,
                                  BaseVC_GifImageView_image,
-                                 Image,
+                                 img,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return Image;
+    }return img;
+}
+
+-(void)setImage:(UIImage *)image{
+    objc_setAssociatedObject(self,
+                             BaseVC_GifImageView_image,
+                             image,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

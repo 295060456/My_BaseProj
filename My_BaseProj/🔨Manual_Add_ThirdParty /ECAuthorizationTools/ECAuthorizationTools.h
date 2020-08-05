@@ -107,7 +107,7 @@ typedef void(^AccessForHomeResultBlock)(BOOL isHaveHomeAccess);
 
 #pragma mark -------------------- Main Enter Method --------------------
 /**
- Check and request access for * type 
+ Check and request access for * type
  检查和请求对应类型的权限
 
  @param type ECPrivacyType

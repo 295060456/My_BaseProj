@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseVC (FSCustomButton)
 
 #pragma mark —— BaseVC+FSCustomButton
-@property(nonatomic,strong)FSCustomButton *backBtn;
+@property(nonatomic,strong)FSCustomButton *backBtnCategory;
 #pragma mark —— 子类需要覆写
 -(void)backBtnClickEvent:(UIButton *)sender;
 

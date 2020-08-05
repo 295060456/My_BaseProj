@@ -11,7 +11,7 @@
 
 @implementation BaseVC (AFNReachability)
 
-static char *BaseVC_AFNReachability_afNetworkReachabilityManager;
+static char *BaseVC_AFNReachability_afNetworkReachabilityManager = "BaseVC_AFNReachability_afNetworkReachabilityManager";
 @dynamic afNetworkReachabilityManager;
 
 - (void)AFNReachability {
@@ -67,17 +67,24 @@ static char *BaseVC_AFNReachability_afNetworkReachabilityManager;
     }
     [self.afNetworkReachabilityManager startMonitoring];
 }
-#pragma mark —— lazyLoad
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)AFNetworkReachabilityManager *afNetworkReachabilityManager;
 -(AFNetworkReachabilityManager *)afNetworkReachabilityManager{
-    AFNetworkReachabilityManager *AfNetworkReachabilityManager = objc_getAssociatedObject(self, BaseVC_AFNReachability_afNetworkReachabilityManager);
-    if (!AfNetworkReachabilityManager) {
-//        1.创建网络监听管理者
-        AfNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    AFNetworkReachabilityManager *aFNetworkReachabilityManager = objc_getAssociatedObject(self, BaseVC_AFNReachability_afNetworkReachabilityManager);
+    if (!aFNetworkReachabilityManager) {
+        aFNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
         objc_setAssociatedObject(self,
                                  BaseVC_AFNReachability_afNetworkReachabilityManager,
-                                 AfNetworkReachabilityManager,
+                                 aFNetworkReachabilityManager,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return AfNetworkReachabilityManager;
+    }return aFNetworkReachabilityManager;
+}
+
+-(void)setAfNetworkReachabilityManager:(AFNetworkReachabilityManager *)afNetworkReachabilityManager{
+    objc_setAssociatedObject(self,
+                             BaseVC_AFNReachability_afNetworkReachabilityManager,
+                             afNetworkReachabilityManager,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 

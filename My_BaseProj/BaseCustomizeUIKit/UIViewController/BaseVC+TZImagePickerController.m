@@ -12,27 +12,30 @@
 
 @implementation BaseVC (TZImagePickerController)
 
-static char *BaseVC_TZImagePickerController_imagePickerVC;
-static char *BaseVC_TZImagePickerController_tzImagePickerControllerType;
-static char *BaseVC_TZImagePickerController_maxImagesCount;
-static char *BaseVC_TZImagePickerController_columnNumber;
-static char *BaseVC_TZImagePickerController_isPushPhotoPickerVc;
-static char *BaseVC_TZImagePickerController_index;
-static char *BaseVC_TZImagePickerController_selectedAssets;
-static char *BaseVC_TZImagePickerController_selectedPhotos;
-static char *BaseVC_TZImagePickerController_photo;
-static char *BaseVC_TZImagePickerController_asset;
+static char *BaseVC_TZImagePickerController_imagePickerVC = "BaseVC_TZImagePickerController_imagePickerVC";
+static char *BaseVC_TZImagePickerController_tzImagePickerControllerType = "BaseVC_TZImagePickerController_tzImagePickerControllerType";
+static char *BaseVC_TZImagePickerController_picBlock = "BaseVC_TZImagePickerController_picBlock";
+static char *BaseVC_TZImagePickerController_maxImagesCount = "BaseVC_TZImagePickerController_maxImagesCount";
+static char *BaseVC_TZImagePickerController_columnNumber = "BaseVC_TZImagePickerController_columnNumber";
+static char *BaseVC_TZImagePickerController_index = "BaseVC_TZImagePickerController_index";
+static char *BaseVC_TZImagePickerController_isPushPhotoPickerVc = "BaseVC_TZImagePickerController_isPushPhotoPickerVc";
+static char *BaseVC_TZImagePickerController_selectedAssets = "BaseVC_TZImagePickerController_selectedAssets";
+static char *BaseVC_TZImagePickerController_selectedPhotos = "BaseVC_TZImagePickerController_selectedPhotos";
+static char *BaseVC_TZImagePickerController_photo = "BaseVC_TZImagePickerController_photo";
+static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerController_asset";
 
+@dynamic imagePickerVC;
+@dynamic tzImagePickerControllerType;
+@dynamic picBlock;
 @dynamic maxImagesCount;
 @dynamic columnNumber;
+@dynamic index;
 @dynamic isPushPhotoPickerVc;
 @dynamic selectedAssets;
 @dynamic selectedPhotos;
-@dynamic imagePickerVC;
-@dynamic tzImagePickerControllerType;
-@dynamic index;
 @dynamic photo;
 @dynamic asset;
+
 ///点选的图片
 -(void)GettingPicBlock:(MKDataBlock)block{
     self.picBlock = block;
@@ -49,6 +52,9 @@ static char *BaseVC_TZImagePickerController_asset;
         //状态类型参考：ECAuthorizationStatus
         NSLog(@"%lu",(unsigned long)status);
         if (status == ECAuthorizationStatus_Authorized) {
+            //图片裁剪
+            self.imagePickerVC.cropRect = CGRectMake(0,0,80,80);
+            self.imagePickerVC.scaleAspectFillCrop = YES;
             [self presentViewController:self.imagePickerVC
                                      animated:YES
                                    completion:nil];
@@ -92,51 +98,51 @@ static char *BaseVC_TZImagePickerController_asset;
                            btnTitleArr:@[@"去获取"]
                         alertBtnAction:@[@"pushToSysConfig"]
                           alertVCBlock:^(id data) {
-                //DIY
+                            //DIY
             }];
-        }
-        return nil;
+        }return nil;
     }];
 }
-#pragma mark —— lazyLoad
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
+//分类里面只能写self.属性，所以每次都优先走get方法再走set
 -(TZImagePickerController *)imagePickerVC{
-    TZImagePickerController *ImagePickerVC = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_imagePickerVC);
-    if (!ImagePickerVC) {
-        switch (self.tzImagePickerControllerType) {
+    TZImagePickerController *imagePickerController = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_imagePickerVC);
+    if (!imagePickerController) {
+        switch (self.tzImagePickerControllerType){
             case TZImagePickerControllerType_1:{
-                ImagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
+                imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
                                                                                 delegate:self];
             }break;
             case TZImagePickerControllerType_2:{
-                ImagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
+                imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
                                                                            columnNumber:self.columnNumber
                                                                                delegate:self];
             }break;
             case TZImagePickerControllerType_3:{
-                ImagePickerVC = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
+                imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
                                                                            columnNumber:self.columnNumber
                                                                                delegate:self
                                                                       pushPhotoPickerVc:YES];
             }break;
             case TZImagePickerControllerType_4:{
-                ImagePickerVC = [[TZImagePickerController alloc] initWithSelectedAssets:self.selectedAssets
+                imagePickerController = [[TZImagePickerController alloc] initWithSelectedAssets:self.selectedAssets
                                                                          selectedPhotos:self.selectedPhotos
                                                                                   index:self.index];
             }break;
             case TZImagePickerControllerType_5:{
-                ImagePickerVC = [[TZImagePickerController alloc] initCropTypeWithAsset:self.asset
+                imagePickerController = [[TZImagePickerController alloc] initCropTypeWithAsset:self.asset
                                                                                  photo:self.photo
                                                                             completion:^(UIImage *cropImage, PHAsset *asset) {
-                    
                 }];
             }break;
-                
+
             default:
                 break;
         }
-
+            
         @weakify(self)
-        [ImagePickerVC setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,
+        [imagePickerController setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,
                                                           NSArray *assets,
                                                           BOOL isSelectOriginalPhoto) {
             @strongify(self)
@@ -146,9 +152,67 @@ static char *BaseVC_TZImagePickerController_asset;
         }];
         objc_setAssociatedObject(self,
                                  BaseVC_TZImagePickerController_imagePickerVC,
-                                 ImagePickerVC,
+                                 imagePickerController,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return ImagePickerVC;
+    }return imagePickerController;
+}
+
+-(void)setImagePickerVC:(TZImagePickerController *)imagePickerVC{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_imagePickerVC,
+                             imagePickerVC,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,assign)NSInteger maxImagesCount;
+-(NSInteger)maxImagesCount{
+    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_maxImagesCount) integerValue];
+}
+
+-(void)setMaxImagesCount:(NSInteger)maxImagesCount{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_maxImagesCount,
+                             [NSNumber numberWithInteger:maxImagesCount],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)NSInteger columnNumber;
+-(NSInteger)columnNumber{
+    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_columnNumber) integerValue];
+}
+
+- (void)setColumnNumber:(NSInteger)columnNumber{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_columnNumber,
+                             [NSNumber numberWithInteger:columnNumber],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)NSInteger index;
+-(NSInteger)index{
+    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_index) integerValue];
+}
+
+-(void)setIndex:(NSInteger)index{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_index,
+                             [NSNumber numberWithInteger:index],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)BOOL isPushPhotoPickerVc;
+-(BOOL)isPushPhotoPickerVc{
+    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_isPushPhotoPickerVc) boolValue];
+}
+
+- (void)setIsPushPhotoPickerVc:(BOOL)isPushPhotoPickerVc{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_isPushPhotoPickerVc,
+                             [NSNumber numberWithBool:isPushPhotoPickerVc],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,strong)NSMutableArray *selectedAssets;
+-(void)setSelectedAssets:(NSMutableArray *)selectedAssets{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_selectedAssets,
+                             selectedAssets,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(NSMutableArray *)selectedAssets{
@@ -161,6 +225,13 @@ static char *BaseVC_TZImagePickerController_asset;
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return SelectedAssets;
 }
+#pragma mark —— @property(nonatomic,strong)NSMutableArray *selectedPhotos;
+-(void)setSelectedPhotos:(NSMutableArray *)selectedPhotos{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_selectedPhotos,
+                             selectedPhotos,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 -(NSMutableArray *)selectedPhotos{
     NSMutableArray *SelectedPhotos = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_selectedPhotos);
@@ -172,80 +243,55 @@ static char *BaseVC_TZImagePickerController_asset;
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return SelectedPhotos;
 }
-
+#pragma mark —— @property(nonatomic,strong)UIImage *photo;
 -(UIImage *)photo{
     UIImage *Photo = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_photo);
     if (!Photo) {
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_photo,
-                                 Photo,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
     }return Photo;
 }
 
+-(void)setPhoto:(UIImage *)photo{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_photo,
+                             photo,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)PHAsset *asset;
 -(PHAsset *)asset{
-    PHAsset *Asset = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_asset);
-    if (!Asset) {
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_asset,
-                                 Asset,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return Asset;
+    PHAsset *ASset = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_asset);
+    if (!ASset) {
+        
+    }return ASset;
 }
 
--(NSInteger)maxImagesCount{
-    NSInteger MaxImagesCount = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_maxImagesCount) integerValue];
-    if (MaxImagesCount == 0) {
-        MaxImagesCount = 1;
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_maxImagesCount,
-                                 [NSNumber numberWithInteger:MaxImagesCount],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return MaxImagesCount;
+-(void)setAsset:(PHAsset *)asset{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_asset,
+                             asset,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
--(NSInteger)columnNumber{
-    NSInteger ColumnNumber = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_columnNumber) integerValue];
-    if (ColumnNumber == 0) {
-        ColumnNumber = 1;
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_columnNumber,
-                                 [NSNumber numberWithInteger:ColumnNumber],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return ColumnNumber;
-}
-
--(BOOL)isPushPhotoPickerVc{
-    BOOL IsPushPhotoPickerVc = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_isPushPhotoPickerVc) boolValue];
-    if (!IsPushPhotoPickerVc) {
-        IsPushPhotoPickerVc = YES;
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_isPushPhotoPickerVc,
-                                 [NSNumber numberWithBool:IsPushPhotoPickerVc],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return IsPushPhotoPickerVc;
-}
-
+#pragma mark —— @property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
 -(TZImagePickerControllerType)tzImagePickerControllerType{
-    NSInteger tZImagePickerControllerType = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_tzImagePickerControllerType) integerValue];
-    if (tZImagePickerControllerType == 0) {
-//        tZImagePickerControllerType = 1;
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_tzImagePickerControllerType,
-                                 [NSNumber numberWithInteger:tZImagePickerControllerType],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return tZImagePickerControllerType;
+    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_tzImagePickerControllerType) integerValue];
 }
 
--(NSInteger)index{
-    NSInteger Index = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_index) integerValue];
-    if (Index == 0) {
-        Index = 1;
-        objc_setAssociatedObject(self,
-                                 BaseVC_TZImagePickerController_index,
-                                 [NSNumber numberWithInteger:Index],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return Index;
+-(void)setTzImagePickerControllerType:(TZImagePickerControllerType)tzImagePickerControllerType{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_tzImagePickerControllerType,
+                             [NSNumber numberWithInteger:tzImagePickerControllerType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,copy)MKDataBlock picBlock;
+-(MKDataBlock)picBlock{
+    return objc_getAssociatedObject(self, BaseVC_TZImagePickerController_picBlock);
+}
+
+-(void)setPicBlock:(MKDataBlock)picBlock{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_picBlock,
+                             picBlock,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

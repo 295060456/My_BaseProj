@@ -11,7 +11,7 @@
 
 @implementation BaseVC (AlertController)
 
-static char *BaseVC_AlertController;
+//static char *BaseVC_AlertController = "BaseVC_AlertController";
 
 ///屏幕正中央 isSeparateStyle如果为YES 那么有实质性进展的键位在右侧，否则在左侧
 -(void)alertControllerStyle:(AlertControllerStyle)alertControllerStyle

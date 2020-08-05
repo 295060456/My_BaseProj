@@ -30,8 +30,7 @@ UIGestureRecognizerDelegate
 
 #pragma mark ——RACSignal
 @property(nonatomic,strong)RACSignal *reqSignal;
-#pragma mark —— BaseVC+FSCustomButton
-@property(nonatomic,strong)FSCustomButton *backBtnBaseVC;
+
 @property(nonatomic,assign)BOOL isRequestFinish;//数据请求是否完毕 !!!
 @property(nonatomic,copy)void (^ReachableViaWWANNetWorking)(void);//3G网络
 @property(nonatomic,copy)void (^ReachableViaWiFiNetWorking)(void);//WiFi
@@ -40,7 +39,11 @@ UIGestureRecognizerDelegate
 @property(nonatomic,copy)void (^ReachableNetWorking)(void);//有网络
 #pragma mark —— BaseVC+TZImagePickerController
 
-@property(nonatomic,copy)MKDataBlock picBlock;
+#pragma mark —— BaseVC+MJRefresh
+@property(nonatomic,strong)MJRefreshAutoGifFooter *tableViewFooter;
+@property(nonatomic,strong)MJRefreshGifHeader *tableViewHeader;
+@property(nonatomic,strong)MJRefreshBackNormalFooter *refreshBackNormalFooter;
+
 #pragma mark —— Sys_LifeCycle
 -(void)VCwillComingBlock:(MKDataBlock)block;//即将进来
 -(void)VCdidComingBlock:(MKDataBlock)block;//已经进来

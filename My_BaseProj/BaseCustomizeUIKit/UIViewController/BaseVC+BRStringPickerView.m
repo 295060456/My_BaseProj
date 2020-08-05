@@ -11,9 +11,10 @@
 
 @implementation BaseVC (BRStringPickerView)
 
-static char *BaseVC_BRStringPickerView_stringPickerView;
-static char *BaseVC_BRStringPickerView_brStringPickerMode;
-static char *BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr;
+static char *BaseVC_BRStringPickerView_stringPickerView = "BaseVC_BRStringPickerView_stringPickerView";
+static char *BaseVC_BRStringPickerView_brStringPickerMode = "BaseVC_BRStringPickerView_brStringPickerMode";
+static char *BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr = "BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr";
+static char *BaseVC_BRStringPickerView_brStringPickerViewBlock = "BaseVC_BRStringPickerView_brStringPickerViewBlock";
 
 @dynamic stringPickerView;
 @dynamic brStringPickerMode;
@@ -23,7 +24,8 @@ static char *BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr;
 -(void)BRStringPickerViewBlock:(MKDataBlock)block{
     self.brStringPickerViewBlock = block;
 }
-#pragma mark —— lazyLoad
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)BRStringPickerView *stringPickerView;
 -(BRStringPickerView *)stringPickerView{
     BRStringPickerView *StringPickerView = objc_getAssociatedObject(self, BaseVC_BRStringPickerView_stringPickerView);
     if (!StringPickerView) {
@@ -50,26 +52,51 @@ static char *BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr;
     }return StringPickerView;
 }
 
+-(void)setStringPickerView:(BRStringPickerView *)stringPickerView{
+    objc_setAssociatedObject(self,
+                             BaseVC_BRStringPickerView_stringPickerView,
+                             stringPickerView,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
 -(BRStringPickerMode)brStringPickerMode{
-    NSInteger BrStringPickerMode = [objc_getAssociatedObject(self, BaseVC_BRStringPickerView_brStringPickerMode) integerValue];
-    if (BrStringPickerMode == 0) {
-//        BrStringPickerMode = 1;
-        objc_setAssociatedObject(self,
-                                 BaseVC_BRStringPickerView_brStringPickerMode,
-                                 [NSNumber numberWithInteger:BrStringPickerMode],
-                                 OBJC_ASSOCIATION_ASSIGN);
-    }return BrStringPickerMode;
+    return [objc_getAssociatedObject(self, BaseVC_BRStringPickerView_brStringPickerMode) integerValue];
 }
 
+-(void)setBrStringPickerMode:(BRStringPickerMode)brStringPickerMode{
+    objc_setAssociatedObject(self,
+                             BaseVC_BRStringPickerView_brStringPickerMode,
+                             [NSNumber numberWithInteger:brStringPickerMode],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,copy)MKDataBlock brStringPickerViewBlock;
+-(MKDataBlock)brStringPickerViewBlock{
+    return objc_getAssociatedObject(self, BaseVC_BRStringPickerView_brStringPickerViewBlock);
+}
+
+-(void)setBrStringPickerViewBlock:(MKDataBlock)brStringPickerViewBlock{
+    objc_setAssociatedObject(self,
+                             BaseVC_BRStringPickerView_brStringPickerViewBlock,
+                             brStringPickerViewBlock,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSArray *BRStringPickerViewDataMutArr;
 -(NSArray *)BRStringPickerViewDataMutArr{
-    NSArray *bRStringPickerViewDataMutArr = objc_getAssociatedObject(self, BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr);
-    if (!bRStringPickerViewDataMutArr) {
-        bRStringPickerViewDataMutArr = NSArray.array;
+    NSArray *brStringPickerViewDataMutArr = objc_getAssociatedObject(self, BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr);
+    if (!brStringPickerViewDataMutArr) {
+        brStringPickerViewDataMutArr = NSArray.array;
         objc_setAssociatedObject(self,
                                  BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr,
-                                 bRStringPickerViewDataMutArr,
+                                 brStringPickerViewDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return bRStringPickerViewDataMutArr;
+    }return brStringPickerViewDataMutArr;
+}
+
+-(void)setBRStringPickerViewDataMutArr:(NSArray *)BRStringPickerViewDataMutArr{
+    objc_setAssociatedObject(self,
+                             BaseVC_BRStringPickerView_BRStringPickerViewDataMutArr,
+                             BRStringPickerViewDataMutArr,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)netWorking_MKCommentDelCommentPOSTWithCommentId:(NSString *)commentId
                                                     ID:(NSString *)ID;
 
+///POST 点赞或取消点赞
+-(void)netWorking_MKCommentSetPraisePOSTWithCommentId:(NSString *)commentId
+                                                   ID:(NSString *)ID
+                                               sender:(RBCLikeButton *)sender;
+
 @end
 
 NS_ASSUME_NONNULL_END

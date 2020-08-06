@@ -32,6 +32,7 @@ UITextFieldDelegate
         self.headerImgV.alpha = 1;
 //        self.textField.alpha = 1;
         self.textField.isInputting = NO;
+        self.isReturnBtnSelect = NO;
     }return self;
 }
 ///发送
@@ -50,12 +51,15 @@ UITextFieldDelegate
 -(void)sendBtnClickEvent:(UIButton *)sender{
     self.textField.isInputting = NO;
     [self.textField endEditing:YES];
-    if (self.inputViewActionBlock) {
-        self.inputViewActionBlock(self.textField);
+    //_textField.enablesReturnKeyAutomatically = YES;的时候，以下block 无意义
+    if (!self.textField.enablesReturnKeyAutomatically) {
+        if (self.inputViewActionBlock) {
+            self.inputViewActionBlock(self.textField);
+        }
     }
 }
 
--(void)AAA{
+-(void)showSendBtn{
     self.sendBtn.alpha = 1;
     [UIView animateWithDuration:3
                      animations:^{
@@ -69,7 +73,7 @@ UITextFieldDelegate
     }];
 }
 
--(void)BBB{
+-(void)hideSendBtn{
     self.sendBtn.alpha = 0;
     [UIView animateWithDuration:3
                      animations:^{
@@ -87,7 +91,7 @@ UITextFieldDelegate
 - (void)cjTextFieldDeleteBackward:(ZYTextField *)textField{//已经删除的结果
     self.textField.isInputting = YES;
     if ([NSString isNullString:textField.text] && self.sendBtn.alpha) {
-        [self BBB];
+        [self hideSendBtn];
     }
     if (self.isInputtingActionBlock) {
         self.isInputtingActionBlock(self.textField);
@@ -96,6 +100,7 @@ UITextFieldDelegate
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
 - (BOOL)textFieldShouldBeginEditing:(ZYTextField *)textField{
+    self.textField.text = self.tfContentStr;
     self.textField.isInputting = YES;
     if (self.isInputtingActionBlock) {
         self.isInputtingActionBlock(self.textField);
@@ -103,6 +108,7 @@ UITextFieldDelegate
 }
 //告诉委托人在指定的文本字段中开始编辑
 - (void)textFieldDidBeginEditing:(ZYTextField *)textField{
+    self.textField.text = self.tfContentStr;
     self.textField.isInputting = YES;
     if (self.isInputtingActionBlock) {
         self.isInputtingActionBlock(self.textField);
@@ -113,14 +119,18 @@ UITextFieldDelegate
 //}
 //告诉委托人对指定的文本字段停止编辑
 - (void)textFieldDidEndEditing:(ZYTextField *)textField{
+    self.tfContentStr = textField.text;
     self.textField.isInputting = NO;
-    if (self.isInputViewActiveBlock) {
-        self.isInputViewActiveBlock(textField);
+    //_textField.enablesReturnKeyAutomatically = YES;的时候，以下block 无意义
+    if (!self.textField.enablesReturnKeyAutomatically) {
+        if (self.inputViewActionBlock) {
+            self.inputViewActionBlock(textField);
+        }
     }
     if (![NSString isNullString:textField.text]) {
-        [self AAA];
+        [self showSendBtn];
     }else{
-        [self BBB];
+        [self hideSendBtn];
     }
 }
 //告诉委托人对指定的文本字段停止编辑
@@ -146,8 +156,12 @@ replacementString:(NSString *)string{//实现逐词搜索
 //询问委托人文本字段是否应处理按下返回按钮
 - (BOOL)textFieldShouldReturn:(ZYTextField *)textField{
     self.textField.isInputting = NO;
-    if (self.inputViewActionBlock) {
-        self.inputViewActionBlock(textField);
+    self.isReturnBtnSelect = YES;
+    //_textField.enablesReturnKeyAutomatically = YES;的时候，以下block 无意义
+    if (!self.textField.enablesReturnKeyAutomatically) {
+        if (self.inputViewActionBlock) {
+            self.inputViewActionBlock(textField);
+        }
     }return YES;
 }
 #pragma mark —— lazyLoad
@@ -174,7 +188,9 @@ replacementString:(NSString *)string{//实现逐词搜索
         _textField.returnKeyType = UIReturnKeySend;//Done按钮
         _textField.delegate = self;
         _textField.cj_delegate = self;
-//        _textField.inputView;//自定义
+        _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//        _textField.enablesReturnKeyAutomatically = YES;//
+//        _textField.inputView;//自定义 系统的键盘你是拿不到的 一切为了安全
         _textField.placeholder = @"我也说几句...";
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {

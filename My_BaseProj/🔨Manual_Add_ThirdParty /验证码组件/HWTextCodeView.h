@@ -16,12 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 当前输入的内容
 @property (nonatomic, copy, readonly) NSString *code;
-
+@property (nonatomic, copy)MKDataBlock HWTextCodeViewBlock;
 - (instancetype)initWithCount:(NSInteger)count
                        margin:(CGFloat)margin;
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
+
+-(void)HWTextCodeViewActionBlock:(MKDataBlock)hwTextCodeViewBlock;
 
 @end
 
@@ -35,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) UIView *colorView;
 
-- (void)HWTC_lineViewAnimation;
+- (void)animation;
 
 @end
 

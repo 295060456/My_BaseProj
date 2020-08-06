@@ -23,6 +23,7 @@ UITableViewDelegate
 >
 
 @property(nonatomic,strong)UIBarButtonItem *closeItem;
+@property(nonatomic,strong)UIButton *closeBtn;
 
 @property(nonatomic,strong)MKFirstCommentModel *firstCommentModel;
 @property(nonatomic,strong)MKChildCommentModel *childCommentModel;
@@ -57,22 +58,11 @@ UITableViewDelegate
     self.tableView.alpha = 1;
     [self netWorking_MKCommentQueryInitListGET];
 }
-
+//里面包含了网络请求
 -(void)likeBtnClickAction:(RBCLikeButton *)sender{
     //1.记录是否是点赞操作
     BOOL isThump = !sender.isSelected;
-    //2.点赞量,正式运用中可自定义(从服务器获取当前的点赞量)
-    NSInteger num = sender.thumpNum;
-    //3.计算点赞后数值
-    if (isThump) {
-        //点赞后的点赞数
-        num = num + 1;
-    }else{
-        //取消点赞后的点赞数
-        num = num - 1;
-    }
-    //4.调用点赞动画,设置点赞button的点赞数值
-    [sender setThumbWithSelected:isThump thumbNum:num animation:YES];
+    sender.userInteractionEnabled = NO;//防止多次点击
     //5.网络请求
     if (isThump) {//如果是点赞操作
         //发起网络请求,告知服务器APP进行了点赞操作,服务器返回是否成功的结果为isRequestSuccess
@@ -85,11 +75,9 @@ UITableViewDelegate
             //改变本地点赞按钮model的点赞状态
             status = RBCLikeButtonStatusThumbsing;
             //开始点赞网络请求
-            BOOL isRequestSuccess = YES;//请求成功
-            if (!isRequestSuccess) {//如果操作失败(没有网络或接口异常)
-                //取消刚才的点赞操作导致的数值变换和点赞按钮的状态变化
-                [sender cancelLike];
-            }
+            [self netWorking_MKCommentSetPraisePOSTWithCommentId:self.commentId
+                                                              ID:self.ID
+                                                          sender:sender];
         }
     }else{//如果是取消点赞操作
         //发起网络请求,告知服务器APP进行了取消点赞操作,服务器的返回结果为isRequestSuccess
@@ -99,13 +87,9 @@ UITableViewDelegate
         if (status != RBCLikeButtonStatusCancelThumbsing
             && status != RBCLikeButtonStatusThumbsing
             && status != RBCLikeButtonStatusHadThumbs){
-            BOOL isRequestSuccess = YES;//请求成功
-//            BOOL isRequestSuccess = NO;//请求失败
-            status = RBCLikeButtonStatusCancelThumbsing;
-            if (!isRequestSuccess) {//如果操作失败(没有网络或接口异常)
-                //恢复到点赞之前的点赞数值和点赞按钮的状态变化
-                [sender recoverLike];
-            }
+            [self netWorking_MKCommentSetPraisePOSTWithCommentId:self.commentId
+                                                              ID:self.ID
+                                                          sender:sender];
         }
     }
 }
@@ -181,6 +165,7 @@ UITableViewDelegate
 }
 #pragma mark —— 点击事件
 -(void)closeBtnClickEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
     if (super.block) {
         super.block(sender);
     }
@@ -193,7 +178,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:LoadMoreTBVCell.class]) {
+    if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:LoadMoreTBVCell.class]) {//加载更多
         MKFirstCommentModel *firstCommentModel = self.firstCommentModelMutArr[indexPath.section];
         firstCommentModel.randShow += LoadDataNum;//randShow 初始值是 preMax
         if (firstCommentModel.rand > firstCommentModel.randShow) {//还有数据
@@ -216,12 +201,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //        [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]
     //                 withRowAnimation:UITableViewRowAnimationNone];
         [self.tableView reloadData];
-    }else if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:InfoTBVCell.class]){
+    }else if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:InfoTBVCell.class]){// 有内容
         InfoTBVCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         self.childCommentModel = cell.childCommentModel;
         self.commentId = self.childCommentModel.commentId;
         self.ID = self.childCommentModel.ID;
-//        self.inputContentStr;
+        @weakify(self)
+        [cell action:^(id data) {
+            @strongify(self)
+            [self likeBtnClickAction:cell.LikeBtn];
+        }];
         [self alertControllerStyle:SYS_AlertController
               showActionSheetTitle:nil
                            message:nil
@@ -309,14 +298,12 @@ viewForHeaderInSection:(NSInteger)section{
                                                               withData:firstCommentModel];
         @weakify(self)
         [header actionBlock:^(id data) {
+            self.commentId = firstCommentModel.commentId;
+            self.ID = firstCommentModel.ID;
             @strongify(self)
             if ([data isKindOfClass:NSDictionary.class]) {//
                 NSDictionary *dic = (NSDictionary *)data;
                 if ([dic[@"sender"] isMemberOfClass:UIControl.class]){
-                    NSLog(@"");
-                    self.commentId = firstCommentModel.commentId;
-                    self.ID = firstCommentModel.ID;
-//                    self.inputContentStr;
                     if ([[MKPublickDataManager sharedPublicDataManage].mkLoginModel.uid isEqualToString:firstCommentModel.userId]) {
                         [self alertControllerStyle:SYS_AlertController
                                 showAlertViewTitle:@"确认删除自己的评论？"
@@ -377,23 +364,25 @@ viewForHeaderInSection:(NSInteger)section{
             @strongify(self)
             if ([data isKindOfClass:ZYTextField.class]) {
                 ZYTextField *tf = (ZYTextField *)data;
-                //校验空字符串
-                if (![NSString isNullString:tf.text]) {
-                    self.inputContentStr = tf.text;
-                    //如果登录,那么直接发送
-                    if (1) {
-                        [self netWorking_MKCommentVideoPOST];
+                if (!self.closeBtn.selected) {
+                    //校验空字符串
+                    if (![NSString isNullString:tf.text]) {
+                        self.inputContentStr = tf.text;
+                        //如果登录,那么直接发送
+                        if (1) {
+                            [self netWorking_MKCommentVideoPOST];
+                        }
+                    }else{
+                        [self alertControllerStyle:SYS_AlertController
+                                showAlertViewTitle:@"总的说点什么吧"
+                                           message:nil
+                                   isSeparateStyle:NO
+                                       btnTitleArr:@[@"好哒"]
+                                    alertBtnAction:@[@"Sure"]
+                                      alertVCBlock:^(id data) {
+                                        //DIY
+                        }];
                     }
-                }else{
-                    [self alertControllerStyle:SYS_AlertController
-                            showAlertViewTitle:@"总的说点什么吧"
-                                       message:nil
-                               isSeparateStyle:NO
-                                   btnTitleArr:@[@"好哒"]
-                                alertBtnAction:@[@"Sure"]
-                                  alertVCBlock:^(id data) {
-                        //DIY
-                    }];
                 }
             }
         }];
@@ -456,18 +445,23 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
 
 -(UIBarButtonItem *)closeItem{
     if (!_closeItem) {
-        UIButton *btn = UIButton.new;
-        btn.frame = CGRectMake(0,
-                               0,
-                               44,
-                               44);
-        [btn setImage:kIMG(@"Close")
-             forState:UIControlStateNormal];
-        [btn addTarget:self
-                action:@selector(closeBtnClickEvent:)
-      forControlEvents:UIControlEventTouchUpInside];
-        _closeItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        _closeItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeBtn];
     }return _closeItem;
+}
+
+-(UIButton *)closeBtn{
+    if (!_closeBtn) {
+        _closeBtn = UIButton.new;
+        _closeBtn.frame = CGRectMake(0,
+                                     0,
+                                     44,
+                                     44);
+        [_closeBtn setImage:kIMG(@"Close")
+                   forState:UIControlStateNormal];
+        [_closeBtn addTarget:self
+                      action:@selector(closeBtnClickEvent:)
+            forControlEvents:UIControlEventTouchUpInside];
+    }return _closeBtn;
 }
 
 -(NSMutableArray<MKFirstCommentModel *> *)firstCommentModelMutArr{

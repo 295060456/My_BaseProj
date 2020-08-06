@@ -14,7 +14,7 @@
 #import "BaseVC+AFNReachability.h"
 #import "BaseVC+FSCustomButton.h"
 #import "BaseVC+JXCategoryListContentViewDelegate.h"
-#import "BaseVC+BRStringPickerView.h"
+#import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
 
 @interface BaseVC ()

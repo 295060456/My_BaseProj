@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InfoTBVCell : UITableViewCell
 
+@property(nonatomic,strong)RBCLikeButton *LikeBtn;
 @property(nonatomic,strong)MKChildCommentModel *childCommentModel;
 
 +(instancetype)cellWith:(UITableView *)tableView;

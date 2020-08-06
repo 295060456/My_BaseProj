@@ -24,6 +24,7 @@
 @property(nonatomic,assign)CGFloat CommentPopUpVC_EditY;//编辑状态下，键盘弹出的时候的CommentPopUpVC.view的高度
 @property(nonatomic,assign)BOOL isCommentPopUpVCOpen;//当前CommentPopUpVC.view 是否开合?
 @property(nonatomic,assign)CGFloat liftingHeight;
+@property(nonatomic,assign)BOOL isBackFromPopAdVC;//是否从广告页pop回来的？
 
 @end
 
@@ -83,6 +84,7 @@
         self.liftingHeight = SCREEN_HEIGHT / 2;
         self.CommentPopUpVC_Y = 0.0;
         self.CommentPopUpVC_EditY = 0.0f;
+        self.isBackFromPopAdVC = NO;
     }return self;
 }
 
@@ -142,10 +144,19 @@
     CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];//(origin = (x = 0, y = 896), size = (width = 414, height = 346))
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];//(origin = (x = 0, y = 550), size = (width = 414, height = 346))
     CGFloat KeyboardOffsetY = beginFrame.origin.y - endFrame.origin.y;
+    NSLog(@"MMM beginFrameY = %f,endFrameY = %f",beginFrame.origin.y,endFrame.origin.y);
     if (self.isCommentPopUpVCOpen && self.commentPopUpVC.inputView.textField.isInputting) {//第一次进这个分支，初始化
         if (self.isCommentPopUpVCOpen) {
             if (self.CommentPopUpVC_EditY) {
-                self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;
+                if (_commentPopUpVC.inputView.textField.isInputting && !_commentPopUpVC.inputView.isReturnBtnSelect) {
+                    if (endFrame.origin.y == SCREEN_HEIGHT) {
+                        self.commentPopUpVC.view.mj_y = self.liftingHeight;//3
+                    }else{
+                        self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//2
+                    }
+                }else{
+                    self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;
+                }
             }else{
                 self.commentPopUpVC.view.mj_y -= KeyboardOffsetY;
                 self.CommentPopUpVC_Y = _commentPopUpVC.view.mj_y;
@@ -158,12 +169,13 @@
         }
     }else if (!self.isCommentPopUpVCOpen && self.commentPopUpVC.inputView.textField.isInputting){
         //不存在这种可能性
+        NSLog(@"");
     }else if (self.isCommentPopUpVCOpen && !self.commentPopUpVC.inputView.textField.isInputting){
         if (self.isCommentPopUpVCOpen) {
             if (self.commentPopUpVC.inputView.textField.isInputting) {
                 self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;//self.CommentPopUpVC_Y;
             }else{
-                self.commentPopUpVC.view.mj_y = self.liftingHeight;
+                self.commentPopUpVC.view.mj_y = self.liftingHeight;//1
             }
         }else{
             self.commentPopUpVC.view.mj_y = self.liftingHeight;
@@ -177,10 +189,21 @@
     }else{}
     NSLog(@"");
 }
+
 - (void)keyboardDidChangeFrameNotification:(NSNotification *)notification{
     NSLog(@"键盘弹出");//self.commentPopUpVC.view.frame = (0 102; 414 448);
     NSLog(@"键盘关闭");//self.commentPopUpVC.view.frame = (0 448; 414 448);
 }
+
+-(void)GiveUpComment{
+    [self.view endEditing:YES];
+    [self willClose_vertical];
+}
+
+-(void)Sorry{
+    self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;
+}
+
 #pragma mark —— PopUpVCDelegate
 - (void)closeComment {
 
@@ -205,11 +228,11 @@
     [UIView animateWithDuration:0.3f
                      animations:^{
 //        [self.commentPopUpVC.inputView endEditing:YES];
-        self.commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
+        self->_commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
     } completion:^(BOOL finished) {
-        [self.commentPopUpVC.view endEditing:YES];
+        [self->_commentPopUpVC.view endEditing:YES];
         //不知为何，这个地方的约束会出现问题，所以在这里写上一句，锁定约束
-        self.commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
+        self->_commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
         //vc的view减1 这里面避免用self.属性，因为害怕走属性懒加载
         [self->_commentPopUpVC.view removeFromSuperview];
         //vc为0
@@ -223,9 +246,10 @@
 -(void)willClose_horizont{
     [UIView animateWithDuration:0.3f
                      animations:^{
-        [self.commentPopUpVC.inputView endEditing:YES];
-        self.commentPopUpVC.view.x = SCREEN_WIDTH;
+//        [self->_commentPopUpVC.inputView endEditing:YES];
+        self->_commentPopUpVC.view.x = SCREEN_WIDTH;
     } completion:^(BOOL finished) {
+        [self->_commentPopUpVC.view endEditing:YES];
         //vc的view减1 这里面避免用self.属性，因为害怕走属性懒加载
         [self->_commentPopUpVC.view removeFromSuperview];
         //vc为0
@@ -268,6 +292,24 @@
         _commentPopUpVC.view.mj_h = self.liftingHeight;
         
         @weakify(self)
+        //已经发送评论网络请求成功
+        [_commentPopUpVC commentPopUpActionBlock:^(id data) {
+            NSLog(@"");
+            @strongify(self)
+            if ([data isKindOfClass:ZYTextField.class]) {
+                if (!self.commentPopUpVC.inputView.textField.isInputting) {
+                    //仅仅键盘消失,commentPopUpVC还在
+//                    [self.commentPopUpVC.view endEditing:YES];
+//                    [self willClose_vertical];//?
+                    //发送按钮隐藏
+                    [self.view endEditing:YES];
+                    [self.commentPopUpVC.inputView hideSendBtn];
+                    self.commentPopUpVC.view.mj_y = self.liftingHeight;
+                }else{
+//                    self.commentPopUpVC.view.mj_y = 102;//self.CommentPopUpVC_EditY; CommentPopUpVC_Y
+                }
+            }
+        }];
         //点击 或者 拖拽触发事件
         [_commentPopUpVC popUpActionBlock:^(id data) {
             if ([data isKindOfClass:UIButton.class]) {
@@ -297,21 +339,6 @@
                 }else if (moveDirection == MoveDirection_vertical_up){
                     [self willOpen];
                 }else{}
-            }
-        }];
-        //已经发送评论网络请求成功
-        [_commentPopUpVC commentPopUpActionBlock:^(id data) {
-            NSLog(@"");
-            @strongify(self)
-            if ([data isKindOfClass:ZYTextField.class]) {
-                if (!self.commentPopUpVC.inputView.textField.isInputting) {
-                    //仅仅键盘消失,commentPopUpVC还在
-//                    [self.commentPopUpVC.view endEditing:YES];
-//                    [self willClose_vertical];//?
-                    //发送按钮隐藏
-                    [self.commentPopUpVC.inputView BBB];
-                    self.commentPopUpVC.view.mj_y = self.liftingHeight;
-                }
             }
         }];
     }return _commentPopUpVC;

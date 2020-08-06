@@ -29,6 +29,13 @@
     
 }
 
+///POST 点赞或取消点赞
+-(void)netWorking_MKCommentSetPraisePOSTWithCommentId:(NSString *)commentId
+                                                   ID:(NSString *)ID
+                                               sender:(RBCLikeButton *)sender{
+    
+}
+
 @end
 
 //{

@@ -46,7 +46,7 @@
     [self addSubview:textField];
     self.textField = textField;
     UIButton *maskView = [UIButton new];
-    maskView.backgroundColor = [UIColor whiteColor];
+    maskView.backgroundColor = kClearColor;
     [maskView addTarget:self
                  action:@selector(clickMaskView)
        forControlEvents:(UIControlEventTouchUpInside)];
@@ -87,6 +87,10 @@
     self.maskView.frame = self.bounds;
 }
 
+-(void)HWTextCodeViewActionBlock:(MKDataBlock)hwTextCodeViewBlock{
+    self.HWTextCodeViewBlock = hwTextCodeViewBlock;
+}
+
 #pragma mark - 编辑改变
 - (void)tfEditingChanged:(UITextField *)textField{
     if (textField.text.length > self.itemCount) {
@@ -108,12 +112,13 @@
     // 动画效果，这里是删除时，不要动画，输入时显示动画
     if (self.tempStr.length < textField.text.length) {
         if (textField.text == nil || textField.text.length <= 0) {
-            [self.lines.firstObject HWTC_lineViewAnimation];
+            [self.lines.firstObject animation];
         } else if (textField.text.length >= self.itemCount) {
-            [self.lines.lastObject HWTC_lineViewAnimation];
+            [self.lines.lastObject animation];
             [self animation:self.labels.lastObject];
         } else {
-            [self.lines[self.textField.text.length - 1] HWTC_lineViewAnimation];
+            HWTC_lineView *lineView = self.lines[self.textField.text.length - 1];
+            [lineView animation];
             UILabel *ff = self.labels[self.textField.text.length - 1];
             [self animation:ff];
         }
@@ -122,6 +127,9 @@
     self.tempStr = textField.text;
     
     if (textField.text.length >= self.itemCount) {
+        if (self.HWTextCodeViewBlock) {
+            self.HWTextCodeViewBlock(textField);
+        }
         [textField resignFirstResponder];
     }
 }
@@ -186,7 +194,7 @@
     self.colorView.backgroundColor = backgroundColor;
 }
 
-- (void)HWTC_lineViewAnimation{
+- (void)animation{
     [self.colorView.layer removeAllAnimations];
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale.x"];
     animation.duration = 0.18;

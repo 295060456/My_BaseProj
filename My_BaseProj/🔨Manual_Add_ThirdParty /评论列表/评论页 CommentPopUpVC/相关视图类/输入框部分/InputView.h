@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface InputView : UIView
 
 @property(nonatomic,strong)ZYTextField *textField;
+@property(nonatomic,assign)BOOL isReturnBtnSelect;
+@property(nonatomic,strong)NSString *tfContentStr;//键盘失去焦点的时候，会自动清除键盘里面的已经输入的内容
 
--(void)BBB;
+-(void)hideSendBtn;
 ///发送
 -(void)actionInputViewBlock:(MKDataBlock)inputViewActionBlock;
 ///删除

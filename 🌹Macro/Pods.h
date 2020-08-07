@@ -64,6 +64,6 @@
 #import "YQImageCompressTool.h"
 #import <TXFileOperation.h>
 #import <LYEmptyView/LYEmptyViewHeader.h>
-
+#import "JPImageresizerView.h"
 
 #endif /* Pods_h */

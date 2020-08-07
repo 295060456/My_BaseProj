@@ -84,6 +84,7 @@ PODS:
     - JJException/Swizzle
   - JJException/Swizzle (0.2.8)
   - JJStockView (0.0.7)
+  - JPImageresizerView (1.7.5)
   - JSONModel (1.8.0)
   - JXCategoryView (1.5.6)
   - ksyhttpcache (1.2.4):
@@ -215,6 +216,7 @@ DEPENDENCIES:
   - JDStatusBarNotification
   - JJException
   - JJStockView
+  - JPImageresizerView
   - JSONModel
   - JXCategoryView
   - ksyhttpcache
@@ -291,6 +293,7 @@ SPEC REPOS:
     - JDStatusBarNotification
     - JJException
     - JJStockView
+    - JPImageresizerView
     - JSONModel
     - JXCategoryView
     - ksyhttpcache
@@ -369,6 +372,7 @@ SPEC CHECKSUMS:
   JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
   JJException: 2c21abbd65fb977c0acc191ec2bfbb7a2aa0c540
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
+  JPImageresizerView: c23ae0d67ea61da374c8a16d3f55982111375c10
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   JXCategoryView: 603ccd8277a89b1a73e9cedb9d8ed4b294576008
   ksyhttpcache: b7f7d9b215e74b49deb4b138e59b3d3b80a05f3d
@@ -417,6 +421,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 2b08cbbaa457283a0eae5cf658e5cab35f929a89
+PODFILE CHECKSUM: b523970b9604f5d92b935f0c5cd8d570660e6bc2
 
 COCOAPODS: 1.9.3

@@ -16,6 +16,7 @@
 #import "BaseVC+JXCategoryListContentViewDelegate.h"
 #import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
+#import "BaseVC+JPImageresizerView.h"
 
 @interface BaseVC ()
 

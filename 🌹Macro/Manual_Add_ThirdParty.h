@@ -64,6 +64,7 @@
 //#import "YYTimer+Block.h"
 #import "EmptyView.h"
 #import "Lottie.h"
+#import "CSXImageCompressTool.h"
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"
@@ -94,6 +95,7 @@
 #import "BaseVC+JXCategoryListContentViewDelegate.h"
 #import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
+#import "BaseVC+JPImageresizerView.h"
 
 #import "AppDelegate.h"
 #import "SceneDelegate.h"

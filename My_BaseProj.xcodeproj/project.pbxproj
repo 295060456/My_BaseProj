@@ -3622,6 +3622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MonkeyKingVideo.My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};
 			name = Debug;
 		};
@@ -3646,6 +3647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "MonkeyKingVideo.My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};
 			name = Release;
 		};

@@ -157,12 +157,8 @@ replacementString:(NSString *)string{//实现逐词搜索
 - (BOOL)textFieldShouldReturn:(ZYTextField *)textField{
     self.textField.isInputting = NO;
     self.isReturnBtnSelect = YES;
-    //_textField.enablesReturnKeyAutomatically = YES;的时候，以下block 无意义
-    if (!self.textField.enablesReturnKeyAutomatically) {
-        if (self.inputViewActionBlock) {
-            self.inputViewActionBlock(textField);
-        }
-    }return YES;
+    [self.textField endEditing:YES];
+    return YES;
 }
 #pragma mark —— lazyLoad
 -(UIImageView *)headerImgV{

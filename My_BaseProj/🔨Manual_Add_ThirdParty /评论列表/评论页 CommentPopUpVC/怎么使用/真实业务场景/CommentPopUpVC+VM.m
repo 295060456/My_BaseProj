@@ -15,13 +15,19 @@
 }
 ///POST 评论视频
 -(void)netWorking_MKCommentVideoPOST{//
-   
+    //如果评论成功
+    self.commentNumStr = @"";
+    self.inputView.tfContentStr = @"";
+    self.inputView.textField.text = @"";
 }
 ///POST 回复评论
 -(void)netWorking_MKCommentReplyCommentPOSTWithCommentId:(NSString *)commentId
                                                       ID:(NSString *)ID
                                                  content:(NSString *)content{//
-    
+    //如果评论成功
+    self.commentNumStr = @"";
+    self.inputView.tfContentStr = @"";
+    self.inputView.textField.text = @"";
 }
 ///POST 删除评论
 -(void)netWorking_MKCommentDelCommentPOSTWithCommentId:(NSString *)commentId

@@ -145,46 +145,46 @@
     CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];//(origin = (x = 0, y = 550), size = (width = 414, height = 346))
     CGFloat KeyboardOffsetY = beginFrame.origin.y - endFrame.origin.y;
     NSLog(@"MMM beginFrameY = %f,endFrameY = %f",beginFrame.origin.y,endFrame.origin.y);
-    if (self.isCommentPopUpVCOpen && self.commentPopUpVC.inputView.textField.isInputting) {//第一次进这个分支，初始化
+    if (self.isCommentPopUpVCOpen && _commentPopUpVC.inputView.textField.isInputting) {//第一次进这个分支，初始化
         if (self.isCommentPopUpVCOpen) {
             if (self.CommentPopUpVC_EditY) {
                 if (_commentPopUpVC.inputView.textField.isInputting && !_commentPopUpVC.inputView.isReturnBtnSelect) {
                     if (endFrame.origin.y == SCREEN_HEIGHT) {
-                        self.commentPopUpVC.view.mj_y = self.liftingHeight;//3
+                        _commentPopUpVC.view.mj_y = self.liftingHeight;//3
                     }else{
-                        self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//2
+                        _commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//2
                     }
                 }else{
-                    self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;
+                    _commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;
                 }
             }else{
-                self.commentPopUpVC.view.mj_y -= KeyboardOffsetY;
+                _commentPopUpVC.view.mj_y -= KeyboardOffsetY;
                 self.CommentPopUpVC_Y = _commentPopUpVC.view.mj_y;
                 self.CommentPopUpVC_EditY = self.CommentPopUpVC_Y;//开始编辑的时候的高度（包含键盘弹出高度）
             }
         }else{
-            self.commentPopUpVC.view.mj_y -= KeyboardOffsetY;
+            _commentPopUpVC.view.mj_y -= KeyboardOffsetY;
             self.CommentPopUpVC_Y = _commentPopUpVC.view.mj_y;
             self.CommentPopUpVC_EditY = self.CommentPopUpVC_Y;//开始编辑的时候的高度（包含键盘弹出高度）
         }
-    }else if (!self.isCommentPopUpVCOpen && self.commentPopUpVC.inputView.textField.isInputting){
+    }else if (!self.isCommentPopUpVCOpen && _commentPopUpVC.inputView.textField.isInputting){
         //不存在这种可能性
         NSLog(@"");
-    }else if (self.isCommentPopUpVCOpen && !self.commentPopUpVC.inputView.textField.isInputting){
+    }else if (self.isCommentPopUpVCOpen && !_commentPopUpVC.inputView.textField.isInputting){
         if (self.isCommentPopUpVCOpen) {
-            if (self.commentPopUpVC.inputView.textField.isInputting) {
-                self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;//self.CommentPopUpVC_Y;
+            if (_commentPopUpVC.inputView.textField.isInputting) {
+                _commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;//self.CommentPopUpVC_Y;
             }else{
-                self.commentPopUpVC.view.mj_y = self.liftingHeight;//1
+                _commentPopUpVC.view.mj_y = self.liftingHeight;//1
             }
         }else{
-            self.commentPopUpVC.view.mj_y = self.liftingHeight;
-            if (!self.commentPopUpVC.isClickExitBtn) {
+            _commentPopUpVC.view.mj_y = self.liftingHeight;
+            if (!_commentPopUpVC.isClickExitBtn) {
                 self.CommentPopUpVC_Y = self.liftingHeight;
             }
         }
-    }else if (!self.isCommentPopUpVCOpen && !self.commentPopUpVC.inputView.textField.isInputting){
-        self.commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
+    }else if (!self.isCommentPopUpVCOpen && !_commentPopUpVC.inputView.textField.isInputting){
+        _commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
         self.CommentPopUpVC_Y = SCREEN_HEIGHT;
     }else{}
     NSLog(@"");
@@ -201,7 +201,7 @@
 }
 
 -(void)Sorry{
-    self.commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;
+    _commentPopUpVC.view.mj_y = self.CommentPopUpVC_EditY;//102;
 }
 
 #pragma mark —— PopUpVCDelegate
@@ -227,7 +227,7 @@
 -(void)willClose_vertical{
     [UIView animateWithDuration:0.3f
                      animations:^{
-//        [self.commentPopUpVC.inputView endEditing:YES];
+//        [_commentPopUpVC.inputView endEditing:YES];
         self->_commentPopUpVC.view.mj_y = SCREEN_HEIGHT;
     } completion:^(BOOL finished) {
         [self->_commentPopUpVC.view endEditing:YES];
@@ -297,25 +297,25 @@
             NSLog(@"");
             @strongify(self)
             if ([data isKindOfClass:ZYTextField.class]) {
-                if (!self.commentPopUpVC.inputView.textField.isInputting) {
+                if (!self->_commentPopUpVC.inputView.textField.isInputting) {
                     //仅仅键盘消失,commentPopUpVC还在
-//                    [self.commentPopUpVC.view endEditing:YES];
+//                    [_commentPopUpVC.view endEditing:YES];
 //                    [self willClose_vertical];//?
                     //发送按钮隐藏
                     [self.view endEditing:YES];
-                    [self.commentPopUpVC.inputView hideSendBtn];
-                    self.commentPopUpVC.view.mj_y = self.liftingHeight;
+                    [self->_commentPopUpVC.inputView hideSendBtn];
+                    self->_commentPopUpVC.view.mj_y = self.liftingHeight;
                 }else{
-//                    self.commentPopUpVC.view.mj_y = 102;//self.CommentPopUpVC_EditY; CommentPopUpVC_Y
+//                    _commentPopUpVC.view.mj_y = 102;//self.CommentPopUpVC_EditY; CommentPopUpVC_Y
                 }
             }
         }];
         //点击 或者 拖拽触发事件
         [_commentPopUpVC popUpActionBlock:^(id data) {
             if ([data isKindOfClass:UIButton.class]) {
-                self.commentPopUpVC.isClickExitBtn = YES;
+                self->_commentPopUpVC.isClickExitBtn = YES;
                 //判断评论框里面是否有值？
-                if ([NSString isNullString:self.commentPopUpVC.inputView.textField.text]) {
+                if ([NSString isNullString:self->_commentPopUpVC.inputView.textField.text]) {
                     [self.view endEditing:YES];
                     [self willClose_vertical];
                 }else{

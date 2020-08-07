@@ -98,11 +98,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-        if (self.isCommentPopUpVCOpen) {
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = YES;
-    }else{
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
-    }
 }
 //这个地方必须用下划线属性而不能用self.属性。因为这两个方法反复调用，会触发懒加载
 -(void)viewWillLayoutSubviews{
@@ -117,11 +112,6 @@
 }
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    if (self.isCommentPopUpVCOpen) {
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = YES;
-    }else{
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
-    }
 }
 
 -(void)keyboard{
@@ -284,6 +274,7 @@
                                            cornerRadii:CGSizeMake(20, 20)];
         [self addChildViewController:_commentPopUpVC];
         [self.view addSubview:_commentPopUpVC.view];
+        [self.view bringSubviewToFront:_commentPopUpVC.view];
         
         //初始化，否则控件是从上落下来的
         _commentPopUpVC.view.mj_y = SCREEN_HEIGHT;

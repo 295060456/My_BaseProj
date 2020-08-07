@@ -54,8 +54,6 @@
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
 		C5748A7D24DD123700A842B2 /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5748A7B24DD123700A842B2 /* BaseVC+JPImageresizerView.m */; };
-		C5748A9324DD34CB00A842B2 /* CSXImageCompressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5748A9124DD34CA00A842B2 /* CSXImageCompressTool.m */; };
-		C5748A9424DD34CB00A842B2 /* readMe in Resources */ = {isa = PBXBuildFile; fileRef = C5748A9224DD34CA00A842B2 /* readMe */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -441,9 +439,6 @@
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C5748A7B24DD123700A842B2 /* BaseVC+JPImageresizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JPImageresizerView.m"; sourceTree = "<group>"; };
 		C5748A7C24DD123700A842B2 /* BaseVC+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+JPImageresizerView.h"; sourceTree = "<group>"; };
-		C5748A9024DD34CA00A842B2 /* CSXImageCompressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSXImageCompressTool.h; sourceTree = "<group>"; };
-		C5748A9124DD34CA00A842B2 /* CSXImageCompressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSXImageCompressTool.m; sourceTree = "<group>"; };
-		C5748A9224DD34CA00A842B2 /* readMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readMe; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -1244,16 +1239,6 @@
 			path = "MJExtension用法";
 			sourceTree = "<group>";
 		};
-		C5748A8F24DD34C100A842B2 /* 图片压缩方案 */ = {
-			isa = PBXGroup;
-			children = (
-				C5748A9224DD34CA00A842B2 /* readMe */,
-				C5748A9024DD34CA00A842B2 /* CSXImageCompressTool.h */,
-				C5748A9124DD34CA00A842B2 /* CSXImageCompressTool.m */,
-			);
-			path = "图片压缩方案";
-			sourceTree = "<group>";
-		};
 		C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1922,7 +1907,6 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
-				C5748A8F24DD34C100A842B2 /* 图片压缩方案 */,
 				C5DD001624D46B3C00307DFA /* LYEmptyView */,
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
@@ -2085,10 +2069,10 @@
 			children = (
 				C5FE9B1124B5F203007B9878 /* UIImage+Extras.h */,
 				C5FE9B0F24B5F203007B9878 /* UIImage+Extras.m */,
-				C5D4FBA224CE88010024A292 /* UIImage+helper.h */,
-				C5D4FBA324CE88010024A292 /* UIImage+helper.m */,
 				C5FE9B1024B5F203007B9878 /* UIImage+YBGIF.h */,
 				C5FE9B0E24B5F203007B9878 /* UIImage+YBGIF.m */,
+				C5D4FBA224CE88010024A292 /* UIImage+helper.h */,
+				C5D4FBA324CE88010024A292 /* UIImage+helper.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -3049,7 +3033,6 @@
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
-				C5748A9424DD34CB00A842B2 /* readMe in Resources */,
 				C5FE9B0024B5F1DC007B9878 /* title3@2x.png in Resources */,
 				C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */,
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
@@ -3203,7 +3186,6 @@
 				C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */,
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
 				C5FE9CB624B5F29C007B9878 /* RSAUtil.m in Sources */,
-				C5748A9324DD34CB00A842B2 /* CSXImageCompressTool.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C5FE9CB824B5F29C007B9878 /* AES.m in Sources */,
 				C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */,

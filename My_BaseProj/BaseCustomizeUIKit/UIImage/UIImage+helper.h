@@ -10,11 +10,12 @@
 #import <CoreImage/CoreImage.h>
 
 @interface UIImage(helper)
-
+///根据字符串生成二维码
 +(UIImage *)createRRcode:(NSString *)sourceString;
-+ (UIImage *)createNonInterpolatedUIImageFormString:(NSString *)string withSize:(CGFloat) size;
-//根据颜色生成图片
-+ (UIImage *)imageWithColor:(UIColor *)color;
+///???
++(UIImage *)createNonInterpolatedUIImageFormString:(NSString *)string
+                                          withSize:(CGFloat)size;
+///根据颜色生成图片
++(UIImage *)imageWithColor:(UIColor *)color;
 
-+ (NSData *)imageZipToData:(UIImage *)newImage;
 @end

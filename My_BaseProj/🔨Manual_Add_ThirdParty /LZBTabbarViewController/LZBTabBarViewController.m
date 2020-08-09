@@ -182,8 +182,8 @@ shouldSelectItemAtIndex:(NSInteger)index{
 - (void)lzb_tabBar:(LZBTabBar *)tabBar
 didSelectItemAtIndex:(NSInteger)index{
     //播放声音
-    [PlaySound playSoundEffect:@"Sound"
-                          type:@"wav"];
+//    [PlaySound playSoundEffect:@"Sound"
+//                          type:@"wav"];
     //震动特效反馈
     [self feedbackGenerator];
     if (index < 0 || index >= self.viewControllers.count)  return;

@@ -151,6 +151,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 
 -(NSMutableArray<UIViewController *> *)viewControllerMutArr{
     if (!_viewControllerMutArr) {
+        _viewControllerMutArr = NSMutableArray.array;
         [_viewControllerMutArr addObject:ViewController_1.new];
         [_viewControllerMutArr addObject:ViewController_2.new];
         [_viewControllerMutArr addObject:ViewController_5.new];

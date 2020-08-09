@@ -100,7 +100,9 @@ willConnectToSession:(UISceneSession *)session
 
 -(UINavigationController *)navigationController{
     if (!_navigationController) {
-        _navigationController = [[UINavigationController alloc] initWithRootViewController:self.customSYSUITabBarController];
+//        _navigationController = [[UINavigationController alloc] initWithRootViewController:self.customSYSUITabBarController];
+        _navigationController = [UINavigationController rootVC:self.customSYSUITabBarController
+                                               transitionScale:NO];
         _navigationController.navigationBar.hidden = YES;
     }return _navigationController;
 }

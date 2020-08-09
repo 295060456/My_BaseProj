@@ -127,7 +127,11 @@
 #pragma mark —— 启动页触发事件
 ///点击广告回调
 -(void)clickAd{
-    
+    if (@available(iOS 13.0, *)){
+        [self.window setRootViewController:self.navigationController];
+        [self.window makeKeyAndVisible];
+//        [[FLEXManager sharedManager] showExplorer];
+    }
 }
 ///点击跳过回调
 -(void)skipAd{

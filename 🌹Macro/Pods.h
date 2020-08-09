@@ -65,5 +65,6 @@
 #import <TXFileOperation.h>
 #import <LYEmptyView/LYEmptyViewHeader.h>
 #import "JPImageresizerView.h"
+#import "TRCustomAlert.h"
 
 #endif /* Pods_h */

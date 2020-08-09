@@ -95,6 +95,8 @@
 #import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
 #import "BaseVC+JPImageresizerView.h"
+#import "BaseVC+OpenURL.h"
+#import "BaseVC+BWShareView.h"
 
 #import "AppDelegate.h"
 #import "SceneDelegate.h"

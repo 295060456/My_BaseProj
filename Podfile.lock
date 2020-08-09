@@ -172,6 +172,8 @@ PODS:
   - Texture/Video (3.0.0):
     - Texture/Core
   - TKCarouselView (1.1.7)
+  - TRCustomAlert (0.2.6):
+    - Masonry
   - TTTAttributedLabel (2.0.0)
   - TWPageViewController (0.0.2)
   - TXFileOperation (1.0)
@@ -249,6 +251,7 @@ DEPENDENCIES:
   - SZTextView
   - Texture
   - TKCarouselView
+  - TRCustomAlert
   - TTTAttributedLabel
   - TWPageViewController
   - TXFileOperation
@@ -327,6 +330,7 @@ SPEC REPOS:
     - SZTextView
     - Texture
     - TKCarouselView
+    - TRCustomAlert
     - TTTAttributedLabel
     - TWPageViewController
     - TXFileOperation
@@ -406,6 +410,7 @@ SPEC CHECKSUMS:
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
   TKCarouselView: 9a4e4d9d42394f1d351f8b54e9c6c89b17f051da
+  TRCustomAlert: d6ce05486fdb205e41dae9da515522f6214e2ee8
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
   TXFileOperation: 99bc7e3763678fdea8e8c407e2b87fb18038385f
@@ -421,6 +426,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: b523970b9604f5d92b935f0c5cd8d570660e6bc2
+PODFILE CHECKSUM: 3cd758e1435e25507121d8747cf3528395c675f0
 
 COCOAPODS: 1.9.3

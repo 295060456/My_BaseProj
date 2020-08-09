@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
  显示
  */
 - (void)show;
+/**
+ 关闭
+*/
+- (void)removeChildView;
 
 @property (nonatomic, copy) void (^shareItemClick) (BWItemModel *model);
 

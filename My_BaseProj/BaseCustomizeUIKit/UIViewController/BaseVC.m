@@ -18,6 +18,7 @@
 #import "BaseVC+GifImageView.h"
 #import "BaseVC+JPImageresizerView.h"
 #import "BaseVC+OpenURL.h"
+#import "BaseVC+BWShareView.h"
 
 @interface BaseVC ()
 

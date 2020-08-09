@@ -70,6 +70,7 @@ target 'My_BaseProj' do
   pod 'SZTextView' # https://github.com/glaszig/SZTextView SZTextView 用于替代内置的 UITextView，实现了 placeholder 功能。
   pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
 #  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
+  pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView
   pod 'TKCarouselView' # https://github.com/libtinker/TKCarouselView

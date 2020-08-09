@@ -169,6 +169,7 @@
 		C5D4FBDE24CFE0C40024A292 /* CommentPopUpVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBDD24CFE0C40024A292 /* CommentPopUpVC+VM.m */; };
 		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
 		C5E4C06E24DFCE0600D4862C /* BaseVC+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C06C24DFCE0600D4862C /* BaseVC+OpenURL.m */; };
+		C5E4C07B24DFEEF500D4862C /* BaseVC+BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C07A24DFEEF500D4862C /* BaseVC+BWShareView.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -669,6 +670,8 @@
 		C5E4C06C24DFCE0600D4862C /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+OpenURL.m"; sourceTree = "<group>"; };
 		C5E4C06D24DFCE0600D4862C /* BaseVC+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+OpenURL.h"; sourceTree = "<group>"; };
 		C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200809_12.png; sourceTree = "<group>"; };
+		C5E4C07924DFEEF500D4862C /* BaseVC+BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BWShareView.h"; sourceTree = "<group>"; };
+		C5E4C07A24DFEEF500D4862C /* BaseVC+BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+BWShareView.m"; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表（PopUpVC上面加盖内容物完成）"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -2268,6 +2271,8 @@
 				C5336F8C24DAB9940082847C /* 存在疑问的 */,
 				C5336FB924DABC320082847C /* BaseVC.h */,
 				C5336FB524DABC310082847C /* BaseVC.m */,
+				C5E4C07924DFEEF500D4862C /* BaseVC+BWShareView.h */,
+				C5E4C07A24DFEEF500D4862C /* BaseVC+BWShareView.m */,
 				C5E4C06D24DFCE0600D4862C /* BaseVC+OpenURL.h */,
 				C5E4C06C24DFCE0600D4862C /* BaseVC+OpenURL.m */,
 				C5748A7C24DD123700A842B2 /* BaseVC+JPImageresizerView.h */,
@@ -3222,6 +3227,7 @@
 				C5B1C7C724BAB91A001923FB /* LOTLayerGroup.m in Sources */,
 				C5B1C7D324BAB91A001923FB /* LOTShapeStroke.m in Sources */,
 				C5B1C7CF24BAB91A001923FB /* LOTAnimationTransitionController.m in Sources */,
+				C5E4C07B24DFEEF500D4862C /* BaseVC+BWShareView.m in Sources */,
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
 				C5B1C7B924BAB919001923FB /* LOTKeypath.m in Sources */,
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,

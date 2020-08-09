@@ -22,21 +22,11 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
   if(self = [super initWithFrame:frame]){
-      [self setupUI];
+      [self addSubview:self.backgroundView];
+      [self.backgroundView addSubview:self.topLine];
+      //分割线的颜色
+      self.topLine.backgroundColor = [UIColor colorWithHexString:@"#37A6F0"];
   }return self;
-}
-
-- (void)setupUI{
-    [self addSubview:self.backgroundView];
-    [self.backgroundView addSubview:self.topLine];
-    //分割线的颜色
-    self.topLine.backgroundColor  = [UIColor colorWithHexString:@"#37A6F0"];
-}
-
--(LZBTabBarStyleType)tabBarStyleType{
-    if (!_tabBarStyleType) {
-        _tabBarStyleType = LZBTabBarStyleType_sysNormal;//默认系统样式
-    }return _tabBarStyleType;
 }
 
 - (void)layoutSubviews{
@@ -78,30 +68,10 @@
             }];
         }
         [item setNeedsDisplay];
-        {
-            //Lottie
-            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
-            animation.userInteractionEnabled = YES;
-            [item addSubview:animation];
-            [animation playWithCompletion:^(BOOL animationFinished) {
-              // Do Something
-            }];
-        }
+        
         index++;
     }
 }
-
--(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-    if (!_lottieJsonNameStrMutArr) {
-        _lottieJsonNameStrMutArr = NSMutableArray.array;
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-    }return _lottieJsonNameStrMutArr;
-}
-
 #pragma mark —— API
 - (void)setItems:(NSArray<LZBTabBarItem *> *)items{
     if(items.count == 0) return;
@@ -110,11 +80,21 @@
         [item removeFromSuperview];
     }
     _items = [items copy];
-    for (LZBTabBarItem *item in items){
-        [self addSubview:item];
-        [item addTarget:self
-                 action:@selector(tabbarItemDidSelected:)
-       forControlEvents:UIControlEventTouchUpInside];
+    
+    for (int i = 0; i < items.count; i++) {
+        [self addSubview:items[i]];
+        {
+            //Lottie
+            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[i]];
+            animation.userInteractionEnabled = YES;
+            [items[i] addSubview:animation];
+            [animation playWithCompletion:^(BOOL animationFinished) {
+              // Do Something
+            }];
+        }
+        [items[i] addTarget:self
+                     action:@selector(tabbarItemDidSelected:)
+           forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -169,6 +149,23 @@
   if(_topLine == nil){
       _topLine = [UIView new];
   } return _topLine;
+}
+
+-(LZBTabBarStyleType)tabBarStyleType{
+    if (!_tabBarStyleType) {
+        _tabBarStyleType = LZBTabBarStyleType_sysNormal;//默认系统样式
+    }return _tabBarStyleType;
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+    }return _lottieJsonNameStrMutArr;
 }
 
 @end

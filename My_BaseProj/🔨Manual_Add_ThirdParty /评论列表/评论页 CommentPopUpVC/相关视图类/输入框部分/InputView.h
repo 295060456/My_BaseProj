@@ -21,8 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)actionInputViewBlock:(MKDataBlock)inputViewActionBlock;
 ///删除
 -(void)actionisInputtingBlock:(MKDataBlock)isInputtingActionBlock;
-///当前输入框是否失去焦点（是否活跃）
--(void)actionisInputViewActiveBlock:(MKDataBlock)isInputViewActiveBlock;
 
 @end
 

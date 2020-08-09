@@ -21,7 +21,6 @@ UITextFieldDelegate
 @property(nonatomic,strong)UIButton *sendBtn;
 @property(nonatomic,copy)MKDataBlock inputViewActionBlock;
 @property(nonatomic,copy)MKDataBlock isInputtingActionBlock;
-@property(nonatomic,copy)MKDataBlock isInputViewActiveBlock;
 
 @end
 
@@ -42,10 +41,6 @@ UITextFieldDelegate
 ///删除
 -(void)actionisInputtingBlock:(MKDataBlock)isInputtingActionBlock{
     self.isInputtingActionBlock = isInputtingActionBlock;
-}
-///当前输入框是否失去焦点（是否活跃）
--(void)actionisInputViewActiveBlock:(MKDataBlock)isInputViewActiveBlock{
-    self.isInputViewActiveBlock = isInputViewActiveBlock;
 }
 
 -(void)sendBtnClickEvent:(UIButton *)sender{

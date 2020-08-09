@@ -7,6 +7,7 @@
 //
 
 #import "LZBTabBar.h"
+#import "LOTAnimationView+action.h"
 #define default_TopLine_Height 0.5
 
 #pragma mark - LZBTabBar
@@ -87,7 +88,16 @@
             //Lottie
             LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[i]];
             animation.userInteractionEnabled = YES;
+            animation.tagger = i;
             [items[i] addSubview:animation];
+            @weakify(self)
+            [animation actionLOTAnimationViewBlock:^(id data) {
+                @strongify(self)
+                if ([data isKindOfClass:NSNumber.class]) {
+                    NSNumber *num = (NSNumber *)data;
+                    [self tabbarItemDidSelected:items[num.intValue]];
+                }
+            }];
             [animation playWithCompletion:^(BOOL animationFinished) {
               // Do Something
             }];

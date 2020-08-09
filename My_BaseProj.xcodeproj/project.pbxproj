@@ -12,6 +12,7 @@
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
 		C51137C024E0241A001049D5 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137BF24E0241A001049D5 /* LZBTabBarItem.m */; };
 		C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */; };
+		C51137D924E0358F001049D5 /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137D824E0358F001049D5 /* LOTAnimationView+action.m */; };
 		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
 		C5336FC124DABC320082847C /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FB524DABC310082847C /* BaseVC.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
@@ -382,6 +383,8 @@
 		C51137C124E0247E001049D5 /* LZBTabBarVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBTabBarVCDelegate.h; sourceTree = "<group>"; };
 		C51137C224E02526001049D5 /* UIViewController+LZBTabBarVCItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LZBTabBarVCItem.h"; sourceTree = "<group>"; };
 		C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LZBTabBarVCItem.m"; sourceTree = "<group>"; };
+		C51137D724E0358F001049D5 /* LOTAnimationView+action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LOTAnimationView+action.h"; sourceTree = "<group>"; };
+		C51137D824E0358F001049D5 /* LOTAnimationView+action.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LOTAnimationView+action.m"; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C5336F8D24DAB99E0082847C /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
@@ -1107,6 +1110,8 @@
 				C51137BD24E02362001049D5 /* LZBTabBarDelegate.h */,
 				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
 				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
+				C51137D724E0358F001049D5 /* LOTAnimationView+action.h */,
+				C51137D824E0358F001049D5 /* LOTAnimationView+action.m */,
 				C51137BE24E0241A001049D5 /* LZBTabBarItem.h */,
 				C51137BF24E0241A001049D5 /* LZBTabBarItem.m */,
 			);
@@ -3291,6 +3296,7 @@
 				C5336FC124DABC320082847C /* BaseVC.m in Sources */,
 				C5FE9AB624B5F0EF007B9878 /* NSlogToDocumentFolder.m in Sources */,
 				C533701A24DB00280082847C /* BRAddressPickerView.m in Sources */,
+				C51137D924E0358F001049D5 /* LOTAnimationView+action.m in Sources */,
 				C5B1C7C124BAB91A001923FB /* LOTValueCallback.m in Sources */,
 				C5FE9D1724B5F29C007B9878 /* FSAppIconManager.m in Sources */,
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,

@@ -55,8 +55,6 @@ UIGestureRecognizerDelegate
 -(void)setStatusBarBackgroundColor:(UIColor *)color;
 ///震动特效反馈
 -(void)feedbackGenerator;
-///跳转系统设置
--(void)pushToSysConfig;
 #pragma mark —— Others
 @property(nonatomic,copy)MKDataBlock didBackBlock;
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;

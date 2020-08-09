@@ -17,6 +17,7 @@
 #import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
 #import "BaseVC+JPImageresizerView.h"
+#import "BaseVC+OpenURL.h"
 
 @interface BaseVC ()
 
@@ -191,15 +192,7 @@
         statusBar.backgroundColor = color;
     }
 }
-///跳转系统设置
--(void)pushToSysConfig{
-    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url
-                                           options:@{UIApplicationOpenURLOptionUniversalLinksOnly : @YES}
-                                 completionHandler:nil];
-    }
-}
+
 //KVO 监听 MJRefresh + 震动特效反馈
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object

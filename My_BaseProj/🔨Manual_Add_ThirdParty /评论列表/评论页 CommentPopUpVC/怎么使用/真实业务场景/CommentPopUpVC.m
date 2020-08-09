@@ -396,10 +396,6 @@ viewForHeaderInSection:(NSInteger)section{
                 }
             }
         }];
-        ///当前输入框是否失去焦点（是否活跃）
-        [_inputView actionisInputViewActiveBlock:^(id data) {
-            @strongify(self)
-        }];
         
         [self.view addSubview:_inputView];
         [_inputView mas_makeConstraints:^(MASConstraintMaker *make) {

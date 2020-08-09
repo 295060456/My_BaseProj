@@ -1,25 +1,32 @@
 //
-//  LZBTabBarViewController.h
-//  LZBTabbarViewController
+//  LZBTabBarVC.h
+//  LZBTabBarVC
 //
 //  Created by zibin on 16/11/1.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseVC.h"
 #import "LZBTabBar.h"
+#import "LZBTabBarItem.h"
+#import "LZBTabBarDelegate.h"
+#import "LZBTabBarVCDelegate.h"
+#import "BaseVC.h"
+#import "UIViewController+LZBTabBarVCItem.h"
+#import "LZBTabBarVC.h"
 
+@class LZBTabBarViewControllerDelegate;
 /**
     用于自定义替换系统的 UITabBarController
  */
-@protocol LZBTabBarViewControllerDelegate;
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LZBTabBarViewController : BaseVC
+@interface LZBTabBarVC : BaseVC
 
-@property(nonatomic,weak)id<LZBTabBarViewControllerDelegate> delegate;
+@property(nonatomic,weak)id<LZBTabBarVCDelegate> delegate;
+@property(nonatomic,strong)UIViewController *selectedViewController;
+@property(nonatomic,strong)UIView *contentView;
+@property(nonatomic,strong)LZBTabBar *tabbar;
 /**
  *  子控制数组
  */
@@ -68,41 +75,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setLzb_tabBarHidden:(BOOL)lzb_tabBarHidden
                    animated:(BOOL)animation;
 
-@end
-
-NS_ASSUME_NONNULL_END
-
-@protocol LZBTabBarViewControllerDelegate <NSObject>
-
-@optional
-/**
- 是否点击控制器
-
- @param tabBarController tabbar控制器
- @param viewController   点击的那个控制器
- @return 是否允许
- */
-- (BOOL)lzb_tabBarController:(LZBTabBarViewController *_Null_unspecified)tabBarController
-  shouldSelectViewController:(UIViewController *_Null_unspecified)viewController;
-/**
- 选择tabbar控制器
- 
- @param tabBarController tabbar控制器
- @param viewController 点击的那个控制器
- */
-- (void)lzb_tabBarController:(LZBTabBarViewController *_Null_unspecified)tabBarController
-     didSelectViewController:(UIViewController *_Null_unspecified)viewController;
-
-@end
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface UIViewController(LZBTabBarViewControllerItem)
-
-@property(nonatomic,strong)LZBTabBarItem *lzb_tabBarItem;
-@property(nonatomic,strong)LZBTabBarViewController *lzb_tabBarController;
+- (NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
 

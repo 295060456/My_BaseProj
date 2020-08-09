@@ -10,6 +10,8 @@
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		5E869FA0B5123EB1A2FC1F0B /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
+		C51137C024E0241A001049D5 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137BF24E0241A001049D5 /* LZBTabBarItem.m */; };
+		C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */; };
 		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
 		C5336FC124DABC320082847C /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FB524DABC310082847C /* BaseVC.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
@@ -296,7 +298,7 @@
 		C5FE9CFF24B5F29C007B9878 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C3B24B5F29A007B9878 /* SearchModel.m */; };
 		C5FE9D0024B5F29C007B9878 /* SearchVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C3E24B5F29A007B9878 /* SearchVC+VM.m */; };
 		C5FE9D0124B5F29C007B9878 /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */; };
-		C5FE9D0224B5F29C007B9878 /* LZBTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4224B5F29A007B9878 /* LZBTabBarViewController.m */; };
+		C5FE9D0224B5F29C007B9878 /* LZBTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4224B5F29A007B9878 /* LZBTabBarVC.m */; };
 		C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4724B5F29A007B9878 /* TimeManager.m */; };
 		C5FE9D0524B5F29C007B9878 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4924B5F29A007B9878 /* TimeManager.m */; };
 		C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C4D24B5F29A007B9878 /* XDTextBtnView.m */; };
@@ -374,6 +376,12 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C51137BD24E02362001049D5 /* LZBTabBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBTabBarDelegate.h; sourceTree = "<group>"; };
+		C51137BE24E0241A001049D5 /* LZBTabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBTabBarItem.h; sourceTree = "<group>"; };
+		C51137BF24E0241A001049D5 /* LZBTabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarItem.m; sourceTree = "<group>"; };
+		C51137C124E0247E001049D5 /* LZBTabBarVCDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBTabBarVCDelegate.h; sourceTree = "<group>"; };
+		C51137C224E02526001049D5 /* UIViewController+LZBTabBarVCItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LZBTabBarVCItem.h"; sourceTree = "<group>"; };
+		C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LZBTabBarVCItem.m"; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C5336F8D24DAB99E0082847C /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
@@ -954,10 +962,10 @@
 		C5FE9C3E24B5F29A007B9878 /* SearchVC+VM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SearchVC+VM.m"; sourceTree = "<group>"; };
 		C5FE9C3F24B5F29A007B9878 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBar.m; sourceTree = "<group>"; };
-		C5FE9C4224B5F29A007B9878 /* LZBTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarViewController.m; sourceTree = "<group>"; };
+		C5FE9C4224B5F29A007B9878 /* LZBTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarVC.m; sourceTree = "<group>"; };
 		C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBar.h; sourceTree = "<group>"; };
 		C5FE9C4424B5F29A007B9878 /* 替换系统的UITabBarViewController */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "替换系统的UITabBarViewController"; sourceTree = "<group>"; };
-		C5FE9C4524B5F29A007B9878 /* LZBTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarViewController.h; sourceTree = "<group>"; };
+		C5FE9C4524B5F29A007B9878 /* LZBTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarVC.h; sourceTree = "<group>"; };
 		C5FE9C4724B5F29A007B9878 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		C5FE9C4924B5F29A007B9878 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
 		C5FE9C4A24B5F29A007B9878 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
@@ -1091,6 +1099,30 @@
 				FC704087AA0F2431943F2CE4 /* Pods-My_BaseProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C51137BB24E022D2001049D5 /* LZBTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C51137BD24E02362001049D5 /* LZBTabBarDelegate.h */,
+				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
+				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
+				C51137BE24E0241A001049D5 /* LZBTabBarItem.h */,
+				C51137BF24E0241A001049D5 /* LZBTabBarItem.m */,
+			);
+			path = LZBTabBar;
+			sourceTree = "<group>";
+		};
+		C51137BC24E022E9001049D5 /* LZBTabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				C51137C124E0247E001049D5 /* LZBTabBarVCDelegate.h */,
+				C5FE9C4524B5F29A007B9878 /* LZBTabBarVC.h */,
+				C5FE9C4224B5F29A007B9878 /* LZBTabBarVC.m */,
+				C51137C224E02526001049D5 /* UIViewController+LZBTabBarVCItem.h */,
+				C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */,
+			);
+			path = LZBTabBarVC;
 			sourceTree = "<group>";
 		};
 		C5336F8C24DAB9940082847C /* 存在疑问的 */ = {
@@ -2681,10 +2713,8 @@
 			isa = PBXGroup;
 			children = (
 				C5FE9C4424B5F29A007B9878 /* 替换系统的UITabBarViewController */,
-				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
-				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
-				C5FE9C4524B5F29A007B9878 /* LZBTabBarViewController.h */,
-				C5FE9C4224B5F29A007B9878 /* LZBTabBarViewController.m */,
+				C51137BB24E022D2001049D5 /* LZBTabBar */,
+				C51137BC24E022E9001049D5 /* LZBTabBarVC */,
 			);
 			path = LZBTabbarViewController;
 			sourceTree = "<group>";
@@ -3271,6 +3301,7 @@
 				C5B1C7BA24BAB919001923FB /* LOTMask.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
+				C51137C024E0241A001049D5 /* LZBTabBarItem.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
@@ -3293,7 +3324,7 @@
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
 				C5B1C7AE24BAB919001923FB /* LOTAnimationCache.m in Sources */,
-				C5FE9D0224B5F29C007B9878 /* LZBTabBarViewController.m in Sources */,
+				C5FE9D0224B5F29C007B9878 /* LZBTabBarVC.m in Sources */,
 				C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */,
 				C5FE9D1524B5F29C007B9878 /* HWTFCodeBView.m in Sources */,
 				C5FE9B6624B5F203007B9878 /* BaseNavigationVC.m in Sources */,
@@ -3323,6 +3354,7 @@
 				C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */,
 				C5FE9CDC24B5F29C007B9878 /* LBXScanDIYViewController.m in Sources */,
 				C5B1C7C924BAB91A001923FB /* LOTAnimatedSwitch.m in Sources */,
+				C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C5E4C09724DFF0B300D4862C /* BaseVC+GifImageView.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,

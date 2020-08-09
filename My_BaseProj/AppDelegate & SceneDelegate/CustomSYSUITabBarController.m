@@ -19,7 +19,7 @@
 
 @interface CustomSYSUITabBarController ()
 <
-LZBTabBarViewControllerDelegate
+LZBTabBarVCDelegate
 >
 
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customUnselectedImgMutArr;
@@ -84,30 +84,34 @@ CGFloat LZB_TABBAR_HEIGHT;
     vc.title = titleStr;//上
 }
 #pragma mark ======== LZBTabBarViewControllerDelegate ======
-- (BOOL)lzb_tabBarController:(LZBTabBarViewController *)tabBarController
+- (BOOL)lzb_tabBarController:(LZBTabBarVC *)tabBarController
   shouldSelectViewController:(UIViewController *)viewController{
     return YES;
 }
 //改1
 //点击的时候进行确认是否登录
-- (void)lzb_tabBarController:(LZBTabBarViewController *)tabBarController
+- (void)lzb_tabBarController:(LZBTabBarVC *)tabBarController
      didSelectViewController:(UIViewController *)viewController{
     if ([viewController isKindOfClass:[ViewController_1 class]]) {
         //        NSLog(@"%ld",self.selectedIndex);
+        NSLog(@"1");
     }
     else if ([viewController isKindOfClass:[ViewController_2 class]]){
 //        [self presentLoginVC];
+        NSLog(@"2");
     }
     else if ([viewController isKindOfClass:[ViewController_3 class]]){
 //        [self presentLoginVC];
+        NSLog(@"3");
     }
     else if ([viewController isKindOfClass:[ViewController_4 class]]){
 //        [self presentLoginVC];
+        NSLog(@"4");
     }
     else if ([viewController isKindOfClass:[ViewController_5 class]]){
     //        [self presentLoginVC];
+        NSLog(@"5");
     }
-    
 }
 #pragma mark —— lazyLoad
 -(NSMutableArray *)mutArr{

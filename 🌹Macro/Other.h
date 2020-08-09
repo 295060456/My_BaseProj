@@ -9,4 +9,6 @@
 #ifndef Other_h
 #define Other_h
 
+#import <objc/runtime.h>
+
 #endif /* Other_h */

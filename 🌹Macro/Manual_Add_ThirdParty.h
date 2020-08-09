@@ -111,7 +111,7 @@
 //#import "NSlogToDocumentFolder.h"//上线需要去掉
 ///公用的类和库
 //替代系统的TabBarController
-#import "LZBTabbarViewController.h"
+#import "LZBTabBarVC.h"
 #import "CustomSYSUITabBarController.h"
 //URL
 #import "URL_Manager.h"

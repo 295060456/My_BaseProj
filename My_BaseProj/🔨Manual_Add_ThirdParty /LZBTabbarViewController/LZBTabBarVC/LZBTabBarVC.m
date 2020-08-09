@@ -1,26 +1,21 @@
 //
-//  LZBTabBarViewController.m
-//  LZBTabbarViewController
+//  LZBTabBarVC.m
+//  LZBTabBarVC
 //
 //  Created by zibin on 16/11/1.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import "LZBTabBarViewController.h"
-#import <objc/runtime.h>
+#import "LZBTabBarVC.h"
+#import "UIViewController+LZBTabBarVCItem.h"
 
 #define LZB_TABBAR_DEFULT_HEIGHT 49
 
-@interface LZBTabBarViewController ()
-<LZBTabBarDelegate>
-
-@property(nonatomic,strong)UIViewController *selectedViewController;
-@property(nonatomic,strong)UIView *contentView;
-@property(nonatomic,strong)LZBTabBar *tabbar;
+@interface LZBTabBarVC ()<LZBTabBarDelegate>
 
 @end
 
-@implementation LZBTabBarViewController
+@implementation LZBTabBarVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -93,12 +88,6 @@
                  animation:self.isShouldAnimation];
 }
 
-- (NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController{
-  if(viewController.navigationController)
-      viewController = viewController.navigationController;
-    return [self.viewControllers indexOfObject:viewController];
-}
-
 -(UIViewController *)lzb_selectedViewController{
     return self.selectedViewController;
 }
@@ -107,7 +96,7 @@
                    animated:(BOOL)animation{
     _lzb_tabBarHidden = lzb_tabBarHidden;
     //定义Block处理隐藏的lzb_tabBarHidden
-    __weak LZBTabBarViewController *weakSelf = self;
+    __weak LZBTabBarVC *weakSelf = self;
     void(^blcokHidden)(void) = ^{
         CGSize fullSize = weakSelf.view.bounds.size;
         CGFloat tabBarStartingY = fullSize.height;
@@ -158,6 +147,13 @@
     [self setLzb_tabBarHidden:lzb_tabBarHidden
                      animated:NO];
 }
+
+- (NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController{
+  if(viewController.navigationController)
+      viewController = viewController.navigationController;
+    return [self.viewControllers indexOfObject:viewController];
+}
+
 #pragma mark- tabbarDelegate
 - (BOOL)lzb_tabBar:(LZBTabBar *)tabBar
 shouldSelectItemAtIndex:(NSInteger)index{
@@ -230,46 +226,3 @@ didSelectItemAtIndex:(NSInteger)index{
 
 @end
 
-static const void *LZBTabBarViewControllerItemKey = @"LZBTabBarViewControllerItemKey";
-
-@implementation UIViewController (LZBTabBarViewControllerItem)
-- (void)setLzb_tabBarController:(LZBTabBarViewController *)lzb_tabBarController{
-   objc_setAssociatedObject(self,
-                            LZBTabBarViewControllerItemKey,
-                            lzb_tabBarController,
-                            OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (LZBTabBarViewController *)lzb_tabBarController{
-    LZBTabBarViewController *tabBarViewController = objc_getAssociatedObject(self, LZBTabBarViewControllerItemKey);
-    if(!tabBarViewController &&
-       self.parentViewController)
-        tabBarViewController = self.parentViewController.lzb_tabBarController;
-    return tabBarViewController;
-}
-
-- (void)setLzb_tabBarItem:(LZBTabBarItem *)lzb_tabBarItem{
-    LZBTabBarViewController *tabBarViewController = self.lzb_tabBarController;
-    if(tabBarViewController == nil) return;
-    LZBTabBar *tabBar = tabBarViewController.tabbar;
-    //当前这个控制器在tabbar的索引
-    NSInteger index = [tabBarViewController indexForTabBarViewControllerViewControllers:self];
-    if(index<0 ||
-       index >= tabBarViewController.tabbar.items.count) return;
-    //替换
-    NSMutableArray *tabBarItems = [[NSMutableArray alloc] initWithArray:[tabBar items]];
-    [tabBarItems replaceObjectAtIndex:index
-                           withObject:lzb_tabBarItem];
-    [tabBar setItems:tabBarItems];
-}
-
-- (LZBTabBarItem *)lzb_tabBarItem{
-    LZBTabBarViewController *tabBarController = [self lzb_tabBarController];
-    NSInteger index = [tabBarController indexForTabBarViewControllerViewControllers:self];
-    if(index<0 ||
-       index >= tabBarController.tabbar.items.count) return nil;
-    return [tabBarController.tabbar.items objectAtIndex:index];
-}
-
-
-@end

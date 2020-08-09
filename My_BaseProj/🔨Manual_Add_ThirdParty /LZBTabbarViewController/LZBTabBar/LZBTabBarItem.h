@@ -1,9 +1,9 @@
 //
-//  LZBTabBar.h
-//  LZBTabbarViewController
+//  LZBTabBarItem.h
+//  My_BaseProj
 //
-//  Created by zibin on 16/11/1.
-//  Copyright © 2016年 apple. All rights reserved.
+//  Created by Jobs on 2020/8/9.
+//  Copyright © 2020 Jobs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -106,74 +106,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@protocol LZBTabBarDelegate;
-
-typedef enum : NSUInteger {
-    LZBTabBarStyleType_sysNormal = 0,//系统默认样式，平的
-    LZBTabBarStyleType_middleItemUp//最中间的按钮凸起中间(前提条件是存在奇数个item)
-} LZBTabBarStyleType;
-
-@interface LZBTabBar : UIView
-
-@property(nonatomic,strong)NSMutableArray <NSString *>*lottieJsonNameStrMutArr;
-
-@property(nonatomic,assign)LZBTabBarStyleType tabBarStyleType;
-
-/**
- *  自定义tabbar的delegate
- */
-@property(nonatomic,weak)id<LZBTabBarDelegate> delegate;
-/**
- *  TabBar设置按钮数组items
- */
-@property(nonatomic,strong)NSArray<LZBTabBarItem *>*items;
-/**
- *  TabBar设置当前选中的item
- */
-@property(nonatomic,strong)LZBTabBarItem *currentSelectItem;
-/**
- *  TabBar设置当前选中的item,animation动画
- */
-- (void)setCurrentSelectItem:(LZBTabBarItem *)currentSelectItem
-                   animation:(BOOL)animation;
-/**
- * TabBar顶部分割线
- */
-@property(nonatomic,strong)UIView *topLine;
-/**
- * TabBar背景View
- */
-@property(nonatomic,strong)UIView *backgroundView;
-
-@end
-
-#pragma mark - 自定义LZBTabBar
-
-@protocol LZBTabBarDelegate <NSObject>
-
-/**
- 判断tabbbar是否被点击
- 
- @param tabBar 自定义tabbar
- @param index 点击的tabbar的index
- @return 是否允许
- */
-- (BOOL)lzb_tabBar:(LZBTabBar *)tabBar
-shouldSelectItemAtIndex:(NSInteger)index;
-
-
-/**
- 点击tabbar的index
- 
- @param tabBar 自定义tabbar
- @param index 点击的tabbar的index
- */
-- (void)lzb_tabBar:(LZBTabBar *)tabBar
-didSelectItemAtIndex:(NSInteger)index;
-
-@end
-
 NS_ASSUME_NONNULL_END
-
-
-

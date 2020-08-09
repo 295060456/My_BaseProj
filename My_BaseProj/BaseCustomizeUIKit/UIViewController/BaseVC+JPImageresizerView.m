@@ -259,9 +259,9 @@ static char *BaseVC_JPImageresizerView_fixCompleteBlock = "BaseVC_JPImageresizer
                 }];
             } break;
             default:
+                NSAssert(Configure,@"alertController 创建出现错误");
                 break;
         }
-//        Configure =
     }return Configure;
 }
 

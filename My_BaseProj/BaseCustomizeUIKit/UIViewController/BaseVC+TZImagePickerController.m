@@ -52,9 +52,19 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         //状态类型参考：ECAuthorizationStatus
         NSLog(@"%lu",(unsigned long)status);
         if (status == ECAuthorizationStatus_Authorized) {
-            //图片裁剪
-            self.imagePickerVC.cropRect = CGRectMake(0,0,80,80);
-            self.imagePickerVC.scaleAspectFillCrop = YES;
+            self.imagePickerVC.allowPickingOriginalPhoto = YES;
+            self.imagePickerVC.allowPickingGif = YES;
+            self.imagePickerVC.sortAscendingByModificationDate = YES;
+            self.imagePickerVC.showSelectBtn = NO;
+            self.imagePickerVC.allowCrop = YES;
+            self.imagePickerVC.needCircleCrop = YES;
+            //图片裁剪 方式方法_1
+//            NSInteger left = 30;
+//            NSInteger widthHeight = self.view.mj_w - 2 * left;
+//            NSInteger top = (self.view.mj_h - widthHeight) / 2;
+//            self.imagePickerVC.cropRect = CGRectMake(left, top, widthHeight, widthHeight);
+//            self.imagePickerVC.scaleAspectFillCrop = YES;
+
             [self presentViewController:self.imagePickerVC
                                      animated:YES
                                    completion:nil];
@@ -112,32 +122,34 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         switch (self.tzImagePickerControllerType){
             case TZImagePickerControllerType_1:{
                 imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
-                                                                                delegate:self];
+                                                                                       delegate:self];
             }break;
             case TZImagePickerControllerType_2:{
                 imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
-                                                                           columnNumber:self.columnNumber
-                                                                               delegate:self];
+                                                                                   columnNumber:self.columnNumber
+                                                                                       delegate:self];
             }break;
             case TZImagePickerControllerType_3:{
                 imagePickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:self.maxImagesCount
-                                                                           columnNumber:self.columnNumber
-                                                                               delegate:self
-                                                                      pushPhotoPickerVc:YES];
+                                                                                   columnNumber:self.columnNumber
+                                                                                       delegate:self
+                                                                              pushPhotoPickerVc:YES];
             }break;
             case TZImagePickerControllerType_4:{
                 imagePickerController = [[TZImagePickerController alloc] initWithSelectedAssets:self.selectedAssets
-                                                                         selectedPhotos:self.selectedPhotos
-                                                                                  index:self.index];
+                                                                                 selectedPhotos:self.selectedPhotos
+                                                                                          index:self.index];
             }break;
             case TZImagePickerControllerType_5:{
                 imagePickerController = [[TZImagePickerController alloc] initCropTypeWithAsset:self.asset
-                                                                                 photo:self.photo
-                                                                            completion:^(UIImage *cropImage, PHAsset *asset) {
+                                                                                         photo:self.photo
+                                                                                    completion:^(UIImage *cropImage,
+                                                                                                 PHAsset *asset) {
                 }];
             }break;
 
             default:
+                NSAssert(imagePickerController,@"imagePickerController 创建出现错误");
                 break;
         }
             
@@ -165,7 +177,9 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
 }
 #pragma mark —— @property(nonatomic,assign)NSInteger maxImagesCount;
 -(NSInteger)maxImagesCount{
-    return [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_maxImagesCount) integerValue];
+    NSInteger MaxImagesCount = [objc_getAssociatedObject(self, BaseVC_TZImagePickerController_maxImagesCount) integerValue];
+    MaxImagesCount = MaxImagesCount != 0 ? : 1;
+    return MaxImagesCount;
 }
 
 -(void)setMaxImagesCount:(NSInteger)maxImagesCount{

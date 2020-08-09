@@ -69,6 +69,7 @@
                              completion:nil];
         }break;
         default:
+            NSAssert(0,@"alertController 创建出现错误");
             break;
     }
 }
@@ -126,6 +127,7 @@
             }
         } break;
         default:
+            NSAssert(0,@"alertController 创建出现错误");
             break;
     }
     UIPopoverPresentationController *popover = vc.popoverPresentationController;

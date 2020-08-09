@@ -84,24 +84,16 @@
     
     for (int i = 0; i < items.count; i++) {
         [self addSubview:items[i]];
-        {
-            //Lottie
-            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[i]];
-            animation.userInteractionEnabled = YES;
-            animation.tagger = i;
-            [items[i] addSubview:animation];
-            @weakify(self)
-            [animation actionLOTAnimationViewBlock:^(id data) {
-                @strongify(self)
-                if ([data isKindOfClass:NSNumber.class]) {
-                    NSNumber *num = (NSNumber *)data;
-                    [self tabbarItemDidSelected:items[num.intValue]];
-                }
-            }];
-            [animation playWithCompletion:^(BOOL animationFinished) {
-              // Do Something
-            }];
-        }
+        LZBTabBarItem *item = items[i];
+        item.tagger = i;
+        @weakify(self)
+        [item actionLZBTabBarItemBlock:^(id data) {
+            @strongify(self)
+            if ([data isKindOfClass:NSNumber.class]) {
+                NSNumber *num = (NSNumber *)data;
+                [self tabbarItemDidSelected:items[num.intValue]];
+            }
+        }];
         [items[i] addTarget:self
                      action:@selector(tabbarItemDidSelected:)
            forControlEvents:UIControlEventTouchUpInside];
@@ -109,6 +101,12 @@
 }
 
 - (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
+    [item.animation playWithCompletion:^(BOOL animationFinished) {
+      // Do Something
+        if (animationFinished) {
+            [item.animation stop];
+        }
+    }];
     if(![self.items containsObject:item]) return;
     NSInteger index = [self.items indexOfObject:item];
     if([self.delegate respondsToSelector:@selector(lzb_tabBar:shouldSelectItemAtIndex:)]){
@@ -167,16 +165,16 @@
     }return _tabBarStyleType;
 }
 
--(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-    if (!_lottieJsonNameStrMutArr) {
-        _lottieJsonNameStrMutArr = NSMutableArray.array;
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-    }return _lottieJsonNameStrMutArr;
-}
+//-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+//    if (!_lottieJsonNameStrMutArr) {
+//        _lottieJsonNameStrMutArr = NSMutableArray.array;
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+//    }return _lottieJsonNameStrMutArr;
+//}
 
 @end
 

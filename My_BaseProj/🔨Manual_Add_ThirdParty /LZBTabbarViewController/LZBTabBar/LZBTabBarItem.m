@@ -7,6 +7,13 @@
 //
 
 #import "LZBTabBarItem.h"
+#import "LOTAnimationView+action.h"
+
+@interface LZBTabBarItem()
+
+@property(nonatomic,copy)MKDataBlock LZBTabBarItemActionBlock;
+
+@end
 
 @implementation LZBTabBarItem
 
@@ -29,6 +36,45 @@
     _badgeTextFont = [UIFont systemFontOfSize:12.0];
     _badgeOffset = UIOffsetZero;
 }
+
+-(void)setTagger:(NSInteger)tagger{
+    _tagger = tagger;
+    [self Lottie];
+}
+
+-(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock{
+    self.LZBTabBarItemActionBlock = LZBTabBarItemActionBlock;
+}
+
+-(void)Lottie{
+    //Lottie
+    self.animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[self.tagger]];
+    self.animation.userInteractionEnabled = YES;
+    [self addSubview:self.animation];
+    @weakify(self)
+    
+    [self.animation actionLOTAnimationViewBlock:^(id data) {
+        @strongify(self)
+        if ([data isKindOfClass:NSNumber.class]) {
+            NSNumber *num = (NSNumber *)data;
+            if (self.LZBTabBarItemActionBlock) {
+                self.LZBTabBarItemActionBlock(num);
+            }
+        }
+    }];
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+    }return _lottieJsonNameStrMutArr;
+}
+
 
 - (void)drawRect:(CGRect)rect{
     CGSize frameSize = self.frame.size;

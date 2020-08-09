@@ -104,6 +104,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,assign)UIOffset badgeBackgroundOffset;
 
+@property(nonatomic,strong)NSMutableArray <NSString *>*lottieJsonNameStrMutArr;
+@property(nonatomic,assign)NSInteger tagger;
+@property(nonatomic,strong)LOTAnimationView *animation;
+
+-(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

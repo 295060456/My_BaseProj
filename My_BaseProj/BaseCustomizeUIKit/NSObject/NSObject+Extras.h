@@ -9,17 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (Extras)
-
-+ (UIImage *)imageWithString:(NSString *)string
-                        font:(UIFont *)font
-                       width:(CGFloat)width
-               textAlignment:(NSTextAlignment)textAlignment
-             backGroundColor:(UIColor *)backGroundColor
-                   textColor:(UIColor *)textColor;
-
-/**
- *  UIColor 转 UIImage
- */
-+(UIImage*)createImageWithColor:(UIColor*)color;
+///震动特效反馈
++(void)feedbackGenerator;
 
 @end

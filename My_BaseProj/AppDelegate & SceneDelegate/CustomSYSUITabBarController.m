@@ -92,6 +92,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 //点击的时候进行确认是否登录
 - (void)lzb_tabBarController:(LZBTabBarVC *)tabBarController
      didSelectViewController:(UIViewController *)viewController{
+    [NSObject feedbackGenerator];
     if ([viewController isKindOfClass:[ViewController_1 class]]) {
         //        NSLog(@"%ld",self.selectedIndex);
         NSLog(@"1");

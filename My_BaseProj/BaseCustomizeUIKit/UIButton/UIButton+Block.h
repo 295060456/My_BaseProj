@@ -3,7 +3,6 @@
 typedef void(^ButtonBlock)(UIButton* btn);
 
 @interface UIButton (Block)
-
 /**
  *  button 添加点击事件
  */

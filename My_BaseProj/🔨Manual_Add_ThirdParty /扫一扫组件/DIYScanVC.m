@@ -154,7 +154,7 @@
     }
     //震动提醒
    // [LBXScanWrapper systemVibrate];
-    [self feedbackGenerator];
+    [NSObject feedbackGenerator];
     //声音提醒
     //[LBXScanWrapper systemSound];
     [self showNextVCWithScanResult:scanResult];

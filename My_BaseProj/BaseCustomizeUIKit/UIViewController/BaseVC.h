@@ -53,8 +53,6 @@ UIGestureRecognizerDelegate
 -(void)locateTabBar:(NSInteger)index;
 ///设置状态栏背景颜色
 -(void)setStatusBarBackgroundColor:(UIColor *)color;
-///震动特效反馈
--(void)feedbackGenerator;
 #pragma mark —— Others
 @property(nonatomic,copy)MKDataBlock didBackBlock;
 //@property(nonatomic,strong)ViewForHeader *viewForHeader;

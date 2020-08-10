@@ -181,7 +181,7 @@ didSelectItemAtIndex:(NSInteger)index{
 //    [PlaySound playSoundEffect:@"Sound"
 //                          type:@"wav"];
     //震动特效反馈
-    [self feedbackGenerator];
+    [NSObject feedbackGenerator];
     if (index < 0 || index >= self.viewControllers.count)  return;
     [self setSelectedIndex:index
                  animation:self.isShouldAnimation];

@@ -201,23 +201,12 @@
                        context:(void *)context {
     if ([object isEqual:self.tableViewHeader] &&
         self.tableViewHeader.state == MJRefreshStatePulling) {
-        [self feedbackGenerator];
+        [NSObject feedbackGenerator];
     }else if ([object isEqual:self.tableViewFooter] &&
              self.tableViewFooter.state == MJRefreshStatePulling) {
-        [self feedbackGenerator];
+        [NSObject feedbackGenerator];
     }
 }
-///震动特效反馈
--(void)feedbackGenerator{
-    if (@available(iOS 10.0, *)) {
-        UIImpactFeedbackGenerator *generator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
-        [generator prepare];
-        [generator impactOccurred];
-    } else {
-        // Fallback on earlier versions
-    }
-}
-
 ///下拉刷新
 -(void)pullToRefresh{
     NSLog(@"下拉刷新");

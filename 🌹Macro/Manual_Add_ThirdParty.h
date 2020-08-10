@@ -74,7 +74,6 @@
 #import "NSString+Extras.h"
 #import "UIView+Extras.h"
 #import "UIImage+Extras.h"
-#import "UIImage+helper.h"
 #import "UIButton+Block.h"
 #import "UIColor+Hex.h"
 #import "NSObject+Extras.h"

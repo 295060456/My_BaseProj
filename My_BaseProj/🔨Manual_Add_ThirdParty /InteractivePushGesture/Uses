@@ -1,0 +1,17 @@
+https://github.com/xiaopin/InteractivePushGesture.git
+
+不能在基类里面写，哪个类需要这个功能再单独加上
+<UIViewControllerInteractivePushGestureDelegate>
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.interactivePushGestureEnabled = YES;
+    self.interactivePushGestureDelegate = self;
+}
+
+- (UIViewController *)destinationViewControllerFromViewController:(UIViewController *)fromViewController {
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+    return vc;
+}
+

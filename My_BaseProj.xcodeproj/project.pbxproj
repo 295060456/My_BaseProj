@@ -177,6 +177,7 @@
 		C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AD24E1640E00A38FAF /* NSObject+Time.m */; };
 		C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B524E1642100A38FAF /* UIImage+YBGIF.m */; };
 		C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B624E1642200A38FAF /* UIImage+Extras.m */; };
+		C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -690,6 +691,9 @@
 		C5E7D9B424E1642100A38FAF /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
 		C5E7D9B524E1642100A38FAF /* UIImage+YBGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YBGIF.m"; sourceTree = "<group>"; };
 		C5E7D9B624E1642200A38FAF /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
+		C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InteractivePushGesture.m"; sourceTree = "<group>"; };
+		C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
+		C5E7D9C624E17A4B00A38FAF /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表（PopUpVC上面加盖内容物完成）"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -1708,6 +1712,16 @@
 			path = LYEmptyView;
 			sourceTree = "<group>";
 		};
+		C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */ = {
+			isa = PBXGroup;
+			children = (
+				C5E7D9C624E17A4B00A38FAF /* Uses */,
+				C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */,
+				C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */,
+			);
+			path = InteractivePushGesture;
+			sourceTree = "<group>";
+		};
 		C5F78AD224BF273B008A46EC /* 评论列表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1949,6 +1963,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */,
 				C5DD001624D46B3C00307DFA /* LYEmptyView */,
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
@@ -3351,6 +3366,7 @@
 				C5B1C7CB24BAB91A001923FB /* LOTFillRenderer.m in Sources */,
 				C5B1C7BF24BAB91A001923FB /* LOTNumberInterpolator.m in Sources */,
 				C5B1C7E224BAB91A001923FB /* LOTPolygonAnimator.m in Sources */,
+				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,
 				C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */,
 				C5FE9D2424B5F29C007B9878 /* NSString+Extension.m in Sources */,

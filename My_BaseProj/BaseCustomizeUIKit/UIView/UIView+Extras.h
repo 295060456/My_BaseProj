@@ -58,4 +58,8 @@ typedef NS_OPTIONS(NSUInteger, UIBorderSideType) {
 //view 转 image
 + (UIImage *)getImageFromView:(UIView *)view;
 
+///点击放大再缩小
++ (void)addViewAnimation:(UIView *)sender
+         completionBlock:(MKDataBlock)completionBlock;
+
 @end

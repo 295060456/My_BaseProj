@@ -186,6 +186,8 @@ PODS:
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
   - WXSTransition (1.2.1)
+  - XHLaunchAd (3.9.12):
+    - FLAnimatedImage (~> 1.0.12)
   - YQImageCompressor (1.0.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -261,6 +263,7 @@ DEPENDENCIES:
   - WCDB
   - WebViewJavascriptBridge
   - WXSTransition
+  - XHLaunchAd
   - YQImageCompressor
   - YYKit
   - ZFJTreeViewKit
@@ -341,6 +344,7 @@ SPEC REPOS:
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
     - WXSTransition
+    - XHLaunchAd
     - YQImageCompressor
     - YYKit
     - ZBarSDK
@@ -421,11 +425,12 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
+  XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 3cd758e1435e25507121d8747cf3528395c675f0
+PODFILE CHECKSUM: b100a67489186d2a9938805b5ed195f4b5cf04dc
 
 COCOAPODS: 1.9.3

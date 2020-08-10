@@ -25,6 +25,7 @@ target 'My_BaseProj' do
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
   #pod 'MyLayout'
+  pod 'XHLaunchAd' # https://github.com/CoderZhuXH/XHLaunchAd 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
   pod 'AFNetworking'  # https://github.com/AFNetworking/AFNetworking A delightful networking framework for iOS, macOS, watchOS, and tvOS.
   pod 'Reachability'  # https://github.com/tonymillion/Reachability 检查联网情况
   pod 'MJRefresh' # https://github.com/CoderMJLee/MJRefresh An easy way to use pull-to-refresh

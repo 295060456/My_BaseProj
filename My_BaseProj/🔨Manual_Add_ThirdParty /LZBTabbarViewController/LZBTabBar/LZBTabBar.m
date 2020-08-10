@@ -86,6 +86,12 @@
         [self addSubview:items[i]];
         LZBTabBarItem *item = items[i];
         item.tagger = i;
+        if (i == 0) {
+            item.selected = YES;//默认第一个为点击选中状态
+            [item.animation playWithCompletion:^(BOOL animationFinished) {
+                
+            }];
+        }
         @weakify(self)
         [item actionLZBTabBarItemBlock:^(id data) {
             @strongify(self)
@@ -101,12 +107,41 @@
 }
 
 - (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
-    [item.animation playWithCompletion:^(BOOL animationFinished) {
-      // Do Something
-        if (animationFinished) {
-            [item.animation stop];
+    {///单个点选放映 & 结束 动画特效
+        //只有点击其他item 才能将本item的点击状态置为NO
+        NSInteger idx = [self.items indexOfObject:item];
+        NSInteger i = 0;
+        for (LZBTabBarItem *ITEM in self.items) {
+            //对每一个状态进行异或操作——>归零
+            ITEM.selected ^= ITEM.selected;
+            //再对这个状态进行重新赋值改变
+            if (idx == i) {
+                ITEM.selected = YES;
+                
+                if (ITEM.animation.isAnimationPlaying) {
+                    //等他放
+                }else{
+                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
+
+                    }];
+                }
+            }
+            
+            if (ITEM.selected) {//放
+                if (!ITEM.animation.isAnimationPlaying) {
+                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
+
+                    }];
+                }
+            }else{//结束
+                if (!ITEM.animation.isAnimationPlaying) {
+                    [ITEM.animation stop];
+                }
+            }
+            i++;
         }
-    }];
+    }
+    
     if(![self.items containsObject:item]) return;
     NSInteger index = [self.items indexOfObject:item];
     if([self.delegate respondsToSelector:@selector(lzb_tabBar:shouldSelectItemAtIndex:)]){
@@ -164,17 +199,6 @@
         _tabBarStyleType = LZBTabBarStyleType_sysNormal;//默认系统样式
     }return _tabBarStyleType;
 }
-
-//-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-//    if (!_lottieJsonNameStrMutArr) {
-//        _lottieJsonNameStrMutArr = NSMutableArray.array;
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-//    }return _lottieJsonNameStrMutArr;
-//}
 
 @end
 

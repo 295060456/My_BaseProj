@@ -1108,12 +1108,12 @@
 			isa = PBXGroup;
 			children = (
 				C51137BD24E02362001049D5 /* LZBTabBarDelegate.h */,
+				C51137BE24E0241A001049D5 /* LZBTabBarItem.h */,
+				C51137BF24E0241A001049D5 /* LZBTabBarItem.m */,
 				C5FE9C4324B5F29A007B9878 /* LZBTabBar.h */,
 				C5FE9C4124B5F29A007B9878 /* LZBTabBar.m */,
 				C51137D724E0358F001049D5 /* LOTAnimationView+action.h */,
 				C51137D824E0358F001049D5 /* LOTAnimationView+action.m */,
-				C51137BE24E0241A001049D5 /* LZBTabBarItem.h */,
-				C51137BF24E0241A001049D5 /* LZBTabBarItem.m */,
 			);
 			path = LZBTabBar;
 			sourceTree = "<group>";

@@ -49,32 +49,21 @@
 -(void)Lottie{
     //Lottie
     self.animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[self.tagger]];
-    self.animation.userInteractionEnabled = YES;
+//    self.animation.userInteractionEnabled = YES;
+//    self.animation.loopAnimation//是否循环
+//    self.animation.animationProgress//动画的进度
+//    self.animation.animationDuration//动画时长
+//    self.animation.isAnimationPlaying//动画是否在执行
+    self.animation.animationSpeed = 3;//放慢动画播放速度?
     [self addSubview:self.animation];
     @weakify(self)
-    
     [self.animation actionLOTAnimationViewBlock:^(id data) {
         @strongify(self)
-        if ([data isKindOfClass:NSNumber.class]) {
-            NSNumber *num = (NSNumber *)data;
-            if (self.LZBTabBarItemActionBlock) {
-                self.LZBTabBarItemActionBlock(num);
-            }
+        if (self.LZBTabBarItemActionBlock) {
+            self.LZBTabBarItemActionBlock(@(self.tagger));
         }
     }];
 }
-
--(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-    if (!_lottieJsonNameStrMutArr) {
-        _lottieJsonNameStrMutArr = NSMutableArray.array;
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-    }return _lottieJsonNameStrMutArr;
-}
-
 
 - (void)drawRect:(CGRect)rect{
     CGSize frameSize = self.frame.size;
@@ -117,7 +106,7 @@
             //必须先设置颜色
             CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
             [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width) * 0.5 + self.titleOffest.horizontal,
-                                              imageTopMaigin+imageSize.height+self.titleOffest.vertical,
+                                              imageTopMaigin+imageSize.height + self.titleOffest.vertical,
                                               titleSize.width,
                                               titleSize.height)
                     withAttributes:titleAttributes];
@@ -205,6 +194,17 @@
 - (void)setTitle:(NSString *)title{
     _title = title;
     [self setNeedsDisplay];
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+    }return _lottieJsonNameStrMutArr;
 }
 
 @end

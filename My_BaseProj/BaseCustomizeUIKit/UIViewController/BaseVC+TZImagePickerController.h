@@ -25,7 +25,7 @@ TZImagePickerControllerDelegate
 #pragma mark —— BaseVC+TZImagePickerController
 @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
 @property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
-@property(nonatomic,copy)MKDataBlock picBlock;
+@property(nonatomic,copy)MMDataBlock picBlock;
 
 @property(nonatomic,assign)NSInteger maxImagesCount;
 @property(nonatomic,assign)NSInteger columnNumber;
@@ -37,7 +37,7 @@ TZImagePickerControllerDelegate
 @property(nonatomic,strong)PHAsset *asset;
 
 ///点选的图片
--(void)GettingPicBlock:(MKDataBlock)block;
+-(void)GettingPicBlock:(MMDataBlock)block;
 ///访问相册 —— 选择图片
 -(void)choosePic:(TZImagePickerControllerType)tzImagePickerControllerType;
 ///访问摄像头

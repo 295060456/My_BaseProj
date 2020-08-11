@@ -10,3 +10,5 @@ typedef void(^SevenMKDataBlock)(id data,id data2,id data3,id data4,id data5,id d
 typedef void(^EightMKDataBlock)(id data,id data2,id data3,id data4,id data5,id data7,id data8);
 typedef void(^NineMKDataBlock)(id data,id data2,id data3,id data4,id data5,id data7,id data8,id data9);
 typedef void(^TenMKDataBlock)(id data,id data2,id data3,id data4,id data5,id data7,id data8,id data9,id data10);
+
+typedef void(^MMDataBlock)(id firstArg,...);//第一个参数写：有多少个实际参数 用NSNumber表示 @1

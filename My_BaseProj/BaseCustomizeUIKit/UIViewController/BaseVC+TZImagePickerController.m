@@ -37,7 +37,7 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
 @dynamic asset;
 
 ///点选的图片
--(void)GettingPicBlock:(MKDataBlock)block{
+-(void)GettingPicBlock:(MMDataBlock)block{
     self.picBlock = block;
 }
 ///访问相册 —— 选择图片
@@ -155,13 +155,342 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
             
         @weakify(self)
         [imagePickerController setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,
-                                                          NSArray *assets,
-                                                          BOOL isSelectOriginalPhoto) {
+                                                                 NSArray *assets,
+                                                                 BOOL isSelectOriginalPhoto) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(photos);
+                self.picBlock(@3,
+                              photos,
+                              assets,
+                              @(isSelectOriginalPhoto));
             }
         }];
+        
+                
+        [imagePickerController setDidFinishPickingPhotosWithInfosHandle:^(NSArray<UIImage *> *photos,
+                                                                          NSArray *assets,
+                                                                          BOOL isSelectOriginalPhoto,
+                                                                          NSArray<NSDictionary *> *infos) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(photos,
+                              assets,
+                              @(isSelectOriginalPhoto),
+                              infos);
+            }
+        }];
+
+        [imagePickerController setImagePickerControllerDidCancelHandle:^{
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(@1);
+            }
+        }];
+
+        [imagePickerController setDidFinishPickingVideoHandle:^(UIImage *coverImage,
+                                                                PHAsset *asset) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(coverImage,
+                              asset);
+            }
+        }];
+        [imagePickerController setDidFinishPickingGifImageHandle:^(UIImage *animatedImage,
+                                                                   id sourceAssets) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(animatedImage,
+                              sourceAssets);
+            }
+        }];
+
+        [imagePickerController setDidFinishPickingGifImageHandle:^(UIImage *animatedImage,
+                                                                   id sourceAssets) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(animatedImage,
+                              sourceAssets);
+            }
+        }];
+
+        [imagePickerController setCropViewSettingBlock:^(UIView *cropView) { ///< 自定义裁剪框的其他属性
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(cropView);
+            }
+        }];
+
+        [imagePickerController setNavLeftBarButtonSettingBlock:^(UIButton *leftButton) {///< 自定义返回按钮样式及其属性
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(leftButton);
+            }
+        }];
+
+        /// 【自定义各页面/组件的样式】在界面初始化/组件setModel完成后调用，允许外界修改样式等
+        [imagePickerController setPhotoPickerPageUIConfigBlock:^(UICollectionView *collectionView,
+                                                                 UIView *bottomToolBar,
+                                                                 UIButton *previewButton,
+                                                                 UIButton *originalPhotoButton,
+                                                                 UILabel *originalPhotoLabel,
+                                                                 UIButton *doneButton,
+                                                                 UIImageView *numberImageView,
+                                                                 UILabel *numberLabel,
+                                                                 UIView *divideLine) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              bottomToolBar,
+                              previewButton,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel,
+                              divideLine);
+            }
+        }];
+
+        [imagePickerController setPhotoPreviewPageUIConfigBlock:^(UICollectionView *collectionView,
+                                                                  UIView *naviBar,
+                                                                  UIButton *backButton,
+                                                                  UIButton *selectButton,
+                                                                  UILabel *indexLabel,
+                                                                  UIView *toolBar,
+                                                                  UIButton *originalPhotoButton,
+                                                                  UILabel *originalPhotoLabel,
+                                                                  UIButton *doneButton,
+                                                                  UIImageView *numberImageView,
+                                                                  UILabel *numberLabel) {//
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              naviBar,
+                              backButton,
+                              selectButton,
+                              indexLabel,
+                              toolBar,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel);
+            }
+        }];
+
+        [imagePickerController setVideoPreviewPageUIConfigBlock:^(UIButton *playButton,
+                                                                  UIView *toolBar,
+                                                                  UIButton *doneButton) {//
+            if (self.picBlock) {
+                self.picBlock(playButton,
+                              toolBar,
+                              doneButton);
+            }
+        }];
+
+        [imagePickerController setGifPreviewPageUIConfigBlock:^(UIView *toolBar,
+                                                                UIButton *doneButton) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(toolBar,
+                              doneButton);
+            }
+        }];
+
+        [imagePickerController setAlbumPickerPageUIConfigBlock:^(UITableView *tableView) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(tableView);
+            }
+        }];
+
+        [imagePickerController setAssetCellDidSetModelBlock:^(TZAssetCell *cell,
+                                                              UIImageView *imageView,
+                                                              UIImageView *selectImageView,
+                                                              UILabel *indexLabel,
+                                                              UIView *bottomView,
+                                                              UILabel *timeLength,
+                                                              UIImageView *videoImgView) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(cell,
+                              imageView,
+                              selectImageView,
+                              indexLabel,
+                              bottomView,
+                              timeLength,
+                              videoImgView);
+            }
+        }];
+
+        [imagePickerController setAlbumCellDidSetModelBlock:^(TZAlbumCell *cell,
+                                                              UIImageView *posterImageView,
+                                                              UILabel *titleLabel) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(cell,
+                              posterImageView,
+                              titleLabel);
+            }
+        }];
+
+        /// 【自定义各页面/组件的frame】在界面viewDidLayoutSubviews/组件layoutSubviews后调用，允许外界修改frame等
+        [imagePickerController setPhotoPickerPageDidLayoutSubviewsBlock:^(UICollectionView *collectionView,
+                                                                          UIView *bottomToolBar,
+                                                                          UIButton *previewButton,
+                                                                          UIButton *originalPhotoButton,
+                                                                          UILabel *originalPhotoLabel,
+                                                                          UIButton *doneButton,
+                                                                          UIImageView *numberImageView,
+                                                                          UILabel *numberLabel,
+                                                                          UIView *divideLine) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              bottomToolBar,
+                              previewButton,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel,
+                              divideLine);
+            }
+        }];
+
+        [imagePickerController setPhotoPreviewPageDidLayoutSubviewsBlock:^(UICollectionView *collectionView,
+                                                                           UIView *naviBar,
+                                                                           UIButton *backButton,
+                                                                           UIButton *selectButton,
+                                                                           UILabel *indexLabel,
+                                                                           UIView *toolBar,
+                                                                           UIButton *originalPhotoButton,
+                                                                           UILabel *originalPhotoLabel,
+                                                                           UIButton *doneButton,
+                                                                           UIImageView *numberImageView,
+                                                                           UILabel *numberLabel) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              naviBar,
+                              backButton,
+                              selectButton,
+                              indexLabel,
+                              toolBar,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel);
+            }
+        }];
+
+        [imagePickerController setVideoPreviewPageDidLayoutSubviewsBlock:^(UIButton *playButton,
+                                                                           UIView *toolBar,
+                                                                           UIButton *doneButton) {//
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(playButton,
+                              toolBar,
+                              doneButton);
+            }
+        }];
+
+        [imagePickerController setGifPreviewPageDidLayoutSubviewsBlock:^(UIView *toolBar,
+                                                                         UIButton *doneButton) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(toolBar,doneButton);
+            }
+        }];
+
+        [imagePickerController setAlbumPickerPageDidLayoutSubviewsBlock:^(UITableView *tableView) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(tableView);
+            }
+        }];
+
+        [imagePickerController setAssetCellDidLayoutSubviewsBlock:^(TZAssetCell *cell,
+                                                                    UIImageView *imageView,
+                                                                    UIImageView *selectImageView,
+                                                                    UILabel *indexLabel,
+                                                                    UIView *bottomView,
+                                                                    UILabel *timeLength,
+                                                                    UIImageView *videoImgView) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(cell,
+                              imageView,
+                              selectImageView,
+                              indexLabel,
+                              bottomView,
+                              timeLength,
+                              videoImgView);
+            }
+        }];
+
+        [imagePickerController setAlbumCellDidLayoutSubviewsBlock:^(TZAlbumCell *cell,
+                                                                    UIImageView *posterImageView,
+                                                                    UILabel *titleLabel) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(cell,
+                              posterImageView,
+                              titleLabel);
+            }
+        }];
+
+        /// 自定义各页面/组件的frame】刷新底部状态(refreshNaviBarAndBottomBarState)使用的
+        [imagePickerController setPhotoPickerPageDidRefreshStateBlock:^(UICollectionView *collectionView,
+                                                                        UIView *bottomToolBar,
+                                                                        UIButton *previewButton,
+                                                                        UIButton *originalPhotoButton,
+                                                                        UILabel *originalPhotoLabel,
+                                                                        UIButton *doneButton,
+                                                                        UIImageView *numberImageView,
+                                                                        UILabel *numberLabel,
+                                                                        UIView *divideLine) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              bottomToolBar,
+                              previewButton,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel,
+                              divideLine);
+            }
+        }];
+
+        [imagePickerController setPhotoPreviewPageDidRefreshStateBlock:^(UICollectionView *collectionView,
+                                                                         UIView *naviBar,
+                                                                         UIButton *backButton,
+                                                                         UIButton *selectButton,
+                                                                         UILabel *indexLabel,
+                                                                         UIView *toolBar,
+                                                                         UIButton *originalPhotoButton,
+                                                                         UILabel *originalPhotoLabel,
+                                                                         UIButton *doneButton,
+                                                                         UIImageView *numberImageView,
+                                                                         UILabel *numberLabel) {
+            @strongify(self)
+            if (self.picBlock) {
+                self.picBlock(collectionView,
+                              naviBar,backButton,
+                              selectButton,
+                              indexLabel,
+                              toolBar,
+                              originalPhotoButton,
+                              originalPhotoLabel,
+                              doneButton,
+                              numberImageView,
+                              numberLabel);
+            }
+        }];
+
         objc_setAssociatedObject(self,
                                  BaseVC_TZImagePickerController_imagePickerVC,
                                  imagePickerController,
@@ -297,11 +626,11 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                              OBJC_ASSOCIATION_ASSIGN);
 }
 #pragma mark —— @property(nonatomic,copy)MKDataBlock picBlock;
--(MKDataBlock)picBlock{
+-(MMDataBlock)picBlock{
     return objc_getAssociatedObject(self, BaseVC_TZImagePickerController_picBlock);
 }
 
--(void)setPicBlock:(MKDataBlock)picBlock{
+-(void)setPicBlock:(MMDataBlock)picBlock{
     objc_setAssociatedObject(self,
                              BaseVC_TZImagePickerController_picBlock,
                              picBlock,

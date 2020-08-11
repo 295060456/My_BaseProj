@@ -190,73 +190,93 @@
 - (void)openPhoto{
     [self choosePic:TZImagePickerControllerType_1];
     @weakify(self)
-    [self GettingPicBlock:^(id data) {
+    [self GettingPicBlock:^(id firstArg, ...)NS_REQUIRES_NIL_TERMINATION{
         @strongify(self)
-        if ([data isKindOfClass:[NSArray class]]) {
-            NSArray *arrData = (NSArray *)data;
-            if (arrData.count == 1) {
-                NSLog(@"");
-                UIImage *image = arrData.firstObject;
-                @weakify(self)
-                switch (self.libraryType) {
-                        case SLT_Native:{
-                #ifdef LBXScan_Define_Native
-                            if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0){
-                                [LBXScanNative recognizeImage:image
-                                                      success:^(NSArray<LBXScanResult *> *array) {
-                                    [self_weak_ scanResultWithArray:array];
-                                }];
-                            }else{
-                                [self showError:@"native低于ios8.0系统不支持识别图片条码"];
-                            }
-                #endif
-                        }
-                            break;
-                        case SLT_ZXing:{
-                #ifdef LBXScan_Define_ZXing
-                            [ZXingWrapper recognizeImage:image
-                                                   block:^(ZXBarcodeFormat barcodeFormat,
-                                                           NSString *str) {
-                                LBXScanResult *result = [[LBXScanResult alloc]init];
-                                result.strScanned = str;
-                                result.imgScanned = image;
-                                result.strBarCodeType = [self convertZXBarcodeFormat:barcodeFormat];
-                                [weak_self scanResultWithArray:@[result]];
-                            }];
-                #endif
-                        }
-                            break;
-                        case SLT_ZBar:{
-                #ifdef LBXScan_Define_ZBar
-                            [LBXZBarWrapper recognizeImage:image
-                                                     block:^(NSArray<LBXZbarResult *> *result) {
+        if (firstArg) {
+            // 取出第一个参数
+            NSLog(@"%@", firstArg);
+            // 定义一个指向个数可变的参数列表指针；
+            va_list args;
+            // 用于存放取出的参数
+            id arg = nil;
+            // 初始化变量刚定义的va_list变量，这个宏的第二个参数是第一个可变参数的前一个参数，是一个固定的参数
+            va_start(args, firstArg);
+            // 遍历全部参数 va_arg返回可变的参数(a_arg的第二个参数是你要返回的参数的类型)
+            if ([firstArg isKindOfClass:NSNumber.class]) {
+                NSNumber *num = (NSNumber *)firstArg;
+                for (int i = 0; i < num.intValue; i++) {
+                    arg = va_arg(args, id);
+                    NSLog(@"KKK = %@", arg);
+                    if ([arg isKindOfClass:NSArray.class]) {
+                        NSArray *arrData = (NSArray *)arg;
+                        if (arrData.count == 1) {
+                            NSLog(@"");
+                            UIImage *image = arrData.firstObject;
+                            @weakify(self)
+                            switch (self.libraryType) {
+                                    case SLT_Native:{
+                            #ifdef LBXScan_Define_Native
+                                        if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0){
+                                            [LBXScanNative recognizeImage:image
+                                                                  success:^(NSArray<LBXScanResult *> *array) {
+                                                [self_weak_ scanResultWithArray:array];
+                                            }];
+                                        }else{
+                                            [self showError:@"native低于ios8.0系统不支持识别图片条码"];
+                                        }
+                            #endif
+                                    }
+                                        break;
+                                    case SLT_ZXing:{
+                            #ifdef LBXScan_Define_ZXing
+                                        [ZXingWrapper recognizeImage:image
+                                                               block:^(ZXBarcodeFormat barcodeFormat,
+                                                                       NSString *str) {
+                                            LBXScanResult *result = [[LBXScanResult alloc]init];
+                                            result.strScanned = str;
+                                            result.imgScanned = image;
+                                            result.strBarCodeType = [self convertZXBarcodeFormat:barcodeFormat];
+                                            [self_weak_ scanResultWithArray:@[result]];
+                                        }];
+                            #endif
+                                    }
+                                        break;
+                                    case SLT_ZBar:{
+                            #ifdef LBXScan_Define_ZBar
+                                        [LBXZBarWrapper recognizeImage:image
+                                                                 block:^(NSArray<LBXZbarResult *> *result) {
 
-                                //测试，只使用扫码结果第一项
-                                LBXZbarResult *firstObj = result[0];
-                                LBXScanResult *scanResult = [[LBXScanResult alloc]init];
-                                scanResult.strScanned = firstObj.strScanned;
-                                scanResult.imgScanned = firstObj.imgScanned;
-                                scanResult.strBarCodeType = [LBXZBarWrapper convertFormat2String:firstObj.format];
-                                [weak_self scanResultWithArray:@[scanResult]];
-                            }];
-                #endif
-                        }
-                            break;
-                        default:
-                            break;
-                    }
-                
-            }else{
-                [self alertControllerStyle:SYS_AlertController
-                        showAlertViewTitle:@"选择一张相片就够啦"
-                                   message:nil
-                           isSeparateStyle:YES
-                               btnTitleArr:@[@"知道了"]
-                            alertBtnAction:@[@"OK"]
-                              alertVCBlock:^(id data) {
+                                            //测试，只使用扫码结果第一项
+                                            LBXZbarResult *firstObj = result[0];
+                                            LBXScanResult *scanResult = [[LBXScanResult alloc]init];
+                                            scanResult.strScanned = firstObj.strScanned;
+                                            scanResult.imgScanned = firstObj.imgScanned;
+                                            scanResult.strBarCodeType = [LBXZBarWrapper convertFormat2String:firstObj.format];
+                                            [self_weak_ scanResultWithArray:@[scanResult]];
+                                        }];
+                            #endif
+                                    }
+                                        break;
+                                    default:
+                                        break;
+                                }
+
+                        }else{
+                            [self alertControllerStyle:SYS_AlertController
+                                    showAlertViewTitle:@"选择一张相片就够啦"
+                                               message:nil
+                                       isSeparateStyle:YES
+                                           btnTitleArr:@[@"好的"]
+                                        alertBtnAction:@[@"OK"]
+                                          alertVCBlock:^(id data) {
                                 //DIY
-                }];
+                            }];
+                        }
+                    }
+                }
             }
+            // 清空参数列表，并置参数指针args无效
+            va_end(args);
         }
     }];
 }

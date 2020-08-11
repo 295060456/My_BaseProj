@@ -173,7 +173,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                           NSArray<NSDictionary *> *infos) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(photos,
+                self.picBlock(@4,
+                              photos,
                               assets,
                               @(isSelectOriginalPhoto),
                               infos);
@@ -183,7 +184,7 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         [imagePickerController setImagePickerControllerDidCancelHandle:^{
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(@1);
+                self.picBlock(@0);
             }
         }];
 
@@ -191,7 +192,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                 PHAsset *asset) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(coverImage,
+                self.picBlock(@2,
+                              coverImage,
                               asset);
             }
         }];
@@ -199,7 +201,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                    id sourceAssets) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(animatedImage,
+                self.picBlock(@2,
+                              animatedImage,
                               sourceAssets);
             }
         }];
@@ -208,7 +211,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                    id sourceAssets) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(animatedImage,
+                self.picBlock(@2,
+                              animatedImage,
                               sourceAssets);
             }
         }];
@@ -216,14 +220,16 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         [imagePickerController setCropViewSettingBlock:^(UIView *cropView) { ///< 自定义裁剪框的其他属性
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(cropView);
+                self.picBlock(@1,
+                              cropView);
             }
         }];
 
         [imagePickerController setNavLeftBarButtonSettingBlock:^(UIButton *leftButton) {///< 自定义返回按钮样式及其属性
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(leftButton);
+                self.picBlock(@1,
+                              leftButton);
             }
         }];
 
@@ -239,7 +245,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                  UIView *divideLine) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@9,
+                              collectionView,
                               bottomToolBar,
                               previewButton,
                               originalPhotoButton,
@@ -264,7 +271,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                   UILabel *numberLabel) {//
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@11,
+                              collectionView,
                               naviBar,
                               backButton,
                               selectButton,
@@ -282,7 +290,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                   UIView *toolBar,
                                                                   UIButton *doneButton) {//
             if (self.picBlock) {
-                self.picBlock(playButton,
+                self.picBlock(@3,
+                              playButton,
                               toolBar,
                               doneButton);
             }
@@ -292,7 +301,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                 UIButton *doneButton) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(toolBar,
+                self.picBlock(@2,
+                              toolBar,
                               doneButton);
             }
         }];
@@ -300,7 +310,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         [imagePickerController setAlbumPickerPageUIConfigBlock:^(UITableView *tableView) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(tableView);
+                self.picBlock(@1,
+                              tableView);
             }
         }];
 
@@ -313,7 +324,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                               UIImageView *videoImgView) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(cell,
+                self.picBlock(@7,
+                              cell,
                               imageView,
                               selectImageView,
                               indexLabel,
@@ -328,7 +340,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                               UILabel *titleLabel) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(cell,
+                self.picBlock(@3,
+                              cell,
                               posterImageView,
                               titleLabel);
             }
@@ -346,7 +359,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                           UIView *divideLine) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@9,
+                              collectionView,
                               bottomToolBar,
                               previewButton,
                               originalPhotoButton,
@@ -371,7 +385,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                            UILabel *numberLabel) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@11,
+                              collectionView,
                               naviBar,
                               backButton,
                               selectButton,
@@ -390,7 +405,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                            UIButton *doneButton) {//
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(playButton,
+                self.picBlock(@3,
+                              playButton,
                               toolBar,
                               doneButton);
             }
@@ -400,14 +416,17 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                          UIButton *doneButton) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(toolBar,doneButton);
+                self.picBlock(@2,
+                              toolBar,
+                              doneButton);
             }
         }];
 
         [imagePickerController setAlbumPickerPageDidLayoutSubviewsBlock:^(UITableView *tableView) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(tableView);
+                self.picBlock(@1,
+                              tableView);
             }
         }];
 
@@ -420,7 +439,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                     UIImageView *videoImgView) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(cell,
+                self.picBlock(@7,
+                              cell,
                               imageView,
                               selectImageView,
                               indexLabel,
@@ -435,7 +455,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                     UILabel *titleLabel) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(cell,
+                self.picBlock(@3,
+                              cell,
                               posterImageView,
                               titleLabel);
             }
@@ -453,7 +474,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                         UIView *divideLine) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@9,
+                              collectionView,
                               bottomToolBar,
                               previewButton,
                               originalPhotoButton,
@@ -478,7 +500,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                                                          UILabel *numberLabel) {
             @strongify(self)
             if (self.picBlock) {
-                self.picBlock(collectionView,
+                self.picBlock(@10,
+                              collectionView,
                               naviBar,backButton,
                               selectButton,
                               indexLabel,

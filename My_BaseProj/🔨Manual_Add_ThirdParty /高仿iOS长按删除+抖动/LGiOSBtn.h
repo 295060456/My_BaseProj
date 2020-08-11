@@ -23,7 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LGiOSBtn : UIButton
 // 是否抖动
 @property(nonatomic,assign,getter=isShaking)BOOL shaking;
-@property (nonatomic, weak) id<DZDeleteButtonDelegate> delegate;
+// 右上角的按钮，
+@property(nonatomic,strong)UIImageView *iconBtn;
+@property(nonatomic,weak)id<DZDeleteButtonDelegate> delegate;
 
 @end
 

@@ -11,14 +11,13 @@
 
 @interface LGiOSBtn ()
 
-// 右上角的按钮，
-@property(nonatomic,strong)UIImageView *iconBtn;
 // 遮盖，在抖动时出现
 @property(nonatomic,strong)UIView *coverView;
 
 @property(nonatomic,strong)UITapGestureRecognizer *coverViewTap;
 @property(nonatomic,strong)UILongPressGestureRecognizer *longPress;
 @property(nonatomic,strong)UITapGestureRecognizer *iconBtnTap;
+@property(nonatomic,strong)CAKeyframeAnimation *anim;
 
 @end
 
@@ -33,6 +32,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
+        self.iconBtn.alpha = 0;
     }return self;
 }
 
@@ -41,6 +41,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
+        self.iconBtn.alpha = 0;
     }return self;
 }
 
@@ -49,6 +50,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
+        self.iconBtn.alpha = 0;
     }return self;
 }
 
@@ -59,7 +61,7 @@
     self.imageView.mj_y = 0;
     self.imageView.mj_w = self.mj_w;
     self.imageView.mj_h = self.mj_w;
-    
+
     self.titleLabel.mj_x = 0;
     self.titleLabel.mj_w = self.mj_w;
     if (self.mj_w >= self.mj_h) {
@@ -69,14 +71,8 @@
         self.titleLabel.mj_y = self.imageView.mj_h;
         self.titleLabel.mj_h = self.mj_h - self.titleLabel.mj_y;
     }
-    
+
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.iconBtn.size = CGSizeMake(self.mj_w * 0.3, self.mj_w * 0.3);
-    self.iconBtn.mj_x = self.mj_w - self.iconBtn.mj_w / 2;
-    self.iconBtn.mj_y = -self.iconBtn.mj_h / 2;
-    
-    self.coverView.frame = self.bounds;
-    [self bringSubviewToFront:self.iconBtn];
 }
 // 添加长按手势
 - (void)addLongPressGestureRecognizer {
@@ -85,7 +81,8 @@
 // 是否执行动画
 - (void)setShaking:(BOOL)shaking {
     if (shaking) {
-        [self shakingAnimation];
+        [self.layer addAnimation:self.anim
+                          forKey:@"shake"];
         self.coverView.hidden = NO;
         self.iconBtn.hidden = NO;
     } else {
@@ -93,25 +90,6 @@
         self.coverView.hidden = YES;
         self.iconBtn.hidden = YES;
     }
-}
-#pragma mark - 抖动动画
-#define Angle2Radian(angle) ((angle) / 180.0 * M_PI)
-- (void)shakingAnimation {
-    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
-    anim.keyPath = @"transform.rotation";
-    
-    anim.values = @[@(Angle2Radian(-5)),
-                    @(Angle2Radian(5)),
-                    @(Angle2Radian(-5))];
-    anim.duration = 0.25;
-    
-    // 动画次数设置为最大
-    anim.repeatCount = MAXFLOAT;
-    // 保持动画执行完毕后的状态
-    anim.removedOnCompletion = NO;
-    anim.fillMode = kCAFillModeForwards;
-    
-    [self.layer addAnimation:anim forKey:@"shake"];
 }
 
 - (void)longClick {
@@ -136,11 +114,33 @@
     if (!_iconBtn) {
         _iconBtn = [[UIImageView alloc] initWithImage:kIMG(@"del_Photo")];
         _iconBtn.userInteractionEnabled = YES;
-        _iconBtn.hidden = YES;
         _iconBtn.ableRespose = YES;
         [_iconBtn addGestureRecognizer:self.iconBtnTap];
         [self addSubview:_iconBtn];
+        [_iconBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCALING_RATIO(20), SCALING_RATIO(20)));
+            make.top.equalTo(self).offset(-SCALING_RATIO(20) / 2);
+            make.right.equalTo(self).offset(SCALING_RATIO(20) / 2);
+        }];
+        [self bringSubviewToFront:_iconBtn];
     }return _iconBtn;
+}
+/// 抖动动画
+-(CAKeyframeAnimation *)anim{
+    if (!_anim) {
+    #define Angle2Radian(angle) ((angle) / 180.0 * M_PI)
+        _anim = CAKeyframeAnimation.animation;
+        _anim.keyPath = @"transform.rotation";
+        _anim.values = @[@(Angle2Radian(-5)),
+                        @(Angle2Radian(5)),
+                        @(Angle2Radian(-5))];
+        _anim.duration = 0.25;
+        // 动画次数设置为最大
+        _anim.repeatCount = MAXFLOAT;
+        // 保持动画执行完毕后的状态
+        _anim.removedOnCompletion = NO;
+        _anim.fillMode = kCAFillModeForwards;
+    }return _anim;
 }
 
 - (UIView *)coverView {
@@ -150,6 +150,7 @@
         _coverView.hidden = YES;
         [_coverView addGestureRecognizer:self.coverViewTap];
         [self addSubview:_coverView];
+        _coverView.frame = self.bounds;
     }return _coverView;
 }
 

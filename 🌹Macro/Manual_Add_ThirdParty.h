@@ -74,6 +74,7 @@
 #import "NSArray+Extend.h"
 #import "NSString+Extras.h"
 #import "UIView+Extras.h"
+#import "UIView+Chain.h"
 #import "UIImage+Extras.h"
 #import "UIButton+Block.h"
 #import "UIColor+Hex.h"
@@ -87,6 +88,7 @@
 ///BaseVC
 #import "BaseVC.h"
 #import "BaseVC+TZImagePickerController.h"
+#import "BaseVC+TZImagePickerControllerDelegate.h"
 #import "BaseVC+MJRefresh.h"
 #import "BaseVC+AlertController.h"
 #import "BaseVC+AFNReachability.h"

@@ -7,6 +7,7 @@
 //
 
 #import "BaseVC+TZImagePickerController.h"
+#import "BaseVC+TZImagePickerControllerDelegate.h"
 #import "BaseVC+AlertController.h"
 #import <objc/runtime.h>
 

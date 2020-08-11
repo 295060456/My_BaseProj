@@ -9,17 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @class LGiOSBtn;
+
 @protocol DZDeleteButtonDelegate <NSObject>
+
 @optional
-- (void)deleteButtonRemoveSelf:(LGiOSBtn *)button;
+
+- (void)deleteButtonRemoveSelf:(LGiOSBtn *_Nonnull)button;
+
 @end
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LGiOSBtn : UIButton
-
+// 是否抖动
+@property(nonatomic,assign,getter=isShaking)BOOL shaking;
 @property (nonatomic, weak) id<DZDeleteButtonDelegate> delegate;
-
 
 @end
 

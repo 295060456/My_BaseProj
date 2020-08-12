@@ -45,6 +45,12 @@
 + (NSString *)tmpDir {
     return NSTemporaryDirectory();
 }
+#pragma mark - 以当前时间戳生成缓存路径
++ (NSURL *)cacheURL:(NSString *)extension {
+    NSString *fileName = [NSString stringWithFormat:@"%.0lf.%@", [[NSDate date] timeIntervalSince1970], extension];
+    NSString *cachePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+    return [NSURL fileURLWithPath:cachePath];
+}
 #pragma mark —— 创建文件（夹）
 ///创建文件夹：
 + (BOOL)createDirectoryAtPath:(NSString *)path
@@ -202,6 +208,22 @@
                                                    error:&error];
         if (error) return NO;
     }return YES;
+}
+///给定一个路径，删除旗下所有东西
++(void)cleanFilesWithPath:(NSString *)PathStr{
+    /**
+     函数说明：unlink()会删除参数pathname 指定的文件. 如果该文件名为最后连接点, 但有其他进程打开了此文件, 则在所有关于此文件的文件描述词皆关闭后才会删除. 如果参数pathname 为一符号连接, 则此连接会被删除。
+     返回值：成功则返回0, 失败返回-1, 错误原因存于errno
+
+     错误代码：
+     1、EROFS 文件存在于只读文件系统内。
+     2、EFAULT 参数pathname 指针超出可存取内存空间。
+     3、ENAMETOOLONG 参数pathname 太长。
+     4、ENOMEM 核心内存不足。
+     5、ELOOP 参数pathname 有过多符号连接问题。
+     6、EIO I/O 存取错误
+     */
+    unlink([PathStr UTF8String]);
 }
 #pragma mark —— 复制文件（夹）
 ///复制文件 依据源文件的路径复制一份到目标路径：

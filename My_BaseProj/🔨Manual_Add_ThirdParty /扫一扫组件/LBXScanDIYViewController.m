@@ -38,13 +38,11 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self drawScanView];
-    [self camera:@"Scan"];
-}
-
--(void)Scan{
-    [self performSelector:@selector(startScan)
-               withObject:nil
-               afterDelay:0.3f];
+    @weakify(self)
+    [self camera:^(id data) {
+        @strongify(self)
+        [self startScan];
+    }];
 }
 
 //绘制扫描区域

@@ -37,7 +37,9 @@ target 'My_BaseProj' do
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'BSYKeyBoard' # https://github.com/baishiyun/BSYKeyBoard
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
-  pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView
+#  pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
+  pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
+  pod 'AWRichText' # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，支持精确点击，UIView混排，GIF动图，并不仅仅局限于图文混排的富文本排版神器。
   #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
   pod 'FDFullscreenPopGesture'# https://github.com/forkingdog/FDFullscreenPopGesture 一个丝滑的全屏滑动返回手势 A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.
 #  pod 'ZYSuspensionView/SuspensionView' # https://github.com/ripperhe/ZYSuspensionView 悬浮球带点击事件
@@ -71,6 +73,7 @@ target 'My_BaseProj' do
   pod 'SZTextView' # https://github.com/glaszig/SZTextView SZTextView 用于替代内置的 UITextView，实现了 placeholder 功能。
   pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
 #  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
+  pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
   pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView

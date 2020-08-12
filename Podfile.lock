@@ -29,23 +29,6 @@ PODS:
     - Debugo/Core (= 0.3.0)
   - Debugo/Core (0.3.0):
     - FMDB (>= 2.7.2)
-  - DTCoreText (1.6.23):
-    - DTCoreText/Core (= 1.6.23)
-    - DTFoundation/Core (~> 1.7.5)
-    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
-    - DTFoundation/DTHTMLParser (~> 1.7.5)
-    - DTFoundation/UIKit (~> 1.7.5)
-  - DTCoreText/Core (1.6.23):
-    - DTFoundation/Core (~> 1.7.5)
-    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
-    - DTFoundation/DTHTMLParser (~> 1.7.5)
-    - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.14)
-  - DTFoundation/DTAnimatedGIF (1.7.14)
-  - DTFoundation/DTHTMLParser (1.7.14):
-    - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.14):
-    - DTFoundation/Core
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
     - FBAllocationTracker (~> 0.1)
@@ -141,6 +124,16 @@ PODS:
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
+  - RZColorful (1.3.0):
+    - RZColorful/AttributeCore (= 1.3.0)
+    - RZColorful/UICore (= 1.3.0)
+  - RZColorful/AttributeCore (1.3.0)
+  - RZColorful/UICore (1.3.0):
+    - RZColorful/AttributeCore
+  - RZRichTextView (0.3.1):
+    - Masonry
+    - RZColorful
+    - TZImagePickerController
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.8.4):
@@ -185,6 +178,8 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
+  - WMZBanner (1.1.3):
+    - SDWebImage
   - WXSTransition (1.2.1)
   - XHLaunchAd (3.9.12):
     - FLAnimatedImage (~> 1.0.12)
@@ -206,7 +201,6 @@ DEPENDENCIES:
   - CWLateralSlide
   - DDProgressView
   - Debugo
-  - DTCoreText
   - FBMemoryProfiler
   - FDFullscreenPopGesture
   - "FLAnimatedImageView+RGWrapper"
@@ -246,6 +240,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - Reveal-SDK
   - RQShineLabel
+  - RZRichTextView
   - SDCycleScrollView
   - SDWebImage
   - Shimmer
@@ -262,6 +257,7 @@ DEPENDENCIES:
   - UICountingLabel
   - WCDB
   - WebViewJavascriptBridge
+  - WMZBanner
   - WXSTransition
   - XHLaunchAd
   - YQImageCompressor
@@ -281,8 +277,6 @@ SPEC REPOS:
     - CWLateralSlide
     - DDProgressView
     - Debugo
-    - DTCoreText
-    - DTFoundation
     - FBAllocationTracker
     - FBMemoryProfiler
     - FBRetainCycleDetector
@@ -325,6 +319,8 @@ SPEC REPOS:
     - ReactiveObjC
     - Reveal-SDK
     - RQShineLabel
+    - RZColorful
+    - RZRichTextView
     - SDCycleScrollView
     - SDWebImage
     - Shimmer
@@ -343,6 +339,7 @@ SPEC REPOS:
     - WCDB
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
+    - WMZBanner
     - WXSTransition
     - XHLaunchAd
     - YQImageCompressor
@@ -362,8 +359,6 @@ SPEC CHECKSUMS:
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   Debugo: ae9d6a6e0c33dcb061db331bd0aead971756a204
-  DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
-  DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -406,6 +401,8 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
+  RZColorful: faa4be6e9425c8d914fde242011cd3abffd50c1e
+  RZRichTextView: c58b28660a40edc6a064aad4a66d9062be9401ba
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
@@ -424,6 +421,7 @@ SPEC CHECKSUMS:
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WMZBanner: 5575711bef96c7e77caac9f06a86c5987bfc3132
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
@@ -431,6 +429,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: b100a67489186d2a9938805b5ed195f4b5cf04dc
+PODFILE CHECKSUM: 4691bc9e67e1fbcf6cdece74795395076b4f3617
 
 COCOAPODS: 1.9.3

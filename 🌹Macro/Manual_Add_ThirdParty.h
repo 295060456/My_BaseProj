@@ -89,6 +89,7 @@
 #import "BaseVC.h"
 #import "BaseVC+TZImagePickerController.h"
 #import "BaseVC+TZImagePickerControllerDelegate.h"
+#import "BaseVC+TZLocationManager.h"
 #import "BaseVC+MJRefresh.h"
 #import "BaseVC+AlertController.h"
 #import "BaseVC+AFNReachability.h"

@@ -7,6 +7,7 @@
 //
 
 #import "BaseVC.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 NS_ASSUME_NONNULL_BEGIN
 ///分别对应 TZImagePickerController 的五种初始化方法
@@ -21,9 +22,13 @@ typedef enum : NSInteger {
 @interface BaseVC (TZImagePickerController)
 <
 TZImagePickerControllerDelegate
+,UINavigationControllerDelegate
+,UIImagePickerControllerDelegate
 >
 #pragma mark —— BaseVC+TZImagePickerController
 @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
+@property(nonatomic,strong)UIImagePickerController *imagePickerVC_Sys;
+@property(nonatomic,strong)NSMutableArray *mediaTypesMutArr;
 @property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
 @property(nonatomic,copy)MMDataBlock picBlock;
 
@@ -41,7 +46,9 @@ TZImagePickerControllerDelegate
 ///访问相册 —— 选择图片
 -(void)choosePic:(TZImagePickerControllerType)tzImagePickerControllerType;
 ///访问摄像头
--(void)camera:(NSString *)doSth;
+-(void)camera:(MKDataBlock)doSthBlock;
+
+-(void)pushImagePickerController;
 
 @end
 

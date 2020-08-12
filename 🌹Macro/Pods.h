@@ -16,7 +16,6 @@
 #import "AYCheckManager.h"
 #import "BEMCheckBox.h"
 #import "DDProgressView.h"
-#import "DTCoreText.h"
 #import "FLEX.h"
 #import "FMDB.h"
 #import "HCSStarRatingView.h"
@@ -66,5 +65,7 @@
 #import <LYEmptyView/LYEmptyViewHeader.h>
 #import "JPImageresizerView.h"
 #import "TRCustomAlert.h"
+#import <RZRichTextView/RZRichTextView.h>
+#include "AWRichText.h"
 
 #endif /* Pods_h */

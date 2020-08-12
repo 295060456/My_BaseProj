@@ -9,11 +9,15 @@
 #import "BaseVC+TZImagePickerController.h"
 #import "BaseVC+TZImagePickerControllerDelegate.h"
 #import "BaseVC+AlertController.h"
+#import "BaseVC+TZLocationManager.h"
 #import <objc/runtime.h>
 
 @implementation BaseVC (TZImagePickerController)
 
 static char *BaseVC_TZImagePickerController_imagePickerVC = "BaseVC_TZImagePickerController_imagePickerVC";
+static char *BaseVC_TZImagePickerController_imagePickerVC_Sys = "BaseVC_TZImagePickerController_imagePickerVC_Sys";
+static char *BaseVC_TZImagePickerController_mediaTypesMutArr = "BaseVC_TZImagePickerController_mediaTypesMutArr";
+
 static char *BaseVC_TZImagePickerController_tzImagePickerControllerType = "BaseVC_TZImagePickerController_tzImagePickerControllerType";
 static char *BaseVC_TZImagePickerController_picBlock = "BaseVC_TZImagePickerController_picBlock";
 static char *BaseVC_TZImagePickerController_maxImagesCount = "BaseVC_TZImagePickerController_maxImagesCount";
@@ -26,6 +30,7 @@ static char *BaseVC_TZImagePickerController_photo = "BaseVC_TZImagePickerControl
 static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerController_asset";
 
 @dynamic imagePickerVC;
+@dynamic imagePickerVC_Sys;
 @dynamic tzImagePickerControllerType;
 @dynamic picBlock;
 @dynamic maxImagesCount;
@@ -36,6 +41,7 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
 @dynamic selectedPhotos;
 @dynamic photo;
 @dynamic asset;
+@dynamic mediaTypesMutArr;
 
 ///点选的图片
 -(void)GettingPicBlock:(MMDataBlock)block{
@@ -85,8 +91,8 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         }
     }];
 }
-///访问摄像头
--(void)camera:(NSString *)doSth{
+///访问摄像头_鉴权
+-(void)camera:(MKDataBlock)doSthBlock{
     //先鉴权
     @weakify(self)
     [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Camera
@@ -98,8 +104,10 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         NSLog(@"%lu",(unsigned long)status);
         if (status == ECAuthorizationStatus_Authorized) {
             //允许访问摄像头后需要做的操作
-            [self performSelector:NSSelectorFromString(doSth)
-                       withObject:Nil];
+            [self pushImagePickerController];
+            if (doSthBlock) {
+                doSthBlock(@1);
+            }
         }else{
             NSLog(@"摄像头不可用:%lu",(unsigned long)status);
             [self alertControllerStyle:SYS_AlertController
@@ -114,7 +122,75 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
         }return nil;
     }];
 }
+// 调用相机
+- (void)pushImagePickerController {
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        self.imagePickerVC_Sys.sourceType = sourceType;
+        [self.mediaTypesMutArr addObject:(NSString *)kUTTypeMovie];
+        [self.mediaTypesMutArr addObject:(NSString *)kUTTypeImage];
+        if (self.mediaTypesMutArr.count) {
+            self.imagePickerVC_Sys.mediaTypes = self.mediaTypesMutArr;
+        }
+        [self presentViewController:self.imagePickerVC_Sys
+                           animated:YES
+                         completion:nil];
+    } else {
+        NSLog(@"模拟器中无法打开照相机,请在真机中使用");
+    }
+}
 #pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)UIImagePickerController *imagePickerVC_Sys;
+-(UIImagePickerController *)imagePickerVC_Sys{
+    UIImagePickerController *ImagePickerVC_Sys = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_imagePickerVC_Sys);
+    if (!ImagePickerVC_Sys) {
+        ImagePickerVC_Sys = UIImagePickerController.new;
+        ImagePickerVC_Sys.delegate = self;
+        // set appearance / 改变相册选择页的导航栏外观
+        ImagePickerVC_Sys.navigationBar.barTintColor = self.navigationController.navigationBar.barTintColor;
+        ImagePickerVC_Sys.navigationBar.tintColor = self.navigationController.navigationBar.tintColor;
+        UIBarButtonItem *tzBarItem, *BarItem;
+        if (@available(iOS 9, *)) {
+            tzBarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[TZImagePickerController.class]];
+            BarItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UIImagePickerController.class]];
+        } else {
+            tzBarItem = [UIBarButtonItem appearanceWhenContainedIn:TZImagePickerController.class, nil];
+            BarItem = [UIBarButtonItem appearanceWhenContainedIn:UIImagePickerController.class, nil];
+        }
+        NSDictionary *titleTextAttributes = [tzBarItem titleTextAttributesForState:UIControlStateNormal];
+        [BarItem setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
+        
+        objc_setAssociatedObject(self,
+                                 BaseVC_TZImagePickerController_imagePickerVC_Sys,
+                                 ImagePickerVC_Sys,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }return ImagePickerVC_Sys;
+}
+
+-(void)setImagePickerVC_Sys:(UIImagePickerController *)imagePickerVC_Sys{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_imagePickerVC_Sys,
+                             imagePickerVC_Sys,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSMutableArray *mediaTypesMutArr;
+-(NSMutableArray *)mediaTypesMutArr{
+    NSMutableArray *MediaTypesMutArr = objc_getAssociatedObject(self, BaseVC_TZImagePickerController_mediaTypesMutArr);
+    if (!MediaTypesMutArr) {
+        MediaTypesMutArr = NSMutableArray.array;
+        objc_setAssociatedObject(self,
+                                 BaseVC_TZImagePickerController_mediaTypesMutArr,
+                                 MediaTypesMutArr,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }return MediaTypesMutArr;
+}
+
+-(void)setMediaTypesMutArr:(NSMutableArray *)mediaTypesMutArr{
+    objc_setAssociatedObject(self,
+                             BaseVC_TZImagePickerController_mediaTypesMutArr,
+                             mediaTypesMutArr,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 #pragma mark —— @property(nonatomic,strong)TZImagePickerController *imagePickerVC;
 //分类里面只能写self.属性，所以每次都优先走get方法再走set
 -(TZImagePickerController *)imagePickerVC{

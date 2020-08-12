@@ -31,34 +31,47 @@ CLLocationManagerDelegate
     if (type == ECPrivacyType_LocationServices) {           // 定位服务
 //        [self checkAndRequestAccessForLocationServicesWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_Contacts) {             // 联系人
-        [self checkAndRequestAccessForContactsWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForContactsWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                   ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_Calendars) {            // 日历
-        [self checkAndRequestAccessForCalendarsWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForCalendarsWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                    ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_Reminders) {            // 提醒事项
-        [self checkAndRequestAccessForRemindersWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForRemindersWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                    ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type ==  ECPrivacyType_Photos) {              // 照片
-        [self checkAndRequestAccessForPhotosWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForPhotosWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                 ECPrivacyType type) {
             accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_BluetoothSharing) {     // 蓝牙
 //        [self checkAndRequestAccessForBluetoothSharingWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_Microphone) {           // 麦克风
-        [self checkAndRequestAccessForMicrophoneWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForMicrophoneWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                     ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_SpeechRecognition) {    // 语音识别
-        [self checkAndRequestAccessForSpeechRecognitionWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForSpeechRecognitionWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                            ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_Camera) {               // 相机
-        [self checkAndRequestAccessForCameraWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForCameraWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                 ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_Health) {               // 健康
@@ -66,7 +79,9 @@ CLLocationManagerDelegate
     }else if (type == ECPrivacyType_HomeKit) {              // home
 //        [self checkAndRequestAccessForHomeWithAccessStatus:accessStatusCallBack];
     }else if (type == ECPrivacyType_MediaAndAppleMusic) {   // Apple Music
-        [self checkAndRequestAccessForAppleMusicWithAccessStatus:^id(ECAuthorizationStatus status, ECPrivacyType type) {
+        [self checkAndRequestAccessForAppleMusicWithAccessStatus:^id(ECAuthorizationStatus status,
+                                                                     ECPrivacyType type) {
+            accessStatusCallBack(status,type);
             return nil;
         }];
     }else if (type == ECPrivacyType_MotionAndFitness) {     // Motion

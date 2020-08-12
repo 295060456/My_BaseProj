@@ -62,6 +62,7 @@
 		C590FF4324D01041000F36C9 /* UIImage+WebP_Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF4224D01041000F36C9 /* UIImage+WebP_Diff.m */; };
 		C59C4A2D24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A2B24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
+		C59C4A5424E3A88E002C2104 /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
@@ -464,6 +465,8 @@
 		C59C4A2C24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZImagePickerControllerDelegate.h"; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
+		C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
+		C59C4A5324E3A88D002C2104 /* BaseVC+TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZLocationManager.h"; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -2326,6 +2329,12 @@
 				C5336F8C24DAB9940082847C /* 存在疑问的 */,
 				C5336FB924DABC320082847C /* BaseVC.h */,
 				C5336FB524DABC310082847C /* BaseVC.m */,
+				C5E4C09124DFF0B300D4862C /* BaseVC+TZImagePickerController.h */,
+				C5E4C08624DFF0B200D4862C /* BaseVC+TZImagePickerController.m */,
+				C59C4A5324E3A88D002C2104 /* BaseVC+TZLocationManager.h */,
+				C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */,
+				C59C4A2C24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.h */,
+				C59C4A2B24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m */,
 				C5E4C08424DFF0B100D4862C /* BaseVC+AFNReachability.h */,
 				C5E4C08924DFF0B200D4862C /* BaseVC+AFNReachability.m */,
 				C5E4C08824DFF0B200D4862C /* BaseVC+AlertController.h */,
@@ -2342,10 +2351,6 @@
 				C5E4C09424DFF0B300D4862C /* BaseVC+JPImageresizerView.m */,
 				C5E4C08A24DFF0B200D4862C /* BaseVC+JXCategoryListContentViewDelegate.h */,
 				C5E4C08B24DFF0B200D4862C /* BaseVC+JXCategoryListContentViewDelegate.m */,
-				C5E4C09124DFF0B300D4862C /* BaseVC+TZImagePickerController.h */,
-				C5E4C08624DFF0B200D4862C /* BaseVC+TZImagePickerController.m */,
-				C59C4A2C24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.h */,
-				C59C4A2B24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m */,
 				C5E4C09324DFF0B300D4862C /* BaseVC+OpenURL.h */,
 				C5E4C08D24DFF0B200D4862C /* BaseVC+OpenURL.m */,
 			);
@@ -3362,6 +3367,7 @@
 				C5E4C09624DFF0B300D4862C /* BaseVC+BWShareView.m in Sources */,
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */,
+				C59C4A5424E3A88E002C2104 /* BaseVC+TZLocationManager.m in Sources */,
 				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
 				C590FF3C24D00D23000F36C9 /* SDWebImageGIFCoder.m in Sources */,
 				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,

@@ -149,6 +149,8 @@
 		C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
+		C5CF709024E43084000DB72D /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF708E24E43083000DB72D /* MKGPUImageView.m */; };
+		C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */ = {isa = PBXBuildFile; fileRef = C5CF708F24E43083000DB72D /* Pod里面的Bug */; };
 		C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */; };
 		C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB424CEC5690024A292 /* spark_red@3x.png */; };
 		C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB524CEC5690024A292 /* spark_red@2x.png */; };
@@ -644,6 +646,9 @@
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
+		C5CF708D24E43083000DB72D /* MKGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageView.h; sourceTree = "<group>"; };
+		C5CF708E24E43083000DB72D /* MKGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageView.m; sourceTree = "<group>"; };
+		C5CF708F24E43083000DB72D /* Pod里面的Bug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pod里面的Bug"; sourceTree = "<group>"; };
 		C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileFolderHandleTool.m; sourceTree = "<group>"; };
 		C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFolderHandleTool.h; sourceTree = "<group>"; };
 		C5D4FBB424CEC5690024A292 /* spark_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spark_red@3x.png"; sourceTree = "<group>"; };
@@ -1275,6 +1280,7 @@
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF708C24E4307A000DB72D /* MKGPUImageView */,
 				C5336FF424DB00280082847C /* BRPickerView */,
 				C5B5201A24D6BCB700579178 /* GKNavigationBar */,
 				C590FF2A24D00A23000F36C9 /* SDWebImage */,
@@ -1611,6 +1617,16 @@
 				C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */,
 			);
 			path = GKCategory;
+			sourceTree = "<group>";
+		};
+		C5CF708C24E4307A000DB72D /* MKGPUImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF708F24E43083000DB72D /* Pod里面的Bug */,
+				C5CF708D24E43083000DB72D /* MKGPUImageView.h */,
+				C5CF708E24E43083000DB72D /* MKGPUImageView.m */,
+			);
+			path = MKGPUImageView;
 			sourceTree = "<group>";
 		};
 		C5D4FBAE24CEC5230024A292 /* 文件夹操作 */ = {
@@ -3074,6 +3090,7 @@
 				C5FE9AD924B5F1B3007B9878 /* 图片@3x.png in Resources */,
 				C5FE9ADF24B5F1B3007B9878 /* MyStore@2x.png in Resources */,
 				C54AE7D524C941D300121233 /* header@2x.png in Resources */,
+				C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */,
 				C54AE7CF24C941D300121233 /* gif_header_1@2x.png in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
@@ -3371,6 +3388,7 @@
 				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
 				C590FF3C24D00D23000F36C9 /* SDWebImageGIFCoder.m in Sources */,
 				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,
+				C5CF709024E43084000DB72D /* MKGPUImageView.m in Sources */,
 				C5B5204224D6BCC400579178 /* UIScrollView+GKCategory.m in Sources */,
 				C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,

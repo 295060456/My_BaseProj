@@ -395,6 +395,7 @@
 		C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LZBTabBarVCItem.m"; sourceTree = "<group>"; };
 		C51137D724E0358F001049D5 /* LOTAnimationView+action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LOTAnimationView+action.h"; sourceTree = "<group>"; };
 		C51137D824E0358F001049D5 /* LOTAnimationView+action.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LOTAnimationView+action.m"; sourceTree = "<group>"; };
+		C52D2A5124E580790048FEFF /* JXCategoryView */ = {isa = PBXFileReference; lastKnownFileType = text; path = JXCategoryView; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C5336F8D24DAB99E0082847C /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
@@ -1158,6 +1159,14 @@
 				C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */,
 			);
 			path = LZBTabBarVC;
+			sourceTree = "<group>";
+		};
+		C52D2A5024E580670048FEFF /* JXCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				C52D2A5124E580790048FEFF /* JXCategoryView */,
+			);
+			path = JXCategoryView;
 			sourceTree = "<group>";
 		};
 		C5336F8C24DAB9940082847C /* 存在疑问的 */ = {
@@ -1929,6 +1938,7 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C52D2A5024E580670048FEFF /* JXCategoryView */,
 				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C557DC1724C8063700754760 /* MJExtension用法 */,
 				C5FE9A8824B5F0BE007B9878 /* Computer_Config */,

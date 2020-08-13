@@ -1,0 +1,3 @@
+ 触发 回滚到某个index
+[self.categoryView selectItemAtIndex:0];
+[self.listContainerView didClickSelectedItemAtIndex:0];

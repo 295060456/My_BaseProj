@@ -158,7 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— 系统相册相关
 ///获取相册最新加载（录制、拍摄）的资源
 +(PHAsset *)gettingLastResource:(NSString *)Key;
-///创建相册
+///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createFolder:(NSString *)folderName
                path:(NSString *)pathStr;
 ///保存视频资源文件

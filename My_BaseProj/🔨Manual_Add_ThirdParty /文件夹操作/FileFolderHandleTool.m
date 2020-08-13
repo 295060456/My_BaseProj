@@ -510,7 +510,7 @@
     PHAsset *d = [assetsFetchResults firstObject];
     return d;
 }
-///创建相册
+///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createFolder:(NSString *)folderName
                path:(NSString *)pathStr{
     if (![self isExistFolder:folderName]) {

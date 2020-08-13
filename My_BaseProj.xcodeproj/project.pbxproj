@@ -151,6 +151,11 @@
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5CF709024E43084000DB72D /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF708E24E43083000DB72D /* MKGPUImageView.m */; };
 		C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */ = {isa = PBXBuildFile; fileRef = C5CF708F24E43083000DB72D /* Pod里面的Bug */; };
+		C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */; };
+		C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CE24E51A3C000DB72D /* SuspendLab.m */; };
+		C5CF70D424E51A3C000DB72D /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70D024E51A3C000DB72D /* SuspendView.m */; };
+		C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */; };
+		C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70DA24E51CA6000DB72D /* MonitorNetwoking.m */; };
 		C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */; };
 		C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB424CEC5690024A292 /* spark_red@3x.png */; };
 		C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D4FBB524CEC5690024A292 /* spark_red@2x.png */; };
@@ -649,6 +654,16 @@
 		C5CF708D24E43083000DB72D /* MKGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageView.h; sourceTree = "<group>"; };
 		C5CF708E24E43083000DB72D /* MKGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageView.m; sourceTree = "<group>"; };
 		C5CF708F24E43083000DB72D /* Pod里面的Bug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pod里面的Bug"; sourceTree = "<group>"; };
+		C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
+		C5CF70CB24E51A3C000DB72D /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
+		C5CF70CD24E51A3C000DB72D /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
+		C5CF70CE24E51A3C000DB72D /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
+		C5CF70D024E51A3C000DB72D /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
+		C5CF70D124E51A3C000DB72D /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
+		C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuspendView.h"; sourceTree = "<group>"; };
+		C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuspendView.m"; sourceTree = "<group>"; };
+		C5CF70DA24E51CA6000DB72D /* MonitorNetwoking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorNetwoking.m; sourceTree = "<group>"; };
+		C5CF70DB24E51CA6000DB72D /* MonitorNetwoking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorNetwoking.h; sourceTree = "<group>"; };
 		C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileFolderHandleTool.m; sourceTree = "<group>"; };
 		C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFolderHandleTool.h; sourceTree = "<group>"; };
 		C5D4FBB424CEC5690024A292 /* spark_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spark_red@3x.png"; sourceTree = "<group>"; };
@@ -1629,6 +1644,52 @@
 			path = MKGPUImageView;
 			sourceTree = "<group>";
 		};
+		C5CF70C824E51A3C000DB72D /* Suspend */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70C924E51A3C000DB72D /* SuspendBtn */,
+				C5CF70CC24E51A3C000DB72D /* SuspendLab */,
+				C5CF70CF24E51A3C000DB72D /* SuspendView */,
+			);
+			path = Suspend;
+			sourceTree = "<group>";
+		};
+		C5CF70C924E51A3C000DB72D /* SuspendBtn */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70CB24E51A3C000DB72D /* SuspendBtn.h */,
+				C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */,
+			);
+			path = SuspendBtn;
+			sourceTree = "<group>";
+		};
+		C5CF70CC24E51A3C000DB72D /* SuspendLab */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70CD24E51A3C000DB72D /* SuspendLab.h */,
+				C5CF70CE24E51A3C000DB72D /* SuspendLab.m */,
+			);
+			path = SuspendLab;
+			sourceTree = "<group>";
+		};
+		C5CF70CF24E51A3C000DB72D /* SuspendView */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70D124E51A3C000DB72D /* SuspendView.h */,
+				C5CF70D024E51A3C000DB72D /* SuspendView.m */,
+			);
+			path = SuspendView;
+			sourceTree = "<group>";
+		};
+		C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70DB24E51CA6000DB72D /* MonitorNetwoking.h */,
+				C5CF70DA24E51CA6000DB72D /* MonitorNetwoking.m */,
+			);
+			path = "网络数据实时监测";
+			sourceTree = "<group>";
+		};
 		C5D4FBAE24CEC5230024A292 /* 文件夹操作 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1988,6 +2049,8 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */,
+				C5CF70C824E51A3C000DB72D /* Suspend */,
 				C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */,
 				C5DD001624D46B3C00307DFA /* LYEmptyView */,
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
@@ -2282,6 +2345,8 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
+				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
 				C5FE9B4124B5F203007B9878 /* UIView+Extras.h */,
 				C5FE9B4224B5F203007B9878 /* UIView+Extras.m */,
 				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
@@ -3427,6 +3492,7 @@
 				C59C4A2D24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m in Sources */,
 				C5E4C09924DFF0B300D4862C /* BaseVC+AFNReachability.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
+				C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */,
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
 				C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */,
 				C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */,
@@ -3474,6 +3540,7 @@
 				C5B1C7CA24BAB91A001923FB /* NSValue+Compat.m in Sources */,
 				C5FE9B7124B5F204007B9878 /* ViewForHeader.m in Sources */,
 				C5B1C7DD24BAB91A001923FB /* LOTAnimatedControl.m in Sources */,
+				C5CF70D424E51A3C000DB72D /* SuspendView.m in Sources */,
 				C5B1C7C324BAB91A001923FB /* LOTAnimatorNode.m in Sources */,
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */,
@@ -3507,9 +3574,12 @@
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5B1C7E624BAB91A001923FB /* LOTKeyframe.m in Sources */,
 				C5B1C7D824BAB91A001923FB /* LOTBlockCallback.m in Sources */,
+				C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */,
+				C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */,
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
 				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
+				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C5E4C09D24DFF0B300D4862C /* BaseVC+FSCustomButton.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,

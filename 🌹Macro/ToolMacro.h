@@ -290,7 +290,7 @@ static inline CGFloat rectOfStatusbar(){
 
 #pragma mark ======================================== 其他 ========================================
 #define ReuseIdentifier NSStringFromClass ([self class])
-#define CurrentThread NSLog(@"%@", [NSThread currentThread]);
+#define CurrentThread [NSThread currentThread]
 //- (void)add:(NSString *)txt{}
 #define addText(fmt, ...) [self add:[NSString stringWithFormat:fmt, ##__VA_ARGS__]]//多参数
 

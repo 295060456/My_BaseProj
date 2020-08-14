@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*创建文件
  *参数1：文件创建的路径
  *参数2：写入文件的内容
- *参数3：假如已经存在此文件是否覆盖
+ *参数3 overwrite ：假如已经存在此文件是否覆盖,如果文件存在，并不想覆盖，那么直接返回YES。
  *参数4：错误信息
  */
 + (BOOL)createFileAtPath:(NSString *)path
@@ -102,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)fileNameAtPath:(NSString *)path
                       suffix:(BOOL)suffix;
-/// 获取文件所在的文件夹路径：
+/// 获取文件所在的文件夹路径：删除最后一个路径节点
 + (NSString *)directoryAtPath:(NSString *)path;
 /// 根据文件路径获取文件扩展类型:
 + (NSString *)suffixAtPath:(NSString *)path;
@@ -158,6 +158,9 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— 系统相册相关
 ///获取相册最新加载（录制、拍摄）的资源
 +(PHAsset *)gettingLastResource:(NSString *)Key;
++(void)createFolder:(NSString *)folderName
+  ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
+  completionHandler:(TwoDataBlock)completionBlock;
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createFolder:(NSString *)folderName
                path:(NSString *)pathStr;

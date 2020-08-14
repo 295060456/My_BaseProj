@@ -52,7 +52,7 @@
     return [NSURL fileURLWithPath:cachePath];
 }
 #pragma mark —— 创建文件（夹）
-///创建文件夹：
+///创建文件夹：返回是否创建成功
 + (BOOL)createDirectoryAtPath:(NSString *)path
                         error:(NSError *__autoreleasing *)error {
     NSFileManager *manager = [NSFileManager defaultManager];
@@ -66,41 +66,49 @@
                         withIntermediateDirectories:YES
                                          attributes:nil
                                               error:error];
+    if (error) {
+        NSLog(@"createDirectoryAtPath_err = %@",error);
+    }
     return isSuccess;
 }
 /*创建文件
  *参数1：文件创建的路径
  *参数2：写入文件的内容
- *参数3：假如已经存在此文件是否覆盖
+ *参数3 overwrite ：假如已经存在此文件是(YES)否(NO)覆盖
  *参数4：错误信息
+ 
+ 返回是否创建带文件夹的文件成功
  */
 + (BOOL)createFileAtPath:(NSString *)path
                overwrite:(BOOL)overwrite
                    error:(NSError *__autoreleasing *)error {
-    // 如果文件夹路径不存在，那么先创建文件夹
+//删除最后一个路径节点，提取父文件夹的路径
     NSString *directoryPath = [self directoryAtPath:path];
+///先讨论是否存在此路径的文件夹？
+    // 如果文件夹路径不存在，那么先创建文件夹
     if (![self isExistsAtPath:directoryPath]) {
-        // 创建文件夹
+        // 创建文件夹，返回文件夹是否创建成功：先有文件夹再有文件，没有文件夹就没有文件
         if (![self createDirectoryAtPath:directoryPath
                                    error:error]) {
             return NO;
         }
     }
+///下面是对文件夹存在的情况进行说明
     // 如果文件存在，并不想覆盖，那么直接返回YES。
     if (!overwrite) {
-        if ([self isExistsAtPath:path]) {
-            return YES;
-        }
+        return YES;
+    }else{
+        /*创建文件
+         *参数1：创建文件的路径
+         *参数2：创建文件的内容（NSData类型）
+         *参数3：文件相关属性
+         
+         返回 创建文件是(YES)否(NO)成功？
+         */
+         return [[NSFileManager defaultManager] createFileAtPath:path
+                                                        contents:nil
+                                                      attributes:nil];
     }
-   /*创建文件
-    *参数1：创建文件的路径
-    *参数2：创建文件的内容（NSData类型）
-    *参数3：文件相关属性
-    */
-    BOOL isSuccess = [[NSFileManager defaultManager] createFileAtPath:path
-                                                             contents:nil
-                                                           attributes:nil];
-    return isSuccess;
 }
 ///获取文件创建的时间
 + (NSDate *)creationDateOfItemAtPath:(NSString *)path
@@ -318,7 +326,7 @@
         fileName = [fileName stringByDeletingPathExtension];
     }return fileName;
 }
-/// 获取文件所在的文件夹路径：
+/// 获取文件所在的文件夹路径：删除最后一个路径节点
 + (NSString *)directoryAtPath:(NSString *)path {
     return [path stringByDeletingLastPathComponent];
 }
@@ -510,6 +518,24 @@
     PHAsset *d = [assetsFetchResults firstObject];
     return d;
 }
++(void)createFolder:(NSString *)folderName
+  ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
+  completionHandler:(TwoDataBlock)completionBlock{
+    if (![self isExistFolder:folderName]) {
+        [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
+            [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:folderName];
+        } completionHandler:^(BOOL success,
+                              NSError * _Nullable error) {
+            if (completionBlock) {
+                completionBlock(@(success),error);
+            }
+        }];
+    }else{
+        if (ifExitFolderBlock) {
+            ifExitFolderBlock(@(YES));//文件夹存在说明至少曾经创建成功了
+        }
+    }
+}
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createFolder:(NSString *)folderName
                path:(NSString *)pathStr{
@@ -551,7 +577,7 @@
                                   NSError *error) {
                 if (success) {
                     NSLog(@"保存视频成功!");
-                    //保存视频成功
+                    //保存视频成功 全局发通知
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"saveRes_success"
                                                                         object:nil];
                 } else {
@@ -567,6 +593,7 @@
     //首先获取用户手动创建相册的集合
     PHFetchResult *collectonResuts = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
     //对获取到集合进行遍历
+    //enumerateObjectsUsingBlock 不会自动开启新的线程,若开发者默认将代码写在主线程,则在主线程进行遍历, 写在子线程,则在子线程遍历
     [collectonResuts enumerateObjectsUsingBlock:^(id obj,
                                                   NSUInteger idx,
                                                   BOOL *stop) {

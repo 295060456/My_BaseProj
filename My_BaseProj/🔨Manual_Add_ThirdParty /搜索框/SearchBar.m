@@ -15,7 +15,7 @@ CJTextFieldDeleteDelegate
 >
 
 @property(nonatomic,strong)UIButton *cancelBtn;
-@property(nonatomic,copy)FourMKDataBlock block;
+@property(nonatomic,copy)FourDataBlock block;
 @property(nonatomic,copy)MKDataBlock block2;
 
 @end
@@ -33,7 +33,7 @@ CJTextFieldDeleteDelegate
     self.textField.alpha = 1;
 }
 
--(void)actionBlock:(FourMKDataBlock)block{
+-(void)actionBlock:(FourDataBlock)block{
     _block = block;
 }
 

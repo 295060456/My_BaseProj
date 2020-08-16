@@ -18,7 +18,7 @@ UITableViewDataSource
 
 @property(nonatomic,strong)NSArray *dataArr;
 //@property(nonatomic,copy)MKDataBlock block;
-@property(nonatomic,copy)TwoMKDataBlock block2;
+@property(nonatomic,copy)TwoDataBlock block2;
 @property(nonatomic,strong)id trigger;
 
 @end
@@ -51,7 +51,7 @@ UITableViewDataSource
     }return self;
 }
 
--(void)showSelectedData:(TwoMKDataBlock)block{
+-(void)showSelectedData:(TwoDataBlock)block{
     self.block2 = block;
 }
 #pragma mark —— UITableViewDelegate,UITableViewDataSource

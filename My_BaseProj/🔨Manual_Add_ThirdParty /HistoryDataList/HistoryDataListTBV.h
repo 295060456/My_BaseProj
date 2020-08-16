@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)initWithRequestParams:(id)requestParams
                            triggerBy:(id __nonnull)trigger;
--(void)showSelectedData:(TwoMKDataBlock)block;//点击的内容、触发点
+-(void)showSelectedData:(TwoDataBlock)block;//点击的内容、触发点
 
 @end
 

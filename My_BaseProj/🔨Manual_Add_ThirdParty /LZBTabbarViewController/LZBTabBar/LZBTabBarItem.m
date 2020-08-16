@@ -164,35 +164,33 @@
 
 #pragma mark —— 手势的响应事件
 -(void)LZBTabBarItemTap:(UITapGestureRecognizer *)tag{
-    NSLog(@"TTT");
     if (self.LZBTabBarItemBlock) {
         self.LZBTabBarItemBlock(tag);
     }
 }
 
--(void)LZBTabBarItemLongPress:(UIGestureRecognizer *)longPressGesture {
-    NSLog(@"KKK");
+-(void)LZBTabBarItemLongPress:(UILongPressGestureRecognizer *)longPressGesture {
     switch (longPressGesture.state) {
         case UIGestureRecognizerStatePossible:{
-            NSLog(@"没有触摸事件发生，所有手势识别的默认状态");
+//            NSLog(@"没有触摸事件发生，所有手势识别的默认状态");
         }break;
         case UIGestureRecognizerStateBegan:{
-            NSLog(@"一个手势已经开始但尚未改变或者完成时");
+            NSLog(@"一个手势已经开始  但尚未改变或者完成时");
             if (self.LZBTabBarItemBlock) {
                 self.LZBTabBarItemBlock(longPressGesture);
             }
         }break;
         case UIGestureRecognizerStateChanged:{
-            NSLog(@"手势状态改变");
+//            NSLog(@"手势状态改变");
         }break;
         case UIGestureRecognizerStateEnded:{// = UIGestureRecognizerStateRecognized
-            NSLog(@"手势完成");
+//            NSLog(@"手势完成");
         }break;
         case UIGestureRecognizerStateCancelled:{
-            NSLog(@"手势取消，恢复至Possible状态");
+//            NSLog(@"手势取消，恢复至Possible状态");
         }break;
         case UIGestureRecognizerStateFailed:{
-            NSLog(@"手势失败，恢复至Possible状态");
+//            NSLog(@"手势失败，恢复至Possible状态");
         }break;
         default:
             break;

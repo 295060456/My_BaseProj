@@ -8,6 +8,7 @@
 
 #import "LZBTabBar.h"
 #import "LOTAnimationView+action.h"
+
 #define default_TopLine_Height 0.5
 
 #pragma mark - LZBTabBar
@@ -16,6 +17,7 @@
 
 @property(nonatomic,assign)CGFloat itemWidth;
 @property(nonatomic,assign)BOOL isAnimation;
+@property(nonatomic,strong)CAKeyframeAnimation *keyAnimation;
 
 @end
 
@@ -149,15 +151,22 @@
 }
 
 - (void)addScaleAnimationWithSuperLayer:(CALayer *)layer{
-    CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    keyAnimation.values = @[@0.8,@1.1,@1.0];
-    keyAnimation.duration = 0.25;
-    keyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    [layer addAnimation:keyAnimation
+    [layer addAnimation:self.keyAnimation
                  forKey:@"keyAnimation"];
 }
 
 #pragma mark —— LazyLoad
+-(CAKeyframeAnimation *)keyAnimation{
+    if (!_keyAnimation) {
+        _keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+        _keyAnimation.values = @[@0.8,
+                                 @1.1,
+                                 @1.0];
+        _keyAnimation.duration = 0.25;
+        _keyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    }return _keyAnimation;
+}
+
 - (UIView *)backgroundView{
   if(_backgroundView == nil){
       _backgroundView = [UIView new];

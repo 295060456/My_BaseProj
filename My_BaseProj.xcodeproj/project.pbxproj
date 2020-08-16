@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
-		5E869FA0B5123EB1A2FC1F0B /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
 		C51137C024E0241A001049D5 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137BF24E0241A001049D5 /* LZBTabBarItem.m */; };
 		C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */; };
@@ -39,14 +38,6 @@
 		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
 		C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */ = {isa = PBXBuildFile; fileRef = C54F101D24C469E900EE1E67 /* GIF大图.gif */; };
 		C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C54F101F24C46A9100EE1E67 /* 兴发街.jpg */; };
-		C54F103B24C4709A00EE1E67 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA224B5F0EF007B9878 /* libstdc++.6.0.9.dylib */; };
-		C54F103C24C4709A00EE1E67 /* libstdc++.6.0.9.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA224B5F0EF007B9878 /* libstdc++.6.0.9.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		C54F103D24C4709A00EE1E67 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9A9F24B5F0EF007B9878 /* libstdc++.6.0.9.tbd */; };
-		C54F103E24C4709A00EE1E67 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA124B5F0EF007B9878 /* libstdc++.6.dylib */; };
-		C54F103F24C4709A00EE1E67 /* libstdc++.6.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA124B5F0EF007B9878 /* libstdc++.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		C54F104024C4709A00EE1E67 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA024B5F0EF007B9878 /* libstdc++.6.tbd */; };
-		C54F104124C4709A00EE1E67 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; };
-		C54F104224C4709A00EE1E67 /* libstdc++.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
@@ -366,22 +357,6 @@
 			remoteInfo = My_BaseProj;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C54F104324C4709A00EE1E67 /* Embed Libraries */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C54F103F24C4709A00EE1E67 /* libstdc++.6.dylib in Embed Libraries */,
-				C54F103C24C4709A00EE1E67 /* libstdc++.6.0.9.dylib in Embed Libraries */,
-				C54F104224C4709A00EE1E67 /* libstdc++.dylib in Embed Libraries */,
-			);
-			name = "Embed Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1094,12 +1069,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C54F103E24C4709A00EE1E67 /* libstdc++.6.dylib in Frameworks */,
-				C54F103B24C4709A00EE1E67 /* libstdc++.6.0.9.dylib in Frameworks */,
-				C54F104124C4709A00EE1E67 /* libstdc++.dylib in Frameworks */,
-				C54F104024C4709A00EE1E67 /* libstdc++.6.tbd in Frameworks */,
-				C54F103D24C4709A00EE1E67 /* libstdc++.6.0.9.tbd in Frameworks */,
-				5E869FA0B5123EB1A2FC1F0B /* libPods-My_BaseProj.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3061,7 +3030,6 @@
 				C5FE9A3224B5EF2B007B9878 /* Resources */,
 				BB10346CAB6194AD8F8ED678 /* [CP] Embed Pods Frameworks */,
 				1BEBE930A4EDF52907895925 /* [CP] Copy Pods Resources */,
-				C54F104324C4709A00EE1E67 /* Embed Libraries */,
 			);
 			buildRules = (
 			);

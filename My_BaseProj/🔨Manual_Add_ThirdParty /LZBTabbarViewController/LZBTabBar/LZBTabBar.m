@@ -107,40 +107,6 @@
 }
 
 - (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
-    {///单个点选放映 & 结束 动画特效
-        //只有点击其他item 才能将本item的点击状态置为NO
-        NSInteger idx = [self.items indexOfObject:item];
-        NSInteger i = 0;
-        for (LZBTabBarItem *ITEM in self.items) {
-            //对每一个状态进行异或操作——>归零
-            ITEM.selected ^= ITEM.selected;
-            //再对这个状态进行重新赋值改变
-            if (idx == i) {
-                ITEM.selected = YES;
-                
-                if (ITEM.animation.isAnimationPlaying) {
-                    //等他放
-                }else{
-                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
-
-                    }];
-                }
-            }
-            
-            if (ITEM.selected) {//放
-                if (!ITEM.animation.isAnimationPlaying) {
-                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
-
-                    }];
-                }
-            }else{//结束
-                if (!ITEM.animation.isAnimationPlaying) {
-                    [ITEM.animation stop];
-                }
-            }
-            i++;
-        }
-    }
     
     if(![self.items containsObject:item]) return;
     NSInteger index = [self.items indexOfObject:item];
@@ -150,10 +116,20 @@
             return;
     }
     self.currentSelectItem = item;
-    if([self.delegate respondsToSelector:@selector(lzb_tabBar:didSelectItemAtIndex:)]){
-        [self.delegate lzb_tabBar:self
-             didSelectItemAtIndex:index];
-    }
+    @weakify(self)
+    [self.currentSelectItem LZBTabBarItemBlock:^(id data) {
+        @strongify(self)
+        if ([data isKindOfClass:UITapGestureRecognizer.class]) {
+//            UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)data;
+            if([self.delegate respondsToSelector:@selector(lzb_tabBar:didSelectItemAtIndex:)]){
+                [self.delegate lzb_tabBar:self
+                     didSelectItemAtIndex:index];
+            }
+        }else if ([data isKindOfClass:UILongPressGestureRecognizer.class]){
+//            UILongPressGestureRecognizer *longPressGesture = (UILongPressGestureRecognizer *)data;
+            NSLog(@"长按手势执行什么？");
+        }else{}
+    }];
 }
 
 - (void)setCurrentSelectItem:(LZBTabBarItem *)currentSelectItem{
@@ -199,6 +175,8 @@
         _tabBarStyleType = LZBTabBarStyleType_sysNormal;//默认系统样式
     }return _tabBarStyleType;
 }
+
+
 
 @end
 

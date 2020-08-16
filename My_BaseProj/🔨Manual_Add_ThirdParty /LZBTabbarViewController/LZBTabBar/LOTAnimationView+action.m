@@ -23,7 +23,6 @@ static char *LOTAnimationView_ActionBlock = "LOTAnimationView_ActionBlock";
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches
           withEvent:(UIEvent *)event{
-    NSLog(@"");
     if (self.LOTAnimationViewActionBlock) {
         self.LOTAnimationViewActionBlock(@(self.tagger));
     }

@@ -9,9 +9,14 @@
 #import "LZBTabBarItem.h"
 #import "LOTAnimationView+action.h"
 
-@interface LZBTabBarItem()
+@interface LZBTabBarItem()<UIGestureRecognizerDelegate>
 
+@property(nonatomic,copy)MKDataBlock LZBTabBarItemBlock;
 @property(nonatomic,copy)MKDataBlock LZBTabBarItemActionBlock;
+
+//手势
+@property(nonatomic,strong)UITapGestureRecognizer *tagGR;//敲击
+@property(nonatomic,strong)UILongPressGestureRecognizer *longPressGR;//长按
 
 @end
 
@@ -20,6 +25,10 @@
 - (instancetype)initWithFrame:(CGRect)frame{
   if(self = [super initWithFrame:frame]){
       [self setupInit];
+      //添加手势
+      self.tagGR.enabled = YES;
+      self.longPressGR.enabled = YES;
+      NSLog(@"");
   }return self;
 }
 
@@ -40,6 +49,10 @@
 -(void)setTagger:(NSInteger)tagger{
     _tagger = tagger;
     [self Lottie];
+}
+
+-(void)LZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemBlock{
+    self.LZBTabBarItemBlock = LZBTabBarItemBlock;
 }
 
 -(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock{
@@ -149,7 +162,94 @@
     CGContextRestoreGState(context);
 }
 
-#pragma mark - config
+#pragma mark —— 手势的响应事件
+-(void)LZBTabBarItemTap:(UITapGestureRecognizer *)tag{
+    NSLog(@"TTT");
+    if (self.LZBTabBarItemBlock) {
+        self.LZBTabBarItemBlock(tag);
+    }
+}
+
+-(void)LZBTabBarItemLongPress:(UIGestureRecognizer *)longPressGesture {
+    NSLog(@"KKK");
+    switch (longPressGesture.state) {
+        case UIGestureRecognizerStatePossible:{
+            NSLog(@"没有触摸事件发生，所有手势识别的默认状态");
+        }break;
+        case UIGestureRecognizerStateBegan:{
+            NSLog(@"一个手势已经开始但尚未改变或者完成时");
+            if (self.LZBTabBarItemBlock) {
+                self.LZBTabBarItemBlock(longPressGesture);
+            }
+        }break;
+        case UIGestureRecognizerStateChanged:{
+            NSLog(@"手势状态改变");
+        }break;
+        case UIGestureRecognizerStateEnded:{// = UIGestureRecognizerStateRecognized
+            NSLog(@"手势完成");
+        }break;
+        case UIGestureRecognizerStateCancelled:{
+            NSLog(@"手势取消，恢复至Possible状态");
+        }break;
+        case UIGestureRecognizerStateFailed:{
+            NSLog(@"手势失败，恢复至Possible状态");
+        }break;
+        default:
+            break;
+    }
+}
+
+#pragma mark —— lazyLoad
+-(UITapGestureRecognizer *)tagGR{
+    if (!_tagGR) {
+        _tagGR = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                        action:@selector(LZBTabBarItemTap:)];
+        _tagGR.delegate = self;
+        
+        _tagGR.numberOfTapsRequired = 1;//tap次数
+        _tagGR.numberOfTouchesRequired = 1;//手指数
+        
+        [self addGestureRecognizer:_tagGR];
+    }return _tagGR;
+}
+
+-(UILongPressGestureRecognizer *)longPressGR{
+
+    /*
+     * 长按手势是连续的。
+     当在指定的时间段（minimumPressDuration）
+     按下允许的手指的数量（numberOfTouchesRequired）
+     并且触摸不超过允许的移动范围（allowableMovement）时，
+     手势开始（UIGestureRecognizerStateBegan）。
+     手指移动时，手势识别器转换到“更改”状态，
+     并且当任何手指抬起时手势识别器结束（UIGestureRecognizerStateEnded）。
+     *
+     */
+    
+    if (!_longPressGR) {
+        _longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                     action:@selector(LZBTabBarItemLongPress:)];
+        _longPressGR.delegate = self;
+        
+        _longPressGR.numberOfTouchesRequired = 1;//手指数
+        _longPressGR.minimumPressDuration = 1;
+//        _longPressGR.allowableMovement;
+
+        [self addGestureRecognizer:_longPressGR];
+    }return _longPressGR;
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+    }return _lottieJsonNameStrMutArr;
+}
+#pragma mark —— config
 - (void)setSelectImage:(UIImage *)selectImage
          unselectImage:(UIImage *)unSelectImage{
   if(self.selectImage != selectImage)
@@ -196,15 +296,5 @@
     [self setNeedsDisplay];
 }
 
--(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-    if (!_lottieJsonNameStrMutArr) {
-        _lottieJsonNameStrMutArr = NSMutableArray.array;
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-    }return _lottieJsonNameStrMutArr;
-}
 
 @end

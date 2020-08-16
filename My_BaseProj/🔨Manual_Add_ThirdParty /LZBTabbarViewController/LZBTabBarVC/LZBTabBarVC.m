@@ -174,15 +174,52 @@ shouldSelectItemAtIndex:(NSInteger)index{
         }return NO;
     }return YES;
 }
-
+//单击手势走这个
 - (void)lzb_tabBar:(LZBTabBar *)tabBar
 didSelectItemAtIndex:(NSInteger)index{
+    NSLog(@"KKK");
     //播放声音
 //    [PlaySound playSoundEffect:@"Sound"
 //                          type:@"wav"];
     //震动特效反馈
     [NSObject feedbackGenerator];
-    if (index < 0 || index >= self.viewControllers.count)  return;
+    
+    {///单个点选放映 & 结束 动画特效
+        //只有点击其他item 才能将本item的点击状态置为NO
+        NSInteger idx = [self.lzb_tabBar.items indexOfObject:self.lzb_tabBar.currentSelectItem];
+        NSInteger i = 0;
+        for (LZBTabBarItem *ITEM in self.lzb_tabBar.items) {
+            //对每一个状态进行异或操作——>归零
+            ITEM.selected ^= ITEM.selected;
+            //再对这个状态进行重新赋值改变
+            if (idx == i) {
+                ITEM.selected = YES;
+                
+                if (ITEM.animation.isAnimationPlaying) {
+                    //等他放
+                }else{
+                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
+
+                    }];
+                }
+            }
+            
+            if (ITEM.selected) {//放
+                if (!ITEM.animation.isAnimationPlaying) {
+                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
+
+                    }];
+                }
+            }else{//结束
+                if (!ITEM.animation.isAnimationPlaying) {
+                    [ITEM.animation stop];
+                }
+            }
+            i++;
+        }
+    }
+    
+    if (index < 0 || index >= self.viewControllers.count) return;
     [self setSelectedIndex:index
                  animation:self.isShouldAnimation];
     if([self.delegate respondsToSelector:@selector(lzb_tabBarController:didSelectViewController:)]){

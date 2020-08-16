@@ -109,6 +109,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)LOTAnimationView *animation;
 
 -(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock;
+-(void)LZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemBlock;
+
 
 @end
 

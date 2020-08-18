@@ -50,6 +50,10 @@
 		C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044624EBCC5C00B6D09C /* JhtBannerView.m */; };
 		C58F044924EBCC8200B6D09C /* Use in Resources */ = {isa = PBXBuildFile; fileRef = C58F044824EBCC8200B6D09C /* Use */; };
 		C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */; };
+		C58F045224EBD55200B6D09C /* VedioTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044F24EBD55100B6D09C /* VedioTools.m */; };
+		C58F045324EBD55200B6D09C /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F045024EBD55200B6D09C /* MKGPUImageView.m */; };
+		C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046424EBD66100B6D09C /* ShowAvailableFont.m */; };
+		C58F046924EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -449,6 +453,14 @@
 		C58F044824EBCC8200B6D09C /* Use */ = {isa = PBXFileReference; lastKnownFileType = text; path = Use; sourceTree = "<group>"; };
 		C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Measure.h"; sourceTree = "<group>"; };
 		C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Measure.m"; sourceTree = "<group>"; };
+		C58F044E24EBD55100B6D09C /* VedioTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioTools.h; sourceTree = "<group>"; };
+		C58F044F24EBD55100B6D09C /* VedioTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioTools.m; sourceTree = "<group>"; };
+		C58F045024EBD55200B6D09C /* MKGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageView.m; sourceTree = "<group>"; };
+		C58F045124EBD55200B6D09C /* MKGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageView.h; sourceTree = "<group>"; };
+		C58F046324EBD66100B6D09C /* ShowAvailableFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAvailableFont.h; sourceTree = "<group>"; };
+		C58F046424EBD66100B6D09C /* ShowAvailableFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAvailableFont.m; sourceTree = "<group>"; };
+		C58F046724EBD6C000B6D09C /* YHGPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -1391,6 +1403,36 @@
 			path = JhtBannerCardView;
 			sourceTree = "<group>";
 		};
+		C58F044D24EBD54700B6D09C /* 视频处理工具类 */ = {
+			isa = PBXGroup;
+			children = (
+				C58F046624EBD6B800B6D09C /* GPUImage */,
+				C58F044E24EBD55100B6D09C /* VedioTools.h */,
+				C58F044F24EBD55100B6D09C /* VedioTools.m */,
+				C58F045124EBD55200B6D09C /* MKGPUImageView.h */,
+				C58F045024EBD55200B6D09C /* MKGPUImageView.m */,
+			);
+			path = "视频处理工具类";
+			sourceTree = "<group>";
+		};
+		C58F046224EBD65800B6D09C /* iOS打印全员字体 */ = {
+			isa = PBXGroup;
+			children = (
+				C58F046324EBD66100B6D09C /* ShowAvailableFont.h */,
+				C58F046424EBD66100B6D09C /* ShowAvailableFont.m */,
+			);
+			path = "iOS打印全员字体";
+			sourceTree = "<group>";
+		};
+		C58F046624EBD6B800B6D09C /* GPUImage */ = {
+			isa = PBXGroup;
+			children = (
+				C58F046724EBD6C000B6D09C /* YHGPUImageBeautifyFilter.h */,
+				C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */,
+			);
+			path = GPUImage;
+			sourceTree = "<group>";
+		};
 		C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2125,6 +2167,8 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C58F046224EBD65800B6D09C /* iOS打印全员字体 */,
+				C58F044D24EBD54700B6D09C /* 视频处理工具类 */,
 				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
 				C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */,
 				C5CF70C824E51A3C000DB72D /* Suspend */,
@@ -3486,6 +3530,7 @@
 				C51137D924E0358F001049D5 /* LOTAnimationView+action.m in Sources */,
 				C5B1C7C124BAB91A001923FB /* LOTValueCallback.m in Sources */,
 				C5FE9D1724B5F29C007B9878 /* FSAppIconManager.m in Sources */,
+				C58F045224EBD55200B6D09C /* VedioTools.m in Sources */,
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
 				C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */,
 				C5FE9D3824B5F2E7007B9878 /* PersonalInfo.m in Sources */,
@@ -3505,6 +3550,7 @@
 				C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */,
 				C5B1C7DE24BAB91A001923FB /* LOTTrimPathNode.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
+				C58F045324EBD55200B6D09C /* MKGPUImageView.m in Sources */,
 				C5E4C09F24DFF0B300D4862C /* BaseVC+JPImageresizerView.m in Sources */,
 				C5B1C7D224BAB91A001923FB /* LOTShapeTransform.m in Sources */,
 				C5B1C7BC24BAB91A001923FB /* LOTPolystarAnimator.m in Sources */,
@@ -3665,6 +3711,7 @@
 				C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */,
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
+				C58F046924EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m in Sources */,
 				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
 				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
@@ -3687,6 +3734,7 @@
 				C5D4FBDE24CFE0C40024A292 /* CommentPopUpVC+VM.m in Sources */,
 				C5B1C7E924BAB91A001923FB /* LOTCompositionContainer.m in Sources */,
 				C5B1C7E524BAB91A001923FB /* LOTShapeStar.m in Sources */,
+				C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */,
 				C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */,
 				C5B5203C24D6BCC400579178 /* GKPushAnimatedTransition.m in Sources */,
 				C5FE9B7224B5F204007B9878 /* ViewForFooter.m in Sources */,

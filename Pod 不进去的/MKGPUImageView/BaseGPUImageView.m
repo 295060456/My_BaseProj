@@ -1,4 +1,4 @@
-#import "MKGPUImageView.h"
+#import "BaseGPUImageView.h"
 #import <OpenGLES/EAGLDrawable.h>
 #import <QuartzCore/QuartzCore.h>
 #import "GPUImageContext.h"
@@ -8,7 +8,7 @@
 #pragma mark -
 #pragma mark Private methods and instance variables
 
-@interface MKGPUImageView ()
+@interface BaseGPUImageView ()
 {
     GPUImageFramebuffer *inputFramebufferForDisplay;
     GLuint displayRenderbuffer, displayFramebuffer;
@@ -39,7 +39,7 @@
 
 @end
 
-@implementation MKGPUImageView
+@implementation BaseGPUImageView
 
 @synthesize aspectRatio;
 @synthesize sizeInPixels = _sizeInPixels;
@@ -381,7 +381,7 @@
         glUniform1i(displayInputTextureUniform, 4);
         
         glVertexAttribPointer(displayPositionAttribute, 2, GL_FLOAT, 0, 0, imageVertices);
-        glVertexAttribPointer(displayTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, [MKGPUImageView textureCoordinatesForRotation:inputRotation]);
+        glVertexAttribPointer(displayTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, [BaseGPUImageView textureCoordinatesForRotation:inputRotation]);
         
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
         

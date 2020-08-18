@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)cachesDir;
 /// 获取沙盒中tmp的目录路径：
 + (NSString *)tmpDir;
-#pragma mark - 以当前时间戳生成缓存路径
-+ (NSURL *)cacheURL:(NSString *)extension;
+#pragma mark - 以当前时间戳生成缓存路径 NSTemporaryDirectory()
++ (NSString *)cacheURL:(NSString *)extension;
 #pragma mark —— 创建文件（夹）
 ///创建文件夹：
 + (BOOL)createDirectoryAtPath:(NSString *)path
@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)createFileAtPath:(NSString *)path
                overwrite:(BOOL)overwrite
                    error:(NSError *__autoreleasing *)error;
+///file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
++(BOOL)createFileByUrl:(NSString *)file_url
+                 error:(NSError *__autoreleasing *)error;
 ///获取文件创建的时间
 + (NSDate *)creationDateOfItemAtPath:(NSString *)path
                                error:(NSError *__autoreleasing *)error;
@@ -158,16 +161,29 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— 系统相册相关
 ///获取相册最新加载（录制、拍摄）的资源
 +(PHAsset *)gettingLastResource:(NSString *)Key;
+
 +(void)createFolder:(NSString *)folderName
   ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
   completionHandler:(TwoDataBlock)completionBlock;
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createFolder:(NSString *)folderName
                path:(NSString *)pathStr;
-///保存视频资源文件
+///保存视频资源文件到指定的相册路径，这里是整个App名字的相册
 +(void)saveRes:(NSURL *)movieURL;
 ///是否存在此相册判断逻辑依据
-+ (BOOL)isExistFolder:(NSString *)folderName;
++(BOOL)isExistFolder:(NSString *)folderName;
+///保存文件到系统默认的相册
++(void)saveVideo:(NSString *)videoPath;
++(void)saveImage:(UIImage *)image;
+///仅获取PHAsset里面的视频
++(void)getVedioFromPHAsset:(PHAsset *)phAsset
+                  complete:(MKDataBlock)completeBlock;
+///获取PHAsset里面的相片
++(void)getPicFromPHAsset:(PHAsset *)phAsset
+                complete:(MKDataBlock)completeBlock;
+///获取PHAsset里面的声音
++(void)getAudioFromPHAsset:(PHAsset *)phAsset
+                  complete:(MKDataBlock)completeBlock;
 
 @end
 

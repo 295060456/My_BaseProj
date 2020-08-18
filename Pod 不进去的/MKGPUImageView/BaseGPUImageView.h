@@ -11,7 +11,7 @@
 /**
  UIView subclass to use as an endpoint for displaying GPUImage outputs
  */
-@interface MKGPUImageView : UIView <GPUImageInput>
+@interface BaseGPUImageView : UIView <GPUImageInput>
 {
     GPUImageRotationMode inputRotation;
 }

@@ -50,7 +50,7 @@ static VedioTools *vedioTools = nil;
 -(void)overturnCamera{
     switch (self.position) {
         case CameraManagerDevicePositionBack: {
-            if (self.myGPUVideoCamera.cameraPosition == AVCaptureDevicePositionBack) {
+            if (self.myGPUVideoCamera.cameraPosition != AVCaptureDevicePositionBack) {
                 [self.myGPUVideoCamera pauseCameraCapture];
                 self.position = CameraManagerDevicePositionFront;
                 [self.myGPUVideoCamera rotateCamera];
@@ -59,7 +59,7 @@ static VedioTools *vedioTools = nil;
         }
             break;
         case CameraManagerDevicePositionFront: {
-            if (self.myGPUVideoCamera.cameraPosition == AVCaptureDevicePositionFront) {
+            if (self.myGPUVideoCamera.cameraPosition != AVCaptureDevicePositionFront) {
                 [self.myGPUVideoCamera pauseCameraCapture];
                 self.position = CameraManagerDevicePositionBack;
                 [self.myGPUVideoCamera rotateCamera];

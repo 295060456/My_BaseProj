@@ -54,6 +54,7 @@
 		C58F045324EBD55200B6D09C /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F045024EBD55200B6D09C /* MKGPUImageView.m */; };
 		C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046424EBD66100B6D09C /* ShowAvailableFont.m */; };
 		C58F046924EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */; };
+		C58F049B24EC112F00B6D09C /* BaseGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F049924EC112F00B6D09C /* BaseGPUImageView.m */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -154,7 +155,6 @@
 		C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
-		C5CF709024E43084000DB72D /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF708E24E43083000DB72D /* MKGPUImageView.m */; };
 		C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */ = {isa = PBXBuildFile; fileRef = C5CF708F24E43083000DB72D /* Pod里面的Bug */; };
 		C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */; };
 		C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CE24E51A3C000DB72D /* SuspendLab.m */; };
@@ -461,6 +461,8 @@
 		C58F046424EBD66100B6D09C /* ShowAvailableFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAvailableFont.m; sourceTree = "<group>"; };
 		C58F046724EBD6C000B6D09C /* YHGPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHGPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		C58F049924EC112F00B6D09C /* BaseGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseGPUImageView.m; sourceTree = "<group>"; };
+		C58F049A24EC112F00B6D09C /* BaseGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGPUImageView.h; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -666,8 +668,6 @@
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
-		C5CF708D24E43083000DB72D /* MKGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKGPUImageView.h; sourceTree = "<group>"; };
-		C5CF708E24E43083000DB72D /* MKGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKGPUImageView.m; sourceTree = "<group>"; };
 		C5CF708F24E43083000DB72D /* Pod里面的Bug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pod里面的Bug"; sourceTree = "<group>"; };
 		C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
 		C5CF70CB24E51A3C000DB72D /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
@@ -1755,8 +1755,8 @@
 			isa = PBXGroup;
 			children = (
 				C5CF708F24E43083000DB72D /* Pod里面的Bug */,
-				C5CF708D24E43083000DB72D /* MKGPUImageView.h */,
-				C5CF708E24E43083000DB72D /* MKGPUImageView.m */,
+				C58F049A24EC112F00B6D09C /* BaseGPUImageView.h */,
+				C58F049924EC112F00B6D09C /* BaseGPUImageView.m */,
 			);
 			path = MKGPUImageView;
 			sourceTree = "<group>";
@@ -3582,7 +3582,6 @@
 				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
 				C590FF3C24D00D23000F36C9 /* SDWebImageGIFCoder.m in Sources */,
 				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,
-				C5CF709024E43084000DB72D /* MKGPUImageView.m in Sources */,
 				C5B5204224D6BCC400579178 /* UIScrollView+GKCategory.m in Sources */,
 				C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
@@ -3674,6 +3673,7 @@
 				C5B1C7DD24BAB91A001923FB /* LOTAnimatedControl.m in Sources */,
 				C5CF70D424E51A3C000DB72D /* SuspendView.m in Sources */,
 				C5B1C7C324BAB91A001923FB /* LOTAnimatorNode.m in Sources */,
+				C58F049B24EC112F00B6D09C /* BaseGPUImageView.m in Sources */,
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,

@@ -11,14 +11,19 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum : NSUInteger {
-    BusinessType_HadPaid = 0,//已支付
-    BusinessType_HadBilled,//已发单
-    BusinessType_HadOrdered,//已接单
-    BusinessType_HadCanceled,//已作废
-    BusinessType_HadConsigned,//已发货
-    BusinessType_HadCompleted,//已完成
-} BusinessType;
+#pragma mark —— GPUImage
+typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
+    CameraManagerDevicePositionBack,
+    CameraManagerDevicePositionFront,
+};
+
+typedef NS_ENUM(NSInteger, TypeFilter) {
+    filterNone,
+    filterGaussBlur,
+    filterDilation,
+    filterBeautify,
+    filterGif,
+};
 
 
 #endif /* DefineStructure_h */

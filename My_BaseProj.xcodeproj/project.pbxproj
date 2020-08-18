@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
+		BDD85CE05D5B657110FC2797 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		C51137C024E0241A001049D5 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137BF24E0241A001049D5 /* LZBTabBarItem.m */; };
 		C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137C324E02526001049D5 /* UIViewController+LZBTabBarVCItem.m */; };
 		C51137D924E0358F001049D5 /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C51137D824E0358F001049D5 /* LOTAnimationView+action.m */; };
@@ -40,6 +41,14 @@
 		C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C54F101F24C46A9100EE1E67 /* 兴发街.jpg */; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
+		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
+		C58F040B24EBA4CA00B6D09C /* 首页选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F040A24EBA4CA00B6D09C /* 首页选中.json */; };
+		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
+		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
+		C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */; };
+		C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */; };
+		C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044624EBCC5C00B6D09C /* JhtBannerView.m */; };
+		C58F044924EBCC8200B6D09C /* Use in Resources */ = {isa = PBXBuildFile; fileRef = C58F044824EBCC8200B6D09C /* Use */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -422,6 +431,21 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
+		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
+		C58F040A24EBA4CA00B6D09C /* 首页选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "首页选中.json"; sourceTree = "<group>"; };
+		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
+		C58F043124EBB63000B6D09C /* MKShootProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKShootProxy.m; sourceTree = "<group>"; };
+		C58F043224EBB63000B6D09C /* MKProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKProxy.m; sourceTree = "<group>"; };
+		C58F043324EBB63000B6D09C /* MKShootProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKShootProxy.h; sourceTree = "<group>"; };
+		C58F043E24EBCC4B00B6D09C /* JhtBannerCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerCardView.h; sourceTree = "<group>"; };
+		C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBannerCardView.m; sourceTree = "<group>"; };
+		C58F044124EBCC5300B6D09C /* JhtBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerScrollView.h; sourceTree = "<group>"; };
+		C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBannerScrollView.m; sourceTree = "<group>"; };
+		C58F044324EBCC5300B6D09C /* JhtBannerScrollViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerScrollViewProtocol.h; sourceTree = "<group>"; };
+		C58F044524EBCC5B00B6D09C /* JhtBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerView.h; sourceTree = "<group>"; };
+		C58F044624EBCC5C00B6D09C /* JhtBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBannerView.m; sourceTree = "<group>"; };
+		C58F044824EBCC8200B6D09C /* Use */ = {isa = PBXFileReference; lastKnownFileType = text; path = Use; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -1069,6 +1093,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD85CE05D5B657110FC2797 /* libPods-My_BaseProj.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1221,6 +1246,8 @@
 				C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */,
 				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
 				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
+				C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */,
+				C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */,
 			);
 			path = "AppDelegate & SceneDelegate";
 			sourceTree = "<group>";
@@ -1290,6 +1317,75 @@
 				C557DC1A24C806AA00754760 /* data.json */,
 			);
 			path = "MJExtension用法";
+			sourceTree = "<group>";
+		};
+		C58F03F424EB879700B6D09C /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				C5B1C72324BAB54C001923FB /* green_lottie_tab_discover.json */,
+				C5B1C72424BAB54C001923FB /* green_lottie_tab_home.json */,
+				C5B1C72524BAB54C001923FB /* green_lottie_tab_mine.json */,
+				C5B1C72224BAB54C001923FB /* green_lottie_tab_news.json */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
+		C58F042F24EBB63000B6D09C /* MKProxy */ = {
+			isa = PBXGroup;
+			children = (
+				C58F043024EBB63000B6D09C /* MKProxy.h */,
+				C58F043224EBB63000B6D09C /* MKProxy.m */,
+				C58F043324EBB63000B6D09C /* MKShootProxy.h */,
+				C58F043124EBB63000B6D09C /* MKShootProxy.m */,
+			);
+			path = MKProxy;
+			sourceTree = "<group>";
+		};
+		C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */ = {
+			isa = PBXGroup;
+			children = (
+				C58F043A24EBCC2100B6D09C /* JhtBanner */,
+			);
+			path = "卡片式滑动效果";
+			sourceTree = "<group>";
+		};
+		C58F043A24EBCC2100B6D09C /* JhtBanner */ = {
+			isa = PBXGroup;
+			children = (
+				C58F044824EBCC8200B6D09C /* Use */,
+				C58F043D24EBCC3E00B6D09C /* JhtBannerCardView */,
+				C58F043C24EBCC3200B6D09C /* JhtBannerScrollView */,
+				C58F043B24EBCC2A00B6D09C /* JhtBannerView */,
+			);
+			path = JhtBanner;
+			sourceTree = "<group>";
+		};
+		C58F043B24EBCC2A00B6D09C /* JhtBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				C58F044524EBCC5B00B6D09C /* JhtBannerView.h */,
+				C58F044624EBCC5C00B6D09C /* JhtBannerView.m */,
+			);
+			path = JhtBannerView;
+			sourceTree = "<group>";
+		};
+		C58F043C24EBCC3200B6D09C /* JhtBannerScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C58F044124EBCC5300B6D09C /* JhtBannerScrollView.h */,
+				C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */,
+				C58F044324EBCC5300B6D09C /* JhtBannerScrollViewProtocol.h */,
+			);
+			path = JhtBannerScrollView;
+			sourceTree = "<group>";
+		};
+		C58F043D24EBCC3E00B6D09C /* JhtBannerCardView */ = {
+			isa = PBXGroup;
+			children = (
+				C58F043E24EBCC4B00B6D09C /* JhtBannerCardView.h */,
+				C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */,
+			);
+			path = JhtBannerCardView;
 			sourceTree = "<group>";
 		};
 		C590FE0424CFE2A4000F36C9 /* 数据模型层 真实 */ = {
@@ -1409,10 +1505,8 @@
 		C5B1C72A24BAB552001923FB /* LottieResources */ = {
 			isa = PBXGroup;
 			children = (
-				C5B1C72324BAB54C001923FB /* green_lottie_tab_discover.json */,
-				C5B1C72424BAB54C001923FB /* green_lottie_tab_home.json */,
-				C5B1C72524BAB54C001923FB /* green_lottie_tab_mine.json */,
-				C5B1C72224BAB54C001923FB /* green_lottie_tab_news.json */,
+				C58F040A24EBA4CA00B6D09C /* 首页选中.json */,
+				C58F03F424EB879700B6D09C /* temp */,
 			);
 			path = LottieResources;
 			sourceTree = "<group>";
@@ -2028,6 +2122,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
 				C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */,
 				C5CF70C824E51A3C000DB72D /* Suspend */,
 				C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */,
@@ -2090,6 +2185,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C58F042F24EBB63000B6D09C /* MKProxy */,
 				C5FE9B5624B5F203007B9878 /* UIViewController */,
 				C5FE9B7A24B5F246007B9878 /* UIScrollView */,
 				C5FE9B7924B5F23C007B9878 /* UICollectionView */,
@@ -3158,6 +3254,7 @@
 				C5FE9AE024B5F1B3007B9878 /* 图片@2x.png in Resources */,
 				C5FE9B0424B5F1DC007B9878 /* bg3@2x.png in Resources */,
 				C5FE9D1C24B5F29C007B9878 /* area.plist in Resources */,
+				C58F040B24EBA4CA00B6D09C /* 首页选中.json in Resources */,
 				C5FE9B0224B5F1DC007B9878 /* bg2@2x.png in Resources */,
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
 				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
@@ -3169,6 +3266,7 @@
 				C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */,
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
+				C58F044924EBCC8200B6D09C /* Use in Resources */,
 				C5FE9ADC24B5F1B3007B9878 /* My@2x.png in Resources */,
 				C54AE7D624C941D300121233 /* gif_header_4@2x.png in Resources */,
 				C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */,
@@ -3328,6 +3426,7 @@
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
 				C5F78AEE24BF297D008A46EC /* LoadMoreTBVCell.m in Sources */,
 				C5B5204124D6BCC400579178 /* UIBarButtonItem+GKCategory.m in Sources */,
+				C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C5B1C7C824BAB91A001923FB /* LOTShapeGroup.m in Sources */,
@@ -3452,6 +3551,7 @@
 				C5B1C7C924BAB91A001923FB /* LOTAnimatedSwitch.m in Sources */,
 				C51137C424E02526001049D5 /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
+				C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */,
 				C5E4C09724DFF0B300D4862C /* BaseVC+GifImageView.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C590FF3E24D00D23000F36C9 /* SDWebImageCoder.m in Sources */,
@@ -3488,12 +3588,14 @@
 				C5B1C7B124BAB919001923FB /* UIColor.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
+				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5FAC33124C5747900372BCD /* TBVCell_style_02.m in Sources */,
 				C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C5FE9CBD24B5F29C007B9878 /* NSData+Base64.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C5B1C7E724BAB91A001923FB /* LOTShapePath.m in Sources */,
+				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
 				C5B1C7DA24BAB91A001923FB /* LOTBezierData.m in Sources */,
 				C5FE9D2E24B5F29C007B9878 /* FSCustomButton.m in Sources */,
 				C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */,
@@ -3545,6 +3647,7 @@
 				C5E4C09A24DFF0B300D4862C /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */,
 				C5D4FBD624CFDFE70024A292 /* MKCommentModel.m in Sources */,
 				C5B1C7D024BAB91A001923FB /* LOTCircleAnimator.m in Sources */,
+				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
 				C5FE9B6D24B5F203007B9878 /* HQTextField.m in Sources */,
 				C5FE9D1324B5F29C007B9878 /* HWTFCodeView.m in Sources */,
@@ -3560,6 +3663,7 @@
 				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C5E4C09D24DFF0B300D4862C /* BaseVC+FSCustomButton.m in Sources */,
+				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,
 				C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */,

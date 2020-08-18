@@ -25,9 +25,9 @@ PODS:
   - CocoaLumberjack/Core (3.6.2)
   - CWLateralSlide (1.6.5)
   - DDProgressView (0.1)
-  - Debugo (0.3.0):
-    - Debugo/Core (= 0.3.0)
-  - Debugo/Core (0.3.0):
+  - Debugo (0.4.0):
+    - Debugo/Core (= 0.4.0)
+  - Debugo/Core (0.4.0):
     - FMDB (>= 2.7.2)
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
@@ -42,11 +42,11 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GKPageScrollView (1.3.7)
+  - GKPageScrollView (1.3.8)
   - GPUImage (0.1.7)
   - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
-  - IQKeyboardManager (6.5.5)
+  - IQKeyboardManager (6.5.6)
   - JDStatusBarNotification (1.6.1)
   - JJException (0.2.8):
     - JJException/All (= 0.2.8)
@@ -93,7 +93,7 @@ PODS:
   - Masonry (1.1.0)
   - "MBProgressHUD+WJExtension (1.3.1)"
   - MJExtension (3.2.2)
-  - MJRefresh (3.4.3)
+  - MJRefresh (3.5.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - MSWeakTimer (1.1.0)
@@ -124,13 +124,13 @@ PODS:
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
   - RQShineLabel (1.0.0)
-  - RZColorful (1.3.0):
-    - RZColorful/AttributeCore (= 1.3.0)
-    - RZColorful/UICore (= 1.3.0)
-  - RZColorful/AttributeCore (1.3.0)
-  - RZColorful/UICore (1.3.0):
+  - RZColorful (1.3.1):
+    - RZColorful/AttributeCore (= 1.3.1)
+    - RZColorful/UICore (= 1.3.1)
+  - RZColorful/AttributeCore (1.3.1)
+  - RZColorful/UICore (1.3.1):
     - RZColorful/AttributeCore
-  - RZRichTextView (0.3.1):
+  - RZRichTextView (0.4.0):
     - Masonry
     - RZColorful
     - TZImagePickerController
@@ -171,7 +171,7 @@ PODS:
   - TWPageViewController (0.0.2)
   - TXFileOperation (1.0)
   - TXScrollLabelView (1.3.2)
-  - TZImagePickerController (3.4.1)
+  - TZImagePickerController (3.4.2)
   - UICountingLabel (1.4.1)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
@@ -358,7 +358,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
-  Debugo: ae9d6a6e0c33dcb061db331bd0aead971756a204
+  Debugo: 7ea74eca356172e17622b6de46a8f2f9e97724ae
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -367,11 +367,11 @@ SPEC CHECKSUMS:
   "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GKPageScrollView: decb0db666d879d31c513e968c2ecc824546c504
+  GKPageScrollView: 5cd374fd7d34c0fb89f313307ac0e31939f82c30
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
-  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
   JJException: 2c21abbd65fb977c0acc191ec2bfbb7a2aa0c540
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
@@ -387,7 +387,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
@@ -401,8 +401,8 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
-  RZColorful: faa4be6e9425c8d914fde242011cd3abffd50c1e
-  RZRichTextView: c58b28660a40edc6a064aad4a66d9062be9401ba
+  RZColorful: 74bd56b1c13b9ce63c3145b9bd934c3bdc30e3af
+  RZRichTextView: f17f9fe7e60983090893d1585a429af1a92d40e2
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
@@ -416,7 +416,7 @@ SPEC CHECKSUMS:
   TWPageViewController: 9a301b0b9774fb6b1d97e947620580e894d01274
   TXFileOperation: 99bc7e3763678fdea8e8c407e2b87fb18038385f
   TXScrollLabelView: 0e1650caf61198bf5dc0938ea6493254aeb80f90
-  TZImagePickerController: 4e7a7b3d314f8a75f11042931dfd9d34c270c7db
+  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1

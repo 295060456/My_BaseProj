@@ -240,11 +240,18 @@
 -(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
     if (!_lottieJsonNameStrMutArr) {
         _lottieJsonNameStrMutArr = NSMutableArray.array;
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
+        
+        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        
     }return _lottieJsonNameStrMutArr;
 }
 #pragma mark —— config

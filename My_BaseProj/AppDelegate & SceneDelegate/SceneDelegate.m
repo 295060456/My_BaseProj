@@ -11,6 +11,7 @@
 #import "SceneDelegate+LaunchingAd.h"
 
 API_AVAILABLE(ios(13.0))
+
 @interface SceneDelegate ()
 
 @end
@@ -29,7 +30,16 @@ static SceneDelegate *static_sceneDelegate = nil;
 -(instancetype)init{
     if (self = [super init]) {
         static_sceneDelegate = self;
+        self.launchingAdPathStr = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:@"LaunchingAd"]; // /Library/caches
     }return self;
+}
+
+-(void)KKK:(NSNotification *)noti{
+    NSNumber *b = noti.object;
+    if (b.intValue == AFNetworkReachabilityStatusNotReachable) {
+        [MBProgressHUD wj_showPlainText:@"没有网络连接"
+                                   view:nil];
+    }
 }
 
 - (void)scene:(UIScene *)scene
@@ -44,8 +54,8 @@ willConnectToSession:(UISceneSession *)session
         }
 #pragma mark —— 启动图
 //        [self netWorkingAd];
-    //    [self fixedAdPicsUrl];
-        [self localAdPic];
+        [self fixedAdPicsUrl];
+//        [self localAdPic];
 }
 
 - (void)sceneDidDisconnect:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
@@ -55,24 +65,20 @@ willConnectToSession:(UISceneSession *)session
     // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
 }
 
-
 - (void)sceneDidBecomeActive:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
     // Called when the scene has moved from an inactive state to an active state.
     // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
 }
-
 
 - (void)sceneWillResignActive:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
     // Called when the scene will move from an active state to an inactive state.
     // This may occur due to temporary interruptions (ex. an incoming phone call).
 }
 
-
 - (void)sceneWillEnterForeground:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
     // Called as the scene transitions from the background to the foreground.
     // Use this method to undo the changes made on entering the background.
 }
-
 
 - (void)sceneDidEnterBackground:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
     // Called as the scene transitions from the foreground to the background.
@@ -82,15 +88,6 @@ willConnectToSession:(UISceneSession *)session
     // Save changes in the application's managed object context when the application transitions to the background.
     [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
-
--(void)KKK:(NSNotification *)noti{
-    NSNumber *b = noti.object;
-    if (b.intValue == AFNetworkReachabilityStatusNotReachable) {
-        [MBProgressHUD wj_showPlainText:@"没有网络连接"
-                                   view:nil];
-    }
-}
-
 #pragma mark —— lazyLoad
 -(CustomSYSUITabBarController *)customSYSUITabBarController{
     if (!_customSYSUITabBarController) {

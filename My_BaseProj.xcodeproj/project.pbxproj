@@ -49,6 +49,7 @@
 		C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */; };
 		C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044624EBCC5C00B6D09C /* JhtBannerView.m */; };
 		C58F044924EBCC8200B6D09C /* Use in Resources */ = {isa = PBXBuildFile; fileRef = C58F044824EBCC8200B6D09C /* Use */; };
+		C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -446,6 +447,8 @@
 		C58F044524EBCC5B00B6D09C /* JhtBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerView.h; sourceTree = "<group>"; };
 		C58F044624EBCC5C00B6D09C /* JhtBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBannerView.m; sourceTree = "<group>"; };
 		C58F044824EBCC8200B6D09C /* Use */ = {isa = PBXFileReference; lastKnownFileType = text; path = Use; sourceTree = "<group>"; };
+		C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Measure.h"; sourceTree = "<group>"; };
+		C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Measure.m"; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -2317,6 +2320,8 @@
 		C5FE9B1A24B5F203007B9878 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */,
+				C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */,
 				C5E7D9AE24E1640E00A38FAF /* NSObject+Extras.h */,
 				C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */,
 				C5E7D9AA24E1640D00A38FAF /* NSObject+Sound.h */,
@@ -3508,6 +3513,7 @@
 				C5FE9D3124B5F29C007B9878 /* CountDownBtn.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5B1C7E424BAB91A001923FB /* LOTArrayInterpolator.m in Sources */,
+				C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */,
 				C5B1C7CD24BAB91A001923FB /* LOTInterpolatorCallback.m in Sources */,
 				C5B5203E24D6BCC400579178 /* GKNavigationBarConfigure.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,

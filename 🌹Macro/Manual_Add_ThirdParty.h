@@ -84,6 +84,7 @@
 #import "UIColor+Hex.h"
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"
+#import "NSObject+Measure.h"
 #import "UIControl+XY.h"
 #import "UITableViewCell+WhiteArrows.h"
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF

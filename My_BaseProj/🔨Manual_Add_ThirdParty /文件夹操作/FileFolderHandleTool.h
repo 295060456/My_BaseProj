@@ -18,7 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
  3.tmp:只是临时使用的数据应该保存在/ tmp 文件夹，tmp目录不是你程序退出的时候就清空，是在你内存不足的情况系统会给你清空，看是网络缓存的数据还是本地存储的，如果本地存储你可以放在doc目录。
  尽管iCloud不会备份这些文件，但在应用使用完这些数据之后要注意随时删除，避免占用用户设备的空间。
  */
-
+#pragma mark —— 禁止App系统文件夹document同步
+///因为它会同步。苹果要求：可重复产生的数据不得进行同步,什么叫做可重复数据？这里最好禁止，否则会影响上架，被拒！
++(void)banSysDocSynchronization;
 #pragma mark —— 目录获取
 ///获取沙盒的主目录路径：
 + (NSString *)homeDir;
@@ -32,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)cachesDir;
 /// 获取沙盒中tmp的目录路径：
 + (NSString *)tmpDir;
-#pragma mark - 以当前时间戳生成缓存路径 NSTemporaryDirectory()
+#pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
 + (NSString *)cacheURL:(NSString *)extension;
 #pragma mark —— 创建文件（夹）
 ///创建文件夹：

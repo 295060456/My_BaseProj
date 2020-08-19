@@ -42,7 +42,6 @@
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
-		C58F040B24EBA4CA00B6D09C /* 首页选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F040A24EBA4CA00B6D09C /* 首页选中.json */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
 		C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */; };
@@ -55,6 +54,14 @@
 		C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046424EBD66100B6D09C /* ShowAvailableFont.m */; };
 		C58F046924EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */; };
 		C58F049B24EC112F00B6D09C /* BaseGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F049924EC112F00B6D09C /* BaseGPUImageView.m */; };
+		C58F04A424ED01B200B6D09C /* 首页选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F049C24ED01B200B6D09C /* 首页选中.json */; };
+		C58F04A524ED01B200B6D09C /* 首页未选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F049D24ED01B200B6D09C /* 首页未选中.json */; };
+		C58F04A624ED01B200B6D09C /* 我的未选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F049E24ED01B200B6D09C /* 我的未选中.json */; };
+		C58F04A724ED01B200B6D09C /* 社区未选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F049F24ED01B200B6D09C /* 社区未选中.json */; };
+		C58F04A824ED01B200B6D09C /* 社区选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F04A024ED01B200B6D09C /* 社区选中.json */; };
+		C58F04A924ED01B200B6D09C /* 任务未选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F04A124ED01B200B6D09C /* 任务未选中.json */; };
+		C58F04AA24ED01B200B6D09C /* 我的选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F04A224ED01B200B6D09C /* 我的选中.json */; };
+		C58F04AB24ED01B200B6D09C /* 任务选中.json in Resources */ = {isa = PBXBuildFile; fileRef = C58F04A324ED01B200B6D09C /* 任务选中.json */; };
 		C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */ = {isa = PBXBuildFile; fileRef = C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */; };
 		C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2524D00A20000F36C9 /* UIImage+WebP.m */; };
 		C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF2624D00A20000F36C9 /* SDWebImageWebPCoder.m */; };
@@ -438,7 +445,6 @@
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
-		C58F040A24EBA4CA00B6D09C /* 首页选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "首页选中.json"; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
 		C58F043124EBB63000B6D09C /* MKShootProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKShootProxy.m; sourceTree = "<group>"; };
 		C58F043224EBB63000B6D09C /* MKProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKProxy.m; sourceTree = "<group>"; };
@@ -463,6 +469,14 @@
 		C58F046824EBD6C000B6D09C /* YHGPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHGPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		C58F049924EC112F00B6D09C /* BaseGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseGPUImageView.m; sourceTree = "<group>"; };
 		C58F049A24EC112F00B6D09C /* BaseGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGPUImageView.h; sourceTree = "<group>"; };
+		C58F049C24ED01B200B6D09C /* 首页选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "首页选中.json"; sourceTree = "<group>"; };
+		C58F049D24ED01B200B6D09C /* 首页未选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "首页未选中.json"; sourceTree = "<group>"; };
+		C58F049E24ED01B200B6D09C /* 我的未选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "我的未选中.json"; sourceTree = "<group>"; };
+		C58F049F24ED01B200B6D09C /* 社区未选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "社区未选中.json"; sourceTree = "<group>"; };
+		C58F04A024ED01B200B6D09C /* 社区选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "社区选中.json"; sourceTree = "<group>"; };
+		C58F04A124ED01B200B6D09C /* 任务未选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "任务未选中.json"; sourceTree = "<group>"; };
+		C58F04A224ED01B200B6D09C /* 我的选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "我的选中.json"; sourceTree = "<group>"; };
+		C58F04A324ED01B200B6D09C /* 任务选中.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "任务选中.json"; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -1550,7 +1564,14 @@
 		C5B1C72A24BAB552001923FB /* LottieResources */ = {
 			isa = PBXGroup;
 			children = (
-				C58F040A24EBA4CA00B6D09C /* 首页选中.json */,
+				C58F04A124ED01B200B6D09C /* 任务未选中.json */,
+				C58F04A324ED01B200B6D09C /* 任务选中.json */,
+				C58F049F24ED01B200B6D09C /* 社区未选中.json */,
+				C58F04A024ED01B200B6D09C /* 社区选中.json */,
+				C58F049D24ED01B200B6D09C /* 首页未选中.json */,
+				C58F049C24ED01B200B6D09C /* 首页选中.json */,
+				C58F049E24ED01B200B6D09C /* 我的未选中.json */,
+				C58F04A224ED01B200B6D09C /* 我的选中.json */,
 				C58F03F424EB879700B6D09C /* temp */,
 			);
 			path = LottieResources;
@@ -3271,8 +3292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58F04A724ED01B200B6D09C /* 社区未选中.json in Resources */,
 				C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */,
 				C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */,
+				C58F04A624ED01B200B6D09C /* 我的未选中.json in Resources */,
 				C5FE9ADD24B5F1B3007B9878 /* ShoppingCart@3x.png in Resources */,
 				C5FE9AFF24B5F1DC007B9878 /* title2@2x.png in Resources */,
 				C5FE9AD924B5F1B3007B9878 /* 图片@3x.png in Resources */,
@@ -3283,8 +3306,10 @@
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
 				C557DC1624C805DF00754760 /* MJExtension用法 in Resources */,
+				C58F04A424ED01B200B6D09C /* 首页选中.json in Resources */,
 				C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */,
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
+				C58F04AA24ED01B200B6D09C /* 我的选中.json in Resources */,
 				C5FE9ADE24B5F1B3007B9878 /* Home@3x.png in Resources */,
 				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
 				C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */,
@@ -3299,11 +3324,11 @@
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C5B1C72724BAB54D001923FB /* green_lottie_tab_discover.json in Resources */,
 				C54AE7D424C941D300121233 /* gif_header_4@3x.png in Resources */,
+				C58F04A524ED01B200B6D09C /* 首页未选中.json in Resources */,
 				C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */,
 				C5FE9AE024B5F1B3007B9878 /* 图片@2x.png in Resources */,
 				C5FE9B0424B5F1DC007B9878 /* bg3@2x.png in Resources */,
 				C5FE9D1C24B5F29C007B9878 /* area.plist in Resources */,
-				C58F040B24EBA4CA00B6D09C /* 首页选中.json in Resources */,
 				C5FE9B0224B5F1DC007B9878 /* bg2@2x.png in Resources */,
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
 				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
@@ -3316,11 +3341,14 @@
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
 				C58F044924EBCC8200B6D09C /* Use in Resources */,
+				C58F04AB24ED01B200B6D09C /* 任务选中.json in Resources */,
+				C58F04A824ED01B200B6D09C /* 社区选中.json in Resources */,
 				C5FE9ADC24B5F1B3007B9878 /* My@2x.png in Resources */,
 				C54AE7D624C941D300121233 /* gif_header_4@2x.png in Resources */,
 				C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */,
 				C5FE9ADB24B5F1B3007B9878 /* MyStore@3x.png in Resources */,
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
+				C58F04A924ED01B200B6D09C /* 任务未选中.json in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,

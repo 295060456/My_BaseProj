@@ -107,10 +107,12 @@ static char *UIView_SuspendView_panRcognize = "UIView_SuspendView_panRcognize";
 }
 
 -(void)setVc:(UIViewController *)vc{
-    objc_setAssociatedObject(self,
-                             UIView_SuspendView_vc,
-                             vc,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (vc) {
+        objc_setAssociatedObject(self,
+                                 UIView_SuspendView_vc,
+                                 vc,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
 }
 #pragma mark —— @property(nonatomic,strong)UIPanGestureRecognizer *panRcognize;
 -(UIPanGestureRecognizer *)panRcognize{

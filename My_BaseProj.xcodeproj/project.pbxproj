@@ -41,6 +41,12 @@
 		C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C54F101F24C46A9100EE1E67 /* 兴发街.jpg */; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
+		C561613724EE2E57001CD851 /* Use in Resources */ = {isa = PBXBuildFile; fileRef = C561613624EE2E57001CD851 /* Use */; };
+		C561613C24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561613A24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m */; };
+		C561614324EE2E95001CD851 /* CustomerAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561614024EE2E95001CD851 /* CustomerAVPlayerView.m */; };
+		C561614424EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C561614124EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.m */; };
+		C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561614624EE2E9C001CD851 /* CustomerAVPlayerVC.m */; };
+		C561614A24EE2EA2001CD851 /* RepeatPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561614824EE2EA1001CD851 /* RepeatPlayer.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -443,6 +449,17 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C561613624EE2E57001CD851 /* Use */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Use; sourceTree = "<group>"; };
+		C561613A24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerGPUImagePlayerVC.m; sourceTree = "<group>"; };
+		C561613B24EE2E78001CD851 /* CustomerGPUImagePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerGPUImagePlayerVC.h; sourceTree = "<group>"; };
+		C561613F24EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CustomerAVPlayerView+UIGestureRecognizerDelegate.h"; sourceTree = "<group>"; };
+		C561614024EE2E95001CD851 /* CustomerAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerAVPlayerView.m; sourceTree = "<group>"; };
+		C561614124EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomerAVPlayerView+UIGestureRecognizerDelegate.m"; sourceTree = "<group>"; };
+		C561614224EE2E95001CD851 /* CustomerAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerAVPlayerView.h; sourceTree = "<group>"; };
+		C561614524EE2E9C001CD851 /* CustomerAVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerAVPlayerVC.h; sourceTree = "<group>"; };
+		C561614624EE2E9C001CD851 /* CustomerAVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerAVPlayerVC.m; sourceTree = "<group>"; };
+		C561614824EE2EA1001CD851 /* RepeatPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatPlayer.m; sourceTree = "<group>"; };
+		C561614924EE2EA1001CD851 /* RepeatPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatPlayer.h; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -1348,6 +1365,56 @@
 			path = "MJExtension用法";
 			sourceTree = "<group>";
 		};
+		C561613524EE2E4B001CD851 /* 录制成功的视频进行播放以决定是否舍弃 */ = {
+			isa = PBXGroup;
+			children = (
+				C561613624EE2E57001CD851 /* Use */,
+				C561613824EE2E5D001CD851 /* CustomerAVPlayer */,
+				C561613924EE2E65001CD851 /* CustomerGPUImagePlayer */,
+			);
+			path = "录制成功的视频进行播放以决定是否舍弃";
+			sourceTree = "<group>";
+		};
+		C561613824EE2E5D001CD851 /* CustomerAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C561614924EE2EA1001CD851 /* RepeatPlayer.h */,
+				C561614824EE2EA1001CD851 /* RepeatPlayer.m */,
+				C561613E24EE2E8B001CD851 /* CustomerAVPlayerVC */,
+				C561613D24EE2E83001CD851 /* CustomerAVPlayerView */,
+			);
+			path = CustomerAVPlayer;
+			sourceTree = "<group>";
+		};
+		C561613924EE2E65001CD851 /* CustomerGPUImagePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C561613B24EE2E78001CD851 /* CustomerGPUImagePlayerVC.h */,
+				C561613A24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m */,
+			);
+			path = CustomerGPUImagePlayer;
+			sourceTree = "<group>";
+		};
+		C561613D24EE2E83001CD851 /* CustomerAVPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				C561614224EE2E95001CD851 /* CustomerAVPlayerView.h */,
+				C561614024EE2E95001CD851 /* CustomerAVPlayerView.m */,
+				C561613F24EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.h */,
+				C561614124EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.m */,
+			);
+			path = CustomerAVPlayerView;
+			sourceTree = "<group>";
+		};
+		C561613E24EE2E8B001CD851 /* CustomerAVPlayerVC */ = {
+			isa = PBXGroup;
+			children = (
+				C561614524EE2E9C001CD851 /* CustomerAVPlayerVC.h */,
+				C561614624EE2E9C001CD851 /* CustomerAVPlayerVC.m */,
+			);
+			path = CustomerAVPlayerVC;
+			sourceTree = "<group>";
+		};
 		C58F03F424EB879700B6D09C /* temp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2188,6 +2255,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C561613524EE2E4B001CD851 /* 录制成功的视频进行播放以决定是否舍弃 */,
 				C58F046224EBD65800B6D09C /* iOS打印全员字体 */,
 				C58F044D24EBD54700B6D09C /* 视频处理工具类 */,
 				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
@@ -3352,6 +3420,7 @@
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
+				C561613724EE2E57001CD851 /* Use in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
 				C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */,
@@ -3499,6 +3568,7 @@
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */,
 				C590FF4324D01041000F36C9 /* UIImage+WebP_Diff.m in Sources */,
+				C561613C24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
 				C5F78AEE24BF297D008A46EC /* LoadMoreTBVCell.m in Sources */,
@@ -3544,8 +3614,10 @@
 				C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */,
 				C5FE9CF624B5F29C007B9878 /* BadgeButton.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
+				C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */,
 				C5E4C09C24DFF0B300D4862C /* BaseVC+OpenURL.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
+				C561614324EE2E95001CD851 /* CustomerAVPlayerView.m in Sources */,
 				C5FE9CEC24B5F29C007B9878 /* UIImage+TBCityIconFont.m in Sources */,
 				C5FE9B6F24B5F204007B9878 /* ZYTextField_01.m in Sources */,
 				C5FE9CE524B5F29C007B9878 /* BWShareView.m in Sources */,
@@ -3575,6 +3647,7 @@
 				C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */,
 				C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
+				C561614424EE2E95001CD851 /* CustomerAVPlayerView+UIGestureRecognizerDelegate.m in Sources */,
 				C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */,
 				C5B1C7DE24BAB91A001923FB /* LOTTrimPathNode.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
@@ -3659,6 +3732,7 @@
 				C5B1C7C424BAB91A001923FB /* LOTMaskContainer.m in Sources */,
 				C5FE9D0124B5F29C007B9878 /* LZBTabBar.m in Sources */,
 				C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */,
+				C561614A24EE2EA2001CD851 /* RepeatPlayer.m in Sources */,
 				C5B1C7B524BAB919001923FB /* LOTRepeaterRenderer.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,

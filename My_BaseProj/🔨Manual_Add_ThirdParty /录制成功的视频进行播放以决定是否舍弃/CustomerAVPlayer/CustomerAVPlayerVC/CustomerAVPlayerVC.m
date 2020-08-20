@@ -14,8 +14,6 @@
 @property(nonatomic,strong)CustomerAVPlayerView *AVPlayerView;
 @property(nonatomic,strong)NSURL *AVPlayerURL;
 
-@property(nonatomic,strong)RepeatPlayer *repeatPlayer;
-
 @property(nonatomic,strong)id requestParams;
 @property(nonatomic,copy)MKDataBlock successBlock;
 @property(nonatomic,assign)BOOL isPush;
@@ -80,12 +78,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navigationBar.hidden = YES;
-    [self.AVPlayerView play];
-//    _repeatPlayer = [[RepeatPlayer alloc] initWithSrc:self.AVPlayerURL];
-//
-//    //self.repeatPlayer.autoPlay = true;
-//    [_repeatPlayer showInView:self.view];
+
+    self.AVPlayerView.alpha = 1;
+    
+    self.gk_navigationBar.hidden = NO;
+    if (self.gk_navigationBar.hidden) {
+        [self.view bringSubviewToFront:self.gk_navigationBar];
+    }
+    self.gk_interactivePopDisabled = NO;
+    self.gk_fullScreenPopDisabled = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -105,13 +106,13 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
-
 #pragma mark —— lazyLoad
 -(CustomerAVPlayerView *)AVPlayerView{
     if (!_AVPlayerView) {
         @weakify(self)
         _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:self.AVPlayerURL
                                                         suspendVC:self_weak_];
+//        _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
         [_AVPlayerView errorCustomerAVPlayerBlock:^{
             @strongify(self)
             [self alertControllerStyle:SYS_AlertController
@@ -123,6 +124,29 @@
                           alertVCBlock:^(id data) {
                 //DIY
             }];
+        }];
+        
+        ///点击事件回调 参数1：self CustomerAVPlayerView，参数2：手势 UITapGestureRecognizer & UISwipeGestureRecognizer
+        [_AVPlayerView actionCustomerAVPlayerBlock:^(id data,
+                                                     id data2) {
+            @strongify(self)
+            if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {
+                NSLog(@"你点击了我");
+            }else if ([data2 isKindOfClass:UISwipeGestureRecognizer.class]){
+                if ([data isKindOfClass:CustomerAVPlayerView.class]) {
+                    CustomerAVPlayerView *view = (CustomerAVPlayerView *)data;
+                    if ([view.vc isEqual:self]) {
+                        if (self.navigationController) {
+                            [self.navigationController popViewControllerAnimated:YES];
+                        }else{
+                            [self dismissViewControllerAnimated:YES
+                                                     completion:^{
+                                
+                            }];
+                        }
+                    }
+                }
+            }else{}
         }];
         [self.view addSubview:_AVPlayerView];
         [self.view.layer addSublayer:_AVPlayerView.playerLayer];
@@ -136,5 +160,6 @@
         }];
     }return _AVPlayerView;
 }
+
 
 @end

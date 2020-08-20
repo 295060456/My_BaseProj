@@ -21,14 +21,16 @@
 
 @interface MKShootVC ()
 #pragma mark —— UI
-@property(nonatomic,strong)UIButton *overturnBtn;
+@property(nonatomic,strong)UIButton *overturnBtn;//镜头翻转
+@property(nonatomic,strong)UIButton *flashLightBtn;//闪光灯
 @property(nonatomic,strong)UIButton *deleteFilmBtn;//删除视频
 @property(nonatomic,strong)UIButton *sureFilmBtn;//保存视频
 @property(nonatomic,strong)UIButton *previewBtn;
-@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;
+@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;//开始录制
 @property(nonatomic,strong)UIView *indexView;
 @property(nonatomic,strong)JhtBannerView *bannerView;
 @property(nonatomic,strong)CustomerAVPlayerView *AVPlayerView;
+@property(nonatomic,strong)AVCaptureDevice *captureDevice;
 
 @property(nonatomic,assign)CGFloat __block time;
 @property(nonatomic,assign)BOOL __block isClickMyGPUImageView;
@@ -107,7 +109,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:kIMG(@"MKShootVC")];
 
     self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtnCategory];
-    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn];
+//    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn];
+    self.gk_navRightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.flashLightBtn],
+                                       [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn]];
+    
     self.gk_navTitle = @"";
     [self hideNavLine];
     
@@ -399,25 +404,26 @@
         //        @strongify(self)
         if ([data isKindOfClass:VedioTools.class]) {
             #pragma mark —— GPUImage
+            // GPUImage 只能播放本地视频，不能处理网络流媒体url
 //            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
 //                                       comingStyle:ComingStyle_PUSH
 //                                 presentationStyle:UIModalPresentationFullScreen
 //                                     requestParams:@{
-//                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]
+//                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]//fileURLWithPath
 //                                     }
 //                                           success:^(id data) {}
 //                                          animated:YES];
             #pragma mark —— AVPlayer
-//            [CustomerAVPlayerVC ComingFromVC:weak_self
-//                                 comingStyle:ComingStyle_PUSH
-//                           presentationStyle:UIModalPresentationFullScreen
-//                               requestParams:@{
-//                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
-//                               }
-//                                     success:^(id data) {}
-//                                    animated:YES];
+            [CustomerAVPlayerVC ComingFromVC:self_weak_
+                                 comingStyle:ComingStyle_PUSH
+                           presentationStyle:UIModalPresentationFullScreen
+                               requestParams:@{
+                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
+                               }
+                                     success:^(id data) {}
+                                    animated:YES];
             #pragma mark —— 悬浮窗AVPlayer
-            self.AVPlayerView.alpha = 1;
+//            self.AVPlayerView.alpha = 1;
         }
     }];
 }
@@ -465,6 +471,24 @@
 //翻转摄像头
 -(void)overturnBtnClickEvent:(UIButton *)sender{
     [VedioTools.sharedInstance overturnCamera];
+}
+//开启闪光灯
+-(void)flashLightBtnClickEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        if (self.captureDevice.hasTorch) {
+            if ([self.captureDevice lockForConfiguration:nil]) {
+                self.captureDevice.torchMode = AVCaptureTorchModeOn;
+                [self.captureDevice unlockForConfiguration];
+            }
+        }
+    }else{
+        if (self.captureDevice.hasTorch) {
+            [self.captureDevice lockForConfiguration:nil];
+            [self.captureDevice setTorchMode: AVCaptureTorchModeOff];
+            [self.captureDevice unlockForConfiguration];
+        }
+    }
 }
 //鉴权
 -(void)check{
@@ -524,6 +548,19 @@
                          action:@selector(overturnBtnClickEvent:)
                forControlEvents:UIControlEventTouchUpInside];
     }return _overturnBtn;
+}
+
+-(UIButton *)flashLightBtn{
+    if (!_flashLightBtn) {
+        _flashLightBtn = UIButton.new;
+        [_flashLightBtn setImage:kIMG(@"闪光灯-关闭")
+                      forState:UIControlStateNormal];
+        [_flashLightBtn setImage:kIMG(@"闪光灯")
+                      forState:UIControlStateSelected];
+        [_flashLightBtn addTarget:self
+                         action:@selector(flashLightBtnClickEvent:)
+               forControlEvents:UIControlEventTouchUpInside];
+    }return _flashLightBtn;
 }
 
 -(UIButton *)previewBtn{
@@ -696,14 +733,11 @@
 - (NSArray *)getData{
     return @[
       @{@"name":@"拍 3 分钟",
-        @"time":@"180",
-        @"icon":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576744105022&di=f06819b43c8032d203642874d1893f3d&imgtype=0&src=http%3A%2F%2Fi2.sinaimg.cn%2Fent%2Fs%2Fm%2Fp%2F2009-06-25%2FU1326P28T3D2580888F326DT20090625072056.jpg"},
+        @"time":@"180"},
       @{@"name":@"拍 5 分钟",
-        @"time":@"300",
-        @"icon":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1577338893&di=189401ebacb9704d18f6ab02b7336923&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201308%2F05%2F20130805105309_5E2zE.jpeg"},
+        @"time":@"300"},
       @{@"name":@"拍 1 分钟",
-        @"time":@"60",
-        @"icon":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576744105022&di=f4aadd0b85f93309a4629c998773ae83&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1206%2F07%2Fc0%2F11909864_1339034191111.jpg"}
+        @"time":@"60"}
       ];
 }
 
@@ -736,6 +770,29 @@
                 //DIY
             }];
         }];
+        
+        ///点击事件回调 参数1：self CustomerAVPlayerView，参数2：手势 UITapGestureRecognizer & UISwipeGestureRecognizer
+        [_AVPlayerView actionCustomerAVPlayerBlock:^(id data,
+                                                     id data2) {
+            @strongify(self)
+            if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {
+                NSLog(@"你点击了我");
+            }else if ([data2 isKindOfClass:UISwipeGestureRecognizer.class]){
+                if ([data isKindOfClass:CustomerAVPlayerView.class]) {
+                    CustomerAVPlayerView *view = (CustomerAVPlayerView *)data;
+                    if ([view.vc isEqual:self]) {
+                        if (self.navigationController) {
+                            [self.navigationController popViewControllerAnimated:YES];
+                        }else{
+                            [self dismissViewControllerAnimated:YES
+                                                     completion:^{
+                                
+                            }];
+                        }
+                    }
+                }
+            }else{}
+        }];
         [self.view addSubview:_AVPlayerView];
         [self.view.layer addSublayer:_AVPlayerView.playerLayer];
         [_AVPlayerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -749,5 +806,12 @@
         }];
     }return _AVPlayerView;
 }
+
+-(AVCaptureDevice *)captureDevice{
+    if (!_captureDevice) {
+        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }return _captureDevice;
+}
+    
 
 @end

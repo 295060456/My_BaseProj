@@ -26,10 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)AVPlayerLayer *playerLayer;
 @property(nonatomic,assign)BOOL isSuspend;//是否开启悬浮窗效果
+@property(nonatomic,assign)BOOL isTap;
 
 -(instancetype)initWithURL:(NSURL *)movieURL
                  suspendVC:(UIViewController *)suspendVC;
-///点击事件回调
+///点击事件回调 参数1：self CustomerAVPlayerView，参数2：手势 UITapGestureRecognizer & UISwipeGestureRecognizer
 -(void)actionCustomerAVPlayerBlock:(TwoDataBlock)customerActionAVPlayerBlock;
 ///错误处理
 -(void)errorCustomerAVPlayerBlock:(NoResultBlock)customerErrorAVPlayerBlock;

@@ -54,6 +54,9 @@
 		C561617C24EE496C001CD851 /* MKShootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561617A24EE496C001CD851 /* MKShootVC.m */; };
 		C561618124EE4976001CD851 /* MKUploadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561617F24EE4976001CD851 /* MKUploadingVC.m */; };
 		C561618224EE4976001CD851 /* MKUploadingVC+VM.m in Sources */ = {isa = PBXBuildFile; fileRef = C561618024EE4976001CD851 /* MKUploadingVC+VM.m */; };
+		C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */ = {isa = PBXBuildFile; fileRef = C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */; };
+		C56161CB24EE7450001CD851 /* 签名上架 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CA24EE7450001CD851 /* 签名上架 */; };
+		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -88,6 +91,12 @@
 		C59C4A2D24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A2B24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59C4A5424E3A88E002C2104 /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */; };
+		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
+		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
+		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
+		C5A46BB624EEA73100158D1E /* 闪光灯-关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */; };
+		C5A46BB724EEA73100158D1E /* 闪光灯@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */; };
+		C5A46BB824EEA73100158D1E /* 闪光灯@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
@@ -482,6 +491,9 @@
 		C561617E24EE4976001CD851 /* MKUploadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKUploadingVC.h; sourceTree = "<group>"; };
 		C561617F24EE4976001CD851 /* MKUploadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKUploadingVC.m; sourceTree = "<group>"; };
 		C561618024EE4976001CD851 /* MKUploadingVC+VM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKUploadingVC+VM.m"; sourceTree = "<group>"; };
+		C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "优秀的关于音视频处理的文献资料"; sourceTree = "<group>"; };
+		C56161CA24EE7450001CD851 /* 签名上架 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "签名上架"; sourceTree = "<group>"; };
+		C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "苹果开发者账号申请"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -544,6 +556,12 @@
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
 		C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
 		C59C4A5324E3A88D002C2104 /* BaseVC+TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZLocationManager.h"; sourceTree = "<group>"; };
+		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
+		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
+		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
+		C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@2x.png"; sourceTree = "<group>"; };
+		C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@2x.png"; sourceTree = "<group>"; };
+		C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@3x.png"; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -1340,6 +1358,7 @@
 		C54F101B24C469D400EE1E67 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C5A46BAC24EEA73100158D1E /* 闪光灯 */,
 				C54F101F24C46A9100EE1E67 /* 兴发街.jpg */,
 				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9ACF24B5F1B3007B9878 /* 图片.png */,
@@ -1440,8 +1459,8 @@
 		C561616724EE4928001CD851 /* 拍照 */ = {
 			isa = PBXGroup;
 			children = (
-				C561616F24EE4947001CD851 /* 拍摄 */,
 				C561616E24EE4940001CD851 /* 上传 */,
+				C561616F24EE4947001CD851 /* 拍摄 */,
 				C561616924EE493A001CD851 /* PhotoVC.h */,
 				C561616B24EE493B001CD851 /* PhotoVC.m */,
 				C561616824EE493A001CD851 /* PhotoVC+VM.h */,
@@ -1482,6 +1501,23 @@
 				C561617424EE4959001CD851 /* StartOrPauseBtn.m */,
 			);
 			path = "拍摄页面的一切其他的子控件";
+			sourceTree = "<group>";
+		};
+		C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */ = {
+			isa = PBXGroup;
+			children = (
+				C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */,
+			);
+			path = "优秀的关于音视频处理的文献资料";
+			sourceTree = "<group>";
+		};
+		C56161C924EE743F001CD851 /* 签名上架 */ = {
+			isa = PBXGroup;
+			children = (
+				C56161CA24EE7450001CD851 /* 签名上架 */,
+				C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */,
+			);
+			path = "签名上架";
 			sourceTree = "<group>";
 		};
 		C58F03F424EB879700B6D09C /* temp */ = {
@@ -1675,6 +1711,19 @@
 				C5FE9C3624B5F29A007B9878 /* CJTextField.m */,
 			);
 			path = CJTextField;
+			sourceTree = "<group>";
+		};
+		C5A46BAC24EEA73100158D1E /* 闪光灯 */ = {
+			isa = PBXGroup;
+			children = (
+				C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */,
+				C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */,
+				C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */,
+				C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */,
+				C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */,
+				C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */,
+			);
+			path = "闪光灯";
 			sourceTree = "<group>";
 		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
@@ -2203,6 +2252,8 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C56161C924EE743F001CD851 /* 签名上架 */,
+				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
 				C52D2A5024E580670048FEFF /* JXCategoryView */,
 				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C557DC1724C8063700754760 /* MJExtension用法 */,
@@ -3432,6 +3483,7 @@
 			files = (
 				C58F04A724ED01B200B6D09C /* 社区未选中.json in Resources */,
 				C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */,
+				C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */,
 				C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */,
 				C58F04A624ED01B200B6D09C /* 我的未选中.json in Resources */,
 				C5FE9ADD24B5F1B3007B9878 /* ShoppingCart@3x.png in Resources */,
@@ -3455,9 +3507,11 @@
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C5FE9AFE24B5F1DC007B9878 /* title1@2x.png in Resources */,
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
+				C5A46BB724EEA73100158D1E /* 闪光灯@2x.png in Resources */,
 				C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */,
 				C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */,
 				C5FE9AE224B5F1B3007B9878 /* My@3x.png in Resources */,
+				C5A46BB824EEA73100158D1E /* 闪光灯@3x.png in Resources */,
 				C54AE7D724C941D300121233 /* gif_header_1@3x.png in Resources */,
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C5B1C72724BAB54D001923FB /* green_lottie_tab_discover.json in Resources */,
@@ -3474,8 +3528,12 @@
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
+				C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */,
+				C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */,
 				C5FE9B0024B5F1DC007B9878 /* title3@2x.png in Resources */,
 				C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */,
+				C5A46BB624EEA73100158D1E /* 闪光灯-关闭@2x.png in Resources */,
+				C56161CB24EE7450001CD851 /* 签名上架 in Resources */,
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
 				C58F04AB24ED01B200B6D09C /* 任务选中.json in Resources */,
@@ -3487,8 +3545,10 @@
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
 				C58F04A924ED01B200B6D09C /* 任务未选中.json in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
+				C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
+				C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
 				C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */,

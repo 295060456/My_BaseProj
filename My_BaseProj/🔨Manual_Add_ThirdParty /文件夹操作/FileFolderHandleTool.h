@@ -32,10 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)preferencesDir;
 ///获取沙盒中Library/Caches的目录路径：
 + (NSString *)cachesDir;
-/// 获取沙盒中tmp的目录路径：
+/// 获取沙盒中tmp的目录路径：供系统使用，程序员不要使用，因为随时会被销毁
 + (NSString *)tmpDir;
 #pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
-+ (NSString *)cacheURL:(NSString *)extension;
++(NSString *)cacheURL:(NSString *)extension
+               folder:(NSString *)folderName;
 #pragma mark —— 创建文件（夹）
 ///创建文件夹：
 + (BOOL)createDirectoryAtPath:(NSString *)path

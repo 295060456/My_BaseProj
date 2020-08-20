@@ -16,11 +16,10 @@
 @property(nonatomic,copy)TwoDataBlock customerActionAVPlayerBlock;
 @property(nonatomic,copy)NoResultBlock customerErrorAVPlayerBlock;
 
-@property(nonatomic,weak)UIViewController *vcer;//这个属性掌管悬浮效果，具体实现见  @interface UIView (SuspendView)
 @property(nonatomic,strong)RepeatPlayer *repeatPlayer;
 @property(nonatomic,strong)UITapGestureRecognizer *tapGR;
+@property(nonatomic,strong)UISwipeGestureRecognizer *swipeGR;
 @property(nonatomic,strong)NSURL *movieURL;
-@property(nonatomic,assign)BOOL isTap;
 
 @end
 
@@ -41,11 +40,13 @@
         }else{
             self.movieURL = movieURL;
         }
-        self.vcer = suspendVC;
-        self.isSuspend = NO;//默认不开启悬浮效果
-        [self addGestureRecognizer:self.tapGR];
+        self.vc = suspendVC;
+        self.isSuspend = NO;//默认不开启悬浮效果  在这里进行手动开启
+        
+        self.tapGR.enabled = YES;
+        self.swipeGR.enabled = YES;
         self.isTap = NO;
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = kClearColor;
     }return self;
 }
 
@@ -53,10 +54,7 @@
     [super drawRect:rect];
     if (self.isSuspend) {
         //开启悬浮效果
-        self.vc = self.vcer;
-        self.panRcognize.enabled = YES;
-    }else{
-        self.vc = nil;
+        self.panRcognize.enabled = YES;//悬浮效果必须要的参数
     }
     [self.repeatPlayer play];
 }
@@ -76,10 +74,22 @@
 -(void)pause{
     [self.repeatPlayer pause];
 }
+#pragma mark —— 点击事件
+-(void)touchesBegan:(NSSet<UITouch *> *)touches
+          withEvent:(UIEvent *)event{
 
+}
+///点击事件
 -(void)tapGRClickEvent:(UITapGestureRecognizer *)sender{
     if (self.customerActionAVPlayerBlock) {
-        self.customerActionAVPlayerBlock(@(self.isTap),sender);
+        self.customerActionAVPlayerBlock(self,sender);
+    }
+    self.isTap = !self.isTap;
+}
+///轻扫事件
+-(void)swipeGREvent:(UISwipeGestureRecognizer *)sender{
+    if (self.customerActionAVPlayerBlock) {
+        self.customerActionAVPlayerBlock(self,sender);
     }
     self.isTap = !self.isTap;
 }
@@ -99,7 +109,8 @@
 -(void)setIsSuspend:(BOOL)isSuspend{
     _isSuspend = isSuspend;
     if (_isSuspend) {
-        self.vc = self.vcer;//开启悬浮效果
+        //开启悬浮效果
+        self.panRcognize.enabled = YES;//悬浮效果必须要的参数
     }else{
         self.vc = nil;
     }
@@ -116,14 +127,25 @@
 
 -(UITapGestureRecognizer *)tapGR{
     if (!_tapGR) {
-        _tapGR = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                        action:@selector(tapGRClickEvent:)];
+        _tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                         action:@selector(tapGRClickEvent:)];
         _tapGR.numberOfTouchesRequired = 1;//手指数
         _tapGR.numberOfTapsRequired = 1;//tap次数
         _tapGR.delegate = self;
+        [self addGestureRecognizer:_tapGR];
     }return _tapGR;
 }
 
+-(UISwipeGestureRecognizer *)swipeGR{
+    if (!_swipeGR) {
+        _swipeGR = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                             action:@selector(swipeGREvent:)];
+        _swipeGR.numberOfTouchesRequired = 1;
+        //设置轻扫方向(默认是从左往右)
+        _swipeGR.direction = UISwipeGestureRecognizerDirectionRight;
+        [self addGestureRecognizer:_swipeGR];
+    }return _swipeGR;
+}
 
 
 @end

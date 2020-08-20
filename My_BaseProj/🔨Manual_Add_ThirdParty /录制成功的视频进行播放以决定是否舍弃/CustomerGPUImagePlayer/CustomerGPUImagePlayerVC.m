@@ -8,6 +8,7 @@
 
 #import "CustomerGPUImagePlayerVC.h"
 #import "MKGPUImageView.h"
+#import "GPUImage.h"
 
 @interface CustomerGPUImagePlayerVC ()<GPUImageMovieDelegate>
 

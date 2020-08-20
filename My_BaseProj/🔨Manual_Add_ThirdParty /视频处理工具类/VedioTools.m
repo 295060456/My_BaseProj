@@ -43,8 +43,12 @@ static VedioTools *vedioTools = nil;
     }return self;
 }
 
--(void)actionVedioToolsBlock:(MKDataBlock)VedioToolsBlock{
-    self.VedioToolsBlock = VedioToolsBlock;
+-(void)actionVedioToolsClickBlock:(MKDataBlock)actionVedioToolsClickBlock{
+    self.actionVedioToolsClickBlock = actionVedioToolsClickBlock;
+}
+
+-(void)vedioToolsSessionStatusCompletedBlock:(MKDataBlock)vedioToolsSessionStatusCompletedBlock{
+    self.vedioToolsSessionStatusCompletedBlock = vedioToolsSessionStatusCompletedBlock;
 }
 ///翻转摄像头
 -(void)overturnCamera{
@@ -91,12 +95,11 @@ static VedioTools *vedioTools = nil;
 #pragma mark —— 结束录制
 -(void)vedioShoottingEnd{
     self.vedioShootType = VedioShootType_end;
-    [self.movieWriter finishRecording];
+    [_movieWriter finishRecording];
     self.myGPUVideoCamera.audioEncodingTarget = nil;
-    [self.urlArray addObject:[NSURL URLWithString:self.FileByUrl]];
-    _FileByUrl = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
-    
-    // 合成
+    [self.urlArray addObject:[NSURL URLWithString:self.recentlyVedioFileUrl]];
+    _FileUrlByTime = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
+    // 合成：将音频流和视频流 合在一起，在这个动作之前，不是视频。合成结束并且写文件。
     [MBProgressHUD wj_showPlainText:@"视频合成中......" view:getMainWindow()];
     @weakify(self)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
@@ -114,17 +117,17 @@ static VedioTools *vedioTools = nil;
 #pragma mark —— 暂停录制
 -(void)vedioShoottingSuspend{
     self.vedioShootType = VedioShootType_suspend;
-    [self.movieWriter finishRecording];
+    [_movieWriter finishRecording];
     self.myGPUVideoCamera.audioEncodingTarget = nil;
-    [self.urlArray addObject:[NSURL URLWithString:self.FileByUrl]];
-    _FileByUrl = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
+    [self.urlArray addObject:[NSURL URLWithString:self.FileUrlByTime]];
+    self.recentlyVedioFileUrl = _FileUrlByTime;
+    _FileUrlByTime = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
     _movieWriter = nil;
     NSLog(@"vedioShoottingSuspend");
 }
 #pragma mark —— 继续录制
 -(void)vedioShoottingContinue{
     self.vedioShootType = VedioShootType_continue;
-    self.FileByUrl = [FileFolderHandleTool cacheURL:@"mp4"];
     self.myGPUVideoCamera.audioEncodingTarget = self.movieWriter;
     [self.movieWriter startRecording];
 }
@@ -133,7 +136,7 @@ static VedioTools *vedioTools = nil;
     self.vedioShootType = VedioShootType_off;
     [self.movieWriter finishRecording];
     self.myGPUVideoCamera.audioEncodingTarget = nil;
-    _FileByUrl = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
+    _FileUrlByTime = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
     _movieWriter = nil;
 }
 ///视频合并
@@ -168,9 +171,9 @@ static VedioTools *vedioTools = nil;
         NSError *errorVideo = nil;
         AVAssetTrack *assetVideoTrack = [[asset tracksWithMediaType:AVMediaTypeVideo]firstObject];
         BOOL bl = [self.videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
-                                      ofTrack:assetVideoTrack
-                                       atTime:totalDuration
-                                        error:&errorVideo];
+                                           ofTrack:assetVideoTrack
+                                            atTime:totalDuration
+                                             error:&errorVideo];
         
         NSLog(@"errorVideo:%@%d",errorVideo,bl);
         totalDuration = CMTimeAdd(totalDuration, asset.duration);
@@ -183,23 +186,28 @@ static VedioTools *vedioTools = nil;
             [MBProgressHUD wj_showPlainText:@"处理完毕...."
                                        view:getMainWindow()];
             @strongify(self)
-            switch (self.exporter.status) {
-                case AVAssetExportSessionStatusFailed:{
-                    NSLog(@"Export failed: %@", [[self.exporter error] localizedDescription]);
-                } break;
-                case AVAssetExportSessionStatusCancelled:{
-                    NSLog(@"Export canceled");
-                } break;
-                case AVAssetExportSessionStatusCompleted:{
-                    NSLog(@"转换成功");
-                    //  处理完毕的回调
-                    if (self.VedioToolsBlock) {
-                        self.VedioToolsBlock(self);
-                    }
-                } break;
-                default:
-                    break;
+            //这里是有问题的
+            if (self.vedioToolsSessionStatusCompletedBlock) {
+                self.vedioToolsSessionStatusCompletedBlock(self);
             }
+            
+//            switch (self.exporter.status) {
+//                case AVAssetExportSessionStatusFailed:{
+//                    NSLog(@"Export failed: %@", [[self.exporter error] localizedDescription]);
+//                } break;
+//                case AVAssetExportSessionStatusCancelled:{
+//                    NSLog(@"Export canceled");
+//                } break;
+//                case AVAssetExportSessionStatusCompleted:{
+//                    NSLog(@"转换成功");
+//                    //  处理完毕的回调
+//                    if (self.VedioToolsBlock) {
+//                        self.VedioToolsBlock(self);
+//                    }
+//                } break;
+//                default:
+//                    break;
+//            }
         });
     }];
 }
@@ -313,11 +321,10 @@ static VedioTools *vedioTools = nil;
         // 点击事件回调
         [_myGPUImageView actionMKGPUImageViewBlock:^(id data) {
             @strongify(self)
-            if (self.VedioToolsBlock) {
-                self.VedioToolsBlock(self->_myGPUImageView);
+            if (self.actionVedioToolsClickBlock) {
+                self.actionVedioToolsClickBlock(self->_myGPUImageView);
             }
         }];
-
         [self.myGPUVideoCamera addTarget:_myGPUImageView];
     }return _myGPUImageView;
 }
@@ -351,10 +358,11 @@ static VedioTools *vedioTools = nil;
 }
 
 -(GPUImageMovieWriter *)movieWriter{
-    if (!_movieWriter) {
-        if ([FileFolderHandleTool createFileByUrl:self.FileByUrl
+    if (!_movieWriter) {  //  zhelirecentlyVedioFileUrl
+        if ([FileFolderHandleTool createFileByUrl:self.FileUrlByTime
                                             error:nil]) {//如果返回结果为真，说明self.FileByUrl这个路径可用
-            _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:[NSURL fileURLWithPath:self.FileByUrl]//[NSURL URLWithString:self.FileByUrl]
+            self.recentlyVedioFileUrl = self.FileUrlByTime;
+            _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:[NSURL fileURLWithPath:self.FileUrlByTime]//[NSURL URLWithString:self.FileByUrl]
                                                                     size:self.movieWriterSize];
 //            _movieWriter.isNeedBreakAudioWhiter = YES;
             _movieWriter.encodingLiveVideo = YES;
@@ -428,9 +436,9 @@ static VedioTools *vedioTools = nil;
         _urlArray = NSMutableArray.array;
     }return _urlArray;
 }
-/// 以当前时间戳生成缓存路径 NSTemporaryDirectory()
--(NSString *)FileByUrl{//每时每刻都在变的，因为是时间戳路径
-    if (!_FileByUrl) {
+/// 以当前时间戳生成缓存路径 Library/Caches
+-(NSString *)FileUrlByTime{//每时每刻都在变的，因为是时间戳路径
+    if (!_FileUrlByTime) {
         // 在临时文件夹储存视频文件
         
         /*** 文件夹 用FileFolderHandleTool调
@@ -443,8 +451,10 @@ static VedioTools *vedioTools = nil;
          沙盒中tmp的目录：tmpDir
          
          */
-        _FileByUrl = [FileFolderHandleTool cacheURL:@"mp4"];//NSTemporaryDirectory()
-    }return _FileByUrl;
+        _FileUrlByTime = [FileFolderHandleTool cacheURL:@"mp4"];//Library/Caches
+
+    }return _FileUrlByTime;
 }
+
 
 @end

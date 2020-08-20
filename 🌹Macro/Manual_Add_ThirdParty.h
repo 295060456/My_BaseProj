@@ -69,6 +69,8 @@
 #import "SuspendLab.h"
 #import "SuspendView.h"
 #import "MonitorNetwoking.h"
+#import "VedioTools.h"
+#import "JhtBannerView.h"
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"
@@ -111,10 +113,14 @@
 #import "SceneDelegate.h"
 #import <VideoToolbox/VideoToolbox.h>//FFmpeg 需要
 ///一些工具库
-//#import "MKTools.h"
 #import "MKPublickDataManager.h"//数据管理
 #import "YBNotificationManager.h"//通知名字定义
 #import "APIKey.h"
+///视频预览
+#import "CustomerAVPlayerVC.h"
+#import "CustomerAVPlayerView.h"
+#import "CustomerGPUImagePlayerVC.h"
+
 //#import "IsLogin.h"
 //#import "PersonalInfo.h"
 //#import "NSlogToDocumentFolder.h"//上线需要去掉

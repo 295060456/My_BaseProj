@@ -284,7 +284,7 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                              parameters:params
               constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                   NSInteger count = fileDatas.count;
-                  for (int i = 0; i< count; i++) {
+                  for (int i = 0; i < count; i++) {
                       NSData *fileData = fileDatas[i];
                       NSAssert([fileData isKindOfClass:NSData.class], @"fileData is not an NSData class: %@", fileData);
                       // 在网络开发中，上传文件时，是文件不允许被覆盖，文件重名
@@ -306,6 +306,47 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                                                          [mimeType isKindOfClass:[NSNull class]]) ? mimeType:@"application/octet-stream"];
                   }
               }] replayLazily];
+}
+/**
+    视频文件上传、可以单个文件、也可以多个文件
+ 
+ @param path 文件上传服务器地址，这里单独给出来，是因为很大部分图片服务器和业务服务器不是同一个
+ @param params 参数 没有可传 @{}
+ @param fileDatas NSData 数组
+ @param nameArr 指定数据关联的名称 数组
+ @return RACSignal
+ */
+- (RACSignal *)uploadViedoNetworkPath:(NSString *)path
+                               params:(NSDictionary *)params
+                            fileDatas:(NSArray<NSData *> *)fileDatas
+                              nameArr:(NSArray <NSString *>*)nameArr
+                             mimeType:(NSString *)mimeType{
+    return [[self UploadRequestWithPath:path
+                             parameters:params
+              constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSInteger count = fileDatas.count;
+        for (int i = 0; i < count; i++) {
+            NSData *fileData = fileDatas[i];
+            NSAssert([fileData isKindOfClass:NSData.class], @"fileData is not an NSData class: %@", fileData);
+            // 在网络开发中，上传文件时，是文件不允许被覆盖，文件重名
+            // 要解决此问题，
+            // 可以在上传时使用当前的系统事件作为文件名
+            static NSDateFormatter *formatter = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                formatter = [[NSDateFormatter alloc] init];
+            });
+            [formatter setDateFormat:@"yyyyMMddHHmmss"];// 设置时间格式
+            NSString *dateString = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [NSString stringWithFormat:@"senba_empty_%@_%d.mp4", dateString , i];
+            [formData appendPartWithFileData:fileData
+                                        name:nameArr[i]
+                                    fileName:fileName //自己生成
+                                    mimeType:!(mimeType.length == 0 ||
+                                               mimeType == nil ||
+                                               [mimeType isKindOfClass:[NSNull class]]) ? mimeType:@"application/octet-stream"];
+        }
+    }] replayLazily];
 }
 
 - (RACSignal *)UploadRequestWithPath:(NSString *)path

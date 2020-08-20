@@ -262,8 +262,6 @@ static inline CGFloat rectOfStatusbar(){
 
 ///缩放比例
 #define SCALING_RATIO(UISize) (UISize) * Device_Width / 375.0f//全局比例尺
-//#define KDeviceScale ((Device_Width/375)>1.3?1.3:(Device_Width/375))
-#define KDeviceScale [[MKTools shared] deviceScaleMetod]
 #define KDeviceHeightScale Device_Height / 812    //獲取屏幕高度比例
 #define KDeviceRealScale [[MKTools shared] deviceRealScaleMetod]
 #define kButtonDefaultWidth (kIPhone4s ? 278 : 288)   //默认输入框宽

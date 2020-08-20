@@ -66,6 +66,8 @@
 #import "JPImageresizerView.h"
 #import "TRCustomAlert.h"
 #import <RZRichTextView/RZRichTextView.h>
-#include "AWRichText.h"
+#import "AWRichText.h"
+#import "GPUImage.h"
+#import "SZTextView.h"
 
 #endif /* Pods_h */

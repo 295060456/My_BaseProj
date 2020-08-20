@@ -111,7 +111,7 @@
     if (!_AVPlayerView) {
         @weakify(self)
         _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:self.AVPlayerURL
-                                                        suspendVC:weak_self];
+                                                        suspendVC:self_weak_];
         [_AVPlayerView errorCustomerAVPlayerBlock:^{
             @strongify(self)
             [self alertControllerStyle:SYS_AlertController

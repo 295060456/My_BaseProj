@@ -33,18 +33,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *sessionPreset;
 @property(nonatomic,strong)NSMutableArray <NSURL *>*urlArray;
 @property(nonatomic,assign)CGSize movieWriterSize;
-@property(nonatomic,strong)NSString *FileByUrl;
+@property(nonatomic,strong)NSString *FileUrlByTime;//时间戳地址
+@property(nonatomic,strong)NSString *recentlyVedioFileUrl;//最近的一段视频资源地址
 
 @property(nonatomic,strong)MKGPUImageView *myGPUImageView;//实际上点击的是它，所以点击事件在 myGPUImageView 的回调里面
 @property(nonatomic,strong)GPUImageVideoCamera *myGPUVideoCamera;
-@property(nonatomic,strong)GPUImageMovieWriter *movieWriter;
+@property(nonatomic,strong)GPUImageMovieWriter *movieWriter;//新建的时候会及时创建文件资源路径
 @property(nonatomic,strong)GPUImageDilationFilter *dilationFilter;
 @property(nonatomic,strong)GPUImageAlphaBlendFilter *gifFilter;
 @property(nonatomic,strong)GPUImageGaussianBlurFilter *gaussBlurFilter;
 @property(nonatomic,strong)YHGPUImageBeautifyFilter *beautifyFilter;
 @property(nonatomic,assign)CameraManagerDevicePosition position;
 @property(nonatomic,assign)TypeFilter typeFilter;
-@property(nonatomic,copy)MKDataBlock VedioToolsBlock;
+@property(nonatomic,copy)MKDataBlock actionVedioToolsClickBlock;
+@property(nonatomic,copy)MKDataBlock vedioToolsSessionStatusCompletedBlock;
 
 +(VedioTools *)sharedInstance;
 /// 视频合并
@@ -52,7 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
                 withOutPath:(NSString *)outpath;
 ///通过视频的URL，获得视频缩略图
 -(UIImage *)getImage:(NSString *)videoURL;
--(void)actionVedioToolsBlock:(MKDataBlock)VedioToolsBlock;
+///_myGPUImageView是点击事件
+-(void)actionVedioToolsClickBlock:(MKDataBlock)actionVedioToolsClickBlock;
+///视频合并处理结束
+-(void)vedioToolsSessionStatusCompletedBlock:(MKDataBlock)vedioToolsSessionStatusCompletedBlock;
 
 #pragma mark —— 开始录制
 -(void)vedioShoottingOn;

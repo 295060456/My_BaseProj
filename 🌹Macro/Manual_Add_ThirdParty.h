@@ -74,27 +74,36 @@
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"
-#import "CALayer+Anim.h"
-#import "CALayer+Transition.h"
-#import "NSArray+Extension.h"
-#import "NSArray+Extend.h"
 #import "NSString+Extras.h"
-#import "UIView+Extras.h"
-#import "UIView+Chain.h"
-#import "UIImage+Extras.h"
+#import "UITableViewCell+WhiteArrows.h"
+#import "UIControl+XY.h"
 #import "UIButton+Block.h"
 #import "UIColor+Hex.h"
+
+#import "CALayer+Anim.h"
+#import "CALayer+Transition.h"
+
+#import "NSArray+Extension.h"
+#import "NSArray+Extend.h"
+
+#import "UIView+Extras.h"
+#import "UIView+Chain.h"
+#import "UIView+SuspendView.h"
+
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"
 #import "NSObject+Measure.h"
-#import "UIControl+XY.h"
-#import "UITableViewCell+WhiteArrows.h"
+#import "NSObject+Sound.h"
+#import "NSObject+Shake.h"
+
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 #import "UIImage+YBGIF.h"
-#import "UIView+SuspendView.h"
+#import "UIImage+Extras.h"
+
 //#import "UIView+JHGestureBlock.h"
 ///BaseVC
 #import "BaseVC.h"
+#import "UIViewController+Shake.h"
 #import "BaseVC+TZImagePickerController.h"
 #import "BaseVC+TZImagePickerControllerDelegate.h"
 #import "BaseVC+TZLocationManager.h"

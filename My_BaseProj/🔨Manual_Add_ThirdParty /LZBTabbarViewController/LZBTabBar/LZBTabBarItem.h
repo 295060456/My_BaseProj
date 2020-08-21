@@ -103,14 +103,18 @@ NS_ASSUME_NONNULL_BEGIN
  * 角标背景偏移量
  */
 @property(nonatomic,assign)UIOffset badgeBackgroundOffset;
+/**
+ * 手势
+*/
+@property(nonatomic,strong)UITapGestureRecognizer *tagGR;//敲击
+@property(nonatomic,strong)UILongPressGestureRecognizer *longPressGR;//长按
 
-@property(nonatomic,strong)NSMutableArray <NSString *>*lottieJsonNameStrMutArr;
+@property(nonatomic,strong)NSMutableArray<NSString *> *lottieJsonNameStrMutArr;
 @property(nonatomic,assign)NSInteger tagger;
 @property(nonatomic,strong)LOTAnimationView *animation;
 
--(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock;
--(void)LZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemBlock;
-
+-(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock;
+-(void)animationActionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemAnimationActionBlock;
 
 @end
 

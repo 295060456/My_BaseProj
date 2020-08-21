@@ -11,12 +11,8 @@
 
 @interface LZBTabBarItem()<UIGestureRecognizerDelegate>
 
-@property(nonatomic,copy)MKDataBlock LZBTabBarItemBlock;
-@property(nonatomic,copy)MKDataBlock LZBTabBarItemActionBlock;
-
-//手势
-@property(nonatomic,strong)UITapGestureRecognizer *tagGR;//敲击
-@property(nonatomic,strong)UILongPressGestureRecognizer *longPressGR;//长按
+@property(nonatomic,copy)TwoDataBlock LZBTabBarItemGestureRecognizerBlock;
+@property(nonatomic,copy)MKDataBlock LZBTabBarItemAnimationActionBlock;
 
 @end
 
@@ -28,7 +24,6 @@
       //添加手势
       self.tagGR.enabled = YES;
       self.longPressGR.enabled = YES;
-      NSLog(@"");
   }return self;
 }
 
@@ -39,7 +34,9 @@
     _titleOffest = UIOffsetZero;
     _unselectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12],
                                  NSForegroundColorAttributeName: kWhiteColor,};
-    _selectTitleAttributes = [_unselectTitleAttributes copy];
+
+    _selectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:13],
+                               NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0xf78361"],};
     _badgeValue = @"";
     _badgeTextColor = [UIColor whiteColor];
     _badgeTextFont = [UIFont systemFontOfSize:12.0];
@@ -51,12 +48,12 @@
     [self Lottie];
 }
 
--(void)LZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemBlock{
-    self.LZBTabBarItemBlock = LZBTabBarItemBlock;
+-(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock{
+    self.LZBTabBarItemGestureRecognizerBlock = LZBTabBarItemGestureRecognizerBlock;
 }
 
--(void)actionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemActionBlock{
-    self.LZBTabBarItemActionBlock = LZBTabBarItemActionBlock;
+-(void)animationActionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemAnimationActionBlock{
+    self.LZBTabBarItemAnimationActionBlock = LZBTabBarItemAnimationActionBlock;
 }
 
 -(void)Lottie{
@@ -72,8 +69,8 @@
     @weakify(self)
     [self.animation actionLOTAnimationViewBlock:^(id data) {
         @strongify(self)
-        if (self.LZBTabBarItemActionBlock) {
-            self.LZBTabBarItemActionBlock(@(self.tagger));
+        if (self.LZBTabBarItemAnimationActionBlock) {
+            self.LZBTabBarItemAnimationActionBlock(@(self.tagger));
         }
     }];
 }
@@ -119,7 +116,7 @@
             //必须先设置颜色
             CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
             [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width) * 0.5 + self.titleOffest.horizontal,
-                                              imageTopMaigin+imageSize.height + self.titleOffest.vertical,
+                                              imageTopMaigin+imageSize.height+self.titleOffest.vertical,
                                               titleSize.width,
                                               titleSize.height)
                     withAttributes:titleAttributes];
@@ -161,23 +158,22 @@
 
     CGContextRestoreGState(context);
 }
-
 #pragma mark —— 手势的响应事件
--(void)LZBTabBarItemTap:(UITapGestureRecognizer *)tag{
-    if (self.LZBTabBarItemBlock) {
-        self.LZBTabBarItemBlock(tag);
+-(void)LZBTabBarItemTap:(UITapGestureRecognizer *)tapGR{
+    if (self.LZBTabBarItemGestureRecognizerBlock) {
+        self.LZBTabBarItemGestureRecognizerBlock(self,tapGR);
     }
 }
 
--(void)LZBTabBarItemLongPress:(UILongPressGestureRecognizer *)longPressGesture {
-    switch (longPressGesture.state) {
+-(void)LZBTabBarItemLongPress:(UILongPressGestureRecognizer *)longPressGR {
+    switch (longPressGR.state) {
         case UIGestureRecognizerStatePossible:{
 //            NSLog(@"没有触摸事件发生，所有手势识别的默认状态");
         }break;
         case UIGestureRecognizerStateBegan:{
             NSLog(@"一个手势已经开始  但尚未改变或者完成时");
-            if (self.LZBTabBarItemBlock) {
-                self.LZBTabBarItemBlock(longPressGesture);
+            if (self.LZBTabBarItemGestureRecognizerBlock) {
+                self.LZBTabBarItemGestureRecognizerBlock(self,longPressGR);
             }
         }break;
         case UIGestureRecognizerStateChanged:{
@@ -196,7 +192,6 @@
             break;
     }
 }
-
 #pragma mark —— lazyLoad
 -(UITapGestureRecognizer *)tagGR{
     if (!_tagGR) {
@@ -236,25 +231,7 @@
         [self addGestureRecognizer:_longPressGR];
     }return _longPressGR;
 }
-
--(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
-    if (!_lottieJsonNameStrMutArr) {
-        _lottieJsonNameStrMutArr = NSMutableArray.array;
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_home.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_mine.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_news.json"];
-        
-        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-        
-    }return _lottieJsonNameStrMutArr;
-}
-#pragma mark —— config
+#pragma mark - config
 - (void)setSelectImage:(UIImage *)selectImage
          unselectImage:(UIImage *)unSelectImage{
   if(self.selectImage != selectImage)
@@ -300,6 +277,5 @@
     _title = title;
     [self setNeedsDisplay];
 }
-
 
 @end

@@ -19,6 +19,8 @@ typedef enum : NSUInteger {
 
 @interface LZBTabBar : UIView
 
+@property(nonatomic,strong)NSMutableArray <NSString *>*lottieJsonNameStrMutArr;
+
 @property(nonatomic,assign)LZBTabBarStyleType tabBarStyleType;
 
 /**
@@ -48,6 +50,8 @@ typedef enum : NSUInteger {
 @property(nonatomic,strong)UIView *backgroundView;
 
 @end
+
+
 
 NS_ASSUME_NONNULL_END
 

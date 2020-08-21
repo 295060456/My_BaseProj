@@ -22,11 +22,13 @@
 LZBTabBarVCDelegate
 >
 
+@property(nonatomic,strong)BaseNavigationVC *customNavigationVC;
+
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customUnselectedImgMutArr;
 @property(nonatomic,strong)NSMutableArray<UIImage *> *customSelectedImgMutArr;
 @property(nonatomic,strong)NSMutableArray<NSString *> *titleStrMutArr;
 @property(nonatomic,strong)NSMutableArray<UIViewController *> *viewControllerMutArr;
-@property(nonatomic,strong)BaseNavigationVC *customNavigationVC;
+@property(nonatomic,strong)NSMutableArray<NSString *> *lottieJsonNameStrMutArr;
 @property(nonatomic,strong)NSMutableArray *mutArr;
 
 @end
@@ -41,7 +43,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 
 -(instancetype)init{
     if (self = [super init]) {
-        LZB_TABBAR_HEIGHT = isiPhoneX_series() ? 80 + isiPhoneX_seriesBottom : 49;
+        LZB_TABBAR_HEIGHT = isiPhoneX_series() ? (50 + isiPhoneX_seriesBottom) : 49;
     }return self;
 }
 
@@ -51,17 +53,26 @@ CGFloat LZB_TABBAR_HEIGHT;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.gk_navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+    
+    self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_sysNormal;
+//    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+    self.lzb_tabBar.topLine.alpha = 0;
+    
     [self p_setUpAllChildViewController];
+}
+
+-(void)presentLoginVC{
+//    @weakify(self)
+    //登录流程
 }
 
 - (void)p_setUpAllChildViewController {
     self.delegate = self;
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
-//        self.customNavigationVC = [[BaseNavigationVC alloc]initWithRootViewController:(UIViewController *)self.viewControllerMutArr[i]];
-//        self.customNavigationVC.navigationBar.hidden = YES;
-//        [self.mutArr addObject:self.customNavigationVC];
-
-        [self.mutArr addObject:self.viewControllerMutArr[i]];
+        [self.mutArr addObject:(UIViewController *)self.viewControllerMutArr[i]];
     }
     self.viewControllers = (NSArray *)self.mutArr;
     for (int i = 0; i <self.titleStrMutArr.count; i++) {
@@ -70,7 +81,7 @@ CGFloat LZB_TABBAR_HEIGHT;
                                      SelectImage:(UIImage *)self.customSelectedImgMutArr[i]
                                    NnSelectImage:(UIImage *)self.customUnselectedImgMutArr[i]];
     }
-//    self.lzb_tabBar.backgroundColor = kWhiteColor;
+    self.lzb_tabBar.backgroundColor = [UIColor blackColor];
     self.isShouldAnimation = YES;
 }
 
@@ -94,24 +105,15 @@ CGFloat LZB_TABBAR_HEIGHT;
      didSelectViewController:(UIViewController *)viewController{
     [NSObject feedbackGenerator];
     if ([viewController isKindOfClass:[ViewController_1 class]]) {
-        //        NSLog(@"%ld",self.selectedIndex);
-        NSLog(@"1");
-    }
-    else if ([viewController isKindOfClass:[ViewController_2 class]]){
-//        [self presentLoginVC];
-        NSLog(@"2");
-    }
-    else if ([viewController isKindOfClass:[ViewController_3 class]]){
-//        [self presentLoginVC];
-        NSLog(@"3");
-    }
-    else if ([viewController isKindOfClass:[ViewController_4 class]]){
-//        [self presentLoginVC];
-        NSLog(@"4");
-    }
-    else if ([viewController isKindOfClass:[ViewController_5 class]]){
-    //        [self presentLoginVC];
-        NSLog(@"5");
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"posy" object:nil];
+    } else if ([viewController isKindOfClass:[ViewController_2 class]]) {
+        [self presentLoginVC];
+    } else if ([viewController isKindOfClass:[ViewController_3 class]]) {
+        [self presentLoginVC];
+    } else if ([viewController isKindOfClass:[ViewController_4 class]]) {
+        [self presentLoginVC];
+    }else if ([viewController isKindOfClass:[ViewController_5 class]]) {
+        [self presentLoginVC];
     }
 }
 #pragma mark —— lazyLoad
@@ -124,11 +126,11 @@ CGFloat LZB_TABBAR_HEIGHT;
 -(NSMutableArray<NSString *> *)titleStrMutArr{
     if (!_titleStrMutArr) {
         _titleStrMutArr = NSMutableArray.array;
-        [_titleStrMutArr addObject:@"CASINO"];
-        [_titleStrMutArr addObject:@"POKER"];
-        [_titleStrMutArr addObject:@"Center"];
-        [_titleStrMutArr addObject:@"VIET LOTTO"];
-        [_titleStrMutArr addObject:@"PROMOTION"];
+        [_titleStrMutArr addObject:@"首页"];
+        [_titleStrMutArr addObject:@"社区"];
+        [_titleStrMutArr addObject:@" "];
+        [_titleStrMutArr addObject:@"任务"];
+        [_titleStrMutArr addObject:@"我的"];
     }return _titleStrMutArr;
 }
 
@@ -163,6 +165,19 @@ CGFloat LZB_TABBAR_HEIGHT;
         [_viewControllerMutArr addObject:ViewController_3.new];
         [_viewControllerMutArr addObject:ViewController_4.new];
     }return _viewControllerMutArr;
+}
+
+-(NSMutableArray<NSString *> *)lottieJsonNameStrMutArr{
+    if (!_lottieJsonNameStrMutArr) {
+        _lottieJsonNameStrMutArr = NSMutableArray.array;
+        
+//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+        
+    }return _lottieJsonNameStrMutArr;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "LZBTabBarVC.h"
 #import "UIViewController+LZBTabBarVCItem.h"
+#import "LOTAnimationView+action.h"
 
 #define LZB_TABBAR_DEFULT_HEIGHT 49
 
@@ -31,7 +32,6 @@
                      animated:NO];
 }
 
-#pragma mark- API
 - (void)setViewControllers:(NSArray <UIViewController *> *)viewControllers{
     if(viewControllers.count == 0) return;
     //移除之前的
@@ -174,10 +174,9 @@ shouldSelectItemAtIndex:(NSInteger)index{
         }return NO;
     }return YES;
 }
-//单击手势走这个
+
 - (void)lzb_tabBar:(LZBTabBar *)tabBar
 didSelectItemAtIndex:(NSInteger)index{
-    NSLog(@"KKK");
     //播放声音
 //    [PlaySound playSoundEffect:@"Sound"
 //                          type:@"wav"];
@@ -219,7 +218,7 @@ didSelectItemAtIndex:(NSInteger)index{
         }
     }
     
-    if (index < 0 || index >= self.viewControllers.count) return;
+    if (index < 0 || index >= self.viewControllers.count)  return;
     [self setSelectedIndex:index
                  animation:self.isShouldAnimation];
     if([self.delegate respondsToSelector:@selector(lzb_tabBarController:didSelectViewController:)]){

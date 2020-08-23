@@ -99,6 +99,7 @@
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 #import "UIImage+YBGIF.h"
 #import "UIImage+Extras.h"
+#import "UIImage+SYS.h"
 
 //#import "UIView+JHGestureBlock.h"
 ///BaseVC

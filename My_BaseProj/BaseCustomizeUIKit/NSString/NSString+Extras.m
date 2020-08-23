@@ -24,7 +24,7 @@
 *  为空返回 YES
 *  不为空返回 NO
 */
-+ (BOOL)isNullString:(NSString *)string{
++(BOOL)isNullString:(NSString *)string{
     
     if (string == nil ||
         string == NULL ||
@@ -176,7 +176,7 @@
     return mutStr;
 }
 //NSDictionary 转 NSString
-+ (NSString *)convertDictionaryToString:(NSMutableDictionary *)dict{
++(NSString *)convertDictionaryToString:(NSMutableDictionary *)dict{
     NSError *error;
     NSDictionary *tempDict = dict.copy;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:tempDict
@@ -212,8 +212,8 @@
 /// 给定某字符串，判断里面的组成char是否全部为某个char
 /// @param originString 被判定的字符串
 /// @param standardChar 需要被检出的标准
-+ (BOOL)isAllSameCharInString:(NSString *)originString
-                 standardChar:(char)standardChar{
++(BOOL)isAllSameCharInString:(NSString *)originString
+                standardChar:(char)standardChar{
     if (originString.length > 0) {
         NSMutableArray* carries = [NSMutableArray array];
         for (int i=0; i < originString.length; i++) {
@@ -231,12 +231,66 @@
     }return NO;
 }
 #pragma mark —— 时间相关
+/// NSDate 和 NSString相互转换
++(NSString *)dataToStr:(NSDate *)date{
+    //获取系统当前时间
+    NSDate *currentDate = [NSDate date];
+    //NSDate转NSString
+    NSString *currentDateString = [[NSString DateFormatter] stringFromDate:currentDate];
+    //输出currentDateString
+//    NSLog(@"%@",currentDateString);
+    return currentDateString;
+}
+///用于格式化NSDate对象
++(NSDateFormatter *)DateFormatter{
+    /*
+     
+     //NSDateFormatter常用的格式有：
+     @"yyyy-MM-dd HH:mm:ss.SSS"
+     @"yyyy-MM-dd HH:mm:ss"
+     @"yyyy-MM-dd"
+     @"MM dd yyyy"
+     
+     //NSDateFormatter格式化参数如下：(注意区分大小写)
+     G: 公元时代，例如AD公元
+     yy: 年的后2位
+     yyyy: 完整年
+     MM: 月，显示为1-12
+     MMM: 月，显示为英文月份简写,如 Jan
+     MMMM: 月，显示为英文月份全称，如 Janualy
+     dd: 日，2位数表示，如02
+     d: 日，1-2位显示，如 2
+     EEE: 简写星期几，如Sun
+     EEEE: 全写星期几，如Sunday
+     aa: 上下午，AM/PM
+     H: 时，24小时制，0-23
+     K：时，12小时制，0-11
+     m: 分，1-2位
+     mm: 分，2位
+     s: 秒，1-2位
+     ss: 秒，2位
+     S: 毫秒
+     
+     */
+    
+    //用于格式化NSDate对象
+    NSDateFormatter *dateFormatter = NSDateFormatter.new;
+    //设置格式：zzz表示时区
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    return dateFormatter;
+}
+
++(NSDate *)strToDate:(NSString *)str{
+    //NSString转NSDate
+    NSDate *date = [[NSString DateFormatter] dateFromString:str];
+    return date;
+}
 /// 获取系统时间戳
-+ (NSString *)getSysTimeStamp{
-    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-    long int timeStamp = timeInterval;
-    NSString * timStampStr = [NSString stringWithFormat:@"%ld",timeStamp];
-    return timStampStr;
++(NSString *)getSysTimeStamp{
+    NSTimeInterval intervalSince1970 = [[NSDate date] timeIntervalSince1970];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:intervalSince1970];
+    NSString *sysTimeStamp = [NSString stringWithFormat:@"%@",date];
+    return sysTimeStamp;
 }
 //服务器时间转化为某固定格式
 +(NSString *)getMMSSFromSS:(NSInteger)totalTime{
@@ -254,7 +308,7 @@
     }return format_time;
 }
 //将秒数转换为字符串格式
-+ (NSString *)timeWithSecond:(NSInteger)second{
++(NSString *)timeWithSecond:(NSInteger)second{
     NSString *time;
     if (second < 60) {
         time = [NSString stringWithFormat:@"00:%02ld",(long)second];//00:00:%02ld
@@ -272,19 +326,15 @@
 /// 以固定格式解析并返回服务器时间戳
 /// @param timeStampString 服务器返回的13位时间戳，毫秒
 /// iOS 生成的时间戳是10位
-+(NSString* )getTimeString:(NSString *)timeStampString{
-    NSTimeInterval interval = [timeStampString doubleValue] / 1000.0;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *dateString = [formatter stringFromDate: date];
+#warning https://www.jianshu.com/p/96bc67ab5f2a 两种时间参考系，这里只做了1种  需要补充
++(NSString *)getTimeString:(NSString *)timeStampString{
+    NSString *dateString = [[NSString DateFormatter] stringFromDate:[NSString strToDate:timeStampString]];
     return dateString;
 }
 #pragma mark -限宽计算AttributeString与String的高度
-+ (CGFloat)getAttributeContentHeightWithAttributeString:(NSAttributedString*)atributedString
-                                           withFontSize:(float)fontSize
-                                  boundingRectWithWidth:(CGFloat)width{
++(CGFloat)getAttributeContentHeightWithAttributeString:(NSAttributedString*)atributedString
+                                          withFontSize:(float)fontSize
+                                 boundingRectWithWidth:(CGFloat)width{
     float height = 0;
     CGSize lableSize = CGSizeZero;
 //    if(IS_IOS7)
@@ -300,10 +350,10 @@
     return height;
 }
 
-+ (CGFloat)getContentHeightWithParagraphStyleLineSpacing:(CGFloat)lineSpacing
-                                          fontWithString:(NSString *)fontWithString
-                                              fontOfSize:(CGFloat)fontOfSize
-                                   boundingRectWithWidth:(CGFloat)width{
++(CGFloat)getContentHeightWithParagraphStyleLineSpacing:(CGFloat)lineSpacing
+                                         fontWithString:(NSString *)fontWithString
+                                             fontOfSize:(CGFloat)fontOfSize
+                                  boundingRectWithWidth:(CGFloat)width{
     float height = 0;
     CGSize lableSize = CGSizeZero;
 //    if(IS_IOS7)
@@ -323,9 +373,9 @@
 }
 #pragma mark —— 根据字符串返回承接控件等相关Frame
 //返回一个矩形，大小等于文本绘制完占据的宽和高。
-+ (CGSize)sizeWithString:(NSString*)str
-                 andFont:(UIFont*)font
-              andMaxSize:(CGSize)size{
++(CGSize)sizeWithString:(NSString*)str
+                andFont:(UIFont*)font
+             andMaxSize:(CGSize)size{
     //特殊的格式要求都写在属性字典中
     NSDictionary *attrs = @{NSFontAttributeName: font};
     

@@ -58,7 +58,7 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.navigationController.navigationBar.hidden = NO;
     
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_sysNormal;
-//    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
     self.lzb_tabBar.topLine.alpha = 0;
     
     [self p_setUpAllChildViewController];
@@ -171,11 +171,17 @@ CGFloat LZB_TABBAR_HEIGHT;
     if (!_lottieJsonNameStrMutArr) {
         _lottieJsonNameStrMutArr = NSMutableArray.array;
         
-//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"首页选中.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"任务.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"上传与拍照.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"社区.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"我的.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
+        
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
         
     }return _lottieJsonNameStrMutArr;
 }

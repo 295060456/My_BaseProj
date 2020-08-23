@@ -21,19 +21,26 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— 禁止App系统文件夹document同步
 ///因为它会同步。苹果要求：可重复产生的数据不得进行同步,什么叫做可重复数据？这里最好禁止，否则会影响上架，被拒！
 +(void)banSysDocSynchronization;
+#pragma mark —— iOS获取文件的 文件名 和 后缀
+///从路径中获得完整的文件名 （带后缀）
++(NSString *)getFullFileName:(NSString *)filePath;
+///获得文件名 （不带后缀）
++(NSString *)getOnlyFileName:(NSString *)filePath;
+///获得文件的后缀名 （不带'.'）
++(NSString *)getSuffixFileName:(NSString *)filePath;
 #pragma mark —— 目录获取
 ///获取沙盒的主目录路径：
-+ (NSString *)homeDir;
++(NSString *)homeDir;
 ///获取沙盒中Documents的目录路径：
-+ (NSString *)documentsDir;
++(NSString *)documentsDir;
 ///获取沙盒中Library的目录路径：
-+ (NSString *)libraryDir;
++(NSString *)libraryDir;
 ///获取沙盒中Libarary/Preferences的目录路径：
-+ (NSString *)preferencesDir;
++(NSString *)preferencesDir;
 ///获取沙盒中Library/Caches的目录路径：
-+ (NSString *)cachesDir;
++(NSString *)cachesDir;
 /// 获取沙盒中tmp的目录路径：供系统使用，程序员不要使用，因为随时会被销毁
-+ (NSString *)tmpDir;
++(NSString *)tmpDir;
 #pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
 +(NSString *)cacheURL:(NSString *)extension
                folder:(NSString *)folderName;
@@ -47,39 +54,41 @@ NS_ASSUME_NONNULL_BEGIN
  *参数3 overwrite ：假如已经存在此文件是否覆盖,如果文件存在，并不想覆盖，那么直接返回YES。
  *参数4：错误信息
  */
-+ (BOOL)createFileAtPath:(NSString *)path
++(BOOL)createFileAtPath:(NSString *)path
                overwrite:(BOOL)overwrite
                    error:(NSError *__autoreleasing *)error;
 ///file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
 +(BOOL)createFileByUrl:(NSString *)file_url
                  error:(NSError *__autoreleasing *)error;
 ///获取文件创建的时间
-+ (NSDate *)creationDateOfItemAtPath:(NSString *)path
-                               error:(NSError *__autoreleasing *)error;
++(NSDate *)creationDateOfItemAtPath:(NSString *)path
+                              error:(NSError *__autoreleasing *)error;
 ///获取文件修改的时间
-+ (NSDate *)modificationDateOfItemAtPath:(NSString *)path
-                                   error:(NSError *__autoreleasing *)error;
++(NSDate *)modificationDateOfItemAtPath:(NSString *)path
+                                  error:(NSError *__autoreleasing *)error;
 #pragma mark —— 写入文件内容
 ///写入文件内容：按照文件路径向文件写入内容，内容可为数组、字典、NSData等等
 /*参数1：文件路径
  *参数2：文件内容
  *参数3：错误信息
  */
-+ (BOOL)writeFileAtPath:(NSString *)path
-                content:(NSObject *)content
-                  error:(NSError *__autoreleasing *)error;
++(BOOL)writeFileAtPath:(NSString *)path
+               content:(NSObject *)content
+                 error:(NSError *__autoreleasing *)error;
 #pragma mark —— 删除文件（夹）
-///删除文件（夹）
-+ (BOOL)removeItemAtPath:(NSString *)path
-                   error:(NSError *__autoreleasing *)error;
-///清空Cashes文件夹
-+ (BOOL)clearCachesDirectory;
-///清空temp文件夹
-+ (BOOL)clearTmpDirectory;
-///清除path文件夹下缓存
-+ (BOOL)clearCacheWithFilePath:(NSString *)path;
+///删除directory（路径）文件夹下的文件。extension是指定文件后缀名文件，传nil是全部删除
++(void)removeContentsOfDirectory:(NSString *)directory
+                   withExtension:(NSString *_Nullable)extension;
+///删除文件（夹） error 传nil；path传文件夹则删除文件夹下面的所有文件，path传一个具体的文件，则删除标的文件
++(BOOL)removeItemAtPath:(NSString *)path
+                  error:(NSError *__autoreleasing *)error;
 ///给定一个路径，删除旗下所有东西
 +(void)cleanFilesWithPath:(NSString *)PathStr;
+///清空Cashes文件夹
++(BOOL)clearCachesDirectory;
+///清空temp文件夹
++(BOOL)clearTmpDirectory;
+
 #pragma mark —— 复制文件（夹）
 ///复制文件 依据源文件的路径复制一份到目标路径：
 /*参数1、被复制文件路径
@@ -165,12 +174,12 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取相册最新加载（录制、拍摄）的资源
 +(PHAsset *)gettingLastResource:(NSString *)Key;
 
-+(void)createFolder:(NSString *)folderName
-  ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
-  completionHandler:(TwoDataBlock)completionBlock;
++(void)createAlbumFolder:(NSString *)folderName
+       ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
+       completionHandler:(TwoDataBlock)completionBlock;
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
-+(void)createFolder:(NSString *)folderName
-               path:(NSString *)pathStr;
++(void)createAlbumFolder:(NSString *)folderName
+                    path:(NSString *)pathStr;
 ///保存视频资源文件到指定的相册路径，这里是整个App名字的相册
 +(void)saveRes:(NSURL *)movieURL;
 ///是否存在此相册判断逻辑依据

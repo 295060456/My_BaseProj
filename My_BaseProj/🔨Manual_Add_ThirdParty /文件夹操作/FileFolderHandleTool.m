@@ -20,6 +20,22 @@
                    forKey:NSURLIsExcludedFromBackupKey
                     error:nil];
 }
+#pragma mark —— iOS获取文件的 文件名 和 后缀
+///从路径中获得完整的文件名 （带后缀）
++(NSString *)getFullFileName:(NSString *)filePath{
+    NSString *fullFileName = [filePath lastPathComponent];
+    return fullFileName;
+}
+///获得文件名 （不带后缀）
++(NSString *)getOnlyFileName:(NSString *)filePath{
+    NSString *onlyFileName = [filePath stringByDeletingPathExtension];
+    return onlyFileName;
+}
+///获得文件的后缀名 （不带'.'）
++(NSString *)getSuffixFileName:(NSString *)filePath{
+    NSString *suffix = [filePath pathExtension];
+    return suffix;
+}
 #pragma mark —— 目录获取
 ///获取沙盒的主目录路径：
 +(NSString *)homeDir {
@@ -58,7 +74,7 @@
 #pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
 +(NSString *)cacheURL:(NSString *)extension
                folder:(NSString *)folderName{
-    NSString *fileName = [NSString stringWithFormat:@"%.0lf.%@", [[NSDate date] timeIntervalSince1970], extension];
+    NSString *fileName = [[NSString getTimeString:[NSString getSysTimeStamp]] stringByAppendingString:extension];
     NSString *cachePath;
     if ([NSString isNullString:folderName]) {
         cachePath = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:fileName];
@@ -199,10 +215,43 @@
     }return YES;
 }
 #pragma mark —— 删除文件（夹）
+///删除directory（路径）文件夹下的文件。extension是指定文件后缀名文件，传nil是全部删除
++(void)removeContentsOfDirectory:(NSString *)directory
+                   withExtension:(NSString *_Nullable)extension{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *contents = [fileManager contentsOfDirectoryAtPath:directory error:NULL];
+    NSEnumerator *e = [contents objectEnumerator];
+    NSString *filename;
+    while ((filename = [e nextObject])) {
+        if (extension) {
+            if ([[filename pathExtension] hasPrefix:extension]) {
+                [fileManager removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+            }
+        }else{
+            [fileManager removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+        }
+    }
+}
 ///删除文件（夹）
 +(BOOL)removeItemAtPath:(NSString *)path
-                   error:(NSError *__autoreleasing *)error {
+                  error:(NSError *__autoreleasing *)error {
     return [[NSFileManager defaultManager] removeItemAtPath:path error:error];
+}
+///给定一个路径，删除旗下所有东西
++(void)cleanFilesWithPath:(NSString *)PathStr{
+    /**
+     函数说明：unlink()会删除参数pathname 指定的文件. 如果该文件名为最后连接点, 但有其他进程打开了此文件, 则在所有关于此文件的文件描述词皆关闭后才会删除. 如果参数pathname 为一符号连接, 则此连接会被删除。
+     返回值：成功则返回0, 失败返回-1, 错误原因存于errno
+
+     错误代码：
+     1、EROFS 文件存在于只读文件系统内。
+     2、EFAULT 参数pathname 指针超出可存取内存空间。
+     3、ENAMETOOLONG 参数pathname 太长。
+     4、ENOMEM 核心内存不足。
+     5、ELOOP 参数pathname 有过多符号连接问题。
+     6、EIO I/O 存取错误
+     */
+    unlink([PathStr UTF8String]);
 }
 ///清空Cashes文件夹
 +(BOOL)clearCachesDirectory{
@@ -225,37 +274,6 @@
         isSuccess &= [TXFileOperation removeItemAtPath:absolutePath];
     }
     return isSuccess;
-}
-///清除path文件夹下缓存
-+(BOOL)clearCacheWithFilePath:(NSString *)path{
-    //拿到path路径的下一级目录的子文件夹
-    NSArray *subPathArr = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path
-                                                                              error:nil];
-    NSString *filePath = nil;
-    NSError *error = nil;
-    for (NSString *subPath in subPathArr){
-        filePath = [path stringByAppendingPathComponent:subPath];
-        //删除子文件夹
-        [[NSFileManager defaultManager] removeItemAtPath:filePath
-                                                   error:&error];
-        if (error) return NO;
-    }return YES;
-}
-///给定一个路径，删除旗下所有东西
-+(void)cleanFilesWithPath:(NSString *)PathStr{
-    /**
-     函数说明：unlink()会删除参数pathname 指定的文件. 如果该文件名为最后连接点, 但有其他进程打开了此文件, 则在所有关于此文件的文件描述词皆关闭后才会删除. 如果参数pathname 为一符号连接, 则此连接会被删除。
-     返回值：成功则返回0, 失败返回-1, 错误原因存于errno
-
-     错误代码：
-     1、EROFS 文件存在于只读文件系统内。
-     2、EFAULT 参数pathname 指针超出可存取内存空间。
-     3、ENAMETOOLONG 参数pathname 太长。
-     4、ENOMEM 核心内存不足。
-     5、ELOOP 参数pathname 有过多符号连接问题。
-     6、EIO I/O 存取错误
-     */
-    unlink([PathStr UTF8String]);
 }
 #pragma mark —— 复制文件（夹）
 ///复制文件 依据源文件的路径复制一份到目标路径：
@@ -287,7 +305,7 @@
     if (overwrite) {
         if ([FileFolderHandleTool isExistsAtPath:toPath]) {
             [FileFolderHandleTool removeItemAtPath:toPath
-                             error:error];
+                                             error:error];
         }
     }
     // 复制文件，如果不覆盖且文件已存在则会复制失败
@@ -543,9 +561,9 @@
     return d;
 }
 //相册
-+(void)createFolder:(NSString *)folderName
-  ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
-  completionHandler:(TwoDataBlock)completionBlock{
++(void)createAlbumFolder:(NSString *)folderName
+       ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
+       completionHandler:(TwoDataBlock)completionBlock{
     if (![FileFolderHandleTool isExistFolder:folderName]) {
         [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
             [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:folderName];
@@ -562,8 +580,8 @@
     }
 }
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
-+(void)createFolder:(NSString *)folderName
-               path:(NSString *)pathStr{
++(void)createAlbumFolder:(NSString *)folderName
+                    path:(NSString *)pathStr{
     if (![FileFolderHandleTool isExistFolder:folderName]) {
         [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
             [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:folderName];

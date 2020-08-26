@@ -291,14 +291,14 @@
             self.ispPhotoAlbumCanBeUsed = YES;
 //创建本App的独属相册
             //在个人相册里面创建一个以本App名字的相册 视频文件以时间戳名命名
-            [FileFolderHandleTool createFolder:HDAppDisplayName
-                             ifExitFolderBlock:^(id data) {
+            [FileFolderHandleTool createAlbumFolder:HDAppDisplayName
+                                  ifExitFolderBlock:^(id data) {
                 //已经存在这个文件夹
                 //保存tmp文件夹下的视频文件到系统相册
                 [FileFolderHandleTool saveRes:[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]];
             }
-                             completionHandler:^(id data,//success ? fail
-                                                 id data2) {// error
+                                  completionHandler:^(id data,//success ? fail
+                                                      id data2) {// error
                 if ([data isKindOfClass:NSNumber.class]) {
                     NSNumber *num = (NSNumber *)data;
                     if (num.boolValue) {//success

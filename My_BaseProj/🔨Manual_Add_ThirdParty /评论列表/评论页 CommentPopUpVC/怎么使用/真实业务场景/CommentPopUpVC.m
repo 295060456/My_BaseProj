@@ -419,7 +419,7 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         _tableView.mj_footer = self.tableViewFooter;
         _tableView.mj_footer.hidden = NO;
         _tableView.tableFooterView = UIView.new;
-        
+        _tableView.mj_footer.automaticallyHidden = NO;//默认根据数据来源 自动显示 隐藏footer，这个功能可以关闭
         _tableView.ly_emptyView = [EmptyView emptyViewWithImageStr:@"Indeterminate Spinner - Small"
                                                           titleStr:@"没有评论"
                                                          detailStr:@"来发布第一条吧"];

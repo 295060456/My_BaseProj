@@ -8,10 +8,9 @@
 
 #import "MKShootVC.h"
 #import "MKShootVC+VM.h"
-
 #import "StartOrPauseBtn.h"
 #import "MyCell.h"
-#import "VedioTools.h"//视频处理类
+#import "GPUImageTools.h"//GPUImage视频处理工具
 #import "CustomerGPUImagePlayerVC.h"//视频预览 VC
 
 #import "YHGPUImageBeautifyFilter.h"
@@ -31,6 +30,7 @@
 @property(nonatomic,strong)JhtBannerView *bannerView;
 @property(nonatomic,strong)CustomerAVPlayerView *AVPlayerView;
 @property(nonatomic,strong)AVCaptureDevice *captureDevice;
+@property(nonatomic,strong)GPUImageTools *gpuImageTools;
 
 @property(nonatomic,assign)CGFloat __block time;
 @property(nonatomic,assign)BOOL __block isClickMyGPUImageView;
@@ -117,10 +117,9 @@
     [self hideNavLine];
     
     //视频管理工具类
-    [self MakeVedioTools];
+    [self MakeVedioTools];//[self.view addSubview:VedioTools.sharedInstance.myGPUImageView]
 
     //如果没有开系统权限 是黑屏 所以不用放在鉴权的block里面，放进去了反而第一次进去的时候会黑屏，第二次进去ok
-    [self LIVE];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -139,7 +138,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [VedioTools.sharedInstance.myGPUVideoCamera startCameraCapture];
+    [self LIVE];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -163,8 +162,8 @@
 }
 //实况视频
 -(void)LIVE{
-//    [VedioTools.sharedInstance LIVE];
-    
+    [self.gpuImageTools LIVE];
+
     self.recordBtn.alpha = 1;
     self.bannerView.alpha = 1;
     self.indexView.alpha = 1;
@@ -173,9 +172,9 @@
 }
 
 -(void)MakeVedioTools{
-    [self.view addSubview:VedioTools.sharedInstance.myGPUImageView];
+    [self.view addSubview:self.gpuImageTools.GPUImageView];
     @weakify(self)
-    [VedioTools.sharedInstance actionVedioToolsClickBlock:^(id data) {
+    [self.gpuImageTools actionVedioToolsClickBlock:^(id data) {
         @strongify(self)
         if ([data isKindOfClass:MKGPUImageView.class]) {//鉴权部分
               MKDataBlock block = ^(NSString *title){
@@ -197,8 +196,8 @@
                   self.deleteFilmBtn.alpha == 0 &&
                   self.sureFilmBtn.alpha == 0 &&
                   self.previewBtn.alpha == 0 &&
-                  VedioTools.sharedInstance.vedioShootType != VedioShootType_on &&
-                  VedioTools.sharedInstance.vedioShootType != VedioShootType_continue) {
+                  self.gpuImageTools.vedioShootType != VedioShootType_on &&
+                  self.gpuImageTools.vedioShootType != VedioShootType_continue) {
                   self.isClickMyGPUImageView = !self.isClickMyGPUImageView;
                   [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = !self.isClickMyGPUImageView;
 
@@ -233,11 +232,11 @@
           }
     }];
     
-    [VedioTools.sharedInstance vedioToolsSessionStatusCompletedBlock:^(id data) {
+    [self.gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
 //        @strongify(self)
 //处理完毕的回调
 //视频处理完毕后，你想干嘛？！
-        if ([data isKindOfClass:VedioTools.class]) {
+        if ([data isKindOfClass:GPUImageTools.class]) {
             
         }
     }];
@@ -252,6 +251,66 @@
     self.recordBtn.hidden = result;
     self.indexView.hidden = result;
 }
+
+/**
+ *  这个“按钮”只有 启动、暂停、继续 没有停止，停止要额外在其他地方实现触发。
+ *  停止的判定标准：1、其他地方强制停止；2、录制时间到了
+ */
+-(StartOrPauseBtn *)recordBtn{
+    if (!_recordBtn) {
+        _recordBtn = StartOrPauseBtn.new;
+        _recordBtn.backgroundColor = kBlueColor;
+        _recordBtn.safetyTime = self.safetyTime;// 单个视频上传最大支持时长为5分钟，最低不得少于30秒
+        _recordBtn.time = self.time;// 准备跑多少秒 —— 预设值。本类的init里面设置了是默认值5分钟
+        [self.view addSubview:_recordBtn];
+        [_recordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(SCALING_RATIO(80), SCALING_RATIO(80)));
+            make.centerX.equalTo(self.view.mas_centerX);
+            make.bottom.equalTo(self.view).offset(-SCALING_RATIO(100));
+        }];
+        [_recordBtn layoutIfNeeded];
+        [UIView cornerCutToCircleWithView:_recordBtn
+                          AndCornerRadius:SCALING_RATIO(80) / 2];
+        @weakify(self)
+        //点击手势回调
+        [_recordBtn actionTapGRHandleSingleFingerBlock:^(id data) {
+//            @strongify(self)
+        }];
+        //长按手势回调
+//        [_recordBtn actionLongPressGRBlock:^(id data) {
+//            @strongify(self)
+//        }];
+        //点击后的录制状态回调 是录制还是没录制
+        [_recordBtn actionStartOrPauseBtnBlock:^(id data) {
+            @strongify(self)
+            if ([data isKindOfClass:NSNumber.class]) {
+                NSNumber *num = (NSNumber *)data;
+                switch (num.intValue) {
+                    case ShottingStatus_on:{//开始录制
+                        [self shootting_on];
+                        NSLog(@"开始录制");
+                    }break;
+                    case ShottingStatus_suspend:{//暂停录制
+//                        [self shootting_suspend];
+                        NSLog(@"暂停录制");
+                    }break;
+                    case ShottingStatus_continue:{//继续录制
+//                        [self shootting_continue];
+                        NSLog(@"继续录制");
+                    }break;
+                    case ShottingStatus_off:{//取消录制 但在这里没啥用
+//                        [self shootting_off];
+                        NSLog(@"取消录制");
+                    }break;
+
+                    default:
+                        break;
+                }
+            }
+        }];
+    }return _recordBtn;
+}
+
 #pragma mark —— 开始录制
 -(void)shootting_on{
     NSLog(@"开始录制");
@@ -262,28 +321,34 @@
     self.previewBtn.alpha = 0;
 //创建本地缓存的文件夹，位置于沙盒中tmp
 //给定一个路径 self.FileByUrl 需要他的父节点
-    if ([FileFolderHandleTool isExistsAtPath:[FileFolderHandleTool directoryAtPath:VedioTools.sharedInstance.FileUrlByTime]]) {//存在则清除旗下所有的东西
+    if ([FileFolderHandleTool isExistsAtPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.recentlyVedioFileUrl]]) {//存在则清除旗下所有的东西
         //先清除缓存
-        [FileFolderHandleTool cleanFilesWithPath:[FileFolderHandleTool directoryAtPath:VedioTools.sharedInstance.FileUrlByTime]];
+        //清除vedio文件夹下所有内容
+        NSURL *url = self.gpuImageTools.urlArray[0];
+        BOOL d = [NSString isNullString:url.absoluteString];
+        if (!d) {
+            [FileFolderHandleTool delFile:@[url.absoluteString]
+                               fileSuffix:@"mp4"];//删除文件夹📂路径下的文件
+        }
     }else{//不存在即创建
         ///创建文件夹：
-        [FileFolderHandleTool createDirectoryAtPath:VedioTools.sharedInstance.FileUrlByTime
+        [FileFolderHandleTool createDirectoryAtPath:self.gpuImageTools.recentlyVedioFileUrl
                                               error:nil];
     }
 //准备工作已完成，现在开始进数据流
-    [VedioTools.sharedInstance vedioShoottingOn];
+    [self.gpuImageTools vedioShoottingOn];
 }
 #pragma mark —— 结束录制
 -(void)shootting_end{
     NSLog(@"结束录制");
     @weakify(self)
-    [VedioTools.sharedInstance vedioShoottingEnd];//包含合成视频
+    [self.gpuImageTools vedioShoottingEnd];//包含合成视频
     //对相册进行鉴权操作
     [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Photos
                                               accessStatus:^id(ECAuthorizationStatus status,
                                                                ECPrivacyType type) {
         @strongify(self)
-        // status 即为权限状态，
+        //status 即为权限状态，
         //状态类型参考：ECAuthorizationStatus
         NSLog(@"%lu",(unsigned long)status);
         if (status == ECAuthorizationStatus_Authorized) {
@@ -295,15 +360,15 @@
                                   ifExitFolderBlock:^(id data) {
                 //已经存在这个文件夹
                 //保存tmp文件夹下的视频文件到系统相册
-                [FileFolderHandleTool saveRes:[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]];
+                [FileFolderHandleTool saveRes:[NSURL URLWithString:self.gpuImageTools.recentlyVedioFileUrl]];
             }
-                                  completionHandler:^(id data,//success ? fail
-                                                      id data2) {// error
+                             completionHandler:^(id data,//success ? fail
+                                                 id data2) {// error
                 if ([data isKindOfClass:NSNumber.class]) {
                     NSNumber *num = (NSNumber *)data;
                     if (num.boolValue) {//success
                         //保存tmp文件夹下的视频文件到系统相册
-                        [FileFolderHandleTool saveRes:[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]];
+                        [FileFolderHandleTool saveRes:[NSURL URLWithString:self.gpuImageTools.recentlyVedioFileUrl]];
                     }else{//fail
                         if ([data2 isKindOfClass:NSError.class]) {
                             NSError *err = (NSError *)data2;
@@ -337,7 +402,7 @@
     self.indexView.alpha = 0;
     self.previewBtn.alpha = 1;
 
-    [VedioTools.sharedInstance vedioShoottingSuspend];
+    [self.gpuImageTools vedioShoottingSuspend];
 }
 #pragma mark —— 继续录制
 -(void)shootting_continue{
@@ -348,7 +413,7 @@
     self.indexView.alpha = 0;
     self.previewBtn.alpha = 0;
     
-    [VedioTools.sharedInstance vedioShoottingContinue];
+    [self.gpuImageTools vedioShoottingContinue];
 }
 #pragma mark —— 取消录制
 -(void)shootting_off{
@@ -358,7 +423,7 @@
     self.indexView.alpha = 1;
     self.previewBtn.alpha = 0;
     
-    [VedioTools.sharedInstance vedioShoottingOff];
+    [self.gpuImageTools vedioShoottingOff];
 }
 
 -(void)ActionMKShootVCBlock:(MKDataBlock)MKShootVCBlock{
@@ -378,7 +443,7 @@
     self.recordBtn.backgroundColor = kBlueColor;
     [self.recordBtn.mytimer invalidate];
     ///功能性的 删除tmp文件夹下的文件
-    [FileFolderHandleTool cleanFilesWithPath:[FileFolderHandleTool directoryAtPath:VedioTools.sharedInstance.FileUrlByTime]];
+    [FileFolderHandleTool cleanFilesWithPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.FileUrlByTime]];
 }
 
 -(void)Cancel{}
@@ -398,11 +463,11 @@
 #pragma mark —— 点击事件
 -(void)previewBtnClickEvent:(UIButton *)sender{
     //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
-    [VedioTools.sharedInstance vedioShoottingEnd];
+    [self.gpuImageTools vedioShoottingEnd];
     @weakify(self)
-    [VedioTools.sharedInstance vedioToolsSessionStatusCompletedBlock:^(id data) {
+    [self.gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
         //        @strongify(self)
-        if ([data isKindOfClass:VedioTools.class]) {
+        if ([data isKindOfClass:GPUImageTools.class]) {
             #pragma mark —— GPUImage
             // GPUImage 只能播放本地视频，不能处理网络流媒体url
 //            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
@@ -414,14 +479,14 @@
 //                                           success:^(id data) {}
 //                                          animated:YES];
             #pragma mark —— AVPlayer
-            [CustomerAVPlayerVC ComingFromVC:self_weak_
-                                 comingStyle:ComingStyle_PUSH
-                           presentationStyle:UIModalPresentationFullScreen
-                               requestParams:@{
-                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
-                               }
-                                     success:^(id data) {}
-                                    animated:YES];
+//            [CustomerAVPlayerVC ComingFromVC:weak_self
+//                                 comingStyle:ComingStyle_PUSH
+//                           presentationStyle:UIModalPresentationFullScreen
+//                               requestParams:@{
+//                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
+//                               }
+//                                     success:^(id data) {}
+//                                    animated:YES];
             #pragma mark —— 悬浮窗AVPlayer
 //            self.AVPlayerView.alpha = 1;
         }
@@ -470,7 +535,7 @@
 }
 //翻转摄像头
 -(void)overturnBtnClickEvent:(UIButton *)sender{
-    [VedioTools.sharedInstance overturnCamera];
+    [self.gpuImageTools  overturnCamera];
 }
 //开启闪光灯
 -(void)flashLightBtnClickEvent:(UIButton *)sender{
@@ -509,8 +574,8 @@
             NSLog(@"摄像头不可用:%lu",(unsigned long)status);
             self.isCameraCanBeUsed = NO;
             [self checkRes:self.isCameraCanBeUsed];
-            if (VedioTools.sharedInstance.actionVedioToolsClickBlock) {
-                VedioTools.sharedInstance.actionVedioToolsClickBlock(VedioTools.sharedInstance.myGPUImageView);
+            if (self.gpuImageTools.actionVedioToolsClickBlock) {
+                self.gpuImageTools.actionVedioToolsClickBlock(self.gpuImageTools.GPUImageView);
             }
             return nil;
         }
@@ -531,8 +596,8 @@
             NSLog(@"麦克风不可用:%lu",(unsigned long)status);
             self.isMicrophoneCanBeUsed = NO;
             [self checkRes:self.isMicrophoneCanBeUsed];
-            if (VedioTools.sharedInstance.actionVedioToolsClickBlock) {
-                VedioTools.sharedInstance.actionVedioToolsClickBlock(VedioTools.sharedInstance.myGPUImageView);
+            if (self.gpuImageTools.actionVedioToolsClickBlock) {
+                self.gpuImageTools.actionVedioToolsClickBlock(self.gpuImageTools.GPUImageView);
             }
             return nil;
         }
@@ -587,56 +652,6 @@
     }return _previewBtn;
 }
 
--(StartOrPauseBtn *)recordBtn{
-    if (!_recordBtn) {
-        _recordBtn = StartOrPauseBtn.new;
-        _recordBtn.backgroundColor = kBlueColor;
-        _recordBtn.safetyTime = self.safetyTime;// 单个视频上传最大支持时长为5分钟，最低不得少于30秒
-        _recordBtn.time = self.time;// 准备跑多少秒 —— 预设值。本类的init里面设置了是默认值5分钟
-        [self.view addSubview:_recordBtn];
-        [_recordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(SCALING_RATIO(80), SCALING_RATIO(80)));
-            make.centerX.equalTo(self.view.mas_centerX);
-            make.bottom.equalTo(self.view).offset(-SCALING_RATIO(100));
-        }];
-        [_recordBtn layoutIfNeeded];
-        [UIView cornerCutToCircleWithView:_recordBtn
-                          AndCornerRadius:SCALING_RATIO(80) / 2];
-        @weakify(self)
-        //点击手势回调
-        [_recordBtn actionTapGRHandleSingleFingerBlock:^(id data) {
-//            @strongify(self)
-        }];
-        //长按手势回调
-//        [_recordBtn actionLongPressGRBlock:^(id data) {
-//            @strongify(self)
-//        }];
-        //点击后的录制状态回调 是录制还是没录制
-        [_recordBtn actionStartOrPauseBtnBlock:^(id data) {
-            @strongify(self)
-            if ([data isKindOfClass:NSNumber.class]) {
-                NSNumber *num = (NSNumber *)data;
-                switch (num.intValue) {
-                    case ShottingStatus_on:{//开始录制
-                        [self shootting_on];
-                    }break;
-                    case ShottingStatus_suspend:{//暂停录制
-                        [self shootting_suspend];
-                    }break;
-                    case ShottingStatus_continue:{//继续录制
-                        [self shootting_continue];
-                    }break;
-                    case ShottingStatus_off:{//取消录制
-                        [self shootting_off];
-                    }break;
-                        
-                    default:
-                        break;
-                }
-            }
-        }];
-    }return _recordBtn;
-}
 
 -(JhtBannerView *)bannerView{
     if (!_bannerView) {
@@ -755,7 +770,7 @@
 -(CustomerAVPlayerView *)AVPlayerView{
     if (!_AVPlayerView) {
         @weakify(self)
-        _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
+        _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:self.gpuImageTools.recentlyVedioFileUrl]
                                                         suspendVC:self_weak_];
         _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
         [_AVPlayerView errorCustomerAVPlayerBlock:^{
@@ -812,6 +827,11 @@
         _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     }return _captureDevice;
 }
-    
+
+-(GPUImageTools *)gpuImageTools{
+    if (!_gpuImageTools) {
+        _gpuImageTools = GPUImageTools.new;
+    }return _gpuImageTools;
+}
 
 @end

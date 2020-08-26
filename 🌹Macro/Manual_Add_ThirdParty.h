@@ -69,7 +69,7 @@
 #import "SuspendLab.h"
 #import "SuspendView.h"
 #import "MonitorNetwoking.h"
-#import "VedioTools.h"
+#import "GPUImageTools.h"
 #import "JhtBannerView.h"
 
 #pragma mark —— 以下是自定义的

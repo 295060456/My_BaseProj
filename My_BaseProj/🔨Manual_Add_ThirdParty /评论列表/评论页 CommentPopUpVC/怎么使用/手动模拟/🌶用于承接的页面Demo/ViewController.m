@@ -158,7 +158,7 @@ viewForHeaderInSection:(NSInteger)section{
         _tableView = UITableView.new;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.mj_footer.automaticallyHidden = NO;//默认根据数据来源 自动显示 隐藏footer，这个功能可以关闭
+//        _tableView.mj_footer.automaticallyHidden = NO;//默认根据数据来源 自动显示 隐藏footer，这个功能可以关闭
         [_tableView registerClass:NonHoveringHeaderView.class
 forHeaderFooterViewReuseIdentifier:NSStringFromClass(NonHoveringHeaderView.class)];
         [_tableView registerClass:HoveringHeaderView.class

@@ -26,14 +26,14 @@
     NSString *fullFileName = [filePath lastPathComponent];
     return fullFileName;
 }
-///获得文件名 （不带后缀）
+///从路径中获得完整的文件名 （不带后缀）
 +(NSString *)getOnlyFileName:(NSString *)filePath{
-    NSString *onlyFileName = [filePath stringByDeletingPathExtension];
+    NSString *onlyFileName = [[FileFolderHandleTool getFullFileName:filePath] stringByDeletingPathExtension];
     return onlyFileName;
 }
-///获得文件的后缀名 （不带'.'）
+///从路径中获得文件完整的后缀名 （不带'.'）
 +(NSString *)getSuffixFileName:(NSString *)filePath{
-    NSString *suffix = [filePath pathExtension];
+    NSString *suffix = [[FileFolderHandleTool getFullFileName:filePath] pathExtension];
     return suffix;
 }
 #pragma mark —— 目录获取
@@ -71,19 +71,19 @@
 +(NSString *)tmpDir{
     return NSTemporaryDirectory();
 }
-#pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
-+(NSString *)cacheURL:(NSString *)extension
-               folder:(NSString *)folderName{
-    NSString *fileName = [[NSString getTimeString:[NSString getSysTimeStamp]] stringByAppendingString:extension];
+#pragma mark - 创建Library/Caches下的文件夹📂路径 还未真正创建
+//以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
++(NSString *)createCacheFolderPath:(NSString * __nullable)folderNameEx{
+    NSString *folderName = [NSString getTimeString:[NSString getSysTimeStamp]];
     NSString *cachePath;
-    if ([NSString isNullString:folderName]) {
-        cachePath = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:fileName];
+    if ([NSString isNullString:folderNameEx]) {
+        cachePath = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:folderName];
     }else{
-        cachePath = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",folderName,fileName]];
+        cachePath = [[FileFolderHandleTool cachesDir] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@/%@",folderName,folderNameEx]];
     }return cachePath;
 }
 #pragma mark —— 创建文件（夹）
-///创建文件夹：返回是否创建成功
+///软性 仅仅是创建文件夹：返回是否创建成功
 +(BOOL)createDirectoryAtPath:(NSString *)path
                        error:(NSError *__autoreleasing *)error {
     NSFileManager *manager = [NSFileManager defaultManager];
@@ -98,11 +98,11 @@
                                          attributes:nil
                                               error:error];
     if (error) {
-        NSLog(@"createDirectoryAtPath_err = %@",error);
+        NSLog(@"createDirectoryAtPath_err = %@",(*error).description);
     }
     return isSuccess;
 }
-/*创建文件
+/*创建带文件夹的文件
  *参数1：文件创建的路径
  *参数2：写入文件的内容
  *参数3 overwrite ：假如已经存在此文件是(YES)否(NO)覆盖
@@ -135,16 +135,31 @@
         }
     }return NO;
 }
-//file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+/* 硬性创建
+ * 给定一个具体的精确到文件📃的路径地址
+ * 不管他是否存在与否，强制性的创建出来
+ * file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+ */
 +(BOOL)createFileByUrl:(NSString *)file_url
                  error:(NSError *__autoreleasing *)error{
     //删除最后一个路径节点，提取父文件夹的路径
     NSString *directoryPath = [FileFolderHandleTool directoryAtPath:file_url];
     //创建目录
     //如果文件夹路径不存在，那么先创建文件夹
-    if (![FileFolderHandleTool isExistsAtPath:directoryPath]) {
+    return [FileFolderHandleTool createFolderByUrl:directoryPath error:nil];
+}
+/* 硬性创建
+* 给定一个具体的精确到文件夹📂的路径地址
+* 不管他是否存在与否，强制性的创建出来
+* file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+*/
++(BOOL)createFolderByUrl:(NSString *)folder_url
+                   error:(NSError *__autoreleasing *)error{
+    //创建目录
+    //如果文件夹路径不存在，那么先创建文件夹
+    if (![FileFolderHandleTool isExistsAtPath:folder_url]) {
         // 创建文件夹，返回文件夹是否创建成功：先有文件夹再有文件，没有文件夹就没有文件
-        if (![FileFolderHandleTool createDirectoryAtPath:directoryPath
+        if (![FileFolderHandleTool createDirectoryAtPath:folder_url
                                    error:error]) {
             return NO;
         }return YES;
@@ -165,9 +180,35 @@
                                            error:error];
 }
 #pragma mark —— 写入文件内容
+/// 将bundle里面的文件写进手机本地文件
+/// @param bundleFileName bundle文件名
+/// @param bundleFileSuffix bundle 文件后缀名
+/// @param LocalFileName 被写入的本地文件名 前提要有空白文件，否则写入失败
+/// @param LocalFileSuffix 被写入的本地文件后缀
++(NSString *)BundleFile:(NSString *)bundleFileName
+       bundleFileSuffix:(NSString *)bundleFileSuffix
+            ToLocalFile:(NSString *)LocalFileName
+        localFileSuffix:(NSString *)LocalFileSuffix{
+    //获取bundle路径
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:bundleFileName ofType:bundleFileSuffix];
+    UIImage *img = [UIImage imageWithContentsOfFile:bundlePath];
+    NSString *fileFolderPathStr = [FileFolderHandleTool createCacheFolderPath:nil];
+    //写文件之前一定要 有空白文件可写。
+    //文件全名 带后缀
+    NSString *localFileFullNameStr = [NSString stringWithFormat:@"/%@.%@",LocalFileName,LocalFileSuffix];
+    bool b = [FileFolderHandleTool createFileAtPath:[fileFolderPathStr stringByAppendingString:localFileFullNameStr] overwrite:YES error:nil];
+    
+    bool d = NO;
+    if (b) {
+        //写文件
+        NSString *ff = [NSString stringWithFormat:@"%@%@",fileFolderPathStr,localFileFullNameStr];
+        d = [FileFolderHandleTool writeFileAtPath:ff content:img error:nil];
+    }
+    return fileFolderPathStr = d? fileFolderPathStr : nil;
+}
 ///写入文件内容：按照文件路径向文件写入内容，内容可为数组、字典、NSData等等
-/*参数1：文件路径
- *参数2：文件内容
+/*参数1：要写入的文件路径
+ *参数2：要写入的文件内容
  *参数3：错误信息
  */
 +(BOOL)writeFileAtPath:(NSString *)path
@@ -181,25 +222,25 @@
     //判断文件(夹)是否存在
     if ([FileFolderHandleTool isExistsAtPath:path]) {
         if ([content isKindOfClass:[NSMutableArray class]]) {//文件内容为可变数组
-            [(NSMutableArray *)content writeToFile:path atomically:YES];
+            return [(NSMutableArray *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSArray class]]) {//文件内容为不可变数组
-            [(NSArray *)content writeToFile:path atomically:YES];
+            return [(NSArray *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSMutableData class]]) {//文件内容为可变NSMutableData
-            [(NSMutableData *)content writeToFile:path atomically:YES];
+            return [(NSMutableData *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSData class]]) {//文件内容为NSData
-            [(NSData *)content writeToFile:path atomically:YES];
+            return [(NSData *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSMutableDictionary class]]) {//文件内容为可变字典
-            [(NSMutableDictionary *)content writeToFile:path atomically:YES];
+            return [(NSMutableDictionary *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSDictionary class]]) {//文件内容为不可变字典
-            [(NSDictionary *)content writeToFile:path atomically:YES];
+            return [(NSDictionary *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSJSONSerialization class]]) {//文件内容为JSON类型
-            [(NSDictionary *)content writeToFile:path atomically:YES];
+            return [(NSDictionary *)content writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSMutableString class]]) {//文件内容为可变字符串
-            [[((NSString *)content) dataUsingEncoding:NSUTF8StringEncoding] writeToFile:path atomically:YES];
+            return [[((NSString *)content) dataUsingEncoding:NSUTF8StringEncoding] writeToFile:path atomically:YES];
         }else if ([content isKindOfClass:[NSString class]]) {//文件内容为不可变字符串
-            [[((NSString *)content) dataUsingEncoding:NSUTF8StringEncoding] writeToFile:path atomically:YES];
-        }else if ([content isKindOfClass:[UIImage class]]) {//文件内容为图片
-            [UIImagePNGRepresentation((UIImage *)content) writeToFile:path atomically:YES];
+            return [[((NSString *)content) dataUsingEncoding:NSUTF8StringEncoding] writeToFile:path atomically:YES];
+        }else if ([content isKindOfClass:[UIImage class]]) {//文件内容为图片 保存为PNG
+            return [UIImagePNGRepresentation((UIImage *)content) writeToFile:path atomically:YES];
         }else if ([content conformsToProtocol:@protocol(NSCoding)]) {//文件归档
 //            [NSKeyedArchiver archiveRootObject:content toFile:path];//API_DEPRECATED
             [NSKeyedArchiver archivedDataWithRootObject:content
@@ -211,24 +252,31 @@
             return NO;
         }
     }else {
+        NSLog(@"文件路径不存在");
         return NO;
     }return YES;
 }
 #pragma mark —— 删除文件（夹）
-///删除directory（路径）文件夹下的文件。extension是指定文件后缀名文件，传nil是全部删除
-+(void)removeContentsOfDirectory:(NSString *)directory
-                   withExtension:(NSString *_Nullable)extension{
+/// 删除指定后缀名的文件
+/// @param pathArr 这个文件夹下面的内容进行删除 非递归删除
+/// @param fileSuffix 传需要删除的文件的后缀名，如果需要全部删除就传nil
++(void)delFile:(NSArray *)pathArr
+    fileSuffix:(NSString *_Nullable)fileSuffix{
+    NSString *extension = fileSuffix;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *contents = [fileManager contentsOfDirectoryAtPath:directory error:NULL];
-    NSEnumerator *e = [contents objectEnumerator];
+    NSArray *paths = pathArr;
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+     
+    NSArray *contents = [fileManager contentsOfDirectoryAtPath:documentsDirectory error:NULL];
+    NSEnumerator*e = [contents objectEnumerator];
     NSString *filename;
     while ((filename = [e nextObject])) {
         if (extension) {
             if ([[filename pathExtension] hasPrefix:extension]) {
-                [fileManager removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+                [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:filename] error:NULL];
             }
         }else{
-            [fileManager removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+            [fileManager removeItemAtPath:[documentsDirectory stringByAppendingPathComponent:filename] error:NULL];
         }
     }
 }

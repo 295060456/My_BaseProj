@@ -451,9 +451,7 @@ static VedioTools *vedioTools = nil;
          沙盒中tmp的目录：tmpDir
          
          */
-        _FileUrlByTime = [FileFolderHandleTool cacheURL:@"mp4"
-                                                 folder:@"vedio"];//Library/Caches/vedio
-
+        _FileUrlByTime = [FileFolderHandleTool createCacheFolderPath:@"vedio"];//Library/Caches/vedio
     }return _FileUrlByTime;
 }
 

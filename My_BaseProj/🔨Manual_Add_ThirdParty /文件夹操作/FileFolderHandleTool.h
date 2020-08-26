@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,11 +42,11 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)cachesDir;
 /// 获取沙盒中tmp的目录路径：供系统使用，程序员不要使用，因为随时会被销毁
 +(NSString *)tmpDir;
-#pragma mark - 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
-+(NSString *)cacheURL:(NSString *)extension
-               folder:(NSString *)folderName;
+#pragma mark - 创建Library/Caches下的文件夹📂路径 还未真正创建
+//以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
++(NSString *)createCacheFolderPath:(NSString * __nullable)folderNameEx;
 #pragma mark —— 创建文件（夹）
-///创建文件夹：
+///软性 创建文件夹📂：
 + (BOOL)createDirectoryAtPath:(NSString *)path
                         error:(NSError *__autoreleasing *)error;
 /*创建文件
@@ -55,11 +56,22 @@ NS_ASSUME_NONNULL_BEGIN
  *参数4：错误信息
  */
 +(BOOL)createFileAtPath:(NSString *)path
-               overwrite:(BOOL)overwrite
-                   error:(NSError *__autoreleasing *)error;
-///file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+              overwrite:(BOOL)overwrite
+                  error:(NSError *__autoreleasing *)error;
+/* 硬性创建
+* 给定一个具体的精确到文件📃的路径地址
+* 不管他是否存在与否，强制性的创建出来
+* file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+*/
 +(BOOL)createFileByUrl:(NSString *)file_url
                  error:(NSError *__autoreleasing *)error;
+/* 硬性创建
+* 给定一个具体的精确到文件夹📂的路径地址
+* 不管他是否存在与否，强制性的创建出来
+* file_url是文件的全路径。外层拼接好，如果返回YES则file_url可用
+*/
++(BOOL)createFolderByUrl:(NSString *)folder_url
+                   error:(NSError *__autoreleasing *)error;
 ///获取文件创建的时间
 +(NSDate *)creationDateOfItemAtPath:(NSString *)path
                               error:(NSError *__autoreleasing *)error;
@@ -67,18 +79,29 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSDate *)modificationDateOfItemAtPath:(NSString *)path
                                   error:(NSError *__autoreleasing *)error;
 #pragma mark —— 写入文件内容
+/// 将bundle里面的文件写进手机本地文件
+/// @param bundleFileName bundle文件名
+/// @param bundleFileSuffix bundle 文件后缀名
+/// @param LocalFileName 被写入的本地文件名 前提要有空白文件，否则写入失败
+/// @param LocalFileSuffix 被写入的本地文件后缀
++(NSString *)BundleFile:(NSString *)bundleFileName
+       bundleFileSuffix:(NSString *)bundleFileSuffix
+            ToLocalFile:(NSString *)LocalFileName
+        localFileSuffix:(NSString *)LocalFileSuffix;
 ///写入文件内容：按照文件路径向文件写入内容，内容可为数组、字典、NSData等等
-/*参数1：文件路径
- *参数2：文件内容
+/*参数1：要写入的文件路径
+ *参数2：要写入的文件内容
  *参数3：错误信息
  */
 +(BOOL)writeFileAtPath:(NSString *)path
                content:(NSObject *)content
                  error:(NSError *__autoreleasing *)error;
 #pragma mark —— 删除文件（夹）
-///删除directory（路径）文件夹下的文件。extension是指定文件后缀名文件，传nil是全部删除
-+(void)removeContentsOfDirectory:(NSString *)directory
-                   withExtension:(NSString *_Nullable)extension;
+/// 删除指定后缀名的文件
+/// @param pathArr 这个文件夹下面的内容进行删除 非递归删除
+/// @param fileSuffix 传需要删除的文件的后缀名，如果需要全部删除就传nil
++(void)delFile:(NSArray *)pathArr
+    fileSuffix:(NSString *_Nullable)fileSuffix;
 ///删除文件（夹） error 传nil；path传文件夹则删除文件夹下面的所有文件，path传一个具体的文件，则删除标的文件
 +(BOOL)removeItemAtPath:(NSString *)path
                   error:(NSError *__autoreleasing *)error;

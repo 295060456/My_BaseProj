@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GPUImage.h"
 #import "MKGPUImageView.h"
 
 typedef enum : NSUInteger {
@@ -53,6 +54,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)vedioShoottingOff;
 #pragma mark —— 翻转摄像头
 -(void)overturnCamera;
+#pragma mark —— 开启/关闭 闪光灯
+-(void)flashLight:(BOOL)turnOn_Off;
+#pragma mark —— 获取视频文件的总时长
++(CGFloat)getVedioDuringTimeWithfilePath:(NSString *)filePathStr;
++(CGFloat)getVedioDuringTimeWithUrlAsset:(AVURLAsset *)urlAsset;
 #pragma mark —— 视频合并
 -(void)mergeAndExportVideos:(NSArray *)videosPathArray
                 withOutPath:(NSString *)outpath;

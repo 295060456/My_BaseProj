@@ -30,6 +30,7 @@
 @property(nonatomic,copy,nullable)AVFileType outputFileType;
 @property(nonatomic,strong)GPUImageVideoCamera *videoCamera;
 @property(nonatomic,strong)AVAssetTrack *mixVideoTrack;
+@property(nonatomic,strong)AVCaptureDevice *captureDevice;
 @property(nonatomic,assign)AVCaptureDevicePosition position;
 @property(nonatomic,strong)AVMutableCompositionTrack *audioTrack;
 @property(nonatomic,strong)AVMutableCompositionTrack *videoTrack;
@@ -86,13 +87,14 @@
 //                                              error:nil];
 //    }
     
+    self.vedioShootType = VedioShootType_on;
     [self initMovieWriter];
     self.videoCamera.audioEncodingTarget = movieWriter;
     [movieWriter startRecording];
 }
 #pragma mark —— 结束录制
 -(void)vedioShoottingEnd{
-//    self.vedioShootType = VedioShootType_end;
+    self.vedioShootType = VedioShootType_end;
     [movieWriter finishRecording];//已经写了文件
     self.videoCamera.audioEncodingTarget = nil;
 //    [self.urlArray addObject:[NSURL fileURLWithPath:self.recentlyVedioFileUrl]];
@@ -111,7 +113,7 @@
             
             [self.urlArray addObject:[NSURL fileURLWithPath:self.recentlyVedioFileUrl]];
             self.compressedVedioPathStr = [NSString stringWithFormat:@"%@%@%@",[FileFolderHandleTool directoryAtPath:self.recentlyVedioFileUrl],@"/合成视频的缓存/",[FileFolderHandleTool getFullFileName:self.recentlyVedioFileUrl]];//被压缩的视频文件的路径
-
+            //视频合并
             [self mergeAndExportVideos:self.urlArray//原始数据地址
                            withOutPath:self.compressedVedioPathStr];
             //缩略图
@@ -130,18 +132,21 @@
 }
 #pragma mark —— 暂停录制
 -(void)vedioShoottingSuspend{
+    self.vedioShootType = VedioShootType_suspend;
     if (!movieWriter.isPaused) {
         movieWriter.paused = YES;
     }
 }
 #pragma mark —— 继续录制
 -(void)vedioShoottingContinue{
+    self.vedioShootType = VedioShootType_continue;
     if (movieWriter.isPaused) {
         movieWriter.paused = NO;
     }
 }
 #pragma mark —— 取消录制
 -(void)vedioShoottingOff{
+    self.vedioShootType = VedioShootType_off;
     [movieWriter finishRecording];
     self.videoCamera.audioEncodingTarget = nil;
     _FileUrlByTime = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
@@ -177,6 +182,23 @@
         [self.videoCamera.inputCamera unlockForConfiguration];
     }
 }
+#pragma mark —— 开启/关闭 闪光灯
+-(void)flashLight:(BOOL)turnOn_Off{
+    if (turnOn_Off) {
+        if (self.captureDevice.hasTorch) {
+            if ([self.captureDevice lockForConfiguration:nil]) {
+                self.captureDevice.torchMode = AVCaptureTorchModeOn;
+                [self.captureDevice unlockForConfiguration];
+            }
+        }
+    }else{
+        if (self.captureDevice.hasTorch) {
+            [self.captureDevice lockForConfiguration:nil];
+            [self.captureDevice setTorchMode: AVCaptureTorchModeOff];
+            [self.captureDevice unlockForConfiguration];
+        }
+    }
+}
 #pragma mark —— 缩略图
 -(UIImage *)getImage:(NSString *)videoURL{
 
@@ -187,6 +209,20 @@
     self.thumb = [[UIImage alloc] initWithCGImage:image];
     CGImageRelease(image);
     return self.thumb;
+}
+#pragma mark —— 获取视频文件的总时长
++(CGFloat)getVedioDuringTimeWithfilePath:(NSString *)filePathStr{
+    NSURL *sourceMovieURL = [NSURL fileURLWithPath:filePathStr];
+    AVURLAsset *sourceAsset = [AVURLAsset URLAssetWithURL:sourceMovieURL options:nil];
+    CMTime duration = sourceAsset.duration;
+    CGFloat second = (float)duration.value / (float)duration.timescale;
+    return second;
+}
+
++(CGFloat)getVedioDuringTimeWithUrlAsset:(AVURLAsset *)urlAsset{
+    CMTime duration = urlAsset.duration;
+    CGFloat second = (float)duration.value / (float)duration.timescale;
+    return second;
 }
 #pragma mark —— 视频合并
 /// 压缩和合并视频
@@ -261,10 +297,6 @@
 -(void)delRaw{
     //原始的视频素材，路径 self.urlArray
     //新生成的，被压缩的视频 self.compressedVedioPathStr 这才是最后需要上传到服务器的资源
-//    for (NSURL *url in self.urlArray) {
-//        [FileFolderHandleTool removeContentsOfDirectory:[FileFolderHandleTool directoryAtPath:url.absoluteString] withExtension:@".mp4"];
-//    }
-    
     NSURL *url = self.urlArray[0];
     BOOL d = [NSString isNullString:url.absoluteString];
     if (!d) {
@@ -517,7 +549,11 @@
     }return _asset;
 }
 
-
+-(AVCaptureDevice *)captureDevice{
+    if (!_captureDevice) {
+        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }return _captureDevice;
+}
 
 //滤镜
 

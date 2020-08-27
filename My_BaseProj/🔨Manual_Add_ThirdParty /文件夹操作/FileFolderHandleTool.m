@@ -180,6 +180,43 @@
                                            error:error];
 }
 #pragma mark —— 写入文件内容
+/// 给定一个NSBundle地址和文件类型，获取返回里面的一个实体文件
++(id)bundleFile:(NSString *)bundleFileName
+bundleFileSuffix:(NSString *)bundleFileSuffix
+       fileType:(FileType)fileType{
+    //获取bundle路径
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:bundleFileName
+                                                           ofType:bundleFileSuffix];
+    switch (fileType) {
+        case TXT:{
+            NSString *string = [[NSString alloc] initWithContentsOfFile:bundlePath
+                                                               encoding:NSUTF8StringEncoding
+                                                                  error:nil];
+            return string;
+        }break;
+        case IMAGE:{
+            UIImage *img = [UIImage imageWithContentsOfFile:bundlePath];
+            return img;
+        }break;
+        case VEDIO:{
+            NSData *movieData = [NSData dataWithContentsOfFile:bundlePath];
+            return movieData;
+        }break;
+        case SOUND:{
+            AVURLAsset *mp3Asset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:bundlePath] options:nil];
+            NSData *mp3Data = [NSData dataWithContentsOfURL:mp3Asset.URL];
+            return mp3Data;
+        }break;
+        case PLIST:{
+            NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:bundlePath];
+            return dic;
+        }break;
+            
+        default:
+            return nil;
+            break;
+    }
+}
 /// 将bundle里面的文件写进手机本地文件
 /// @param bundleFileName bundle文件名
 /// @param bundleFileSuffix bundle 文件后缀名
@@ -188,21 +225,29 @@
 +(NSString *)BundleFile:(NSString *)bundleFileName
        bundleFileSuffix:(NSString *)bundleFileSuffix
             ToLocalFile:(NSString *)LocalFileName
-        localFileSuffix:(NSString *)LocalFileSuffix{
+        localFileSuffix:(NSString *)LocalFileSuffix
+               fileType:(FileType)fileType{
     //获取bundle路径
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:bundleFileName ofType:bundleFileSuffix];
-    UIImage *img = [UIImage imageWithContentsOfFile:bundlePath];
+    id content = [FileFolderHandleTool bundleFile:bundleFileName
+                                 bundleFileSuffix:bundleFileSuffix
+                                         fileType:fileType];
+    
+    //图片、文本、plist（字典）、视频、声音
     NSString *fileFolderPathStr = [FileFolderHandleTool createCacheFolderPath:nil];
     //写文件之前一定要 有空白文件可写。
     //文件全名 带后缀
     NSString *localFileFullNameStr = [NSString stringWithFormat:@"/%@.%@",LocalFileName,LocalFileSuffix];
-    bool b = [FileFolderHandleTool createFileAtPath:[fileFolderPathStr stringByAppendingString:localFileFullNameStr] overwrite:YES error:nil];
+    bool b = [FileFolderHandleTool createFileAtPath:[fileFolderPathStr stringByAppendingString:localFileFullNameStr]
+                                          overwrite:YES
+                                              error:nil];
     
     bool d = NO;
     if (b) {
         //写文件
         NSString *ff = [NSString stringWithFormat:@"%@%@",fileFolderPathStr,localFileFullNameStr];
-        d = [FileFolderHandleTool writeFileAtPath:ff content:img error:nil];
+        d = [FileFolderHandleTool writeFileAtPath:ff
+                                          content:content
+                                            error:nil];
     }
     return fileFolderPathStr = d? fileFolderPathStr : nil;
 }

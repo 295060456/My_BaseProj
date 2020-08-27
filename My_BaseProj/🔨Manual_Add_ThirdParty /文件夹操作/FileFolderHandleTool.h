@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    TXT = 0,
+    IMAGE,
+    VEDIO,
+    SOUND,
+    PLIST//键值对存在
+} FileType;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FileFolderHandleTool : NSObject
@@ -79,6 +87,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSDate *)modificationDateOfItemAtPath:(NSString *)path
                                   error:(NSError *__autoreleasing *)error;
 #pragma mark —— 写入文件内容
+/// 给定一个NSBundle地址和文件类型，获取返回里面的一个实体文件
++(id)bundleFile:(NSString *)bundleFileName
+bundleFileSuffix:(NSString *)bundleFileSuffix
+       fileType:(FileType)fileType;
 /// 将bundle里面的文件写进手机本地文件
 /// @param bundleFileName bundle文件名
 /// @param bundleFileSuffix bundle 文件后缀名
@@ -87,7 +99,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSString *)BundleFile:(NSString *)bundleFileName
        bundleFileSuffix:(NSString *)bundleFileSuffix
             ToLocalFile:(NSString *)LocalFileName
-        localFileSuffix:(NSString *)LocalFileSuffix;
+        localFileSuffix:(NSString *)LocalFileSuffix
+               fileType:(FileType)fileType;
 ///写入文件内容：按照文件路径向文件写入内容，内容可为数组、字典、NSData等等
 /*参数1：要写入的文件路径
  *参数2：要写入的文件内容

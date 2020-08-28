@@ -89,6 +89,9 @@
 		C59C4A5424E3A88E002C2104 /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
 		C59D9AB224F8DFBD00A74CE9 /* video.gif in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AB124F8DFBD00A74CE9 /* video.gif */; };
+		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
+		C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */; };
+		C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */; };
 		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
 		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
 		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
@@ -556,6 +559,11 @@
 		C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
 		C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Random.h"; sourceTree = "<group>"; };
 		C59D9AB124F8DFBD00A74CE9 /* video.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video.gif; sourceTree = "<group>"; };
+		C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZZCircleProgress.bundle; sourceTree = "<group>"; };
+		C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCircleProgress.m; sourceTree = "<group>"; };
+		C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCountingLabel.m; sourceTree = "<group>"; };
+		C59D9AF424F8F19100A74CE9 /* ZZCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCircleProgress.h; sourceTree = "<group>"; };
+		C59D9AF524F8F19100A74CE9 /* ZZCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCountingLabel.h; sourceTree = "<group>"; };
 		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
 		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
 		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
@@ -1399,6 +1407,7 @@
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
+				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
 				C5CF708C24E4307A000DB72D /* MKGPUImageView */,
 				C5336FF424DB00280082847C /* BRPickerView */,
 				C5B5201A24D6BCB700579178 /* GKNavigationBar */,
@@ -1742,6 +1751,18 @@
 				C5FE9C3624B5F29A007B9878 /* CJTextField.m */,
 			);
 			path = CJTextField;
+			sourceTree = "<group>";
+		};
+		C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */ = {
+			isa = PBXGroup;
+			children = (
+				C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */,
+				C59D9AF424F8F19100A74CE9 /* ZZCircleProgress.h */,
+				C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */,
+				C59D9AF524F8F19100A74CE9 /* ZZCountingLabel.h */,
+				C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */,
+			);
+			path = ZZCircleProgress;
 			sourceTree = "<group>";
 		};
 		C5A46BAC24EEA73100158D1E /* 闪光灯 */ = {
@@ -3559,6 +3580,7 @@
 				C5FE9B0424B5F1DC007B9878 /* bg3@2x.png in Resources */,
 				C5FE9D1C24B5F29C007B9878 /* area.plist in Resources */,
 				C5FE9B0224B5F1DC007B9878 /* bg2@2x.png in Resources */,
+				C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */,
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
 				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
 				C54AE7D324C941D300121233 /* gif_header_3@3x.png in Resources */,
@@ -3742,6 +3764,7 @@
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C5B1C7C824BAB91A001923FB /* LOTShapeGroup.m in Sources */,
 				C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */,
+				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
 				C5B1C7CE24BAB91A001923FB /* LOTLayer.m in Sources */,
 				C5E4C09E24DFF0B300D4862C /* BaseVC+BRPickerView.m in Sources */,
 				C5B1C7C524BAB91A001923FB /* LOTAssetGroup.m in Sources */,
@@ -3807,6 +3830,7 @@
 				C5B1C7BA24BAB919001923FB /* LOTMask.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
+				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,

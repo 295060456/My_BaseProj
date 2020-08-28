@@ -189,7 +189,6 @@ PODS:
   - YYKit/no-arc (1.0.9)
   - ZBarSDK (1.3.1)
   - ZFJTreeViewKit (1.0.1)
-  - ZZCircleProgress (0.3.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -264,7 +263,6 @@ DEPENDENCIES:
   - YQImageCompressor
   - YYKit
   - ZFJTreeViewKit
-  - ZZCircleProgress
 
 SPEC REPOS:
   trunk:
@@ -348,7 +346,6 @@ SPEC REPOS:
     - YYKit
     - ZBarSDK
     - ZFJTreeViewKit
-    - ZZCircleProgress
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -431,8 +428,7 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
-  ZZCircleProgress: 207e454a96f05321be6df16357671d9a870656b6
 
-PODFILE CHECKSUM: 2d48a26e62438bdac00b3b003cb9ca4cd97f5d6d
+PODFILE CHECKSUM: 522798e03a9fee395e7b099e019bbe5150817c35
 
 COCOAPODS: 1.9.3

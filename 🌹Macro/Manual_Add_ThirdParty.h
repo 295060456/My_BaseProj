@@ -71,6 +71,7 @@
 #import "MonitorNetwoking.h"
 #import "GPUImageTools.h"
 #import "JhtBannerView.h"
+#import "ZZCircleProgress.h"
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"

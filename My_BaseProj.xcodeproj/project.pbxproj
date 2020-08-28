@@ -92,6 +92,12 @@
 		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
 		C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */; };
 		C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */; };
+		C59D9B0E24F904A200A74CE9 /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0824F904A200A74CE9 /* 闪光灯-自动@3x.png */; };
+		C59D9B0F24F904A200A74CE9 /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0924F904A200A74CE9 /* 闪光灯-自动@2x.png */; };
+		C59D9B1024F904A200A74CE9 /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0A24F904A200A74CE9 /* 闪光灯-关闭@3x.png */; };
+		C59D9B1124F904A200A74CE9 /* 闪光灯-关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0B24F904A200A74CE9 /* 闪光灯-关闭@2x.png */; };
+		C59D9B1224F904A200A74CE9 /* 闪光灯@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0C24F904A200A74CE9 /* 闪光灯@3x.png */; };
+		C59D9B1324F904A200A74CE9 /* 闪光灯@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0D24F904A200A74CE9 /* 闪光灯@2x.png */; };
 		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
 		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
 		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
@@ -564,6 +570,12 @@
 		C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCountingLabel.m; sourceTree = "<group>"; };
 		C59D9AF424F8F19100A74CE9 /* ZZCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCircleProgress.h; sourceTree = "<group>"; };
 		C59D9AF524F8F19100A74CE9 /* ZZCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCountingLabel.h; sourceTree = "<group>"; };
+		C59D9B0824F904A200A74CE9 /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
+		C59D9B0924F904A200A74CE9 /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
+		C59D9B0A24F904A200A74CE9 /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
+		C59D9B0B24F904A200A74CE9 /* 闪光灯-关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@2x.png"; sourceTree = "<group>"; };
+		C59D9B0C24F904A200A74CE9 /* 闪光灯@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@3x.png"; sourceTree = "<group>"; };
+		C59D9B0D24F904A200A74CE9 /* 闪光灯@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@2x.png"; sourceTree = "<group>"; };
 		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
 		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
 		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
@@ -1765,6 +1777,19 @@
 			path = ZZCircleProgress;
 			sourceTree = "<group>";
 		};
+		C59D9B0724F9049100A74CE9 /* 闪光灯 */ = {
+			isa = PBXGroup;
+			children = (
+				C59D9B0B24F904A200A74CE9 /* 闪光灯-关闭@2x.png */,
+				C59D9B0A24F904A200A74CE9 /* 闪光灯-关闭@3x.png */,
+				C59D9B0924F904A200A74CE9 /* 闪光灯-自动@2x.png */,
+				C59D9B0824F904A200A74CE9 /* 闪光灯-自动@3x.png */,
+				C59D9B0D24F904A200A74CE9 /* 闪光灯@2x.png */,
+				C59D9B0C24F904A200A74CE9 /* 闪光灯@3x.png */,
+			);
+			path = "闪光灯";
+			sourceTree = "<group>";
+		};
 		C5A46BAC24EEA73100158D1E /* 闪光灯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2536,6 +2561,7 @@
 		C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */ = {
 			isa = PBXGroup;
 			children = (
+				C59D9B0724F9049100A74CE9 /* 闪光灯 */,
 				C54AE7C424C941CA00121233 /* 刷新 */,
 				C54F101C24C469E000EE1E67 /* Gif */,
 				C54F101B24C469D400EE1E67 /* Others */,
@@ -3549,6 +3575,8 @@
 				C54AE7D524C941D300121233 /* header@2x.png in Resources */,
 				C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */,
 				C54AE7CF24C941D300121233 /* gif_header_1@2x.png in Resources */,
+				C59D9B1124F904A200A74CE9 /* 闪光灯-关闭@2x.png in Resources */,
+				C59D9B1324F904A200A74CE9 /* 闪光灯@2x.png in Resources */,
 				C563AE3224F00FC600A3B0AC /* 我的.json in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C563AE3124F00FC600A3B0AC /* 社区.json in Resources */,
@@ -3559,8 +3587,10 @@
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
 				C5FE9ADE24B5F1B3007B9878 /* Home@3x.png in Resources */,
 				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
+				C59D9B0F24F904A200A74CE9 /* 闪光灯-自动@2x.png in Resources */,
 				C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */,
 				C54AE7D224C941D300121233 /* gif_header_3@2x.png in Resources */,
+				C59D9B0E24F904A200A74CE9 /* 闪光灯-自动@3x.png in Resources */,
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C5FE9AFE24B5F1DC007B9878 /* title1@2x.png in Resources */,
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
@@ -3584,6 +3614,7 @@
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
 				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
 				C54AE7D324C941D300121233 /* gif_header_3@3x.png in Resources */,
+				C59D9B1224F904A200A74CE9 /* 闪光灯@3x.png in Resources */,
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
@@ -3611,6 +3642,7 @@
 				C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */,
 				C5FE9B0324B5F1DC007B9878 /* bg4@2x.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
+				C59D9B1024F904A200A74CE9 /* 闪光灯-关闭@3x.png in Resources */,
 				C5FE9CD324B5F29C007B9878 /* sortedNameCH.plist in Resources */,
 				C5D4FBBD24CEC5690024A292 /* spark_red.png in Resources */,
 				C5B1C72624BAB54D001923FB /* green_lottie_tab_news.json in Resources */,

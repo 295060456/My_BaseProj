@@ -11,19 +11,4 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma mark —— GPUImage
-typedef NS_ENUM(NSInteger, CameraManagerDevicePosition) {
-    CameraManagerDevicePositionBack,
-    CameraManagerDevicePositionFront,
-};
-
-typedef NS_ENUM(NSInteger, TypeFilter) {
-    filterNone,
-    filterGaussBlur,
-    filterDilation,
-    filterBeautify,
-    filterGif,
-};
-
-
 #endif /* DefineStructure_h */

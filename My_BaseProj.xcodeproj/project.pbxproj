@@ -87,6 +87,8 @@
 		C59C4A2D24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A2B24E2822B002C2104 /* BaseVC+TZImagePickerControllerDelegate.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59C4A5424E3A88E002C2104 /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */; };
+		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
+		C59D9AB224F8DFBD00A74CE9 /* video.gif in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AB124F8DFBD00A74CE9 /* video.gif */; };
 		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
 		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
 		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
@@ -551,6 +553,9 @@
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
 		C59C4A5224E3A88D002C2104 /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
 		C59C4A5324E3A88D002C2104 /* BaseVC+TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZLocationManager.h"; sourceTree = "<group>"; };
+		C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
+		C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Random.h"; sourceTree = "<group>"; };
+		C59D9AB124F8DFBD00A74CE9 /* video.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = video.gif; sourceTree = "<group>"; };
 		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
 		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
 		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
@@ -1435,6 +1440,7 @@
 		C5601F6324F6A0280070FBD5 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
+				C59D9AB124F8DFBD00A74CE9 /* video.gif */,
 				C5601F6524F6A02E0070FBD5 /* MKGPUImageView.h */,
 				C5601F6624F6A02E0070FBD5 /* MKGPUImageView.m */,
 				C5601F6424F6A02E0070FBD5 /* YHGPUImageBeautifyFilter.h */,
@@ -2599,6 +2605,8 @@
 		C5FE9B1A24B5F203007B9878 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */,
+				C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */,
 				C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */,
 				C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */,
 				C5E7D9AA24E1640D00A38FAF /* NSObject+Sound.h */,
@@ -3526,6 +3534,7 @@
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
 				C557DC1624C805DF00754760 /* MJExtension用法 in Resources */,
 				C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */,
+				C59D9AB224F8DFBD00A74CE9 /* video.gif in Resources */,
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
 				C5FE9ADE24B5F1B3007B9878 /* Home@3x.png in Resources */,
 				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
@@ -3952,6 +3961,7 @@
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
 				C5B1C7E124BAB91A001923FB /* LOTShapeTrimPath.m in Sources */,
 				C5B1C7AD24BAB919001923FB /* LOTRoundedRectAnimator.m in Sources */,
+				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,
 				C5FE9CE424B5F29C007B9878 /* BWItemModel.m in Sources */,
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5B1C7C224BAB91A001923FB /* LOTComposition.m in Sources */,

@@ -95,6 +95,7 @@
 #import "NSObject+Measure.h"
 #import "NSObject+Sound.h"
 #import "NSObject+Shake.h"
+#import "NSObject+Random.h"
 
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 #import "UIImage+YBGIF.h"

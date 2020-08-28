@@ -19,12 +19,21 @@ typedef enum : NSUInteger {
     VedioShootType_end//结束录制
 } VedioShootType;//视频录制的状态
 
+typedef NS_ENUM(NSInteger, TypeFilter) {
+    filterNone,
+    filterGaussBlur,
+    filterDilation,
+    filterBeautify,
+    filterGif,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 //不要用单例，让这个工具类有一个完整的生命周期，里面的属性得以释放
 @interface GPUImageTools : NSObject
 
 @property(nonatomic,assign)CGSize videoSize;
+@property(nonatomic,assign)TypeFilter typeFilter;
 @property(nonatomic,assign)VedioShootType vedioShootType;
 @property(nonatomic,strong)MKGPUImageView *GPUImageView;//实际上点击的是它，所以点击事件在 myGPUImageView 的回调里面
 @property(nonatomic,strong)UIImage *thumb;

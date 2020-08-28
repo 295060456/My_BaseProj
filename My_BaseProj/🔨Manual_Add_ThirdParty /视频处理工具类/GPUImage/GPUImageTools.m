@@ -12,21 +12,24 @@
 @interface GPUImageTools ()
 <GPUImageVideoCameraDelegate>
 {
-    GPUImageMovieWriter              *movieWriter;//
+    GPUImageMovieWriter              *movieWriter;
     GPUImageOutput<GPUImageInput>    *filter;
-    GPUImageGaussianBlurFilter       *gaussBlurFilter;
-    GPUImageDilationFilter           *dilationFilter;
-    YHGPUImageBeautifyFilter         *beautifyFilter;
-    GPUImageAlphaBlendFilter         *gifFilter;
-    GPUImageFilter                   *videoFilter;
-    NSTimer                          *myTimer;
-    NSString                         *videoPathUrl;
 }
+//滤镜
+@property(nonatomic,strong)GPUImageGaussianBlurFilter *gaussBlurFilter;//高斯
+@property(nonatomic,strong)GPUImageDilationFilter *dilationFilter;//灰度
+@property(nonatomic,strong)YHGPUImageBeautifyFilter *beautifyFilter;//美颜
+@property(nonatomic,strong)GPUImageAlphaBlendFilter *gifFilter;//gif
+@property(nonatomic,strong)GPUImageUIElement *uiElement;
+@property(nonatomic,strong)UIView *watermarkView;
+@property(nonatomic,strong)UILabel *label;
+@property(nonatomic,strong)UIImageView *imageV;
+@property(nonatomic,strong)GPUImageFilter *videoFilter;
+@property(nonatomic,strong)NSArray *arrImage;
 
 @property(nonatomic,strong)NSMutableArray *lastAry;
 @property(nonatomic,strong)NSMutableArray *progressViewArray;
 
-@property(nonatomic,assign)TypeFilter typeFilter;
 @property(nonatomic,copy,nullable)AVFileType outputFileType;
 @property(nonatomic,strong)GPUImageVideoCamera *videoCamera;
 @property(nonatomic,strong)AVAssetTrack *mixVideoTrack;
@@ -60,6 +63,7 @@
 
 -(instancetype)init{
     if (self = [super init]) {
+        
     }return self;
 }
 #pragma mark ——实况视频
@@ -75,18 +79,6 @@
 }
 #pragma mark —— 开始录制
 -(void)vedioShoottingOn{
-//#warning 删除原来已经写好的影片文件，如果新的实例直接写入已存在的文件会报错AVAssetWriterStatusFailed
-//    if ([FileFolderHandleTool isExistsAtPath:[FileFolderHandleTool directoryAtPath:self.recentlyVedioFileUrl]]) {//存在则清除旗下所有的东西
-//        //先清除缓存
-//        //清除vedio文件夹下所有内容
-//        [FileFolderHandleTool removeContentsOfDirectory:[FileFolderHandleTool directoryAtPath:self.recentlyVedioFileUrl]
-//                                          withExtension:nil];
-//    }else{//不存在即创建
-//        ///创建文件夹：
-//        [FileFolderHandleTool createDirectoryAtPath:self.recentlyVedioFileUrl
-//                                              error:nil];
-//    }
-    
     self.vedioShootType = VedioShootType_on;
     [self initMovieWriter];
     self.videoCamera.audioEncodingTarget = movieWriter;
@@ -97,7 +89,6 @@
     self.vedioShootType = VedioShootType_end;
     [movieWriter finishRecording];//已经写了文件
     self.videoCamera.audioEncodingTarget = nil;
-//    [self.urlArray addObject:[NSURL fileURLWithPath:self.recentlyVedioFileUrl]];
     _FileUrlByTime = nil;//只要一暂停录制，就需要置空，因为是时间戳路径，需要懒加载获取到最新
     // 合成：将音频流和视频流 合在一起，在这个动作之前，不是视频。合成结束并且写文件。
     [MBProgressHUD wj_showPlainText:@"视频合成中......" view:getMainWindow()];
@@ -293,6 +284,34 @@
         });
     }];
 }
+///添加滤镜
+- (void)addFilter{
+    self.gaussBlurFilter.enabled = YES;//高斯
+    self.dilationFilter.enabled = YES;//灰度
+    self.beautifyFilter.enabled = YES;//美颜
+    self.gifFilter.enabled = YES;//gif
+    self.watermarkView.alpha = 1;
+    __block NSInteger imageIndex = 0;
+    __block GPUImageUIElement *weakElement = self.uiElement;
+    __block NSInteger timeCount = 0;
+    @weakify(self)
+    [self.videoFilter setFrameProcessingCompletionBlock:^(GPUImageOutput *output,
+                                                          CMTime time) {
+        @strongify(self)
+        NSInteger tempCount = time.value / (time.timescale/1000);
+        if (tempCount - timeCount > 100) {
+            imageIndex ++;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageV.image = self.arrImage[imageIndex];
+            });
+            if (imageIndex == self.arrImage.count -1) {
+                imageIndex = 0;
+            }
+            timeCount = tempCount;
+        }
+        [weakElement update];
+    }];
+}
 ///转换视频成功删除原始视频素材
 -(void)delRaw{
     //原始的视频素材，路径 self.urlArray
@@ -398,6 +417,7 @@
             }
         }];
         [self.videoCamera addTarget:_GPUImageView];
+        [self addFilter];//添加滤镜
     }return _GPUImageView;
 }
 
@@ -421,8 +441,7 @@
          沙盒中tmp的目录：tmpDir
          
          */
-        _FileUrlByTime = [FileFolderHandleTool createCacheFolderPath:@"vedio"
-                                                              fileEx:@".mp4"];//Library/Caches/vedio/时间戳.MP4
+        _FileUrlByTime = [FileFolderHandleTool createCacheFolderPath:@"vedio" fileEx:@".mp4"];//Library/Caches/vedio/时间戳.MP4
     }return _FileUrlByTime;
 }
 
@@ -432,29 +451,55 @@
                                                                size:self.movieWriterSize];
         movieWriter.encodingLiveVideo = YES;
         movieWriter.shouldPassthroughAudio = YES;
-        switch (_typeFilter) {
-            case filterNone:{
-                [self.videoCamera addTarget:movieWriter];
-            }break;
-            case filterDilation:{
-                [dilationFilter addTarget:movieWriter];
-            }break;
-            case filterGif:{
-                [gifFilter addTarget:movieWriter];
-            }break;
-            case filterBeautify:{
-                [beautifyFilter addTarget:movieWriter];
-            }break;
-            case filterGaussBlur:{
-                [gaussBlurFilter addTarget:movieWriter];
-            }break;
-                
-            default:
-                break;
-        }
+        [self.videoCamera addTarget:movieWriter];
     }else{
         movieWriter = nil;
         NSAssert(movieWriter, @"创建文件夹失败,终止movieWriter的创建");
+    }
+}
+
+- (void)setTypeFilter:(TypeFilter)typeFilter{
+    _typeFilter = typeFilter;
+    [self.videoCamera removeAllTargets];
+    switch (typeFilter) {
+        case filterNone:{
+            if (movieWriter) {
+                [self.videoCamera addTarget:movieWriter];
+            }
+            [self.videoCamera addTarget:self.GPUImageView];
+        }break;
+        case filterDilation:{
+            [self.videoCamera addTarget:self.dilationFilter];
+            if (movieWriter) {
+                [self.dilationFilter addTarget:movieWriter];
+            }
+            [self.dilationFilter addTarget:self.GPUImageView];
+        }break;
+        case filterGif:{
+            [self.videoCamera addTarget:self.videoFilter];
+            //由于GPUImageAlphaBlendFilter 不能直接以videoCamera为输入源中间以videoFilter桥接一下
+            [self.videoFilter addTarget:self.gifFilter];
+            if (movieWriter) {
+                [self.gifFilter addTarget:movieWriter];
+            }
+            [self.gifFilter addTarget:self.GPUImageView];
+        }break;
+        case filterBeautify:{
+            [self.videoCamera addTarget:self.beautifyFilter];
+            if (movieWriter) {
+                [self.beautifyFilter addTarget:movieWriter];
+            }
+            [self.beautifyFilter addTarget:self.GPUImageView];
+        }break;
+        case filterGaussBlur:{
+            [self.videoCamera addTarget:self.gaussBlurFilter];
+            if (movieWriter) {
+                [self.gaussBlurFilter addTarget:movieWriter];
+            }
+            [self.gaussBlurFilter addTarget:self.GPUImageView];
+        }break;
+        default:
+            break;
     }
 }
 
@@ -555,7 +600,80 @@
         _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     }return _captureDevice;
 }
-
 //滤镜
+-(GPUImageGaussianBlurFilter *)gaussBlurFilter{
+    if (!_gaussBlurFilter) {
+        _gaussBlurFilter = GPUImageGaussianBlurFilter.new;
+        _gaussBlurFilter.texelSpacingMultiplier = 4;
+        _gaussBlurFilter.blurRadiusInPixels = 5;
+    }return _gaussBlurFilter;
+}
+
+-(GPUImageDilationFilter *)dilationFilter{
+    if (!_dilationFilter) {
+        _dilationFilter = [[GPUImageDilationFilter alloc] initWithRadius:3];
+    }return _dilationFilter;
+}
+
+-(YHGPUImageBeautifyFilter *)beautifyFilter{
+    if (!_beautifyFilter) {
+        _beautifyFilter = YHGPUImageBeautifyFilter.new;
+    }return _beautifyFilter;
+}
+
+-(GPUImageAlphaBlendFilter *)gifFilter{
+    if (!_gifFilter) {
+        _gifFilter = GPUImageAlphaBlendFilter.new;
+        _gifFilter.mix = 0.8;
+    }return _gifFilter;
+}
+
+-(GPUImageUIElement *)uiElement{
+    if (!_uiElement) {
+        _uiElement = [[GPUImageUIElement alloc] initWithView:self.watermarkView];
+        [_uiElement addTarget:self.gifFilter];
+    }return _uiElement;
+}
+
+-(UIView *)watermarkView{
+    if (!_watermarkView) {
+        _watermarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 180, 380)];
+        [_watermarkView addSubview:self.imageV];
+        [_watermarkView addSubview:self.label];
+    }return _watermarkView;
+}
+
+-(UILabel *)label{
+    if (!_label) {
+        _label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+        _label.text = @"Record";
+        _label.textColor = [UIColor whiteColor];
+        _label.textAlignment = NSTextAlignmentCenter;
+        _label.font = [UIFont systemFontOfSize:20 weight:UIFontWeightBold];
+    }return _label;
+}
+
+-(UIImageView *)imageV{
+    if (!_imageV) {
+        _imageV = [[UIImageView alloc]initWithFrame:CGRectMake(80, 0, 100, 80)];
+        _imageV.image = self.arrImage[0];
+    }return _imageV;
+}
+
+-(NSArray *)arrImage{
+    if (!_arrImage) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"video.gif" ofType:nil] ;
+        NSData *imageData = [NSData dataWithContentsOfFile:path];
+        _arrImage = [NSObject changeGifToImage:imageData];
+    }return _arrImage;
+}
+
+-(GPUImageFilter *)videoFilter{
+    if (!_videoFilter) {
+        _videoFilter = GPUImageFilter.new;
+        [_videoFilter addTarget:self.gifFilter];
+    }return _videoFilter;
+}
+
 
 @end

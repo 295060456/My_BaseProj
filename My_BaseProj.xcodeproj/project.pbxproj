@@ -98,6 +98,10 @@
 		C59D9B1124F904A200A74CE9 /* 闪光灯-关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0B24F904A200A74CE9 /* 闪光灯-关闭@2x.png */; };
 		C59D9B1224F904A200A74CE9 /* 闪光灯@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0C24F904A200A74CE9 /* 闪光灯@3x.png */; };
 		C59D9B1324F904A200A74CE9 /* 闪光灯@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B0D24F904A200A74CE9 /* 闪光灯@2x.png */; };
+		C59D9B2324F9085800A74CE9 /* 删除@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B1F24F9085800A74CE9 /* 删除@3x.png */; };
+		C59D9B2424F9085800A74CE9 /* sure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2024F9085800A74CE9 /* sure@2x.png */; };
+		C59D9B2524F9085800A74CE9 /* sure@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2124F9085800A74CE9 /* sure@3x.png */; };
+		C59D9B2624F9085800A74CE9 /* 删除@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2224F9085800A74CE9 /* 删除@2x.png */; };
 		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
 		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
 		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
@@ -576,6 +580,10 @@
 		C59D9B0B24F904A200A74CE9 /* 闪光灯-关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@2x.png"; sourceTree = "<group>"; };
 		C59D9B0C24F904A200A74CE9 /* 闪光灯@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@3x.png"; sourceTree = "<group>"; };
 		C59D9B0D24F904A200A74CE9 /* 闪光灯@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@2x.png"; sourceTree = "<group>"; };
+		C59D9B1F24F9085800A74CE9 /* 删除@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除@3x.png"; sourceTree = "<group>"; };
+		C59D9B2024F9085800A74CE9 /* sure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure@2x.png"; sourceTree = "<group>"; };
+		C59D9B2124F9085800A74CE9 /* sure@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure@3x.png"; sourceTree = "<group>"; };
+		C59D9B2224F9085800A74CE9 /* 删除@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除@2x.png"; sourceTree = "<group>"; };
 		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
 		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
 		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
@@ -1790,6 +1798,18 @@
 			path = "闪光灯";
 			sourceTree = "<group>";
 		};
+		C59D9B1E24F9084800A74CE9 /* 拍摄 */ = {
+			isa = PBXGroup;
+			children = (
+				C59D9B0724F9049100A74CE9 /* 闪光灯 */,
+				C59D9B2224F9085800A74CE9 /* 删除@2x.png */,
+				C59D9B1F24F9085800A74CE9 /* 删除@3x.png */,
+				C59D9B2024F9085800A74CE9 /* sure@2x.png */,
+				C59D9B2124F9085800A74CE9 /* sure@3x.png */,
+			);
+			path = "拍摄";
+			sourceTree = "<group>";
+		};
 		C5A46BAC24EEA73100158D1E /* 闪光灯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2561,7 +2581,7 @@
 		C5FE9ABC24B5F18B007B9878 /* ⚽️PicResource */ = {
 			isa = PBXGroup;
 			children = (
-				C59D9B0724F9049100A74CE9 /* 闪光灯 */,
+				C59D9B1E24F9084800A74CE9 /* 拍摄 */,
 				C54AE7C424C941CA00121233 /* 刷新 */,
 				C54F101C24C469E000EE1E67 /* Gif */,
 				C54F101B24C469D400EE1E67 /* Others */,
@@ -3576,6 +3596,7 @@
 				C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */,
 				C54AE7CF24C941D300121233 /* gif_header_1@2x.png in Resources */,
 				C59D9B1124F904A200A74CE9 /* 闪光灯-关闭@2x.png in Resources */,
+				C59D9B2324F9085800A74CE9 /* 删除@3x.png in Resources */,
 				C59D9B1324F904A200A74CE9 /* 闪光灯@2x.png in Resources */,
 				C563AE3224F00FC600A3B0AC /* 我的.json in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
@@ -3615,6 +3636,7 @@
 				C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */,
 				C54AE7D324C941D300121233 /* gif_header_3@3x.png in Resources */,
 				C59D9B1224F904A200A74CE9 /* 闪光灯@3x.png in Resources */,
+				C59D9B2424F9085800A74CE9 /* sure@2x.png in Resources */,
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
@@ -3634,11 +3656,13 @@
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */,
+				C59D9B2624F9085800A74CE9 /* 删除@2x.png in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
 				C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
+				C59D9B2524F9085800A74CE9 /* sure@3x.png in Resources */,
 				C5B5203F24D6BCC400579178 /* GKNavigationBar.bundle in Resources */,
 				C5FE9B0324B5F1DC007B9878 /* bg4@2x.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,

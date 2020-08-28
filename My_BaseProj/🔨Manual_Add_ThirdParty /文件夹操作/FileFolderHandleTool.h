@@ -51,8 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取沙盒中tmp的目录路径：供系统使用，程序员不要使用，因为随时会被销毁
 +(NSString *)tmpDir;
 #pragma mark - 创建Library/Caches下的文件夹📂路径 还未真正创建
-//以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
-+(NSString *)createCacheFolderPath:(NSString * __nullable)folderNameEx;
+/// 以当前时间戳生成缓存路径 Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除。一般存放体积比较大，不是特别重要的资源。
+/// @param folderNameEx 中间层自定义的文件夹
+/// @param fileNameEx 文件后缀名
++(NSString *)createCacheFolderPath:(NSString * __nullable)folderNameEx
+                            fileEx:(NSString * __nullable)fileNameEx;
 #pragma mark —— 创建文件（夹）
 ///软性 创建文件夹📂：
 + (BOOL)createDirectoryAtPath:(NSString *)path

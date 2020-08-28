@@ -421,7 +421,8 @@
          沙盒中tmp的目录：tmpDir
          
          */
-        _FileUrlByTime = [FileFolderHandleTool createCacheFolderPath:@"vedio"];//Library/Caches/vedio
+        _FileUrlByTime = [FileFolderHandleTool createCacheFolderPath:@"vedio"
+                                                              fileEx:@".mp4"];//Library/Caches/vedio/时间戳.MP4
     }return _FileUrlByTime;
 }
 

@@ -102,12 +102,6 @@
 		C59D9B2424F9085800A74CE9 /* sure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2024F9085800A74CE9 /* sure@2x.png */; };
 		C59D9B2524F9085800A74CE9 /* sure@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2124F9085800A74CE9 /* sure@3x.png */; };
 		C59D9B2624F9085800A74CE9 /* 删除@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C59D9B2224F9085800A74CE9 /* 删除@2x.png */; };
-		C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */; };
-		C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */; };
-		C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */; };
-		C5A46BB624EEA73100158D1E /* 闪光灯-关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */; };
-		C5A46BB724EEA73100158D1E /* 闪光灯@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */; };
-		C5A46BB824EEA73100158D1E /* 闪光灯@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */; };
 		C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */; };
 		C5A46BE524EF901200158D1E /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BE324EF901200158D1E /* UIViewController+Shake.m */; };
 		C5A46BF224EFB58C00158D1E /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEB24EFB58B00158D1E /* LOTAnimationView+action.m */; };
@@ -584,12 +578,6 @@
 		C59D9B2024F9085800A74CE9 /* sure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure@2x.png"; sourceTree = "<group>"; };
 		C59D9B2124F9085800A74CE9 /* sure@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sure@3x.png"; sourceTree = "<group>"; };
 		C59D9B2224F9085800A74CE9 /* 删除@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除@2x.png"; sourceTree = "<group>"; };
-		C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@2x.png"; sourceTree = "<group>"; };
-		C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-自动@3x.png"; sourceTree = "<group>"; };
-		C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@3x.png"; sourceTree = "<group>"; };
-		C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯-关闭@2x.png"; sourceTree = "<group>"; };
-		C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@2x.png"; sourceTree = "<group>"; };
-		C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "闪光灯@3x.png"; sourceTree = "<group>"; };
 		C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shake.h"; sourceTree = "<group>"; };
 		C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shake.m"; sourceTree = "<group>"; };
 		C5A46BE324EF901200158D1E /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
@@ -1398,7 +1386,6 @@
 		C54F101B24C469D400EE1E67 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				C5A46BAC24EEA73100158D1E /* 闪光灯 */,
 				C54F101F24C46A9100EE1E67 /* 兴发街.jpg */,
 				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9ACF24B5F1B3007B9878 /* 图片.png */,
@@ -1808,19 +1795,6 @@
 				C59D9B2124F9085800A74CE9 /* sure@3x.png */,
 			);
 			path = "拍摄";
-			sourceTree = "<group>";
-		};
-		C5A46BAC24EEA73100158D1E /* 闪光灯 */ = {
-			isa = PBXGroup;
-			children = (
-				C5A46BAD24EEA73100158D1E /* 闪光灯-自动@2x.png */,
-				C5A46BAE24EEA73100158D1E /* 闪光灯-自动@3x.png */,
-				C5A46BAF24EEA73100158D1E /* 闪光灯-关闭@3x.png */,
-				C5A46BB024EEA73100158D1E /* 闪光灯-关闭@2x.png */,
-				C5A46BB124EEA73100158D1E /* 闪光灯@2x.png */,
-				C5A46BB224EEA73100158D1E /* 闪光灯@3x.png */,
-			);
-			path = "闪光灯";
 			sourceTree = "<group>";
 		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
@@ -3586,7 +3560,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */,
-				C5A46BB424EEA73100158D1E /* 闪光灯-自动@3x.png in Resources */,
 				C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */,
 				C5FE9ADD24B5F1B3007B9878 /* ShoppingCart@3x.png in Resources */,
 				C5FE9AFF24B5F1DC007B9878 /* title2@2x.png in Resources */,
@@ -3615,11 +3588,9 @@
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C5FE9AFE24B5F1DC007B9878 /* title1@2x.png in Resources */,
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
-				C5A46BB724EEA73100158D1E /* 闪光灯@2x.png in Resources */,
 				C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */,
 				C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */,
 				C5FE9AE224B5F1B3007B9878 /* My@3x.png in Resources */,
-				C5A46BB824EEA73100158D1E /* 闪光灯@3x.png in Resources */,
 				C563AE2F24F00FC600A3B0AC /* 任务.json in Resources */,
 				C563AE3324F00FC600A3B0AC /* 主页.json in Resources */,
 				C54AE7D724C941D300121233 /* gif_header_1@3x.png in Resources */,
@@ -3645,7 +3616,6 @@
 				C5FE9B0024B5F1DC007B9878 /* title3@2x.png in Resources */,
 				C563AE3024F00FC600A3B0AC /* 上传与拍照.json in Resources */,
 				C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */,
-				C5A46BB624EEA73100158D1E /* 闪光灯-关闭@2x.png in Resources */,
 				C56161CB24EE7450001CD851 /* 签名上架 in Resources */,
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
@@ -3655,11 +3625,9 @@
 				C5FE9ADB24B5F1B3007B9878 /* MyStore@3x.png in Resources */,
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
-				C5A46BB324EEA73100158D1E /* 闪光灯-自动@2x.png in Resources */,
 				C59D9B2624F9085800A74CE9 /* 删除@2x.png in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
-				C5A46BB524EEA73100158D1E /* 闪光灯-关闭@3x.png in Resources */,
 				C5FE9ADA24B5F1B3007B9878 /* 图片.png in Resources */,
 				C5FE9AFD24B5F1DC007B9878 /* bg1@2x.png in Resources */,
 				C59D9B2524F9085800A74CE9 /* sure@3x.png in Resources */,

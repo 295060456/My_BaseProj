@@ -58,7 +58,7 @@
         LZBTabBarItem *tabBarItem = LZBTabBarItem.new;
         [tabBarItem setTitle:viewController.title];
         [self.tabBarItems addObject:tabBarItem];
-//        viewController.lzb_tabBarController = self;
+        viewController.lzb_tabBarController = self;
     }
     [self.lzb_tabBar setLzbTabBarItemsArr:self.tabBarItems];
 }

@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak)id<LZBTabBarVCDelegate> delegate;
 @property(nonatomic,strong)UIViewController *selectedViewController;
 @property(nonatomic,strong)UIView *contentView;
-@property(nonatomic,strong)LZBTabBar *tabbar;
 /**
  *  子控制数组
  */
@@ -62,20 +61,18 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  获得当前tabbar
  */
-@property(nonatomic,strong,readonly)LZBTabBar *lzb_tabBar;
+@property(nonatomic,strong)LZBTabBar *lzb_tabBar;
 /**
  *   隐藏导航条
  */
 @property(nonatomic,assign)BOOL lzb_tabBarHidden;
-
-
 /**
     隐藏导航条，是否动画
  */
-- (void)setLzb_tabBarHidden:(BOOL)lzb_tabBarHidden
-                   animated:(BOOL)animation;
+-(void)setLzb_tabBarHidden:(BOOL)lzb_tabBarHidden
+                  animated:(BOOL)animation;
 
-- (NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController;
+-(NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController;
 
 @end
 

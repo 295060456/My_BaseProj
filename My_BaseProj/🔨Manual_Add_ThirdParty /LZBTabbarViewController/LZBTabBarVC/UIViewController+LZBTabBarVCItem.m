@@ -30,11 +30,11 @@ static const void *LZBTabBarVCItemKey = @"LZBTabBarVCItemKey";
 - (void)setLzb_tabBarItem:(LZBTabBarItem *)lzb_tabBarItem{
     LZBTabBarVC *tabBarViewController = self.lzb_tabBarController;
     if(tabBarViewController == nil) return;
-    LZBTabBar *tabBar = tabBarViewController.tabbar;
+    LZBTabBar *tabBar = tabBarViewController.lzb_tabBar;
     //当前这个控制器在tabbar的索引
     NSInteger index = [tabBarViewController indexForTabBarViewControllerViewControllers:self];
     if(index < 0 ||
-       index >= tabBarViewController.tabbar.lzbTabBarItemsArr.count) return;
+       index >= tabBarViewController.lzb_tabBar.lzbTabBarItemsArr.count) return;
     //替换
     NSMutableArray *tabBarItems = [[NSMutableArray alloc] initWithArray:[tabBar lzbTabBarItemsArr]];
     [tabBarItems replaceObjectAtIndex:index
@@ -46,8 +46,8 @@ static const void *LZBTabBarVCItemKey = @"LZBTabBarVCItemKey";
     LZBTabBarVC *tabBarController = [self lzb_tabBarController];
     NSInteger index = [tabBarController indexForTabBarViewControllerViewControllers:self];
     if(index < 0 ||
-       index >= tabBarController.tabbar.lzbTabBarItemsArr.count) return nil;
-    return [tabBarController.tabbar.lzbTabBarItemsArr objectAtIndex:index];
+       index >= tabBarController.lzb_tabBar.lzbTabBarItemsArr.count) return nil;
+    return [tabBarController.lzb_tabBar.lzbTabBarItemsArr objectAtIndex:index];
 }
 
 

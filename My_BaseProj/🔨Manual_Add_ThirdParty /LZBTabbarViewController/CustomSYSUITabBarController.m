@@ -68,7 +68,7 @@ CGFloat LZB_TABBAR_HEIGHT;
 }
 
 -(void)Badge{
-    LZBTabBarItem *tabBarItem = self.tabbar.lzbTabBarItemsArr[0];
+    LZBTabBarItem *tabBarItem = self.lzb_tabBar.lzbTabBarItemsArr[0];
 //    [tabBarItem pp_addBadgeWithText:@"99+"];
     [tabBarItem pp_addBadgeWithNumber:99];
     [tabBarItem pp_moveBadgeWithX:-20 Y:20];

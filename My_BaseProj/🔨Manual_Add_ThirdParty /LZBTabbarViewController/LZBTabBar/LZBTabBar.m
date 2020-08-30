@@ -107,17 +107,16 @@
     }
 }
 #pragma mark —— API
-- (void)setItems:(NSArray<LZBTabBarItem *> *)items{
-    if(items.count == 0) return;
+- (void)setLzbTabBarItemsArr:(NSArray<LZBTabBarItem *> *)lzbTabBarItemsArr{
+    _lzbTabBarItemsArr = lzbTabBarItemsArr;
+    if(_lzbTabBarItemsArr.count == 0) return;
     //移除所有子控件
-    for (LZBTabBarItem *item in self.lzbTabBarItemsArr){
+    for (LZBTabBarItem *item in _lzbTabBarItemsArr){
         [item removeFromSuperview];
     }
-    self.lzbTabBarItemsArr = [items copy];
-    
-    for (int i = 0; i < items.count; i++) {
-        [self addSubview:items[i]];
-        LZBTabBarItem *item = items[i];
+    for (int i = 0; i < _lzbTabBarItemsArr.count; i++) {
+        [self addSubview:_lzbTabBarItemsArr[i]];
+        LZBTabBarItem *item = _lzbTabBarItemsArr[i];
         item.tagger = i;
         if (i == 0) {
             item.selected = YES;//默认第一个为点击选中状态
@@ -130,7 +129,7 @@
             if ([data isKindOfClass:LZBTabBarItem.class]) {
                 LZBTabBarItem *item = (LZBTabBarItem *)data;
                 if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {//点按手势
-                    [self tabbarItemDidSelected:items[item.tagger]];
+                    [self tabbarItemDidSelected:self->_lzbTabBarItemsArr[item.tagger]];
                 }else if ([data2 isKindOfClass:UILongPressGestureRecognizer.class]){//长按手势
                     NSLog(@"长按手势执行什么？");
                 }else{}

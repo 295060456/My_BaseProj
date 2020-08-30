@@ -76,26 +76,68 @@
         [item setNeedsDisplay];
         {
             //Lottie 初始化
-            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
-//            animation.userInteractionEnabled = YES;
-//            animation.loopAnimation//是否循环
-//            animation.animationProgress//动画的进度
-//            animation.animationDuration//动画时长
-//            animation.isAnimationPlaying//动画是否在执行
-            animation.animationSpeed = 3;//放慢动画播放速度?
-            animation.frame = item.frame;
-            animation.userInteractionEnabled = YES;
-            animation.contentMode = UIViewContentModeScaleAspectFill;
-            [item addSubview:animation];
-
-            if (animation.animationProgress == 0) {
-                [animation playToProgress:0.5
-                           withCompletion:^(BOOL animationFinished) {
-                    NSLog(@"pressButtonAction isSelected animation");
+            if (_lottieJsonNameStrMutArr) {
+                LOTAnimationView *animationView = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
+    //            animation.userInteractionEnabled = YES;
+    //            animation.loopAnimation//是否循环
+    //            animation.animationProgress//动画的进度
+    //            animation.animationDuration//动画时长
+    //            animation.isAnimationPlaying//动画是否在执行
+                animationView.animationSpeed = 3;//放慢动画播放速度?
+                animationView.userInteractionEnabled = YES;
+                animationView.contentMode = UIViewContentModeScaleAspectFill;
+                item.animationView = animationView;
+                [item addSubview:animationView];
+                [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.equalTo(item);
                 }];
+
+                if (animationView.animationProgress == 0) {
+                    [animationView playToProgress:0.5
+                                   withCompletion:^(BOOL animationFinished) {
+                        NSLog(@"pressButtonAction isSelected animation");
+                    }];
+                }
             }
         }
         index++;
+    }
+}
+#pragma mark —— API
+///点击事件
+- (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
+    if (self.currentSelectItem != item) {
+        if(![self.lzbTabBarItemsArr containsObject:item]) return;
+        NSInteger index = [self.lzbTabBarItemsArr indexOfObject:item];
+        //关于动画部分
+        if (item.animationView) {
+            //先全部停止
+            for (id v in self.subviews) {//LZBTabBarItem
+                if ([v isKindOfClass:LZBTabBarItem.class]) {
+                    LZBTabBarItem *item = (LZBTabBarItem *)v;
+                    [item.animationView stop];
+                }
+            }
+            //再独开一个
+            if (item.animationView.animationProgress == 0) {
+                [item.animationView playToProgress:0.5
+                                    withCompletion:^(BOOL animationFinished) {
+                    NSLog(@"pressButtonAction isSelected animation");
+                    
+                }];
+            }
+        }
+        
+        if([self.delegate respondsToSelector:@selector(lzb_tabBar:shouldSelectItemAtIndex:)]){
+            if(![self.delegate lzb_tabBar:self
+                  shouldSelectItemAtIndex:index])
+                return;
+        }
+        if([self.delegate respondsToSelector:@selector(lzb_tabBar:didSelectItemAtIndex:)]){
+            [self.delegate lzb_tabBar:self
+                 didSelectItemAtIndex:index];
+        }
+        self.currentSelectItem = item;
     }
 }
 
@@ -110,7 +152,7 @@
         _tabBarStyleType = tabBarStyleType;
     }
 }
-#pragma mark —— API
+
 - (void)setLzbTabBarItemsArr:(NSArray<LZBTabBarItem *> *)lzbTabBarItemsArr{
     _lzbTabBarItemsArr = lzbTabBarItemsArr;
     if(_lzbTabBarItemsArr.count == 0) return;
@@ -140,21 +182,6 @@
             }
         }];
     }
-}
-///点击事件
-- (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
-    if(![self.lzbTabBarItemsArr containsObject:item]) return;
-    NSInteger index = [self.lzbTabBarItemsArr indexOfObject:item];
-    if([self.delegate respondsToSelector:@selector(lzb_tabBar:shouldSelectItemAtIndex:)]){
-        if(![self.delegate lzb_tabBar:self
-              shouldSelectItemAtIndex:index])
-            return;
-    }
-    if([self.delegate respondsToSelector:@selector(lzb_tabBar:didSelectItemAtIndex:)]){
-        [self.delegate lzb_tabBar:self
-             didSelectItemAtIndex:index];
-    }
-    self.currentSelectItem = item;
 }
 
 - (void)setCurrentSelectItem:(LZBTabBarItem *)currentSelectItem{

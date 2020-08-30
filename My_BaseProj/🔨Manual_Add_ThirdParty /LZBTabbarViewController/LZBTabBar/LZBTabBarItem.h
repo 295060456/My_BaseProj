@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSMutableArray<NSString *> *lottieJsonNameStrMutArr;
 @property(nonatomic,assign)NSInteger tagger;
-@property(nonatomic,strong)LOTAnimationView *animation;
+@property(nonatomic,strong)LOTAnimationView *animationView;
 
 -(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock;
 

@@ -7,7 +7,6 @@
 //
 
 #import "LZBTabBarVC.h"
-#import "LOTAnimationView+action.h"
 
 #define LZB_TABBAR_DEFULT_HEIGHT 49
 
@@ -191,42 +190,6 @@ didSelectItemAtIndex:(NSInteger)index{
 //                          type:@"wav"];
     //震动特效反馈
     [NSObject feedbackGenerator];
-    
-    {///单个点选放映 & 结束 动画特效
-        //只有点击其他item 才能将本item的点击状态置为NO
-        NSInteger idx = [self.lzb_tabBar.lzbTabBarItemsArr indexOfObject:self.lzb_tabBar.currentSelectItem];
-        NSInteger i = 0;
-        for (LZBTabBarItem *ITEM in self.lzb_tabBar.lzbTabBarItemsArr) {
-            //对每一个状态进行异或操作——>归零
-            ITEM.selected ^= ITEM.selected;
-            //再对这个状态进行重新赋值改变
-            if (idx == i) {
-                ITEM.selected = YES;
-                
-                if (ITEM.animation.isAnimationPlaying) {
-                    //等他放
-                }else{
-                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
-
-                    }];
-                }
-            }
-            
-            if (ITEM.selected) {//放
-                if (!ITEM.animation.isAnimationPlaying) {
-                    [ITEM.animation playWithCompletion:^(BOOL animationFinished) {
-
-                    }];
-                }
-            }else{//结束
-                if (!ITEM.animation.isAnimationPlaying) {
-                    [ITEM.animation stop];
-                }
-            }
-            i++;
-        }
-    }
-    
     if (index < 0 || index >= self.viewControllers.count)  return;
     [self setSelectedIndex:index
                  animation:self.isShouldAnimation];

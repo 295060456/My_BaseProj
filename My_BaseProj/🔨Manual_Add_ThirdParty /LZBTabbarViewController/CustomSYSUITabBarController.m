@@ -59,7 +59,7 @@ CGFloat LZB_TABBAR_HEIGHT;
     
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_sysNormal;
     self.lzb_tabBar.topLine.alpha = 0;//TabBar顶部分割线
-//    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
 
     [self p_setUpAllChildViewController];
     
@@ -181,11 +181,11 @@ CGFloat LZB_TABBAR_HEIGHT;
     if (!_lottieJsonNameStrMutArr) {
         _lottieJsonNameStrMutArr = NSMutableArray.array;
         
-//        [_lottieJsonNameStrMutArr addObject:@"任务.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"上传与拍照.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"社区.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"我的.json"];
-//        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
+        [_lottieJsonNameStrMutArr addObject:@"任务.json"];
+        [_lottieJsonNameStrMutArr addObject:@"上传与拍照.json"];
+        [_lottieJsonNameStrMutArr addObject:@"社区.json"];
+        [_lottieJsonNameStrMutArr addObject:@"我的.json"];
+        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
         
 //        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
 //        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
@@ -193,11 +193,11 @@ CGFloat LZB_TABBAR_HEIGHT;
 //        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
 //        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
         
-        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
-        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
-        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
-        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
-        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];//green_lottie_tab_discover
+//        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];//green_lottie_tab_discover
         
     }return _lottieJsonNameStrMutArr;
 }

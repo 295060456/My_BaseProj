@@ -218,4 +218,8 @@
     [self setNeedsDisplay];
 }
 
+-(void)setAnimationView:(LOTAnimationView *)animationView{
+    _animationView = animationView;
+}
+
 @end

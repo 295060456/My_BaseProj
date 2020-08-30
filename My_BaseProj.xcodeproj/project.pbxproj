@@ -65,6 +65,8 @@
 		C563AE3324F00FC600A3B0AC /* 主页.json in Resources */ = {isa = PBXBuildFile; fileRef = C563AE2E24F00FC600A3B0AC /* 主页.json */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
 		C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF524EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m */; };
+		C572A27224FBC5A9000A1687 /* 加号@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C572A27024FBC5A9000A1687 /* 加号@2x.png */; };
+		C572A27324FBC5A9000A1687 /* 加号@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C572A27124FBC5A9000A1687 /* 加号@3x.png */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -513,6 +515,8 @@
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "_Nullable等的用法和总结"; sourceTree = "<group>"; };
+		C572A27024FBC5A9000A1687 /* 加号@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加号@2x.png"; sourceTree = "<group>"; };
+		C572A27124FBC5A9000A1687 /* 加号@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加号@3x.png"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -1380,6 +1384,8 @@
 		C54F101B24C469D400EE1E67 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C572A27024FBC5A9000A1687 /* 加号@2x.png */,
+				C572A27124FBC5A9000A1687 /* 加号@3x.png */,
 				C54F101F24C46A9100EE1E67 /* 兴发街.jpg */,
 				C5C4731524B6FE200003B6F2 /* 摄像机.png */,
 				C5FE9ACF24B5F1B3007B9878 /* 图片.png */,
@@ -3572,6 +3578,7 @@
 				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
 				C59D9B0F24F904A200A74CE9 /* 闪光灯-自动@2x.png in Resources */,
 				C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */,
+				C572A27324FBC5A9000A1687 /* 加号@3x.png in Resources */,
 				C54AE7D224C941D300121233 /* gif_header_3@2x.png in Resources */,
 				C59D9B0E24F904A200A74CE9 /* 闪光灯-自动@3x.png in Resources */,
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
@@ -3601,6 +3608,7 @@
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5FE9B0124B5F1DC007B9878 /* title4@2x.png in Resources */,
 				C5FE9AE124B5F1B3007B9878 /* ShoppingCart@2x.png in Resources */,
+				C572A27224FBC5A9000A1687 /* 加号@2x.png in Resources */,
 				C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */,
 				C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */,
 				C5FE9B0024B5F1DC007B9878 /* title3@2x.png in Resources */,

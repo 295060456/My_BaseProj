@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseVC.h"
+#import "LZBTabBarVC.h"
 #import "LZBTabBar.h"
+#import "UIViewController+LZBTabBarVCItem.h"
 #import "LZBTabBarItem.h"
 #import "LZBTabBarDelegate.h"
 #import "LZBTabBarVCDelegate.h"
-#import "BaseVC.h"
-#import "UIViewController+LZBTabBarVCItem.h"
-#import "LZBTabBarVC.h"
 
 @class LZBTabBarViewControllerDelegate;
 /**

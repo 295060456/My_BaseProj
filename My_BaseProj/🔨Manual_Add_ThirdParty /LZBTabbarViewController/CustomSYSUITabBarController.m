@@ -58,15 +58,14 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.navigationController.navigationBar.hidden = NO;
     
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_sysNormal;
+    self.lzb_tabBar.topLine.alpha = 0;//TabBar顶部分割线
 //    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
 
-    self.lzb_tabBar.topLine.alpha = 0;
-    
     [self p_setUpAllChildViewController];
     
 //    [self Badge];
 }
-
+///右上角角标
 -(void)Badge{
     LZBTabBarItem *tabBarItem = self.lzb_tabBar.lzbTabBarItemsArr[0];
 //    [tabBarItem pp_addBadgeWithText:@"99+"];
@@ -74,10 +73,10 @@ CGFloat LZB_TABBAR_HEIGHT;
     [tabBarItem pp_moveBadgeWithX:-20 Y:20];
     [tabBarItem pp_decreaseBy:10];
 }
-
+///登录流程
 -(void)presentLoginVC{
 //    @weakify(self)
-    //登录流程
+    
 }
 
 - (void)p_setUpAllChildViewController {

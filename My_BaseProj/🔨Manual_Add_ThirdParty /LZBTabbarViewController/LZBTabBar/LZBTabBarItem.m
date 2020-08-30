@@ -17,14 +17,18 @@
 
 @implementation LZBTabBarItem
 
-- (instancetype)initWithFrame:(CGRect)frame{
-  if(self = [super initWithFrame:frame]){
-      [self setupInit];
-      //添加手势
-      self.tagGR.enabled = YES;
-      self.longPressGR.enabled = YES;
-      self.backgroundColor = kWhiteColor;
-  }return self;
+- (void)dealloc {
+    NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
+}
+
+- (instancetype)init{
+    if (self = [super init]) {
+        [self setupInit];
+        //添加手势
+        self.tagGR.enabled = YES;
+        self.longPressGR.enabled = YES;
+        self.backgroundColor = kWhiteColor;
+    }return self;
 }
 
 - (void)setupInit{
@@ -39,15 +43,8 @@
                                NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0xf78361"],};
 }
 
--(void)setTagger:(NSInteger)tagger{
-    _tagger = tagger;
-}
-
--(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock{
-    self.LZBTabBarItemGestureRecognizerBlock = LZBTabBarItemGestureRecognizerBlock;
-}
-
-- (void)drawRect:(CGRect)rect{
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
     CGSize frameSize = self.frame.size;
     CGSize imageSize = CGSizeZero;
     CGSize titleSize = CGSizeZero;
@@ -131,6 +128,14 @@
         default:
             break;
     }
+}
+
+-(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock{
+    self.LZBTabBarItemGestureRecognizerBlock = LZBTabBarItemGestureRecognizerBlock;
+}
+
+-(void)setTagger:(NSInteger)tagger{
+    _tagger = tagger;
 }
 #pragma mark —— lazyLoad
 -(UITapGestureRecognizer *)tagGR{

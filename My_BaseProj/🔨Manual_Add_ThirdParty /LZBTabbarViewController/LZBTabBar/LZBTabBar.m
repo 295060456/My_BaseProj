@@ -22,6 +22,10 @@
 
 @implementation LZBTabBar
 
+- (void)dealloc {
+    NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
+}
+
 - (instancetype)init{
     if (self = [super init]) {
   

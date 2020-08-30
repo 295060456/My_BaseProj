@@ -84,7 +84,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)LOTAnimationView *animation;
 
 -(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock;
-//-(void)animationActionLZBTabBarItemBlock:(MKDataBlock)LZBTabBarItemAnimationActionBlock;
 
 @end
 

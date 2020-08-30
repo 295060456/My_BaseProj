@@ -64,11 +64,11 @@ CGFloat LZB_TABBAR_HEIGHT;
     
     [self p_setUpAllChildViewController];
     
-    [self Badge];
+//    [self Badge];
 }
 
 -(void)Badge{
-    LZBTabBarItem *tabBarItem = self.tabbar.items[0];
+    LZBTabBarItem *tabBarItem = self.tabbar.lzbTabBarItemsArr[0];
 //    [tabBarItem pp_addBadgeWithText:@"99+"];
     [tabBarItem pp_addBadgeWithNumber:99];
     [tabBarItem pp_moveBadgeWithX:-20 Y:20];
@@ -97,9 +97,9 @@ CGFloat LZB_TABBAR_HEIGHT;
 }
 
 -(void)p_setupCustomTBCWithViewController:(UIViewController *)vc
-                                  Title:(NSString *)titleStr
-                            SelectImage:(UIImage *)selectImage
-                          NnSelectImage:(UIImage *)unSelectImage{
+                                    Title:(NSString *)titleStr
+                              SelectImage:(UIImage *)selectImage
+                            NnSelectImage:(UIImage *)unSelectImage{
     vc.lzb_tabBarItem.selectImage = selectImage;
     vc.lzb_tabBarItem.unSelectImage = unSelectImage;
     vc.lzb_tabBarItem.title = titleStr;//下
@@ -139,7 +139,7 @@ CGFloat LZB_TABBAR_HEIGHT;
         _titleStrMutArr = NSMutableArray.array;
         [_titleStrMutArr addObject:@"首页"];
         [_titleStrMutArr addObject:@"社区"];
-        [_titleStrMutArr addObject:@" "];
+        [_titleStrMutArr addObject:@"拍摄"];
         [_titleStrMutArr addObject:@"任务"];
         [_titleStrMutArr addObject:@"我的"];
     }return _titleStrMutArr;
@@ -188,11 +188,17 @@ CGFloat LZB_TABBAR_HEIGHT;
 //        [_lottieJsonNameStrMutArr addObject:@"我的.json"];
 //        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
         
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
-        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"green_lottie_tab_discover.json"];
+//        [_lottieJsonNameStrMutArr addObject:@"主页.json"];//green_lottie_tab_discover
+        
+        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];
+        [_lottieJsonNameStrMutArr addObject:@"dingdan.json"];//green_lottie_tab_discover
         
     }return _lottieJsonNameStrMutArr;
 }

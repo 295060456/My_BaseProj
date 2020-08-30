@@ -50,7 +50,7 @@
          [tabBarItem setTitle:viewController.title];
          viewController.lzb_tabBarController = self;
     }
-    [self.tabbar setItems:tabBarItems];
+    [self.tabbar setLzbTabBarItemsArr:tabBarItems];
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex{
@@ -68,7 +68,7 @@
     }
     _selectedIndex = selectedIndex;
     self.isShouldAnimation = animation;
-    LZBTabBarItem *selectItem = [self.tabbar.items objectAtIndex:selectedIndex];
+    LZBTabBarItem *selectItem = [self.tabbar.lzbTabBarItemsArr objectAtIndex:selectedIndex];
     [self.tabbar setCurrentSelectItem:selectItem
                             animation:self.isShouldAnimation];
     self.selectedViewController = [self.viewControllers objectAtIndex:selectedIndex];
@@ -185,9 +185,9 @@ didSelectItemAtIndex:(NSInteger)index{
     
     {///单个点选放映 & 结束 动画特效
         //只有点击其他item 才能将本item的点击状态置为NO
-        NSInteger idx = [self.lzb_tabBar.items indexOfObject:self.lzb_tabBar.currentSelectItem];
+        NSInteger idx = [self.lzb_tabBar.lzbTabBarItemsArr indexOfObject:self.lzb_tabBar.currentSelectItem];
         NSInteger i = 0;
-        for (LZBTabBarItem *ITEM in self.lzb_tabBar.items) {
+        for (LZBTabBarItem *ITEM in self.lzb_tabBar.lzbTabBarItemsArr) {
             //对每一个状态进行异或操作——>归零
             ITEM.selected ^= ITEM.selected;
             //再对这个状态进行重新赋值改变

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)NSInteger tagger;
 @property(nonatomic,copy)MKDataBlock LOTAnimationViewActionBlock;
 
--(void)actionLOTAnimationViewBlock:(MKDataBlock)LOTAnimationViewActionBlock;
+-(void)actionLOTAnimationViewBlock:(MKDataBlock)LOTAnimationViewActionBlock;//?
 
 @end
 

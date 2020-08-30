@@ -33,21 +33,21 @@ static const void *LZBTabBarVCItemKey = @"LZBTabBarVCItemKey";
     LZBTabBar *tabBar = tabBarViewController.tabbar;
     //当前这个控制器在tabbar的索引
     NSInteger index = [tabBarViewController indexForTabBarViewControllerViewControllers:self];
-    if(index<0 ||
-       index >= tabBarViewController.tabbar.items.count) return;
+    if(index < 0 ||
+       index >= tabBarViewController.tabbar.lzbTabBarItemsArr.count) return;
     //替换
-    NSMutableArray *tabBarItems = [[NSMutableArray alloc] initWithArray:[tabBar items]];
+    NSMutableArray *tabBarItems = [[NSMutableArray alloc] initWithArray:[tabBar lzbTabBarItemsArr]];
     [tabBarItems replaceObjectAtIndex:index
                            withObject:lzb_tabBarItem];
-    [tabBar setItems:tabBarItems];
+    [tabBar setLzbTabBarItemsArr:tabBarItems];
 }
 
 - (LZBTabBarItem *)lzb_tabBarItem{
     LZBTabBarVC *tabBarController = [self lzb_tabBarController];
     NSInteger index = [tabBarController indexForTabBarViewControllerViewControllers:self];
-    if(index<0 ||
-       index >= tabBarController.tabbar.items.count) return nil;
-    return [tabBarController.tabbar.items objectAtIndex:index];
+    if(index < 0 ||
+       index >= tabBarController.tabbar.lzbTabBarItemsArr.count) return nil;
+    return [tabBarController.tabbar.lzbTabBarItemsArr objectAtIndex:index];
 }
 
 

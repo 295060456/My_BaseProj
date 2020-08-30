@@ -30,7 +30,7 @@ typedef enum : NSUInteger {
 /**
  *  TabBar设置按钮数组items
  */
-@property(nonatomic,strong)NSArray<LZBTabBarItem *>*items;
+@property(nonatomic,strong)NSArray <LZBTabBarItem *>*lzbTabBarItemsArr;
 /**
  *  TabBar设置当前选中的item
  */

@@ -28,6 +28,73 @@
   }return self;
 }
 
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    self.backgroundView.frame = self.bounds;
+    self.topLine.frame = CGRectMake(0,
+                                    0,
+                                    self.bounds.size.width,
+                                    default_TopLine_Height);
+    //布局
+    NSInteger index = 0;
+    Boolean isOddItems = self.lzbTabBarItemsArr.count % 2;//items为奇数个，那么就最中间的作为突出的大头
+    int y = (int)ceil(self.lzbTabBarItemsArr.count / 2.0);//向上取整，求中位数
+    self.itemWidth = self.bounds.size.width / self.lzbTabBarItemsArr.count;
+    for (LZBTabBarItem *item in self.lzbTabBarItemsArr) {
+        CGFloat itemHeight = [item itemHeight];
+        if(!itemHeight)
+            itemHeight = self.bounds.size.height;
+        CGFloat itemW = self.itemWidth;
+        CGFloat itemH = itemHeight;
+        
+        [self addSubview:item];
+        
+        if (isOddItems && y == index + 1 && self.tabBarStyleType) {
+            [item mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(itemW, itemH * 4 / 3));
+                LZBTabBarItem *item_ = (LZBTabBarItem *)self.lzbTabBarItemsArr[index - 1];
+                make.left.equalTo(item_.mas_right);
+                make.bottom.equalTo(self);
+            }];
+        }else{
+            [item mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(itemW, itemH));
+                if (index == 0) {
+                    make.left.equalTo(self);
+//                    make.left.mas_equalTo(0);
+                }else{
+                    LZBTabBarItem *item = (LZBTabBarItem *)self.lzbTabBarItemsArr[index - 1];
+                    make.left.equalTo(item.mas_right);
+                }
+                make.bottom.equalTo(self);
+            }];
+        }
+        [item setNeedsDisplay];
+        {
+            //Lottie 初始化
+            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
+//            animation.userInteractionEnabled = YES;
+//            animation.loopAnimation//是否循环
+//            animation.animationProgress//动画的进度
+//            animation.animationDuration//动画时长
+//            animation.isAnimationPlaying//动画是否在执行
+            animation.animationSpeed = 3;//放慢动画播放速度?
+            animation.frame = item.frame;
+            animation.userInteractionEnabled = YES;
+            animation.contentMode = UIViewContentModeScaleAspectFill;
+            [item addSubview:animation];
+
+            if (animation.animationProgress == 0) {
+                [animation playToProgress:0.5
+                           withCompletion:^(BOOL animationFinished) {
+                    NSLog(@"pressButtonAction isSelected animation");
+                }];
+            }
+        }
+        index++;
+    }
+}
+
 - (void)setupUI{
     [self addSubview:self.backgroundView];
     [self.backgroundView addSubview:self.topLine];
@@ -37,7 +104,7 @@
 
 -(void)setTabBarStyleType:(LZBTabBarStyleType)tabBarStyleType{
     if (tabBarStyleType == LZBTabBarStyleType_middleItemUp) {
-        if (self.items.count % 2) {
+        if (self.lzbTabBarItemsArr.count % 2) {
             _tabBarStyleType = tabBarStyleType;
         }else{
             _tabBarStyleType = LZBTabBarStyleType_sysNormal;
@@ -46,66 +113,14 @@
         _tabBarStyleType = tabBarStyleType;
     }
 }
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    self.backgroundView.frame = self.bounds;
-    self.topLine.frame = CGRectMake(0,
-                                    0,
-                                    self.bounds.size.width,
-                                    default_TopLine_Height);
-    //布局
-    NSInteger index = 0;
-    Boolean isOddItems = self.items.count % 2;//items为奇数个，那么就最中间的作为突出的大头
-    int y = (int)ceil(self.items.count / 2.0);//向上取整，求中位数
-    self.itemWidth = self.bounds.size.width / self.items.count;
-    for (LZBTabBarItem *item in self.items) {
-        CGFloat itemHeight = [item itemHeight];
-        if(!itemHeight)
-            itemHeight = self.bounds.size.height;
-        CGFloat itemW = self.itemWidth;
-        CGFloat itemH = itemHeight;
-        
-        if (isOddItems && y == index + 1 && self.tabBarStyleType) {
-            [item mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(itemW, itemH * 4 / 3));
-                LZBTabBarItem *item_ = (LZBTabBarItem *)self.items[index - 1];
-                make.left.equalTo(item_.mas_right);
-                make.bottom.equalTo(self);
-            }];
-        }else{
-            [item mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(itemW, itemH));
-                if (index == 0) {
-                    make.left.equalTo(self);
-                }else{
-                    LZBTabBarItem *item = (LZBTabBarItem *)self.items[index - 1];
-                    make.left.equalTo(item.mas_right);
-                }
-                make.bottom.equalTo(self);
-            }];
-        }
-        [item setNeedsDisplay];
-        {
-            //Lottie
-            LOTAnimationView *animation = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
-            animation.userInteractionEnabled = YES;
-            [item addSubview:animation];
-            [animation playWithCompletion:^(BOOL animationFinished) {
-              // Do Something
-            }];
-        }
-        index++;
-    }
-}
 #pragma mark —— API
 - (void)setItems:(NSArray<LZBTabBarItem *> *)items{
     if(items.count == 0) return;
     //移除所有子控件
-    for (LZBTabBarItem *item in _items){
+    for (LZBTabBarItem *item in self.lzbTabBarItemsArr){
         [item removeFromSuperview];
     }
-    _items = [items copy];
+    self.lzbTabBarItemsArr = [items copy];
     
     for (int i = 0; i < items.count; i++) {
         [self addSubview:items[i]];
@@ -113,37 +128,27 @@
         item.tagger = i;
         if (i == 0) {
             item.selected = YES;//默认第一个为点击选中状态
-            [item.animation playWithCompletion:^(BOOL animationFinished) {
-                
-            }];
         }
         @weakify(self)
-        [item animationActionLZBTabBarItemBlock:^(id data) {
-            @strongify(self)
-            if ([data isKindOfClass:NSNumber.class]) {
-                NSNumber *num = (NSNumber *)data;
-                [self tabbarItemDidSelected:items[num.intValue]];
-            }
-        }];
-        
+        //点击事件回调
         [item gestureRecognizerLZBTabBarItemBlock:^(id data,
                                                     id data2) {
             @strongify(self)
             if ([data isKindOfClass:LZBTabBarItem.class]) {
                 LZBTabBarItem *item = (LZBTabBarItem *)data;
-                if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {
+                if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {//点按手势
                     [self tabbarItemDidSelected:items[item.tagger]];
-                }else if ([data2 isKindOfClass:UILongPressGestureRecognizer.class]){
+                }else if ([data2 isKindOfClass:UILongPressGestureRecognizer.class]){//长按手势
                     NSLog(@"长按手势执行什么？");
                 }else{}
             }
         }];
     }
 }
-
+///点击事件
 - (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
-    if(![self.items containsObject:item]) return;
-    NSInteger index = [self.items indexOfObject:item];
+    if(![self.lzbTabBarItemsArr containsObject:item]) return;
+    NSInteger index = [self.lzbTabBarItemsArr indexOfObject:item];
     if([self.delegate respondsToSelector:@selector(lzb_tabBar:shouldSelectItemAtIndex:)]){
         if(![self.delegate lzb_tabBar:self
               shouldSelectItemAtIndex:index])
@@ -174,7 +179,9 @@
 
 - (void)addScaleAnimationWithSuperLayer:(CALayer *)layer{
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
-    keyAnimation.values = @[@0.8,@1.1,@1.0];
+    keyAnimation.values = @[@0.8,
+                            @1.1,
+                            @1.0];
     keyAnimation.duration = 0.25;
     keyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [layer addAnimation:keyAnimation
@@ -183,14 +190,14 @@
 
 #pragma mark —— LazyLoad
 - (UIView *)backgroundView{
-  if(_backgroundView == nil){
-      _backgroundView = [UIView new];
+  if(!_backgroundView){
+      _backgroundView = UIView.new;
   }return _backgroundView;
 }
 
 - (UIView *)topLine{
-  if(_topLine == nil){
-      _topLine = [UIView new];
+  if(!_topLine){
+      _topLine = UIView.new;
   } return _topLine;
 }
 

@@ -22,20 +22,21 @@
 
 @implementation LZBTabBar
 
-- (instancetype)initWithFrame:(CGRect)frame{
-  if(self = [super initWithFrame:frame]){
-      [self setupUI];
-  }return self;
+- (instancetype)init{
+    if (self = [super init]) {
+  
+    }return self;
 }
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    self.backgroundView.frame = self.bounds;
-    self.topLine.frame = CGRectMake(0,
-                                    0,
-                                    self.bounds.size.width,
-                                    default_TopLine_Height);
-    //布局
+    [self setupUI];
+    [self layoutIfNeeded];
+}
+
+- (void)setupUI{
+    self.backgroundView.alpha = 1;
+    self.topLine.alpha = 1;
     NSInteger index = 0;
     Boolean isOddItems = self.lzbTabBarItemsArr.count % 2;//items为奇数个，那么就最中间的作为突出的大头
     int y = (int)ceil(self.lzbTabBarItemsArr.count / 2.0);//向上取整，求中位数
@@ -61,7 +62,6 @@
                 make.size.mas_equalTo(CGSizeMake(itemW, itemH));
                 if (index == 0) {
                     make.left.equalTo(self);
-//                    make.left.mas_equalTo(0);
                 }else{
                     LZBTabBarItem *item = (LZBTabBarItem *)self.lzbTabBarItemsArr[index - 1];
                     make.left.equalTo(item.mas_right);
@@ -93,13 +93,6 @@
         }
         index++;
     }
-}
-
-- (void)setupUI{
-    [self addSubview:self.backgroundView];
-    [self.backgroundView addSubview:self.topLine];
-    //分割线的颜色
-    self.topLine.backgroundColor = [UIColor colorWithHexString:@"#37A6F0"];
 }
 
 -(void)setTabBarStyleType:(LZBTabBarStyleType)tabBarStyleType{
@@ -189,16 +182,24 @@
 }
 
 #pragma mark —— LazyLoad
-- (UIView *)backgroundView{
+-(UIView *)backgroundView{
   if(!_backgroundView){
       _backgroundView = UIView.new;
+      [self addSubview:_backgroundView];
+      [_backgroundView addSubview:self.topLine];
+      _backgroundView.frame = self.bounds;
   }return _backgroundView;
 }
 
-- (UIView *)topLine{
+-(UIView *)topLine{
   if(!_topLine){
       _topLine = UIView.new;
-  } return _topLine;
+      _topLine.backgroundColor = [UIColor colorWithHexString:@"#37A6F0"];//分割线的颜色
+      _topLine.frame = CGRectMake(0,
+                                  0,
+                                  self.bounds.size.width,
+                                  default_TopLine_Height);
+  }return _topLine;
 }
 
 @end

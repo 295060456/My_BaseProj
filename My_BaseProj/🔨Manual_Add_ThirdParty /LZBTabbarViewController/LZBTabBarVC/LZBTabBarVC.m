@@ -7,7 +7,6 @@
 //
 
 #import "LZBTabBarVC.h"
-#import "UIViewController+LZBTabBarVCItem.h"
 #import "LOTAnimationView+action.h"
 
 #define LZB_TABBAR_DEFULT_HEIGHT 49
@@ -59,7 +58,7 @@
         LZBTabBarItem *tabBarItem = LZBTabBarItem.new;
         [tabBarItem setTitle:viewController.title];
         [self.tabBarItems addObject:tabBarItem];
-        viewController.lzb_tabBarController = self;
+//        viewController.lzb_tabBarController = self;
     }
     [self.lzb_tabBar setLzbTabBarItemsArr:self.tabBarItems];
 }
@@ -164,7 +163,6 @@
       viewController = viewController.navigationController;
     return [self.viewControllers indexOfObject:viewController];
 }
-
 #pragma mark- tabbarDelegate
 - (BOOL)lzb_tabBar:(LZBTabBar *)tabBar
 shouldSelectItemAtIndex:(NSInteger)index{
@@ -237,7 +235,6 @@ didSelectItemAtIndex:(NSInteger)index{
                     didSelectViewController:[self.viewControllers objectAtIndex:index]];
     }
 }
-
 #pragma mark —— LazyLoad
 - (UIView *)contentView{
   if(_contentView == nil){

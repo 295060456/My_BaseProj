@@ -64,6 +64,7 @@
 		C563AE3224F00FC600A3B0AC /* 我的.json in Resources */ = {isa = PBXBuildFile; fileRef = C563AE2D24F00FC600A3B0AC /* 我的.json */; };
 		C563AE3324F00FC600A3B0AC /* 主页.json in Resources */ = {isa = PBXBuildFile; fileRef = C563AE2E24F00FC600A3B0AC /* 主页.json */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
+		C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF524EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -107,7 +108,6 @@
 		C5A46BF224EFB58C00158D1E /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEB24EFB58B00158D1E /* LOTAnimationView+action.m */; };
 		C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
 		C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BED24EFB58B00158D1E /* LZBTabBar.m */; };
-		C5A46BFA24EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF524EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m */; };
 		C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF824EFB59200158D1E /* LZBTabBarVC.m */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
@@ -3225,9 +3225,9 @@
 		C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE9C4424B5F29A007B9878 /* 替换系统的UITabBarViewController */,
 				C5FE9B7B24B5F270007B9878 /* CustomSYSUITabBarController.h */,
 				C5FE9B7C24B5F270007B9878 /* CustomSYSUITabBarController.m */,
-				C5FE9C4424B5F29A007B9878 /* 替换系统的UITabBarViewController */,
 				C51137BB24E022D2001049D5 /* LZBTabBar */,
 				C51137BC24E022E9001049D5 /* LZBTabBarVC */,
 			);
@@ -3904,7 +3904,6 @@
 				C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */,
 				C5F78AED24BF297D008A46EC /* InfoTBVCell.m in Sources */,
 				C5B1C7CB24BAB91A001923FB /* LOTFillRenderer.m in Sources */,
-				C5A46BFA24EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C5B1C7BF24BAB91A001923FB /* LOTNumberInterpolator.m in Sources */,
 				C5B1C7E224BAB91A001923FB /* LOTPolygonAnimator.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
@@ -3993,6 +3992,7 @@
 				C58F049B24EC112F00B6D09C /* BaseGPUImageView.m in Sources */,
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */,
+				C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,

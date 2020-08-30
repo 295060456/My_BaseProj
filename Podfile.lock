@@ -119,6 +119,7 @@ PODS:
     - PINCache (= 3.0.1-beta.8)
     - PINRemoteImage/Core
   - pop (1.0.12)
+  - PPBadgeView (3.1.0)
   - PYSearch (0.9.1)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
@@ -235,6 +236,7 @@ DEPENDENCIES:
   - NJKWebViewProgress
   - OpenUDID
   - pop
+  - PPBadgeView
   - PYSearch
   - Reachability
   - ReactiveObjC
@@ -314,6 +316,7 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - pop
+    - PPBadgeView
     - PYSearch
     - Reachability
     - ReactiveObjC
@@ -396,6 +399,7 @@ SPEC CHECKSUMS:
   PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
   PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PPBadgeView: b50a223638970fd0781e8753250385864b6dd2fe
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
@@ -429,6 +433,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 522798e03a9fee395e7b099e019bbe5150817c35
+PODFILE CHECKSUM: 9e3b155f28c07928305bdb9674ab47d768d76937
 
 COCOAPODS: 1.9.3

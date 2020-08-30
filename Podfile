@@ -91,6 +91,7 @@ target 'My_BaseProj' do
   pod 'JPImageresizerView' # https://github.com/Rogue24/JPImageresizerView 一个专门裁剪图片、GIF、视频的轮子，简单易用，功能丰富（高自由度的参数设定、支持旋转和镜像翻转、蒙版、压缩等），能满足绝大部分裁剪的需求。
   pod 'JJException' # https://github.com/jezzmemo/JJException Protect the objective-c application(保护App不闪退)
   pod 'ZFJTreeViewKit'
+  pod 'PPBadgeView' #https://github.com/jkpang/PPBadgeView iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
   pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具
 #  pod 'QMUIKit' # https://github.com/Tencent/QMUI_iOS 「很遗憾，没有对iOS 13进行适配」 QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。不管是新项目的创建，或是已有项目的维护，均可使开发效率和项目质量得到大幅度提升。

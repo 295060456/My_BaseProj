@@ -25,13 +25,11 @@
 #import "XWCountryCodeController.h"
 #import "HAHandleDemoView.h"
 #import "AESCrypt.h"
-#import "BadgeButton.h"//Btn右上方红点
 #import "SDCycleScrollView.h"
 #import "SoundBtn.h"
 #import "LXTagsView.h"
 #import "TouchID.h"
 #import "CountDownBtn.h"
-#import "WJItemsControlView.h"
 #import "XDSDropDownMenu.h"
 #import "XLSphereView.h"
 #import "UICountingLabel.h"//数字可以一直变化到指定值的UILable

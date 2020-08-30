@@ -127,6 +127,18 @@
 //
 //        make.height.mas_equalTo((SCALING_RATIO(100)));
 //    }];
+    
+    
+    UIView *v = UIView.new;
+    [v pp_addBadgeWithText:@"11"];
+    [v pp_moveBadgeWithX:-40 Y:50];
+    v.backgroundColor = KGreenColor;
+    [self.view addSubview:v];
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(button);
+        make.top.equalTo(button.mas_bottom).offset(50);
+        make.size.equalTo(button);
+    }];
 }
 
 - (void)btnClick {

@@ -69,5 +69,6 @@
 #import "AWRichText.h"
 #import "GPUImage.h"
 #import "SZTextView.h"
+#import "PPBadgeView.h"
 
 #endif /* Pods_h */

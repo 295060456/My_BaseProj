@@ -73,36 +73,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setBackgroundSelectedImage:(UIImage *)selectedImage
                    unselectedImage:(UIImage *)unselectedImage;
-
-#pragma mark - config  角标样式
-/**
- *  角标文字
- */
-@property(nonatomic,copy)NSString *badgeValue;
-/**
- *  角标背景图片
- */
-@property(nonatomic,strong)UIImage *badgeBackgroundImage;
-/**
- *  角标背景颜色
- */
-@property(nonatomic,strong)UIColor *badgeBackgroundColor;
-/**
- *  角标文字颜色
- */
-@property(nonatomic,strong)UIColor *badgeTextColor;
-/**
- *  角标文字字体
- */
-@property(nonatomic,strong)UIFont *badgeTextFont;
-/**
- * 角标偏移量
- */
-@property(nonatomic,assign)UIOffset badgeOffset;
-/**
- * 角标背景偏移量
- */
-@property(nonatomic,assign)UIOffset badgeBackgroundOffset;
 /**
  * 手势
 */

@@ -37,10 +37,6 @@
 
     _selectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:13],
                                NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0xf78361"],};
-    _badgeValue = @"";
-    _badgeTextColor = [UIColor whiteColor];
-    _badgeTextFont = [UIFont systemFontOfSize:12.0];
-    _badgeOffset = UIOffsetZero;
 }
 
 -(void)setTagger:(NSInteger)tagger{
@@ -122,40 +118,6 @@
                     withAttributes:titleAttributes];
         }
     }
-
-    {
-        //角标
-        CGRect bageBackFrame = CGRectZero;
-        if(self.badgeBackgroundColor){
-            CGFloat badgeBackWidthHeight = 10;
-            bageBackFrame = CGRectMake(frameSize.width - badgeBackWidthHeight - self.badgeBackgroundOffset.horizontal,
-                                       self.badgeBackgroundOffset.vertical,
-                                       badgeBackWidthHeight,
-                                       badgeBackWidthHeight);
-            CGContextSetFillColorWithColor(context, self.badgeBackgroundColor.CGColor);
-            CGContextFillEllipseInRect(context, bageBackFrame);
-        }else if(self.badgeBackgroundImage){
-            bageBackFrame = CGRectMake(frameSize.width - self.badgeBackgroundImage.size.width - self.badgeBackgroundOffset.horizontal,
-                                       self.badgeBackgroundOffset.vertical,
-                                       self.badgeBackgroundImage.size.width,
-                                       self.badgeBackgroundImage.size.height);
-            [self.badgeBackgroundImage drawInRect:bageBackFrame];
-        }else{}
-        //角标文字
-        if(self.badgeValue){
-            NSDictionary *badgeAttrubute = @{NSFontAttributeName : self.badgeTextFont,
-                                            NSForegroundColorAttributeName : self.badgeTextColor};
-            CGSize badgeValueSize = [self.badgeValue sizeWithAttributes:badgeAttrubute];
-            //必须先设置颜色
-            CGContextSetFillColorWithColor(context, self.badgeTextColor.CGColor);
-            [self.badgeValue drawInRect:CGRectMake(frameSize.width - badgeValueSize.width - self.badgeOffset.horizontal,
-                                                   self.badgeOffset.vertical,
-                                                   badgeValueSize.width,
-                                                   badgeValueSize.height)
-                         withAttributes:badgeAttrubute];
-        }
-    }
-
     CGContextRestoreGState(context);
 }
 #pragma mark —— 手势的响应事件
@@ -266,11 +228,6 @@
 -(void)setSelectBackgroundImage:(UIImage *)selectBackgroundImage{
     if((_selectBackgroundImage != selectBackgroundImage) && selectBackgroundImage)
         _selectBackgroundImage = selectBackgroundImage;
-}
-
-- (void)setBadgeValue:(NSString *)badgeValue{
-    _badgeValue = badgeValue;
-    [self setNeedsDisplay];
 }
 
 - (void)setTitle:(NSString *)title{

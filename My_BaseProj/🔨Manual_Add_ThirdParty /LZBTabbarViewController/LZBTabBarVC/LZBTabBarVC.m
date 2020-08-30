@@ -43,7 +43,7 @@
     }
     
     _viewControllers = viewControllers;
-    NSMutableArray *tabBarItems = [NSMutableArray array];
+    NSMutableArray <LZBTabBarItem *>*tabBarItems = [NSMutableArray array];
     for (UIViewController *viewController in viewControllers) {
         LZBTabBarItem *tabBarItem = [[LZBTabBarItem alloc] init];
          [tabBarItems addObject:tabBarItem];

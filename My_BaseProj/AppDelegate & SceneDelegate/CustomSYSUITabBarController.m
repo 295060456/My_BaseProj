@@ -58,10 +58,21 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.navigationController.navigationBar.hidden = NO;
     
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_sysNormal;
-    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+//    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+
     self.lzb_tabBar.topLine.alpha = 0;
     
     [self p_setUpAllChildViewController];
+    
+    [self Badge];
+}
+
+-(void)Badge{
+    LZBTabBarItem *tabBarItem = self.tabbar.items[0];
+//    [tabBarItem pp_addBadgeWithText:@"99+"];
+    [tabBarItem pp_addBadgeWithNumber:99];
+    [tabBarItem pp_moveBadgeWithX:-20 Y:20];
+    [tabBarItem pp_decreaseBy:10];
 }
 
 -(void)presentLoginVC{

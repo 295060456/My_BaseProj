@@ -69,6 +69,10 @@
 		C572A27324FBC5A9000A1687 /* 加号@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C572A27124FBC5A9000A1687 /* 加号@3x.png */; };
 		C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */; };
 		C572A28924FCBDDE000A1687 /* UIImage+Tailor.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A28624FCBDDE000A1687 /* UIImage+Tailor.m */; };
+		C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29524FD2AA8000A1687 /* STSimplePing.m */; };
+		C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29824FD2AA9000A1687 /* STDPingServices.m */; };
+		C572A29C24FD2ADE000A1687 /* Uses in Resources */ = {isa = PBXBuildFile; fileRef = C572A29B24FD2ADE000A1687 /* Uses */; };
+		C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29F24FD2F99000A1687 /* GDFadeView.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -523,6 +527,14 @@
 		C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Overlay.m"; sourceTree = "<group>"; };
 		C572A28624FCBDDE000A1687 /* UIImage+Tailor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tailor.m"; sourceTree = "<group>"; };
 		C572A28724FCBDDE000A1687 /* UIImage+Tailor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tailor.h"; sourceTree = "<group>"; };
+		C572A29524FD2AA8000A1687 /* STSimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSimplePing.m; sourceTree = "<group>"; };
+		C572A29624FD2AA9000A1687 /* STDPingServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDPingServices.h; sourceTree = "<group>"; };
+		C572A29724FD2AA9000A1687 /* STSimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimplePing.h; sourceTree = "<group>"; };
+		C572A29824FD2AA9000A1687 /* STDPingServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDPingServices.m; sourceTree = "<group>"; };
+		C572A29B24FD2ADE000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
+		C572A29E24FD2F99000A1687 /* GDFadeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFadeView.h; sourceTree = "<group>"; };
+		C572A29F24FD2F99000A1687 /* GDFadeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFadeView.m; sourceTree = "<group>"; };
+		C572A2A124FD2FB5000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -1585,6 +1597,28 @@
 			path = "签名上架";
 			sourceTree = "<group>";
 		};
+		C572A29424FD2A94000A1687 /* PingTest */ = {
+			isa = PBXGroup;
+			children = (
+				C572A29724FD2AA9000A1687 /* STSimplePing.h */,
+				C572A29524FD2AA8000A1687 /* STSimplePing.m */,
+				C572A29624FD2AA9000A1687 /* STDPingServices.h */,
+				C572A29824FD2AA9000A1687 /* STDPingServices.m */,
+				C572A29B24FD2ADE000A1687 /* Uses */,
+			);
+			path = PingTest;
+			sourceTree = "<group>";
+		};
+		C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */ = {
+			isa = PBXGroup;
+			children = (
+				C572A29E24FD2F99000A1687 /* GDFadeView.h */,
+				C572A29F24FD2F99000A1687 /* GDFadeView.m */,
+				C572A2A124FD2FB5000A1687 /* Uses */,
+			);
+			path = "颜色渐变的View，GDFadeView";
+			sourceTree = "<group>";
+		};
 		C58F03F424EB879700B6D09C /* temp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2462,6 +2496,8 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */,
+				C572A29424FD2A94000A1687 /* PingTest */,
 				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
 				C58F044D24EBD54700B6D09C /* 视频处理工具类 */,
 				C561616724EE4928001CD851 /* 拍照 */,
@@ -3590,6 +3626,7 @@
 				C54AE7D024C941D300121233 /* gif_header_2@2x.png in Resources */,
 				C572A27324FBC5A9000A1687 /* 加号@3x.png in Resources */,
 				C54AE7D224C941D300121233 /* gif_header_3@2x.png in Resources */,
+				C572A29C24FD2ADE000A1687 /* Uses in Resources */,
 				C59D9B0E24F904A200A74CE9 /* 闪光灯-自动@3x.png in Resources */,
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C5D8289224FB65D8002DD3E6 /* wode.json in Resources */,
@@ -3836,6 +3873,7 @@
 				C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */,
+				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E4C09C24DFF0B300D4862C /* BaseVC+OpenURL.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C561614324EE2E95001CD851 /* CustomerAVPlayerView.m in Sources */,
@@ -3984,6 +4022,7 @@
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5FE9CDD24B5F29C007B9878 /* ScanResultViewController.m in Sources */,
 				C5FE9CE124B5F29C007B9878 /* DIYScanVC.m in Sources */,
+				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
 				C590FF3A24D00D23000F36C9 /* SDWebImageImageIOCoder.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,
 				C5FE9ACB24B5F19E007B9878 /* ArcTBVCell.m in Sources */,
@@ -4007,6 +4046,7 @@
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C5B5203B24D6BCC400579178 /* GKPopAnimatedTransition.m in Sources */,
 				C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */,
+				C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,

@@ -215,32 +215,33 @@ static FMARCNetwork *static_FMARCNetwork = nil;
             if (!error) {//网络OK
                 NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
                 if (statusCode == HTTPResponseCodeSuccess) {//请求成功 200 只有在200的时候才有data
-                    
                     FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
-                                                                                        code:statusCode
-                                               ];
-                    
+                                                                                        code:statusCode];
                     [subscriber sendNext:response];//
                     [subscriber sendCompleted];
-                }else if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
-                          statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
-                          statusCode == HTTPResponseCodeError){//后台代码异常 999
-                    [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                               view:nil];
-                    
-                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
-                                                                                        code:statusCode];
-                    
-                    [subscriber sendNext:response];
-                    [subscriber sendCompleted];
-                }else{//抛其他异常
-                    [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                               view:nil];
-                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
-                                                                                        code:statusCode];
-                                               
-                    [subscriber sendNext:response];
-                    [subscriber sendCompleted];
+                    /**
+                     *  用户尚未登录 401
+                     *  后台业务代码参数异常 参数异常 550
+                     *  后台代码异常 999
+                     */
+                }else{
+                    if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
+                        statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
+                        statusCode == HTTPResponseCodeError){//后台代码异常 999
+                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                                   view:nil];
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                            code:statusCode];
+                        [subscriber sendNext:response];
+                        [subscriber sendCompleted];
+                    }else{//抛其他异常
+                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
+                                                   view:nil];
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
+                                                                                            code:statusCode];
+                        [subscriber sendNext:response];
+                        [subscriber sendCompleted];
+                    }
                 }
             } else {//网络问题
                 NSError *parseError = [self errorFromRequestWithTask:task
@@ -387,7 +388,13 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                               id  _Nullable responseObject,
                               NSError * _Nullable error) {
             @strongify(self);
-            if (error) {
+            if (!error) {
+                FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject
+                                                                                    code:0];
+                [subscriber sendNext:response];
+                [subscriber sendCompleted];
+                [self demo];
+            } else {
                 NSError *parseError = [self errorFromRequestWithTask:task
                                                         httpResponse:(NSHTTPURLResponse *)response
                                                       responseObject:responseObject
@@ -404,12 +411,6 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                 [subscriber sendCompleted];
                 [MBProgressHUD wj_showPlainText:msgStr
                                            view:nil];
-            } else {
-                FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject
-                                                                                    code:0];
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-                [self demo];
             }
         }];
         [task resume];

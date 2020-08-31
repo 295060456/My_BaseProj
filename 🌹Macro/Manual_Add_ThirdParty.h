@@ -100,6 +100,8 @@
 #import "UIImage+YBGIF.h"
 #import "UIImage+Extras.h"
 #import "UIImage+SYS.h"
+#import "UIImage+Overlay.h"
+#import "UIImage+Tailor.h"
 
 //#import "UIView+JHGestureBlock.h"
 ///BaseVC

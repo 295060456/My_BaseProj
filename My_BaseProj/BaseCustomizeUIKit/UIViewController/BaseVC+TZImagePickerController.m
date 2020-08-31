@@ -118,6 +118,7 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                         alertBtnAction:@[@"pushToSysConfig"]
                           alertVCBlock:^(id data) {
                             //DIY
+                
             }];
         }return nil;
     }];
@@ -127,7 +128,7 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
     if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
         self.imagePickerVC_Sys.sourceType = sourceType;
-        [self.mediaTypesMutArr addObject:(NSString *)kUTTypeMovie];
+//        [self.mediaTypesMutArr addObject:(NSString *)kUTTypeMovie];
         [self.mediaTypesMutArr addObject:(NSString *)kUTTypeImage];
         if (self.mediaTypesMutArr.count) {
             self.imagePickerVC_Sys.mediaTypes = self.mediaTypesMutArr;
@@ -165,6 +166,19 @@ static char *BaseVC_TZImagePickerController_asset = "BaseVC_TZImagePickerControl
                                  ImagePickerVC_Sys,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return ImagePickerVC_Sys;
+}
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info{
+    UIImage *photo = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (photo == nil) {
+        [MBProgressHUD wj_showError:@"异常操作，导致拍照失败"];
+        return;
+    }else{
+        if (self.picBlock) {
+            self.picBlock(@1,photo);
+        }
+    }
+    [self dismissViewControllerAnimated:self.imagePickerVC_Sys completion:^{}];
 }
 
 -(void)setImagePickerVC_Sys:(UIImagePickerController *)imagePickerVC_Sys{

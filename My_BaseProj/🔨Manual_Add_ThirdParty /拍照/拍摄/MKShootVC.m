@@ -1,51 +1,46 @@
 //
 //  MKShootVC.m
-//  MonkeyKingVideo
+//  Shooting
 //
-//  Created by Jobs on 2020/8/10.
+//  Created by Jobs on 2020/8/24.
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
 #import "MKShootVC.h"
-#import "MKShootVC+VM.h"
+#import "GPUImageTools.h"
+#import "CustomerGPUImagePlayerVC.h"//视频预览 VC
 #import "StartOrPauseBtn.h"
 #import "MyCell.h"
-#import "GPUImageTools.h"//GPUImage视频处理工具
-#import "CustomerGPUImagePlayerVC.h"//视频预览 VC
 
-#import "YHGPUImageBeautifyFilter.h"
-#import "GPUImageVideoCamera.h"
-#import "MKGPUImageView.h"
-#import "GPUImage.h"
+#import "MKShootVC+VM.h"
 
 @interface MKShootVC ()
+
 #pragma mark —— UI
 @property(nonatomic,strong)UIButton *overturnBtn;//镜头翻转
 @property(nonatomic,strong)UIButton *flashLightBtn;//闪光灯
 @property(nonatomic,strong)UIButton *deleteFilmBtn;//删除视频
 @property(nonatomic,strong)UIButton *sureFilmBtn;//保存视频
 @property(nonatomic,strong)UIButton *previewBtn;
-@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;//开始录制
 @property(nonatomic,strong)UIView *indexView;
 @property(nonatomic,strong)JhtBannerView *bannerView;
 @property(nonatomic,strong)CustomerAVPlayerView *AVPlayerView;
-@property(nonatomic,strong)AVCaptureDevice *captureDevice;
-@property(nonatomic,strong)GPUImageTools *gpuImageTools;
+@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;
 
+@property(nonatomic,assign)CGFloat safetyTime;//小于等于这个时间点的录制的视频不允许被保存，而是应该被遗弃
 @property(nonatomic,assign)CGFloat __block time;
-@property(nonatomic,assign)BOOL __block isClickMyGPUImageView;
-@property(nonatomic,copy)MKDataBlock MKShootVCBlock;
+@property(nonatomic,strong)NSArray *timeArr;
 
+@property(nonatomic,strong)GPUImageTools *gpuImageTools;
+@property(nonatomic,strong)id requestParams;
+@property(nonatomic,assign)BOOL isPush;
+@property(nonatomic,assign)BOOL isPresent;
 @property(nonatomic,assign)BOOL isCameraCanBeUsed;//鉴权的结果 —— 摄像头是否可用？
 @property(nonatomic,assign)BOOL isMicrophoneCanBeUsed;//鉴权的结果 —— 麦克风是否可用？
 @property(nonatomic,assign)BOOL ispPhotoAlbumCanBeUsed;//鉴权的结果 —— 相册是否可用
-@property(nonatomic,assign)CGFloat safetyTime;//小于等于这个时间点的录制的视频不允许被保存，而是应该被遗弃
-@property(nonatomic,strong)NSArray *timeArr;
-
-@property(nonatomic,strong)id requestParams;
+@property(nonatomic,assign)BOOL __block isClickMyGPUImageView;
 @property(nonatomic,copy)MKDataBlock successBlock;
-@property(nonatomic,assign)BOOL isPush;
-@property(nonatomic,assign)BOOL isPresent;
+@property(nonatomic,copy)MKDataBlock MKShootVCBlock;
 
 @end
 
@@ -97,37 +92,31 @@
 -(instancetype)init{
     if (self = [super init]) {
         self.time = 60;// 最大可录制时间（秒），预设值
+        self.safetyTime = 5;//小于等于这个时间点的录制的视频不允许被保存，而是应该被遗弃
         self.isCameraCanBeUsed = NO;
         self.isMicrophoneCanBeUsed = NO;
         self.ispPhotoAlbumCanBeUsed = NO;
-        self.safetyTime = 30;
     }return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:kIMG(@"MKShootVC")];
-
+    
     self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtnCategory];
-//    self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn];
     self.gk_navRightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.flashLightBtn],
                                        [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn]];
     
     self.gk_navTitle = @"";
     [self hideNavLine];
-    
-    //视频管理工具类
-    [self MakeVedioTools];//[self.view addSubview:VedioTools.sharedInstance.myGPUImageView]
 
-    //如果没有开系统权限 是黑屏 所以不用放在鉴权的block里面，放进去了反而第一次进去的时候会黑屏，第二次进去ok
+    [self.view addSubview:self.gpuImageTools.GPUImageView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
     //鉴权 开启摄像头、麦克风
     [self check];
-
     if (self.MKShootVCBlock) {
         self.MKShootVCBlock(@YES);
     }
@@ -138,108 +127,88 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self LIVE];
+    [self.gpuImageTools LIVE];
+    self.recordBtn.alpha = 1;
+    self.bannerView.alpha = 1;
+    self.indexView.alpha = 1;
+    [self.view bringSubviewToFront:self.gk_navigationBar];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
     if (self.MKShootVCBlock) {
         self.MKShootVCBlock(@NO);
     }
     [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
-
-    //后续要加上去的补充功能
-//    self.overturnBtn.alpha = 0;
-//    self.deleteFilmBtn.alpha = 0;
-//    self.sureFilmBtn.alpha = 0;
-//    self.recordBtn.alpha = 0;
-//    self.bannerView.alpha = 0;
-//    self.indexView.alpha = 0;
 }
-//
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
+#pragma mark —— 切换滤镜功能
+-(void)changeFilter{
+    TypeFilter typeFilter = [NSObject getRandomNumberFrom:filterGaussBlur
+                                                       to:filterGif];
+    self->_gpuImageTools.typeFilter = typeFilter;
 }
-//实况视频
--(void)LIVE{
-    [self.gpuImageTools LIVE];
+#pragma mark —— 点击事件
+//翻转摄像头
+-(void)overturnBtnClickEvent:(UIButton *)sender{
+    [self.gpuImageTools overturnCamera];
+}
+//开启闪光灯
+-(void)flashLightBtnClickEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    [self.gpuImageTools flashLight:sender.selected];
+}
+//删除作品
+-(void)deleteFilmBtnClickEvent:(UIButton *)sender{
+    NSLog(@"删除作品？");
+    [self.gpuImageTools vedioShoottingSuspend];
+    [self alertControllerStyle:SYS_AlertController
+            showAlertViewTitle:@"删除作品？"
+                       message:nil
+               isSeparateStyle:NO
+                   btnTitleArr:@[@"确认",@"继续录制"]
+                alertBtnAction:@[@"sure",@"shoottingContinue"]
+                  alertVCBlock:^(id data) {
+        //DIY
+    }];
+}
+//返回键
+-(void)backBtnClickEvent:(UIButton *)sender{
+    [self alertControllerStyle:SYS_AlertController
+          showActionSheetTitle:nil
+                       message:nil
+               isSeparateStyle:YES
+                   btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
+                alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
+                        sender:nil
+                  alertVCBlock:^(id data) {
+        //DIY
+    }];
+}
 
-    self.recordBtn.alpha = 1;
-    self.bannerView.alpha = 1;
+-(void)previewBtnClickEvent:(UIButton *)sender{
+    //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
+    [self.gpuImageTools vedioShoottingEnd];
+}
+
+-(void)sureFilmBtnClickEvent:(UIButton *)sender{
+    NSLog(@"结束录制 —— 这个作品我要了");
+    //判定规则：小于3秒的被遗弃，不允许被保存
+    if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
+        [MBProgressHUD wj_showPlainText:[NSString stringWithFormat:@"不能保存录制时间低于%.2f秒的视频",self.recordBtn.safetyTime]
+                                   view:self.view];
+    }else{
+        [self.gpuImageTools vedioShoottingEnd];
+        [self.recordBtn reset];
+    }
+    
+    self.deleteFilmBtn.alpha = 0;
+    self.sureFilmBtn.alpha = 0;
     self.indexView.alpha = 1;
-    
-    [self.view bringSubviewToFront:self.gk_navigationBar];
-}
-
--(void)MakeVedioTools{
-    [self.view addSubview:self.gpuImageTools.GPUImageView];
-    @weakify(self)
-    [self.gpuImageTools actionVedioToolsClickBlock:^(id data) {
-        @strongify(self)
-        if ([data isKindOfClass:MKGPUImageView.class]) {//鉴权部分
-              MKDataBlock block = ^(NSString *title){
-                  NSLog(@"打开失败");
-                  @strongify(self)
-                  [self alertControllerStyle:SYS_AlertController
-                          showAlertViewTitle:title
-                                     message:nil
-                             isSeparateStyle:YES
-                                 btnTitleArr:@[@"去获取"]
-                              alertBtnAction:@[@"pushToSysConfig"]
-                                alertVCBlock:^(id data) {
-                      //DIY
-                  }];
-              };
-
-              if (self.isCameraCanBeUsed &&
-                  self.isMicrophoneCanBeUsed &&
-                  self.deleteFilmBtn.alpha == 0 &&
-                  self.sureFilmBtn.alpha == 0 &&
-                  self.previewBtn.alpha == 0 &&
-                  self.gpuImageTools.vedioShootType != VedioShootType_on &&
-                  self.gpuImageTools.vedioShootType != VedioShootType_continue) {
-                  self.isClickMyGPUImageView = !self.isClickMyGPUImageView;
-                  [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = !self.isClickMyGPUImageView;
-
-                  self.gk_navigationBar.hidden = self.isClickMyGPUImageView;
-                  self.recordBtn.alpha = !self.isClickMyGPUImageView;
-                  self.deleteFilmBtn.alpha = !self.isClickMyGPUImageView;
-                  self.previewBtn.alpha = !self.isClickMyGPUImageView;
-              }else{
-                  if (!self.isCameraCanBeUsed &&
-                      self.isMicrophoneCanBeUsed) {
-                      NSLog(@"仅仅只有摄像头不可用");
-                      if (block) {
-                          block(@"仅仅只有摄像头不可用");
-                      }
-                  }else if (self.isCameraCanBeUsed &&
-                            !self.isMicrophoneCanBeUsed){
-                      NSLog(@"仅仅只有麦克风不可用");
-                      if (block) {
-                          block(@"仅仅只有麦克风不可用");
-                      }
-                  }else if (!self.isCameraCanBeUsed &&
-                            !self.isMicrophoneCanBeUsed){
-                      NSLog(@"麦克风 和 摄像头 皆不可用");
-                      if (block) {
-                          block(@"麦克风 和 摄像头 皆不可用");
-                      }
-                  }else{
-                      NSLog(@"");
-                      //这里做动作
-                  }
-              }
-          }
-    }];
-    
-    [self.gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
-//        @strongify(self)
-//处理完毕的回调
-//视频处理完毕后，你想干嘛？！
-        if ([data isKindOfClass:GPUImageTools.class]) {
-            
-        }
-    }];
+    self.previewBtn.alpha = 0;
 }
 //摄像头鉴权结果不利的UI状况
 -(void)checkRes:(BOOL)result{
@@ -252,10 +221,94 @@
     self.indexView.hidden = result;
 }
 
-/**
- *  这个“按钮”只有 启动、暂停、继续 没有停止，停止要额外在其他地方实现触发。
- *  停止的判定标准：1、其他地方强制停止；2、录制时间到了
- */
+-(void)reShoot{}
+
+-(void)sure{
+    
+    self.deleteFilmBtn.alpha = 0;
+    self.sureFilmBtn.alpha = 0;
+    self.previewBtn.alpha = 0;
+
+    [self.recordBtn.progressView reset];
+    [self.recordBtn reset];
+
+    [MBProgressHUD wj_showPlainText:@"开始录制"
+                               view:nil];
+    
+    //功能性的 删除tmp文件夹下的文件
+    BOOL success = [FileFolderHandleTool removeItemAtPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.FileUrlByTime]
+                                                    error:nil];
+    if (success) {
+        NSLog(@"删除作品成功");
+        [MBProgressHUD wj_showPlainText:@"删除作品成功"
+                                   view:self.view];
+    }
+}
+
+-(void)shoottingContinue{
+    [self.recordBtn tapGRUI:YES];
+    [self.gpuImageTools vedioShoottingContinue];
+}
+
+-(void)exit{
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+    }
+    
+    if (self.MKShootVCBlock) {
+        self.MKShootVCBlock(NSStringFromSelector(_cmd));
+    }
+}
+//鉴权
+-(void)check{
+    @weakify(self)
+    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Camera
+                                          accessStatus:^id(ECAuthorizationStatus status,
+                                                           ECPrivacyType type) {
+        @strongify(self)
+        // status 即为权限状态，
+        //状态类型参考：ECAuthorizationStatus
+        NSLog(@"%lu",(unsigned long)status);
+        if (status == ECAuthorizationStatus_Authorized) {
+            NSLog(@"已经开启摄像头权限");
+            self.isCameraCanBeUsed = YES;
+            return nil;
+        }else{
+            NSLog(@"摄像头不可用:%lu",(unsigned long)status);
+            self.isCameraCanBeUsed = NO;
+            [self checkRes:self.isCameraCanBeUsed];
+            return nil;
+        }
+    }];
+
+    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Microphone
+                                          accessStatus:^id(ECAuthorizationStatus status,
+                                                           ECPrivacyType type) {
+        @strongify(self)
+        // status 即为权限状态，
+        //状态类型参考：ECAuthorizationStatus
+        NSLog(@"%lu",(unsigned long)status);
+        if (status == ECAuthorizationStatus_Authorized) {
+            NSLog(@"已经开启麦克风权限");
+            self.isMicrophoneCanBeUsed = YES;
+            self.recordBtn.alpha = 1;
+            return nil;
+        }else{
+            NSLog(@"麦克风不可用:%lu",(unsigned long)status);
+            self.isMicrophoneCanBeUsed = NO;
+            [self checkRes:self.isMicrophoneCanBeUsed];
+            return nil;
+        }
+    }];
+}
+
+-(void)ActionMKShootVCBlock:(MKDataBlock)MKShootVCBlock{
+    self.MKShootVCBlock = MKShootVCBlock;
+}
+#pragma mark —— lazyLoad
 -(StartOrPauseBtn *)recordBtn{
     if (!_recordBtn) {
         _recordBtn = StartOrPauseBtn.new;
@@ -287,22 +340,19 @@
                 NSNumber *num = (NSNumber *)data;
                 switch (num.intValue) {
                     case ShottingStatus_on:{//开始录制
-                        [self shootting_on];
-                        NSLog(@"开始录制");
+                        [self.gpuImageTools vedioShoottingOn];
                     }break;
                     case ShottingStatus_suspend:{//暂停录制
-//                        [self shootting_suspend];
-                        NSLog(@"暂停录制");
+                        [self.gpuImageTools vedioShoottingSuspend];
+                        self.deleteFilmBtn.alpha = 1;
+                        self.sureFilmBtn.alpha = 1;
                     }break;
                     case ShottingStatus_continue:{//继续录制
-//                        [self shootting_continue];
-                        NSLog(@"继续录制");
+                        [self.gpuImageTools vedioShoottingContinue];
                     }break;
-                    case ShottingStatus_off:{//取消录制 但在这里没啥用
-//                        [self shootting_off];
-                        NSLog(@"取消录制");
-                    }break;
-
+//                    case ShottingStatus_off:{//取消录制
+//                        [self.gpuImageTools vedioShoottingOff];
+//                    }break;
                     default:
                         break;
                 }
@@ -311,299 +361,97 @@
     }return _recordBtn;
 }
 
-#pragma mark —— 开始录制
--(void)shootting_on{
-    NSLog(@"开始录制");
-    self.gk_navigationBar.hidden = YES;
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.indexView.alpha = 0;
-    self.previewBtn.alpha = 0;
-//创建本地缓存的文件夹，位置于沙盒中tmp
-//给定一个路径 self.FileByUrl 需要他的父节点
-    if ([FileFolderHandleTool isExistsAtPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.recentlyVedioFileUrl]]) {//存在则清除旗下所有的东西
-        //先清除缓存
-        //清除vedio文件夹下所有内容
-        NSURL *url = self.gpuImageTools.urlArray[0];
-        BOOL d = [NSString isNullString:url.absoluteString];
-        if (!d) {
-            [FileFolderHandleTool delFile:@[url.absoluteString]
-                               fileSuffix:@"mp4"];//删除文件夹📂路径下的文件
-        }
-    }else{//不存在即创建
-        ///创建文件夹：
-        [FileFolderHandleTool createDirectoryAtPath:self.gpuImageTools.recentlyVedioFileUrl
-                                              error:nil];
-    }
-//准备工作已完成，现在开始进数据流
-    [self.gpuImageTools vedioShoottingOn];
-}
-#pragma mark —— 结束录制
--(void)shootting_end{
-    NSLog(@"结束录制");
-    @weakify(self)
-    [self.gpuImageTools vedioShoottingEnd];//包含合成视频
-    //对相册进行鉴权操作
-    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Photos
-                                              accessStatus:^id(ECAuthorizationStatus status,
-                                                               ECPrivacyType type) {
-        @strongify(self)
-        //status 即为权限状态，
-        //状态类型参考：ECAuthorizationStatus
-        NSLog(@"%lu",(unsigned long)status);
-        if (status == ECAuthorizationStatus_Authorized) {
-            NSLog(@"已经开启相册权限");
-            self.ispPhotoAlbumCanBeUsed = YES;
-//创建本App的独属相册
-            //在个人相册里面创建一个以本App名字的相册 视频文件以时间戳名命名
-            [FileFolderHandleTool createAlbumFolder:HDAppDisplayName
-                                  ifExitFolderBlock:^(id data) {
-                //已经存在这个文件夹
-                //保存tmp文件夹下的视频文件到系统相册
-                [FileFolderHandleTool saveRes:[NSURL URLWithString:self.gpuImageTools.recentlyVedioFileUrl]];
+-(GPUImageTools *)gpuImageTools{
+    if (!_gpuImageTools) {
+        _gpuImageTools = GPUImageTools.new;
+        @weakify(self)
+        //点击事件
+        [_gpuImageTools actionVedioToolsClickBlock:^(id data) {
+            @strongify(self)
+            if ([data isKindOfClass:MKGPUImageView.class]) {//鉴权部分
+                  MKDataBlock block = ^(NSString *title){
+                      NSLog(@"打开失败");
+                      @strongify(self)
+                      [self alertControllerStyle:SYS_AlertController
+                              showAlertViewTitle:title
+                                         message:nil
+                                 isSeparateStyle:YES
+                                     btnTitleArr:@[@"去获取"]
+                                  alertBtnAction:@[@"pushToSysConfig"]
+                                    alertVCBlock:^(id data) {
+                          //DIY
+                      }];
+                  };
+
+                  if (self.isCameraCanBeUsed &&
+                      self.isMicrophoneCanBeUsed &&
+                      self.deleteFilmBtn.alpha == 0 &&
+                      self.sureFilmBtn.alpha == 0 &&
+                      self.previewBtn.alpha == 0 &&
+                      self.gpuImageTools.vedioShootType != VedioShootType_on &&
+                      self.gpuImageTools.vedioShootType != VedioShootType_continue) {
+                      self.isClickMyGPUImageView = !self.isClickMyGPUImageView;
+                      //切换滤镜功能
+                      [self changeFilter];
+                  }else{
+                      if (!self.isCameraCanBeUsed &&
+                          self.isMicrophoneCanBeUsed) {
+                          NSLog(@"仅仅只有摄像头不可用");
+                          if (block) {
+                              block(@"仅仅只有摄像头不可用");
+                          }
+                      }else if (self.isCameraCanBeUsed &&
+                                !self.isMicrophoneCanBeUsed){
+                          NSLog(@"仅仅只有麦克风不可用");
+                          if (block) {
+                              block(@"仅仅只有麦克风不可用");
+                          }
+                      }else if (!self.isCameraCanBeUsed &&
+                                !self.isMicrophoneCanBeUsed){
+                          NSLog(@"麦克风 和 摄像头 皆不可用");
+                          if (block) {
+                              block(@"麦克风 和 摄像头 皆不可用");
+                          }
+                      }else{
+                          NSLog(@"");
+                          //这里做动作
+                      }
+                  }
+              }
+        }];
+        
+        //视频合并处理结束
+        [_gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
+            @strongify(self)
+            if ([data isKindOfClass:GPUImageTools.class]) {
+                GPUImageTools *tools = (GPUImageTools *)data;
+                tools.thumb;//缩略图
+                
+                // GPUImage 只能播放本地视频，不能处理网络流媒体url
+    //            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
+    //                                       comingStyle:ComingStyle_PUSH
+    //                                 presentationStyle:UIModalPresentationFullScreen
+    //                                     requestParams:@{
+    //                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]//fileURLWithPath
+    //                                     }
+    //                                           success:^(id data) {}
+    //                                          animated:YES];
+                #pragma mark —— AVPlayer
+    //            [CustomerAVPlayerVC ComingFromVC:weak_self
+    //                                 comingStyle:ComingStyle_PUSH
+    //                           presentationStyle:UIModalPresentationFullScreen
+    //                               requestParams:@{
+    //                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
+    //                               }
+    //                                     success:^(id data) {}
+    //                                    animated:YES];
+                #pragma mark —— 悬浮窗AVPlayer
+                self.AVPlayerView.alpha = 1;
             }
-                             completionHandler:^(id data,//success ? fail
-                                                 id data2) {// error
-                if ([data isKindOfClass:NSNumber.class]) {
-                    NSNumber *num = (NSNumber *)data;
-                    if (num.boolValue) {//success
-                        //保存tmp文件夹下的视频文件到系统相册
-                        [FileFolderHandleTool saveRes:[NSURL URLWithString:self.gpuImageTools.recentlyVedioFileUrl]];
-                    }else{//fail
-                        if ([data2 isKindOfClass:NSError.class]) {
-                            NSError *err = (NSError *)data2;
-                            NSLog(@"err = %@",err);
-                        }
-                    }
-                }
-            }];
-            return nil;
-        }else{
-            NSLog(@"相册不可用:%lu",(unsigned long)status);
-            [self alertControllerStyle:SYS_AlertController
-                    showAlertViewTitle:@"获取系统相册权限"
-                               message:nil
-                       isSeparateStyle:YES
-                           btnTitleArr:@[@"去获取"]
-                        alertBtnAction:@[@"pushToSysConfig"]
-                          alertVCBlock:^(id data) {
-                //DIY
-            }];
-            return nil;
-        }
-    }];
-}
-#pragma mark —— 暂停录制
--(void)shootting_suspend{
-    NSLog(@"暂停录制");
-    self.gk_navigationBar.hidden = NO;
-    self.deleteFilmBtn.alpha = 1;
-    self.sureFilmBtn.alpha = 1;
-    self.indexView.alpha = 0;
-    self.previewBtn.alpha = 1;
-
-    [self.gpuImageTools vedioShoottingSuspend];
-}
-#pragma mark —— 继续录制
--(void)shootting_continue{
-    NSLog(@"继续录制");
-    self.gk_navigationBar.hidden = YES;
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.indexView.alpha = 0;
-    self.previewBtn.alpha = 0;
-    
-    [self.gpuImageTools vedioShoottingContinue];
-}
-#pragma mark —— 取消录制
--(void)shootting_off{
-    NSLog(@"取消录制");
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.indexView.alpha = 1;
-    self.previewBtn.alpha = 0;
-    
-    [self.gpuImageTools vedioShoottingOff];
+        }];
+    }return _gpuImageTools;
 }
 
--(void)ActionMKShootVCBlock:(MKDataBlock)MKShootVCBlock{
-    self.MKShootVCBlock = MKShootVCBlock;
-}
-
--(void)reShoot{}
-
--(void)sure{
-    NSLog(@"删除作品成功");
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.previewBtn.alpha = 0;
-#warning 没干完的
-    //StartOrPauseBtn 归零
-//    self.recordBtn.progressLabel.text = @"开始";
-    self.recordBtn.backgroundColor = kBlueColor;
-    [self.recordBtn.mytimer invalidate];
-    ///功能性的 删除tmp文件夹下的文件
-    [FileFolderHandleTool cleanFilesWithPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.FileUrlByTime]];
-}
-
--(void)Cancel{}
-
--(void)exit{
-    if (self.navigationController) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }else{
-        [self dismissViewControllerAnimated:YES
-                                 completion:nil];
-    }
-    
-    if (self.MKShootVCBlock) {
-        self.MKShootVCBlock(NSStringFromSelector(_cmd));
-    }
-}
-#pragma mark —— 点击事件
--(void)previewBtnClickEvent:(UIButton *)sender{
-    //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
-    [self.gpuImageTools vedioShoottingEnd];
-    @weakify(self)
-    [self.gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
-        //        @strongify(self)
-        if ([data isKindOfClass:GPUImageTools.class]) {
-            #pragma mark —— GPUImage
-            // GPUImage 只能播放本地视频，不能处理网络流媒体url
-//            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
-//                                       comingStyle:ComingStyle_PUSH
-//                                 presentationStyle:UIModalPresentationFullScreen
-//                                     requestParams:@{
-//                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]//fileURLWithPath
-//                                     }
-//                                           success:^(id data) {}
-//                                          animated:YES];
-            #pragma mark —— AVPlayer
-//            [CustomerAVPlayerVC ComingFromVC:weak_self
-//                                 comingStyle:ComingStyle_PUSH
-//                           presentationStyle:UIModalPresentationFullScreen
-//                               requestParams:@{
-//                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
-//                               }
-//                                     success:^(id data) {}
-//                                    animated:YES];
-            #pragma mark —— 悬浮窗AVPlayer
-//            self.AVPlayerView.alpha = 1;
-        }
-    }];
-}
-
--(void)sureFilmBtnClickEvent:(UIButton *)sender{
-    NSLog(@"结束录制 —— 这个作品我要了");
-    //判定规则：小于3秒的被遗弃，不允许被保存
-    if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
-        [MBProgressHUD wj_showPlainText:[NSString stringWithFormat:@"不能保存录制时间低于%.2f秒的视频",self.recordBtn.safetyTime]
-                                   view:self.view];
-    }else{
-        [self shootting_end];
-    }
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.indexView.alpha = 1;
-    self.previewBtn.alpha = 0;
-}
-
--(void)deleteFilmBtnClickEvent:(UIButton *)sender{
-    NSLog(@"删除作品？");
-    [self alertControllerStyle:SYS_AlertController
-            showAlertViewTitle:@"删除作品？"
-                       message:nil
-               isSeparateStyle:NO
-                   btnTitleArr:@[@"确认",@"取消"]
-                alertBtnAction:@[@"sure",@"Cancel"]
-                  alertVCBlock:^(id data) {
-        //DIY
-    }];
-}
-
--(void)backBtnClickEvent:(UIButton *)sender{
-    [self alertControllerStyle:SYS_AlertController
-          showActionSheetTitle:nil
-                       message:nil
-               isSeparateStyle:YES
-                   btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
-                alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
-                        sender:nil
-                  alertVCBlock:^(id data) {
-        //DIY
-    }];
-}
-//翻转摄像头
--(void)overturnBtnClickEvent:(UIButton *)sender{
-    [self.gpuImageTools  overturnCamera];
-}
-//开启闪光灯
--(void)flashLightBtnClickEvent:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    if (sender.selected) {
-        if (self.captureDevice.hasTorch) {
-            if ([self.captureDevice lockForConfiguration:nil]) {
-                self.captureDevice.torchMode = AVCaptureTorchModeOn;
-                [self.captureDevice unlockForConfiguration];
-            }
-        }
-    }else{
-        if (self.captureDevice.hasTorch) {
-            [self.captureDevice lockForConfiguration:nil];
-            [self.captureDevice setTorchMode: AVCaptureTorchModeOff];
-            [self.captureDevice unlockForConfiguration];
-        }
-    }
-}
-//鉴权
--(void)check{
-    @weakify(self)
-    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Camera
-                                          accessStatus:^id(ECAuthorizationStatus status,
-                                                           ECPrivacyType type) {
-        @strongify(self)
-        // status 即为权限状态，
-        //状态类型参考：ECAuthorizationStatus
-        NSLog(@"%lu",(unsigned long)status);
-        if (status == ECAuthorizationStatus_Authorized) {
-            NSLog(@"已经开启摄像头权限");
-            self.isCameraCanBeUsed = YES;
-            [self LIVE];
-            return nil;
-        }else{
-            NSLog(@"摄像头不可用:%lu",(unsigned long)status);
-            self.isCameraCanBeUsed = NO;
-            [self checkRes:self.isCameraCanBeUsed];
-            if (self.gpuImageTools.actionVedioToolsClickBlock) {
-                self.gpuImageTools.actionVedioToolsClickBlock(self.gpuImageTools.GPUImageView);
-            }
-            return nil;
-        }
-    }];
-
-    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Microphone
-                                          accessStatus:^id(ECAuthorizationStatus status,
-                                                           ECPrivacyType type) {
-        @strongify(self)
-        // status 即为权限状态，
-        //状态类型参考：ECAuthorizationStatus
-        NSLog(@"%lu",(unsigned long)status);
-        if (status == ECAuthorizationStatus_Authorized) {
-            NSLog(@"已经开启麦克风权限");
-            self.isMicrophoneCanBeUsed = YES;
-            return nil;
-        }else{
-            NSLog(@"麦克风不可用:%lu",(unsigned long)status);
-            self.isMicrophoneCanBeUsed = NO;
-            [self checkRes:self.isMicrophoneCanBeUsed];
-            if (self.gpuImageTools.actionVedioToolsClickBlock) {
-                self.gpuImageTools.actionVedioToolsClickBlock(self.gpuImageTools.GPUImageView);
-            }
-            return nil;
-        }
-    }];
-}
-#pragma mark —— lazyLoad
 -(UIButton *)overturnBtn{
     if (!_overturnBtn) {
         _overturnBtn = UIButton.new;
@@ -632,6 +480,7 @@
     if (!_previewBtn) {
         _previewBtn = UIButton.new;
         _previewBtn.backgroundColor = kCyanColor;
+        _previewBtn.alpha = 0;
         [_previewBtn setTitleColor:kRedColor
                           forState:UIControlStateNormal];
         [_previewBtn setTitle:@"预览"
@@ -651,7 +500,6 @@
                           AndCornerRadius:8.f];
     }return _previewBtn;
 }
-
 
 -(JhtBannerView *)bannerView{
     if (!_bannerView) {
@@ -770,68 +618,63 @@
 -(CustomerAVPlayerView *)AVPlayerView{
     if (!_AVPlayerView) {
         @weakify(self)
-        _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:self.gpuImageTools.recentlyVedioFileUrl]
-                                                        suspendVC:self_weak_];
-        _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
-        [_AVPlayerView errorCustomerAVPlayerBlock:^{
-            @strongify(self)
-            [self alertControllerStyle:SYS_AlertController
-                    showAlertViewTitle:@"软件内部错误"
-                               message:@"因为某种未知的原因，找不到播放的资源文件"
-                       isSeparateStyle:NO
-                           btnTitleArr:@[@"确定"]
-                        alertBtnAction:@[@"OK"]
-                          alertVCBlock:^(id data) {
-                //DIY
+        if (![NSString isNullString:self.gpuImageTools.compressedVedioPathStr]) {
+            _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:self.gpuImageTools.compressedVedioPathStr]
+                                                            suspendVC:self_weak_];
+            _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
+            [_AVPlayerView errorCustomerAVPlayerBlock:^{
+                @strongify(self)
+                [self alertControllerStyle:SYS_AlertController
+                        showAlertViewTitle:@"软件内部错误"
+                                   message:@"因为某种未知的原因，找不到播放的资源文件"
+                           isSeparateStyle:NO
+                               btnTitleArr:@[@"确定"]
+                            alertBtnAction:@[@"OK"]
+                              alertVCBlock:^(id data) {
+                    //DIY
+                }];
             }];
-        }];
-        
-        ///点击事件回调 参数1：self CustomerAVPlayerView，参数2：手势 UITapGestureRecognizer & UISwipeGestureRecognizer
-        [_AVPlayerView actionCustomerAVPlayerBlock:^(id data,
-                                                     id data2) {
-            @strongify(self)
-            if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {
-                NSLog(@"你点击了我");
-            }else if ([data2 isKindOfClass:UISwipeGestureRecognizer.class]){
-                if ([data isKindOfClass:CustomerAVPlayerView.class]) {
-                    CustomerAVPlayerView *view = (CustomerAVPlayerView *)data;
-                    if ([view.vc isEqual:self]) {
-                        if (self.navigationController) {
-                            [self.navigationController popViewControllerAnimated:YES];
-                        }else{
-                            [self dismissViewControllerAnimated:YES
-                                                     completion:^{
-                                
-                            }];
+            
+            ///点击事件回调 参数1：self CustomerAVPlayerView，参数2：手势 UITapGestureRecognizer & UISwipeGestureRecognizer
+            [_AVPlayerView actionCustomerAVPlayerBlock:^(id data,
+                                                         id data2) {
+                @strongify(self)
+                if ([data2 isKindOfClass:UITapGestureRecognizer.class]) {
+                    NSLog(@"你点击了我");
+                }else if ([data2 isKindOfClass:UISwipeGestureRecognizer.class]){
+                    if ([data isKindOfClass:CustomerAVPlayerView.class]) {
+                        CustomerAVPlayerView *view = (CustomerAVPlayerView *)data;
+                        if ([view.vc isEqual:self]) {
+                            if (self.navigationController) {
+                                [self.navigationController popViewControllerAnimated:YES];
+                            }else{
+                                [self dismissViewControllerAnimated:YES
+                                                         completion:^{
+                                    
+                                }];
+                            }
                         }
                     }
+                }else{}
+            }];
+            [self.view addSubview:_AVPlayerView];
+            [self.view.layer addSublayer:_AVPlayerView.playerLayer];
+            [_AVPlayerView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(SCALING_RATIO(50));
+                make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2));
+                if (self.gk_navigationBar.hidden) {
+                    make.top.equalTo(self.view);
+                }else{
+                    make.top.equalTo(self.gk_navigationBar.mas_bottom);
                 }
-            }else{}
-        }];
-        [self.view addSubview:_AVPlayerView];
-        [self.view.layer addSublayer:_AVPlayerView.playerLayer];
-        [_AVPlayerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.view).offset(SCALING_RATIO(50));
-            make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2));
-            if (self.gk_navigationBar.hidden) {
-                make.top.equalTo(self.view);
-            }else{
-                make.top.equalTo(self.gk_navigationBar.mas_bottom);
-            }
-        }];
+            }];
+        }else{
+            NSLog(@"文件资源查找失败,播放终止");
+            _AVPlayerView = nil;
+        }
     }return _AVPlayerView;
 }
 
--(AVCaptureDevice *)captureDevice{
-    if (!_captureDevice) {
-        _captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    }return _captureDevice;
-}
 
--(GPUImageTools *)gpuImageTools{
-    if (!_gpuImageTools) {
-        _gpuImageTools = GPUImageTools.new;
-    }return _gpuImageTools;
-}
 
 @end

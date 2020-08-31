@@ -12,8 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKUploadingVC (VM)
 
--(void)videosUploadNetworking:(NSData *)data
-              andVideoArticle:(NSString *)videoArticle;
+- (void)videosUploadNetworkingWithData:(NSData *)data
+                          videoArticle:(NSString *)videoArticle
+                              urlAsset:(AVURLAsset *)urlAsset;
 
 @end
 

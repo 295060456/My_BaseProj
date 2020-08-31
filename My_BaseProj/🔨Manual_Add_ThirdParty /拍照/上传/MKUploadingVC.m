@@ -5,11 +5,9 @@
 //  Created by Jobs on 2020/8/10.
 //  Copyright © 2020 Jobs. All rights reserved.
 //
-
+#import "LGiOSBtn.h"
 #import "MKUploadingVC.h"
 #import "MKUploadingVC+VM.h"
-
-#import "LGiOSBtn.h"
 
 #define InputLimit 40
 
@@ -30,6 +28,7 @@ UITextViewDelegate
 @property(nonatomic,strong)UIImage *imgData;
 @property(nonatomic,assign)BOOL isClickMKUploadingVCView;
 @property(nonatomic,strong)NSData *__block vedioData;
+@property(nonatomic,strong)AVURLAsset *__block urlAsset;
 
 @property(nonatomic,strong)AWRichText *richText;
 @property(nonatomic,strong)AWRichTextLabel *rtLabel;
@@ -84,7 +83,7 @@ UITextViewDelegate
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.isClickMKUploadingVCView = NO;
-    [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = YES;
+    [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
 }
 
 -(void)viewWillLayoutSubviews{
@@ -113,7 +112,7 @@ UITextViewDelegate
         self.imgData) {
         NSLog(@"发布成功");
         //这里先鉴定是否已经登录？
-        if (![NSString isNullString:[MKPublickDataManager sharedPublicDataManage].mkLoginModel.token]) {
+        if (!YES) {
             // 已经登录才可以上传视频
             //对视频的大小进行控制 单个视频上传最大支持300M
             
@@ -126,8 +125,9 @@ UITextViewDelegate
 //            最终支持所有格式上传，目前优先支持mp4和webm格式。如不符合上传格式要求，前期则半透明悬浮提示“请上传mp4或webm格式的视频文件”。
             
             if (sizeof(self.vedioData) <= 300 * 1024 * 1024) {
-                [self videosUploadNetworking:self.vedioData
-                             andVideoArticle:self.textView.text];
+                [self videosUploadNetworkingWithData:self.vedioData
+                                        videoArticle:self.textView.text
+                                            urlAsset:self.urlAsset];
             }else{
                 [MBProgressHUD wj_showPlainText:@"单个文件大小需要在300M以内"
                                            view:self.view];
@@ -153,7 +153,7 @@ UITextViewDelegate
                                message:nil
                        isSeparateStyle:NO
                            btnTitleArr:@[@"确定"]
-                        alertBtnAction:@[@"sure"]
+                        alertBtnAction:@[@"OK"]
                           alertVCBlock:^(id data) {
                 //DIY
             }];
@@ -175,9 +175,14 @@ UITextViewDelegate
     }
 }
 
--(void)sure{}
+-(void)sure{
+    [self choosePicBtnClickEvent:nil];
+}
+
+-(void)OK{}
 
 -(void)choosePicBtnClickEvent:(UIButton *)sender{
+    self.imagePickerVC = Nil;
     [NSObject feedbackGenerator];
     [self choosePic:TZImagePickerControllerType_1];
     @weakify(self)
@@ -200,23 +205,51 @@ UITextViewDelegate
                     NSLog(@"KKK = %@", arg);
                     if ([arg isKindOfClass:UIImage.class]) {
                         self.imgData = (UIImage *)arg;
-                        [self.choosePicBtn setImage:self.imgData
-                                  forState:UIControlStateNormal];
+                        [self.choosePicBtn setImage:[UIImage addImage:[UIImage cropSquareImage:self.imgData]
+                                                            withImage:kIMG(@"播放")
+                                                    image2Coefficient:3]
+                                           forState:UIControlStateNormal];
                         self.choosePicBtn.iconBtn.alpha = 0.7;
-                        NSLog(@"");
                     }else if ([arg isKindOfClass:PHAsset.class]){
                         NSLog(@"");
                         PHAsset *phAsset = (PHAsset *)arg;
                         [FileFolderHandleTool getVedioFromPHAsset:phAsset
                                                          complete:^(id data) {
-                            if ([data isKindOfClass:NSData.class]) {
-                                self.vedioData = (NSData *)data;
+                            if ([data isKindOfClass:AVURLAsset.class]) {
+                                self.urlAsset = (AVURLAsset *)data;
+                                NSURL *url = self.urlAsset.URL;
+                                self.vedioData = [NSData dataWithContentsOfURL:url];
                             }
                         }];
                     }else if ([arg isKindOfClass:NSString.class]){
                         NSLog(@"");
+                    }else if ([arg isKindOfClass:NSArray.class]){
+                        NSArray *arr = (NSArray *)arg;
+                        if (arr.count == 1) {
+                            if ([arr[0] isKindOfClass:PHAsset.class]) {
+                                
+                            }else if ([arr[0] isKindOfClass:UIImage.class]){
+                                [self alertControllerStyle:SYS_AlertController
+                                        showAlertViewTitle:@"请选择视频作品"
+                                                   message:nil
+                                           isSeparateStyle:NO
+                                               btnTitleArr:@[@"确认"]
+                                            alertBtnAction:@[@"sure"]
+                                              alertVCBlock:^(id data) {
+                                    //DIY
+                                }];
+                            }else{
+                                NSLog(@"");
+                            }
+                        }else{
+                            NSLog(@"");
+                        }
+                    }else{
+                        NSLog(@"");
                     }
                 }
+            }else{
+                NSLog(@"");
             }
             // 清空参数列表，并置参数指针args无效
             va_end(args);
@@ -333,7 +366,6 @@ shouldChangeTextInRange:(NSRange)range
                               color:kRedColor
                              target:self
                              action:@selector(btnClickEvent:)];
-    WeakSelf
     [self addLinkCompWithText:@"上传须知"
                       onClick:^{
         NSLog(@"点击到了一个链接");

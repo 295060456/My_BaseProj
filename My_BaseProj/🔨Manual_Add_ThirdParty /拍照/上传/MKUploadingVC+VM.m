@@ -15,12 +15,15 @@
  视频地址（必传）file
  视频标签(可多选，标签id，以逗号分隔)（非必传） ids
  */
-- (void)videosUploadNetworking:(NSData *)data
-               andVideoArticle:(NSString *)videoArticle{
+- (void)videosUploadNetworkingWithData:(NSData *)data
+                          videoArticle:(NSString *)videoArticle
+                              urlAsset:(AVURLAsset *)urlAsset{
+    
     self.reqSignal = [[FMARCNetwork sharedInstance] uploadViedoNetworkPath:@""
                                                                     params:@{
                                                                         @"videoSize":@(data.length),
-                                                                        @"videoArticle":videoArticle
+                                                                        @"videoArticle":videoArticle,
+                                                                        @"videoTime":@([GPUImageTools getVedioDuringTimeWithUrlAsset:urlAsset])//获取视频文件的总时长
                                                                     }
                                                                  fileDatas:@[data]
                                                                    nameArr:@[@"file"]

@@ -1,8 +1,8 @@
 //
 //  MKShootVC.h
-//  MonkeyKingVideo
+//  Shooting
 //
-//  Created by Jobs on 2020/8/10.
+//  Created by Jobs on 2020/8/24.
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
@@ -24,5 +24,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-
-//App 退到后台 或者杀死的时候 不录

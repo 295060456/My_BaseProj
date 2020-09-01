@@ -256,6 +256,7 @@ static inline CGFloat rectOfStatusbar(){
     }else{
         RectOfStatusbar = UIApplication.sharedApplication.statusBarFrame.size.height;
     }return RectOfStatusbar;
+#pragma clang diagnostic pop
 }
 
 #define rectOfNavigationbar self.navigationController.navigationBar.frame.size.height//获取导航栏的高

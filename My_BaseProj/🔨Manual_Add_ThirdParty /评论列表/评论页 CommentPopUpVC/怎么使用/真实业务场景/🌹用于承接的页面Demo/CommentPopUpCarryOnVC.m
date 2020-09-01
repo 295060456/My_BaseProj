@@ -35,6 +35,7 @@
 #pragma clang diagnostic ignored "-Wgnu"
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+#pragma clang diagnostic pop
 }
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC

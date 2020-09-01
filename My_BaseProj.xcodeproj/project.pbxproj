@@ -201,6 +201,7 @@
 		C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
+		C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */; };
 		C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */ = {isa = PBXBuildFile; fileRef = C5CF708F24E43083000DB72D /* Pod里面的Bug */; };
 		C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */; };
 		C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CE24E51A3C000DB72D /* SuspendLab.m */; };
@@ -393,7 +394,6 @@
 		C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C9624B5F29B007B9878 /* LXTagsView.m */; };
 		C5FE9D2E24B5F29C007B9878 /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9CA724B5F29B007B9878 /* FSCustomButton.m */; };
 		C5FE9D2F24B5F29C007B9878 /* CALayer+FSUI.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9CA824B5F29B007B9878 /* CALayer+FSUI.m */; };
-		C5FE9D3124B5F29C007B9878 /* CountDownBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9CAC24B5F29B007B9878 /* CountDownBtn.m */; };
 		C5FE9D3824B5F2E7007B9878 /* PersonalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9D3324B5F2E6007B9878 /* PersonalInfo.m */; };
 		C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9D3424B5F2E6007B9878 /* IsLogin.m */; };
 		C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9D3724B5F2E7007B9878 /* ModelLogin.m */; };
@@ -790,6 +790,8 @@
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
+		C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDownBtn.m"; sourceTree = "<group>"; };
+		C5C67C4F24FE4A37000A26B8 /* UIButton+CountDownBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDownBtn.h"; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
 		C5CF708F24E43083000DB72D /* Pod里面的Bug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pod里面的Bug"; sourceTree = "<group>"; };
 		C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
@@ -1200,8 +1202,6 @@
 		C5FE9CA724B5F29B007B9878 /* FSCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomButton.m; sourceTree = "<group>"; };
 		C5FE9CA824B5F29B007B9878 /* CALayer+FSUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSUI.m"; sourceTree = "<group>"; };
 		C5FE9CAA24B5F29B007B9878 /* 验证码按钮单例封装 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "验证码按钮单例封装"; sourceTree = "<group>"; };
-		C5FE9CAB24B5F29B007B9878 /* CountDownBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownBtn.h; sourceTree = "<group>"; };
-		C5FE9CAC24B5F29B007B9878 /* CountDownBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownBtn.m; sourceTree = "<group>"; };
 		C5FE9D3224B5F2E6007B9878 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
 		C5FE9D3324B5F2E6007B9878 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		C5FE9D3424B5F2E6007B9878 /* IsLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsLogin.m; sourceTree = "<group>"; };
@@ -3472,8 +3472,8 @@
 			isa = PBXGroup;
 			children = (
 				C5FE9CAA24B5F29B007B9878 /* 验证码按钮单例封装 */,
-				C5FE9CAB24B5F29B007B9878 /* CountDownBtn.h */,
-				C5FE9CAC24B5F29B007B9878 /* CountDownBtn.m */,
+				C5C67C4F24FE4A37000A26B8 /* UIButton+CountDownBtn.h */,
+				C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */,
 			);
 			path = "💰VerifyCodeButton";
 			sourceTree = "<group>";
@@ -3871,6 +3871,7 @@
 				C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */,
+				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E4C09C24DFF0B300D4862C /* BaseVC+OpenURL.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
@@ -3916,7 +3917,6 @@
 				C5B1C7BC24BAB91A001923FB /* LOTPolystarAnimator.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
 				C590FF3D24D00D23000F36C9 /* SDWebImageCoderHelper.m in Sources */,
-				C5FE9D3124B5F29C007B9878 /* CountDownBtn.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5B1C7E424BAB91A001923FB /* LOTArrayInterpolator.m in Sources */,
 				C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */,

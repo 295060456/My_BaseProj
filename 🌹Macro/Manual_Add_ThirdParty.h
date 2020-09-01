@@ -29,7 +29,7 @@
 #import "SoundBtn.h"
 #import "LXTagsView.h"
 #import "TouchID.h"
-#import "CountDownBtn.h"
+#import "UIButton+CountDownBtn.h"
 #import "XDSDropDownMenu.h"
 #import "XLSphereView.h"
 #import "UICountingLabel.h"//数字可以一直变化到指定值的UILable

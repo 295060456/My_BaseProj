@@ -2546,7 +2546,7 @@
 				C5FE9C2E24B5F29A007B9878 /* TouchID */,
 				C5FE9C7A24B5F29B007B9878 /* UIControl+XY */,
 				C5FE9C1624B5F299007B9878 /* UIDevice+XMUtils */,
-				C5FE9CA924B5F29B007B9878 /* VerifyCodeButton */,
+				C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */,
 				C5FE9BFC24B5F299007B9878 /* WaterMark */,
 				C5FE9C2224B5F29A007B9878 /* WebSocket */,
 				C5FE9B8124B5F298007B9878 /* XDSDropDownMenu */,
@@ -3468,14 +3468,14 @@
 			path = "高度自定义的按钮";
 			sourceTree = "<group>";
 		};
-		C5FE9CA924B5F29B007B9878 /* VerifyCodeButton */ = {
+		C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */ = {
 			isa = PBXGroup;
 			children = (
 				C5FE9CAA24B5F29B007B9878 /* 验证码按钮单例封装 */,
 				C5FE9CAB24B5F29B007B9878 /* CountDownBtn.h */,
 				C5FE9CAC24B5F29B007B9878 /* CountDownBtn.m */,
 			);
-			path = VerifyCodeButton;
+			path = "💰VerifyCodeButton";
 			sourceTree = "<group>";
 		};
 		EE05B672768957DF208CC365 /* Frameworks */ = {

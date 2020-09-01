@@ -19,7 +19,8 @@
 @implementation CountDownBtn
 
 -(void)dealloc{
-   [self.timer invalidate];
+    [self.timer invalidate];
+    _timer = nil;
 }
 
 -(instancetype)initWithStyle:(CountDownBtnType)style{
@@ -125,7 +126,7 @@
     NSLog(@"format_time : %@",format_time);
     return format_time;
 }
-
+#pragma mark —— LazyLoad
 -(UIColor *)bgCountDownColor{
     if (!_bgCountDownColor) {
         _bgCountDownColor = [UIColor greenColor];

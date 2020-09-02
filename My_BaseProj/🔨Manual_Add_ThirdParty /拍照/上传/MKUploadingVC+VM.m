@@ -33,9 +33,6 @@
         @strongify(self)
         NSLog(@"%@",response.reqResult);
         [MBProgressHUD wj_showPlainText:@"发布成功" view:getMainWindow()];
-        if (self.MKUploadingBlock) {//为什么不执行？？？
-            self.MKUploadingBlock(@1);
-        }
     }];
 }
 

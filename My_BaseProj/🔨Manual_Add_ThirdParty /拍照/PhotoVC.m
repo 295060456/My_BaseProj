@@ -224,12 +224,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 -(MKUploadingVC *)uploadingVC{
     if (!_uploadingVC) {
         _uploadingVC = MKUploadingVC.new;
-        @weakify(self)
-        [_uploadingVC actionMKUploadingBlock:^(id data) {
-            @strongify(self)
-            [self.categoryView selectItemAtIndex:3];
-            [self.listContainerView didClickSelectedItemAtIndex:3];
-        }];
     }return _uploadingVC;
 }
 

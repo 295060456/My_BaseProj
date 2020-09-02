@@ -662,7 +662,7 @@
 
 -(NSArray *)arrImage{
     if (!_arrImage) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"video.gif" ofType:nil] ;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"视频水印.gif" ofType:nil];
         NSData *imageData = [NSData dataWithContentsOfFile:path];
         _arrImage = [NSObject changeGifToImage:imageData];
     }return _arrImage;

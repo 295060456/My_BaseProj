@@ -70,6 +70,8 @@
 #import "GPUImageTools.h"
 #import "JhtBannerView.h"
 #import "ZZCircleProgress.h"
+#import "MovieCountDown.h"
+#import "UIButton+CountDownBtn.h"//验证码倒计时按钮
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"
@@ -88,6 +90,7 @@
 #import "UIView+Extras.h"
 #import "UIView+Chain.h"
 #import "UIView+SuspendView.h"
+#import "UIView+Measure.h"
 
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"

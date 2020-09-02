@@ -103,7 +103,7 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
     [self setTitle:self.titleEndStr
           forState:UIControlStateNormal];
     self.backgroundColor = self.bgEndColor;
-    [NSTimerManager nsTimeDestroy:self.nsTimerManager.nsTimer];
+    [self.nsTimerManager nsTimeDestroy];
 }
 //传入 秒  得到 xx:xx:xx
 -(NSString *)getHHMMSSFromStr:(NSString *)totalTime{
@@ -367,3 +367,4 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
 
 
 @end
+ 

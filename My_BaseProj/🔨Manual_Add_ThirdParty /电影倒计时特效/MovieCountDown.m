@@ -33,11 +33,12 @@
 }
 
 -(void)makeTimer{
+    self.nsTimerManager.anticlockwiseTime = self.countDownTime;
     //创建方式——1
-    //    [NSTimerManager nsTimeStart:self.nsTimerManager.nsTimer
-    //                    withRunLoop:nil];
+    [NSTimerManager nsTimeStart:self.nsTimerManager.nsTimer
+                    withRunLoop:nil];
     //创建方式——2
-    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
+    //    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
 }
 
 -(void)secountDown{
@@ -74,17 +75,14 @@
     if (!_nsTimerManager) {
         _nsTimerManager = NSTimerManager.new;
         _nsTimerManager.timerStyle = TimerStyle_anticlockwise;
-        _nsTimerManager.anticlockwiseTime = 5;
-        @weakify(self)
+        _nsTimerManager.anticlockwiseTime = self.countDownTime;
         [_nsTimerManager actionNSTimerManagerRunningBlock:^(id data) {
-            @strongify(self)
             if ([data isKindOfClass:NSTimerManager.class]) {
                 NSTimerManager *timerManager = (NSTimerManager *)data;
                 [self getCuntDown:(NSInteger)timerManager.anticlockwiseTime];
             }
         }];
         [_nsTimerManager actionNSTimerManagerFinishBlock:^(id data) {
-            @strongify(self)
             NSLog(@"结束回调");
             if (self.movieCountDownFinishBlock) {
                 self.movieCountDownFinishBlock(data);
@@ -122,17 +120,23 @@
     }return _aphView;
 }
 
+
 -(UIColor *)countDownTextColor{
     if (!_countDownTextColor) {
-        _countDownTextColor = kRedColor;
+        _countDownTextColor = [UIColor redColor];
     }return _countDownTextColor;
 }
 
 -(UIColor *)aphViewBackgroundColor{
     if (!_aphViewBackgroundColor) {
-        _aphViewBackgroundColor = kClearColor;
+        _aphViewBackgroundColor = [UIColor clearColor];
     }return _aphViewBackgroundColor;
 }
 
+-(CGFloat)countDownTime{
+    if (_countDownTime == 0) {
+        _countDownTime = 5;
+    }return _countDownTime;
+}
 
 @end

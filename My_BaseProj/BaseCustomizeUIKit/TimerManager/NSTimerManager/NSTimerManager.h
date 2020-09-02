@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///定时器继续
 +(void)nsTimecontinue:(NSTimer *)nsTimer;
 ///销毁定时器
-+(void)nsTimeDestroy:(NSTimer *)nsTimer;
+-(void)nsTimeDestroy;
 
 @end
 

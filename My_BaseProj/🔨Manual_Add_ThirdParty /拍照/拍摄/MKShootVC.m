@@ -9,8 +9,9 @@
 #import "MKShootVC.h"
 #import "GPUImageTools.h"
 #import "CustomerGPUImagePlayerVC.h"//视频预览 VC
-#import "StartOrPauseBtn.h"
+
 #import "MyCell.h"
+#import "MovieCountDown.h"
 
 #import "MKShootVC+VM.h"
 
@@ -19,19 +20,19 @@
 #pragma mark —— UI
 @property(nonatomic,strong)UIButton *overturnBtn;//镜头翻转
 @property(nonatomic,strong)UIButton *flashLightBtn;//闪光灯
+@property(nonatomic,strong)UIButton *countDownBtn;//开始录制的时候是否允许有倒计时;默认无
 @property(nonatomic,strong)UIButton *deleteFilmBtn;//删除视频
 @property(nonatomic,strong)UIButton *sureFilmBtn;//保存视频
 @property(nonatomic,strong)UIButton *previewBtn;
 @property(nonatomic,strong)UIView *indexView;
 @property(nonatomic,strong)JhtBannerView *bannerView;
 @property(nonatomic,strong)CustomerAVPlayerView *AVPlayerView;
-@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;
+@property(nonatomic,strong)MovieCountDown *movieCountDown;
 
 @property(nonatomic,assign)CGFloat safetyTime;//小于等于这个时间点的录制的视频不允许被保存，而是应该被遗弃
 @property(nonatomic,assign)CGFloat __block time;
 @property(nonatomic,strong)NSArray *timeArr;
 
-@property(nonatomic,strong)GPUImageTools *gpuImageTools;
 @property(nonatomic,strong)id requestParams;
 @property(nonatomic,assign)BOOL isPush;
 @property(nonatomic,assign)BOOL isPresent;
@@ -105,8 +106,8 @@
     
     self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtnCategory];
     self.gk_navRightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.flashLightBtn],
-                                       [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn]];
-    
+                                       [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn],
+                                       [[UIBarButtonItem alloc] initWithCustomView:self.countDownBtn]];
     self.gk_navTitle = @"";
     [self hideNavLine];
 
@@ -154,6 +155,7 @@
 #pragma mark —— 点击事件
 //翻转摄像头
 -(void)overturnBtnClickEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
     [self.gpuImageTools overturnCamera];
 }
 //开启闪光灯
@@ -193,13 +195,18 @@
     //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
     [self.gpuImageTools vedioShoottingEnd];
 }
+//倒计时
+-(void)countDownBtnClickEvent:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    self.recordBtn.isCountDown = sender.selected;
+}
 
 -(void)sureFilmBtnClickEvent:(UIButton *)sender{
     NSLog(@"结束录制 —— 这个作品我要了");
     //判定规则：小于3秒的被遗弃，不允许被保存
     if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
         [MBProgressHUD wj_showPlainText:[NSString stringWithFormat:@"不能保存录制时间低于%.2f秒的视频",self.recordBtn.safetyTime]
-                                   view:self.view];
+                                   view:getMainWindow()];
     }else{
         [self.gpuImageTools vedioShoottingEnd];
         [self.recordBtn reset];
@@ -233,21 +240,27 @@
     [self.recordBtn reset];
 
     [MBProgressHUD wj_showPlainText:@"开始录制"
-                               view:nil];
-    
-    //功能性的 删除tmp文件夹下的文件
+                               view:getMainWindow()];
+    [self delTmpRes];
+}
+///功能性的 删除tmp文件夹下的文件
+-(void)delTmpRes{
     BOOL success = [FileFolderHandleTool removeItemAtPath:[FileFolderHandleTool directoryAtPath:self.gpuImageTools.FileUrlByTime]
                                                     error:nil];
     if (success) {
         NSLog(@"删除作品成功");
         [MBProgressHUD wj_showPlainText:@"删除作品成功"
-                                   view:self.view];
+                                   view:getMainWindow()];
     }
 }
 
 -(void)shoottingContinue{
     [self.recordBtn tapGRUI:YES];
     [self.gpuImageTools vedioShoottingContinue];
+    
+    self.deleteFilmBtn.alpha = 0;
+    self.sureFilmBtn.alpha = 0;
+    self.previewBtn.alpha = 0;
 }
 
 -(void)exit{
@@ -336,11 +349,15 @@
         //点击后的录制状态回调 是录制还是没录制
         [_recordBtn actionStartOrPauseBtnBlock:^(id data) {
             @strongify(self)
-            if ([data isKindOfClass:NSNumber.class]) {
-                NSNumber *num = (NSNumber *)data;
-                switch (num.intValue) {
+            if ([data isKindOfClass:StartOrPauseBtn.class]) {
+                StartOrPauseBtn *btn = (StartOrPauseBtn *)data;
+                switch (btn.shottingStatus) {
                     case ShottingStatus_on:{//开始录制
-                        [self.gpuImageTools vedioShoottingOn];
+                        if (self.countDownBtn.selected) {
+                            [self.movieCountDown 倒计时放大特效];
+                        }else{
+                            [self 开始录制];
+                        }
                     }break;
                     case ShottingStatus_suspend:{//暂停录制
                         [self.gpuImageTools vedioShoottingSuspend];
@@ -348,17 +365,41 @@
                         self.sureFilmBtn.alpha = 1;
                     }break;
                     case ShottingStatus_continue:{//继续录制
-                        [self.gpuImageTools vedioShoottingContinue];
+                        if (self.countDownBtn.selected) {
+                            [self.movieCountDown 倒计时放大特效];
+                        }else{
+                            [self 继续录制];
+                        }
                     }break;
-//                    case ShottingStatus_off:{//取消录制
-//                        [self.gpuImageTools vedioShoottingOff];
-//                    }break;
+    //                    case ShottingStatus_off:{//取消录制
+    //                        [self.gpuImageTools vedioShoottingOff];
+    //                    }break;
                     default:
                         break;
                 }
             }
         }];
+        [_recordBtn actionFinishWorkBlock:^(id data) {
+            @strongify(self)
+            [self.gpuImageTools vedioShoottingEnd];
+        }];
     }return _recordBtn;
+}
+
+-(void)开始录制{
+    [self.gpuImageTools vedioShoottingOn];
+    self.deleteFilmBtn.alpha = 0;
+    self.sureFilmBtn.alpha = 0;
+    self.previewBtn.alpha = 0;
+    [self.recordBtn vedioShoottingOn];
+}
+
+-(void)继续录制{
+    [self.gpuImageTools vedioShoottingContinue];
+    self.deleteFilmBtn.alpha = 0;
+    self.sureFilmBtn.alpha = 0;
+    self.previewBtn.alpha = 0;
+    [self.recordBtn vedioShoottingContinue];
 }
 
 -(GPUImageTools *)gpuImageTools{
@@ -474,6 +515,19 @@
                          action:@selector(flashLightBtnClickEvent:)
                forControlEvents:UIControlEventTouchUpInside];
     }return _flashLightBtn;
+}
+
+-(UIButton *)countDownBtn{
+    if (!_countDownBtn) {
+        _countDownBtn = UIButton.new;
+        [_countDownBtn setImage:kIMG(@"倒计时 关闭状态")
+                       forState:UIControlStateNormal];
+        [_countDownBtn setImage:kIMG(@"倒计时 开启状态")
+                       forState:UIControlStateSelected];
+        [_countDownBtn addTarget:self
+                          action:@selector(countDownBtnClickEvent:)
+                forControlEvents:UIControlEventTouchUpInside];
+    }return _countDownBtn;
 }
 
 -(UIButton *)previewBtn{
@@ -593,17 +647,6 @@
     }return _time;
 }
 
-- (NSArray *)getData{
-    return @[
-      @{@"name":@"拍 3 分钟",
-        @"time":@"180"},
-      @{@"name":@"拍 5 分钟",
-        @"time":@"300"},
-      @{@"name":@"拍 1 分钟",
-        @"time":@"60"}
-      ];
-}
-
 -(NSArray *)timeArr{
     if (!_timeArr) {
         _timeArr = @[@"拍摄 1 分钟",
@@ -675,6 +718,19 @@
     }return _AVPlayerView;
 }
 
-
+-(MovieCountDown *)movieCountDown{
+    if (!_movieCountDown) {
+        _movieCountDown = MovieCountDown.new;
+        _movieCountDown.countDownTextColor = kBlueColor;
+        _movieCountDown.aphViewBackgroundColor = KLightGrayColor;
+        _movieCountDown.effectView = self.view;
+        @weakify(self)
+        [_movieCountDown actionMovieCountDownFinishBlock:^(id data) {
+            @strongify(self)
+            NSLog(@"我死球了");
+            [self 开始录制];
+        }];
+    }return _movieCountDown;
+}
 
 @end

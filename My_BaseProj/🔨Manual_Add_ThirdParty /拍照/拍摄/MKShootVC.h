@@ -7,10 +7,14 @@
 //
 
 #import "BaseVC.h"
+#import "StartOrPauseBtn.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MKShootVC : BaseVC
+
+@property(nonatomic,strong)GPUImageTools *gpuImageTools;
+@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;//录制的按钮
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                  comingStyle:(ComingStyle)comingStyle
@@ -20,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
                     animated:(BOOL)animated;
 
 -(void)ActionMKShootVCBlock:(MKDataBlock)MKShootVCBlock;
+///功能性的 删除tmp文件夹下的文件
+-(void)delTmpRes;
 
 @end
 

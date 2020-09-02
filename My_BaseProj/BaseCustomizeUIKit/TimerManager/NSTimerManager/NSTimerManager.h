@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)NSTimeInterval timeSecIntervalSinceDate;//推移时间，秒数
 @property(nonatomic,assign)NSTimeInterval timeInterval;//时间间距
 @property(nonatomic,assign)BOOL repeats;
-@property(nonatomic,weak)NSTimer *__block nsTimer;
+@property(nonatomic,strong)NSTimer *__block nsTimer;
 ///需要定时器做的事情，回调
 -(void)actionNSTimerManagerRunningBlock:(MKDataBlock)NSTimerManagerRunningBlock;
 ///定时器销毁的时候的回调

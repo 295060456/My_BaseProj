@@ -16,6 +16,7 @@
 @property(nonatomic,strong)UILabel *countDown;
 @property(nonatomic,strong)UIView *aphView;
 @property(nonatomic,strong)NSTimerManager *nsTimerManager;
+@property(nonatomic,copy)MKDataBlock movieCountDownFinishBlock;
 
 @end
 
@@ -40,18 +41,15 @@
 }
 
 -(void)secountDown{
-    if (self.effectView) {
-        self.countDown.alpha = 1;
-        self.aphView.alpha = 1;
-    }else{
+    if (!self.effectView) {
         NSAssert(0,@"检查属性 effectView 不能为空");
     }
 }
 
 -(void)getCuntDown:(NSInteger)second{
-    _countDown.text=[NSString stringWithFormat:@"%ld",(long)second];
-    _countDown.alpha = 1;
-    _aphView.alpha = 0;
+    self.countDown.text = [NSString stringWithFormat:@"%ld",(long)second];
+    self.countDown.alpha = 1;
+    self.aphView.alpha = 0;
     @weakify(self)
     [UIView animateWithDuration:0.8
                      animations:^{
@@ -67,20 +65,30 @@
     }];
 }
 
+-(void)actionMovieCountDownFinishBlock:(MKDataBlock)movieCountDownFinishBlock{
+    _movieCountDownFinishBlock = movieCountDownFinishBlock;
+}
+
 #pragma mark —— lazyLoad
 -(NSTimerManager *)nsTimerManager{
     if (!_nsTimerManager) {
         _nsTimerManager = NSTimerManager.new;
         _nsTimerManager.timerStyle = TimerStyle_anticlockwise;
         _nsTimerManager.anticlockwiseTime = 5;
+        @weakify(self)
         [_nsTimerManager actionNSTimerManagerRunningBlock:^(id data) {
+            @strongify(self)
             if ([data isKindOfClass:NSTimerManager.class]) {
                 NSTimerManager *timerManager = (NSTimerManager *)data;
                 [self getCuntDown:(NSInteger)timerManager.anticlockwiseTime];
             }
         }];
         [_nsTimerManager actionNSTimerManagerFinishBlock:^(id data) {
+            @strongify(self)
             NSLog(@"结束回调");
+            if (self.movieCountDownFinishBlock) {
+                self.movieCountDownFinishBlock(data);
+            }
         }];
     }return _nsTimerManager;
 }
@@ -88,12 +96,12 @@
 -(UILabel *)countDown{
     if (!_countDown) {
         _countDown = UILabel.new;
-        _countDown.textColor = [UIColor redColor];;
-        _countDown.font =[UIFont boldSystemFontOfSize:100];
+        _countDown.textColor = self.countDownTextColor;;
+        _countDown.font = [UIFont boldSystemFontOfSize:100];
         _countDown.textAlignment = 1;
-        _countDown.x = (SCREEN_WIDTH - 100)/2;
-        _countDown.y = (SCREEN_HEIGHT - 100)/2;
-        _countDown.width =_countDown.height = 100;
+        _countDown.x = (SCREEN_WIDTH - 100) / 2;
+        _countDown.y = (SCREEN_HEIGHT - 100) / 2;
+        _countDown.width = _countDown.height = 100;
         [self.effectView addSubview:_countDown];
     }return _countDown;
 }
@@ -101,8 +109,11 @@
 -(UIView *)aphView{
     if (!_aphView) {
         _aphView = UIView.new;
-        _aphView.backgroundColor = [UIColor blueColor];
-        _aphView.frame = CGRectMake(0, 0, 100, 100);
+        _aphView.backgroundColor = self.aphViewBackgroundColor;
+        _aphView.frame = CGRectMake(0,
+                                    0,
+                                    100,
+                                    100);
         _aphView.centerX = _countDown.centerX;
         _aphView.centerY = _countDown.centerY;
         _aphView.alpha = 0;
@@ -110,5 +121,18 @@
         [self.effectView addSubview:_aphView];
     }return _aphView;
 }
+
+-(UIColor *)countDownTextColor{
+    if (!_countDownTextColor) {
+        _countDownTextColor = kRedColor;
+    }return _countDownTextColor;
+}
+
+-(UIColor *)aphViewBackgroundColor{
+    if (!_aphViewBackgroundColor) {
+        _aphViewBackgroundColor = kClearColor;
+    }return _aphViewBackgroundColor;
+}
+
 
 @end

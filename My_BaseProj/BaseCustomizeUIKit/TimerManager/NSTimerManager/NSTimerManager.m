@@ -30,7 +30,38 @@
         
     }return self;
 }
-
+///定时器暂停
++(void)nsTimePause:(NSTimer *)nsTimer{
+    if (nsTimer) {
+        [nsTimer setFireDate:NSDate.distantFuture];
+    }
+}
+///定时器继续
++(void)nsTimecontinue:(NSTimer *)nsTimer{
+    if (nsTimer) {
+        [nsTimer setFireDate:NSDate.distantPast];
+    }
+}
+///销毁定时器
++(void)nsTimeDestroy:(NSTimer *)nsTimer{
+    if (nsTimer) {
+        [nsTimer invalidate];//这个是唯一一个可以将计时器从runloop中移出的方法
+        nsTimer = nil;
+    }
+}
+///定时器启动 手动添加定时器到RunLoop
++(void)nsTimeStart:(NSTimer *)nsTimer
+       withRunLoop:(NSRunLoop *_Nullable)runLoop{
+    if (nsTimer) {
+        if (!runLoop) {
+            runLoop = NSRunLoop.mainRunLoop;
+        }
+        [runLoop addTimer:nsTimer
+                  forMode:NSRunLoopCommonModes];
+    }else{
+         NSAssert(0,@"属性 nsTimer 没有被成功创建,请检查");
+    }
+}
 -(void)actionNSTimerManagerRunningBlock:(MKDataBlock)NSTimerManagerRunningBlock{
     _NSTimerManagerRunningBlock = NSTimerManagerRunningBlock;
 }
@@ -38,6 +69,46 @@
 -(void)actionNSTimerManagerFinishBlock:(MKDataBlock)NSTimerManagerFinishBlock{
     _NSTimerManagerFinishBlock = NSTimerManagerFinishBlock;
 }
+#pragma mark —— lazyLoad
+#pragma mark —— 系统Api暴露出来的未被废弃的 NSTimer 的初始化方法有如下几种:
+
+//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti
+//                                invocation:(NSInvocation *)invocation
+//                                   repeats:(BOOL)yesOrNo;
+//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti
+//                                    target:(id)aTarget
+//                                  selector:(SEL)aSelector
+//                                  userInfo:(nullable id)userInfo//????
+//                                   repeats:(BOOL)yesOrNo;
+//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval
+//                                   repeats:(BOOL)repeats
+//                                     block:(void (^)(NSTimer *timer))block;
+
+/*
+*   scheduledTimerWithTimeInterval相比它的小伙伴们不仅仅是创建了NSTimer对象,
+*   还把该对象加入到了当前的runloop中
+*   runloop的模式为默认模式（NSRunLoopCommonModes）!
+*   NSTimer只有被加入到runloop, 才会生效, 即NSTimer才会被真正执行
+*/
+
+//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti
+//                       invocation:(NSInvocation *)invocation
+//                          repeats:(BOOL)yesOrNo;
+
+//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti
+//                           target:(id)aTarget
+//                         selector:(SEL)aSelector
+//                         userInfo:(nullable id)userInfo//????
+//                          repeats:(BOOL)yesOrNo;
+
+//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval
+//                          repeats:(BOOL)repeats
+//                            block:(void (^)(NSTimer *timer))block;
+
+//-(instancetype)initWithFireDate:(NSDate *)date
+//                       interval:(NSTimeInterval)interval
+//                        repeats:(BOOL)repeats
+//                          block:(void (^)(NSTimer *timer))block;
 
 ///定时器启动 系统自动添加到RunLoop
 -(NSTimer *)nsTimeStartSysAutoInRunLoop{
@@ -51,20 +122,20 @@
                 switch (self.timerStyle) {
                     case TimerStyle_clockwise:{//顺时针模式
                         if (self.NSTimerManagerRunningBlock) {
-                            self.NSTimerManagerRunningBlock(timer);
+                            self.NSTimerManagerRunningBlock(self);
                         }
                     }break;
                     case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
                         if (self.anticlockwiseTime >= 1) {
                             if (self.NSTimerManagerRunningBlock) {
-                                self.NSTimerManagerRunningBlock(timer);
+                                self.NSTimerManagerRunningBlock(self);
                             }
                             self.anticlockwiseTime -= self.timeInterval;
                         }else{
                             if (self->_nsTimer) {
                                 [NSTimerManager nsTimeDestroy:self->_nsTimer];
                                 if (self.NSTimerManagerFinishBlock) {
-                                    self.NSTimerManagerFinishBlock(@1);
+                                    self.NSTimerManagerFinishBlock(self);
                                 }
                             }
                         }
@@ -94,74 +165,6 @@
     }
     return self.nsTimer;
 }
-///定时器启动 手动添加定时器到RunLoop
-+(void)nsTimeStart:(NSTimer *)nsTimer
-       withRunLoop:(NSRunLoop *_Nullable)runLoop{
-    if (!runLoop) {
-        runLoop = NSRunLoop.mainRunLoop;
-    }
-    [runLoop addTimer:nsTimer
-              forMode:NSDefaultRunLoopMode];
-}
-///定时器暂停
-+(void)nsTimePause:(NSTimer *)nsTimer{
-    if (nsTimer) {
-        [nsTimer setFireDate:NSDate.distantFuture];
-    }
-}
-///定时器继续
-+(void)nsTimecontinue:(NSTimer *)nsTimer{
-    if (nsTimer) {
-        [nsTimer setFireDate:NSDate.date];
-    }
-}
-///销毁定时器
-+(void)nsTimeDestroy:(NSTimer *)nsTimer{
-    if (nsTimer) {
-        [nsTimer invalidate];//这个是唯一一个可以将计时器从runloop中移出的方法
-        nsTimer = nil;
-    }
-}
-#pragma mark —— lazyLoad
-#pragma mark —— 系统Api暴露出来的未被废弃的 NSTimer 的初始化方法有如下几种:
-
-//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti
-//                                invocation:(NSInvocation *)invocation
-//                                   repeats:(BOOL)yesOrNo;
-//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti
-//                                    target:(id)aTarget
-//                                  selector:(SEL)aSelector
-//                                  userInfo:(nullable id)userInfo//????
-//                                   repeats:(BOOL)yesOrNo;
-//+(NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval
-//                                   repeats:(BOOL)repeats
-//                                     block:(void (^)(NSTimer *timer))block;
-
-/*
-*   scheduledTimerWithTimeInterval相比它的小伙伴们不仅仅是创建了NSTimer对象,
-*   还把该对象加入到了当前的runloop中
-*   runloop的模式为默认模式（NSDefaultRunLoopMode）!
-*   NSTimer只有被加入到runloop, 才会生效, 即NSTimer才会被真正执行
-*/
-
-//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti
-//                       invocation:(NSInvocation *)invocation
-//                          repeats:(BOOL)yesOrNo;
-
-//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti
-//                           target:(id)aTarget
-//                         selector:(SEL)aSelector
-//                         userInfo:(nullable id)userInfo//????
-//                          repeats:(BOOL)yesOrNo;
-
-//+(NSTimer *)timerWithTimeInterval:(NSTimeInterval)interval
-//                          repeats:(BOOL)repeats
-//                            block:(void (^)(NSTimer *timer))block;
-
-//-(instancetype)initWithFireDate:(NSDate *)date
-//                       interval:(NSTimeInterval)interval
-//                        repeats:(BOOL)repeats
-//                          block:(void (^)(NSTimer *timer))block;
 
 -(NSTimer *)nsTimer{
     if (!_nsTimer) {
@@ -174,20 +177,20 @@
             switch (self.timerStyle) {
                 case TimerStyle_clockwise:{//顺时针模式
                     if (self.NSTimerManagerRunningBlock) {
-                        self.NSTimerManagerRunningBlock(timer);
+                        self.NSTimerManagerRunningBlock(self);
                     }
                 }break;
                 case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
                     if (self.anticlockwiseTime >= 0) {
                         if (self.NSTimerManagerRunningBlock) {
-                            self.NSTimerManagerRunningBlock(timer);
+                            self.NSTimerManagerRunningBlock(self);
                         }
                         self.anticlockwiseTime -= self.timeInterval;
                     }else{
                         if (self->_nsTimer) {
                             [NSTimerManager nsTimeDestroy:self->_nsTimer];
                             if (self.NSTimerManagerFinishBlock) {
-                                self.NSTimerManagerFinishBlock(@1);
+                                self.NSTimerManagerFinishBlock(self);
                             }
                         }
                     }
@@ -219,8 +222,9 @@
 }
 
 -(id)target{
+    @weakify(self)
     if (!_target) {
-        _target = self;
+        _target = self_weak_;
     }return _target;
 }
 

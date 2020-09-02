@@ -262,11 +262,12 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
                 }
             }else if ([data isKindOfClass:NSString.class]){
                 NSString *str = (NSString *)data;
-                if ([str isEqualToString:@"exit"]) {
+                if ([str isEqualToString:@"exit"] ||
+                    [str isEqualToString:@"gpuImageTools"]) {
                     [self.categoryView selectItemAtIndex:0];
                     [self.listContainerView didClickSelectedItemAtIndex:0];
-                }
-            }
+                }else{}
+            }else{}
         }];
     }return _shootVC;
 }

@@ -316,6 +316,24 @@
             return nil;
         }
     }];
+    
+    [ECAuthorizationTools checkAndRequestAccessForType:ECPrivacyType_Photos
+                                          accessStatus:^id(ECAuthorizationStatus status,
+                                                           ECPrivacyType type) {
+        @strongify(self)
+        // status 即为权限状态，
+        //状态类型参考：ECAuthorizationStatus
+        NSLog(@"%lu",(unsigned long)status);
+        if (status == ECAuthorizationStatus_Authorized) {
+            NSLog(@"系统相册可用");
+            self.ispPhotoAlbumCanBeUsed = YES;
+            return nil;
+        }else{
+            NSLog(@"系统相册不可用:%lu",(unsigned long)status);
+            self.ispPhotoAlbumCanBeUsed = NO;
+            return nil;
+        }
+    }];
 }
 
 -(void)ActionMKShootVCBlock:(MKDataBlock)MKShootVCBlock{
@@ -424,8 +442,9 @@
                       }];
                   };
 
-                  if (self.isCameraCanBeUsed &&
-                      self.isMicrophoneCanBeUsed &&
+                  if (self.isCameraCanBeUsed && //摄像头
+                      self.isMicrophoneCanBeUsed &&//麦克风
+                      self.ispPhotoAlbumCanBeUsed && //系统相册
                       self.deleteFilmBtn.alpha == 0 &&
                       self.sureFilmBtn.alpha == 0 &&
                       self.previewBtn.alpha == 0 &&
@@ -436,22 +455,53 @@
                       [self changeFilter];
                   }else{
                       if (!self.isCameraCanBeUsed &&
-                          self.isMicrophoneCanBeUsed) {
+                          self.isMicrophoneCanBeUsed &&
+                          self.ispPhotoAlbumCanBeUsed) {
                           NSLog(@"仅仅只有摄像头不可用");
                           if (block) {
                               block(@"仅仅只有摄像头不可用");
                           }
                       }else if (self.isCameraCanBeUsed &&
+                                self.ispPhotoAlbumCanBeUsed &&
                                 !self.isMicrophoneCanBeUsed){
                           NSLog(@"仅仅只有麦克风不可用");
                           if (block) {
                               block(@"仅仅只有麦克风不可用");
                           }
-                      }else if (!self.isCameraCanBeUsed &&
-                                !self.isMicrophoneCanBeUsed){
-                          NSLog(@"麦克风 和 摄像头 皆不可用");
+                      }else if (self.isCameraCanBeUsed &&
+                                !self.ispPhotoAlbumCanBeUsed &&
+                                self.isMicrophoneCanBeUsed){
+                          NSLog(@"仅仅只有系统相册不可用");
                           if (block) {
-                              block(@"麦克风 和 摄像头 皆不可用");
+                              block(@"仅仅只有系统相册不可用");
+                          }
+                      }else if (!self.isCameraCanBeUsed &&
+                                !self.ispPhotoAlbumCanBeUsed &&
+                                self.isMicrophoneCanBeUsed){
+                          NSLog(@"摄像头和系统相册不可用");
+                          if (block) {
+                              block(@"摄像头和系统相册不可用");
+                          }
+                      }else if (self.isCameraCanBeUsed &&
+                                !self.ispPhotoAlbumCanBeUsed &&
+                                !self.isMicrophoneCanBeUsed){
+                          NSLog(@"系统相册和麦克风不可用");
+                          if (block) {
+                              block(@"系统相册和麦克风不可用");
+                          }
+                      }else if (!self.isCameraCanBeUsed &&
+                                self.ispPhotoAlbumCanBeUsed &&
+                                !self.isMicrophoneCanBeUsed){
+                          NSLog(@"摄像头和麦克风不可用");
+                          if (block) {
+                              block(@"摄像头和麦克风不可用");
+                          }
+                      }else if (!self.isCameraCanBeUsed &&
+                                !self.isMicrophoneCanBeUsed &&
+                                !self.ispPhotoAlbumCanBeUsed){
+                          NSLog(@"麦克风、摄像头、系统相册皆不可用");
+                          if (block) {
+                              block(@"麦克风、摄像头、系统相册皆不可用");
                           }
                       }else{
                           NSLog(@"");
@@ -465,29 +515,34 @@
         [_gpuImageTools vedioToolsSessionStatusCompletedBlock:^(id data) {
             @strongify(self)
             if ([data isKindOfClass:GPUImageTools.class]) {
-                GPUImageTools *tools = (GPUImageTools *)data;
-                tools.thumb;//缩略图
-                
-                // GPUImage 只能播放本地视频，不能处理网络流媒体url
-    //            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
-    //                                       comingStyle:ComingStyle_PUSH
-    //                                 presentationStyle:UIModalPresentationFullScreen
-    //                                     requestParams:@{
-    //                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]//fileURLWithPath
-    //                                     }
-    //                                           success:^(id data) {}
-    //                                          animated:YES];
-                #pragma mark —— AVPlayer
-    //            [CustomerAVPlayerVC ComingFromVC:weak_self
-    //                                 comingStyle:ComingStyle_PUSH
-    //                           presentationStyle:UIModalPresentationFullScreen
-    //                               requestParams:@{
-    //                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
-    //                               }
-    //                                     success:^(id data) {}
-    //                                    animated:YES];
-                #pragma mark —— 悬浮窗AVPlayer
-                self.AVPlayerView.alpha = 1;
+                {
+//                    GPUImageTools *tools = (GPUImageTools *)data;
+//                    tools.thumb;//缩略图
+                    
+                    // GPUImage 只能播放本地视频，不能处理网络流媒体url
+        //            [CustomerGPUImagePlayerVC ComingFromVC:weak_self
+        //                                       comingStyle:ComingStyle_PUSH
+        //                                 presentationStyle:UIModalPresentationFullScreen
+        //                                     requestParams:@{
+        //                                         @"AVPlayerURL":[NSURL URLWithString:VedioTools.sharedInstance.recentlyVedioFileUrl]//fileURLWithPath
+        //                                     }
+        //                                           success:^(id data) {}
+        //                                          animated:YES];
+                    #pragma mark —— AVPlayer
+        //            [CustomerAVPlayerVC ComingFromVC:weak_self
+        //                                 comingStyle:ComingStyle_PUSH
+        //                           presentationStyle:UIModalPresentationFullScreen
+        //                               requestParams:@{
+        //                                   @"AVPlayerURL":[NSURL fileURLWithPath:VedioTools.sharedInstance.recentlyVedioFileUrl]
+        //                               }
+        //                                     success:^(id data) {}
+        //                                    animated:YES];
+                    #pragma mark —— 悬浮窗AVPlayer
+    //                self.AVPlayerView.alpha = 1;
+                }
+                if (self.MKShootVCBlock) {
+                    self.MKShootVCBlock(NSStringFromSelector(_cmd));
+                }
             }
         }];
     }return _gpuImageTools;

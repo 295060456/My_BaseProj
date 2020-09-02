@@ -669,7 +669,7 @@ bundleFileSuffix:(NSString *)bundleFileSuffix
 +(void)createAlbumFolder:(NSString *)folderName
        ifExitFolderBlock:(MKDataBlock)ifExitFolderBlock
        completionHandler:(TwoDataBlock)completionBlock{
-    if (![FileFolderHandleTool isExistFolder:folderName]) {
+    if (![FileFolderHandleTool isAlbumExistFolder:folderName]) {
         [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
             [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:folderName];
         } completionHandler:^(BOOL success,
@@ -687,19 +687,19 @@ bundleFileSuffix:(NSString *)bundleFileSuffix
 ///创建一个名为folderName的相册，并且以路径pathStr保存文件
 +(void)createAlbumFolder:(NSString *)folderName
                     path:(NSString *)pathStr{
-    if (![FileFolderHandleTool isExistFolder:folderName]) {
+    if (![FileFolderHandleTool isAlbumExistFolder:folderName]) {
         [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
             [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:folderName];
         } completionHandler:^(BOOL success,
                               NSError * _Nullable error) {
             if (success) {
                 NSLog(@"创建相册文件夹成功!");
-                [FileFolderHandleTool saveRes:[NSURL URLWithString:pathStr]];
+                [FileFolderHandleTool saveRes:[NSURL fileURLWithPath:pathStr]];
             } else {
                 NSLog(@"创建相册文件夹失败:%@", error);
             }
         }];
-    }else [FileFolderHandleTool saveRes:[NSURL URLWithString:pathStr]];
+    }else [FileFolderHandleTool saveRes:[NSURL fileURLWithPath:pathStr]];
 }
 ///保存视频资源文件到指定的相册路径，这里是整个App名字的相册
 +(void)saveRes:(NSURL *)movieURL{
@@ -736,7 +736,7 @@ bundleFileSuffix:(NSString *)bundleFileSuffix
     }];
 }
 ///是否存在此相册判断逻辑依据 注意和 isExistsAtPath进行区分
-+(BOOL)isExistFolder:(NSString *)folderName{
++(BOOL)isAlbumExistFolder:(NSString *)folderName{
     __block BOOL isExisted = NO;
     //首先获取用户手动创建相册的集合
     PHFetchResult *collectonResuts = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];

@@ -271,8 +271,9 @@
                     NSLog(@"Export canceled");
                 } break;
                 case AVAssetExportSessionStatusCompleted:{
-                    NSLog(@"转换成功");
-                    [self delRaw];
+                    [self delRaw];//转换视频成功删除原始视频素材
+                    [FileFolderHandleTool createAlbumFolder:HDAppDisplayName
+                                                       path:self.compressedVedioPathStr];//存系统相册
                     //  处理完毕的回调
                     if (self.vedioToolsSessionStatusCompletedBlock) {
                         self.vedioToolsSessionStatusCompletedBlock(self);

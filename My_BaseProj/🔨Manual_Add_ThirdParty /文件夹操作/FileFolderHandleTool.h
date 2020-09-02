@@ -222,7 +222,7 @@ bundleFileSuffix:(NSString *)bundleFileSuffix
 ///保存视频资源文件到指定的相册路径，这里是整个App名字的相册
 +(void)saveRes:(NSURL *)movieURL;
 ///是否存在此相册判断逻辑依据
-+(BOOL)isExistFolder:(NSString *)folderName;
++(BOOL)isAlbumExistFolder:(NSString *)folderName;
 ///保存文件到系统默认的相册
 +(void)saveVideo:(NSString *)videoPath;
 +(void)saveImage:(UIImage *)image;

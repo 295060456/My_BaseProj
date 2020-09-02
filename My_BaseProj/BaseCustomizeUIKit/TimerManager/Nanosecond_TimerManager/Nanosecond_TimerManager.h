@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Nanosecond_TimerManager : NSObject
 
-static uint64_t nanos_to_abs(uint64_t nanos);
 void waitSeconds(int seconds);
 
 @end

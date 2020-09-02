@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TimerManager_DefineStructure.h"
 
 typedef enum : NSUInteger {
     ScheduledTimerType_0 = 0,//scheduledTimerWithTimeInterval/repeats/block
@@ -27,13 +28,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign,nullable)SEL selector;
 @property(nonatomic,strong,nullable)id userInfo;
 @property(nonatomic,assign)ScheduledTimerType timerType;
+@property(nonatomic,assign)TimerStyle timerStyle;//逆时针模式?顺时针模式？
+@property(nonatomic,assign)CGFloat anticlockwiseTime;//逆时针模式（倒计时）的顶点时间
 
 @property(nonatomic,assign)NSTimeInterval timeSecIntervalSinceDate;//推移时间，秒数
 @property(nonatomic,assign)NSTimeInterval timeInterval;//时间间距
 @property(nonatomic,assign)BOOL repeats;
-@property(nonatomic,strong)NSTimer *nsTimer;
+@property(nonatomic,weak)NSTimer *__block nsTimer;
 ///需要定时器做的事情，回调
--(void)actionNSTimerManagerBlock:(MKDataBlock)NSTimerManagerBlock;
+-(void)actionNSTimerManagerRunningBlock:(MKDataBlock)NSTimerManagerRunningBlock;
+///定时器销毁的时候的回调
+-(void)actionNSTimerManagerFinishBlock:(MKDataBlock)NSTimerManagerFinishBlock;
 
 ///定时器启动 手动添加定时器到RunLoop
 +(void)nsTimeStart:(NSTimer *)nsTimer

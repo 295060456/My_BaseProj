@@ -207,6 +207,7 @@
 		C5C67C5E24FE4FA5000A26B8 /* GCD_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5C24FE4FA5000A26B8 /* GCD_TimerManager.m */; };
 		C5C67C6124FE4FAB000A26B8 /* CADisplayLink_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5F24FE4FAB000A26B8 /* CADisplayLink_TimerManager.m */; };
 		C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C6324FE4FB1000A26B8 /* NSTimerManager.m */; };
+		C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C7124FF5868000A26B8 /* MovieCountDown.m */; };
 		C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */ = {isa = PBXBuildFile; fileRef = C5CF708F24E43083000DB72D /* Pod里面的Bug */; };
 		C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */; };
 		C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CE24E51A3C000DB72D /* SuspendLab.m */; };
@@ -808,6 +809,9 @@
 		C5C67C6224FE4FB1000A26B8 /* NSTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimerManager.h; sourceTree = "<group>"; };
 		C5C67C6324FE4FB1000A26B8 /* NSTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimerManager.m; sourceTree = "<group>"; };
 		C5C67C6524FE4FEB000A26B8 /* TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager.h; sourceTree = "<group>"; };
+		C5C67C6A24FF460E000A26B8 /* TimerManager_DefineStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager_DefineStructure.h; sourceTree = "<group>"; };
+		C5C67C7024FF5868000A26B8 /* MovieCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCountDown.h; sourceTree = "<group>"; };
+		C5C67C7124FF5868000A26B8 /* MovieCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCountDown.m; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
 		C5CF708F24E43083000DB72D /* Pod里面的Bug */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pod里面的Bug"; sourceTree = "<group>"; };
 		C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
@@ -2085,6 +2089,7 @@
 			isa = PBXGroup;
 			children = (
 				C5C67C6524FE4FEB000A26B8 /* TimerManager.h */,
+				C5C67C6A24FF460E000A26B8 /* TimerManager_DefineStructure.h */,
 				C5C67C5824FE4F94000A26B8 /* Nanosecond_TimerManager */,
 				C5C67C5724FE4F8D000A26B8 /* GCD_TimerManager(未完) */,
 				C5C67C5624FE4F86000A26B8 /* CADisplayLink_TimerManager */,
@@ -2127,6 +2132,15 @@
 				C5C67C5A24FE4F9C000A26B8 /* Nanosecond_TimerManager.m */,
 			);
 			path = Nanosecond_TimerManager;
+			sourceTree = "<group>";
+		};
+		C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */ = {
+			isa = PBXGroup;
+			children = (
+				C5C67C7024FF5868000A26B8 /* MovieCountDown.h */,
+				C5C67C7124FF5868000A26B8 /* MovieCountDown.m */,
+			);
+			path = "电影倒计时特效";
 			sourceTree = "<group>";
 		};
 		C5CF708C24E4307A000DB72D /* MKGPUImageView */ = {
@@ -2559,6 +2573,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */,
 				C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */,
 				C572A29424FD2A94000A1687 /* PingTest */,
 				C5FE9C4024B5F29A007B9878 /* LZBTabbarViewController */,
@@ -4102,6 +4117,7 @@
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C5FE9D1D24B5F29C007B9878 /* AddressPickerView.m in Sources */,
 				C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */,
+				C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */,
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5B1C7AF24BAB919001923FB /* LOTPathInterpolator.m in Sources */,
 				C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */,

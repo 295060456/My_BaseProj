@@ -11,7 +11,8 @@
 @interface NSTimerManager ()
 
 @property(nonatomic,strong)NSDate *date;
-@property(nonatomic,copy)MKDataBlock NSTimerManagerBlock;
+@property(nonatomic,copy)MKDataBlock NSTimerManagerRunningBlock;
+@property(nonatomic,copy)MKDataBlock NSTimerManagerFinishBlock;
 
 @end
 
@@ -30,18 +31,47 @@
     }return self;
 }
 
--(void)actionNSTimerManagerBlock:(MKDataBlock)NSTimerManagerBlock{
-    _NSTimerManagerBlock = NSTimerManagerBlock;
+-(void)actionNSTimerManagerRunningBlock:(MKDataBlock)NSTimerManagerRunningBlock{
+    _NSTimerManagerRunningBlock = NSTimerManagerRunningBlock;
 }
+
+-(void)actionNSTimerManagerFinishBlock:(MKDataBlock)NSTimerManagerFinishBlock{
+    _NSTimerManagerFinishBlock = NSTimerManagerFinishBlock;
+}
+
 ///定时器启动 系统自动添加到RunLoop
 -(NSTimer *)nsTimeStartSysAutoInRunLoop{
     switch (self.timerType) {
         case ScheduledTimerType_0:{
+            @weakify(self)
             self.nsTimer = [NSTimer scheduledTimerWithTimeInterval:self.timeInterval
                                                            repeats:self.repeats
                                                              block:^(NSTimer * _Nonnull timer) {
-                if (self.NSTimerManagerBlock) {
-                    self.NSTimerManagerBlock(timer);
+                @strongify(self)
+                switch (self.timerStyle) {
+                    case TimerStyle_clockwise:{//顺时针模式
+                        if (self.NSTimerManagerRunningBlock) {
+                            self.NSTimerManagerRunningBlock(timer);
+                        }
+                    }break;
+                    case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
+                        if (self.anticlockwiseTime >= 1) {
+                            if (self.NSTimerManagerRunningBlock) {
+                                self.NSTimerManagerRunningBlock(timer);
+                            }
+                            self.anticlockwiseTime -= self.timeInterval;
+                        }else{
+                            if (self->_nsTimer) {
+                                [NSTimerManager nsTimeDestroy:self->_nsTimer];
+                                if (self.NSTimerManagerFinishBlock) {
+                                    self.NSTimerManagerFinishBlock(@1);
+                                }
+                            }
+                        }
+                    }break;
+                        
+                    default:
+                        break;
                 }
             }];
         }break;
@@ -135,12 +165,36 @@
 
 -(NSTimer *)nsTimer{
     if (!_nsTimer) {
+        @weakify(self)
         _nsTimer = [[NSTimer alloc] initWithFireDate:self.date
-                                            interval:1//self.interval
-                                             repeats:YES//self.repeats
+                                            interval:self.timeInterval
+                                             repeats:self.repeats
                                                block:^(NSTimer * _Nonnull timer) {
-            if (self.NSTimerManagerBlock) {
-                self.NSTimerManagerBlock(timer);
+            @strongify(self)
+            switch (self.timerStyle) {
+                case TimerStyle_clockwise:{//顺时针模式
+                    if (self.NSTimerManagerRunningBlock) {
+                        self.NSTimerManagerRunningBlock(timer);
+                    }
+                }break;
+                case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
+                    if (self.anticlockwiseTime >= 0) {
+                        if (self.NSTimerManagerRunningBlock) {
+                            self.NSTimerManagerRunningBlock(timer);
+                        }
+                        self.anticlockwiseTime -= self.timeInterval;
+                    }else{
+                        if (self->_nsTimer) {
+                            [NSTimerManager nsTimeDestroy:self->_nsTimer];
+                            if (self.NSTimerManagerFinishBlock) {
+                                self.NSTimerManagerFinishBlock(@1);
+                            }
+                        }
+                    }
+                }break;
+                    
+                default:
+                    break;
             }
         }];
     }return _nsTimer;
@@ -174,6 +228,12 @@
     if (!_invocation) {
         //需要补充
     }return _invocation;
+}
+
+-(TimerStyle)timerStyle{
+    if (_timerStyle == TimerStyle_anticlockwise) {
+        self.repeats = YES;
+    }return _timerStyle;
 }
 
 @end

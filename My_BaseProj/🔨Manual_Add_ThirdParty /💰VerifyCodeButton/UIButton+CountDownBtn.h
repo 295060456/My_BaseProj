@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIFont *titleLabelFont;
 @property(nonatomic,assign)CGFloat layerCornerRadius;
 @property(nonatomic,assign)CGFloat layerBorderWidth;
-@property(nonatomic,assign)ShowTimeType showTimeType;
-@property(nonatomic,assign)long count;
+@property(nonatomic,assign)ShowTimeType showTimeType;//时间显示风格
+@property(nonatomic,assign)long count;// 倒计时
 @property(nonatomic,copy)MKDataBlock countDownBlock;
 
 -(void)actionCountDownBlock:(MKDataBlock)countDownBlock;//倒计时需要触发调用的方法

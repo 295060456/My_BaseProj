@@ -70,6 +70,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     return YES;
 }
 
+-(void)applicationDidEnterBackground:(UIApplication *)application{
+    NSLog(@"---applicationDidEnterBackground----"); //进入后台
+}
+
+-(void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"---applicationDidBecomeActive----");//进入前台
+}
 #pragma mark - UISceneSession lifecycle
 - (UISceneConfiguration *)application:(UIApplication *)application
 configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession

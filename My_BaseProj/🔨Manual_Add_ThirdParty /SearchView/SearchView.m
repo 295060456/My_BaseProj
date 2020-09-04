@@ -17,7 +17,7 @@ UIScrollViewDelegate
 
 @property(nonatomic,copy)MKDataBlock block;
 @property(nonatomic,assign)CGFloat BtnWidth;
-@property(nonatomic,strong)FSCustomButton *tempBtn;
+@property(nonatomic,strong)UIButton *tempBtn;
 
 @end
 
@@ -36,7 +36,7 @@ UIScrollViewDelegate
         }
         
         for (int i = 0; i < btnTitleMutArr.count; i++) {
-            FSCustomButton *btn = FSCustomButton.new;
+            UIButton *btn = UIButton.new;
 //            btn.backgroundColor = RandomColor;
             [UIView cornerCutToCircleWithView:btn
                               AndCornerRadius:7.f];
@@ -59,11 +59,8 @@ UIScrollViewDelegate
                 [btn setTitleColor:kRedColor
                           forState:UIControlStateSelected];
             }else{}
-            btn.buttonImagePosition = FSCustomButtonImagePositionRight;
-            btn.titleEdgeInsets = UIEdgeInsetsMake(0,
-                                                   0,
-                                                   0,
-                                                   SCALING_RATIO(10));
+            [btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight
+                                 imageTitleSpace:10];
             [btn.titleLabel sizeToFit];
             btn.titleLabel.adjustsFontSizeToFitWidth = YES;
             [btn addTarget:self
@@ -85,12 +82,12 @@ UIScrollViewDelegate
     self.block = block;
 }
 
--(void)FSCustomButtonClickEvent:(FSCustomButton *)sender{
+-(void)FSCustomButtonClickEvent:(UIButton *)sender{
     if ([self.tempBtn isEqual:sender]) {//同一个btn
         sender.selected = !sender.selected;
     }else{//不同一个btn
         //点击不同的btn
-        for (FSCustomButton *btn in self.btnMutArr) {
+        for (UIButton *btn in self.btnMutArr) {
             btn.selected = NO;
         }
         sender.selected = YES;
@@ -122,7 +119,7 @@ UIScrollViewDelegate
     }return _scrollView;
 }
 
--(NSMutableArray<FSCustomButton *> *)btnMutArr{
+-(NSMutableArray<UIButton *> *)btnMutArr{
     if (!_btnMutArr) {
         _btnMutArr = NSMutableArray.array;
     }return _btnMutArr;

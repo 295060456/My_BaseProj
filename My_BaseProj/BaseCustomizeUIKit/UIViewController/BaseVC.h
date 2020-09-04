@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FSCustomButton.h"
+#import "UIButton+ImageTitleSpacing.h"
 #import "AABlock.h"
 
 typedef enum : NSUInteger {

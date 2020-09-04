@@ -69,7 +69,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     }];
     return YES;
 }
-
+//系统版本低于iOS13.0的设备
 -(void)applicationDidEnterBackground:(UIApplication *)application{
     NSLog(@"---applicationDidEnterBackground----"); //进入后台
 }

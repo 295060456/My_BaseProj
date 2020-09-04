@@ -41,7 +41,7 @@ static SceneDelegate *static_sceneDelegate = nil;
                                    view:nil];
     }
 }
-
+//系统版本不低于iOS13.0的设备
 - (void)scene:(UIScene *)scene
 willConnectToSession:(UISceneSession *)session
       options:(UISceneConnectionOptions *)connectionOptions  API_AVAILABLE(ios(13.0)){

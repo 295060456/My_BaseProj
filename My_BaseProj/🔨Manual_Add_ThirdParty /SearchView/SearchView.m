@@ -63,9 +63,21 @@ UIScrollViewDelegate
                                  imageTitleSpace:10];
             [btn.titleLabel sizeToFit];
             btn.titleLabel.adjustsFontSizeToFitWidth = YES;
-            [btn addTarget:self
-                    action:@selector(FSCustomButtonClickEvent:)
-          forControlEvents:UIControlEventTouchUpInside];
+            [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                if ([self.tempBtn isEqual:x]) {//同一个btn
+                    x.selected = !x.selected;
+                }else{//不同一个btn
+                    //点击不同的btn
+                    for (UIButton *btn in self.btnMutArr) {
+                        btn.selected = NO;
+                    }
+                    x.selected = YES;
+                }
+                self.tempBtn = x;//上一个被点击的btn
+                if (self.block) {
+                    self.block(x);
+                }
+            }];
             [btn setTitleColor:kBlackColor
                       forState:UIControlStateNormal];
             [self.scrollView addSubview:btn];
@@ -80,22 +92,6 @@ UIScrollViewDelegate
 
 -(void)actionBlock:(MKDataBlock)block{
     self.block = block;
-}
-
--(void)FSCustomButtonClickEvent:(UIButton *)sender{
-    if ([self.tempBtn isEqual:sender]) {//同一个btn
-        sender.selected = !sender.selected;
-    }else{//不同一个btn
-        //点击不同的btn
-        for (UIButton *btn in self.btnMutArr) {
-            btn.selected = NO;
-        }
-        sender.selected = YES;
-    }
-    self.tempBtn = sender;//上一个被点击的btn
-    if (self.block) {
-        self.block(sender);
-    }
 }
 #pragma mark —— UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

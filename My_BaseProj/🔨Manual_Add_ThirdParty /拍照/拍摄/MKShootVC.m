@@ -110,6 +110,19 @@
                                        [[UIBarButtonItem alloc] initWithCustomView:self.countDownBtn]];
     self.gk_navTitle = @"";
     [self hideNavLine];
+    
+    [[self.backBtnCategory rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [self alertControllerStyle:SYS_AlertController
+                  showActionSheetTitle:nil
+                               message:nil
+                       isSeparateStyle:YES
+                           btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
+                        alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
+                                sender:nil
+                          alertVCBlock:^(id data) {
+                //DIY
+            }];
+    }];
 
     [self.view addSubview:self.gpuImageTools.GPUImageView];
 }
@@ -152,71 +165,7 @@
                                                        to:filterGif];
     self->_gpuImageTools.typeFilter = typeFilter;
 }
-#pragma mark —— 点击事件
-//翻转摄像头
--(void)overturnBtnClickEvent:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    [self.gpuImageTools overturnCamera];
-}
-//开启闪光灯
--(void)flashLightBtnClickEvent:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    [self.gpuImageTools flashLight:sender.selected];
-}
-//删除作品
--(void)deleteFilmBtnClickEvent:(UIButton *)sender{
-    NSLog(@"删除作品？");
-    [self.gpuImageTools vedioShoottingSuspend];
-    [self alertControllerStyle:SYS_AlertController
-            showAlertViewTitle:@"删除作品？"
-                       message:nil
-               isSeparateStyle:NO
-                   btnTitleArr:@[@"确认",@"继续录制"]
-                alertBtnAction:@[@"sure",@"shoottingContinue"]
-                  alertVCBlock:^(id data) {
-        //DIY
-    }];
-}
-//返回键
--(void)backBtnClickEvent:(UIButton *)sender{
-    [self alertControllerStyle:SYS_AlertController
-          showActionSheetTitle:nil
-                       message:nil
-               isSeparateStyle:YES
-                   btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
-                alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
-                        sender:nil
-                  alertVCBlock:^(id data) {
-        //DIY
-    }];
-}
 
--(void)previewBtnClickEvent:(UIButton *)sender{
-    //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
-    [self.gpuImageTools vedioShoottingEnd];
-}
-//倒计时
--(void)countDownBtnClickEvent:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    self.recordBtn.isCountDown = sender.selected;
-}
-
--(void)sureFilmBtnClickEvent:(UIButton *)sender{
-    NSLog(@"结束录制 —— 这个作品我要了");
-    //判定规则：小于3秒的被遗弃，不允许被保存
-    if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
-        [MBProgressHUD wj_showPlainText:[NSString stringWithFormat:@"不能保存录制时间低于%.2f秒的视频",self.recordBtn.safetyTime]
-                                   view:getMainWindow()];
-    }else{
-        [self.gpuImageTools vedioShoottingEnd];
-        [self.recordBtn reset];
-    }
-    
-    self.deleteFilmBtn.alpha = 0;
-    self.sureFilmBtn.alpha = 0;
-    self.indexView.alpha = 1;
-    self.previewBtn.alpha = 0;
-}
 //摄像头鉴权结果不利的UI状况
 -(void)checkRes:(BOOL)result{
     result = !result;
@@ -553,9 +502,10 @@
         _overturnBtn = UIButton.new;
         [_overturnBtn setImage:kIMG(@"翻转镜头")
                       forState:UIControlStateNormal];
-        [_overturnBtn addTarget:self
-                         action:@selector(overturnBtnClickEvent:)
-               forControlEvents:UIControlEventTouchUpInside];
+        [[_overturnBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            x.selected = !x.selected;
+            [self.gpuImageTools overturnCamera];
+        }];
     }return _overturnBtn;
 }
 
@@ -566,9 +516,10 @@
                       forState:UIControlStateNormal];
         [_flashLightBtn setImage:kIMG(@"闪光灯")
                       forState:UIControlStateSelected];
-        [_flashLightBtn addTarget:self
-                         action:@selector(flashLightBtnClickEvent:)
-               forControlEvents:UIControlEventTouchUpInside];
+        [[_flashLightBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            x.selected = !x.selected;
+            [self.gpuImageTools flashLight:x.selected];
+        }];
     }return _flashLightBtn;
 }
 
@@ -579,9 +530,10 @@
                        forState:UIControlStateNormal];
         [_countDownBtn setImage:kIMG(@"倒计时 开启状态")
                        forState:UIControlStateSelected];
-        [_countDownBtn addTarget:self
-                          action:@selector(countDownBtnClickEvent:)
-                forControlEvents:UIControlEventTouchUpInside];
+        [[_countDownBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            x.selected = !x.selected;
+            self.recordBtn.isCountDown = x.selected;
+        }];
     }return _countDownBtn;
 }
 
@@ -594,9 +546,10 @@
                           forState:UIControlStateNormal];
         [_previewBtn setTitle:@"预览"
                      forState:UIControlStateNormal];
-        [_previewBtn addTarget:self
-                        action:@selector(previewBtnClickEvent:)
-              forControlEvents:UIControlEventTouchUpInside];
+        [[_previewBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
+            [self.gpuImageTools vedioShoottingEnd];
+        }];
         [_previewBtn.titleLabel sizeToFit];
         _previewBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
         [self.view addSubview:_previewBtn];
@@ -666,9 +619,19 @@
         _deleteFilmBtn.alpha = 0;
         [_deleteFilmBtn setImage:kIMG(@"删除")
                         forState:UIControlStateNormal];
-        [_deleteFilmBtn addTarget:self
-                           action:@selector(deleteFilmBtnClickEvent:)
-                 forControlEvents:UIControlEventTouchUpInside];
+        [[_deleteFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            NSLog(@"删除作品？");
+            [self.gpuImageTools vedioShoottingSuspend];
+            [self alertControllerStyle:SYS_AlertController
+                    showAlertViewTitle:@"删除作品？"
+                               message:nil
+                       isSeparateStyle:NO
+                           btnTitleArr:@[@"确认",@"继续录制"]
+                        alertBtnAction:@[@"sure",@"shoottingContinue"]
+                          alertVCBlock:^(id data) {
+                //DIY
+            }];
+        }];
         [self.view addSubview:_deleteFilmBtn];
         [_deleteFilmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.recordBtn);
@@ -684,9 +647,22 @@
         _sureFilmBtn.alpha = 0;
         [_sureFilmBtn setImage:kIMG(@"sure")
                         forState:UIControlStateNormal];
-        [_sureFilmBtn addTarget:self
-                           action:@selector(sureFilmBtnClickEvent:)
-                 forControlEvents:UIControlEventTouchUpInside];
+        [[_sureFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            NSLog(@"结束录制 —— 这个作品我要了");
+            //判定规则：小于3秒的被遗弃，不允许被保存
+            if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
+                [MBProgressHUD wj_showPlainText:[NSString stringWithFormat:@"不能保存录制时间低于%.2f秒的视频",self.recordBtn.safetyTime]
+                                           view:getMainWindow()];
+            }else{
+                [self.gpuImageTools vedioShoottingEnd];
+                [self.recordBtn reset];
+            }
+            
+            self.deleteFilmBtn.alpha = 0;
+            self.sureFilmBtn.alpha = 0;
+            self.indexView.alpha = 1;
+            self.previewBtn.alpha = 0;
+        }];
         [self.view addSubview:_sureFilmBtn];
         [_sureFilmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.recordBtn);

@@ -96,6 +96,24 @@ UITextViewDelegate
     NSLog(@"");
 }
 
+-(void)createRichText{
+    UIFont *btnFont = nil;
+    if (@available(iOS 8.2, *)) {
+        btnFont = [UIFont systemFontOfSize:12
+                                    weight:UIFontWeightBold];
+    } else {
+        btnFont = [UIFont systemFontOfSize:12];
+    }
+    [self addButtonCompWithBtnTitle:@"  已阅读并同意"
+                               font:btnFont
+                              color:kRedColor
+                             target:self
+                             action:@selector(btnClickEvent:)];
+    [self addLinkCompWithText:@"上传须知"
+                      onClick:^{
+        NSLog(@"点击到了一个链接");
+    }];
+}
 ///发布成功以后做的事情
 -(void)afterRelease{
     [self deleteButtonRemoveSelf:self.choosePicBtn];
@@ -108,63 +126,7 @@ UITextViewDelegate
     self.isClickMKUploadingVCView = !self.isClickMKUploadingVCView;
     [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = !self.isClickMKUploadingVCView;
 }
-
 #pragma mark —— 点击事件
--(void)releaseBtnClickEvent:(UIButton *)sender{
-    if (btn.selected &&
-        ![NSString isNullString:self.textView.text] &&
-        self.imgData) {
-        NSLog(@"发布成功");
-        //这里先鉴定是否已经登录？
-        if (!YES) {
-            // 已经登录才可以上传视频
-            //对视频的大小进行控制 单个视频上传最大支持300M
-            
-//            8bit(位) = 1Byte(字节)
-//            1024Byte(字节) = 1KB
-//            1024KB = 1MB
-//            1024MB = 1GB
-            
-//            视频上传格式：
-//            最终支持所有格式上传，目前优先支持mp4和webm格式。如不符合上传格式要求，前期则半透明悬浮提示“请上传mp4或webm格式的视频文件”。
-            
-            if (sizeof(self.vedioData) <= 300 * 1024 * 1024) {
-                [self videosUploadNetworkingWithData:self.vedioData
-                                        videoArticle:self.textView.text
-                                            urlAsset:self.urlAsset];
-            }else{
-                [MBProgressHUD wj_showPlainText:@"单个文件大小需要在300M以内"
-                                           view:self.view];
-            }
-        }else{
-//            @weakify(self)
-            //登录流程
-        }
-    }else{
-        if (!self.imgData) {
-            [self alertControllerStyle:SYS_AlertController
-                    showAlertViewTitle:@"您还没选择需要上传的视频呢~~~"
-                               message:nil
-                       isSeparateStyle:NO
-                           btnTitleArr:@[@"确定"]
-                        alertBtnAction:@[@"sure"]
-                          alertVCBlock:^(id data) {
-                //DIY
-            }];
-        }else if ([NSString isNullString:self.textView.text]){
-            [self alertControllerStyle:SYS_AlertController
-                    showAlertViewTitle:@"主人，写点什么吧~~~"
-                               message:nil
-                       isSeparateStyle:NO
-                           btnTitleArr:@[@"确定"]
-                        alertBtnAction:@[@"OK"]
-                          alertVCBlock:^(id data) {
-                //DIY
-            }];
-        }else{}
-    }
-}
-
 -(void)btnClickEvent:(UIButton *)sender{
     NSLog(@"已阅读并同意上传须知");
     btn.selected = !btn.selected;
@@ -347,33 +309,14 @@ shouldChangeTextInRange:(NSRange)range
             make.left.equalTo(self.view).offset(SCALING_RATIO(13));
             make.top.equalTo(self.backView.mas_bottom).offset(SCALING_RATIO(13));
         }];
-        [_choosePicBtn addTarget:self
-                 action:@selector(choosePicBtnClickEvent:)
-       forControlEvents:UIControlEventTouchUpInside];
+        [[_choosePicBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            [self choosePicBtnClickEvent:self->_choosePicBtn];
+        }];
         [UIView colourToLayerOfView:_choosePicBtn
                          WithColour:KLightGrayColor
                      AndBorderWidth:0.2f];
         [self.view layoutIfNeeded];
     }return _choosePicBtn;
-}
-
--(void)createRichText{
-    UIFont *btnFont = nil;
-    if (@available(iOS 8.2, *)) {
-        btnFont = [UIFont systemFontOfSize:12
-                                    weight:UIFontWeightBold];
-    } else {
-        btnFont = [UIFont systemFontOfSize:12];
-    }
-    [self addButtonCompWithBtnTitle:@"  已阅读并同意"
-                               font:btnFont
-                              color:kRedColor
-                             target:self
-                             action:@selector(btnClickEvent:)];
-    [self addLinkCompWithText:@"上传须知"
-                      onClick:^{
-        NSLog(@"点击到了一个链接");
-    }];
 }
 
 -(AWRTViewComponent *)addButtonCompWithBtnTitle:(NSString *)title
@@ -460,10 +403,61 @@ shouldChangeTextInRange:(NSRange)range
         _releaseBtn.userInteractionEnabled = NO;
         _releaseBtn.alpha = 0.4;
         _releaseBtn.backgroundColor = KLightGrayColor;
-        
-        [_releaseBtn addTarget:self
-                        action:@selector(releaseBtnClickEvent:)
-              forControlEvents:UIControlEventTouchUpInside];
+
+        [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            if (self->btn.selected &&
+                ![NSString isNullString:self.textView.text] &&
+                self.imgData) {
+                NSLog(@"发布成功");
+                //这里先鉴定是否已经登录？
+                if (!YES) {
+                    // 已经登录才可以上传视频
+                    //对视频的大小进行控制 单个视频上传最大支持300M
+                    
+        //            8bit(位) = 1Byte(字节)
+        //            1024Byte(字节) = 1KB
+        //            1024KB = 1MB
+        //            1024MB = 1GB
+                    
+        //            视频上传格式：
+        //            最终支持所有格式上传，目前优先支持mp4和webm格式。如不符合上传格式要求，前期则半透明悬浮提示“请上传mp4或webm格式的视频文件”。
+                    
+                    if (sizeof(self.vedioData) <= 300 * 1024 * 1024) {
+                        [self videosUploadNetworkingWithData:self.vedioData
+                                                videoArticle:self.textView.text
+                                                    urlAsset:self.urlAsset];
+                    }else{
+                        [MBProgressHUD wj_showPlainText:@"单个文件大小需要在300M以内"
+                                                   view:getMainWindow()];
+                    }
+                }else{
+        //            @weakify(self)
+                    //登录流程
+                }
+            }else{
+                if (!self.imgData) {
+                    [self alertControllerStyle:SYS_AlertController
+                            showAlertViewTitle:@"您还没选择需要上传的视频呢~~~"
+                                       message:nil
+                               isSeparateStyle:NO
+                                   btnTitleArr:@[@"确定"]
+                                alertBtnAction:@[@"sure"]
+                                  alertVCBlock:^(id data) {
+                        //DIY
+                    }];
+                }else if ([NSString isNullString:self.textView.text]){
+                    [self alertControllerStyle:SYS_AlertController
+                            showAlertViewTitle:@"主人，写点什么吧~~~"
+                                       message:nil
+                               isSeparateStyle:NO
+                                   btnTitleArr:@[@"确定"]
+                                alertBtnAction:@[@"OK"]
+                                  alertVCBlock:^(id data) {
+                        //DIY
+                    }];
+                }else{}
+            }
+        }];
         [self.view addSubview:_releaseBtn];
         [_releaseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 2.5, SCALING_RATIO(30)));

@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,nullable)id userInfo;
 @property(nonatomic,assign)ScheduledTimerType timerType;
 @property(nonatomic,assign)TimerStyle timerStyle;//逆时针模式?顺时针模式？
-@property(nonatomic,assign)CGFloat anticlockwiseTime;//逆时针模式（倒计时）的顶点时间
+@property(nonatomic,assign)CGFloat anticlockwiseTime;//逆时针模式（倒计时）的顶点时间 运行时是当前时间
 
 @property(nonatomic,assign)NSTimeInterval timeSecIntervalSinceDate;//推移时间，秒数
 @property(nonatomic,assign)NSTimeInterval timeInterval;//时间间距

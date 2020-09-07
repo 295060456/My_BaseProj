@@ -25,6 +25,10 @@ static char *UIButton_CountDownBtn_layerBorderWidth = "UIButton_CountDownBtn_lay
 static char *UIButton_CountDownBtn_showTimeType = "UIButton_CountDownBtn_showTimeType";
 static char *UIButton_CountDownBtn_count = "UIButton_CountDownBtn_count";
 static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_countDownBlock";
+static char *UIButton_CountDownBtn_countDownBtnType = "UIButton_CountDownBtn_countDownBtnType";
+static char *UIButton_CountDownBtn_isCountDownClockFinished = "UIButton_CountDownBtn_isCountDownClockFinished";
+static char *UIButton_CountDownBtn_countDownClickEventBlock = "UIButton_CountDownBtn_countDownClickEventBlock";
+static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn_isCountDownClockOpen";
 
 @dynamic nsTimerManager;
 @dynamic titleBeginStr;
@@ -40,28 +44,49 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
 @dynamic showTimeType;
 @dynamic count;
 @dynamic countDownBlock;
+@dynamic countDownBtnType;
+@dynamic isCountDownClockFinished;
+@dynamic countDownClickEventBlock;
+@dynamic isCountDownClockOpen;
+
+-(instancetype)initWithType:(CountDownBtnType)countDownBtnType{
+    if (self = [super init]) {
+        self.countDownBtnType = countDownBtnType;
+        if (self.countDownBtnType) {
+            [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+                if (self.isCountDownClockFinished) {
+                    [self timeFailBeginFrom:self.count];
+                }
+                if (self.countDownClickEventBlock) {
+                    self.countDownClickEventBlock(x);
+                }
+            }];
+        }
+    }return self;
+}
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [self setTitle:self.titleBeginStr
-          forState:UIControlStateNormal];
-    
-    self.layer.borderColor = self.layerBorderColor.CGColor;
-    self.layer.cornerRadius = self.layerCornerRadius;
-    self.titleLabel.font = self.titleLabelFont;
-    self.layer.borderWidth = self.layerBorderWidth;
-    [self setTitleColor:self.titleColor forState:UIControlStateNormal];
-    [self.titleLabel sizeToFit];
-    self.titleLabel.adjustsFontSizeToFitWidth = YES;
-}
-
--(void)actionCountDownBlock:(MKDataBlock)countDownBlock{
-    self.countDownBlock = countDownBlock;
+    if (self.countDownBtnType) {
+        if (!self.isCountDownClockOpen) {
+            [self setTitle:self.titleBeginStr
+                  forState:UIControlStateNormal];
+        }
+        self.layer.borderColor = self.layerBorderColor.CGColor;
+        self.layer.cornerRadius = self.layerCornerRadius;
+        self.titleLabel.font = self.titleLabelFont;
+        self.layer.borderWidth = self.layerBorderWidth;
+        [self setTitleColor:self.titleColor
+                   forState:UIControlStateNormal];
+        [self.titleLabel sizeToFit];
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    }
 }
 //倒计时方法:
 -(void)timeFailBeginFrom:(NSInteger)timeCount{
     [self setTitle:self.titleBeginStr
           forState:UIControlStateNormal];
+    self.countDownBtnType = CountDownBtnType_countDown;
     self.count = timeCount;
     self.enabled = NO;
     //创建方式——1
@@ -69,24 +94,23 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
 //                    withRunLoop:nil];
     //创建方式——2
     [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
-    
 }
 //
--(void)timerRuning{
-    self.enabled = NO;
+-(void)timerRuning:(long)currentTime{
+    self.enabled = NO;//倒计时期间，不接受任何的点击事件
     NSString *countStr;
     NSString *str;
     switch (self.showTimeType) {
         case ShowTimeType_SS:{
             //不做任何处理
-            str = [NSString stringWithFormat:@"%@%ld秒",self.titleRuningStr,self.count];
+            str = [NSString stringWithFormat:@"%@%ld秒",self.titleRuningStr,(long)currentTime];
         }break;
         case ShowTimeType_MMSS:{
-            countStr = [self getMMSSFromStr:[NSString stringWithFormat:@"%ld",self.count]];
+            countStr = [self getMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
             str = [self.titleRuningStr stringByAppendingString:countStr];
         }break;
         case ShowTimeType_HHMMSS:{
-            countStr = [self getHHMMSSFromStr:[NSString stringWithFormat:@"%ld",self.count]];
+            countStr = [self getHHMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
             str = [self.titleRuningStr stringByAppendingString:countStr];
         }break;
         default:
@@ -124,6 +148,14 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
     NSLog(@"format_time : %@",format_time);
     return format_time;
 }
+
+-(void)actionCountDownClickEventBlock:(MKDataBlock)countDownClickEventBlock{
+    self.countDownClickEventBlock = countDownClickEventBlock;
+}
+
+-(void)actionCountDownBlock:(MKDataBlock)countDownBlock{
+    self.countDownBlock = countDownBlock;
+}
 #pragma mark SET | GET
 #pragma mark —— @property(nonatomic,strong)NSTimerManager *nsTimerManager;
 -(NSTimerManager *)nsTimerManager{
@@ -136,20 +168,27 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    timerManager.timerStyle = TimerStyle_anticlockwise;
-    timerManager.anticlockwiseTime = self.count;
+    timerManager.timerStyle = TimerStyle_anticlockwise;//逆时针模式（倒计时模式）
+    timerManager.anticlockwiseTime = self.count;//逆时针模式（倒计时）的顶点时间
     
     @weakify(self)
+    //倒计时启动
     [timerManager actionNSTimerManagerRunningBlock:^(id data) {
+        self.isCountDownClockOpen = YES;
         @strongify(self)
-        NSLog(@"你好");
-        [self timerRuning];
+        if ([data isKindOfClass:NSTimerManager.class]) {
+            NSTimerManager *timeManager = (NSTimerManager *)data;
+            [self timerRuning:(long)timeManager.anticlockwiseTime];
+        }
+        
         if (self.countDownBlock) {
-            self.countDownBlock(@1);
+            self.countDownBlock(@1);//倒计时需要触发调用的方法:倒计时的时候外面同时干的事，随着定时器走，可以不实现
         }
     }];
-    
+    //倒计时结束
     [timerManager actionNSTimerManagerFinishBlock:^(id data) {
+        @strongify(self)
+        self.isCountDownClockFinished = YES;
         [self timerDestroy];
     }];
     
@@ -328,17 +367,7 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
                              [NSNumber numberWithFloat:layerBorderWidth],
                              OBJC_ASSOCIATION_ASSIGN);
 }
-#pragma mark —— @property(nonatomic,assign)ShowTimeType showTimeType;
--(ShowTimeType)showTimeType{
-    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_showTimeType) integerValue];
-}
 
--(void)setShowTimeType:(ShowTimeType)showTimeType{
-    objc_setAssociatedObject(self,
-                             UIButton_CountDownBtn_showTimeType,
-                             [NSNumber numberWithInteger:showTimeType],
-                             OBJC_ASSOCIATION_ASSIGN);
-}
 #pragma mark —— @property(nonatomic,assign)long count;
 -(long)count{
     return [objc_getAssociatedObject(self, UIButton_CountDownBtn_count) longValue];
@@ -364,7 +393,62 @@ static char *UIButton_CountDownBtn_countDownBlock = "UIButton_CountDownBtn_count
                              countDownBlock,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
+#pragma mark —— @property(nonatomic,copy)MKDataBlock countDownClickEventBlock;
+-(MKDataBlock)countDownClickEventBlock{
+    return objc_getAssociatedObject(self, UIButton_CountDownBtn_countDownClickEventBlock);
+}
 
+-(void)setCountDownClickEventBlock:(MKDataBlock)countDownClickEventBlock{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_countDownClickEventBlock,
+                             countDownClickEventBlock,
+                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,assign)ShowTimeType showTimeType;
+-(ShowTimeType)showTimeType{
+    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_showTimeType) integerValue];
+}
+
+-(void)setShowTimeType:(ShowTimeType)showTimeType{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_showTimeType,
+                             [NSNumber numberWithInteger:showTimeType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark ——  @property(nonatomic,assign)CountDownBtnType countDownBtnType;
+-(CountDownBtnType)countDownBtnType{
+    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_countDownBtnType) integerValue];
+}
+
+-(void)setCountDownBtnType:(CountDownBtnType)countDownBtnType{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_countDownBtnType,
+                             [NSNumber numberWithInteger:countDownBtnType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark ——  @property(nonatomic,assign)BOOL isCountDownClockFinished;
+-(BOOL)isCountDownClockFinished{
+    BOOL d = [objc_getAssociatedObject(self, UIButton_CountDownBtn_isCountDownClockFinished) boolValue];
+    return d;
+}
+
+-(void)setIsCountDownClockFinished:(BOOL)isCountDownClockFinished{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_isCountDownClockFinished,
+                             [NSNumber numberWithBool:isCountDownClockFinished],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark ——  @property(nonatomic,assign)BOOL isCountDownClockOpen;//倒计时是否开始
+-(BOOL)isCountDownClockOpen{
+    BOOL d = [objc_getAssociatedObject(self, UIButton_CountDownBtn_isCountDownClockOpen) boolValue];
+    return d;
+}
+
+-(void)setIsCountDownClockOpen:(BOOL)isCountDownClockOpen{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_isCountDownClockOpen,
+                             [NSNumber numberWithBool:isCountDownClockOpen],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
 
 @end
- 

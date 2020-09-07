@@ -45,18 +45,18 @@
             @weakify(self)
             self.nsTimer = [NSTimer scheduledTimerWithTimeInterval:self.timeInterval
                                                            repeats:self.repeats
-                                                             block:^(NSTimer * _Nonnull timer) {
+                                                             block:^(NSTimer * _Nonnull timer) {//在block里面进行内循环
                 @strongify(self)
                 switch (self.timerStyle) {
                     case TimerStyle_clockwise:{//顺时针模式
                         if (self.NSTimerManagerRunningBlock) {
-                            self.NSTimerManagerRunningBlock(self);
+                            self.NSTimerManagerRunningBlock(self);//在这里可以将self.anticlockwiseTime回调出去，是当前时间
                         }
                     }break;
                     case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
                         if (self.anticlockwiseTime >= 1) {
                             if (self.NSTimerManagerRunningBlock) {
-                                self.NSTimerManagerRunningBlock(self);
+                                self.NSTimerManagerRunningBlock(self);//在这里可以将self.anticlockwiseTime回调出去，是当前时间
                             }
                             self.anticlockwiseTime -= self.timeInterval;
                         }else{
@@ -177,13 +177,13 @@
             switch (self.timerStyle) {
                 case TimerStyle_clockwise:{//顺时针模式
                     if (self.NSTimerManagerRunningBlock) {
-                        self.NSTimerManagerRunningBlock(self);
+                        self.NSTimerManagerRunningBlock(self);//在这里可以将self.anticlockwiseTime回调出去，是当前时间
                     }
                 }break;
                 case TimerStyle_anticlockwise:{//逆时针模式（倒计时）
                     if (self.anticlockwiseTime >= 1) {
                         if (self.NSTimerManagerRunningBlock) {
-                            self.NSTimerManagerRunningBlock(self);
+                            self.NSTimerManagerRunningBlock(self);//在这里可以将self.anticlockwiseTime回调出去，是当前时间
                         }
                         self.anticlockwiseTime -= self.timeInterval;
                     }else{

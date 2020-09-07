@@ -15,7 +15,17 @@ typedef enum : NSUInteger {
     ShowTimeType_HHMMSS,//时分秒
 } ShowTimeType;
 
+typedef enum : NSUInteger {
+    CountDownBtnType_normal = 0,//普通模式
+    CountDownBtnType_countDown//倒计时模式
+} CountDownBtnType;
+
 NS_ASSUME_NONNULL_BEGIN
+
+/*
+ *  倒计时期间，不接受任何的点击事件
+ *
+ */
 
 @interface UIButton (CountDownBtn)
 
@@ -31,12 +41,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIFont *titleLabelFont;
 @property(nonatomic,assign)CGFloat layerCornerRadius;
 @property(nonatomic,assign)CGFloat layerBorderWidth;
-@property(nonatomic,assign)ShowTimeType showTimeType;//时间显示风格
 @property(nonatomic,assign)long count;// 倒计时
+@property(nonatomic,assign)ShowTimeType showTimeType;//时间显示风格
+@property(nonatomic,assign)CountDownBtnType countDownBtnType;
 @property(nonatomic,copy)MKDataBlock countDownBlock;
+@property(nonatomic,copy)MKDataBlock countDownClickEventBlock;
+@property(nonatomic,assign)BOOL isCountDownClockFinished;//倒计时是否结束
+@property(nonatomic,assign)BOOL isCountDownClockOpen;//倒计时是否开始
 
--(void)actionCountDownBlock:(MKDataBlock)countDownBlock;//倒计时需要触发调用的方法
+-(void)actionCountDownBlock:(MKDataBlock)countDownBlock;//倒计时需要触发调用的方法：倒计时的时候外面同时干的事，随着定时器走，可以不实现
+-(void)actionCountDownClickEventBlock:(MKDataBlock)countDownClickEventBlock;//点击事件回调，就不要用系统的addTarget/action/forControlEvents
 -(void)timeFailBeginFrom:(NSInteger)timeCount;//倒计时时间次数
+-(instancetype)initWithType:(CountDownBtnType)countDownBtnType;//用这个初始化方法
 
 @end
 

@@ -2593,6 +2593,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5C67C5424FE4F6C000A26B8 /* TimerManager */,
 				C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */,
 				C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */,
 				C572A29424FD2A94000A1687 /* PingTest */,
@@ -2661,7 +2662,6 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				C5C67C5424FE4F6C000A26B8 /* TimerManager */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
 				C5FE9B5624B5F203007B9878 /* UIViewController */,
 				C5FE9B7A24B5F246007B9878 /* UIScrollView */,

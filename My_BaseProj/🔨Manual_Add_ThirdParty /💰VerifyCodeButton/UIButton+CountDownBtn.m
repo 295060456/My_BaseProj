@@ -29,6 +29,13 @@ static char *UIButton_CountDownBtn_countDownBtnType = "UIButton_CountDownBtn_cou
 static char *UIButton_CountDownBtn_isCountDownClockFinished = "UIButton_CountDownBtn_isCountDownClockFinished";
 static char *UIButton_CountDownBtn_countDownClickEventBlock = "UIButton_CountDownBtn_countDownClickEventBlock";
 static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn_isCountDownClockOpen";
+static char *UIButton_CountDownBtn_countDownBtnNewLineType = "UIButton_CountDownBtn_countDownBtnNewLineType";
+static char *UIButton_CountDownBtn_cequenceForShowTitleRuningStrType = "UIButton_CountDownBtn_cequenceForShowTitleRuningStrType";
+static char *UIButton_CountDownBtn_countStr = "UIButton_CountDownBtn_countStr";
+static char *UIButton_CountDownBtn_str = "UIButton_CountDownBtn_str";
+static char *UIButton_CountDownBtn_mps = "UIButton_CountDownBtn_mps";
+static char *UIButton_CountDownBtn_mas = "UIButton_CountDownBtn_mas";
+static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunType";
 
 @dynamic nsTimerManager;
 @dynamic titleBeginStr;
@@ -48,47 +55,118 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
 @dynamic isCountDownClockFinished;
 @dynamic countDownClickEventBlock;
 @dynamic isCountDownClockOpen;
+@dynamic countDownBtnNewLineType;
+@dynamic cequenceForShowTitleRuningStrType;
+@dynamic countStr;
+@dynamic str;
+@dynamic mps;
+@dynamic mas;
+@dynamic btnRunType;
 
--(instancetype)initWithType:(CountDownBtnType)countDownBtnType{
+-(instancetype)initWithType:(CountDownBtnType)countDownBtnType
+                    runType:(CountDownBtnRunType)runType
+           layerBorderWidth:(CGFloat)layerBorderWidth
+          layerCornerRadius:(CGFloat)layerCornerRadius
+           layerBorderColor:(UIColor *_Nullable)layerBorderColor
+                 titleColor:(UIColor *_Nullable)titleColor
+              titleBeginStr:(NSString *_Nullable)titleBeginStr
+             titleLabelFont:(UIFont *_Nullable)titleLabelFont{
+
     if (self = [super init]) {
         self.countDownBtnType = countDownBtnType;
+        self.btnRunType = runType;
+        
         if (self.countDownBtnType) {
+            // CountDownBtn 的点击事件回调
             [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                if (self.isCountDownClockFinished) {
+                
+                if ((self.isCountDownClockFinished && self.btnRunType == CountDownBtnRunType_auto) ||//自启动模式
+                    self.btnRunType == CountDownBtnRunType_manual) {//手动启动模式
+                    
+                    self.isCountDownClockFinished = NO;
+                    self.isCountDownClockOpen = NO;
+                    
                     [self timeFailBeginFrom:self.count];
                 }
+                
                 if (self.countDownClickEventBlock) {
                     self.countDownClickEventBlock(x);
                 }
             }];
+            
+            switch (self.btnRunType) {
+                case CountDownBtnRunType_manual:{//手动触发计时器模式
+                    [self setTitle:@"发送验证码"
+                          forState:UIControlStateNormal];
+                    
+                    self.layer.borderColor = layerBorderColor.CGColor;
+                    self.layer.cornerRadius = layerCornerRadius;
+                    self.titleLabel.font = titleLabelFont;
+                    self.layer.borderWidth = layerBorderWidth;
+                    [self setTitleColor:titleColor
+                               forState:UIControlStateNormal];
+                }break;
+                case CountDownBtnRunType_auto:{//自启动模式
+
+                }break;
+                default:
+                    break;
+            }
+            
+            [self.titleLabel sizeToFit];
+            self.titleLabel.adjustsFontSizeToFitWidth = YES;
         }
     }return self;
 }
 
+//先走timeFailBeginFrom 再走drawRect
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    if (self.countDownBtnNewLineType) {
+        self.titleLabel.numberOfLines = 0;
+    }
+    
     if (self.countDownBtnType) {
         if (!self.isCountDownClockOpen) {
-            [self setTitle:self.titleBeginStr
-                  forState:UIControlStateNormal];
+            switch (self.countDownBtnNewLineType) {
+                case CountDownBtnNewLineType_normal:{
+                    [self setTitle:self.titleBeginStr
+                          forState:UIControlStateNormal];
+                }break;
+                case CountDownBtnNewLineType_newLine:{
+                    NSLog(@"%@",self.titleBeginStr);
+                    self.str = self.titleBeginStr;
+                    [self setAttributedTitle:self.mas
+                                    forState:UIControlStateNormal];
+                }break;
+                    
+                default:
+                    break;
+            }
         }
-        self.layer.borderColor = self.layerBorderColor.CGColor;
-        self.layer.cornerRadius = self.layerCornerRadius;
-        self.titleLabel.font = self.titleLabelFont;
-        self.layer.borderWidth = self.layerBorderWidth;
-        [self setTitleColor:self.titleColor
-                   forState:UIControlStateNormal];
-        [self.titleLabel sizeToFit];
-        self.titleLabel.adjustsFontSizeToFitWidth = YES;
     }
 }
 //倒计时方法:
 -(void)timeFailBeginFrom:(NSInteger)timeCount{
-    [self setTitle:self.titleBeginStr
-          forState:UIControlStateNormal];
+    switch (self.countDownBtnNewLineType) {
+        case CountDownBtnNewLineType_normal:{
+            [self setTitle:self.titleBeginStr
+                  forState:UIControlStateNormal];
+        }break;
+        case CountDownBtnNewLineType_newLine:{
+            NSLog(@"%@",self.titleBeginStr);
+            self.str = self.titleBeginStr;
+            [self setAttributedTitle:self.mas
+                            forState:UIControlStateNormal];
+        }break;
+        default:
+            break;
+    }
+    
     self.countDownBtnType = CountDownBtnType_countDown;
     self.count = timeCount;
     self.enabled = NO;
+    
     //创建方式——1
 //    [NSTimerManager nsTimeStart:self.nsTimerManager.nsTimer
 //                    withRunLoop:nil];
@@ -98,34 +176,68 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
 //
 -(void)timerRuning:(long)currentTime{
     self.enabled = NO;//倒计时期间，不接受任何的点击事件
-    NSString *countStr;
-    NSString *str;
     switch (self.showTimeType) {
         case ShowTimeType_SS:{
-            //不做任何处理
-            str = [NSString stringWithFormat:@"%@%ld秒",self.titleRuningStr,(long)currentTime];
+            self.countStr = [NSString stringWithFormat:@"%ld秒",(long)currentTime];
         }break;
         case ShowTimeType_MMSS:{
-            countStr = [self getMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
-            str = [self.titleRuningStr stringByAppendingString:countStr];
+            self.countStr = [self getMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
         }break;
         case ShowTimeType_HHMMSS:{
-            countStr = [self getHHMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
-            str = [self.titleRuningStr stringByAppendingString:countStr];
+            self.countStr = [self getHHMMSSFromStr:[NSString stringWithFormat:@"%ld",(long)currentTime]];
         }break;
         default:
-            str = @"异常值";
+            self.countStr = @"异常值";
             break;
     }
-    [self setTitle:str
-          forState:UIControlStateNormal];
+
+    switch (self.cequenceForShowTitleRuningStrType) {
+        case CequenceForShowTitleRuningStrType_front:{
+            self.str = [self.titleRuningStr stringByAppendingString:self.countStr];
+        }break;
+        case CequenceForShowTitleRuningStrType_tail:{
+            self.str = [self.countStr stringByAppendingString:self.titleRuningStr];
+        }break;
+        default:
+            self.str = @"异常值";
+            break;
+    }
+        
+    switch (self.countDownBtnNewLineType) {
+        case CountDownBtnNewLineType_normal:{
+            [self setTitle:self.str
+                  forState:UIControlStateNormal];
+        }break;
+        case CountDownBtnNewLineType_newLine:{
+            NSLog(@"%@",self.mas);
+            NSLog(@"%@",self.countStr);
+            [self setAttributedTitle:self.mas
+                            forState:UIControlStateNormal];
+        }break;
+            
+        default:
+            break;
+    }
+
     self.backgroundColor = self.bgCountDownColor;
 }
 
 -(void)timerDestroy{
     self.enabled = YES;
-    [self setTitle:self.titleEndStr
-          forState:UIControlStateNormal];
+    switch (self.countDownBtnNewLineType) {
+        case CountDownBtnNewLineType_normal:{
+            [self setTitle:self.titleEndStr
+                  forState:UIControlStateNormal];
+        }break;
+        case CountDownBtnNewLineType_newLine:{
+            self.str = self.titleEndStr;
+            [self setAttributedTitle:self.mas
+                            forState:UIControlStateNormal];
+        }break;
+        default:
+            break;
+    }
+    
     self.backgroundColor = self.bgEndColor;
     [self.nsTimerManager nsTimeDestroy];
 }
@@ -210,7 +322,8 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
                                  UIButton_CountDownBtn_titleBeginStr,
                                  TitleBeginStr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }return TitleBeginStr;
+    }
+    return TitleBeginStr;
 }
 
 -(void)setTitleBeginStr:(NSString *)titleBeginStr{
@@ -223,7 +336,7 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
 -(NSString *)titleRuningStr{
     NSString *TitleRuningStr = objc_getAssociatedObject(self, UIButton_CountDownBtn_titleRuningStr);
     if (!TitleRuningStr) {
-        TitleRuningStr = @"开始1";
+        TitleRuningStr = @"开始";
         objc_setAssociatedObject(self,
                                  UIButton_CountDownBtn_titleRuningStr,
                                  TitleRuningStr,
@@ -331,7 +444,7 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
 -(UIFont *)titleLabelFont{
     UIFont *TitleLabelFont = objc_getAssociatedObject(self, UIButton_CountDownBtn_titleLabelFont);
     if (!TitleLabelFont) {
-        TitleLabelFont = [UIFont systemFontOfSize:12];////////////////
+        TitleLabelFont = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
         objc_setAssociatedObject(self,
                                  UIButton_CountDownBtn_titleLabelFont,
                                  TitleLabelFont,
@@ -415,9 +528,10 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
                              [NSNumber numberWithInteger:showTimeType],
                              OBJC_ASSOCIATION_ASSIGN);
 }
-#pragma mark ——  @property(nonatomic,assign)CountDownBtnType countDownBtnType;
+#pragma mark —— @property(nonatomic,assign)CountDownBtnType countDownBtnType;
 -(CountDownBtnType)countDownBtnType{
-    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_countDownBtnType) integerValue];
+    CountDownBtnType countDownBtnType = [objc_getAssociatedObject(self, UIButton_CountDownBtn_countDownBtnType) integerValue];
+    return countDownBtnType;
 }
 
 -(void)setCountDownBtnType:(CountDownBtnType)countDownBtnType{
@@ -426,7 +540,40 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
                              [NSNumber numberWithInteger:countDownBtnType],
                              OBJC_ASSOCIATION_ASSIGN);
 }
-#pragma mark ——  @property(nonatomic,assign)BOOL isCountDownClockFinished;
+#pragma mark —— @property(nonatomic,assign)CountDownBtnNewLineType countDownBtnNewLineType;
+-(CountDownBtnNewLineType)countDownBtnNewLineType{
+     return [objc_getAssociatedObject(self, UIButton_CountDownBtn_countDownBtnNewLineType) integerValue];
+}
+
+-(void)setCountDownBtnNewLineType:(CountDownBtnNewLineType)countDownBtnNewLineType{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_countDownBtnNewLineType,
+                             [NSNumber numberWithInteger:countDownBtnNewLineType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)CequenceForShowTitleRuningStrType cequenceForShowTitleRuningStrType;
+-(CequenceForShowTitleRuningStrType)cequenceForShowTitleRuningStrType{
+    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_cequenceForShowTitleRuningStrType) integerValue];
+}
+
+-(void)setCequenceForShowTitleRuningStrType:(CequenceForShowTitleRuningStrType)cequenceForShowTitleRuningStrType{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_cequenceForShowTitleRuningStrType,
+                             [NSNumber numberWithInteger:cequenceForShowTitleRuningStrType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)CountDownBtnRunType btnRunType;
+-(CountDownBtnRunType)btnRunType{
+    return [objc_getAssociatedObject(self, UIButton_CountDownBtn_btnRunType) integerValue];
+}
+
+-(void)setBtnRunType:(CountDownBtnRunType)btnRunType{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_btnRunType,
+                             [NSNumber numberWithInteger:btnRunType],
+                             OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,assign)BOOL isCountDownClockFinished;
 -(BOOL)isCountDownClockFinished{
     BOOL d = [objc_getAssociatedObject(self, UIButton_CountDownBtn_isCountDownClockFinished) boolValue];
     return d;
@@ -449,6 +596,102 @@ static char *UIButton_CountDownBtn_isCountDownClockOpen = "UIButton_CountDownBtn
                              UIButton_CountDownBtn_isCountDownClockOpen,
                              [NSNumber numberWithBool:isCountDownClockOpen],
                              OBJC_ASSOCIATION_ASSIGN);
+}
+#pragma mark —— @property(nonatomic,strong)NSString *countStr;
+-(NSString *)countStr{
+    NSString *CountStr = objc_getAssociatedObject(self, UIButton_CountDownBtn_countStr);
+    return CountStr;
+}
+
+-(void)setCountStr:(NSString *)countStr{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_countStr,
+                             countStr,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSString *str;
+-(NSString *)str{
+    NSString *Str = objc_getAssociatedObject(self, UIButton_CountDownBtn_str);
+    return Str;
+}
+
+-(void)setStr:(NSString *)str{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_str,
+                             str,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSMutableParagraphStyle *mps;
+-(NSMutableParagraphStyle *)mps{
+    NSMutableParagraphStyle *MPS = objc_getAssociatedObject(self, UIButton_CountDownBtn_mps);
+    if (!MPS) {
+        MPS = NSMutableParagraphStyle.new;
+        MPS.lineSpacing = 0;
+        MPS.alignment = NSTextAlignmentCenter;
+        objc_setAssociatedObject(self,
+                                 UIButton_CountDownBtn_mps,
+                                 MPS,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return MPS;
+}
+
+-(void)setMps:(NSMutableParagraphStyle *)mps{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_mps,
+                             mps,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+#pragma mark —— @property(nonatomic,strong)NSMutableAttributedString *mas;
+-(NSMutableAttributedString *)mas{//重新发送 正常 发送验证码 不正常
+    NSMutableAttributedString *MAS = objc_getAssociatedObject(self, UIButton_CountDownBtn_mas);
+    if (![NSString isNullString:self.countStr]) {
+        MAS = [[NSMutableAttributedString alloc] initWithString:self.str];
+        NSLog(@"%@",self.mps);
+        NSLog(@"%@",self.titleRuningStr);
+        NSLog(@"%@",self.countStr);
+        NSLog(@"%ld",self.countStr.length);//2
+        NSLog(@"%ld",self.titleRuningStr.length);//5
+        if (!self.isCountDownClockFinished) {//倒计时没结束的时候走这个，否则会崩，因为重新设定了值
+            [MAS addAttribute:NSParagraphStyleAttributeName
+                        value:self.mps
+                        range:NSMakeRange(0, self.titleRuningStr.length)];
+            
+            if (self.isCountDownClockOpen) {
+                [MAS addAttribute:NSParagraphStyleAttributeName
+                            value:self.mps
+                            range:NSMakeRange(self.titleRuningStr.length, self.countStr.length)];
+                [MAS addAttribute:NSForegroundColorAttributeName
+                            value:self.titleColor
+                            range:NSMakeRange(0, self.titleRuningStr.length + self.countStr.length)];
+                [MAS addAttribute:NSFontAttributeName
+                            value:self.titleLabelFont
+                            range:NSMakeRange(0, self.titleRuningStr.length + self.countStr.length)];
+            }else{
+                [MAS addAttribute:NSParagraphStyleAttributeName
+                            value:self.mps
+                            range:NSMakeRange(0, self.titleRuningStr.length)];
+                [MAS addAttribute:NSForegroundColorAttributeName
+                            value:self.titleColor
+                            range:NSMakeRange(0, self.titleRuningStr.length)];
+                [MAS addAttribute:NSFontAttributeName
+                            value:self.titleLabelFont
+                            range:NSMakeRange(0, self.titleRuningStr.length)];
+            }
+        }
+        objc_setAssociatedObject(self,
+                                 UIButton_CountDownBtn_mas,
+                                 MAS,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return MAS;
+}
+
+-(void)setMas:(NSMutableAttributedString *)mas{
+    objc_setAssociatedObject(self,
+                             UIButton_CountDownBtn_mas,
+                             mas,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

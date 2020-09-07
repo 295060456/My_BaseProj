@@ -20,11 +20,27 @@ typedef enum : NSUInteger {
     CountDownBtnType_countDown//倒计时模式
 } CountDownBtnType;
 
+typedef enum : NSUInteger {
+    CountDownBtnNewLineType_normal = 0,//普通模式
+    CountDownBtnNewLineType_newLine//换行模式
+} CountDownBtnNewLineType;
+
+typedef enum : NSUInteger {
+    CequenceForShowTitleRuningStrType_front = 0,//TitleRuningStr（固定值） 相对于 currentTime（浮动值）在前面
+    CequenceForShowTitleRuningStrType_tail//TitleRuningStr（固定值） 相对于 currentTime（浮动值）在后面
+} CequenceForShowTitleRuningStrType;
+
+typedef enum : NSUInteger {
+    CountDownBtnRunType_manual = 0,//手动触发计时器模式
+    CountDownBtnRunType_auto//自启动模式
+} CountDownBtnRunType;
+
 NS_ASSUME_NONNULL_BEGIN
 
-/*
+/*  使用方法，特别说明
  *  倒计时期间，不接受任何的点击事件
- *
+ *  countDownBtnNewLineType设置了这个属性仅仅对titleRuningStr有效，且在外层进行设置的时候需要用户手动加就换行符 \n
+ *  自启动的优先级 > 手动触发的优先级。如果设置了自启动，那么手动触发无效
  */
 
 @interface UIButton (CountDownBtn)
@@ -43,16 +59,33 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat layerBorderWidth;
 @property(nonatomic,assign)long count;// 倒计时
 @property(nonatomic,assign)ShowTimeType showTimeType;//时间显示风格
+@property(nonatomic,assign)CountDownBtnRunType btnRunType;
 @property(nonatomic,assign)CountDownBtnType countDownBtnType;
+@property(nonatomic,assign)CountDownBtnNewLineType countDownBtnNewLineType;//设置了这个属性仅仅对titleRuningStr有效，且在外层进行设置的时候需要用户手动加就换行符 \n
+@property(nonatomic,assign)CequenceForShowTitleRuningStrType cequenceForShowTitleRuningStrType;
 @property(nonatomic,copy)MKDataBlock countDownBlock;
 @property(nonatomic,copy)MKDataBlock countDownClickEventBlock;
 @property(nonatomic,assign)BOOL isCountDownClockFinished;//倒计时是否结束
 @property(nonatomic,assign)BOOL isCountDownClockOpen;//倒计时是否开始
 
+@property(nonatomic,strong)NSString *countStr;
+@property(nonatomic,strong)NSString *str;
+@property(nonatomic,strong)NSMutableParagraphStyle *mps;
+@property(nonatomic,strong)NSMutableAttributedString *mas;
+
 -(void)actionCountDownBlock:(MKDataBlock)countDownBlock;//倒计时需要触发调用的方法：倒计时的时候外面同时干的事，随着定时器走，可以不实现
 -(void)actionCountDownClickEventBlock:(MKDataBlock)countDownClickEventBlock;//点击事件回调，就不要用系统的addTarget/action/forControlEvents
--(void)timeFailBeginFrom:(NSInteger)timeCount;//倒计时时间次数
--(instancetype)initWithType:(CountDownBtnType)countDownBtnType;//用这个初始化方法
+-(void)timeFailBeginFrom:(NSInteger)timeCount;//倒计时时间次数 自启动直接调用
+
+///用这个初始化方法
+- (instancetype)initWithType:(CountDownBtnType)countDownBtnType
+                     runType:(CountDownBtnRunType)runType
+            layerBorderWidth:(CGFloat)layerBorderWidth
+           layerCornerRadius:(CGFloat)layerCornerRadius
+            layerBorderColor:(UIColor *_Nullable)layerBorderColor
+                  titleColor:(UIColor *_Nullable)titleColor
+               titleBeginStr:(NSString *_Nullable)titleBeginStr
+              titleLabelFont:(UIFont *_Nullable)titleLabelFont;
 
 @end
 

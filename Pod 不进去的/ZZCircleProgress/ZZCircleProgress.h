@@ -35,22 +35,29 @@
 
 //进度
 @property(nonatomic,assign)CGFloat progress;/**<进度 0-1 */
+//绕一圈需要的时间
+@property(nonatomic,assign)CGFloat cycleTime;
+//警戒时间
+@property(nonatomic,assign)CGFloat safetyTime;
 
 -(void)reset;
 /**
  初始化
-
  @param frame 使用自动布局时传CGRectZero
- @param pathBackColor 背景线条色
- @param pathFillColor 填充线条色
- @param startAngle 开始角度
- @param strokeWidth 线条宽度
+ @param pathBackColor   背景线条色
+ @param pathFillColor   填充线条色
+ @param startAngle   开始角度
+ @param strokeWidth     线条宽度
+ @param cycleTime   绕一圈需要的时间
+ @param safetyTime  警戒时间
  @return ZZCircleProgress
  */
 - (instancetype)initWithFrame:(CGRect)frame
                 pathBackColor:(UIColor *)pathBackColor
                 pathFillColor:(UIColor *)pathFillColor
                    startAngle:(CGFloat)startAngle
-                  strokeWidth:(CGFloat)strokeWidth;
+                  strokeWidth:(CGFloat)strokeWidth
+                    cycleTime:(CGFloat)cycleTime
+                   safetyTime:(CGFloat)safetyTime;
 
 @end

@@ -32,10 +32,15 @@
 //        [self addGestureRecognizer:self.longPressGR];
         
         self.userInteractionEnabled = YES;
-        self.progressView.alpha = 1;
+
         self.currentTime = 0.0f;
         self.isClickStartOrPauseBtn = NO;
     }return self;
+}
+
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    self.progressView.alpha = 1;
 }
 
 -(void)makeTimer{
@@ -199,7 +204,9 @@
                                                   pathBackColor:KYellowColor//原本的色彩
                                                   pathFillColor:kBlueColor//进度条略过的色彩
                                                      startAngle:0
-                                                    strokeWidth:3];
+                                                    strokeWidth:3
+                                                      cycleTime:self.time
+                                                     safetyTime:self.safetyTime];
         _progressView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
         _progressView.userInteractionEnabled = YES;
         _progressView.increaseFromLast = YES;//是否从头开始

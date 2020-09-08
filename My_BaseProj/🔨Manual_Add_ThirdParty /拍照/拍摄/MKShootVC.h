@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MKShootVC : BaseVC
 
 @property(nonatomic,strong)GPUImageTools *gpuImageTools;
-@property(nonatomic,strong)__block StartOrPauseBtn *recordBtn;//录制的按钮
+@property(nonatomic,strong,nullable)__block StartOrPauseBtn *recordBtn;//录制的按钮
 
 + (instancetype)ComingFromVC:(UIViewController *)rootVC
                  comingStyle:(ComingStyle)comingStyle

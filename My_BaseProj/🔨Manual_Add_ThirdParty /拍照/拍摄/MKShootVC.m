@@ -587,7 +587,11 @@
                 NSNumber *num = (NSNumber *)data;
                 NSString *str = self.timeArr[num.integerValue];
                 self.time = (CGFloat)[NSString getDigitsFromStr:str] * 60;
+                [self.recordBtn removeFromSuperview];
+                self.recordBtn = nil;
                 self.recordBtn.time = self.time;
+                self.recordBtn.progressView.cycleTime = self.time;
+                self.recordBtn.progressView.safetyTime = self.safetyTime;
                 NSLog(@"self.time = %f",self.time);
             }
         }];

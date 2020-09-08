@@ -71,6 +71,7 @@
 #import "ZZCircleProgress.h"
 #import "MovieCountDown.h"
 #import "UIButton+CountDownBtn.h"//验证码倒计时按钮
+#import "UIDevice+XMUtils.h"
 
 #pragma mark —— 以下是自定义的
 #import "ToolMacro.h"

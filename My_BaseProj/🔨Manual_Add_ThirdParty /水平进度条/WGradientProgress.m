@@ -23,13 +23,9 @@
 
 @implementation WGradientProgress
 
--(instancetype)initWithProgressType:(WGradientProgressType)progressType{
+-(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = KBrownColor;
-        self.progressType = progressType;
-        if (self.progressType == WGradientProgressType_colorRoll) {
-            [self makeTimer_color];
-        }
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;//自动调整view的宽度，保证左边距和右边距不变
     }return self;
 }
@@ -60,13 +56,12 @@
     if (self.isShowFence) {
         self.fenceLayer.hidden = NO;
     }
-    
-    [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
-                    withRunLoop:NSRunLoop.currentRunLoop];
 }
 //开始
 -(void)start{
-//    self.progress += self.increment;
+    if (self.progressType == WGradientProgressType_colorRoll) {
+        [self makeTimer_color];
+    }
     [self makeTimer_length];
 }
 //暂停

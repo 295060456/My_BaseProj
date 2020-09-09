@@ -10,9 +10,9 @@
 
 @interface WGradientProgress ()
 
-@property(nonatomic,strong)CAGradientLayer *gradLayer;
-@property(nonatomic,strong)CALayer *mask;
-@property(nonatomic,strong)UIView *parentView;
+@property(nonatomic,strong)CALayer *roadLayer;//跑道 即将运行的轨迹
+@property(nonatomic,strong)CALayer *fenceLayer;//栅栏
+@property(nonatomic,strong)CAGradientLayer *gradLayer;//通过改变layer的宽度来实现进度 运动员
 @property(nonatomic,strong)NSTimerManager *nsTimerManager_color;//主管线条颜色的翻滚
 @property(nonatomic,strong)NSTimerManager *nsTimerManager_length;//主管线条长度的递增
 @property(nonatomic,strong)NSMutableArray *colors;
@@ -34,13 +34,16 @@
 }
 
 -(void)showOnParent:(UIView *)parentView{
-    self.parentView = parentView;
-    self.frame = CGRectMake(parentView.mj_x,
-                            parentView.mj_y,
-                            parentView.mj_w,
-                            1);
-    [parentView addSubview:self];
-     self.gradLayer.hidden = NO;
+    if (self.isShowRoad) {
+        self.roadLayer.hidden = NO;
+    }
+    
+    self.gradLayer.hidden = NO;
+    
+    if (self.isShowFence) {
+        self.fenceLayer.hidden = NO;
+    }
+    
     [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
                     withRunLoop:NSRunLoop.currentRunLoop];
     
@@ -52,7 +55,6 @@
     if ([self superview]) {
         [self removeFromSuperview];
     }
-    self.parentView = nil;
 }
 
 -(void)setProgress:(CGFloat)progress{
@@ -63,11 +65,10 @@
         progress = 1;
     }
     _progress = progress;
-    CGFloat maskWidth = progress * self.width;
-    self.mask.frame = CGRectMake(0,
-                                 0,
-                                 maskWidth,
-                                 self.height);
+    self.gradLayer.frame = CGRectMake(0,
+                                      0,
+                                      progress * self.width,
+                                      self.mj_h);
 }
 
 -(void)simulateProgress{
@@ -102,7 +103,7 @@
         [copyArray insertObject:lastColor
                         atIndex:0];
     }
-    [self.gradLayer setColors:copyArray];
+    self.gradLayer.colors = copyArray;
 }
 #pragma mark —— lazyLoad
 -(CGFloat)increment{
@@ -176,13 +177,11 @@
     if (!_colors) {
         _colors = NSMutableArray.array;
         for (NSInteger deg = 0; deg <= 360; deg += 5) {
-            UIColor *color;
-            color = [UIColor colorWithHue:1.0 * deg / 360.0
-                               saturation:1.0
-                               brightness:1.0
-                                    alpha:1.0];
-            [_colors addObject:(id)[color
-                                    CGColor]];
+            UIColor *color = [UIColor colorWithHue:1.0 * deg / 360.0
+                                        saturation:1.0
+                                        brightness:1.0
+                                             alpha:1.0];
+            [_colors addObject:(id)color.CGColor];
         }
     }return _colors;;
 }
@@ -190,26 +189,52 @@
 -(CAGradientLayer *)gradLayer{
     if (!_gradLayer) {
         _gradLayer = CAGradientLayer.layer;
-        _gradLayer.frame = self.bounds;
-        _gradLayer.startPoint = CGPointMake(0, 0.5);
-        _gradLayer.endPoint = CGPointMake(1, 0.5);
-        [_gradLayer setColors:[NSArray arrayWithArray:self.colors]];
+        _gradLayer.frame = CGRectZero;
+        _gradLayer.borderWidth = 1;
+        _gradLayer.startPoint = CGPointMake(0, 0);
+        _gradLayer.endPoint = CGPointMake(1, 1);
+        _gradLayer.colors = [NSArray arrayWithArray:self.colors];
         [self.layer addSublayer:_gradLayer];
-        [_gradLayer setMask:self.mask];
     }return _gradLayer;
 }
-//
--(CALayer *)mask{
-    if (!_mask) {
-        _mask = CALayer.layer;
-        [_mask setFrame:CGRectMake(self.gradLayer.frame.origin.x,
-                                   self.gradLayer.frame.origin.y,
-                                   self.progress * self.width,
-                                   self.height)];
-        _mask.borderColor = [[UIColor blueColor] CGColor];
-        _mask.borderWidth = 2;
-        
-    }return _mask;
+
+-(CALayer *)roadLayer{
+    if (!_roadLayer) {
+        _roadLayer = CALayer.layer;
+        _roadLayer.frame = self.bounds;
+        _roadLayer.backgroundColor = KLightGrayColor.CGColor;
+        [self.layer addSublayer:_roadLayer];
+    }return _roadLayer;
+}
+
+-(CALayer *)fenceLayer{
+    if (!_fenceLayer) {
+        _fenceLayer = CALayer.layer;
+        _fenceLayer.frame = CGRectMake(self.fenceLayer_x,
+                                       0,
+                                       self.fenceLayer_width,
+                                       self.mj_h);
+        _fenceLayer.backgroundColor = self.fenceLayerColor.CGColor;
+        [self.gradLayer addSublayer:_fenceLayer];
+    }return _fenceLayer;;
+}
+
+-(CGFloat)fenceLayer_x{
+    if (_fenceLayer_x == 0) {
+        _fenceLayer_x = self.mj_w * 0.3;
+    }return _fenceLayer_x;
+}
+
+-(CGFloat)fenceLayer_width{
+    if (_fenceLayer_width == 0) {
+        _fenceLayer_width = 5;
+    }return _fenceLayer_width;
+}
+
+-(UIColor *)fenceLayerColor{
+    if (!_fenceLayerColor) {
+        _fenceLayerColor = RandomColor;
+    }return _fenceLayerColor;
 }
 
 @end

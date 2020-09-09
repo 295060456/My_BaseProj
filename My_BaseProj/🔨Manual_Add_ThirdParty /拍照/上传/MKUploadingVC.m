@@ -95,25 +95,6 @@ UITextViewDelegate
     [super viewDidLayoutSubviews];
     NSLog(@"");
 }
-
--(void)createRichText{
-    UIFont *btnFont = nil;
-    if (@available(iOS 8.2, *)) {
-        btnFont = [UIFont systemFontOfSize:12
-                                    weight:UIFontWeightBold];
-    } else {
-        btnFont = [UIFont systemFontOfSize:12];
-    }
-    [self addButtonCompWithBtnTitle:@"  已阅读并同意"
-                               font:btnFont
-                              color:kRedColor
-                             target:self
-                             action:@selector(btnClickEvent:)];
-    [self addLinkCompWithText:@"上传须知"
-                      onClick:^{
-        NSLog(@"点击到了一个链接");
-    }];
-}
 ///发布成功以后做的事情
 -(void)afterRelease{
     [self deleteButtonRemoveSelf:self.choosePicBtn];
@@ -310,13 +291,33 @@ shouldChangeTextInRange:(NSRange)range
             make.top.equalTo(self.backView.mas_bottom).offset(SCALING_RATIO(13));
         }];
         [[_choosePicBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            [self choosePicBtnClickEvent:self->_choosePicBtn];
+            [self choosePicBtnClickEvent:x];
         }];
         [UIView colourToLayerOfView:_choosePicBtn
                          WithColour:KLightGrayColor
                      AndBorderWidth:0.2f];
         [self.view layoutIfNeeded];
     }return _choosePicBtn;
+}
+
+-(void)createRichText{
+    UIFont *btnFont = nil;
+    if (@available(iOS 8.2, *)) {
+        btnFont = [UIFont systemFontOfSize:12
+                                    weight:UIFontWeightBold];
+    } else {
+        btnFont = [UIFont systemFontOfSize:12];
+    }
+    [self addButtonCompWithBtnTitle:@"  已阅读并同意"
+                               font:btnFont
+                              color:kRedColor
+                             target:self
+                             action:@selector(btnClickEvent:)];
+    WeakSelf
+    [self addLinkCompWithText:@"上传须知"
+                      onClick:^{
+        NSLog(@"点击到了一个链接");
+    }];
 }
 
 -(AWRTViewComponent *)addButtonCompWithBtnTitle:(NSString *)title
@@ -403,7 +404,6 @@ shouldChangeTextInRange:(NSRange)range
         _releaseBtn.userInteractionEnabled = NO;
         _releaseBtn.alpha = 0.4;
         _releaseBtn.backgroundColor = KLightGrayColor;
-
         [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             if (self->btn.selected &&
                 ![NSString isNullString:self.textView.text] &&
@@ -428,7 +428,7 @@ shouldChangeTextInRange:(NSRange)range
                                                     urlAsset:self.urlAsset];
                     }else{
                         [MBProgressHUD wj_showPlainText:@"单个文件大小需要在300M以内"
-                                                   view:getMainWindow()];
+                                                   view:self.view];
                     }
                 }else{
         //            @weakify(self)
@@ -468,7 +468,5 @@ shouldChangeTextInRange:(NSRange)range
                           AndCornerRadius:SCALING_RATIO(6)];
     }return _releaseBtn;
 }
-
-
 
 @end

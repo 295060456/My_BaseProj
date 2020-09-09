@@ -12,10 +12,12 @@
 
 @property(nonatomic,strong)CALayer *roadLayer;//跑道 即将运行的轨迹
 @property(nonatomic,strong)CALayer *fenceLayer;//栅栏
-@property(nonatomic,strong)CAGradientLayer *gradLayer;//通过改变layer的宽度来实现进度 运动员
+@property(nonatomic,strong)CAGradientLayer *__block gradLayer;//通过改变layer的宽度来实现进度 运动员
+
 @property(nonatomic,strong)NSTimerManager *nsTimerManager_color;//主管线条颜色的翻滚
 @property(nonatomic,strong)NSTimerManager *nsTimerManager_length;//主管线条长度的递增
 @property(nonatomic,strong)NSMutableArray *colors;
+@property(nonatomic,copy)TwoDataBlock WGradientProgressBlock;
 
 @end
 
@@ -23,17 +25,29 @@
 
 -(instancetype)init{
     if (self = [super init]) {
-        [self makeTimer];
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        self.backgroundColor = KBrownColor;
+        [self makeTimer_color];
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;//自动调整view的宽度，保证左边距和右边距不变
     }return self;
 }
-///旋转 以适应不同方向的直线型进度条
--(void)setTransformRadians:(CGFloat)transformRadians{
-    [UIView setTransform:transformRadians
-                 forView:self];
+
+-(void)makeTimer_color{
+    //启动方式——1
+    [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
+                    withRunLoop:nil];
+    //启动方式——2
+//    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
 }
 
--(void)showOnParent:(UIView *)parentView{
+-(void)makeTimer_length{
+    //启动方式——1
+    [NSTimerManager nsTimeStart:self.nsTimerManager_length.nsTimer
+                    withRunLoop:nil];
+    //启动方式——2
+//    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
+}
+
+-(void)showOnParent{
     if (self.isShowRoad) {
         self.roadLayer.hidden = NO;
     }
@@ -46,8 +60,32 @@
     
     [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
                     withRunLoop:NSRunLoop.currentRunLoop];
-    
-    [self simulateProgress];
+}
+//开始
+-(void)start{
+//    self.progress += self.increment;
+    [self makeTimer_length];
+}
+//暂停
+-(void)pause{
+    [NSTimerManager nsTimePause:self.nsTimerManager_length.nsTimer];
+}
+//重新开始
+-(void)resume{
+    [NSTimerManager nsTimecontinue:self.nsTimerManager_length.nsTimer];
+}
+//归位
+-(void)reset{
+    //定时器归位
+    [self.nsTimerManager_color nsTimeDestroy];
+    [self.nsTimerManager_length nsTimeDestroy];
+    //UI归位
+    self.gradLayer.frame = CGRectZero;
+}
+///旋转 以适应不同方向的直线型进度条
+-(void)setTransformRadians:(CGFloat)transformRadians{
+    [UIView setTransform:transformRadians
+                 forView:self];
 }
 
 -(void)hide{
@@ -71,29 +109,6 @@
                                       self.mj_h);
 }
 
--(void)simulateProgress{
-    self.progress += self.increment;
-    [self makeTimer2];
-    [NSTimerManager nsTimeStart:self.nsTimerManager_length.nsTimer
-                    withRunLoop:NSRunLoop.currentRunLoop];
-}
-
--(void)makeTimer{
-    //创建方式——1
-        [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
-                        withRunLoop:nil];
-    //创建方式——2
-//    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
-}
-
--(void)makeTimer2{
-    //创建方式——1
-        [NSTimerManager nsTimeStart:self.nsTimerManager_length.nsTimer
-                        withRunLoop:nil];
-    //创建方式——2
-//    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
-}
-
 -(void)timerFunc{
     CAGradientLayer *gradLayer = self.gradLayer;
     NSMutableArray *copyArray = [NSMutableArray arrayWithArray:[gradLayer colors]];
@@ -104,6 +119,10 @@
                         atIndex:0];
     }
     self.gradLayer.colors = copyArray;
+}
+
+-(void)actionWGradientProgressBlock:(TwoDataBlock)WGradientProgressBlock{
+    _WGradientProgressBlock = WGradientProgressBlock;
 }
 #pragma mark —— lazyLoad
 -(CGFloat)increment{
@@ -164,7 +183,19 @@
             if ([data isKindOfClass:NSTimerManager.class]) {
 //                NSTimerManager *timerManager = (NSTimerManager *)data;
 //                timerManager.anticlockwiseTime;
-                [self simulateProgress];
+                
+                if (self.progress < 1) {
+                    [self start];
+                    
+                    if (self.WGradientProgressBlock) {
+                        self.WGradientProgressBlock(@(self.progress),self.gradLayer);
+                    }
+                    
+                    self.progress += self.increment;
+                }else{
+                    //销毁
+                    [self.nsTimerManager_length nsTimeDestroy];
+                }
             }
         }];
         [_nsTimerManager_length actionNSTimerManagerFinishBlock:^(id data) {

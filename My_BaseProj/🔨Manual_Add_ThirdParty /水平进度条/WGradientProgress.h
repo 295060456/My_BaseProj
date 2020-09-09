@@ -22,9 +22,15 @@
 
 @property(nonatomic,strong)UIColor *fenceLayerColor;
 
--(void)showOnParent:(UIView *)parentView;
+-(void)showOnParent;// 启动色彩翻滚
 -(void)hide;
 ///旋转 以适应不同方向的直线型进度条
 -(void)setTransformRadians:(CGFloat)transformRadians;
+-(void)actionWGradientProgressBlock:(TwoDataBlock)WGradientProgressBlock;
+
+-(void)start;
+-(void)pause;
+-(void)resume;
+-(void)reset;
 
 @end

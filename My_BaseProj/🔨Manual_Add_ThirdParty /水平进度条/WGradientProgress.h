@@ -11,6 +11,12 @@
 @interface WGradientProgress : UIView
 
 @property(nonatomic,assign)CGFloat progress;
+@property(nonatomic,assign)CGFloat increment;//只能允许 0 ~ 1 范围内
+
+@property(nonatomic,assign)NSTimeInterval color_timeInterval;//色彩翻滚的频率
+@property(nonatomic,assign)NSTimeInterval length_timeInterval;//长度变化的频率
+@property(nonatomic,assign)NSTimeInterval length_timeSecIntervalSinceDate;//长度变化的时间延迟
+
 
 -(void)showOnParent:(UIView *)parentView;
 -(void)hide;

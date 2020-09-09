@@ -13,7 +13,8 @@
 @property(nonatomic,strong)CAGradientLayer *gradLayer;
 @property(nonatomic,strong)CALayer *mask;
 @property(nonatomic,strong)UIView *parentView;
-@property(nonatomic,strong)NSTimerManager *nsTimerManager;
+@property(nonatomic,strong)NSTimerManager *nsTimerManager_color;//主管线条颜色的翻滚
+@property(nonatomic,strong)NSTimerManager *nsTimerManager_length;//主管线条长度的递增
 @property(nonatomic,strong)NSMutableArray *colors;
 
 @end
@@ -40,14 +41,14 @@
                             1);
     [parentView addSubview:self];
      self.gradLayer.hidden = NO;
-    [NSTimerManager nsTimeStart:self.nsTimerManager.nsTimer
+    [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
                     withRunLoop:NSRunLoop.currentRunLoop];
     
     [self simulateProgress];
 }
 
 -(void)hide{
-    [NSTimerManager nsTimePause:self.nsTimerManager.nsTimer];
+    [NSTimerManager nsTimePause:self.nsTimerManager_color.nsTimer];
     if ([self superview]) {
         [self removeFromSuperview];
     }
@@ -70,31 +71,23 @@
 }
 
 -(void)simulateProgress{
-    if (self.progress == 0) {
-        CGFloat increment = (arc4random() % 5) / 10.0f + 0.1;
-        CGFloat progress  = [self progress] + increment;
-        [self setProgress:progress];
-    }
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    @weakify(self)
-    dispatch_after(popTime,
-                   dispatch_get_main_queue(),
-                   ^(void){
-        @strongify(self)
-        CGFloat increment = (arc4random() % 5) / 10.0f + 0.1;
-        CGFloat progress  = self.progress + increment;
-        NSLog(@"progress:%@", @(progress));
-        self.progress = progress;
-        if (progress < 1.0) {
-            [self simulateProgress];
-        }
-    });
+    self.progress += self.increment;
+    [self makeTimer2];
+    [NSTimerManager nsTimeStart:self.nsTimerManager_length.nsTimer
+                    withRunLoop:NSRunLoop.currentRunLoop];
 }
 
 -(void)makeTimer{
     //创建方式——1
-        [NSTimerManager nsTimeStart:self.nsTimerManager.nsTimer
+        [NSTimerManager nsTimeStart:self.nsTimerManager_color.nsTimer
+                        withRunLoop:nil];
+    //创建方式——2
+//    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
+}
+
+-(void)makeTimer2{
+    //创建方式——1
+        [NSTimerManager nsTimeStart:self.nsTimerManager_length.nsTimer
                         withRunLoop:nil];
     //创建方式——2
 //    [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
@@ -112,13 +105,37 @@
     [self.gradLayer setColors:copyArray];
 }
 #pragma mark —— lazyLoad
--(NSTimerManager *)nsTimerManager{
-    if (!_nsTimerManager) {
-        _nsTimerManager = NSTimerManager.new;
-        _nsTimerManager.timeInterval = 0.03;
-        _nsTimerManager.timerStyle = TimerStyle_clockwise;
+-(CGFloat)increment{
+    if (_increment == 0) {
+        _increment = 0.1;
+    }return _increment;
+}
+
+-(NSTimeInterval)color_timeInterval{
+    if (_color_timeInterval == 0) {
+        _color_timeInterval = 0.03;
+    }return _color_timeInterval;
+}
+
+-(NSTimeInterval)length_timeInterval{
+    if (_length_timeInterval == 0) {
+        _length_timeInterval = 1;
+    }return _length_timeInterval;
+}
+
+-(NSTimeInterval)length_timeSecIntervalSinceDate{
+    if (_length_timeSecIntervalSinceDate == 0) {
+        _length_timeSecIntervalSinceDate = 2;
+    }return _length_timeSecIntervalSinceDate;
+}
+
+-(NSTimerManager *)nsTimerManager_color{
+    if (!_nsTimerManager_color) {
+        _nsTimerManager_color = NSTimerManager.new;
+        _nsTimerManager_color.timeInterval = self.color_timeInterval;
+        _nsTimerManager_color.timerStyle = TimerStyle_clockwise;
         @weakify(self)
-        [_nsTimerManager actionNSTimerManagerRunningBlock:^(id data) {
+        [_nsTimerManager_color actionNSTimerManagerRunningBlock:^(id data) {
             NSLog(@"你好");
             @strongify(self)
             if ([data isKindOfClass:NSTimerManager.class]) {
@@ -127,10 +144,32 @@
                 [self timerFunc];
             }
         }];
-        [_nsTimerManager actionNSTimerManagerFinishBlock:^(id data) {
+        [_nsTimerManager_color actionNSTimerManagerFinishBlock:^(id data) {
             NSLog(@"我死球了");
         }];
-    }return _nsTimerManager;
+    }return _nsTimerManager_color;
+}
+
+-(NSTimerManager *)nsTimerManager_length{
+    if (!_nsTimerManager_length) {
+        _nsTimerManager_length = NSTimerManager.new;
+        _nsTimerManager_length.timeInterval = self.length_timeInterval;
+        _nsTimerManager_length.timeSecIntervalSinceDate = self.length_timeSecIntervalSinceDate;
+        _nsTimerManager_length.timerStyle = TimerStyle_clockwise;
+        @weakify(self)
+        [_nsTimerManager_length actionNSTimerManagerRunningBlock:^(id data) {
+            NSLog(@"你好");
+            @strongify(self)
+            if ([data isKindOfClass:NSTimerManager.class]) {
+//                NSTimerManager *timerManager = (NSTimerManager *)data;
+//                timerManager.anticlockwiseTime;
+                [self simulateProgress];
+            }
+        }];
+        [_nsTimerManager_length actionNSTimerManagerFinishBlock:^(id data) {
+            NSLog(@"我死球了");
+        }];
+    }return _nsTimerManager_length;
 }
 
 -(NSMutableArray *)colors{

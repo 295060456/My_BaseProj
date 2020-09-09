@@ -254,6 +254,7 @@
 		C5E4C09E24DFF0B300D4862C /* BaseVC+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C09224DFF0B300D4862C /* BaseVC+BRPickerView.m */; };
 		C5E4C09F24DFF0B300D4862C /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C09424DFF0B300D4862C /* BaseVC+JPImageresizerView.m */; };
 		C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C65525088EAD001E69DA /* WGradientProgress.m */; };
+		C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C6812509148C001E69DA /* WGradientProgressView.m */; };
 		C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */; };
 		C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AC24E1640E00A38FAF /* NSObject+Sound.m */; };
 		C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AD24E1640E00A38FAF /* NSObject+Time.m */; };
@@ -894,6 +895,8 @@
 		C5E4C09524DFF0B300D4862C /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
 		C5E5C65425088EAC001E69DA /* WGradientProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgress.h; sourceTree = "<group>"; };
 		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
+		C5E5C6812509148C001E69DA /* WGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgressView.m; sourceTree = "<group>"; };
+		C5E5C6822509148C001E69DA /* WGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgressView.h; sourceTree = "<group>"; };
 		C5E7D9AA24E1640D00A38FAF /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		C5E7D9AC24E1640E00A38FAF /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
@@ -2346,6 +2349,8 @@
 			children = (
 				C5E5C65425088EAC001E69DA /* WGradientProgress.h */,
 				C5E5C65525088EAD001E69DA /* WGradientProgress.m */,
+				C5E5C6822509148C001E69DA /* WGradientProgressView.h */,
+				C5E5C6812509148C001E69DA /* WGradientProgressView.m */,
 			);
 			path = "水平进度条";
 			sourceTree = "<group>";
@@ -3995,6 +4000,7 @@
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E4C09C24DFF0B300D4862C /* BaseVC+OpenURL.m in Sources */,
+				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C561614324EE2E95001CD851 /* CustomerAVPlayerView.m in Sources */,
 				C5FE9CEC24B5F29C007B9878 /* UIImage+TBCityIconFont.m in Sources */,

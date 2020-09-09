@@ -253,6 +253,7 @@
 		C5E4C09D24DFF0B300D4862C /* BaseVC+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C09024DFF0B300D4862C /* BaseVC+BackBtn.m */; };
 		C5E4C09E24DFF0B300D4862C /* BaseVC+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C09224DFF0B300D4862C /* BaseVC+BRPickerView.m */; };
 		C5E4C09F24DFF0B300D4862C /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E4C09424DFF0B300D4862C /* BaseVC+JPImageresizerView.m */; };
+		C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C65525088EAD001E69DA /* WGradientProgress.m */; };
 		C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */; };
 		C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AC24E1640E00A38FAF /* NSObject+Sound.m */; };
 		C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AD24E1640E00A38FAF /* NSObject+Time.m */; };
@@ -891,6 +892,8 @@
 		C5E4C09324DFF0B300D4862C /* BaseVC+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+OpenURL.h"; sourceTree = "<group>"; };
 		C5E4C09424DFF0B300D4862C /* BaseVC+JPImageresizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JPImageresizerView.m"; sourceTree = "<group>"; };
 		C5E4C09524DFF0B300D4862C /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
+		C5E5C65425088EAC001E69DA /* WGradientProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgress.h; sourceTree = "<group>"; };
+		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
 		C5E7D9AA24E1640D00A38FAF /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extras.m"; sourceTree = "<group>"; };
 		C5E7D9AC24E1640E00A38FAF /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
@@ -2338,6 +2341,15 @@
 			path = LYEmptyView;
 			sourceTree = "<group>";
 		};
+		C5E5C65225088E80001E69DA /* 水平进度条 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5C65425088EAC001E69DA /* WGradientProgress.h */,
+				C5E5C65525088EAD001E69DA /* WGradientProgress.m */,
+			);
+			path = "水平进度条";
+			sourceTree = "<group>";
+		};
 		C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -2593,6 +2605,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5C65225088E80001E69DA /* 水平进度条 */,
 				C5C67C5424FE4F6C000A26B8 /* TimerManager */,
 				C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */,
 				C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */,
@@ -4028,6 +4041,7 @@
 				C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */,
 				C590FF3D24D00D23000F36C9 /* SDWebImageCoderHelper.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
+				C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */,
 				C5B1C7E424BAB91A001923FB /* LOTArrayInterpolator.m in Sources */,
 				C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */,
 				C5B1C7CD24BAB91A001923FB /* LOTInterpolatorCallback.m in Sources */,

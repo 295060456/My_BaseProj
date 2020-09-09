@@ -23,10 +23,13 @@
 
 @implementation WGradientProgress
 
--(instancetype)init{
+-(instancetype)initWithProgressType:(WGradientProgressType)progressType{
     if (self = [super init]) {
         self.backgroundColor = KBrownColor;
-        [self makeTimer_color];
+        self.progressType = progressType;
+        if (self.progressType == WGradientProgressType_colorRoll) {
+            [self makeTimer_color];
+        }
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;//自动调整view的宽度，保证左边距和右边距不变
     }return self;
 }
@@ -208,11 +211,15 @@
     if (!_colors) {
         _colors = NSMutableArray.array;
         for (NSInteger deg = 0; deg <= 360; deg += 5) {
-            UIColor *color = [UIColor colorWithHue:1.0 * deg / 360.0
-                                        saturation:1.0
-                                        brightness:1.0
-                                             alpha:1.0];
-            [_colors addObject:(id)color.CGColor];
+            if (self.progressType == WGradientProgressType_colorNormal) {
+                [_colors addObject:(id)self.progressColor.CGColor];
+            }else{
+                UIColor *color = [UIColor colorWithHue:1.0 * deg / 360.0
+                                            saturation:1.0
+                                            brightness:1.0
+                                                 alpha:1.0];
+                [_colors addObject:(id)color.CGColor];
+            }
         }
     }return _colors;;
 }
@@ -266,6 +273,12 @@
     if (!_fenceLayerColor) {
         _fenceLayerColor = RandomColor;
     }return _fenceLayerColor;
+}
+
+-(UIColor *)progressColor{
+    if (!_progressColor) {
+        _progressColor = kRedColor;
+    }return _progressColor;
 }
 
 @end

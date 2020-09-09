@@ -37,6 +37,9 @@
                                                                  }];
                 [alertController addAction:okAction];
             }
+            if (alertVCBlock) {
+                alertVCBlock(alertController);
+            }
             [self presentViewController:alertController
                                animated:YES
                              completion:nil];
@@ -63,6 +66,9 @@
                                                                                 withObject:Nil];
                                                                  }];
                 [alertController addAction:okAction];
+            }
+            if (alertVCBlock) {
+                alertVCBlock(alertController);
             }
             [self presentViewController:alertController
                                animated:YES
@@ -100,6 +106,9 @@
                                                                  }];
                 [alertController addAction:okAction];
             }
+            if (alertVCBlock) {
+                alertVCBlock(alertController);
+            }
         } break;
         case YX_AlertController:{
             YXAlertController *alertController = [YXAlertController alertControllerWithTitle:title
@@ -124,6 +133,9 @@
                                                                                 withObject:Nil];
                                                                  }];
                 [alertController addAction:okAction];
+            }
+            if (alertVCBlock) {
+                alertVCBlock(alertController);
             }
         } break;
         default:

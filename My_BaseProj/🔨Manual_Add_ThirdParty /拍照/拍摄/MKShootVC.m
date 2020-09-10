@@ -18,6 +18,7 @@
 @interface MKShootVC ()
 
 #pragma mark —— UI
+@property(nonatomic,strong)UIButton *backBtn;
 @property(nonatomic,strong)UIButton *overturnBtn;//镜头翻转
 @property(nonatomic,strong)UIButton *flashLightBtn;//闪光灯
 @property(nonatomic,strong)UIButton *countDownBtn;//开始录制的时候是否允许有倒计时;默认无
@@ -106,26 +107,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:kIMG(@"MKShootVC")];
     
-    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtnCategory];
+    self.gk_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
     self.gk_navRightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.flashLightBtn],
                                        [[UIBarButtonItem alloc] initWithCustomView:self.overturnBtn],
                                        [[UIBarButtonItem alloc] initWithCustomView:self.countDownBtn]];
     self.gk_navTitle = @"";
     [self hideNavLine];
     
-    [[self.backBtnCategory rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        [self alertControllerStyle:SYS_AlertController
-                  showActionSheetTitle:nil
-                               message:nil
-                       isSeparateStyle:YES
-                           btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
-                        alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
-                                sender:nil
-                          alertVCBlock:^(id data) {
-            //DIY
-        }];
-    }];
-
     [self.view addSubview:self.gpuImageTools.GPUImageView];
 }
 
@@ -401,6 +389,7 @@
                                   alertBtnAction:@[@"pushToSysConfig"]
                                     alertVCBlock:^(id data) {
                           //DIY
+                          NSLog(@"");
                       }];
                   };
 
@@ -643,14 +632,29 @@
         [[_deleteFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             NSLog(@"删除作品？");
             [self.gpuImageTools vedioShoottingSuspend];
-            [self alertControllerStyle:SYS_AlertController
+            [self alertControllerStyle:YX_AlertController
                     showAlertViewTitle:@"删除作品？"
                                message:nil
                        isSeparateStyle:NO
                            btnTitleArr:@[@"确认",@"继续录制"]
                         alertBtnAction:@[@"sure",@"shoottingContinue"]
                           alertVCBlock:^(id data) {
-                //DIY
+                if ([data isKindOfClass:YXAlertController.class]) {
+                    YXAlertController *yxAlertController = (YXAlertController *)data;
+                    yxAlertController.layout.doneActionTitleColor = COLOR_HEX(0x1F242F, 0.8);
+                    yxAlertController.layout.cancelActionBackgroundColor = COLOR_HEX(0x1F242F, 0.8);
+                    yxAlertController.layout.doneActionBackgroundColor = COLOR_HEX(0x1F242F, 0.8);
+                    yxAlertController.layout.lineColor = COLOR_HEX(0x1F242F, 0.8);
+                    yxAlertController.layout.messageFont = [UIFont systemFontOfSize:14
+                                                                             weight:UIFontWeightMedium];
+                    yxAlertController.layout.cancelActionTitleFont = [UIFont systemFontOfSize:14
+                                                                                       weight:UIFontWeightRegular];
+                    yxAlertController.layout.doneActionTitleFont = [UIFont systemFontOfSize:14
+                                                                                     weight:UIFontWeightRegular];
+                    yxAlertController.layout.topViewBackgroundColor = COLOR_HEX(0x1F242F, 0.8);
+                    yxAlertController.layout.titleColor = kWhiteColor;
+                    [yxAlertController layoutSettings];
+                }
             }];
         }];
         [self.view addSubview:_deleteFilmBtn];
@@ -715,7 +719,7 @@
         @weakify(self)
         if (![NSString isNullString:self.gpuImageTools.compressedVedioPathStr]) {
             _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:self.gpuImageTools.compressedVedioPathStr]
-                                                            suspendVC:self_weak_];
+                                                            suspendVC:weak_self];
             _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
             [_AVPlayerView errorCustomerAVPlayerBlock:^{
                 @strongify(self)
@@ -727,6 +731,7 @@
                             alertBtnAction:@[@"OK"]
                               alertVCBlock:^(id data) {
                     //DIY
+                    NSLog(@"");
                 }];
             }];
             
@@ -828,5 +833,33 @@
         }];
     }return _progressView;
 }
+
+-(UIButton *)backBtn{
+    if (!_backBtn) {
+        _backBtn = UIButton.new;
+        [_backBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
+                                  imageTitleSpace:8];
+        [_backBtn setTitleColor:kWhiteColor
+                       forState:UIControlStateNormal];
+        [_backBtn setTitle:@"返回"
+                  forState:UIControlStateNormal];
+        [_backBtn setImage:kIMG(@"back_white")
+                         forState:UIControlStateNormal];
+        [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            [self alertControllerStyle:SYS_AlertController
+                  showActionSheetTitle:nil
+                               message:nil
+                       isSeparateStyle:YES
+                           btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
+                        alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
+                                sender:nil
+                          alertVCBlock:^(id data) {
+                //DIY
+                NSLog(@"");
+            }];
+        }];
+    }return _backBtn;
+}
+
 
 @end

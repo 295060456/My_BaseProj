@@ -11,6 +11,7 @@
 
 @interface AppDelegate ()
 
+@property(nonatomic,strong)UINavigationController *navigationController;
 @property(nonatomic,strong)CustomSYSUITabBarController *customSYSUITabBarController;
 
 @end
@@ -67,6 +68,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         configure.gk_navItemLeftSpace = 12.0f;
         configure.gk_navItemRightSpace = 12.0f;
     }];
+    
+    //如果系统版本低于iOS 13.0 则运行以下代码
+    if (@available(iOS 13.0, *)) {
+
+    }else{
+        self.window.rootViewController = self.navigationController;
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 //系统版本低于iOS13.0的设备
@@ -133,12 +142,20 @@ didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions  API_AVAILABLE(
         abort();
     }
 }
-
 #pragma mark —— lazyLoad
 -(CustomSYSUITabBarController *)customSYSUITabBarController{
     if (!_customSYSUITabBarController) {
         _customSYSUITabBarController = CustomSYSUITabBarController.new;
     }return _customSYSUITabBarController;
+}
+
+-(UINavigationController *)navigationController{
+    if (!_navigationController) {
+//        _navigationController = [[UINavigationController alloc] initWithRootViewController:self.customSYSUITabBarController];
+        _navigationController = [UINavigationController rootVC:self.customSYSUITabBarController
+                                               transitionScale:NO];
+        _navigationController.navigationBar.hidden = YES;
+    }return _navigationController;
 }
 
 @end

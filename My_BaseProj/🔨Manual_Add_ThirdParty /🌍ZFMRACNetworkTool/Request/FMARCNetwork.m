@@ -723,6 +723,10 @@ static FMARCNetwork *static_FMARCNetwork = nil;
 //        }
 //    }
 }
+#pragma mark —— 登录模块 在适当的时候调用
+-(void)Login{
 
+    
+}
 
 @end

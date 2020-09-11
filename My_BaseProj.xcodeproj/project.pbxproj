@@ -261,6 +261,8 @@
 		C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B524E1642100A38FAF /* UIImage+YBGIF.m */; };
 		C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B624E1642200A38FAF /* UIImage+Extras.m */; };
 		C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */; };
+		C5EB98D8250A1736007660B3 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB98D4250A1736007660B3 /* UIView+Animation.m */; };
+		C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB98D6250A1736007660B3 /* UIView+Gradient.m */; };
 		C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */; };
 		C5F78AE824BF297D008A46EC /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD724BF297D008A46EC /* HoveringHeaderView.m */; };
 		C5F78AE924BF297D008A46EC /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78AD824BF297D008A46EC /* NonHoveringHeaderView.m */; };
@@ -910,6 +912,10 @@
 		C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InteractivePushGesture.m"; sourceTree = "<group>"; };
 		C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
 		C5E7D9C624E17A4B00A38FAF /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
+		C5EB98D4250A1736007660B3 /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
+		C5EB98D5250A1736007660B3 /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
+		C5EB98D6250A1736007660B3 /* UIView+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gradient.m"; sourceTree = "<group>"; };
+		C5EB98D7250A1736007660B3 /* UIView+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gradient.h"; sourceTree = "<group>"; };
 		C5F78AD324BF27BD008A46EC /* 高仿刷宝评论列表（PopUpVC上面加盖内容物完成） */ = {isa = PBXFileReference; lastKnownFileType = text; path = "高仿刷宝评论列表（PopUpVC上面加盖内容物完成）"; sourceTree = "<group>"; };
 		C5F78AD524BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
 		C5F78AD624BF297D008A46EC /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
@@ -2928,6 +2934,10 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C5EB98D5250A1736007660B3 /* UIView+Animation.h */,
+				C5EB98D4250A1736007660B3 /* UIView+Animation.m */,
+				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
+				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
 				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
 				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
 				C5FE9B4124B5F203007B9878 /* UIView+Extras.h */,
@@ -4161,6 +4171,7 @@
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C5FE9D1D24B5F29C007B9878 /* AddressPickerView.m in Sources */,
 				C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */,
+				C5EB98D8250A1736007660B3 /* UIView+Animation.m in Sources */,
 				C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */,
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5B1C7AF24BAB919001923FB /* LOTPathInterpolator.m in Sources */,
@@ -4221,6 +4232,7 @@
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,
+				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,
 				C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */,
 				C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */,
 				C5A46BE524EF901200158D1E /* UIViewController+Shake.m in Sources */,

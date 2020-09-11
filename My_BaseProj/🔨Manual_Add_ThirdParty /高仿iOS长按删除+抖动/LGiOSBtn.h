@@ -19,7 +19,7 @@
 @end
 
 NS_ASSUME_NONNULL_BEGIN
-
+//hidden 的 权限优先级 > alpha
 @interface LGiOSBtn : UIButton
 // 是否抖动
 @property(nonatomic,assign,getter=isShaking)BOOL shaking;

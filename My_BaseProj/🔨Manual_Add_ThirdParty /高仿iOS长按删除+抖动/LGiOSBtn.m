@@ -32,7 +32,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
-        self.iconBtn.alpha = 0;
+        self.iconBtn.hidden = YES;
     }return self;
 }
 
@@ -41,7 +41,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
-        self.iconBtn.alpha = 0;
+        self.iconBtn.hidden = YES;
     }return self;
 }
 
@@ -50,7 +50,7 @@
         [self setImage:kIMG(@"加号")
               forState:UIControlStateNormal];
         [self addLongPressGestureRecognizer];
-        self.iconBtn.alpha = 0;
+        self.iconBtn.hidden = YES;
     }return self;
 }
 
@@ -73,6 +73,7 @@
     }
 
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self bringSubviewToFront:_iconBtn];
 }
 // 添加长按手势
 - (void)addLongPressGestureRecognizer {
@@ -122,7 +123,6 @@
             make.top.equalTo(self).offset(-SCALING_RATIO(20) / 2);
             make.right.equalTo(self).offset(SCALING_RATIO(20) / 2);
         }];
-        [self bringSubviewToFront:_iconBtn];
     }return _iconBtn;
 }
 /// 抖动动画

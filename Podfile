@@ -88,6 +88,7 @@ target 'My_BaseProj' do
   pod 'RQShineLabel'  # https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
   pod 'AWRichText'  # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，并不仅仅局限于图文混排的富文本排版神器
   pod 'LYXAlertController' # https://github.com/liuyunxinok/LYXAlertController 为解决UIAlertController的UI（字体颜色，action背景色,字体大小等）设置局限，故自己封装一个YXAlertController，可以随意进行颜色和字体设置。样式大小，title和message的行距缩进与系统样式保持一致。
+  pod 'SPAlertController'# https://github.com/SPStore/SPAlertController 深度定制AlertController
   pod 'JPImageresizerView' # https://github.com/Rogue24/JPImageresizerView 一个专门裁剪图片、GIF、视频的轮子，简单易用，功能丰富（高自由度的参数设定、支持旋转和镜像翻转、蒙版、压缩等），能满足绝大部分裁剪的需求。
   pod 'JJException' # https://github.com/jezzmemo/JJException Protect the objective-c application(保护App不闪退)
   pod 'ZFJTreeViewKit'

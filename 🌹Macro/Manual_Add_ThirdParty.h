@@ -93,6 +93,8 @@
 #import "UIView+Chain.h"
 #import "UIView+SuspendView.h"
 #import "UIView+Measure.h"
+#import "UIView+Animation.h"
+#import "UIView+Gradient.h"
 
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"

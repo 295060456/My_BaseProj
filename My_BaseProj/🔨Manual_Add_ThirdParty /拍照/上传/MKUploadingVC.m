@@ -176,13 +176,12 @@ UITextViewDelegate
                             if ([arr[0] isKindOfClass:PHAsset.class]) {
                                 
                             }else if ([arr[0] isKindOfClass:UIImage.class]){
-                                [self alertControllerStyle:SYS_AlertController
-                                        showAlertViewTitle:@"请选择视频作品"
-                                                   message:nil
-                                           isSeparateStyle:NO
-                                               btnTitleArr:@[@"确认"]
-                                            alertBtnAction:@[@"sure"]
-                                              alertVCBlock:^(id data) {
+                                [self showSYSAlertViewTitle:@"请选择视频作品"
+                                                    message:nil
+                                            isSeparateStyle:NO
+                                                btnTitleArr:@[@"确认"]
+                                             alertBtnAction:@[@"sure"]
+                                               alertVCBlock:^(id data) {
                                     //DIY
                                 }];
                             }else{
@@ -436,23 +435,21 @@ shouldChangeTextInRange:(NSRange)range
                 }
             }else{
                 if (!self.imgData) {
-                    [self alertControllerStyle:SYS_AlertController
-                            showAlertViewTitle:@"您还没选择需要上传的视频呢~~~"
-                                       message:nil
-                               isSeparateStyle:NO
-                                   btnTitleArr:@[@"确定"]
-                                alertBtnAction:@[@"sure"]
-                                  alertVCBlock:^(id data) {
+                    [self showSYSAlertViewTitle:@"您还没选择需要上传的视频呢~~~"
+                                        message:nil
+                                isSeparateStyle:NO
+                                    btnTitleArr:@[@"确定"]
+                                 alertBtnAction:@[@"sure"]
+                                   alertVCBlock:^(id data) {
                         //DIY
                     }];
                 }else if ([NSString isNullString:self.textView.text]){
-                    [self alertControllerStyle:SYS_AlertController
-                            showAlertViewTitle:@"主人，写点什么吧~~~"
-                                       message:nil
-                               isSeparateStyle:NO
-                                   btnTitleArr:@[@"确定"]
-                                alertBtnAction:@[@"OK"]
-                                  alertVCBlock:^(id data) {
+                    [self showSYSAlertViewTitle:@"主人，写点什么吧~~~"
+                                        message:nil
+                                isSeparateStyle:NO
+                                    btnTitleArr:@[@"确定"]
+                                 alertBtnAction:@[@"OK"]
+                                   alertVCBlock:^(id data) {
                         //DIY
                     }];
                 }else{}

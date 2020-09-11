@@ -142,6 +142,7 @@ PODS:
   - SDWebImage/Core (5.8.4)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
+  - SPAlertController (4.0.0)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SZTextView (1.3.0)
@@ -247,6 +248,7 @@ DEPENDENCIES:
   - SDWebImage
   - Shimmer
   - SocketRocket
+  - SPAlertController
   - SZTextView
   - Texture
   - TKCarouselView
@@ -328,6 +330,7 @@ SPEC REPOS:
     - SDWebImage
     - Shimmer
     - SocketRocket
+    - SPAlertController
     - SQLiteRepairKit
     - SZTextView
     - Texture
@@ -411,6 +414,7 @@ SPEC CHECKSUMS:
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
@@ -433,6 +437,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 9e3b155f28c07928305bdb9674ab47d768d76937
+PODFILE CHECKSUM: 7be000a0c03a14612f09463c20db9d180efffe60
 
 COCOAPODS: 1.9.3

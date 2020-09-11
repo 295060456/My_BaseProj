@@ -381,13 +381,12 @@
                   MKDataBlock block = ^(NSString *title){
                       NSLog(@"打开失败");
                       @strongify(self)
-                      [self alertControllerStyle:SYS_AlertController
-                              showAlertViewTitle:title
-                                         message:nil
-                                 isSeparateStyle:YES
-                                     btnTitleArr:@[@"去获取"]
-                                  alertBtnAction:@[@"pushToSysConfig"]
-                                    alertVCBlock:^(id data) {
+                      [self showSYSAlertViewTitle:title
+                                          message:nil
+                                  isSeparateStyle:YES
+                                      btnTitleArr:@[@"去获取"]
+                                   alertBtnAction:@[@"pushToSysConfig"]
+                                     alertVCBlock:^(id data) {
                           //DIY
                           NSLog(@"");
                       }];
@@ -632,13 +631,12 @@
         [[_deleteFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             NSLog(@"删除作品？");
             [self.gpuImageTools vedioShoottingSuspend];
-            [self alertControllerStyle:YX_AlertController
-                    showAlertViewTitle:@"删除作品？"
-                               message:nil
-                       isSeparateStyle:NO
-                           btnTitleArr:@[@"确认",@"继续录制"]
-                        alertBtnAction:@[@"sure",@"shoottingContinue"]
-                          alertVCBlock:^(id data) {
+            [self showSYSAlertViewTitle:@"删除作品？"
+                                message:nil
+                        isSeparateStyle:NO
+                            btnTitleArr:@[@"确认",@"继续录制"]
+                         alertBtnAction:@[@"sure",@"shoottingContinue"]
+                           alertVCBlock:^(id data) {
                 if ([data isKindOfClass:YXAlertController.class]) {
                     YXAlertController *yxAlertController = (YXAlertController *)data;
                     yxAlertController.layout.doneActionTitleColor = COLOR_HEX(0x1F242F, 0.8);
@@ -719,17 +717,16 @@
         @weakify(self)
         if (![NSString isNullString:self.gpuImageTools.compressedVedioPathStr]) {
             _AVPlayerView = [[CustomerAVPlayerView alloc] initWithURL:[NSURL fileURLWithPath:self.gpuImageTools.compressedVedioPathStr]
-                                                            suspendVC:weak_self];
+                                                            suspendVC:self_weak_];
             _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
             [_AVPlayerView errorCustomerAVPlayerBlock:^{
                 @strongify(self)
-                [self alertControllerStyle:SYS_AlertController
-                        showAlertViewTitle:@"软件内部错误"
-                                   message:@"因为某种未知的原因，找不到播放的资源文件"
-                           isSeparateStyle:NO
-                               btnTitleArr:@[@"确定"]
-                            alertBtnAction:@[@"OK"]
-                              alertVCBlock:^(id data) {
+                [self showSYSAlertViewTitle:@"软件内部错误"
+                                    message:@"因为某种未知的原因，找不到播放的资源文件"
+                            isSeparateStyle:NO
+                                btnTitleArr:@[@"确定"]
+                             alertBtnAction:@[@"OK"]
+                               alertVCBlock:^(id data) {
                     //DIY
                     NSLog(@"");
                 }];
@@ -846,14 +843,13 @@
         [_backBtn setImage:kIMG(@"back_white")
                          forState:UIControlStateNormal];
         [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            [self alertControllerStyle:SYS_AlertController
-                  showActionSheetTitle:nil
-                               message:nil
-                       isSeparateStyle:YES
-                           btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
-                        alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
-                                sender:nil
-                          alertVCBlock:^(id data) {
+            [self showSYSActionSheetTitle:nil
+                                  message:nil
+                          isSeparateStyle:YES
+                              btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
+                           alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
+                                   sender:nil
+                             alertVCBlock:^(id data) {
                 //DIY
                 NSLog(@"");
             }];

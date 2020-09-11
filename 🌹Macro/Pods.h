@@ -70,5 +70,6 @@
 #import "GPUImage.h"
 #import "SZTextView.h"
 #import "PPBadgeView.h"
+#import "SPAlertController.h"
 
 #endif /* Pods_h */

@@ -12,12 +12,12 @@
 @implementation BaseVC (SYSAlertController)
 
 ///屏幕正中央 isSeparateStyle如果为YES 那么有实质性进展的键位在右侧，否则在左侧
--(void)showAlertViewTitle:(nullable NSString *)title
-                  message:(nullable NSString *)message
-          isSeparateStyle:(BOOL)isSeparateStyle
-              btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-           alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-             alertVCBlock:(MKDataBlock)alertVCBlock{
+-(void)showSYSAlertViewTitle:(nullable NSString *)title
+                     message:(nullable NSString *)message
+             isSeparateStyle:(BOOL)isSeparateStyle
+                 btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+              alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+                alertVCBlock:(MKDataBlock)alertVCBlock{
     @weakify(self)
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
@@ -40,13 +40,13 @@
                      completion:nil];
 }
 
--(void)showActionSheetTitle:(nullable NSString *)title
-                    message:(nullable NSString *)message
-            isSeparateStyle:(BOOL)isSeparateStyle
-                btnTitleArr:(NSArray <NSString*>*)btnTitleArr
-             alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
-                     sender:(nullable UIControl *)sender
-               alertVCBlock:(MKDataBlock)alertVCBlock{
+-(void)showSYSActionSheetTitle:(nullable NSString *)title
+                       message:(nullable NSString *)message
+               isSeparateStyle:(BOOL)isSeparateStyle
+                   btnTitleArr:(NSArray <NSString*>*)btnTitleArr
+                alertBtnAction:(NSArray <NSString*>*)alertBtnActionArr
+                        sender:(nullable UIControl *)sender
+                  alertVCBlock:(MKDataBlock)alertVCBlock{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
@@ -118,7 +118,7 @@
                      completion:nil];
 }
 
-- (void)alertUserAccountInfoDidChange:(UITextField *)sender{
+-(void)alertUserAccountInfoDidChange:(UITextField *)sender{
     UIAlertController *alertController = (UIAlertController *)self.presentedViewController;
     if (alertController){
         NSString *userName = alertController.textFields.firstObject.text;

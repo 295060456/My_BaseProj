@@ -136,6 +136,8 @@
 		C5AA48E9250BB7B3009F583F /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48DB250BB7B2009F583F /* BaseVC.m */; };
 		C5AA48EA250BB7B3009F583F /* BaseVC+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48DE250BB7B2009F583F /* BaseVC+OpenURL.m */; };
 		C5AA48F0250BB850009F583F /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48EF250BB850009F583F /* UIViewController+Shake.m */; };
+		C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */; };
+		C5AA4908250C8C2D009F583F /* NSObject+SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */; };
 		C5AFBF02250B265000EC14B7 /* del_Photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AFBF00250B265000EC14B7 /* del_Photo@3x.png */; };
 		C5AFBF03250B265000EC14B7 /* del_Photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AFBF01250B265000EC14B7 /* del_Photo@2x.png */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
@@ -668,6 +670,10 @@
 		C5AA48DE250BB7B2009F583F /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+OpenURL.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+OpenURL.m"; sourceTree = "<group>"; };
 		C5AA48EE250BB850009F583F /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Shake.h"; path = "../../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/BaseCustomizeUIKit/UIViewController/UIViewController+Shake.h"; sourceTree = "<group>"; };
 		C5AA48EF250BB850009F583F /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Shake.m"; path = "../../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/BaseCustomizeUIKit/UIViewController/UIViewController+Shake.m"; sourceTree = "<group>"; };
+		C5AA4903250C8C2D009F583F /* NSObject+SPAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPAlertController.h"; sourceTree = "<group>"; };
+		C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SYSAlertController.m"; sourceTree = "<group>"; };
+		C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPAlertController.m"; sourceTree = "<group>"; };
+		C5AA4906250C8C2D009F583F /* NSObject+SYSAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYSAlertController.h"; sourceTree = "<group>"; };
 		C5AFBF00250B265000EC14B7 /* del_Photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@3x.png"; sourceTree = "<group>"; };
 		C5AFBF01250B265000EC14B7 /* del_Photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@2x.png"; sourceTree = "<group>"; };
 		C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Xcode资料下载"; sourceTree = "<group>"; };
@@ -1917,6 +1923,17 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		C5AA4902250C8C22009F583F /* NSObject+Alert */ = {
+			isa = PBXGroup;
+			children = (
+				C5AA4906250C8C2D009F583F /* NSObject+SYSAlertController.h */,
+				C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */,
+				C5AA4903250C8C2D009F583F /* NSObject+SPAlertController.h */,
+				C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */,
+			);
+			path = "NSObject+Alert";
+			sourceTree = "<group>";
+		};
 		C5B1C72A24BAB552001923FB /* LottieResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -2835,6 +2852,7 @@
 		C5FE9B1A24B5F203007B9878 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C5AA4902250C8C22009F583F /* NSObject+Alert */,
 				C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */,
 				C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */,
 				C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */,
@@ -4059,6 +4077,7 @@
 				C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */,
 				C5B1C7DE24BAB91A001923FB /* LOTTrimPathNode.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
+				C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */,
 				C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */,
 				C5B1C7D224BAB91A001923FB /* LOTShapeTransform.m in Sources */,
 				C5B1C7BC24BAB91A001923FB /* LOTPolystarAnimator.m in Sources */,
@@ -4201,6 +4220,7 @@
 				C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
+				C5AA4908250C8C2D009F583F /* NSObject+SPAlertController.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
 				C590FF3B24D00D23000F36C9 /* SDWebImageCodersManager.m in Sources */,

@@ -211,13 +211,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
             @strongify(self)
             [self likeBtnClickAction:cell.LikeBtn];
         }];
-        [self showSYSActionSheetTitle:nil
-                              message:nil
-                      isSeparateStyle:YES
-                          btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
-                       alertBtnAction:@[@"reply",@"copyIt",@"report",@"cancel"]
-                               sender:nil
-                         alertVCBlock:^(id data) {
+        [NSObject showSYSActionSheetTitle:nil
+                                  message:nil
+                          isSeparateStyle:YES
+                              btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
+                           alertBtnAction:@[@"reply",@"copyIt",@"report",@"cancel"]
+                                 targetVC:self
+                                   sender:nil
+                             alertVCBlock:^(id data) {
             //DIY
         }];
     }else{}
@@ -304,24 +305,26 @@ viewForHeaderInSection:(NSInteger)section{
                 NSDictionary *dic = (NSDictionary *)data;
                 if ([dic[@"sender"] isMemberOfClass:UIControl.class]){
                     if ([[MKPublickDataManager sharedPublicDataManage].mkLoginModel.uid isEqualToString:firstCommentModel.userId]) {
-                        [self showSYSAlertViewTitle:@"确认删除自己的评论？"
-                                            message:nil
-                                    isSeparateStyle:NO
-                                        btnTitleArr:@[@"确认",@"手滑啦"]
-                                     alertBtnAction:@[@"SureDeleteSelfComment",@"Cancel"]
-                                       alertVCBlock:^(id data) {
+                        [NSObject showSYSAlertViewTitle:@"确认删除自己的评论？"
+                                                message:nil
+                                        isSeparateStyle:NO
+                                            btnTitleArr:@[@"确认",@"手滑啦"]
+                                         alertBtnAction:@[@"SureDeleteSelfComment",@"Cancel"]
+                                               targetVC:self
+                                           alertVCBlock:^(id data) {
                             //DIY
                         }];
                     }else{
                         UIControl *control = (UIControl *)dic[@"sender"];
                         self.firstCommentModel = dic[@"model"];
-                        [self showSYSActionSheetTitle:nil
-                                              message:nil
-                                      isSeparateStyle:YES
-                                          btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
-                                       alertBtnAction:@[@"Reply",@"CopyIt",@"Report",@"Cancel"]
-                                               sender:control
-                                         alertVCBlock:^(id data) {
+                        [NSObject showSYSActionSheetTitle:nil
+                                                  message:nil
+                                          isSeparateStyle:YES
+                                              btnTitleArr:@[@"回复",@"复制",@"举报",@"取消"]
+                                           alertBtnAction:@[@"Reply",@"CopyIt",@"Report",@"Cancel"]
+                                                 targetVC:self
+                                                   sender:control
+                                             alertVCBlock:^(id data) {
                             //DIY
                         }];
                     }
@@ -370,13 +373,14 @@ viewForHeaderInSection:(NSInteger)section{
                             [self netWorking_MKCommentVideoPOST];
                         }
                     }else{
-                        [self showSYSAlertViewTitle:@"总的说点什么吧"
-                                            message:nil
-                                    isSeparateStyle:NO
-                                        btnTitleArr:@[@"好哒"]
-                                     alertBtnAction:@[@"Sure"]
-                                       alertVCBlock:^(id data) {
-                                        //DIY
+                        [NSObject showSYSAlertViewTitle:@"总的说点什么吧"
+                                                message:nil
+                                        isSeparateStyle:NO
+                                            btnTitleArr:@[@"好哒"]
+                                         alertBtnAction:@[@"Sure"]
+                                               targetVC:self
+                                           alertVCBlock:^(id data) {
+                            //DIY
                         }];
                     }
                 }

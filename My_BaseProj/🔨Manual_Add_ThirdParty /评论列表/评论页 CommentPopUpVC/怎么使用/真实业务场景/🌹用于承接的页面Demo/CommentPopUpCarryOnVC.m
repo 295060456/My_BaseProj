@@ -311,12 +311,13 @@
                     [self.view endEditing:YES];
                     [self willClose_vertical];
                 }else{
-                    [self showSYSAlertViewTitle:@"优质评论会被优先展示"
-                                        message:@"确定放弃评论吗？"
-                                isSeparateStyle:NO
-                                    btnTitleArr:@[@"我不回复了",@"手滑啦"]
-                                 alertBtnAction:@[@"GiveUpComment",@"Sorry"]
-                                   alertVCBlock:^(id data) {
+                    [NSObject showSYSAlertViewTitle:@"优质评论会被优先展示"
+                                            message:@"确定放弃评论吗？"
+                                    isSeparateStyle:NO
+                                        btnTitleArr:@[@"我不回复了",@"手滑啦"]
+                                     alertBtnAction:@[@"GiveUpComment",@"Sorry"]
+                                           targetVC:self
+                                       alertVCBlock:^(id data) {
                         //DIY
                     }];
                 }

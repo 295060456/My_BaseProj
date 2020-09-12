@@ -121,12 +121,13 @@
 }
 
 - (void)showError:(NSString*)str{
-    [self showSYSAlertViewTitle:@"提示"
-                        message:str
-                isSeparateStyle:YES
-                    btnTitleArr:@[@"知道了"]
-                 alertBtnAction:@[@"OK"]
-                   alertVCBlock:^(id data) {
+    [NSObject showSYSAlertViewTitle:@"提示"
+                            message:str
+                    isSeparateStyle:YES
+                        btnTitleArr:@[@"知道了"]
+                     alertBtnAction:@[@"OK"]
+                           targetVC:self
+                       alertVCBlock:^(id data) {
         //DIY
     }];
 }
@@ -164,12 +165,13 @@
         strResult = @"识别失败";
     }
     
-    [self showSYSAlertViewTitle:@"扫码内容"
-                        message:strResult
-                isSeparateStyle:YES
-                    btnTitleArr:@[@"知道了"]
-                 alertBtnAction:@[@"reStartDevice"]
-                   alertVCBlock:^(id data) {
+    [NSObject showSYSAlertViewTitle:@"扫码内容"
+                            message:strResult
+                    isSeparateStyle:YES
+                        btnTitleArr:@[@"知道了"]
+                     alertBtnAction:@[@"reStartDevice"]
+                           targetVC:self
+                       alertVCBlock:^(id data) {
         //DIY
     }];
 }
@@ -260,12 +262,13 @@
                                 }
 
                         }else{
-                            [self showSYSAlertViewTitle:@"选择一张相片就够啦"
-                                                message:nil
-                                        isSeparateStyle:YES
-                                            btnTitleArr:@[@"好的"]
-                                         alertBtnAction:@[@"OK"]
-                                           alertVCBlock:^(id data) {
+                            [NSObject showSYSAlertViewTitle:@"选择一张相片就够啦"
+                                                    message:nil
+                                            isSeparateStyle:YES
+                                                btnTitleArr:@[@"好的"]
+                                             alertBtnAction:@[@"OK"]
+                                                   targetVC:self
+                                               alertVCBlock:^(id data) {
                                 //DIY
                             }];
                         }

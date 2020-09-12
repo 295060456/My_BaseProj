@@ -381,11 +381,12 @@
                   MKDataBlock block = ^(NSString *title){
                       NSLog(@"打开失败");
                       @strongify(self)
-                      [self showSYSAlertViewTitle:title
+                      [NSObject showSYSAlertViewTitle:title
                                           message:nil
                                   isSeparateStyle:YES
                                       btnTitleArr:@[@"去获取"]
                                    alertBtnAction:@[@"pushToSysConfig"]
+                                             targetVC:self
                                      alertVCBlock:^(id data) {
                           //DIY
                           NSLog(@"");
@@ -631,11 +632,12 @@
         [[_deleteFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             NSLog(@"删除作品？");
             [self.gpuImageTools vedioShoottingSuspend];
-            [self showSYSAlertViewTitle:@"删除作品？"
+            [NSObject showSYSAlertViewTitle:@"删除作品？"
                                 message:nil
                         isSeparateStyle:NO
                             btnTitleArr:@[@"确认",@"继续录制"]
                          alertBtnAction:@[@"sure",@"shoottingContinue"]
+                               targetVC:self
                            alertVCBlock:^(id data) {
                 if ([data isKindOfClass:YXAlertController.class]) {
                     YXAlertController *yxAlertController = (YXAlertController *)data;
@@ -721,12 +723,13 @@
             _AVPlayerView.isSuspend = YES;//开启悬浮窗效果
             [_AVPlayerView errorCustomerAVPlayerBlock:^{
                 @strongify(self)
-                [self showSYSAlertViewTitle:@"软件内部错误"
-                                    message:@"因为某种未知的原因，找不到播放的资源文件"
-                            isSeparateStyle:NO
-                                btnTitleArr:@[@"确定"]
-                             alertBtnAction:@[@"OK"]
-                               alertVCBlock:^(id data) {
+                [NSObject showSYSAlertViewTitle:@"软件内部错误"
+                                        message:@"因为某种未知的原因，找不到播放的资源文件"
+                                isSeparateStyle:NO
+                                    btnTitleArr:@[@"确定"]
+                                 alertBtnAction:@[@"OK"]
+                                       targetVC:self
+                                   alertVCBlock:^(id data) {
                     //DIY
                     NSLog(@"");
                 }];
@@ -843,13 +846,14 @@
         [_backBtn setImage:kIMG(@"back_white")
                          forState:UIControlStateNormal];
         [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            [self showSYSActionSheetTitle:nil
-                                  message:nil
-                          isSeparateStyle:YES
-                              btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
-                           alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
-                                   sender:nil
-                             alertVCBlock:^(id data) {
+            [NSObject showSYSActionSheetTitle:nil
+                                      message:nil
+                              isSeparateStyle:YES
+                                  btnTitleArr:@[@"重新拍摄",@"退出",@"取消"]
+                               alertBtnAction:@[@"reShoot",@"exit",@"reShoot"]
+                                     targetVC:self
+                                       sender:nil
+                                 alertVCBlock:^(id data) {
                 //DIY
                 NSLog(@"");
             }];

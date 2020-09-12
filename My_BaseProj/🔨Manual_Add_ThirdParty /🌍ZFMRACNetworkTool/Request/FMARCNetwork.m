@@ -232,6 +232,7 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                                                    view:nil];
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
                                                                                             code:statusCode];
+                        NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
                     }else{//抛其他异常
@@ -239,6 +240,7 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                                                    view:nil];
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
                                                                                             code:statusCode];
+                        NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
                     }
@@ -253,6 +255,7 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                 FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
                                                                                   code:code
                                                                                    msg:msgStr];//初始化、返回数据模型
+                NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
                 [subscriber sendNext:response];//同样也返回到,调用的地址，也可处理，自己选择
         //                [subscriber sendError:parseError];
                 [subscriber sendCompleted];
@@ -404,6 +407,7 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                 FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:parseError
                                                                                   code:code
                                                                                    msg:msgStr];//初始化、返回数据模型
+                NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
                 //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
                 //同样也返回到,调用的地址，也可处理，自己选择
                 [subscriber sendNext:response];

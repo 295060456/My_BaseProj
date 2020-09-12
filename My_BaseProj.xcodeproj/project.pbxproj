@@ -219,6 +219,7 @@
 		C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203424D6BCC400579178 /* UIImage+GKCategory.m */; };
 		C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203524D6BCC400579178 /* GKCustomNavigationBar.m */; };
 		C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */; };
+		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C4731624B6FE200003B6F2 /* 摄像机.png in Resources */ = {isa = PBXBuildFile; fileRef = C5C4731524B6FE200003B6F2 /* 摄像机.png */; };
 		C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */; };
@@ -840,6 +841,8 @@
 		C5B5203724D6BCC400579178 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
 		C5B5203824D6BCC400579178 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCategory.m"; sourceTree = "<group>"; };
 		C5B5203924D6BCC400579178 /* GKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
+		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
+		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4731524B6FE200003B6F2 /* 摄像机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摄像机.png"; sourceTree = "<group>"; };
@@ -2143,6 +2146,15 @@
 			path = GKCategory;
 			sourceTree = "<group>";
 		};
+		C5B5EF71250D246F00DCDA93 /* 图形验证码 */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5EF72250D247900DCDA93 /* ImageCodeView.h */,
+				C5B5EF73250D247900DCDA93 /* ImageCodeView.m */,
+			);
+			path = "图形验证码";
+			sourceTree = "<group>";
+		};
 		C5C67C5424FE4F6C000A26B8 /* TimerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2643,6 +2655,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5B5EF71250D246F00DCDA93 /* 图形验证码 */,
 				C5E5C65225088E80001E69DA /* 水平进度条 */,
 				C5C67C5424FE4F6C000A26B8 /* TimerManager */,
 				C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */,
@@ -4173,6 +4186,7 @@
 				C5B1C7E024BAB91A001923FB /* LOTRenderNode.m in Sources */,
 				C5B1C7B124BAB919001923FB /* UIColor.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
+				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5FAC33124C5747900372BCD /* TBVCell_style_02.m in Sources */,

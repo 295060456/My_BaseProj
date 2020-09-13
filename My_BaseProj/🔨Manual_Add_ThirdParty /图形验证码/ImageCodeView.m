@@ -15,6 +15,7 @@
 @interface ImageCodeView ()
 
 @property(nonatomic,strong)UITapGestureRecognizer *changeCodeTap;
+@property(nonatomic,copy)MKDataBlock imageCodeViewBlock;
 
 @end
 
@@ -91,13 +92,19 @@
     @weakify(self)
     [NSObject getAuthCode_networking:^(id data) {
         @strongify(self)
-        if ([data isKindOfClass:NSString.class]) {
-            NSString *str = (NSString *)data;
-            self.CodeStr = str;
+        if ([data isKindOfClass:NSDictionary.class]) {
+            self.CodeStr = data[@"imgCode"];
             NSLog(@"我是验证码：%@",self.CodeStr);
             [self setNeedsDisplay];
+            if (self.imageCodeViewBlock) {
+                self.imageCodeViewBlock(data);
+            }
         }
     }];
+}
+
+-(void)actionBlockImageCodeView:(MKDataBlock)imageCodeViewBlock{
+    _imageCodeViewBlock = imageCodeViewBlock;
 }
 
 -(void)setCodeStr:(NSString *)CodeStr{

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIColor *color;
 @property(nonatomic,strong)UIFont *font;
 
+-(void)actionBlockImageCodeView:(MKDataBlock)imageCodeViewBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -121,8 +121,6 @@
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
 		C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */; };
 		C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */; };
-		C5AA48C5250BB7AA009F583F /* BaseVC+SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48C2250BB7A9009F583F /* BaseVC+SPAlertController.m */; };
-		C5AA48C6250BB7AA009F583F /* BaseVC+SYSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48C4250BB7AA009F583F /* BaseVC+SYSAlertController.m */; };
 		C5AA48DF250BB7B3009F583F /* BaseVC+GifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48C8250BB7B1009F583F /* BaseVC+GifImageView.m */; };
 		C5AA48E0250BB7B3009F583F /* BaseVC+TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48C9250BB7B1009F583F /* BaseVC+TZImagePickerController.m */; };
 		C5AA48E1250BB7B3009F583F /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48CB250BB7B1009F583F /* BaseVC+JPImageresizerView.m */; };
@@ -640,10 +638,6 @@
 		C5A7CE9B24C70B7500E502A9 /* MKLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLoginModel.h; sourceTree = "<group>"; };
 		C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPublickDataManager.m; sourceTree = "<group>"; };
 		C5A7CE9D24C70B7600E502A9 /* MKPublickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPublickDataManager.h; sourceTree = "<group>"; };
-		C5AA48C1250BB7A9009F583F /* BaseVC+SPAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+SPAlertController.h"; sourceTree = "<group>"; };
-		C5AA48C2250BB7A9009F583F /* BaseVC+SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+SPAlertController.m"; sourceTree = "<group>"; };
-		C5AA48C3250BB7AA009F583F /* BaseVC+SYSAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+SYSAlertController.h"; sourceTree = "<group>"; };
-		C5AA48C4250BB7AA009F583F /* BaseVC+SYSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+SYSAlertController.m"; sourceTree = "<group>"; };
 		C5AA48C7250BB7B1009F583F /* BaseVC+BackBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+BackBtn.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BackBtn.h"; sourceTree = "<group>"; };
 		C5AA48C8250BB7B1009F583F /* BaseVC+GifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+GifImageView.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+GifImageView.m"; sourceTree = "<group>"; };
 		C5AA48C9250BB7B1009F583F /* BaseVC+TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+TZImagePickerController.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+TZImagePickerController.m"; sourceTree = "<group>"; };
@@ -1913,17 +1907,6 @@
 			path = URL_Manager;
 			sourceTree = "<group>";
 		};
-		C5AA48C0250BB7A2009F583F /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				C5AA48C3250BB7AA009F583F /* BaseVC+SYSAlertController.h */,
-				C5AA48C4250BB7AA009F583F /* BaseVC+SYSAlertController.m */,
-				C5AA48C1250BB7A9009F583F /* BaseVC+SPAlertController.h */,
-				C5AA48C2250BB7A9009F583F /* BaseVC+SPAlertController.m */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		C5AA4902250C8C22009F583F /* NSObject+Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -3041,7 +3024,6 @@
 		C5FE9B5624B5F203007B9878 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5AA48C0250BB7A2009F583F /* Alert */,
 				C5336F8C24DAB9940082847C /* 存在疑问的 */,
 				C5AA48D7250BB7B2009F583F /* BaseVC.h */,
 				C5AA48DB250BB7B2009F583F /* BaseVC.m */,
@@ -4077,7 +4059,6 @@
 				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
-				C5AA48C6250BB7AA009F583F /* BaseVC+SYSAlertController.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
 				C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */,
 				C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */,
@@ -4131,7 +4112,6 @@
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */,
 				C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */,
-				C5AA48C5250BB7AA009F583F /* BaseVC+SPAlertController.m in Sources */,
 				C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */,
 				C5F78AED24BF297D008A46EC /* InfoTBVCell.m in Sources */,
 				C5B1C7CB24BAB91A001923FB /* LOTFillRenderer.m in Sources */,

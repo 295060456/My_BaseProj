@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//  pod 'SPAlertController'# https://github.com/SPStore/SPAlertController 深度定制AlertController
+
 typedef enum : NSUInteger {
     NSObject_SPAlertControllerInitType_1 = 0,//alertControllerWithTitle/message/preferredStyle
     NSObject_SPAlertControllerInitType_2,//alertControllerWithTitle/message/preferredStyle/animationType

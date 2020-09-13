@@ -318,8 +318,10 @@ static inline CGFloat rectOfStatusbar(){
 #define PATH_OF_DOCUMENT    [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 #pragma mark ======================================== MD5加盐 ========================================
-#define lowerMD5_Salt(String) md5_64bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], YES)
-#define upperMD5_Salt(String) md5_64bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], NO)
+#define lowerMD5_64Salt(String) md5_64bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], YES)
+#define upperMD5_64Salt(String) md5_64bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], NO)
+#define lowerMD5_32Salt(String) md5_32bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], YES)
+#define upperMD5_32Salt(String) md5_32bits([String stringByAppendingString:@"2f7607f1d1ee429ea4a978cf904990d6"], NO)
 
 #pragma mark ======================================== 队列相关 ========================================
 ///异步获取某个队列

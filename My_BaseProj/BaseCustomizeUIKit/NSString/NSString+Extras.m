@@ -752,34 +752,6 @@
 //- (BOOL)match:(NSString *)express {
 //    return [self isMatchedByRegex:express];
 //}
-//MD5加密🔐,加盐操作在内部进行
-+ (NSString *)MD5WithString:(NSString *)string
-                       salt:(NSString *)saltStr
-                isLowercase:(BOOL)isLowercase{
-//    string = [NSString stringWithFormat:@"*bub#{%@}#fly*",string];
-    string = [NSString stringWithFormat:saltStr,string];
-    //传入参数,转化成char
-    const char *str = string.UTF8String;
-    //开辟一个16字节的空间
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    /*
-     extern unsigned char * CC_MD5(const void *data, CC_LONG len, unsigned char *md)官方封装好的加密方法
-     把str字符串转换成了32位的16进制数列（这个过程不可逆转） 存储到了md这个空间中
-     */
-    CC_MD5(str,
-           (CC_LONG)strlen(str),
-           result);
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH];
-    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-        [ret appendFormat:@"%02X",result[i]];
-    }
-    NSString *finalStr = Nil;
-    if (isLowercase) {
-        finalStr = [ret lowercaseString];
-    }else{
-        finalStr = [ret uppercaseString];
-    }return finalStr;
-}
 
 // 截取字符串方法封装// 截取字符串方法封装
 - (NSString *)subStringFrom:(NSString *)startString

@@ -339,7 +339,6 @@
 		C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9524B5F298007B9878 /* FMHttpRequest.m */; };
 		C5FE9CB524B5F29C007B9878 /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9824B5F298007B9878 /* PopUpVC.m */; };
 		C5FE9CB624B5F29C007B9878 /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9A24B5F298007B9878 /* RSAUtil.m */; };
-		C5FE9CB724B5F29C007B9878 /* EncryptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9D24B5F298007B9878 /* EncryptUtils.m */; };
 		C5FE9CB824B5F29C007B9878 /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9F24B5F298007B9878 /* AES.m */; };
 		C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BA024B5F298007B9878 /* NSString+Base64.m */; };
 		C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BA224B5F298007B9878 /* AESCipher.m */; };
@@ -1092,7 +1091,6 @@
 		C5FE9B9A24B5F298007B9878 /* RSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAUtil.m; sourceTree = "<group>"; };
 		C5FE9B9B24B5F298007B9878 /* EncryptUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptUtils.h; sourceTree = "<group>"; };
 		C5FE9B9C24B5F298007B9878 /* RSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAUtil.h; sourceTree = "<group>"; };
-		C5FE9B9D24B5F298007B9878 /* EncryptUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptUtils.m; sourceTree = "<group>"; };
 		C5FE9B9F24B5F298007B9878 /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
 		C5FE9BA024B5F298007B9878 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		C5FE9BA224B5F298007B9878 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
@@ -3172,7 +3170,6 @@
 			children = (
 				C5FE9B9E24B5F298007B9878 /* AES */,
 				C5FE9B9B24B5F298007B9878 /* EncryptUtils.h */,
-				C5FE9B9D24B5F298007B9878 /* EncryptUtils.m */,
 				C5FE9B9C24B5F298007B9878 /* RSAUtil.h */,
 				C5FE9B9A24B5F298007B9878 /* RSAUtil.m */,
 			);
@@ -4249,7 +4246,6 @@
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5B1C7C224BAB91A001923FB /* LOTComposition.m in Sources */,
 				C5FE9D1424B5F29C007B9878 /* HWTextCodeView.m in Sources */,
-				C5FE9CB724B5F29C007B9878 /* EncryptUtils.m in Sources */,
 				C5FE9CE824B5F29C007B9878 /* LongPressToDeleteImageView.m in Sources */,
 				C5B1C7C624BAB91A001923FB /* LOTPathAnimator.m in Sources */,
 				C533701124DB00280082847C /* BRStringPickerView.m in Sources */,

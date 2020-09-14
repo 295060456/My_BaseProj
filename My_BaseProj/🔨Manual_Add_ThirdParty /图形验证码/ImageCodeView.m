@@ -90,17 +90,17 @@
 ///刷新验证码
 -(void)changeCode:(UITapGestureRecognizer *)sender{
     @weakify(self)
-    [NSObject getAuthCode_networking:^(id data) {
-        @strongify(self)
-        if ([data isKindOfClass:NSDictionary.class]) {
-            self.CodeStr = data[@"imgCode"];
-            NSLog(@"我是验证码：%@",self.CodeStr);
-            [self setNeedsDisplay];
-            if (self.imageCodeViewBlock) {
-                self.imageCodeViewBlock(data);
-            }
-        }
-    }];
+    //    [NSObject getAuthCode_networking:^(id data) {
+    //        @strongify(self)
+    //        if ([data isKindOfClass:NSDictionary.class]) {
+    //            self.CodeStr = data[@"imgCode"];
+    //            NSLog(@"我是验证码：%@",self.CodeStr);
+    //            [self setNeedsDisplay];
+    //            if (self.imageCodeViewBlock) {
+    //                self.imageCodeViewBlock(data);
+    //            }
+    //        }
+    //    }];
 }
 
 -(void)actionBlockImageCodeView:(MKDataBlock)imageCodeViewBlock{

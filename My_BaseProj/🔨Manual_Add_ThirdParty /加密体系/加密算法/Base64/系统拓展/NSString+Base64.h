@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Gurpartap Singh. All rights reserved.
 //
 
-#import <Foundation/NSString.h>
 #import <Foundation/Foundation.h>
 
 @interface NSString (Base64Additions)

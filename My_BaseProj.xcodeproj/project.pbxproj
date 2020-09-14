@@ -10,6 +10,13 @@
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
 		BDD85CE05D5B657110FC2797 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
+		C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8915250F75020070356F /* NSData+CommonCrypto.m */; };
+		C52E894A250F752E0070356F /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E891D250F752D0070356F /* RSAUtil.m */; };
+		C52E894D250F752E0070356F /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8924250F752D0070356F /* AES.m */; };
+		C52E894F250F752E0070356F /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8927250F752D0070356F /* AESCipher.m */; };
+		C52E8957250F752E0070356F /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8940250F752E0070356F /* NSString+Base64.m */; };
+		C52E8958250F752E0070356F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8943250F752E0070356F /* NSData+Base64.m */; };
+		C52E895B250F752E0070356F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8949250F752E0070356F /* GTMBase64.m */; };
 		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
 		C533701124DB00280082847C /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF924DB00280082847C /* BRStringPickerView.m */; };
@@ -336,12 +343,6 @@
 		C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9224B5F298007B9878 /* FMARCNetwork.m */; };
 		C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9524B5F298007B9878 /* FMHttpRequest.m */; };
 		C5FE9CB524B5F29C007B9878 /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9824B5F298007B9878 /* PopUpVC.m */; };
-		C5FE9CB624B5F29C007B9878 /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9A24B5F298007B9878 /* RSAUtil.m */; };
-		C5FE9CB824B5F29C007B9878 /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B9F24B5F298007B9878 /* AES.m */; };
-		C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BA024B5F298007B9878 /* NSString+Base64.m */; };
-		C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BA224B5F298007B9878 /* AESCipher.m */; };
-		C5FE9CBC24B5F29C007B9878 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BA924B5F298007B9878 /* NSData+CommonCrypto.m */; };
-		C5FE9CBD24B5F29C007B9878 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BAA24B5F298007B9878 /* NSData+Base64.m */; };
 		C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BAD24B5F298007B9878 /* LGiOSBtn.m */; };
 		C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB024B5F298007B9878 /* ECAuthorizationTools.m */; };
 		C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9BB224B5F298007B9878 /* CFGradientLabel.m */; };
@@ -439,6 +440,45 @@
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
 		C52D2A5124E580790048FEFF /* JXCategoryView */ = {isa = PBXFileReference; lastKnownFileType = text; path = JXCategoryView; sourceTree = "<group>"; };
+		C52E88D4250F2CEF0070356F /* 加密流程 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "加密流程"; sourceTree = "<group>"; };
+		C52E890F250F74B70070356F /* Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cryptography.h; sourceTree = "<group>"; };
+		C52E8912250F74D60070356F /* HASH */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HASH; sourceTree = "<group>"; };
+		C52E8915250F75020070356F /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		C52E8916250F75020070356F /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		C52E8919250F75170070356F /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
+		C52E891A250F75170070356F /* MD5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MD5; sourceTree = "<group>"; };
+		C52E891D250F752D0070356F /* RSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAUtil.m; sourceTree = "<group>"; };
+		C52E891E250F752D0070356F /* RSA */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RSA; sourceTree = "<group>"; };
+		C52E891F250F752D0070356F /* RSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAUtil.h; sourceTree = "<group>"; };
+		C52E8921250F752D0070356F /* 凯撒加密解密 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "凯撒加密解密"; sourceTree = "<group>"; };
+		C52E8922250F752D0070356F /* CaesarCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaesarCipher.h; sourceTree = "<group>"; };
+		C52E8924250F752D0070356F /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
+		C52E8926250F752D0070356F /* AESCipher */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AESCipher; sourceTree = "<group>"; };
+		C52E8927250F752D0070356F /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		C52E8928250F752D0070356F /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		C52E8929250F752D0070356F /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		C52E892C250F752D0070356F /* SHA-1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHA-1.h"; sourceTree = "<group>"; };
+		C52E892D250F752D0070356F /* SHA-1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SHA-1"; sourceTree = "<group>"; };
+		C52E892F250F752D0070356F /* SHA-384 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SHA-384"; sourceTree = "<group>"; };
+		C52E8930250F752D0070356F /* SHA-384.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHA-384.h"; sourceTree = "<group>"; };
+		C52E8932250F752D0070356F /* SHA-256 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SHA-256"; sourceTree = "<group>"; };
+		C52E8933250F752D0070356F /* SHA-256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHA-256.h"; sourceTree = "<group>"; };
+		C52E8935250F752D0070356F /* SHA-224 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SHA-224"; sourceTree = "<group>"; };
+		C52E8936250F752D0070356F /* SHA-224.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHA-224.h"; sourceTree = "<group>"; };
+		C52E8937250F752D0070356F /* SHA */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SHA; sourceTree = "<group>"; };
+		C52E8939250F752D0070356F /* SHA-512 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SHA-512"; sourceTree = "<group>"; };
+		C52E893A250F752D0070356F /* SHA-512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHA-512.h"; sourceTree = "<group>"; };
+		C52E893C250F752E0070356F /* DES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DES; sourceTree = "<group>"; };
+		C52E893D250F752E0070356F /* DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DES.h; sourceTree = "<group>"; };
+		C52E8940250F752E0070356F /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		C52E8941250F752E0070356F /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C52E8942250F752E0070356F /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		C52E8943250F752E0070356F /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		C52E8944250F752E0070356F /* Base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Base64; sourceTree = "<group>"; };
+		C52E8946250F752E0070356F /* GTMBase64.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GTMBase64.md; sourceTree = "<group>"; };
+		C52E8947250F752E0070356F /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		C52E8948250F752E0070356F /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		C52E8949250F752E0070356F /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C5336F8D24DAB99E0082847C /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
@@ -1082,20 +1122,6 @@
 		C5FE9B9524B5F298007B9878 /* FMHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHttpRequest.m; sourceTree = "<group>"; };
 		C5FE9B9724B5F298007B9878 /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
 		C5FE9B9824B5F298007B9878 /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
-		C5FE9B9A24B5F298007B9878 /* RSAUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAUtil.m; sourceTree = "<group>"; };
-		C5FE9B9B24B5F298007B9878 /* EncryptUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptUtils.h; sourceTree = "<group>"; };
-		C5FE9B9C24B5F298007B9878 /* RSAUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAUtil.h; sourceTree = "<group>"; };
-		C5FE9B9F24B5F298007B9878 /* AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES.m; sourceTree = "<group>"; };
-		C5FE9BA024B5F298007B9878 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
-		C5FE9BA224B5F298007B9878 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
-		C5FE9BA324B5F298007B9878 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		C5FE9BA424B5F298007B9878 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
-		C5FE9BA524B5F298007B9878 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		C5FE9BA624B5F298007B9878 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
-		C5FE9BA724B5F298007B9878 /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
-		C5FE9BA824B5F298007B9878 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		C5FE9BA924B5F298007B9878 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
-		C5FE9BAA24B5F298007B9878 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		C5FE9BAC24B5F298007B9878 /* LGiOSBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGiOSBtn.h; sourceTree = "<group>"; };
 		C5FE9BAD24B5F298007B9878 /* LGiOSBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGiOSBtn.m; sourceTree = "<group>"; };
 		C5FE9BAF24B5F298007B9878 /* ECAuthorizationTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAuthorizationTools.h; sourceTree = "<group>"; };
@@ -1337,6 +1363,186 @@
 				C52D2A5124E580790048FEFF /* JXCategoryView */,
 			);
 			path = JXCategoryView;
+			sourceTree = "<group>";
+		};
+		C52E8910250F74C20070356F /* 加密算法 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E890F250F74B70070356F /* Cryptography.h */,
+				C52E891C250F752D0070356F /* 非对称加密RSA */,
+				C52E8920250F752D0070356F /* 凯撒加密解密 */,
+				C52E8923250F752D0070356F /* AES */,
+				C52E893E250F752E0070356F /* Base64 */,
+				C52E893B250F752E0070356F /* DES */,
+				C52E892A250F752D0070356F /* SHA */,
+			);
+			path = "加密算法";
+			sourceTree = "<group>";
+		};
+		C52E8911250F74C80070356F /* HASH 信息摘要 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8918250F750F0070356F /* MD5 */,
+				C52E8914250F74E40070356F /* 系统拓展 */,
+				C52E8912250F74D60070356F /* HASH */,
+			);
+			path = "HASH 信息摘要";
+			sourceTree = "<group>";
+		};
+		C52E8914250F74E40070356F /* 系统拓展 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8916250F75020070356F /* NSData+CommonCrypto.h */,
+				C52E8915250F75020070356F /* NSData+CommonCrypto.m */,
+			);
+			path = "系统拓展";
+			sourceTree = "<group>";
+		};
+		C52E8918250F750F0070356F /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8919250F75170070356F /* MD5.h */,
+				C52E891A250F75170070356F /* MD5 */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		C52E891C250F752D0070356F /* 非对称加密RSA */ = {
+			isa = PBXGroup;
+			children = (
+				C52E891E250F752D0070356F /* RSA */,
+				C52E891F250F752D0070356F /* RSAUtil.h */,
+				C52E891D250F752D0070356F /* RSAUtil.m */,
+			);
+			path = "非对称加密RSA";
+			sourceTree = "<group>";
+		};
+		C52E8920250F752D0070356F /* 凯撒加密解密 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8921250F752D0070356F /* 凯撒加密解密 */,
+				C52E8922250F752D0070356F /* CaesarCipher.h */,
+			);
+			path = "凯撒加密解密";
+			sourceTree = "<group>";
+		};
+		C52E8923250F752D0070356F /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8925250F752D0070356F /* AESCipher */,
+				C52E8929250F752D0070356F /* AES.h */,
+				C52E8924250F752D0070356F /* AES.m */,
+			);
+			path = AES;
+			sourceTree = "<group>";
+		};
+		C52E8925250F752D0070356F /* AESCipher */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8926250F752D0070356F /* AESCipher */,
+				C52E8927250F752D0070356F /* AESCipher.m */,
+				C52E8928250F752D0070356F /* AESCipher.h */,
+			);
+			path = AESCipher;
+			sourceTree = "<group>";
+		};
+		C52E892A250F752D0070356F /* SHA */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8937250F752D0070356F /* SHA */,
+				C52E892B250F752D0070356F /* SHA-1 */,
+				C52E892E250F752D0070356F /* SHA-384 */,
+				C52E8931250F752D0070356F /* SHA-256 */,
+				C52E8934250F752D0070356F /* SHA-224 */,
+				C52E8938250F752D0070356F /* SHA-512 */,
+			);
+			path = SHA;
+			sourceTree = "<group>";
+		};
+		C52E892B250F752D0070356F /* SHA-1 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E892C250F752D0070356F /* SHA-1.h */,
+				C52E892D250F752D0070356F /* SHA-1 */,
+			);
+			path = "SHA-1";
+			sourceTree = "<group>";
+		};
+		C52E892E250F752D0070356F /* SHA-384 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E892F250F752D0070356F /* SHA-384 */,
+				C52E8930250F752D0070356F /* SHA-384.h */,
+			);
+			path = "SHA-384";
+			sourceTree = "<group>";
+		};
+		C52E8931250F752D0070356F /* SHA-256 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8932250F752D0070356F /* SHA-256 */,
+				C52E8933250F752D0070356F /* SHA-256.h */,
+			);
+			path = "SHA-256";
+			sourceTree = "<group>";
+		};
+		C52E8934250F752D0070356F /* SHA-224 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8935250F752D0070356F /* SHA-224 */,
+				C52E8936250F752D0070356F /* SHA-224.h */,
+			);
+			path = "SHA-224";
+			sourceTree = "<group>";
+		};
+		C52E8938250F752D0070356F /* SHA-512 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8939250F752D0070356F /* SHA-512 */,
+				C52E893A250F752D0070356F /* SHA-512.h */,
+			);
+			path = "SHA-512";
+			sourceTree = "<group>";
+		};
+		C52E893B250F752E0070356F /* DES */ = {
+			isa = PBXGroup;
+			children = (
+				C52E893C250F752E0070356F /* DES */,
+				C52E893D250F752E0070356F /* DES.h */,
+			);
+			path = DES;
+			sourceTree = "<group>";
+		};
+		C52E893E250F752E0070356F /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8944250F752E0070356F /* Base64 */,
+				C52E893F250F752E0070356F /* 系统拓展 */,
+				C52E8945250F752E0070356F /* GTMBase64 第三方 */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		C52E893F250F752E0070356F /* 系统拓展 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8940250F752E0070356F /* NSString+Base64.m */,
+				C52E8941250F752E0070356F /* NSData+Base64.h */,
+				C52E8942250F752E0070356F /* NSString+Base64.h */,
+				C52E8943250F752E0070356F /* NSData+Base64.m */,
+			);
+			path = "系统拓展";
+			sourceTree = "<group>";
+		};
+		C52E8945250F752E0070356F /* GTMBase64 第三方 */ = {
+			isa = PBXGroup;
+			children = (
+				C52E8946250F752E0070356F /* GTMBase64.md */,
+				C52E8947250F752E0070356F /* GTMBase64.h */,
+				C52E8948250F752E0070356F /* GTMDefines.h */,
+				C52E8949250F752E0070356F /* GTMBase64.m */,
+			);
+			path = "GTMBase64 第三方";
 			sourceTree = "<group>";
 		};
 		C5336F8C24DAB9940082847C /* 存在疑问的 */ = {
@@ -2511,7 +2717,6 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
-				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C56161C924EE743F001CD851 /* 签名上架 */,
 				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
 				C52D2A5024E580670048FEFF /* JXCategoryView */,
@@ -2521,6 +2726,7 @@
 				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
 				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
 				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
+				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
 				C5FE9A7B24B5F0B6007B9878 /* cell重用.png */,
 				C5FE9A7624B5F0B6007B9878 /* Jose */,
@@ -2529,6 +2735,7 @@
 				C5FE9A7E24B5F0B6007B9878 /* TableViewCell自适应 */,
 				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
 				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
+				C52E88D4250F2CEF0070356F /* 加密流程 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
@@ -3150,38 +3357,10 @@
 		C5FE9B9924B5F298007B9878 /* 加密体系 */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B9E24B5F298007B9878 /* AES */,
-				C5FE9B9B24B5F298007B9878 /* EncryptUtils.h */,
-				C5FE9B9C24B5F298007B9878 /* RSAUtil.h */,
-				C5FE9B9A24B5F298007B9878 /* RSAUtil.m */,
+				C52E8911250F74C80070356F /* HASH 信息摘要 */,
+				C52E8910250F74C20070356F /* 加密算法 */,
 			);
 			path = "加密体系";
-			sourceTree = "<group>";
-		};
-		C5FE9B9E24B5F298007B9878 /* AES */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BA124B5F298007B9878 /* AESCipher */,
-				C5FE9BA724B5F298007B9878 /* AES.h */,
-				C5FE9B9F24B5F298007B9878 /* AES.m */,
-				C5FE9BA524B5F298007B9878 /* NSData+Base64.h */,
-				C5FE9BAA24B5F298007B9878 /* NSData+Base64.m */,
-				C5FE9BA624B5F298007B9878 /* NSData+CommonCrypto.h */,
-				C5FE9BA924B5F298007B9878 /* NSData+CommonCrypto.m */,
-				C5FE9BA824B5F298007B9878 /* NSString+Base64.h */,
-				C5FE9BA024B5F298007B9878 /* NSString+Base64.m */,
-			);
-			path = AES;
-			sourceTree = "<group>";
-		};
-		C5FE9BA124B5F298007B9878 /* AESCipher */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9BA324B5F298007B9878 /* File */,
-				C5FE9BA424B5F298007B9878 /* AESCipher.h */,
-				C5FE9BA224B5F298007B9878 /* AESCipher.m */,
-			);
-			path = AESCipher;
 			sourceTree = "<group>";
 		};
 		C5FE9BAB24B5F298007B9878 /* 高仿iOS长按删除+抖动 */ = {
@@ -3966,9 +4145,7 @@
 				C5B1C7B824BAB919001923FB /* LOTCacheProvider.m in Sources */,
 				C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */,
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
-				C5FE9CB624B5F29C007B9878 /* RSAUtil.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
-				C5FE9CB824B5F29C007B9878 /* AES.m in Sources */,
 				C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C561616C24EE493B001CD851 /* PhotoVC+VM.m in Sources */,
@@ -4053,6 +4230,7 @@
 				C5B5204324D6BCC400579178 /* UINavigationItem+GKCategory.m in Sources */,
 				C5601F6224F6A0200070FBD5 /* AVFounationTools.m in Sources */,
 				C5B5203A24D6BCC400579178 /* GKTransitionDelegateHandler.m in Sources */,
+				C52E895B250F752E0070356F /* GTMBase64.m in Sources */,
 				C5B1C7BA24BAB919001923FB /* LOTMask.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
@@ -4060,7 +4238,6 @@
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
-				C5FE9CB924B5F29C007B9878 /* NSString+Base64.m in Sources */,
 				C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */,
 				C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
@@ -4102,8 +4279,8 @@
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */,
 				C5C67C5B24FE4F9C000A26B8 /* Nanosecond_TimerManager.m in Sources */,
-				C5FE9CBA24B5F29C007B9878 /* AESCipher.m in Sources */,
 				C590FF3C24D00D23000F36C9 /* SDWebImageGIFCoder.m in Sources */,
+				C52E8958250F752E0070356F /* NSData+Base64.m in Sources */,
 				C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */,
 				C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */,
 				C5601F6824F6A02F0070FBD5 /* MKGPUImageView.m in Sources */,
@@ -4129,6 +4306,7 @@
 				C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */,
 				C561618224EE4976001CD851 /* MKUploadingVC+VM.m in Sources */,
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
+				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
 				C590FF3E24D00D23000F36C9 /* SDWebImageCoder.m in Sources */,
 				C533701724DB00280082847C /* BRBaseView.m in Sources */,
 				C5B5204024D6BCC400579178 /* UINavigationController+GKCategory.m in Sources */,
@@ -4142,8 +4320,10 @@
 				C5AA48E9250BB7B3009F583F /* BaseVC.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
 				C561617524EE4959001CD851 /* MyCell.m in Sources */,
+				C52E894D250F752E0070356F /* AES.m in Sources */,
 				C533701824DB00280082847C /* NSBundle+BRPickerView.m in Sources */,
 				C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */,
+				C52E894F250F752E0070356F /* AESCipher.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
 				C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */,
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
@@ -4170,10 +4350,10 @@
 				C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C5AA48E7250BB7B3009F583F /* BaseVC+AFNReachability.m in Sources */,
-				C5FE9CBD24B5F29C007B9878 /* NSData+Base64.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C5B1C7E724BAB91A001923FB /* LOTShapePath.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
+				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
 				C5B1C7DA24BAB91A001923FB /* LOTBezierData.m in Sources */,
 				C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */,
 				C5FE9CFC24B5F29C007B9878 /* CJTextField.m in Sources */,
@@ -4238,7 +4418,6 @@
 				C5FE9B6D24B5F203007B9878 /* HQTextField.m in Sources */,
 				C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */,
 				C5FE9D1324B5F29C007B9878 /* HWTFCodeView.m in Sources */,
-				C5FE9CBC24B5F29C007B9878 /* NSData+CommonCrypto.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5B1C7E624BAB91A001923FB /* LOTKeyframe.m in Sources */,
 				C5B1C7D824BAB91A001923FB /* LOTBlockCallback.m in Sources */,
@@ -4261,6 +4440,7 @@
 				C5D4FBC424CEC5700024A292 /* RBCLikeButton.m in Sources */,
 				C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */,
 				C5FE9D0024B5F29C007B9878 /* SearchVC+VM.m in Sources */,
+				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5B1C7D924BAB91A001923FB /* LOTShapeRectangle.m in Sources */,
 				C5B1C7D124BAB91A001923FB /* LOTShapeGradientFill.m in Sources */,

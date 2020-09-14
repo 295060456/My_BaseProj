@@ -48,7 +48,8 @@ static NSData *base64_decode(NSString *str){
     unsigned char *c_key = (unsigned char *)[d_key bytes];
     unsigned int  idx	 = 0;
     
-    if (c_key[idx++] != 0x30) return(nil);
+
+    
     
     if (c_key[idx] > 0x80) idx += c_key[idx] - 0x80 + 1;
     else idx++;

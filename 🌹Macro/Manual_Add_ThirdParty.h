@@ -9,13 +9,6 @@
 #ifndef Manual_Add_ThirdParty_h
 #define Manual_Add_ThirdParty_h
 
-#import "RSAUtil.h"
-#import "EncryptUtils.h"
-#import "AES.h"
-#import "NSData+Base64.h"
-#import <CommonCrypto/CommonCryptor.h>
-#import "NSString+Base64.h"
-#import "AESCipher.h"
 #import "ZYTextField_01.h"
 #import "UIButton+ImageTitleSpacing.h"
 #import "AABlock.h"
@@ -24,7 +17,6 @@
 #import "RYCuteView.h"
 #import "XWCountryCodeController.h"
 #import "HAHandleDemoView.h"
-#import "AESCrypt.h"
 #import "SDCycleScrollView.h"
 #import "SoundBtn.h"
 #import "LXTagsView.h"
@@ -120,8 +112,6 @@
 #import "BaseVC+TZImagePickerControllerDelegate.h"
 #import "BaseVC+TZLocationManager.h"
 #import "BaseVC+MJRefresh.h"
-#import "BaseVC+SYSAlertController.h"
-#import "BaseVC+SPAlertController.h"
 #import "BaseVC+AFNReachability.h"
 #import "BaseVC+BackBtn.h"
 #import "BaseVC+JXCategoryListContentViewDelegate.h"

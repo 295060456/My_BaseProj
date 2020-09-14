@@ -86,11 +86,11 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
                     self.isCountDownClockFinished = NO;
                     self.isCountDownClockOpen = NO;
                     
-                    [self timeFailBeginFrom:self.count];
+//                    [self timeFailBeginFrom:self.count];//根据需求来
                 }
                 
                 if (self.countDownClickEventBlock) {
-                    self.countDownClickEventBlock(x);
+                    self.countDownClickEventBlock(self);
                 }
             }];
             
@@ -147,7 +147,7 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
     }
 }
 //倒计时方法:
--(void)timeFailBeginFrom:(NSInteger)timeCount{
+- (void)timeFailBeginFrom:(NSInteger)timeCount {
     switch (self.countDownBtnNewLineType) {
         case CountDownBtnNewLineType_normal:{
             [self setTitle:self.titleBeginStr
@@ -174,7 +174,7 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
     [self.nsTimerManager nsTimeStartSysAutoInRunLoop];
 }
 //
--(void)timerRuning:(long)currentTime{
+- (void)timerRuning:(long)currentTime {
     self.enabled = NO;//倒计时期间，不接受任何的点击事件
     switch (self.showTimeType) {
         case ShowTimeType_SS:{
@@ -224,6 +224,7 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
 
 -(void)timerDestroy{
     self.enabled = YES;
+    self.isCountDownClockFinished = YES;
     switch (self.countDownBtnNewLineType) {
         case CountDownBtnNewLineType_normal:{
             [self setTitle:self.titleEndStr
@@ -300,7 +301,6 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
     //倒计时结束
     [timerManager actionNSTimerManagerFinishBlock:^(id data) {
         @strongify(self)
-        self.isCountDownClockFinished = YES;
         [self timerDestroy];
     }];
     

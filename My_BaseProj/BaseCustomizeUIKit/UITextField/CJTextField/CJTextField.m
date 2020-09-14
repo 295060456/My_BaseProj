@@ -9,9 +9,16 @@
 #import "CJTextField.h"
 
 @implementation CJTextField
+
 ///输入的和某个预设定值不一致的时候，抖动动画
--(void)isValidate:(NSString *)validate{
+- (void)isValidate:(NSString *)validate{
     if (![self.text isEqualToString:validate]) {
+        [self shakeAnimationForView:self];
+    }
+}
+///输入的为空，抖动动画
+-(void)isEmptyText{
+    if ([NSString isNullString:self.text]) {
         [self shakeAnimationForView:self];
     }
 }
@@ -31,14 +38,14 @@
     [lay_lb addAnimation:animation forKey:nil];
 }
 
--(void)deleteBackward{
+- (void)deleteBackward{
     [super deleteBackward];
     if ([self.cj_delegate respondsToSelector:@selector(cjTextFieldDeleteBackward:)]) {
         [self.cj_delegate cjTextFieldDeleteBackward:self];
     }
 }
 
--(BOOL)keyboardInputShouldDelete:(UITextField *)textField{
+- (BOOL)keyboardInputShouldDelete:(UITextField *)textField{
     BOOL shouldDelete = YES;
     if ([UITextField instancesRespondToSelector:_cmd]) {
         BOOL (*keyboardInputShouldDelete)(id, SEL, UITextField *) = (BOOL (*)(id, SEL, UITextField *))[UITextField instanceMethodForSelector:_cmd];

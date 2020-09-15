@@ -1,5 +1,3 @@
-
-
 //
 //  NSObject+Extras.m
 //  TestDemo
@@ -20,6 +18,18 @@
     } else {
         // Fallback on earlier versions
     }
+}
+///检测用户是否锁屏：根据屏幕光线来进行判定，而不是系统通知
++(BOOL)didUserPressLockButton{
+    //获取屏幕亮度
+    CGFloat oldBrightness = [UIScreen mainScreen].brightness;
+    //以较小的数量改变屏幕亮度
+    [UIScreen mainScreen].brightness = oldBrightness + (oldBrightness <= 0.01 ? (0.01) : (-0.01));
+    CGFloat newBrightness  = [UIScreen mainScreen].brightness;
+    //恢复屏幕亮度
+    [UIScreen mainScreen].brightness = oldBrightness;
+    //判断屏幕亮度是否能够被改变
+    return oldBrightness != newBrightness;
 }
 
 @end

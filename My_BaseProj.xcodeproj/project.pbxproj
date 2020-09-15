@@ -17,6 +17,7 @@
 		C52E8957250F752E0070356F /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8940250F752E0070356F /* NSString+Base64.m */; };
 		C52E8958250F752E0070356F /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8943250F752E0070356F /* NSData+Base64.m */; };
 		C52E895B250F752E0070356F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8949250F752E0070356F /* GTMBase64.m */; };
+		C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E89682510B4080070356F /* UITextField+Extend.m */; };
 		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
 		C533701124DB00280082847C /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF924DB00280082847C /* BRStringPickerView.m */; };
@@ -479,6 +480,8 @@
 		C52E8947250F752E0070356F /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		C52E8948250F752E0070356F /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		C52E8949250F752E0070356F /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		C52E89682510B4080070356F /* UITextField+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extend.m"; sourceTree = "<group>"; };
+		C52E89692510B4080070356F /* UITextField+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extend.h"; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C5336F8D24DAB99E0082847C /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
@@ -1543,6 +1546,15 @@
 				C52E8949250F752E0070356F /* GTMBase64.m */,
 			);
 			path = "GTMBase64 第三方";
+			sourceTree = "<group>";
+		};
+		C52E89672510B3F30070356F /* UITextField+Extend */ = {
+			isa = PBXGroup;
+			children = (
+				C52E89692510B4080070356F /* UITextField+Extend.h */,
+				C52E89682510B4080070356F /* UITextField+Extend.m */,
+			);
+			path = "UITextField+Extend";
 			sourceTree = "<group>";
 		};
 		C5336F8C24DAB9940082847C /* 存在疑问的 */ = {
@@ -3133,6 +3145,7 @@
 		C5FE9B3724B5F203007B9878 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				C52E89672510B3F30070356F /* UITextField+Extend */,
 				C590FF7124D06B75000F36C9 /* CJTextField */,
 				C5FE9B3824B5F203007B9878 /* HQTextField */,
 				C5FE9B3B24B5F203007B9878 /* ZYTextField */,
@@ -4295,6 +4308,7 @@
 				C5B1C7BF24BAB91A001923FB /* LOTNumberInterpolator.m in Sources */,
 				C5B1C7E224BAB91A001923FB /* LOTPolygonAnimator.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
+				C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,
 				C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */,
 				C5FE9D2424B5F29C007B9878 /* NSString+Extension.m in Sources */,

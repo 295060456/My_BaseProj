@@ -125,14 +125,12 @@
                             message:str
                     isSeparateStyle:YES
                         btnTitleArr:@[@"知道了"]
-                     alertBtnAction:@[@"OK"]
+                     alertBtnAction:@[@""]
                            targetVC:self
                        alertVCBlock:^(id data) {
         //DIY
     }];
 }
-
--(void)OK{}
 
 - (void)scanResultWithArray:(NSArray<LBXScanResult *> *)array{
     if (array.count < 1){
@@ -169,7 +167,7 @@
                             message:strResult
                     isSeparateStyle:YES
                         btnTitleArr:@[@"知道了"]
-                     alertBtnAction:@[@"reStartDevice"]
+                     alertBtnAction:@[@""]
                            targetVC:self
                        alertVCBlock:^(id data) {
         //DIY
@@ -266,7 +264,7 @@
                                                     message:nil
                                             isSeparateStyle:YES
                                                 btnTitleArr:@[@"好的"]
-                                             alertBtnAction:@[@"OK"]
+                                             alertBtnAction:@[@""]
                                                    targetVC:self
                                                alertVCBlock:^(id data) {
                                 //DIY

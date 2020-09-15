@@ -119,7 +119,7 @@
                                     message:@"因为某种未知的原因，找不到播放的资源文件"
                             isSeparateStyle:NO
                                 btnTitleArr:@[@"确定"]
-                             alertBtnAction:@[@"OK"]
+                             alertBtnAction:@[@""]
                                    targetVC:self
                                alertVCBlock:^(id data) {
                 //DIY

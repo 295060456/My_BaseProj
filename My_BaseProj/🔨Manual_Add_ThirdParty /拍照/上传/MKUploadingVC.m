@@ -126,8 +126,6 @@ UITextViewDelegate
     [self choosePicBtnClickEvent:nil];
 }
 
--(void)OK{}
-
 -(void)choosePicBtnClickEvent:(UIButton *)sender{
     self.imagePickerVC = Nil;
     [NSObject feedbackGenerator];
@@ -454,7 +452,7 @@ shouldChangeTextInRange:(NSRange)range
                                             message:nil
                                     isSeparateStyle:NO
                                         btnTitleArr:@[@"确定"]
-                                     alertBtnAction:@[@"OK"]
+                                     alertBtnAction:@[@""]
                                            targetVC:self
                                        alertVCBlock:^(id data) {
                         //DIY

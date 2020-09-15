@@ -105,10 +105,6 @@ JXCategoryTitleViewDataSource
     [super viewWillDisappear:animated];
 }
 
--(void)sure{
-
-}
-
 -(void)Cancel{
     [self.categoryView selectItemAtIndex:1];
     [self.listContainerView didClickSelectedItemAtIndex:1];
@@ -178,7 +174,7 @@ didScrollSelectedItemAtIndex:(NSInteger)index{
                                         message:nil
                                 isSeparateStyle:NO
                                     btnTitleArr:@[@"确认",@"手滑了"]
-                                 alertBtnAction:@[@"sure",@"Cancel"]
+                                 alertBtnAction:@[@"",@"Cancel"]
                                        targetVC:self
                                    alertVCBlock:^(id data) {
                     //DIY

@@ -15,6 +15,13 @@
 @property(nonatomic,strong)UIFont *ZYplaceholderLabelFont_2;//占位文字字体 聚焦状态
 
 @property(nonatomic,assign)CGFloat offset;
+@property(nonatomic,assign)CGFloat leftViewOffsetX;
+@property(nonatomic,assign)CGFloat rightViewOffsetX;
+
+@property(nonatomic,assign)CGFloat ZYTextFieldCornerRadius;
+@property(nonatomic,assign)CGFloat ZYTextFieldBorderWidth;
+@property(nonatomic,assign)UIColor *ZYTextFieldBorderColor;
+@property(nonatomic,assign)BOOL ZYTextFieldMasksToBounds;
 
 
 @end

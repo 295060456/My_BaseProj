@@ -9,31 +9,28 @@
 
 @implementation ZYTextField
 
+-(instancetype)init{
+    if (self = [super init]) {
+        self.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [self modifyClearButtonWithImage:kIMG(@"closeCircle@2x")];
+    }return self;
+}
+
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (!self.isOk) {
         [self setUpUI];
     }
 }
-// 重写此方法
-//-(void)drawPlaceholderInRect:(CGRect)rect {
-//    // 计算占位文字的 Size
-//    CGSize placeholderSize = [self.placeholder sizeWithAttributes: @{NSFontAttributeName : self.font}];
-//    [self.placeholder drawInRect:CGRectMake(0,
-//                                            (rect.size.height - placeholderSize.height) / 2,
-//                                            rect.size.width,
-//                                            rect.size.height)
-//                  withAttributes:@{NSForegroundColorAttributeName : kWhiteColor,
-//                                   NSFontAttributeName : self.font}];
-//}
 
 - (void)setUpUI{
-//    设置border
-//    self.layer.masksToBounds = YES;
-//    self.layer.cornerRadius = 22;
-//    self.backgroundColor = Default_FontColor;
-//    self.layer.borderColor = [UIColor blackColor].CGColor;
-//    self.layer.borderWidth = 1;
+    //设置border
+    self.layer.masksToBounds = self.ZYTextFieldMasksToBounds;
+    if (self.layer.masksToBounds) {
+        self.layer.cornerRadius = self.ZYTextFieldCornerRadius;
+        self.layer.borderColor = self.ZYTextFieldBorderColor.CGColor;
+        self.layer.borderWidth = self.ZYTextFieldBorderWidth;
+    }
     //字体大小
     self.font = self.ZYtextFont;
     //字体颜色
@@ -75,9 +72,26 @@
     return [super resignFirstResponder];
 }
 #pragma mark —— 重写父类方法
+-(void)drawPlaceholderInRect:(CGRect)rect {
+    // 计算占位文字的 Size
+    CGSize placeholderSize = [self.placeholder sizeWithAttributes: @{NSFontAttributeName : self.font}];
+    [self.placeholder drawInRect:CGRectMake(0,
+                                            (rect.size.height - placeholderSize.height) / 2,
+                                            rect.size.width,
+                                            rect.size.height)
+                  withAttributes:@{NSForegroundColorAttributeName : self.ZYplaceholderLabelTextColor_1,
+                                   NSFontAttributeName : self.font}];
+}
+
 -(CGRect)leftViewRectForBounds:(CGRect)bounds{
     CGRect iconRect = [super leftViewRectForBounds:bounds];
-    iconRect.origin.x += 5;
+    iconRect.origin.x += self.leftViewOffsetX;
+    return iconRect;
+}
+
+- (CGRect)rightViewRectForBounds:(CGRect)bounds{
+    CGRect iconRect = [super rightViewRectForBounds:bounds];
+    iconRect.origin.x -= self.rightViewOffsetX;
     return iconRect;
 }
 //控制placeHolder的位置
@@ -156,5 +170,28 @@
     }return _offset;
 }
 
+-(CGFloat)leftViewOffsetX{
+    if (_leftViewOffsetX == 0) {
+        _leftViewOffsetX = 5;
+    }return _leftViewOffsetX;
+}
+
+-(CGFloat)rightViewOffsetX{
+    if (_rightViewOffsetX == 0) {
+        _rightViewOffsetX = 5;
+    }return _rightViewOffsetX;
+}
+
+-(CGFloat)ZYTextFieldBorderWidth{
+    if (_ZYTextFieldBorderWidth == 0) {
+        _ZYTextFieldBorderWidth = 1;
+    }return _ZYTextFieldBorderWidth;
+}
+
+-(UIColor *)ZYTextFieldBorderColor{
+    if (!_ZYTextFieldBorderColor) {
+        _ZYTextFieldBorderColor = kBlackColor;
+    }return _ZYTextFieldBorderColor;
+}
 
 @end

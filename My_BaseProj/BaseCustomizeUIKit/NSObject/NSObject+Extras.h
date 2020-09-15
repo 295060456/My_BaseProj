@@ -17,5 +17,7 @@
  * 调试是否进入后台，要断开于Xcode的连接，否则屏幕常亮
  */
 +(BOOL)didUserPressLockButton;
+///iOS 限制自动锁屏 lockSwitch:YES(关闭自动锁屏)
++(void)autoLockedScreen:(BOOL)lockSwitch;
 
 @end

@@ -31,5 +31,9 @@
     //判断屏幕亮度是否能够被改变
     return oldBrightness != newBrightness;
 }
+///iOS 限制自动锁屏 lockSwitch:YES(关闭自动锁屏)
++(void)autoLockedScreen:(BOOL)lockSwitch{
+    [[UIApplication sharedApplication] setIdleTimerDisabled:lockSwitch];
+}
 
 @end

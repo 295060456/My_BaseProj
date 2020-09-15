@@ -290,7 +290,9 @@ shouldChangeTextInRange:(NSRange)range
             make.left.equalTo(self.view).offset(SCALING_RATIO(13));
             make.top.equalTo(self.backView.mas_bottom).offset(SCALING_RATIO(13));
         }];
+        @weakify(self)
         [[_choosePicBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             [self choosePicBtnClickEvent:x];
         }];
         [UIView colourToLayerOfView:_choosePicBtn
@@ -404,7 +406,9 @@ shouldChangeTextInRange:(NSRange)range
         _releaseBtn.userInteractionEnabled = NO;
         _releaseBtn.alpha = 0.4;
         _releaseBtn.backgroundColor = KLightGrayColor;
+        weakify(sel@f)
         [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             if (self->btn.selected &&
                 ![NSString isNullString:self.textView.text] &&
                 self.imgData) {

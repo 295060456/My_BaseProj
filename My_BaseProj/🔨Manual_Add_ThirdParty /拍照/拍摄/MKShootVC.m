@@ -504,7 +504,9 @@
         _overturnBtn = UIButton.new;
         [_overturnBtn setImage:kIMG(@"翻转镜头")
                       forState:UIControlStateNormal];
+        @weakify(self)
         [[_overturnBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             x.selected = !x.selected;
             [self.gpuImageTools overturnCamera];
         }];
@@ -518,7 +520,9 @@
                       forState:UIControlStateNormal];
         [_flashLightBtn setImage:kIMG(@"闪光灯")
                       forState:UIControlStateSelected];
+        @weakify(self)
         [[_flashLightBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             x.selected = !x.selected;
             [self.gpuImageTools flashLight:x.selected];
         }];
@@ -532,7 +536,9 @@
                        forState:UIControlStateNormal];
         [_countDownBtn setImage:kIMG(@"倒计时 开启状态")
                        forState:UIControlStateSelected];
+        @weakify(self)
         [[_countDownBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             x.selected = !x.selected;
             self.recordBtn.isCountDown = x.selected;
         }];
@@ -548,7 +554,9 @@
                           forState:UIControlStateNormal];
         [_previewBtn setTitle:@"预览"
                      forState:UIControlStateNormal];
+        weakify(sel@f)
         [[_previewBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件
             [self.gpuImageTools vedioShoottingEnd];
         }];
@@ -629,7 +637,9 @@
         _deleteFilmBtn.alpha = 0;
         [_deleteFilmBtn setImage:kIMG(@"删除视频")
                         forState:UIControlStateNormal];
+        @weakify(self)
         [[_deleteFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             NSLog(@"删除作品？");
             [self.gpuImageTools vedioShoottingSuspend];
             [NSObject showSYSAlertViewTitle:@"删除作品？"
@@ -672,7 +682,9 @@
         _sureFilmBtn.alpha = 0;
         [_sureFilmBtn setImage:kIMG(@"保存视频")
                         forState:UIControlStateNormal];
+        @weakify(self)
         [[_sureFilmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             NSLog(@"结束录制 —— 这个作品我要了");
             //判定规则：小于3秒的被遗弃，不允许被保存
             if (self.recordBtn.currentTime <= self.recordBtn.safetyTime) {
@@ -845,7 +857,9 @@
                   forState:UIControlStateNormal];
         [_backBtn setImage:kIMG(@"back_white")
                          forState:UIControlStateNormal];
+        @weakify(self)
         [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
             [NSObject showSYSActionSheetTitle:nil
                                       message:nil
                               isSeparateStyle:YES

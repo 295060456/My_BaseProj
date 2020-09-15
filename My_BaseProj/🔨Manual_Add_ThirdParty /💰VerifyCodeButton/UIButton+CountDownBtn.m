@@ -78,8 +78,9 @@ static char *UIButton_CountDownBtn_btnRunType = "UIButton_CountDownBtn_btnRunTyp
         
         if (self.countDownBtnType) {
             // CountDownBtn 的点击事件回调
+            @weakify(self)
             [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-                
+                @strongify(self)
                 if ((self.isCountDownClockFinished && self.btnRunType == CountDownBtnRunType_auto) ||//自启动模式
                     self.btnRunType == CountDownBtnRunType_manual) {//手动启动模式
                     

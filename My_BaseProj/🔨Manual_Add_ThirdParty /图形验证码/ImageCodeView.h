@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)UIColor *color;
 @property(nonatomic,strong)UIFont *font;
+@property(nonatomic,strong)UIColor *bgColor;//外界不传值定义内部即用随机色彩
 
 -(void)actionBlockImageCodeView:(MKDataBlock)imageCodeViewBlock;
 

@@ -9,8 +9,6 @@
 #import "ImageCodeView.h"
 
 #define CODE_LENGTH 4
-#define ARCNUMBER arc4random() % 100 / 100.0
-#define ARC_COLOR [UIColor colorWithRed:ARCNUMBER green:ARCNUMBER blue:ARCNUMBER alpha:0.2]
 
 @interface ImageCodeView ()
 
@@ -22,6 +20,7 @@
 @implementation ImageCodeView
 
 @synthesize CodeStr = _CodeStr;//不加这句会报错
+@synthesize bgColor = _bgColor;//不加这句会报错
 
 - (void)dealloc {
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
@@ -39,7 +38,7 @@
 }
 ///设置默认参数
 - (void)setupUI{
-    self.backgroundColor = ARC_COLOR;
+    self.backgroundColor = self.bgColor;
     self.changeCodeTap.enabled = YES;
 }
 
@@ -67,7 +66,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 1.0);
     for(int cout = 0; cout < 10; cout++){
-        CGContextSetStrokeColorWithColor(context, [ARC_COLOR CGColor]);
+        CGContextSetStrokeColorWithColor(context, RandomColor.CGColor);
         pX = arc4random() % (int)rect.size.width;
         pY = arc4random() % (int)rect.size.height;
         CGContextMoveToPoint(context, pX, pY);
@@ -79,7 +78,6 @@
 }
 ///随机生成验证码字符串
 -(void)getStrCode{
-    self.backgroundColor = ARC_COLOR;
     NSMutableString *tmpStr = [[NSMutableString alloc] initWithCapacity:5];
     for (int i = 0; i < CODE_LENGTH; i++) {
         NSInteger index = arc4random() % (self.CodeArr.count - 1);
@@ -87,20 +85,21 @@
     }
     _CodeStr = [NSString stringWithFormat:@"%@",tmpStr];
 }
-///刷新验证码
+///点击、刷新验证码
 -(void)changeCode:(UITapGestureRecognizer *)sender{
     @weakify(self)
-    //    [NSObject getAuthCode_networking:^(id data) {
-    //        @strongify(self)
-    //        if ([data isKindOfClass:NSDictionary.class]) {
-    //            self.CodeStr = data[@"imgCode"];
-    //            NSLog(@"我是验证码：%@",self.CodeStr);
-    //            [self setNeedsDisplay];
-    //            if (self.imageCodeViewBlock) {
-    //                self.imageCodeViewBlock(data);
-    //            }
-    //        }
-    //    }];
+    [NSObject getAuthCode_networking:^(id data) {
+        @strongify(self)
+        if ([data isKindOfClass:NSDictionary.class]) {
+            self.CodeStr = data[@"imgCode"];
+            self.backgroundColor = self.bgColor;
+            NSLog(@"我是验证码：%@",self.CodeStr);
+            [self setNeedsDisplay];
+            if (self.imageCodeViewBlock) {
+                self.imageCodeViewBlock(data);
+            }
+        }
+    }];
 }
 
 -(void)actionBlockImageCodeView:(MKDataBlock)imageCodeViewBlock{
@@ -110,6 +109,11 @@
 -(void)setCodeStr:(NSString *)CodeStr{
     _CodeStr = CodeStr;
     [self setNeedsDisplay];
+}
+
+-(void)setBgColor:(UIColor *)bgColor{
+    _bgColor = bgColor;
+    self.backgroundColor = _bgColor;
 }
 #pragma mark —— lazyLoad
 -(NSString *)CodeStr{
@@ -143,6 +147,14 @@
         _font = [UIFont systemFontOfSize:9.6
                                   weight:UIFontWeightRegular];
     }return _font;
+}
+
+-(UIColor *)bgColor{
+    if (_bgColor) {
+        return _bgColor;
+    }else{
+        return RandomColor;
+    }
 }
 
 @end

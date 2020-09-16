@@ -52,7 +52,7 @@ CJTextFieldDeleteDelegate
         self.block(textField,
                    self,
                    @"",
-                   @"CJTextFieldDeleteDelegate_cjTextFieldDeleteBackward");
+                   NSStringFromSelector(_cmd));
     }
 }
 #pragma mark —— UITextFieldDelegate
@@ -70,7 +70,7 @@ CJTextFieldDeleteDelegate
         self.block(textField,
                    self,
                    @"",
-                   @"CJTextFieldDeleteDelegate_textFieldDidEndEditing");
+                   NSStringFromSelector(_cmd));
     }
 }
 //告诉委托人对指定的文本字段停止编辑
@@ -83,7 +83,7 @@ replacementString:(NSString *)string{//实现逐词搜索
         self.block(textField,
                    self,
                    string,
-                   @"CJTextFieldDeleteDelegate_shouldChangeCharactersInRange");
+                   NSStringFromSelector(_cmd));
     }return YES;
 }
 //询问委托人是否应删除文本字段的当前内容

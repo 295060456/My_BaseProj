@@ -604,6 +604,7 @@
 		C572A2A124FD2FB5000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C57AC03A2511DC61009EE44D /* closeCircle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeCircle@3x.png"; sourceTree = "<group>"; };
 		C57AC03B2511DC61009EE44D /* closeCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeCircle@2x.png"; sourceTree = "<group>"; };
+		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
 		C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
@@ -2752,6 +2753,7 @@
 				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
 				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
 				C52E88D4250F2CEF0070356F /* 加密流程 */,
+				C57AC05025120BA3009EE44D /* 网络请求写法 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

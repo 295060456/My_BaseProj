@@ -90,6 +90,7 @@ replacementString:(NSString *)string{//实现逐词搜索
 //- (BOOL)textFieldShouldClear:(UITextField *)textField;
 //询问委托人文本字段是否应处理按下返回按钮
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self endEditing:YES];
     return YES;
 }
 #pragma mark —— lazyLoad

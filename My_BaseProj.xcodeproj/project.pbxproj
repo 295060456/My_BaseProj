@@ -88,6 +88,8 @@
 		C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29524FD2AA8000A1687 /* STSimplePing.m */; };
 		C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29824FD2AA9000A1687 /* STDPingServices.m */; };
 		C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29F24FD2F99000A1687 /* GDFadeView.m */; };
+		C57AC03C2511DC61009EE44D /* closeCircle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57AC03A2511DC61009EE44D /* closeCircle@3x.png */; };
+		C57AC03D2511DC61009EE44D /* closeCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57AC03B2511DC61009EE44D /* closeCircle@2x.png */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
@@ -600,6 +602,8 @@
 		C572A29E24FD2F99000A1687 /* GDFadeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFadeView.h; sourceTree = "<group>"; };
 		C572A29F24FD2F99000A1687 /* GDFadeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFadeView.m; sourceTree = "<group>"; };
 		C572A2A124FD2FB5000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
+		C57AC03A2511DC61009EE44D /* closeCircle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeCircle@3x.png"; sourceTree = "<group>"; };
+		C57AC03B2511DC61009EE44D /* closeCircle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeCircle@2x.png"; sourceTree = "<group>"; };
 		C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
@@ -3165,6 +3169,8 @@
 		C5FE9B3B24B5F203007B9878 /* ZYTextField */ = {
 			isa = PBXGroup;
 			children = (
+				C57AC03B2511DC61009EE44D /* closeCircle@2x.png */,
+				C57AC03A2511DC61009EE44D /* closeCircle@3x.png */,
 				C5FE9B3C24B5F203007B9878 /* ZYTextField_01.h */,
 				C5FE9B3E24B5F203007B9878 /* ZYTextField_01.m */,
 				C5FE9B3F24B5F203007B9878 /* ZYTextField.h */,
@@ -3969,6 +3975,7 @@
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
 				C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */,
 				C53B184E24FFB1E2000019F2 /* 删除@2x.png in Resources */,
+				C57AC03D2511DC61009EE44D /* closeCircle@2x.png in Resources */,
 				C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */,
 				C5FE9AE224B5F1B3007B9878 /* My@3x.png in Resources */,
 				C563AE2F24F00FC600A3B0AC /* 任务.json in Resources */,
@@ -4013,6 +4020,7 @@
 				C5AFBF03250B265000EC14B7 /* del_Photo@2x.png in Resources */,
 				C5FE9ADB24B5F1B3007B9878 /* MyStore@3x.png in Resources */,
 				C53B184B24FFB1E2000019F2 /* 倒计时 开启状态@2x.png in Resources */,
+				C57AC03C2511DC61009EE44D /* closeCircle@3x.png in Resources */,
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */,

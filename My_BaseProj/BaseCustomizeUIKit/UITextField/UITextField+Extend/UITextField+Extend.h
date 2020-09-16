@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (Extend)
-
+/// 自定义系统的清除按钮
 -(void)modifyClearButtonWithImage:(UIImage *)image;
 
 @end

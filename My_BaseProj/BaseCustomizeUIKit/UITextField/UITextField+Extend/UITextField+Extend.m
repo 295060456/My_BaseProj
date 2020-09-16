@@ -9,7 +9,7 @@
 #import "UITextField+Extend.h"
 
 @implementation UITextField (Extend)
-
+/// 自定义系统的清除按钮
 - (void)modifyClearButtonWithImage:(UIImage *)image{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image

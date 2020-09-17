@@ -404,7 +404,7 @@ shouldChangeTextInRange:(NSRange)range
         _releaseBtn.userInteractionEnabled = NO;
         _releaseBtn.alpha = 0.4;
         _releaseBtn.backgroundColor = KLightGrayColor;
-        weakify(sel@f)
+        @weakify(self)
         [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             if (self->btn.selected &&

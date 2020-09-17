@@ -187,7 +187,7 @@
 
 //询问委托人文本字段是否应处理按下返回按钮
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self endEditing:YES];
+    [self.view endEditing:YES];
     return YES;
 }
 

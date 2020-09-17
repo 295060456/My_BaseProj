@@ -550,7 +550,7 @@
                           forState:UIControlStateNormal];
         [_previewBtn setTitle:@"预览"
                      forState:UIControlStateNormal];
-        weakify(sel@f)
+        @weakify(self)
         [[_previewBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
             //值得注意：想要预览视频必须写文件。因为GPUImageMovieWriter在做合成动作之前，没有把音频流和视频流进行整合，碎片化的信息文件不能称之为一个完整的视频文件

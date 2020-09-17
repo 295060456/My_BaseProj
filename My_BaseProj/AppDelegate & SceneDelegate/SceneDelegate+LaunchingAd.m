@@ -19,8 +19,8 @@
           FMHttpRequest *req = [FMHttpRequest urlParametersWithMethod:HTTTP_METHOD_POST
                                                                  path:@"Room/GetHotLive_v2"
                                                            parameters:easyDict];
-          self.reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
-          [self.reqSignal subscribeNext:^(FMHttpResonse *response) {
+          RACSignal *reqSignal = [[FMARCNetwork sharedInstance] requestNetworkData:req];
+          [reqSignal subscribeNext:^(FMHttpResonse *response) {
               if (response.isSuccess) {
                   NSLog(@"%p",response.reqResult);
                   NSLog(@"--%@",response.reqResult);

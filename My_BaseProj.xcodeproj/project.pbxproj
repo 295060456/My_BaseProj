@@ -949,6 +949,7 @@
 		C5D8288F24FB65D8002DD3E6 /* fangzi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fangzi.json; sourceTree = "<group>"; };
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200919_10.png; sourceTree = "<group>"; };
 		C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200809_12.png; sourceTree = "<group>"; };
 		C5E5C65425088EAC001E69DA /* WGradientProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgress.h; sourceTree = "<group>"; };
 		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
@@ -2759,6 +2760,7 @@
 				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
 				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
 				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
+				C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */,
 				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
 				C5FE9A7B24B5F0B6007B9878 /* cell重用.png */,

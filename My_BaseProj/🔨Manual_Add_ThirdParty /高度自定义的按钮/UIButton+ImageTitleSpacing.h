@@ -31,3 +31,20 @@ typedef NS_ENUM(NSUInteger, GLButtonEdgeInsetsStyle) {
                         imageTitleSpace:(CGFloat)space;
 
 @end
+
+/*
+ *
+
+ -(void)setIsSelected:(BOOL)isSelected{
+ _isSelected = isSelected;
+ self.mkZanView.selected = _isSelected;
+ if (self.mkZanView.selected) {
+     //特别重要，花了老子半个小时，mmp.只要改变选择状态都要进行刷新 走这一句
+     [self.mkZanView setTitle:self.ZanNumStr forState:UIControlStateSelected];
+ }
+ [self.mkZanView layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
+                                    imageTitleSpace:5];
+}
+
+ *
+ */

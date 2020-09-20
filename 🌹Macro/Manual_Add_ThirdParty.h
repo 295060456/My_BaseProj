@@ -103,6 +103,7 @@
 #import "UIImage+SYS.h"
 #import "UIImage+Overlay.h"
 #import "UIImage+Tailor.h"
+#import "UIImage+screenshot.h"
 
 //#import "UIView+JHGestureBlock.h"
 ///BaseVC

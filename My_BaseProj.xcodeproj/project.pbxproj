@@ -265,6 +265,7 @@
 		C5D8289224FB65D8002DD3E6 /* wode.json in Resources */ = {isa = PBXBuildFile; fileRef = C5D8288E24FB65D8002DD3E6 /* wode.json */; };
 		C5D8289324FB65D8002DD3E6 /* fangzi.json in Resources */ = {isa = PBXBuildFile; fileRef = C5D8288F24FB65D8002DD3E6 /* fangzi.json */; };
 		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
+		C5E3C7772517869000F9A150 /* UIImage+screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E3C7762517869000F9A150 /* UIImage+screenshot.m */; };
 		C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C65525088EAD001E69DA /* WGradientProgress.m */; };
 		C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C6812509148C001E69DA /* WGradientProgressView.m */; };
 		C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */; };
@@ -950,6 +951,8 @@
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200919_10.png; sourceTree = "<group>"; };
+		C5E3C7752517869000F9A150 /* UIImage+screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+screenshot.h"; sourceTree = "<group>"; };
+		C5E3C7762517869000F9A150 /* UIImage+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+screenshot.m"; sourceTree = "<group>"; };
 		C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200809_12.png; sourceTree = "<group>"; };
 		C5E5C65425088EAC001E69DA /* WGradientProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgress.h; sourceTree = "<group>"; };
 		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
@@ -3054,6 +3057,8 @@
 		C5FE9B0D24B5F203007B9878 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				C5E3C7752517869000F9A150 /* UIImage+screenshot.h */,
+				C5E3C7762517869000F9A150 /* UIImage+screenshot.m */,
 				C572A28424FCBDDD000A1687 /* UIImage+Overlay.h */,
 				C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */,
 				C572A28724FCBDDE000A1687 /* UIImage+Tailor.h */,
@@ -4413,6 +4418,7 @@
 				C590FF3A24D00D23000F36C9 /* SDWebImageImageIOCoder.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,
 				C5FE9ACB24B5F19E007B9878 /* ArcTBVCell.m in Sources */,
+				C5E3C7772517869000F9A150 /* UIImage+screenshot.m in Sources */,
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
 				C5D4FBCE24CFDECC0024A292 /* InputView.m in Sources */,
 				C5B1C7BE24BAB91A001923FB /* LOTShapeCircle.m in Sources */,

@@ -953,6 +953,8 @@
 		C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200919_10.png; sourceTree = "<group>"; };
 		C5E3C7752517869000F9A150 /* UIImage+screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+screenshot.h"; sourceTree = "<group>"; };
 		C5E3C7762517869000F9A150 /* UIImage+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+screenshot.m"; sourceTree = "<group>"; };
+		C5E3C79E25179B3800F9A150 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		C5E3C79F25179B7800F9A150 /* 20190619125944370.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20190619125944370.png; sourceTree = "<group>"; };
 		C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200809_12.png; sourceTree = "<group>"; };
 		C5E5C65425088EAC001E69DA /* WGradientProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgress.h; sourceTree = "<group>"; };
 		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
@@ -2603,6 +2605,15 @@
 			path = LYEmptyView;
 			sourceTree = "<group>";
 		};
+		C5E3C79D25179B2100F9A150 /* FFmpeg */ = {
+			isa = PBXGroup;
+			children = (
+				C5E3C79F25179B7800F9A150 /* 20190619125944370.png */,
+				C5E3C79E25179B3800F9A150 /* File */,
+			);
+			path = FFmpeg;
+			sourceTree = "<group>";
+		};
 		C5E5C65225088E80001E69DA /* 水平进度条 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2754,6 +2765,7 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C5E3C79D25179B2100F9A150 /* FFmpeg */,
 				C56161C924EE743F001CD851 /* 签名上架 */,
 				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
 				C52D2A5024E580670048FEFF /* JXCategoryView */,

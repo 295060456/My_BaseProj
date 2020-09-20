@@ -75,6 +75,7 @@ target 'My_BaseProj' do
 #  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
 #  pod 'DYVideoCamera' # https://github.com/Sexy-Queen-team/DYVideoCamera DYVideoCamera 是一个适用于 iOS 视频录制组件,可高度定制化和二次开发,特色是支持自定义 比特率, 滤镜, 裁剪, 音乐, 试听音乐实时缓存。
   pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
+  pod 'JJException' #https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
 #  pod 'ZZCircleProgress'
   pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']

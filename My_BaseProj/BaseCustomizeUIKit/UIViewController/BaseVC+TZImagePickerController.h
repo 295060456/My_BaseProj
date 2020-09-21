@@ -26,7 +26,7 @@ TZImagePickerControllerDelegate
 ,UIImagePickerControllerDelegate
 >
 #pragma mark —— BaseVC+TZImagePickerController
-@property(nonatomic,strong)TZImagePickerController *imagePickerVC;
+@property(nonatomic,strong,nullable)TZImagePickerController *imagePickerVC;
 @property(nonatomic,strong)UIImagePickerController *imagePickerVC_Sys;
 @property(nonatomic,strong)NSMutableArray *mediaTypesMutArr;
 @property(nonatomic,assign)TZImagePickerControllerType tzImagePickerControllerType;
@@ -44,7 +44,8 @@ TZImagePickerControllerDelegate
 ///点选的图片
 -(void)GettingPicBlock:(MMDataBlock)block;
 ///访问相册 —— 选择图片
--(void)choosePic:(TZImagePickerControllerType)tzImagePickerControllerType;
+-(void)choosePic:(TZImagePickerControllerType)tzImagePickerControllerType
+imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock;
 ///访问摄像头
 -(void)camera:(MKDataBlock)doSthBlock;
 

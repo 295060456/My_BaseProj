@@ -29,6 +29,13 @@ PODS:
     - Debugo/Core (= 0.4.0)
   - Debugo/Core (0.4.0):
     - FMDB (>= 2.7.2)
+  - DoraemonKit (3.0.4):
+    - DoraemonKit/Core (= 3.0.4)
+  - DoraemonKit/Core (3.0.4):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
   - FBAllocationTracker (0.1.5)
   - FBMemoryProfiler (0.1.3):
     - FBAllocationTracker (~> 0.1)
@@ -42,6 +49,13 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
   - GKPageScrollView (1.3.8)
   - GPUImage (0.1.7)
   - HBDNavigationBar (1.7.7)
@@ -203,6 +217,7 @@ DEPENDENCIES:
   - CWLateralSlide
   - DDProgressView
   - Debugo
+  - DoraemonKit
   - FBMemoryProfiler
   - FDFullscreenPopGesture
   - "FLAnimatedImageView+RGWrapper"
@@ -281,6 +296,7 @@ SPEC REPOS:
     - CWLateralSlide
     - DDProgressView
     - Debugo
+    - DoraemonKit
     - FBAllocationTracker
     - FBMemoryProfiler
     - FBRetainCycleDetector
@@ -289,6 +305,7 @@ SPEC REPOS:
     - "FLAnimatedImageView+RGWrapper"
     - FLEX
     - FMDB
+    - GCDWebServer
     - GKPageScrollView
     - GPUImage
     - HBDNavigationBar
@@ -365,6 +382,7 @@ SPEC CHECKSUMS:
   CWLateralSlide: 8939c8dea91a24e40d0793553118cb57cd67f64b
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   Debugo: 7ea74eca356172e17622b6de46a8f2f9e97724ae
+  DoraemonKit: b507a1500667024070f248d648632a3f7bbb6044
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -373,6 +391,7 @@ SPEC CHECKSUMS:
   "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GKPageScrollView: 5cd374fd7d34c0fb89f313307ac0e31939f82c30
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
@@ -437,6 +456,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: 7be000a0c03a14612f09463c20db9d180efffe60
+PODFILE CHECKSUM: 9e3add3692297fd9a922ac380f3dc7c53bed42e4
 
 COCOAPODS: 1.9.3

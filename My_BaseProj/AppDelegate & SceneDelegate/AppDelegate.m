@@ -36,14 +36,17 @@ static AppDelegate *static_appDelegate = nil;
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    #if DEBUG
-        /**
-         *  宏忽略警告-+         */
-        SuppressPerformSelectorLeakWarning(
-                                           id overlayClass = NSClassFromString(@"UIDebuggingInformationOverlay");
-                                           [overlayClass performSelector:NSSelectorFromString(@"prepareDebuggingOverlay")];
-                                           );
-    #endif
+    
+#ifdef DEBUG
+    [[DoraemonManager shareInstance] install];
+    /**
+     *  宏忽略警告-+         */
+    SuppressPerformSelectorLeakWarning(
+                                       id overlayClass = NSClassFromString(@"UIDebuggingInformationOverlay");
+                                       [overlayClass performSelector:NSSelectorFromString(@"prepareDebuggingOverlay")];
+                                       );
+#endif
+    
 #pragma mark —— 网络监控
     [FMARCNetwork.sharedInstance AFNReachability];
 //    [GKConfigure setupDefaultConfigure];

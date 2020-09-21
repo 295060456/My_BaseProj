@@ -8,6 +8,9 @@ target 'My_BaseProj' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
+  
+  pod 'DoraemonKit' # https://github.com/didi/DoraemonKit 滴滴打车出的工具
+  
   # Pods for My_BaseProj
 #  pod 'lottie-ios' # 这个是swift版本
   pod 'CWLateralSlide' # https://github.com/ChavezChen/CWLateralSlide 打破传统侧滑抽屉框架LeftVC，RightVC，CenterVC模式，使用自定义转场动画实现的0耦合、0侵入、0污染的抽屉框架，抽屉控制器拥有完整的生命周期函数调用，关闭抽屉时抽屉不会展示在我们看不见的地方（屏幕外，或者根控制器下边）,最重要的是简单：只要一行代码就能拥有一个侧滑抽屉。

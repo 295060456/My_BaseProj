@@ -49,6 +49,11 @@
 		C54AE7D624C941D300121233 /* gif_header_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CC24C941D300121233 /* gif_header_4@2x.png */; };
 		C54AE7D724C941D300121233 /* gif_header_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CD24C941D300121233 /* gif_header_1@3x.png */; };
 		C54AE7D824C941D300121233 /* gif_header_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AE7CE24C941D300121233 /* gif_header_2@3x.png */; };
+		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
+		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
+		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
+		C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */; };
+		C54BB51F2518E559001591C2 /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB51A2518E559001591C2 /* ZBRequestManager.m */; };
 		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
 		C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */ = {isa = PBXBuildFile; fileRef = C54F101D24C469E900EE1E67 /* GIF大图.gif */; };
 		C54F102024C46A9100EE1E67 /* 兴发街.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C54F101F24C46A9100EE1E67 /* 兴发街.jpg */; };
@@ -533,6 +538,19 @@
 		C54AE7CC24C941D300121233 /* gif_header_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_4@2x.png"; sourceTree = "<group>"; };
 		C54AE7CD24C941D300121233 /* gif_header_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_1@3x.png"; sourceTree = "<group>"; };
 		C54AE7CE24C941D300121233 /* gif_header_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gif_header_2@3x.png"; sourceTree = "<group>"; };
+		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
+		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
+		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
+		C54BB5122518E558001591C2 /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
+		C54BB5132518E558001591C2 /* ZBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBURLRequest.m; sourceTree = "<group>"; };
+		C54BB5142518E558001591C2 /* ZBCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCacheManager.m; sourceTree = "<group>"; };
+		C54BB5152518E559001591C2 /* ZBRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestEngine.h; sourceTree = "<group>"; };
+		C54BB5162518E559001591C2 /* ZBRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestEngine.m; sourceTree = "<group>"; };
+		C54BB5172518E559001591C2 /* ZBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestManager.h; sourceTree = "<group>"; };
+		C54BB5182518E559001591C2 /* ZBRequestConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestConst.h; sourceTree = "<group>"; };
+		C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZBUTF8Encoding.m"; sourceTree = "<group>"; };
+		C54BB51A2518E559001591C2 /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
+		C54BB5262518E570001591C2 /* ZBNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZBNetworking; sourceTree = "<group>"; };
 		C54C78A024D2AD460052BE0B /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
 		C54F101D24C469E900EE1E67 /* GIF大图.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "GIF大图.gif"; sourceTree = "<group>"; };
 		C54F101F24C46A9100EE1E67 /* 兴发街.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "兴发街.jpg"; sourceTree = "<group>"; };
@@ -1666,6 +1684,35 @@
 				C54AE7C724C941D300121233 /* header@3x.png */,
 			);
 			path = "刷新";
+			sourceTree = "<group>";
+		};
+		C54BB50D2518E53F001591C2 /* 网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9B8A24B5F298007B9878 /* 🌍ZFMRACNetworkTool */,
+				C54BB50E2518E546001591C2 /* ZBNetworking */,
+			);
+			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		C54BB50E2518E546001591C2 /* ZBNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C54BB5262518E570001591C2 /* ZBNetworking */,
+				C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */,
+				C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */,
+				C54BB5122518E558001591C2 /* ZBCacheManager.h */,
+				C54BB5142518E558001591C2 /* ZBCacheManager.m */,
+				C54BB50F2518E558001591C2 /* ZBNetworking.h */,
+				C54BB5182518E559001591C2 /* ZBRequestConst.h */,
+				C54BB5152518E559001591C2 /* ZBRequestEngine.h */,
+				C54BB5162518E559001591C2 /* ZBRequestEngine.m */,
+				C54BB5172518E559001591C2 /* ZBRequestManager.h */,
+				C54BB51A2518E559001591C2 /* ZBRequestManager.m */,
+				C54BB5102518E558001591C2 /* ZBURLRequest.h */,
+				C54BB5132518E558001591C2 /* ZBURLRequest.m */,
+			);
+			path = ZBNetworking;
 			sourceTree = "<group>";
 		};
 		C54F101B24C469D400EE1E67 /* Others */ = {
@@ -2883,6 +2930,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C54BB50D2518E53F001591C2 /* 网络请求 */,
 				C5F732D025138E4300216DEF /* 正则表达式 */,
 				C5B5EF71250D246F00DCDA93 /* 图形验证码 */,
 				C5E5C65225088E80001E69DA /* 水平进度条 */,
@@ -2906,7 +2954,6 @@
 				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5F78AD224BF273B008A46EC /* 评论列表 */,
 				C5B1C72B24BAB8FF001923FB /* Lottie-iOS(OC) */,
-				C5FE9B8A24B5F298007B9878 /* 🌍ZFMRACNetworkTool */,
 				C5FE9BFF24B5F299007B9878 /* 分享控件 */,
 				C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */,
 				C5FE9BAB24B5F298007B9878 /* 高仿iOS长按删除+抖动 */,
@@ -4236,6 +4283,7 @@
 				C5AA48E1250BB7B3009F583F /* BaseVC+JPImageresizerView.m in Sources */,
 				C561617624EE4959001CD851 /* StartOrPauseBtn.m in Sources */,
 				C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */,
+				C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5B1C7B224BAB919001923FB /* LOTTransformInterpolator.m in Sources */,
 				C5AA48EA250BB7B3009F583F /* BaseVC+OpenURL.m in Sources */,
 				C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */,
@@ -4298,6 +4346,7 @@
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
 				C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */,
 				C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */,
+				C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */,
 				C5B1C7D224BAB91A001923FB /* LOTShapeTransform.m in Sources */,
 				C5B1C7BC24BAB91A001923FB /* LOTPolystarAnimator.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
@@ -4339,6 +4388,7 @@
 				C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */,
+				C54BB51F2518E559001591C2 /* ZBRequestManager.m in Sources */,
 				C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */,
 				C590FF2924D00A20000F36C9 /* SDWebImageWebPCoder.m in Sources */,
 				C5F78AED24BF297D008A46EC /* InfoTBVCell.m in Sources */,
@@ -4390,6 +4440,7 @@
 				C561614A24EE2EA2001CD851 /* RepeatPlayer.m in Sources */,
 				C5601F6924F6A02F0070FBD5 /* YHGPUImageBeautifyFilter.m in Sources */,
 				C5B1C7B524BAB919001923FB /* LOTRepeaterRenderer.m in Sources */,
+				C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,
 				C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */,
@@ -4414,6 +4465,7 @@
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5FE9CDD24B5F29C007B9878 /* ScanResultViewController.m in Sources */,
 				C5FE9CE124B5F29C007B9878 /* DIYScanVC.m in Sources */,
+				C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
 				C590FF3A24D00D23000F36C9 /* SDWebImageImageIOCoder.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,

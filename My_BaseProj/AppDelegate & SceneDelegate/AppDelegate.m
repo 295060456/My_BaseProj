@@ -6,6 +6,10 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
+#ifdef DEBUG
+#import <DoraemonKit/DoraemonManager.h>
+#endif
+
 #import "AppDelegate.h"
 #import "CustomSYSUITabBarController.h"
 

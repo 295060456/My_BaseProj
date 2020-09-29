@@ -23,11 +23,11 @@ static MKPublickDataManager *static_publicDataManage = nil;
     }
     return static_publicDataManage;
 }
-#pragma mark - 登录model
-- (MKLoginModel *)mkLoginModel{
-    MKLoginModel *bdmodel = [[MKLoginModel getUsingLKDBHelper] searchSingle:[MKLoginModel class] where:nil orderBy:nil];
-    return bdmodel;
-}
+//#pragma mark - 登录model
+//- (MKLoginModel *)mkLoginModel{
+//    MKLoginModel *bdmodel = [[MKLoginModel getUsingLKDBHelper] searchSingle:[MKLoginModel class] where:nil orderBy:nil];
+//    return bdmodel;
+//}
 
 
 @end

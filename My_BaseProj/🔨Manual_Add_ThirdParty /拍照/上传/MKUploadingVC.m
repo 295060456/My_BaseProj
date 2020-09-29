@@ -129,8 +129,16 @@ UITextViewDelegate
 -(void)choosePicBtnClickEvent:(UIButton *)sender{
     self.imagePickerVC = Nil;
     [NSObject feedbackGenerator];
-    [self choosePic:TZImagePickerControllerType_1];
     @weakify(self)
+    [self choosePic:TZImagePickerControllerType_1 imagePickerVCBlock:^(id data) {
+        @strongify(self)
+        //回调 这样就可以全部选择视频了
+        self.imagePickerVC.allowPickingVideo = YES;
+        self.imagePickerVC.allowPickingImage = NO;
+        self.imagePickerVC.allowPickingOriginalPhoto = NO;
+        self.imagePickerVC.allowPickingGif = NO;
+        self.imagePickerVC.allowPickingMultipleVideo = NO;
+    }];
     [self GettingPicBlock:^(id firstArg, ...)NS_REQUIRES_NIL_TERMINATION{
         @strongify(self)
         if (firstArg) {

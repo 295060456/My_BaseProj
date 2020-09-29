@@ -125,23 +125,26 @@
 		C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
 		C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BED24EFB58B00158D1E /* LZBTabBar.m */; };
 		C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF824EFB59200158D1E /* LZBTabBarVC.m */; };
+		C5A6D4FF252367870096910D /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */; };
+		C5A6D500252367870096910D /* BaseVC+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */; };
+		C5A6D501252367870096910D /* BaseVC+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4E4252367850096910D /* BaseVC+AFNReachability.m */; };
+		C5A6D502252367870096910D /* BaseVC+GifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4E8252367860096910D /* BaseVC+GifImageView.m */; };
+		C5A6D503252367870096910D /* BaseVC+BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EB252367860096910D /* BaseVC+BWShareView.m */; };
+		C5A6D504252367870096910D /* BaseVC+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EC252367860096910D /* BaseVC+BRPickerView.m */; };
+		C5A6D505252367870096910D /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EE252367860096910D /* BaseVC.m */; };
+		C5A6D506252367870096910D /* BaseVC+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */; };
+		C5A6D507252367870096910D /* BaseVC+TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */; };
+		C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */; };
+		C5A6D509252367870096910D /* BaseVC+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */; };
+		C5A6D50A252367870096910D /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F9252367860096910D /* BaseVC+TZLocationManager.m */; };
+		C5A6D50B252367870096910D /* BaseVC+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FA252367860096910D /* BaseVC+AlertController.m */; };
+		C5A6D50C252367870096910D /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FB252367860096910D /* UIViewController+Shake.m */; };
+		C5A6D50D252367870096910D /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
 		C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */; };
 		C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */; };
-		C5AA48DF250BB7B3009F583F /* BaseVC+GifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48C8250BB7B1009F583F /* BaseVC+GifImageView.m */; };
-		C5AA48E1250BB7B3009F583F /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48CB250BB7B1009F583F /* BaseVC+JPImageresizerView.m */; };
-		C5AA48E2250BB7B3009F583F /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48CE250BB7B1009F583F /* BaseVC+TZImagePickerControllerDelegate.m */; };
-		C5AA48E3250BB7B3009F583F /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48CF250BB7B1009F583F /* BaseVC+TZLocationManager.m */; };
-		C5AA48E4250BB7B3009F583F /* BaseVC+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48D1250BB7B1009F583F /* BaseVC+BRPickerView.m */; };
-		C5AA48E5250BB7B3009F583F /* BaseVC+BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48D4250BB7B2009F583F /* BaseVC+BWShareView.m */; };
-		C5AA48E6250BB7B3009F583F /* BaseVC+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48D5250BB7B2009F583F /* BaseVC+BackBtn.m */; };
-		C5AA48E7250BB7B3009F583F /* BaseVC+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48D6250BB7B2009F583F /* BaseVC+AFNReachability.m */; };
-		C5AA48E8250BB7B3009F583F /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48D9250BB7B2009F583F /* BaseVC+JXCategoryListContentViewDelegate.m */; };
-		C5AA48E9250BB7B3009F583F /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48DB250BB7B2009F583F /* BaseVC.m */; };
-		C5AA48EA250BB7B3009F583F /* BaseVC+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48DE250BB7B2009F583F /* BaseVC+OpenURL.m */; };
-		C5AA48F0250BB850009F583F /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA48EF250BB850009F583F /* UIViewController+Shake.m */; };
 		C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */; };
 		C5AA4908250C8C2D009F583F /* NSObject+SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */; };
 		C5AFBF02250B265000EC14B7 /* del_Photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AFBF00250B265000EC14B7 /* del_Photo@3x.png */; };
@@ -262,7 +265,6 @@
 		C5D8289324FB65D8002DD3E6 /* fangzi.json in Resources */ = {isa = PBXBuildFile; fileRef = C5D8288F24FB65D8002DD3E6 /* fangzi.json */; };
 		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
 		C5E3C7772517869000F9A150 /* UIImage+screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E3C7762517869000F9A150 /* UIImage+screenshot.m */; };
-		C5E3C7E72518841B00F9A150 /* BaseVC+TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E3C7E52518841B00F9A150 /* BaseVC+TZImagePickerController.m */; };
 		C5E4F7DD251B0ECF00F7F205 /* Indeterminate Spinner - Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E4F7DB251B0ECF00F7F205 /* Indeterminate Spinner - Small@2x.png */; };
 		C5E4F7DE251B0ECF00F7F205 /* Indeterminate Spinner - Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E4F7DC251B0ECF00F7F205 /* Indeterminate Spinner - Small@3x.png */; };
 		C5E4F8FD251B0FCD00F7F205 /* gif_header_28@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E4F8C6251B0FC900F7F205 /* gif_header_28@3x.png */; };
@@ -795,6 +797,36 @@
 		C5A46BF724EFB59200158D1E /* LZBTabBarVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarVCDelegate.h; sourceTree = "<group>"; };
 		C5A46BF824EFB59200158D1E /* LZBTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarVC.m; sourceTree = "<group>"; };
 		C5A46BF924EFB59200158D1E /* UIViewController+LZBTabBarVCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LZBTabBarVCItem.h"; sourceTree = "<group>"; };
+		C5A6D4E1252367850096910D /* BaseVC+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+OpenURL.h"; sourceTree = "<group>"; };
+		C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JXCategoryListContentViewDelegate.m"; sourceTree = "<group>"; };
+		C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
+		C5A6D4E4252367850096910D /* BaseVC+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+AFNReachability.m"; sourceTree = "<group>"; };
+		C5A6D4E5252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+JXCategoryListContentViewDelegate.h"; sourceTree = "<group>"; };
+		C5A6D4E6252367850096910D /* BaseVC+TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZImagePickerController.h"; sourceTree = "<group>"; };
+		C5A6D4E7252367850096910D /* BaseVC+TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZLocationManager.h"; sourceTree = "<group>"; };
+		C5A6D4E8252367860096910D /* BaseVC+GifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+GifImageView.m"; sourceTree = "<group>"; };
+		C5A6D4E9252367860096910D /* BaseVC+BackBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BackBtn.h"; sourceTree = "<group>"; };
+		C5A6D4EA252367860096910D /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Shake.h"; sourceTree = "<group>"; };
+		C5A6D4EB252367860096910D /* BaseVC+BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+BWShareView.m"; sourceTree = "<group>"; };
+		C5A6D4EC252367860096910D /* BaseVC+BRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+BRPickerView.m"; sourceTree = "<group>"; };
+		C5A6D4ED252367860096910D /* BaseVC+TZImagePickerControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZImagePickerControllerDelegate.h"; sourceTree = "<group>"; };
+		C5A6D4EE252367860096910D /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		C5A6D4EF252367860096910D /* BaseVC+GifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+GifImageView.h"; sourceTree = "<group>"; };
+		C5A6D4F0252367860096910D /* BaseVC+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+JPImageresizerView.h"; sourceTree = "<group>"; };
+		C5A6D4F1252367860096910D /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		C5A6D4F2252367860096910D /* BaseVC+AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+AlertController.h"; sourceTree = "<group>"; };
+		C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+OpenURL.m"; sourceTree = "<group>"; };
+		C5A6D4F4252367860096910D /* BaseVC+BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BWShareView.h"; sourceTree = "<group>"; };
+		C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerController.m"; sourceTree = "<group>"; };
+		C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JPImageresizerView.m"; sourceTree = "<group>"; };
+		C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+BackBtn.m"; sourceTree = "<group>"; };
+		C5A6D4F8252367860096910D /* BaseVC+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+AFNReachability.h"; sourceTree = "<group>"; };
+		C5A6D4F9252367860096910D /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
+		C5A6D4FA252367860096910D /* BaseVC+AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+AlertController.m"; sourceTree = "<group>"; };
+		C5A6D4FB252367860096910D /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
+		C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerControllerDelegate.m"; sourceTree = "<group>"; };
+		C5A6D4FD252367870096910D /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
+		C5A6D4FE252367870096910D /* BaseVC+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+MJRefresh.h"; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -805,30 +837,6 @@
 		C5A7CE9B24C70B7500E502A9 /* MKLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLoginModel.h; sourceTree = "<group>"; };
 		C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPublickDataManager.m; sourceTree = "<group>"; };
 		C5A7CE9D24C70B7600E502A9 /* MKPublickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPublickDataManager.h; sourceTree = "<group>"; };
-		C5AA48C7250BB7B1009F583F /* BaseVC+BackBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+BackBtn.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BackBtn.h"; sourceTree = "<group>"; };
-		C5AA48C8250BB7B1009F583F /* BaseVC+GifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+GifImageView.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+GifImageView.m"; sourceTree = "<group>"; };
-		C5AA48CA250BB7B1009F583F /* BaseVC+TZImagePickerControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+TZImagePickerControllerDelegate.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+TZImagePickerControllerDelegate.h"; sourceTree = "<group>"; };
-		C5AA48CB250BB7B1009F583F /* BaseVC+JPImageresizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+JPImageresizerView.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+JPImageresizerView.m"; sourceTree = "<group>"; };
-		C5AA48CC250BB7B1009F583F /* BaseVC+GifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+GifImageView.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+GifImageView.h"; sourceTree = "<group>"; };
-		C5AA48CD250BB7B1009F583F /* BaseVC+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+JPImageresizerView.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+JPImageresizerView.h"; sourceTree = "<group>"; };
-		C5AA48CE250BB7B1009F583F /* BaseVC+TZImagePickerControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+TZImagePickerControllerDelegate.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+TZImagePickerControllerDelegate.m"; sourceTree = "<group>"; };
-		C5AA48CF250BB7B1009F583F /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+TZLocationManager.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
-		C5AA48D0250BB7B1009F583F /* BaseVC+TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+TZLocationManager.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+TZLocationManager.h"; sourceTree = "<group>"; };
-		C5AA48D1250BB7B1009F583F /* BaseVC+BRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+BRPickerView.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BRPickerView.m"; sourceTree = "<group>"; };
-		C5AA48D2250BB7B1009F583F /* BaseVC+JXCategoryListContentViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+JXCategoryListContentViewDelegate.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+JXCategoryListContentViewDelegate.h"; sourceTree = "<group>"; };
-		C5AA48D3250BB7B2009F583F /* BaseVC+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+OpenURL.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+OpenURL.h"; sourceTree = "<group>"; };
-		C5AA48D4250BB7B2009F583F /* BaseVC+BWShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+BWShareView.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BWShareView.m"; sourceTree = "<group>"; };
-		C5AA48D5250BB7B2009F583F /* BaseVC+BackBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+BackBtn.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BackBtn.m"; sourceTree = "<group>"; };
-		C5AA48D6250BB7B2009F583F /* BaseVC+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+AFNReachability.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+AFNReachability.m"; sourceTree = "<group>"; };
-		C5AA48D7250BB7B2009F583F /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseVC.h; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC.h"; sourceTree = "<group>"; };
-		C5AA48D8250BB7B2009F583F /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+BRPickerView.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
-		C5AA48D9250BB7B2009F583F /* BaseVC+JXCategoryListContentViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+JXCategoryListContentViewDelegate.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+JXCategoryListContentViewDelegate.m"; sourceTree = "<group>"; };
-		C5AA48DA250BB7B2009F583F /* BaseVC+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+AFNReachability.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+AFNReachability.h"; sourceTree = "<group>"; };
-		C5AA48DB250BB7B2009F583F /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseVC.m; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC.m"; sourceTree = "<group>"; };
-		C5AA48DC250BB7B2009F583F /* BaseVC+BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BaseVC+BWShareView.h"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+BWShareView.h"; sourceTree = "<group>"; };
-		C5AA48DE250BB7B2009F583F /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BaseVC+OpenURL.m"; path = "../../../../拍摄功能/Shooting/BaseCustomizeUIKit/UIViewController/BaseVC+OpenURL.m"; sourceTree = "<group>"; };
-		C5AA48EE250BB850009F583F /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Shake.h"; path = "../../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/BaseCustomizeUIKit/UIViewController/UIViewController+Shake.h"; sourceTree = "<group>"; };
-		C5AA48EF250BB850009F583F /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Shake.m"; path = "../../../../../GitLab/monkeyKingVideo/MonkeyKingVideo/BaseCustomizeUIKit/UIViewController/UIViewController+Shake.m"; sourceTree = "<group>"; };
 		C5AA4903250C8C2D009F583F /* NSObject+SPAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPAlertController.h"; sourceTree = "<group>"; };
 		C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SYSAlertController.m"; sourceTree = "<group>"; };
 		C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPAlertController.m"; sourceTree = "<group>"; };
@@ -1066,8 +1074,6 @@
 		C5E3C7762517869000F9A150 /* UIImage+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+screenshot.m"; sourceTree = "<group>"; };
 		C5E3C79E25179B3800F9A150 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		C5E3C79F25179B7800F9A150 /* 20190619125944370.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20190619125944370.png; sourceTree = "<group>"; };
-		C5E3C7E52518841B00F9A150 /* BaseVC+TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerController.m"; sourceTree = "<group>"; };
-		C5E3C7E62518841B00F9A150 /* BaseVC+TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+TZImagePickerController.h"; sourceTree = "<group>"; };
 		C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200809_12.png; sourceTree = "<group>"; };
 		C5E4F7DB251B0ECF00F7F205 /* Indeterminate Spinner - Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indeterminate Spinner - Small@2x.png"; sourceTree = "<group>"; };
 		C5E4F7DC251B0ECF00F7F205 /* Indeterminate Spinner - Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indeterminate Spinner - Small@3x.png"; sourceTree = "<group>"; };
@@ -3656,32 +3662,36 @@
 		C5FE9B5624B5F203007B9878 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5AA48D7250BB7B2009F583F /* BaseVC.h */,
-				C5AA48DB250BB7B2009F583F /* BaseVC.m */,
-				C5AA48EE250BB850009F583F /* UIViewController+Shake.h */,
-				C5AA48EF250BB850009F583F /* UIViewController+Shake.m */,
-				C5AA48DA250BB7B2009F583F /* BaseVC+AFNReachability.h */,
-				C5AA48D6250BB7B2009F583F /* BaseVC+AFNReachability.m */,
-				C5AA48D8250BB7B2009F583F /* BaseVC+BRPickerView.h */,
-				C5AA48D1250BB7B1009F583F /* BaseVC+BRPickerView.m */,
-				C5AA48DC250BB7B2009F583F /* BaseVC+BWShareView.h */,
-				C5AA48D4250BB7B2009F583F /* BaseVC+BWShareView.m */,
-				C5AA48C7250BB7B1009F583F /* BaseVC+BackBtn.h */,
-				C5AA48D5250BB7B2009F583F /* BaseVC+BackBtn.m */,
-				C5AA48CC250BB7B1009F583F /* BaseVC+GifImageView.h */,
-				C5AA48C8250BB7B1009F583F /* BaseVC+GifImageView.m */,
-				C5AA48CD250BB7B1009F583F /* BaseVC+JPImageresizerView.h */,
-				C5AA48CB250BB7B1009F583F /* BaseVC+JPImageresizerView.m */,
-				C5AA48D2250BB7B1009F583F /* BaseVC+JXCategoryListContentViewDelegate.h */,
-				C5AA48D9250BB7B2009F583F /* BaseVC+JXCategoryListContentViewDelegate.m */,
-				C5AA48D3250BB7B2009F583F /* BaseVC+OpenURL.h */,
-				C5AA48DE250BB7B2009F583F /* BaseVC+OpenURL.m */,
-				C5E3C7E62518841B00F9A150 /* BaseVC+TZImagePickerController.h */,
-				C5E3C7E52518841B00F9A150 /* BaseVC+TZImagePickerController.m */,
-				C5AA48CA250BB7B1009F583F /* BaseVC+TZImagePickerControllerDelegate.h */,
-				C5AA48CE250BB7B1009F583F /* BaseVC+TZImagePickerControllerDelegate.m */,
-				C5AA48D0250BB7B1009F583F /* BaseVC+TZLocationManager.h */,
-				C5AA48CF250BB7B1009F583F /* BaseVC+TZLocationManager.m */,
+				C5A6D4F1252367860096910D /* BaseVC.h */,
+				C5A6D4EE252367860096910D /* BaseVC.m */,
+				C5A6D4F8252367860096910D /* BaseVC+AFNReachability.h */,
+				C5A6D4E4252367850096910D /* BaseVC+AFNReachability.m */,
+				C5A6D4F2252367860096910D /* BaseVC+AlertController.h */,
+				C5A6D4FA252367860096910D /* BaseVC+AlertController.m */,
+				C5A6D4E9252367860096910D /* BaseVC+BackBtn.h */,
+				C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */,
+				C5A6D4FD252367870096910D /* BaseVC+BRPickerView.h */,
+				C5A6D4EC252367860096910D /* BaseVC+BRPickerView.m */,
+				C5A6D4F4252367860096910D /* BaseVC+BWShareView.h */,
+				C5A6D4EB252367860096910D /* BaseVC+BWShareView.m */,
+				C5A6D4EF252367860096910D /* BaseVC+GifImageView.h */,
+				C5A6D4E8252367860096910D /* BaseVC+GifImageView.m */,
+				C5A6D4F0252367860096910D /* BaseVC+JPImageresizerView.h */,
+				C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */,
+				C5A6D4E5252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.h */,
+				C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */,
+				C5A6D4FE252367870096910D /* BaseVC+MJRefresh.h */,
+				C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */,
+				C5A6D4E1252367850096910D /* BaseVC+OpenURL.h */,
+				C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */,
+				C5A6D4E6252367850096910D /* BaseVC+TZImagePickerController.h */,
+				C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */,
+				C5A6D4ED252367860096910D /* BaseVC+TZImagePickerControllerDelegate.h */,
+				C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */,
+				C5A6D4E7252367850096910D /* BaseVC+TZLocationManager.h */,
+				C5A6D4F9252367860096910D /* BaseVC+TZLocationManager.m */,
+				C5A6D4EA252367860096910D /* UIViewController+Shake.h */,
+				C5A6D4FB252367860096910D /* UIViewController+Shake.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -4679,6 +4689,7 @@
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */,
+				C5A6D507252367870096910D /* BaseVC+TZImagePickerController.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C561616C24EE493B001CD851 /* PhotoVC+VM.m in Sources */,
 				C590FF2824D00A20000F36C9 /* UIImage+WebP.m in Sources */,
@@ -4686,6 +4697,7 @@
 				C561613C24EE2E78001CD851 /* CustomerGPUImagePlayerVC.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
+				C5A6D50D252367870096910D /* BaseVC+TZImagePickerControllerDelegate.m in Sources */,
 				C5F78AEE24BF297D008A46EC /* LoadMoreTBVCell.m in Sources */,
 				C5B5204124D6BCC400579178 /* UIBarButtonItem+GKCategory.m in Sources */,
 				C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */,
@@ -4694,11 +4706,11 @@
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C5B1C7C824BAB91A001923FB /* LOTShapeGroup.m in Sources */,
 				C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */,
+				C5A6D50B252367870096910D /* BaseVC+AlertController.m in Sources */,
 				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
 				C5B1C7CE24BAB91A001923FB /* LOTLayer.m in Sources */,
 				C5B1C7C524BAB91A001923FB /* LOTAssetGroup.m in Sources */,
 				C5B1C7B024BAB919001923FB /* LOTShapeFill.m in Sources */,
-				C5AA48E4250BB7B3009F583F /* BaseVC+BRPickerView.m in Sources */,
 				C5FE9CDB24B5F29C007B9878 /* StyleDIY.m in Sources */,
 				C5B1C7DC24BAB91A001923FB /* LOTAnimationView.m in Sources */,
 				C5FE9CED24B5F29C007B9878 /* HAHandleDemoView.m in Sources */,
@@ -4714,12 +4726,10 @@
 				C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */,
 				C5FE9D1224B5F29C007B9878 /* GettingDeviceIP.m in Sources */,
 				C5B1C7CC24BAB91A001923FB /* LOTLayerContainer.m in Sources */,
-				C5AA48E1250BB7B3009F583F /* BaseVC+JPImageresizerView.m in Sources */,
 				C561617624EE4959001CD851 /* StartOrPauseBtn.m in Sources */,
 				C5F78AE724BF297D008A46EC /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5B1C7B224BAB919001923FB /* LOTTransformInterpolator.m in Sources */,
-				C5AA48EA250BB7B3009F583F /* BaseVC+OpenURL.m in Sources */,
 				C5B5204624D6BCC400579178 /* UIViewController+GKCategory.m in Sources */,
 				C5FE9D0524B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9CFF24B5F29C007B9878 /* SearchModel.m in Sources */,
@@ -4736,7 +4746,6 @@
 				C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */,
-				C5AA48E6250BB7B3009F583F /* BaseVC+BackBtn.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
@@ -4748,7 +4757,6 @@
 				C5FE9B6724B5F203007B9878 /* NSString+Extras.m in Sources */,
 				C5FE9CB524B5F29C007B9878 /* PopUpVC.m in Sources */,
 				C5B1C7D524BAB91A001923FB /* LOTStrokeRenderer.m in Sources */,
-				C5AA48E3250BB7B3009F583F /* BaseVC+TZLocationManager.m in Sources */,
 				C5FE9AB624B5F0EF007B9878 /* NSlogToDocumentFolder.m in Sources */,
 				C5C67C6124FE4FAB000A26B8 /* CADisplayLink_TimerManager.m in Sources */,
 				C561618124EE4976001CD851 /* MKUploadingVC.m in Sources */,
@@ -4767,6 +4775,7 @@
 				C5B1C7BA24BAB919001923FB /* LOTMask.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
+				C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */,
 				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
@@ -4779,6 +4788,7 @@
 				C5B1C7DE24BAB91A001923FB /* LOTTrimPathNode.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
 				C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */,
+				C5A6D50C252367870096910D /* UIViewController+Shake.m in Sources */,
 				C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */,
 				C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */,
 				C5B1C7D224BAB91A001923FB /* LOTShapeTransform.m in Sources */,
@@ -4787,24 +4797,24 @@
 				C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */,
 				C590FF3D24D00D23000F36C9 /* SDWebImageCoderHelper.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
-				C5AA48F0250BB850009F583F /* UIViewController+Shake.m in Sources */,
 				C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */,
+				C5A6D501252367870096910D /* BaseVC+AFNReachability.m in Sources */,
 				C5B1C7E424BAB91A001923FB /* LOTArrayInterpolator.m in Sources */,
 				C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */,
 				C5B1C7CD24BAB91A001923FB /* LOTInterpolatorCallback.m in Sources */,
 				C5B5203E24D6BCC400579178 /* GKNavigationBarConfigure.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
-				C5AA48E5250BB7B3009F583F /* BaseVC+BWShareView.m in Sources */,
+				C5A6D500252367870096910D /* BaseVC+MJRefresh.m in Sources */,
+				C5A6D504252367870096910D /* BaseVC+BRPickerView.m in Sources */,
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
 				C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */,
 				C5B1C7AE24BAB919001923FB /* LOTAnimationCache.m in Sources */,
-				C5AA48E8250BB7B3009F583F /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */,
 				C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */,
 				C5FE9D1524B5F29C007B9878 /* HWTFCodeBView.m in Sources */,
 				C5FE9B6624B5F203007B9878 /* BaseNavigationVC.m in Sources */,
 				C572A28924FCBDDE000A1687 /* UIImage+Tailor.m in Sources */,
 				C5FE9D1024B5F29C007B9878 /* XLChannelView.m in Sources */,
-				C5AA48E2250BB7B3009F583F /* BaseVC+TZImagePickerControllerDelegate.m in Sources */,
+				C5A6D4FF252367870096910D /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */,
 				C561617B24EE496C001CD851 /* MKShootVC+VM.m in Sources */,
 				C590FF4024D00D23000F36C9 /* NSImage+WebCache.m in Sources */,
 				C5B1C7D624BAB91A001923FB /* LOTGradientFillRender.m in Sources */,
@@ -4854,7 +4864,6 @@
 				C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */,
 				C5B1C7BB24BAB919001923FB /* LOTSizeInterpolator.m in Sources */,
 				C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */,
-				C5AA48E9250BB7B3009F583F /* BaseVC.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
 				C561617524EE4959001CD851 /* MyCell.m in Sources */,
 				C52E894D250F752E0070356F /* AES.m in Sources */,
@@ -4870,7 +4879,6 @@
 				C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */,
 				C5B1C7C424BAB91A001923FB /* LOTMaskContainer.m in Sources */,
 				C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */,
-				C5AA48DF250BB7B3009F583F /* BaseVC+GifImageView.m in Sources */,
 				C561614A24EE2EA2001CD851 /* RepeatPlayer.m in Sources */,
 				C5601F6924F6A02F0070FBD5 /* YHGPUImageBeautifyFilter.m in Sources */,
 				C5B1C7B524BAB919001923FB /* LOTRepeaterRenderer.m in Sources */,
@@ -4884,10 +4892,11 @@
 				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
+				C5A6D506252367870096910D /* BaseVC+OpenURL.m in Sources */,
 				C5FAC33124C5747900372BCD /* TBVCell_style_02.m in Sources */,
 				C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
-				C5AA48E7250BB7B3009F583F /* BaseVC+AFNReachability.m in Sources */,
+				C5A6D503252367870096910D /* BaseVC+BWShareView.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C5B1C7E724BAB91A001923FB /* LOTShapePath.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
@@ -4902,6 +4911,7 @@
 				C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
 				C590FF3A24D00D23000F36C9 /* SDWebImageImageIOCoder.m in Sources */,
+				C5A6D50A252367870096910D /* BaseVC+TZLocationManager.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,
 				C5FE9ACB24B5F19E007B9878 /* ArcTBVCell.m in Sources */,
 				C5E3C7772517869000F9A150 /* UIImage+screenshot.m in Sources */,
@@ -4948,12 +4958,12 @@
 				C5FE9CE824B5F29C007B9878 /* LongPressToDeleteImageView.m in Sources */,
 				C5B1C7C624BAB91A001923FB /* LOTPathAnimator.m in Sources */,
 				C533701124DB00280082847C /* BRStringPickerView.m in Sources */,
+				C5A6D509252367870096910D /* BaseVC+BackBtn.m in Sources */,
 				C590FF3F24D00D23000F36C9 /* SDWebImageFrame.m in Sources */,
 				C5B1C7C024BAB91A001923FB /* LOTShapeRepeater.m in Sources */,
 				C5D4FBD624CFDFE70024A292 /* MKCommentModel.m in Sources */,
 				C5B1C7D024BAB91A001923FB /* LOTCircleAnimator.m in Sources */,
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
-				C5E3C7E72518841B00F9A150 /* BaseVC+TZImagePickerController.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
 				C5FE9B6D24B5F203007B9878 /* HQTextField.m in Sources */,
 				C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */,
@@ -4964,11 +4974,13 @@
 				C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */,
 				C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */,
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
+				C5A6D505252367870096910D /* BaseVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
 				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
 				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
+				C5A6D502252367870096910D /* BaseVC+GifImageView.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,

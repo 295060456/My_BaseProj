@@ -8,7 +8,6 @@ target 'My_BaseProj' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  
   pod 'DoraemonKit' # https://github.com/didi/DoraemonKit 滴滴打车出的工具
   
   # Pods for My_BaseProj
@@ -55,6 +54,7 @@ target 'My_BaseProj' do
   pod 'TXScrollLabelView' # https://github.com/tingxins/TXScrollLabelView “走马灯”效果 TXScrollLabelView, the best way to show & display information such as adverts / boardcast / onsale e.g. with a customView.
   pod 'HCSStarRatingView' # https://github.com/hsousa/HCSStarRatingView 星级评分显示 Simple star rating view for iOS written in Objective-C
   pod 'NJKWebViewProgress'  # https://github.com/ninjinkun/NJKWebViewProgress Web_View进度条 UIWebView progress interface
+  pod 'GoogleTagManager'
   #pod 'MBProgressHUD'
   pod 'MBProgressHUD+WJExtension' # https://github.com/WJCha/MBProgressHUD-WJExtension 基于 MBProgressHUD 的封装、并增加了操作成功与失败的HUD动画与祝贺撒花效果
   #pod 'SVProgressHUD' # https://github.com/SVProgressHUD/SVProgressHUD 是一个弹出提示层，用来提示 网络加载 或 提示对错 A clean and lightweight progress HUD for your iOS and tvOS app
@@ -78,7 +78,7 @@ target 'My_BaseProj' do
 #  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
 #  pod 'DYVideoCamera' # https://github.com/Sexy-Queen-team/DYVideoCamera DYVideoCamera 是一个适用于 iOS 视频录制组件,可高度定制化和二次开发,特色是支持自定义 比特率, 滤镜, 裁剪, 音乐, 试听音乐实时缓存。
   pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
-  pod 'JJException' #https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
+  pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
 #  pod 'ZZCircleProgress'
   pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']
@@ -104,7 +104,7 @@ target 'My_BaseProj' do
   pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
   #  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
 #  pod 'FMDB/SQLCipher' # 数据库加解密
-  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
+#  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   
   pod 'GPUImage' # https://github.com/BradLarson/GPUImage
   pod 'JSONModel' # https://github.com/jsonmodel/jsonmodel
@@ -123,7 +123,6 @@ target 'My_BaseProj' do
 #  pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
   pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
   pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
-
 
   target 'My_BaseProjTests' do
     inherit! :search_paths

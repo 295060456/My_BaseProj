@@ -452,7 +452,7 @@ forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
                                      0,
                                      44,
                                      44);
-        [_closeBtn setImage:kIMG(@"Close")
+        [_closeBtn setImage:KIMG(@"Close")
                    forState:UIControlStateNormal];
         [_closeBtn addTarget:self
                       action:@selector(closeBtnClickEvent:)

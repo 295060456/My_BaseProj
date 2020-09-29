@@ -745,6 +745,7 @@
 		C58F046424EBD66100B6D09C /* ShowAvailableFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAvailableFont.m; sourceTree = "<group>"; };
 		C58F049924EC112F00B6D09C /* BaseGPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseGPUImageView.m; sourceTree = "<group>"; };
 		C58F049A24EC112F00B6D09C /* BaseGPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGPUImageView.h; sourceTree = "<group>"; };
+		C58FDEEB25233E6200E020D3 /* LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingImage.h; path = "../../../../记住账号和密码输入框/TFRememberHistoryInputContentWithDropList/BaseCustomizeUIKit/UIImage/LoadingImage.h"; sourceTree = "<group>"; };
 		C590FE0524CFE2D3000F36C9 /* 这个类教你怎么集成 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "这个类教你怎么集成"; sourceTree = "<group>"; };
 		C590FF2224D00A20000F36C9 /* 手动集成 SDWebImage_WebP */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "手动集成 SDWebImage_WebP"; sourceTree = "<group>"; };
 		C590FF2324D00A20000F36C9 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
@@ -3433,6 +3434,7 @@
 		C5FE9B0D24B5F203007B9878 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				C58FDEEB25233E6200E020D3 /* LoadingImage.h */,
 				C5E3C7752517869000F9A150 /* UIImage+screenshot.h */,
 				C5E3C7762517869000F9A150 /* UIImage+screenshot.m */,
 				C572A28424FCBDDD000A1687 /* UIImage+Overlay.h */,
@@ -4246,8 +4248,8 @@
 				C5FE9A3024B5EF2B007B9878 /* Sources */,
 				C5FE9A3124B5EF2B007B9878 /* Frameworks */,
 				C5FE9A3224B5EF2B007B9878 /* Resources */,
-				BB10346CAB6194AD8F8ED678 /* [CP] Embed Pods Frameworks */,
-				1BEBE930A4EDF52907895925 /* [CP] Copy Pods Resources */,
+				D18FD3E3B1D56504FFB38E2C /* [CP] Embed Pods Frameworks */,
+				D38B7E0D8CBF4F7A3B94E5FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4587,24 +4589,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1BEBE930A4EDF52907895925 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BB10346CAB6194AD8F8ED678 /* [CP] Embed Pods Frameworks */ = {
+		D18FD3E3B1D56504FFB38E2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4619,6 +4604,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D38B7E0D8CBF4F7A3B94E5FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5DD8D9475CF9917FE67C420 /* [CP] Check Pods Manifest.lock */ = {

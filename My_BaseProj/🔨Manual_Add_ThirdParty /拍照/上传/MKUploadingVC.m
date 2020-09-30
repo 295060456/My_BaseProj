@@ -6,23 +6,23 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 #import "LGiOSBtn.h"
+#import "AgreementView.h"
+
 #import "MKUploadingVC.h"
 #import "MKUploadingVC+VM.h"
 
-#define InputLimit 40
+#define InputLimit 60
 
 @interface MKUploadingVC ()
 <
 UITextViewDelegate
 ,DZDeleteButtonDelegate
->{
-    UIButton *btn;
-}
+>
 
 @property(nonatomic,strong)UIView *backView;
 @property(nonatomic,strong)SZTextView *textView;
 @property(nonatomic,strong)UILabel *tipsLab;
-@property(nonatomic,strong)LGiOSBtn *choosePicBtn;
+@property(nonatomic,strong)LGiOSBtn *__block choosePicBtn;
 @property(nonatomic,strong)UIButton *releaseBtn;
 @property(nonatomic,assign)int inputLimit;
 @property(nonatomic,strong)UIImage *imgData;
@@ -30,8 +30,7 @@ UITextViewDelegate
 @property(nonatomic,strong)NSData *__block vedioData;
 @property(nonatomic,strong)AVURLAsset *__block urlAsset;
 
-@property(nonatomic,strong)AWRichText *richText;
-@property(nonatomic,strong)AWRichTextLabel *rtLabel;
+@property(nonatomic,strong)AgreementView *agreementView;
 
 @end
 
@@ -50,40 +49,22 @@ UITextViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:KIMG(@"nodata")];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:KBuddleIMG(@"Others", nil, @"nodata")];
     self.backView.alpha = 1;
     self.textView.alpha = 1;
     self.choosePicBtn.alpha = 1;
     self.tipsLab.alpha = 1;
     
-    if (!_rtLabel) {
-        ///构造richtext
-        AWRichText *rt = AWRichText.new;
-        _richText = rt;
-        [self createRichText];
-    
-        ///创建label
-        _rtLabel = rt.createRichTextLabel;
-        [self.view addSubview:_rtLabel];
-        
-        ///计算cell（富文本）高度
-        [_richText attributedString];
-        _richText.truncatingTokenComp = [[AWRTTextComponent alloc] init].AWText(@"~~~").AWFont([UIFont systemFontOfSize:12]).AWColor(kRedColor);
-        ///注意，autolayout中可使用rtMaxWidth这个属性，也可以使用rtFrame
-        ///若此处将rtFrame的高度改成一个非零较小的值如60，会有截断效果。
-        ///截断字符由truncatingTokenComp决定，如不传，默认为 "..."。
-        _rtLabel.rtFrame = CGRectMake(SCREEN_WIDTH / 2,
-                                      self.choosePicBtn.mj_y + self.choosePicBtn.mj_h + SCALING_RATIO(10),
-                                      SCREEN_WIDTH - 20,
-                                      0);
-    }
     self.releaseBtn.alpha = 0.4;
+    self.agreementView.alpha = 1;
+    [IQKeyboardManager sharedManager].enable = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.isClickMKUploadingVCView = NO;
     [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
+//    [self ff];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -95,10 +76,66 @@ UITextViewDelegate
     [super viewDidLayoutSubviews];
     NSLog(@"");
 }
+
+-(void)ff{
+    NSMutableArray *dataMutArr = [self autoChoiceRes];
+    PHAsset *phAsset = (PHAsset *)dataMutArr.lastObject;
+    
+    [FileFolderHandleTool getVedioFromPHAsset:phAsset
+                                     complete:^(id data) {
+        if ([data isKindOfClass:AVURLAsset.class]) {
+            self.urlAsset = (AVURLAsset *)data;
+            NSURL *url = self.urlAsset.URL;
+            self.vedioData = [NSData dataWithContentsOfURL:url];
+            [GPUImageTools.new getImage:url.absoluteString];
+        }
+    }];
+}
+///进来以后直接选择最后一个资源文件，直接绕开TZ
+-(NSMutableArray *)autoChoiceRes{
+/*
+ PHAsset: 代表照片库中的一个资源，跟 ALAsset 类似，通过 PHAsset 可以获取和保存资源
+ PHFetchOptions: 获取资源时的参数，可以传 nil，即使用系统默认值
+ PHFetchResult: 表示一系列的资源集合，也可以是相册的集合
+ PHAssetCollection: 表示一个相册或者一个时刻，或者是一个「智能相册（系统提供的特定的一系列相册，例如：最近删除，视频列表，收藏等等，如下图所示）
+ PHImageManager: 用于处理资源的加载，加载图片的过程带有缓存处理，可以通过传入一个 PHImageRequestOptions 控制资源的输出尺寸，同异步获取，是否获取iCloud图片等
+ PHCachingImageManager: 继承 PHImageManager ，对Photos的图片或视频资源提供了加载或生成预览缩略图和全尺寸图片的方法，针对预处理巨量的资源进行了优化。
+ PHImageRequestOptions: 如上面所说，控制加载图片时的一系列参数
+*/
+
+    //获取所有的系统相册
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
+                                                                          subtype:PHAssetCollectionSubtypeAlbumRegular
+                                                                          options:nil];
+    NSMutableArray <PHFetchResult *>*dataMutArr = NSMutableArray.array;
+    //将smartAlbums中的相册添加到数组中(最近添加，相机胶卷,视频...)
+    for (PHAssetCollection *collection in smartAlbums) {
+        //如果不想显示 ‘最近添加’ ‘收藏’等 可以这样做
+        if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumRecentlyAdded ||
+            collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumFavorites) {
+            continue;
+        }
+        //遍历所有相册，只显示有视频或照片的相册
+        PHFetchOptions *fetchOptions = PHFetchOptions.new;
+        fetchOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType == %d || mediaType == %d", PHAssetMediaTypeImage,PHAssetMediaTypeVideo];
+        //按创建时间排序
+        fetchOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate"
+                                                                       ascending:YES]];
+        
+        PHFetchResult *assetResults = [PHAsset fetchAssetsInAssetCollection:collection
+                                                                    options:fetchOptions];
+        if (assetResults.count > 0) {
+            [dataMutArr addObject:assetResults];
+        }
+    }return dataMutArr;
+}
+
+
 ///发布成功以后做的事情
 -(void)afterRelease{
     [self deleteButtonRemoveSelf:self.choosePicBtn];
-    [self btnClickEvent:btn];
+    [self btnClickEvent:self.agreementView.agreementBtn];
+    [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
     self.textView.text = @"";
 }
 
@@ -110,8 +147,15 @@ UITextViewDelegate
 #pragma mark —— 点击事件
 -(void)btnClickEvent:(UIButton *)sender{
     NSLog(@"已阅读并同意上传须知");
-    btn.selected = !btn.selected;
-    if (btn.selected) {
+    sender.selected = !sender.selected;
+}
+
+-(void)sure{
+    [self choosePicBtnClickEvent:nil];
+}
+
+-(void)KK{
+    if (self.imgData && ![NSString isNullString:self.textView.text]) {
         self.releaseBtn.userInteractionEnabled = YES;
         self.releaseBtn.alpha = 1;
         self.releaseBtn.backgroundColor = kRedColor;
@@ -121,12 +165,8 @@ UITextViewDelegate
         self.releaseBtn.backgroundColor = KLightGrayColor;
     }
 }
-
--(void)sure{
-    [self choosePicBtnClickEvent:nil];
-}
-
--(void)choosePicBtnClickEvent:(UIButton *)sender{
+///选择相册文件
+-(void)choosePicBtnClickEvent:(LGiOSBtn *)sender{
     self.imagePickerVC = Nil;
     [NSObject feedbackGenerator];
     @weakify(self)
@@ -155,14 +195,15 @@ UITextViewDelegate
                 NSNumber *num = (NSNumber *)firstArg;
                 for (int i = 0; i < num.intValue; i++) {
                     arg = va_arg(args, id);
-                    NSLog(@"KKK = %@", arg);
+//                    NSLog(@"KKK = %@", arg);
                     if ([arg isKindOfClass:UIImage.class]) {
                         self.imgData = (UIImage *)arg;
                         [self.choosePicBtn setImage:[UIImage addImage:[UIImage cropSquareImage:self.imgData]
-                                                            withImage:KIMG(@"播放")
+                                                            withImage:KBuddleIMG(@"拍摄", nil, @"播放.png")
                                                     image2Coefficient:3]
                                            forState:UIControlStateNormal];
-                        self.choosePicBtn.iconBtn.alpha = 0.7;
+                        self.choosePicBtn.iconBtn.hidden = NO;
+                        [self KK];
                     }else if ([arg isKindOfClass:PHAsset.class]){
                         NSLog(@"");
                         PHAsset *phAsset = (PHAsset *)arg;
@@ -211,10 +252,12 @@ UITextViewDelegate
 }
 #pragma mark - DZDeleteButtonDelegate
 - (void)deleteButtonRemoveSelf:(LGiOSBtn *_Nonnull)button{
-    [button setImage:KIMG(@"加号")
+    [button setImage:KBuddleIMG(@"Others", nil, @"加号.png")
             forState:UIControlStateNormal];
-    button.iconBtn.alpha = 0;
+    button.iconBtn.hidden = YES;
     button.shaking = NO;
+    self.imgData = nil;
+    [self KK];
 }
 #pragma mark - UITextViewDelegate协议中的方法
 //将要进入编辑模式
@@ -224,7 +267,9 @@ UITextViewDelegate
 //将要结束/退出编辑模式
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {return YES;}
 //已经结束/退出编辑模式
-- (void)textViewDidEndEditing:(UITextView *)textView {}
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    [self KK];
+}
 //当textView的内容发生改变的时候调用
 - (void)textViewDidChange:(UITextView *)textView {}
 //选中textView 或者输入内容的时候调用
@@ -308,100 +353,6 @@ shouldChangeTextInRange:(NSRange)range
     }return _choosePicBtn;
 }
 
--(void)createRichText{
-    UIFont *btnFont = nil;
-    if (@available(iOS 8.2, *)) {
-        btnFont = [UIFont systemFontOfSize:12
-                                    weight:UIFontWeightBold];
-    } else {
-        btnFont = [UIFont systemFontOfSize:12];
-    }
-    [self addButtonCompWithBtnTitle:@"  已阅读并同意"
-                               font:btnFont
-                              color:kRedColor
-                             target:self
-                             action:@selector(btnClickEvent:)];
-    WeakSelf
-    [self addLinkCompWithText:@"上传须知"
-                      onClick:^{
-        NSLog(@"点击到了一个链接");
-    }];
-}
-
--(AWRTViewComponent *)addButtonCompWithBtnTitle:(NSString *)title
-                                           font:(UIFont *)font
-                                          color:(UIColor *)color
-                                         target:(id)target
-                                         action:(SEL)action{
-    btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 22)];
-    [btn setImage:KIMG(@"unsure") forState:UIControlStateNormal];
-    [btn setImage:KIMG(@"sure") forState:UIControlStateSelected];
-    btn.titleLabel.font = font;
-    [btn setTitle:title forState:UIControlStateNormal];
-    [btn setTitleColor:color forState:UIControlStateNormal];
-    [btn setTitleColor:HEXCOLOR(0xaaa) forState:UIControlStateHighlighted];
-    [btn setBackgroundColor:kClearColor];
-    btn.layer.cornerRadius = 5;
-    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    
-    AWRTViewComponent *viewComp = ((AWRTViewComponent *)[self.richText addComponentFromPoolWithType:AWRTComponentTypeView])
-    .AWView(btn)
-    .AWFont([UIFont systemFontOfSize:12])
-    .AWBoundsDepend(@(AWRTAttchmentBoundsDependContent))
-    .AWAlignment(@(AWRTAttachmentAlignCenter))
-    .AWPaddingRight(@1);
-    
-    return viewComp;
-}
-
--(AWRTTextComponent *)addTextCompWithText:(NSString *)text{
-    AWRTTextComponent *textComp = ((AWRTTextComponent *)[self.richText addComponentFromPoolWithType:AWRTComponentTypeText])
-    .AWText(text)
-    .AWColor(KBrownColor)
-    .AWShadowColor(KLightGrayColor)
-    .AWShadowOffset([NSValue valueWithCGSize:CGSizeMake(0, 2)])
-    .AWShadowBlurRadius(@(3));
-    
-    if (@available(iOS 8.2, *)) {
-        textComp.AWFont([UIFont systemFontOfSize:14 weight:UIFontWeightBold]);
-    } else {
-        textComp.AWFont([UIFont systemFontOfSize:14]);
-    }
-    
-    return textComp;
-}
-
--(AWRTTextComponent *)addLinkCompWithText:(NSString *)text
-                                  onClick:(void (^)(void))onClick{
-    AWRTTextComponent *linkComp = [self addTextCompWithText:text]
-    .AWColor(kWhiteColor);
-    
-#define TOUCHING_MODE (@"touchingLinkMode")
-#define DEFAULT_MODE ((NSString *)AWRTComponentDefaultMode)
-    
-    [linkComp storeAllAttributesToMode:DEFAULT_MODE replace:YES];
-    
-    [linkComp beginUpdateMode:TOUCHING_MODE block:^{
-        linkComp.AWUnderlineStyle(@(NSUnderlineStyleSingle))
-        .AWUnderlineColor(HEXCOLOR(0x55F));
-    }];
-    
-    linkComp.touchable = YES;
-    linkComp.touchCallback = ^(AWRTComponent *comp, AWRTLabelTouchEvent touchEvent) {
-        if (awIsTouchingIn(touchEvent)) {
-            comp.currentMode = TOUCHING_MODE;
-        }else{
-            comp.currentMode = DEFAULT_MODE;
-        }
-        
-        if (touchEvent == AWRTLabelTouchEventEndedIn) {
-            if (onClick) {
-                onClick();
-            }
-        }
-    };return linkComp;
-}
-
 -(UIButton *)releaseBtn{
     if (!_releaseBtn) {
         _releaseBtn = UIButton.new;
@@ -415,7 +366,7 @@ shouldChangeTextInRange:(NSRange)range
         @weakify(self)
         [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
-            if (self->btn.selected &&
+            if (self.agreementView.agreementBtn.selected &&
                 ![NSString isNullString:self.textView.text] &&
                 self.imgData) {
                 NSLog(@"发布成功");
@@ -453,7 +404,7 @@ shouldChangeTextInRange:(NSRange)range
                                      alertBtnAction:@[@"sure"]
                                            targetVC:self
                                        alertVCBlock:^(id data) {
-                                                //DIY
+                        //DIY
                     }];
                 }else if ([NSString isNullString:self.textView.text]){
                     [NSObject showSYSAlertViewTitle:@"主人，写点什么吧~~~"
@@ -477,6 +428,29 @@ shouldChangeTextInRange:(NSRange)range
         [UIView cornerCutToCircleWithView:_releaseBtn
                           AndCornerRadius:SCALING_RATIO(6)];
     }return _releaseBtn;
+}
+
+-(AgreementView *)agreementView{
+    if (!_agreementView) {
+        _agreementView = AgreementView.new;
+        @weakify(self)
+        [_agreementView actionAgreementViewBtnBlock:^(id data) {
+            @strongify(self)
+            [self btnClickEvent:data];
+        }];
+        
+        [_agreementView actionAgreementViewLinkBlock:^(id data) {
+            @strongify(self)
+            NSLog(@"点击到了一个链接");
+        }];
+        
+        [self.view addSubview:_agreementView];
+        [_agreementView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(140, 20));
+            make.bottom.equalTo(self.releaseBtn.mas_top).offset(-5);
+        }];
+    }return _agreementView;
 }
 
 @end

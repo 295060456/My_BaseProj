@@ -221,10 +221,10 @@
         _tableViewHeader =  [MJRefreshGifHeader headerWithRefreshingTarget:self
                                                           refreshingAction:@selector(pullToRefresh)];
         // 设置普通状态的动画图片
-        [_tableViewHeader setImages:@[KIMG(@"官方")]
+        [_tableViewHeader setImages:@[KBuddleIMG(@"Others", nil, @"header.png")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewHeader setImages:@[KIMG(@"Indeterminate Spinner - Small")]
+        [_tableViewHeader setImages:@[KBuddleIMG(@"Others", nil, @"Indeterminate Spinner - Small.png")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
 //        [_tableViewHeader setImages:@[KIMG(@"gif_header_1"),
@@ -236,7 +236,8 @@
         NSMutableArray *dataMutArr = NSMutableArray.array;
         for (int i = 1; i <= 55; i++) {
             NSString *str = [NSString stringWithFormat:@"gif_header_%d",i];
-            [dataMutArr addObject:KIMG(str)];
+            str = [str stringByAppendingString:@".png"];
+            [dataMutArr addObject:KBuddleIMG(@"Others", @"刷新图片 166 * 166 @3x 100 * 100 @2x", str)];
         }
 
         [_tableViewHeader setImages:dataMutArr
@@ -268,10 +269,10 @@
         _tableViewFooter = [MJRefreshAutoGifFooter footerWithRefreshingTarget:self
                                                                 refreshingAction:@selector(loadMoreRefresh)];
         // 设置普通状态的动画图片
-        [_tableViewFooter setImages:@[KIMG(@"官方")]
+        [_tableViewFooter setImages:@[KBuddleIMG(@"Others", nil, @"header.png")]
                            forState:MJRefreshStateIdle];
         // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-        [_tableViewFooter setImages:@[KIMG(@"Indeterminate Spinner - Small")]
+        [_tableViewFooter setImages:@[KBuddleIMG(@"Others", nil, @"Indeterminate Spinner - Small.png")]
                            forState:MJRefreshStatePulling];
         // 设置正在刷新状态的动画图片
 //        [_tableViewFooter setImages:@[KIMG(@"gif_header_1"),
@@ -284,7 +285,8 @@
         NSMutableArray *dataMutArr = NSMutableArray.array;
         for (int i = 1; i <= 55; i++) {
             NSString *str = [NSString stringWithFormat:@"gif_header_%d",i];
-            [dataMutArr addObject:KIMG(str)];
+            str = [str stringByAppendingString:@".png"];
+            [dataMutArr addObject:KBuddleIMG(@"Others", @"刷新图片 166 * 166 @3x 100 * 100 @2x", str)];
         }
 
         [_tableViewHeader setImages:dataMutArr

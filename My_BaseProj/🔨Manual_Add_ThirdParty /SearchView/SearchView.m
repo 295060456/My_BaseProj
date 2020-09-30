@@ -50,10 +50,10 @@ UIScrollViewDelegate
             }else if ([btnTitleMutArr[i] isKindOfClass:[NSString class]]){
                 [btn setTitle:btnTitleMutArr[i]
                      forState:UIControlStateNormal];
-                [btn setImage:KIMG(@"TwoWayArrow_1")
-                     forState:UIControlStateNormal];
-                [btn setImage:KIMG(@"TwoWayArrow_2")
-                     forState:UIControlStateSelected];
+//                [btn setImage:KIMG(@"TwoWayArrow_1")
+//                     forState:UIControlStateNormal];
+//                [btn setImage:KIMG(@"TwoWayArrow_2")
+//                     forState:UIControlStateSelected];
                 [btn setTitleColor:kBlackColor
                           forState:UIControlStateNormal];
                 [btn setTitleColor:kRedColor

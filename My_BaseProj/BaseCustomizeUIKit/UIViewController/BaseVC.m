@@ -10,7 +10,6 @@
 
 #import "BaseVC+TZImagePickerController.h"
 #import "BaseVC+MJRefresh.h"
-#import "BaseVC+AlertController.h"
 #import "BaseVC+AFNReachability.h"
 #import "BaseVC+BackBtn.h"
 #import "BaseVC+JXCategoryListContentViewDelegate.h"

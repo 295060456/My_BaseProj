@@ -116,7 +116,6 @@
 		C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */; };
 		C5A6D509252367870096910D /* BaseVC+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */; };
 		C5A6D50A252367870096910D /* BaseVC+TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F9252367860096910D /* BaseVC+TZLocationManager.m */; };
-		C5A6D50B252367870096910D /* BaseVC+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FA252367860096910D /* BaseVC+AlertController.m */; };
 		C5A6D50C252367870096910D /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FB252367860096910D /* UIViewController+Shake.m */; };
 		C5A6D50D252367870096910D /* BaseVC+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */; };
 		C5A6D51625236E1B0096910D /* 开屏页面.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5A6D51525236E1B0096910D /* 开屏页面.bundle */; };
@@ -648,7 +647,6 @@
 		C5A6D4EF252367860096910D /* BaseVC+GifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+GifImageView.h"; sourceTree = "<group>"; };
 		C5A6D4F0252367860096910D /* BaseVC+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+JPImageresizerView.h"; sourceTree = "<group>"; };
 		C5A6D4F1252367860096910D /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		C5A6D4F2252367860096910D /* BaseVC+AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+AlertController.h"; sourceTree = "<group>"; };
 		C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+OpenURL.m"; sourceTree = "<group>"; };
 		C5A6D4F4252367860096910D /* BaseVC+BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BWShareView.h"; sourceTree = "<group>"; };
 		C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerController.m"; sourceTree = "<group>"; };
@@ -656,7 +654,6 @@
 		C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+BackBtn.m"; sourceTree = "<group>"; };
 		C5A6D4F8252367860096910D /* BaseVC+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+AFNReachability.h"; sourceTree = "<group>"; };
 		C5A6D4F9252367860096910D /* BaseVC+TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZLocationManager.m"; sourceTree = "<group>"; };
-		C5A6D4FA252367860096910D /* BaseVC+AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+AlertController.m"; sourceTree = "<group>"; };
 		C5A6D4FB252367860096910D /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
 		C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerControllerDelegate.m"; sourceTree = "<group>"; };
 		C5A6D4FD252367870096910D /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
@@ -3209,10 +3206,10 @@
 			children = (
 				C5A6D4F1252367860096910D /* BaseVC.h */,
 				C5A6D4EE252367860096910D /* BaseVC.m */,
+				C5A6D4FE252367870096910D /* BaseVC+MJRefresh.h */,
+				C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */,
 				C5A6D4F8252367860096910D /* BaseVC+AFNReachability.h */,
 				C5A6D4E4252367850096910D /* BaseVC+AFNReachability.m */,
-				C5A6D4F2252367860096910D /* BaseVC+AlertController.h */,
-				C5A6D4FA252367860096910D /* BaseVC+AlertController.m */,
 				C5A6D4E9252367860096910D /* BaseVC+BackBtn.h */,
 				C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */,
 				C5A6D4FD252367870096910D /* BaseVC+BRPickerView.h */,
@@ -3225,8 +3222,6 @@
 				C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */,
 				C5A6D4E5252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.h */,
 				C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */,
-				C5A6D4FE252367870096910D /* BaseVC+MJRefresh.h */,
-				C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */,
 				C5A6D4E1252367850096910D /* BaseVC+OpenURL.h */,
 				C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */,
 				C5A6D4E6252367850096910D /* BaseVC+TZImagePickerController.h */,
@@ -4095,7 +4090,6 @@
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C5B1C7C824BAB91A001923FB /* LOTShapeGroup.m in Sources */,
 				C5B5204524D6BCC400579178 /* GKCustomNavigationBar.m in Sources */,
-				C5A6D50B252367870096910D /* BaseVC+AlertController.m in Sources */,
 				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
 				C5B1C7CE24BAB91A001923FB /* LOTLayer.m in Sources */,
 				C5B1C7C524BAB91A001923FB /* LOTAssetGroup.m in Sources */,

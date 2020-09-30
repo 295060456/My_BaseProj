@@ -9,7 +9,6 @@
 #ifndef Manual_Add_ThirdParty_h
 #define Manual_Add_ThirdParty_h
 
-#import "ZYTextField_01.h"
 #import "UIButton+ImageTitleSpacing.h"
 #import "AABlock.h"
 #import "YBNotificationManager.h"

@@ -7,8 +7,6 @@
 //
 
 #import "ViewController@1.h"
-#import "HistoryDataListTBV.h"
-#import "HistoryDataListTBVCell.h"
 
 #import "LGiOSBtn.h"
 
@@ -20,7 +18,6 @@
 
 //@property (nonatomic, assign) BOOL isShowEmailSuffix;   //是否在输入@后显示email后缀
 //@property (nonatomic, assign) BOOL isAutoCompleterEmailSuffix;  //是否自动补全email后缀
-@property(nonatomic,strong)ZYTextField_01 *textField;
 @property(nonatomic,strong)UIView *mainView;
 @property(nonatomic,strong)id requestParams;
 @property(nonatomic,copy)MKDataBlock successBlock;
@@ -172,8 +169,6 @@
     NSLog(@"123");
     
     NSLog(@"%@",textField.text);
-
-    [self.textField store:textField.text];
 }
 
 //告诉委托人对指定的文本字段停止编辑
@@ -208,28 +203,6 @@
     return _mainView;
 }
 
--(ZYTextField_01 *)textField{
-    
-    if (!_textField) {
-        
-        _textField = [[ZYTextField_01 alloc]initWithFrame:CGRectZero
-                                          documentName:@"KKK"
-                                    isStoreHistoryInfo:isStoreHistoryInfo_YES];
-        
-        [UIView cornerCutToCircleWithView:_textField
-                          AndCornerRadius:4];
-        
-        [UIView colourToLayerOfView:_textField
-                         WithColour:kCyanColor
-                     AndBorderWidth:1.0f];
-        
-        _textField.delegate = self;
-        
-//        _textField.keyboardType = UIKeyboardTypeDecimalPad;
-    }
-    
-    return _textField;
-}
 
 //https://www.jianshu.com/p/a1e967dead48
 

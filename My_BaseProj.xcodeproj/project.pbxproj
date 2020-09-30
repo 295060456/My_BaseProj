@@ -131,6 +131,9 @@
 		C5A6D6D4252433CC0096910D /* closeCircle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A6D6CD252433CB0096910D /* closeCircle@2x.png */; };
 		C5A6D6D5252433CC0096910D /* 登录注册关闭@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A6D6CE252433CB0096910D /* 登录注册关闭@2x.png */; };
 		C5A6D6D6252433CC0096910D /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D6D0252433CC0096910D /* ZYTextField.m */; };
+		C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */; };
+		C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75A25243B3C0096910D /* TableViewAnimationKit.m */; };
+		C5A6D76A25243BFB0096910D /* AgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D76925243BFB0096910D /* AgreementView.m */; };
 		C5A7CE9324C7051800E502A9 /* LBLaunchImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */; };
 		C5A7CE9424C7051800E502A9 /* NSObject+LBLaunchImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */; };
 		C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9524C7055400E502A9 /* SceneDelegate+LaunchingAd.m */; };
@@ -346,8 +349,6 @@
 		C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C1924B5F299007B9878 /* UIDevice+XMUtils.m */; };
 		C5FE9CF324B5F29C007B9878 /* XLSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C2124B5F299007B9878 /* XLSphereView.m */; };
 		C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C2324B5F29A007B9878 /* SocketRocketUtility.m */; };
-		C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C2C24B5F29A007B9878 /* HistoryDataListTBVCell.m */; };
-		C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C2D24B5F29A007B9878 /* HistoryDataListTBV.m */; };
 		C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C3124B5F29A007B9878 /* TouchID.m */; };
 		C5FE9CFC24B5F29C007B9878 /* CJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C3624B5F29A007B9878 /* CJTextField.m */; };
 		C5FE9CFD24B5F29C007B9878 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C3724B5F29A007B9878 /* SearchBar.m */; };
@@ -675,6 +676,14 @@
 		C5A6D6CE252433CB0096910D /* 登录注册关闭@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录注册关闭@2x.png"; sourceTree = "<group>"; };
 		C5A6D6CF252433CC0096910D /* ZYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
 		C5A6D6D0252433CC0096910D /* ZYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
+		C5A6D75525243B3B0096910D /* TableViewAnimationKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitConfig.h; sourceTree = "<group>"; };
+		C5A6D75625243B3B0096910D /* UITableView+XSAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XSAnimationKit.h"; sourceTree = "<group>"; };
+		C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XSAnimationKit.m"; sourceTree = "<group>"; };
+		C5A6D75825243B3C0096910D /* TableViewAnimationKitHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitHeaders.h; sourceTree = "<group>"; };
+		C5A6D75925243B3C0096910D /* TableViewAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKit.h; sourceTree = "<group>"; };
+		C5A6D75A25243B3C0096910D /* TableViewAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewAnimationKit.m; sourceTree = "<group>"; };
+		C5A6D76825243BFB0096910D /* AgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementView.h; sourceTree = "<group>"; };
+		C5A6D76925243BFB0096910D /* AgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementView.m; sourceTree = "<group>"; };
 		C5A7CE8F24C7051800E502A9 /* LBLaunchImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLaunchImageAdView.h; sourceTree = "<group>"; };
 		C5A7CE9024C7051800E502A9 /* LBLaunchImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLaunchImageAdView.m; sourceTree = "<group>"; };
 		C5A7CE9124C7051800E502A9 /* NSObject+LBLaunchImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBLaunchImage.m"; sourceTree = "<group>"; };
@@ -1154,10 +1163,6 @@
 		C5FE9C2124B5F299007B9878 /* XLSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSphereView.m; sourceTree = "<group>"; };
 		C5FE9C2324B5F29A007B9878 /* SocketRocketUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketRocketUtility.m; sourceTree = "<group>"; };
 		C5FE9C2424B5F29A007B9878 /* SocketRocketUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketRocketUtility.h; sourceTree = "<group>"; };
-		C5FE9C2A24B5F29A007B9878 /* HistoryDataListTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDataListTBVCell.h; sourceTree = "<group>"; };
-		C5FE9C2B24B5F29A007B9878 /* HistoryDataListTBV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDataListTBV.h; sourceTree = "<group>"; };
-		C5FE9C2C24B5F29A007B9878 /* HistoryDataListTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDataListTBVCell.m; sourceTree = "<group>"; };
-		C5FE9C2D24B5F29A007B9878 /* HistoryDataListTBV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDataListTBV.m; sourceTree = "<group>"; };
 		C5FE9C2F24B5F29A007B9878 /* TouchID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchID.h; sourceTree = "<group>"; };
 		C5FE9C3024B5F29A007B9878 /* 指纹识别 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "指纹识别"; sourceTree = "<group>"; };
 		C5FE9C3124B5F29A007B9878 /* TouchID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchID.m; sourceTree = "<group>"; };
@@ -1751,6 +1756,7 @@
 		C561616E24EE4940001CD851 /* 上传 */ = {
 			isa = PBXGroup;
 			children = (
+				C5A6D76725243BF40096910D /* 已阅读并同意上传须知 */,
 				C561617E24EE4976001CD851 /* MKUploadingVC.h */,
 				C561617F24EE4976001CD851 /* MKUploadingVC.m */,
 				C561617D24EE4976001CD851 /* MKUploadingVC+VM.h */,
@@ -2012,6 +2018,38 @@
 				C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */,
 			);
 			path = ZZCircleProgress;
+			sourceTree = "<group>";
+		};
+		C5A6D75425243B2F0096910D /* TableViewAnimationKit */ = {
+			isa = PBXGroup;
+			children = (
+				C5A6D75925243B3C0096910D /* TableViewAnimationKit.h */,
+				C5A6D75A25243B3C0096910D /* TableViewAnimationKit.m */,
+				C5A6D75525243B3B0096910D /* TableViewAnimationKitConfig.h */,
+				C5A6D75825243B3C0096910D /* TableViewAnimationKitHeaders.h */,
+				C5A6D75625243B3B0096910D /* UITableView+XSAnimationKit.h */,
+				C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */,
+			);
+			path = TableViewAnimationKit;
+			sourceTree = "<group>";
+		};
+		C5A6D76025243B440096910D /* 专治UITableView相应链断裂 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9B1424B5F203007B9878 /* 专治UITableView相应链断裂 */,
+				C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */,
+				C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */,
+			);
+			path = "专治UITableView相应链断裂";
+			sourceTree = "<group>";
+		};
+		C5A6D76725243BF40096910D /* 已阅读并同意上传须知 */ = {
+			isa = PBXGroup;
+			children = (
+				C5A6D76825243BFB0096910D /* AgreementView.h */,
+				C5A6D76925243BFB0096910D /* AgreementView.m */,
+			);
+			path = "已阅读并同意上传须知";
 			sourceTree = "<group>";
 		};
 		C5A7CE8E24C7050E00E502A9 /* LBLaunchImageAd. */ = {
@@ -2753,8 +2791,8 @@
 		C5FE9AA824B5F0EF007B9878 /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9AA924B5F0EF007B9878 /* NSlogToDocumentFolder.h */,
 				C5FE9AAA24B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 */,
+				C5FE9AA924B5F0EF007B9878 /* NSlogToDocumentFolder.h */,
 				C5FE9AAB24B5F0EF007B9878 /* NSlogToDocumentFolder.m */,
 			);
 			path = Log;
@@ -2829,7 +2867,6 @@
 				C5FE9C7324B5F29B007B9878 /* FSAppIconManager */,
 				C5FE9C6624B5F29A007B9878 /* GetDeviceIP */,
 				C5FE9C1224B5F299007B9878 /* HAHandleDemoView */,
-				C5FE9C2924B5F29A007B9878 /* HistoryDataList */,
 				C5FE9C8224B5F29B007B9878 /* HotLabel */,
 				C5FE9C0B24B5F299007B9878 /* IconFont */,
 				C5FE9B7E24B5F298007B9878 /* KeyChainManager */,
@@ -2967,9 +3004,8 @@
 		C5FE9B1224B5F203007B9878 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B1424B5F203007B9878 /* 专治UITableView相应链断裂 */,
-				C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */,
-				C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */,
+				C5A6D76025243B440096910D /* 专治UITableView相应链断裂 */,
+				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -3501,17 +3537,6 @@
 				C5FE9C2324B5F29A007B9878 /* SocketRocketUtility.m */,
 			);
 			path = WebSocket;
-			sourceTree = "<group>";
-		};
-		C5FE9C2924B5F29A007B9878 /* HistoryDataList */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9C2B24B5F29A007B9878 /* HistoryDataListTBV.h */,
-				C5FE9C2D24B5F29A007B9878 /* HistoryDataListTBV.m */,
-				C5FE9C2A24B5F29A007B9878 /* HistoryDataListTBVCell.h */,
-				C5FE9C2C24B5F29A007B9878 /* HistoryDataListTBVCell.m */,
-			);
-			path = HistoryDataList;
 			sourceTree = "<group>";
 		};
 		C5FE9C2E24B5F29A007B9878 /* TouchID */ = {
@@ -4106,7 +4131,6 @@
 				C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */,
 				C5B1C7D724BAB91A001923FB /* LOTRadialGradientLayer.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
-				C5FE9CF724B5F29C007B9878 /* HistoryDataListTBVCell.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C561614724EE2E9C001CD851 /* CustomerAVPlayerVC.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
@@ -4182,6 +4206,7 @@
 				C590FF4024D00D23000F36C9 /* NSImage+WebCache.m in Sources */,
 				C5B1C7D624BAB91A001923FB /* LOTGradientFillRender.m in Sources */,
 				C5B5203D24D6BCC400579178 /* GKBaseAnimatedTransition.m in Sources */,
+				C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */,
 				C5B1C7DB24BAB91A001923FB /* LOTPointInterpolator.m in Sources */,
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5B5204424D6BCC400579178 /* UIImage+GKCategory.m in Sources */,
@@ -4211,6 +4236,7 @@
 				C561617C24EE496C001CD851 /* MKShootVC.m in Sources */,
 				C5FE9CDC24B5F29C007B9878 /* LBXScanDIYViewController.m in Sources */,
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
+				C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */,
 				C5B1C7C924BAB91A001923FB /* LOTAnimatedSwitch.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */,
@@ -4223,6 +4249,7 @@
 				C5B5204024D6BCC400579178 /* UINavigationController+GKCategory.m in Sources */,
 				C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */,
 				C5B1C7E324BAB91A001923FB /* LOTRenderGroup.m in Sources */,
+				C5A6D76A25243BFB0096910D /* AgreementView.m in Sources */,
 				C5FE9CDE24B5F29C007B9878 /* LBXScanDIYView.m in Sources */,
 				C5FE9CFE24B5F29C007B9878 /* SearchVC.m in Sources */,
 				C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */,
@@ -4349,7 +4376,6 @@
 				C5B1C7B424BAB919001923FB /* LOTColorInterpolator.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,
 				C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */,
-				C5FE9CF824B5F29C007B9878 /* HistoryDataListTBV.m in Sources */,
 				C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
 				C5B1C7DF24BAB91A001923FB /* UIBezierPath.m in Sources */,

@@ -1,0 +1,7 @@
+
+
+1、https://developer.apple.com/download/more/  苹果官方历史发布的软件合集
+
+2、https://imageoptim.com/mac 直接项目里面的图片文件拖进去，软件会自动帮你压缩，并且进行替换
+
+3、Cleaner for Xcode

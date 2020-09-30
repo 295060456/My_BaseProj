@@ -661,7 +661,6 @@
 		C5A6D4FC252367860096910D /* BaseVC+TZImagePickerControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerControllerDelegate.m"; sourceTree = "<group>"; };
 		C5A6D4FD252367870096910D /* BaseVC+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BRPickerView.h"; sourceTree = "<group>"; };
 		C5A6D4FE252367870096910D /* BaseVC+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+MJRefresh.h"; sourceTree = "<group>"; };
-		C5A6D511252369BB0096910D /* 图片压缩软件 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "图片压缩软件"; sourceTree = "<group>"; };
 		C5A6D51525236E1B0096910D /* 开屏页面.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "开屏页面.bundle"; sourceTree = "<group>"; };
 		C5A6D51A2523706B0096910D /* Others.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Others.bundle; sourceTree = "<group>"; };
 		C5A6D5252523764D0096910D /* 拍摄.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "拍摄.bundle"; sourceTree = "<group>"; };
@@ -2681,7 +2680,6 @@
 				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
 				C52E88D4250F2CEF0070356F /* 加密流程 */,
 				C57AC05025120BA3009EE44D /* 网络请求写法 */,
-				C5A6D511252369BB0096910D /* 图片压缩软件 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

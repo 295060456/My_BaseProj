@@ -17,6 +17,7 @@
         [generator impactOccurred];
     } else {
         // Fallback on earlier versions
+        AudioServicesPlaySystemSound(1520);
     }
 }
 ///检测用户是否锁屏：根据屏幕光线来进行判定，而不是系统通知

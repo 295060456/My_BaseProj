@@ -33,6 +33,11 @@
 		C533701924DB00280082847C /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C533700C24DB00280082847C /* BRAddressModel.m */; };
 		C533701A24DB00280082847C /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C533700F24DB00280082847C /* BRAddressPickerView.m */; };
 		C53B182E24FFACF1000019F2 /* 视频水印.gif in Resources */ = {isa = PBXBuildFile; fileRef = C53B182D24FFACF1000019F2 /* 视频水印.gif */; };
+		C544D23E2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m in Sources */ = {isa = PBXBuildFile; fileRef = C544D23D2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m */; };
+		C544D26E2525D7ED003C2A94 /* TestTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */; };
+		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
+		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
+		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
 		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
 		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
@@ -486,6 +491,13 @@
 		C533700F24DB00280082847C /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		C533701B24DB007C0082847C /* 我添加了功能 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "我添加了功能"; sourceTree = "<group>"; };
 		C53B182D24FFACF1000019F2 /* 视频水印.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "视频水印.gif"; sourceTree = "<group>"; };
+		C544D23C2525CBC4003C2A94 /* MJRefreshComponent+Lottie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MJRefreshComponent+Lottie.h"; sourceTree = "<group>"; };
+		C544D23D2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MJRefreshComponent+Lottie.m"; sourceTree = "<group>"; };
+		C544D26C2525D7ED003C2A94 /* TestTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewHeader.h; sourceTree = "<group>"; };
+		C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewHeader.m; sourceTree = "<group>"; };
+		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
+		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
+		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
 		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
 		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
 		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
@@ -1609,6 +1621,20 @@
 				C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */,
 			);
 			path = "AppDelegate & SceneDelegate";
+			sourceTree = "<group>";
+		};
+		C544D2722525D7F1003C2A94 /* MJRefresh + Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				C544D2E52525DC2F003C2A94 /* 123.json */,
+				C544D2E62525DC2F003C2A94 /* 1234.json */,
+				C544D2E42525DC2F003C2A94 /* 12345.json */,
+				C544D23C2525CBC4003C2A94 /* MJRefreshComponent+Lottie.h */,
+				C544D23D2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m */,
+				C544D26C2525D7ED003C2A94 /* TestTableViewHeader.h */,
+				C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */,
+			);
+			path = "MJRefresh + Lottie";
 			sourceTree = "<group>";
 		};
 		C54BB50D2518E53F001591C2 /* 网络请求 */ = {
@@ -2967,6 +2993,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D4FBD724CFE0740024A292 /* Common */,
+				C544D2722525D7F1003C2A94 /* MJRefresh + Lottie */,
 				C5FE9AC024B5F19E007B9878 /* ArcTBVCell.h */,
 				C5FE9AC324B5F19E007B9878 /* ArcTBVCell.m */,
 				C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */,
@@ -3904,6 +3931,7 @@
 				C5D4FBC124CEC5690024A292 /* day_like@2x.png in Resources */,
 				C5D4FBBE24CEC5690024A292 /* day_like_red@2x.png in Resources */,
 				C5A6D52B252376770096910D /* 刷新.bundle in Resources */,
+				C544D2E82525DC2F003C2A94 /* 123.json in Resources */,
 				C5A6D6D2252433CC0096910D /* 登录注册关闭@3x.png in Resources */,
 				C5D8289124FB65D8002DD3E6 /* huiyuan.json in Resources */,
 				C5CF709124E43084000DB72D /* Pod里面的Bug in Resources */,
@@ -3924,6 +3952,7 @@
 				C5A6D5262523764D0096910D /* 拍摄.bundle in Resources */,
 				C5D8289224FB65D8002DD3E6 /* wode.json in Resources */,
 				C5B1C72924BAB54D001923FB /* green_lottie_tab_mine.json in Resources */,
+				C544D2E72525DC2F003C2A94 /* 12345.json in Resources */,
 				C5A6D6D5252433CC0096910D /* 登录注册关闭@2x.png in Resources */,
 				C5D4FBBF24CEC5690024A292 /* day_like@3x.png in Resources */,
 				C563AE2F24F00FC600A3B0AC /* 任务.json in Resources */,
@@ -3942,6 +3971,7 @@
 				C590FF2724D00A20000F36C9 /* 手动集成 SDWebImage_WebP in Resources */,
 				C56161CB24EE7450001CD851 /* 签名上架 in Resources */,
 				C5D4FBC024CEC5690024A292 /* day_like_red@3x.png in Resources */,
+				C544D2E92525DC2F003C2A94 /* 1234.json in Resources */,
 				C5A6D6D1252433CC0096910D /* closeCircle@3x.png in Resources */,
 				C5A6D62A252430960096910D /* Close@2x.png in Resources */,
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
@@ -4216,6 +4246,7 @@
 				C561617B24EE496C001CD851 /* MKShootVC+VM.m in Sources */,
 				C590FF4024D00D23000F36C9 /* NSImage+WebCache.m in Sources */,
 				C5B1C7D624BAB91A001923FB /* LOTGradientFillRender.m in Sources */,
+				C544D23E2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m in Sources */,
 				C5B5203D24D6BCC400579178 /* GKBaseAnimatedTransition.m in Sources */,
 				C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */,
 				C5B1C7DB24BAB91A001923FB /* LOTPointInterpolator.m in Sources */,
@@ -4248,6 +4279,7 @@
 				C5FE9CDC24B5F29C007B9878 /* LBXScanDIYViewController.m in Sources */,
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
 				C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */,
+				C544D26E2525D7ED003C2A94 /* TestTableViewHeader.m in Sources */,
 				C5B1C7C924BAB91A001923FB /* LOTAnimatedSwitch.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */,

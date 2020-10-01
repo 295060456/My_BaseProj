@@ -10,6 +10,8 @@
 		463EACFFE28C7CA88B883312 /* libPods-My_BaseProjUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */; };
 		7B01FABA47F46FF3968EEC66 /* libPods-My_BaseProjTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */; };
 		BDD85CE05D5B657110FC2797 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
+		C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C50ECADC25258877000AE52F /* 音律跳动.bundle */; };
+		C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50ECADE25258878000AE52F /* GifLoopPlayView.m */; };
 		C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8915250F75020070356F /* NSData+CommonCrypto.m */; };
 		C52E894A250F752E0070356F /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E891D250F752D0070356F /* RSAUtil.m */; };
 		C52E894D250F752E0070356F /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8924250F752D0070356F /* AES.m */; };
@@ -412,6 +414,9 @@
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
+		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
+		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
+		C50ECADE25258878000AE52F /* GifLoopPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifLoopPlayView.m; sourceTree = "<group>"; };
 		C52D2A5124E580790048FEFF /* JXCategoryView */ = {isa = PBXFileReference; lastKnownFileType = text; path = JXCategoryView; sourceTree = "<group>"; };
 		C52E88D4250F2CEF0070356F /* 加密流程 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "加密流程"; sourceTree = "<group>"; };
 		C52E890F250F74B70070356F /* Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cryptography.h; sourceTree = "<group>"; };
@@ -1295,6 +1300,16 @@
 				FC704087AA0F2431943F2CE4 /* Pods-My_BaseProjUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C50ECAC82525884A000AE52F /* 音律跳动 */ = {
+			isa = PBXGroup;
+			children = (
+				C50ECADC25258877000AE52F /* 音律跳动.bundle */,
+				C50ECADD25258878000AE52F /* GifLoopPlayView.h */,
+				C50ECADE25258878000AE52F /* GifLoopPlayView.m */,
+			);
+			path = "音律跳动";
 			sourceTree = "<group>";
 		};
 		C51137BB24E022D2001049D5 /* LZBTabBar */ = {
@@ -2822,6 +2837,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C50ECAC82525884A000AE52F /* 音律跳动 */,
 				C54BB50D2518E53F001591C2 /* 网络请求 */,
 				C5F732D025138E4300216DEF /* 正则表达式 */,
 				C5B5EF71250D246F00DCDA93 /* 图形验证码 */,
@@ -3901,6 +3917,7 @@
 				C557DC1624C805DF00754760 /* MJExtension用法 in Resources */,
 				C5A6D62B252430960096910D /* Close@3x.png in Resources */,
 				C5B1C72824BAB54D001923FB /* green_lottie_tab_home.json in Resources */,
+				C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */,
 				C5D4FBBC24CEC5690024A292 /* spark_red@2x.png in Resources */,
 				C5D4FBBB24CEC5690024A292 /* spark_red@3x.png in Resources */,
 				C57D5C57251374CE0073F90B /* WhiteRightArrow@2x.png in Resources */,
@@ -4271,6 +4288,7 @@
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,
 				C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */,
+				C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */,
 				C5B1C7E024BAB91A001923FB /* LOTRenderNode.m in Sources */,
 				C5B1C7B124BAB919001923FB /* UIColor.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,

@@ -256,6 +256,7 @@ PODS:
   - WebViewJavascriptBridge (6.0.3)
   - WMZBanner (1.1.3):
     - SDWebImage
+  - WSLNativeScanTool (1.0)
   - WXSTransition (1.2.1)
   - XHLaunchAd (3.9.12):
     - FLAnimatedImage (~> 1.0.12)
@@ -337,6 +338,7 @@ DEPENDENCIES:
   - WCDB
   - WebViewJavascriptBridge
   - WMZBanner
+  - WSLNativeScanTool
   - WXSTransition
   - XHLaunchAd
   - YQImageCompressor
@@ -435,6 +437,7 @@ SPEC REPOS:
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
     - WMZBanner
+    - WSLNativeScanTool
     - WXSTransition
     - XHLaunchAd
     - YQImageCompressor
@@ -533,6 +536,7 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WMZBanner: 5575711bef96c7e77caac9f06a86c5987bfc3132
+  WSLNativeScanTool: 1540f43317611d6cf948b5dff1cc1483bd39f8a5
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
@@ -540,6 +544,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
 
-PODFILE CHECKSUM: eb2c7cb623312d0bf8b67ee29f64ba5d5db6e8df
+PODFILE CHECKSUM: da9d7d3fa6a6b41e44bb5f645a32314443ccc1ae
 
 COCOAPODS: 1.9.3

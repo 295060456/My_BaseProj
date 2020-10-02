@@ -41,7 +41,6 @@ target 'My_BaseProj' do
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
 #  pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
   pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
-  pod 'AWRichText' # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，支持精确点击，UIView混排，GIF动图，并不仅仅局限于图文混排的富文本排版神器。
   #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
   pod 'FDFullscreenPopGesture'# https://github.com/forkingdog/FDFullscreenPopGesture 一个丝滑的全屏滑动返回手势 A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.
 #  pod 'ZYSuspensionView/SuspensionView' # https://github.com/ripperhe/ZYSuspensionView 悬浮球带点击事件
@@ -80,6 +79,7 @@ target 'My_BaseProj' do
   pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
   pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
 #  pod 'ZZCircleProgress'
+  pod 'WSLNativeScanTool' # https://github.com/wsl2ls/ScanQRcode 是在利用原生API的条件下封装的二维码扫描工具，支持二维码的扫描、识别图中二维码、生成自定义颜色和中心图标的二维码、监测环境亮度、打开闪光灯这些功能；WSLScanView是参照微信封装的一个扫一扫界面，支持线条颜色、大小、动画图片、矩形扫描框样式的自定义；这个示例本身就是仿照微信的扫一扫功能实现的。
   pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']
   pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView
@@ -90,7 +90,6 @@ target 'My_BaseProj' do
   pod 'WXSTransition' # https://github.com/alanwangmodify/WXSTransition 这是一个界面转场动画集。 目前只支持纯代码 已支持手势返回
   pod 'MSWeakTimer' # https://github.com/mindsnacks/MSWeakTimer Thread-safe NSTimer drop-in alternative that doesn't retain the target and supports being used with GCD queues.
   pod 'RQShineLabel'  # https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
-  pod 'AWRichText'  # https://github.com/hardman/AWRichText 基于CoreText，面向对象，极简，易用，高效，并不仅仅局限于图文混排的富文本排版神器
   pod 'LYXAlertController' # https://github.com/liuyunxinok/LYXAlertController 为解决UIAlertController的UI（字体颜色，action背景色,字体大小等）设置局限，故自己封装一个YXAlertController，可以随意进行颜色和字体设置。样式大小，title和message的行距缩进与系统样式保持一致。
   pod 'SPAlertController'# https://github.com/SPStore/SPAlertController 深度定制AlertController
   pod 'JPImageresizerView' # https://github.com/Rogue24/JPImageresizerView 一个专门裁剪图片、GIF、视频的轮子，简单易用，功能丰富（高自由度的参数设定、支持旋转和镜像翻转、蒙版、压缩等），能满足绝大部分裁剪的需求。

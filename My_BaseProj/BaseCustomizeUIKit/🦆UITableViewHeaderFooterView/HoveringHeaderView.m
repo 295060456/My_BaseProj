@@ -17,10 +17,19 @@
 - (instancetype)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
                                withData:(id)data{
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-        self.result.alpha = 1;
+//        self.result.alpha = 1;
     }return self;
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if (self.hoveringHeaderViewBlock) {
+        self.hoveringHeaderViewBlock(@1);
+    }
+}
+
+-(void)actionBlockHoveringHeaderView:(MKDataBlock)hoveringHeaderViewBlock{
+    _hoveringHeaderViewBlock = hoveringHeaderViewBlock;
+}
 #pragma mark —— lazyLoad
 -(UIControl *)result{
     if (!_result) {

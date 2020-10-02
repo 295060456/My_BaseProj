@@ -1,5 +1,5 @@
 //
-//  NonHoveringHeaderView.h
+//  HoveringHeaderView.h
 //  HeaderDemo
 //
 //  Created by zyd on 2018/6/22.
@@ -8,22 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NonHoveringHeaderView : UITableViewHeaderFooterView
+@interface HoveringHeaderView : UITableViewHeaderFooterView
 
 @property(nonatomic,strong)UIControl * _Nullable result;
+@property(nonatomic,copy)MKDataBlock _Nullable hoveringHeaderViewBlock;
 
-- (instancetype _Nullable )initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
-                                          withData:(id _Nullable )data;
--(void)actionBlock:(MKDataBlock _Nullable )actionBlock;
-
+-(instancetype _Nullable)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
+                                        withData:(id _Nullable)data;
+-(void)actionBlockHoveringHeaderView:(MKDataBlock _Nullable)hoveringHeaderViewBlock;
 
 @end
 
 /* 使用示例
- NonHoveringHeaderView *header = nil;
+ CommentPopUpNonHoveringHeaderView *header = nil;
  
  {//第一种创建方式
-     header = [[NonHoveringHeaderView alloc]initWithReuseIdentifier:NSStringFromClass(NonHoveringHeaderView.class)
+     header = [[CommentPopUpNonHoveringHeaderView alloc]initWithReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderView.class)
                                                            withData:@(section)];
 
 
@@ -35,9 +35,9 @@
  
 //    {//第二种创建方式
 //        //viewForHeaderInSection 悬停与否
-//        Class headerClass = NonHoveringHeaderView.class;
+//        Class headerClass = CommentPopUpNonHoveringHeaderView.class;
 //    //    Class headerClass = HoveringHeaderView.class;
 //
 //        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass(headerClass)];
 //    }
-*/
+ */

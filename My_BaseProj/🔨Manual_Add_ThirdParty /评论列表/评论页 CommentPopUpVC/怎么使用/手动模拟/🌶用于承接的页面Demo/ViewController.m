@@ -11,7 +11,7 @@
 #import "LoadMoreTBVCell.h"
 #import "InfoTBVCell.h"
 
-#import "NonHoveringHeaderView.h"
+#import "CommentPopUpNonHoveringHeaderView.h"
 #import "HoveringHeaderView.h"
 #import "UITableViewHeaderFooterView+Attribute.h"
 
@@ -39,7 +39,7 @@ UITableViewDelegate
     NSLog(@"");
 }
 
--(void)headerIsTapEvent:(NonHoveringHeaderView *)sender{
+-(void)headerIsTapEvent:(CommentPopUpNonHoveringHeaderView *)sender{
     //疑惑 传tag无效
     NSLog(@"%p",sender);
 }
@@ -125,10 +125,10 @@ heightForHeaderInSection:(NSInteger)section{
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section{
     
-    NonHoveringHeaderView *header = nil;
+    CommentPopUpNonHoveringHeaderView *header = nil;
     
     {//第一种创建方式
-        header = [[NonHoveringHeaderView alloc]initWithReuseIdentifier:NSStringFromClass(NonHoveringHeaderView.class)
+        header = [[CommentPopUpNonHoveringHeaderView alloc]initWithReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderView.class)
                                                               withData:@(section)];
 
 
@@ -140,7 +140,7 @@ viewForHeaderInSection:(NSInteger)section{
     
 //    {//第二种创建方式
 //        //viewForHeaderInSection 悬停与否
-//        Class headerClass = NonHoveringHeaderView.class;
+//        Class headerClass = CommentPopUpNonHoveringHeaderView.class;
 //    //    Class headerClass = HoveringHeaderView.class;
 //
 //        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass(headerClass)];
@@ -159,8 +159,8 @@ viewForHeaderInSection:(NSInteger)section{
         _tableView.delegate = self;
         _tableView.dataSource = self;
 //        _tableView.mj_footer.automaticallyHidden = NO;//默认根据数据来源 自动显示 隐藏footer，这个功能可以关闭
-        [_tableView registerClass:NonHoveringHeaderView.class
-forHeaderFooterViewReuseIdentifier:NSStringFromClass(NonHoveringHeaderView.class)];
+        [_tableView registerClass:CommentPopUpNonHoveringHeaderView.class
+forHeaderFooterViewReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderView.class)];
         [_tableView registerClass:HoveringHeaderView.class
 forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         [self.view addSubview:_tableView];

@@ -1,5 +1,5 @@
 //
-//  HoveringHeaderView.h
+//  NonHoveringHeaderView.h
 //  HeaderDemo
 //
 //  Created by zyd on 2018/6/22.
@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HoveringHeaderView : UITableViewHeaderFooterView
-
-- (instancetype _Nullable )initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
-                                          withData:(id _Nullable )data;
+@interface NonHoveringHeaderView : UITableViewHeaderFooterView
 
 @property(nonatomic,strong)UIControl * _Nullable result;
+@property(nonatomic,copy)MKDataBlock _Nullable nonHoveringHeaderViewBlock;
+
+-(instancetype _Nullable)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
+                                        withData:(id _Nullable )data;
+
+-(void)actionBlockNonHoveringHeaderView:(MKDataBlock _Nullable)nonHoveringHeaderViewBlock;
 
 @end
 
@@ -38,4 +41,4 @@
 //
 //        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass(headerClass)];
 //    }
- */
+*/

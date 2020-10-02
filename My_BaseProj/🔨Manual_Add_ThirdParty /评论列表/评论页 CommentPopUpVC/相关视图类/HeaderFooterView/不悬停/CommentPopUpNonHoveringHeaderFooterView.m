@@ -101,9 +101,9 @@
     if (!_titleLab) {
         _titleLab = UILabel.new;
         _titleLab.text = self.titleStr;
-//        _titleLab.attributedText = [[NSMutableAttributedString alloc] initWithString:self.titleStr
-//                                                                          attributes:@{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC" size: 13],
-//                                                                                       NSForegroundColorAttributeName: COLOR_RGB(131, 145, 175, 1)}];
+        _titleLab.attributedText = [[NSMutableAttributedString alloc] initWithString:self.titleStr
+                                                                          attributes:@{NSFontAttributeName: kFontSize(13),
+                                                                                       NSForegroundColorAttributeName: COLOR_RGB(131, 145, 175, 1)}];
         [self.contentView addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView);
@@ -117,9 +117,9 @@
     if (!_contentLab) {
         _contentLab = UILabel.new;
         _contentLab.text = self.contentStr;
-//        _contentLab.attributedText = [[NSMutableAttributedString alloc] initWithString:self.contentStr
-//                                                                            attributes: @{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC" size: 15],
-//                                                                                          NSForegroundColorAttributeName: COLOR_RGB(255, 255, 255, 1)}];
+        _contentLab.attributedText = [[NSMutableAttributedString alloc] initWithString:self.contentStr
+                                                                            attributes: @{NSFontAttributeName: kFontSize(15),
+                                                                                          NSForegroundColorAttributeName: COLOR_RGB(255, 255, 255, 1)}];
         [self.contentView addSubview:_contentLab];
         [_contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_centerY);

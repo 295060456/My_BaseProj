@@ -8,6 +8,10 @@
 
 #import "CommentPopUpHoveringHeaderFooterView.h"
 
+@interface CommentPopUpHoveringHeaderFooterView ()
+
+@end
+
 @implementation CommentPopUpHoveringHeaderFooterView
 
 @end

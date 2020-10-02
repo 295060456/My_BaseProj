@@ -106,8 +106,9 @@
 		C59B9F4D2527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F462527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m */; };
 		C59B9F4E2527051F0039B485 /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F472527051F0039B485 /* HoveringHeaderView.m */; };
 		C59B9F4F2527051F0039B485 /* 是否取消悬停 in Resources */ = {isa = PBXBuildFile; fileRef = C59B9F492527051F0039B485 /* 是否取消悬停 */; };
-		C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderView.m */; };
+		C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */; };
 		C59B9F712527079E0039B485 /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */; };
+		C59BA396252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59BA395252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
 		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
@@ -629,10 +630,12 @@
 		C59B9F482527051F0039B485 /* UITableViewHeaderFooterView+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewHeaderFooterView+Attribute.h"; sourceTree = "<group>"; };
 		C59B9F492527051F0039B485 /* 是否取消悬停 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "是否取消悬停"; sourceTree = "<group>"; };
 		C59B9F4B2527051F0039B485 /* HoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoveringHeaderView.h; sourceTree = "<group>"; };
-		C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpNonHoveringHeaderView.h; sourceTree = "<group>"; };
-		C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpNonHoveringHeaderView.m; sourceTree = "<group>"; };
+		C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpNonHoveringHeaderFooterView.h; sourceTree = "<group>"; };
+		C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpNonHoveringHeaderFooterView.m; sourceTree = "<group>"; };
 		C59B9F6F2527079E0039B485 /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
 		C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonHoveringHeaderView.m; sourceTree = "<group>"; };
+		C59BA394252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpHoveringHeaderFooterView.h; sourceTree = "<group>"; };
+		C59BA395252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpHoveringHeaderFooterView.m; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
 		C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
@@ -1967,8 +1970,7 @@
 		C590FE0724CFE314000F36C9 /* 相关视图类 */ = {
 			isa = PBXGroup;
 			children = (
-				C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderView.h */,
-				C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderView.m */,
+				C59BA39B252737F80039B485 /* HeaderFooterView */,
 				C5D4FBCB24CFDEA80024A292 /* 输入框部分 */,
 				C5F78AE224BF297D008A46EC /* TBVCell */,
 			);
@@ -2040,18 +2042,61 @@
 			path = CJTextField;
 			sourceTree = "<group>";
 		};
-		C59B9F45252705130039B485 /* 🦆UITableViewHeaderFooterView */ = {
+		C59B9F45252705130039B485 /* 🦆UITableViewHeaderFooterView 用作基类 */ = {
 			isa = PBXGroup;
 			children = (
 				C59B9F492527051F0039B485 /* 是否取消悬停 */,
-				C59B9F4B2527051F0039B485 /* HoveringHeaderView.h */,
-				C59B9F472527051F0039B485 /* HoveringHeaderView.m */,
-				C59B9F6F2527079E0039B485 /* NonHoveringHeaderView.h */,
-				C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */,
+				C59BA3B5252738A30039B485 /* 不悬停 */,
+				C59BA3B42527389D0039B485 /* 悬停 */,
 				C59B9F482527051F0039B485 /* UITableViewHeaderFooterView+Attribute.h */,
 				C59B9F462527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m */,
 			);
-			path = "🦆UITableViewHeaderFooterView";
+			path = "🦆UITableViewHeaderFooterView 用作基类";
+			sourceTree = "<group>";
+		};
+		C59BA39B252737F80039B485 /* HeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				C59BA3AA252738810039B485 /* 不悬停 */,
+				C59BA3A62527387A0039B485 /* 悬停 */,
+			);
+			path = HeaderFooterView;
+			sourceTree = "<group>";
+		};
+		C59BA3A62527387A0039B485 /* 悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C59BA394252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.h */,
+				C59BA395252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m */,
+			);
+			path = "悬停";
+			sourceTree = "<group>";
+		};
+		C59BA3AA252738810039B485 /* 不悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.h */,
+				C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */,
+			);
+			path = "不悬停";
+			sourceTree = "<group>";
+		};
+		C59BA3B42527389D0039B485 /* 悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C59B9F4B2527051F0039B485 /* HoveringHeaderView.h */,
+				C59B9F472527051F0039B485 /* HoveringHeaderView.m */,
+			);
+			path = "悬停";
+			sourceTree = "<group>";
+		};
+		C59BA3B5252738A30039B485 /* 不悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C59B9F6F2527079E0039B485 /* NonHoveringHeaderView.h */,
+				C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */,
+			);
+			path = "不悬停";
 			sourceTree = "<group>";
 		};
 		C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */ = {
@@ -2930,7 +2975,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				C59B9F45252705130039B485 /* 🦆UITableViewHeaderFooterView */,
+				C59B9F45252705130039B485 /* 🦆UITableViewHeaderFooterView 用作基类 */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
 				C5FE9B5624B5F203007B9878 /* UIViewController */,
 				C5FE9B7A24B5F246007B9878 /* UIScrollView */,
@@ -4250,7 +4295,7 @@
 				C5B1C7BF24BAB91A001923FB /* LOTNumberInterpolator.m in Sources */,
 				C5B1C7E224BAB91A001923FB /* LOTPolygonAnimator.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
-				C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderView.m in Sources */,
+				C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m in Sources */,
 				C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,
 				C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */,
@@ -4294,6 +4339,7 @@
 				C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */,
 				C5B1C7C424BAB91A001923FB /* LOTMaskContainer.m in Sources */,
 				C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */,
+				C59BA396252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m in Sources */,
 				C561614A24EE2EA2001CD851 /* RepeatPlayer.m in Sources */,
 				C5601F6924F6A02F0070FBD5 /* YHGPUImageBeautifyFilter.m in Sources */,
 				C59B9F4E2527051F0039B485 /* HoveringHeaderView.m in Sources */,

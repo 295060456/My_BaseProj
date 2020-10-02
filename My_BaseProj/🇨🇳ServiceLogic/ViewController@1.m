@@ -80,9 +80,9 @@
     }return self;
 }
 
-- (void)closeAction {
-    @weakify(self)
-    [ViewController_2 ComingFromVC:self_weak_
+-(void)closeAction{
+    [ViewController_2 comingFromVC:self
+                              toVC:ViewController_2.new
                        comingStyle:ComingStyle_PUSH
                  presentationStyle:UIModalPresentationAutomatic
                      requestParams:nil

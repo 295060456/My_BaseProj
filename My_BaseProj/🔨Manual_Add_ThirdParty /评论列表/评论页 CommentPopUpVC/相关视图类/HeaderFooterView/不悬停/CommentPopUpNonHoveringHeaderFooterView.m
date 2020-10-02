@@ -6,10 +6,10 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
-#import "CommentPopUpNonHoveringHeaderView.h"
+#import "CommentPopUpNonHoveringHeaderFooterView.h"
 #import "UITableViewHeaderFooterView+Attribute.h"
 
-@interface CommentPopUpNonHoveringHeaderView ()
+@interface CommentPopUpNonHoveringHeaderFooterView ()
 
 @property(nonatomic,strong)UIImageView *headerIMGV;
 @property(nonatomic,strong)UILabel *titleLab;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation CommentPopUpNonHoveringHeaderView
+@implementation CommentPopUpNonHoveringHeaderFooterView
 
 @synthesize result = _result;
 

@@ -159,7 +159,7 @@
 #import "StyleDIY.h"
 //评论列表的
 #import "PopUpVC.h"//弹窗小控件（高仿今日头条App评论弹窗框架）
-#import "CommentPopUpNonHoveringHeaderView.h"
+#import "CommentPopUpNonHoveringHeaderFooterView.h"
 #import "HoveringHeaderView.h"
 #import "UITableViewHeaderFooterView+Attribute.h"
 ///Model

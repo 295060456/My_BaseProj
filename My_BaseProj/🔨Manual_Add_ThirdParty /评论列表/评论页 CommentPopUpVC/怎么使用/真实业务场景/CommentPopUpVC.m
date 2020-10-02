@@ -12,7 +12,7 @@
 #import "LoadMoreTBVCell.h"
 #import "InfoTBVCell.h"
 
-#import "CommentPopUpNonHoveringHeaderView.h"
+#import "CommentPopUpNonHoveringHeaderFooterView.h"
 #import "HoveringHeaderView.h"
 #import "UITableViewHeaderFooterView+Attribute.h"
 
@@ -291,10 +291,10 @@ heightForHeaderInSection:(NSInteger)section{
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section{
     //一级标题数据从这里进去
-    CommentPopUpNonHoveringHeaderView *header = nil;
+    CommentPopUpNonHoveringHeaderFooterView *header = nil;
     MKFirstCommentModel *firstCommentModel = self.commentModel.listMytArr[section];
     {//第一种创建方式
-        header = [[CommentPopUpNonHoveringHeaderView alloc]initWithReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderView.class)
+        header = [[CommentPopUpNonHoveringHeaderFooterView alloc]initWithReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderFooterView.class)
                                                               withData:firstCommentModel];
         @weakify(self)
         [header actionBlockNonHoveringHeaderView:^(id data) {
@@ -411,8 +411,8 @@ viewForHeaderInSection:(NSInteger)section{
         _tableView.backgroundColor = HEXCOLOR(0x242A37);
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:CommentPopUpNonHoveringHeaderView.class
-forHeaderFooterViewReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderView.class)];
+        [_tableView registerClass:CommentPopUpNonHoveringHeaderFooterView.class
+forHeaderFooterViewReuseIdentifier:NSStringFromClass(CommentPopUpNonHoveringHeaderFooterView.class)];
         [_tableView registerClass:HoveringHeaderView.class
 forHeaderFooterViewReuseIdentifier:NSStringFromClass(HoveringHeaderView.class)];
         _tableView.mj_header = self.mjRefreshGifHeader;

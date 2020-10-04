@@ -1,6 +1,7 @@
 Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+//以下命令直接拖动到命令行批量运行下载和更新
 brew cask install cakebrew
 brew cask install launchrocket
 brew install carthage
@@ -34,6 +35,7 @@ brew install tomcat
 brew install ruby
 brew install ffmpeg
 brew install watchman
+brew install gnupg
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ###################################################

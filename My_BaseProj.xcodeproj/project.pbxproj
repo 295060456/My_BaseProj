@@ -416,6 +416,7 @@
 /* Begin PBXFileReference section */
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
+		8B272FAB25281E050086E19D /* RVM_Ruby_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVM_Ruby_Config; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
 		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
 		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
@@ -2824,6 +2825,7 @@
 				C5FE9A8C24B5F0C6007B9878 /* Weex_Config */,
 				C5FE9A8A24B5F0C6007B9878 /* MacPorts_Config */,
 				C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */,
+				8B272FAB25281E050086E19D /* RVM_Ruby_Config */,
 			);
 			path = Computer_Config;
 			sourceTree = "<group>";

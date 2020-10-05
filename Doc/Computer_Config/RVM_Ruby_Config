@@ -1,0 +1,26 @@
+
+RVM是一个命令行工具，它允许您轻松地安装，管理和使用从解释器到多组宝石的多个ruby环境。
+
+使用Ruby原因：
+虽然 macOS 自带了一个 ruby 环境，但是是系统自己使用的，所以权限很小，只有 system。而/Library 目录是 root 权限,所以很多会提示无权限。
+使用自带ruby更新,管理不方便
+一系列无原因的报错
+
+### 卸载 RVM
+卸载 RVM_Ruby 方式：终端键入 $ rvm implode
+为了保险起见还需要执行(自己的Users目录中删除)下面的命令
+$ cd ~ ; sudo rm -rf .rvm .rvmrc/etc/rvmrc;gem uninstall rvm
+(同样在自己的Users目录中删除)
+最后不要忘记了注释.bashrc 或者.bash_profile 或者 .profile 中的相关语句
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+到此成功删除了rvm。
+
+### 安装RVM
+brew install gnupg   // Mac OS X不附带gpg，因此在安装公钥之前，您需要安装gpg
+gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB  // 安装完gpg之后，你可以安装mpapis公钥：
+
+\curl -sSL https://get.rvm.io | bash -s stable --ruby // 安装最新版本的Ruby的RVM
+
+### 使用 RVM & Ruby
+source /Users/sino/.rvm/scripts/rvm   //切换rvm
+rvm list  //您可以列出可供RVM使用的Ruby版本

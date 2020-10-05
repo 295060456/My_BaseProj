@@ -9,6 +9,23 @@
 #ifndef ToolMacro_h
 #define ToolMacro_h
 
+//警告处理⚠️
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+    do { \
+        _Pragma("clang diagnostic push") \
+        _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+        Stuff; \
+        _Pragma("clang diagnostic pop") \
+} while (0)
+
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wundeclared-selector"
+//#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+//#pragma clang diagnostic ignored "-Wincomplete-implementation"
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//#pragma clang diagnostic ignored "-Warc-performSelector-leaks" [targetVC performSelector:NSSelectorFromString([NSString ensureNonnullString:alertBtnActionArr[i] ReplaceStr:@"defaultFunc"]) withObject:Nil];
+//#pragma clang diagnostic pop
+
 #pragma mark ======================================== Sys.========================================
 #define HDAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]//标识应用程序的发布版本号
 #define HDAppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]//APP BUILD 版本号

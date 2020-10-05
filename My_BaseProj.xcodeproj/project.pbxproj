@@ -46,6 +46,8 @@
 		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
 		C54F101E24C469E900EE1E67 /* GIF大图.gif in Resources */ = {isa = PBXBuildFile; fileRef = C54F101D24C469E900EE1E67 /* GIF大图.gif */; };
 		C54F104824C4728300EE1E67 /* SDWebImage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */; };
+		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
+		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
 		C5601F6224F6A0200070FBD5 /* AVFounationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5601F6024F6A0200070FBD5 /* AVFounationTools.m */; };
 		C5601F6824F6A02F0070FBD5 /* MKGPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5601F6624F6A02E0070FBD5 /* MKGPUImageView.m */; };
@@ -381,7 +383,6 @@
 		C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C7D24B5F29B007B9878 /* UIControl+XY.m */; };
 		C5FE9D1C24B5F29C007B9878 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9C7F24B5F29B007B9878 /* area.plist */; };
 		C5FE9D1D24B5F29C007B9878 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C8124B5F29B007B9878 /* AddressPickerView.m */; };
-		C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C8424B5F29B007B9878 /* HotLabel.m */; };
 		C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C8824B5F29B007B9878 /* AnimateToSpecifiedDateView.m */; };
 		C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C8A24B5F29B007B9878 /* AnimateToSpecifiedDate_Init.m */; };
 		C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9C8C24B5F29B007B9878 /* XXTools.m */; };
@@ -516,6 +517,10 @@
 		C54F104624C4728300EE1E67 /* SDWebImage.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		C54F104724C4728300EE1E67 /* SDWebImage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SDWebImage-Info.plist"; sourceTree = "<group>"; };
 		C54F104924C472E100EE1E67 /* 使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "使用说明"; sourceTree = "<group>"; };
+		C54F854C252B609700EE3DD0 /* UITableView+WWFoldableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WWFoldableTableView.h"; sourceTree = "<group>"; };
+		C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
+		C54F8555252B60E500EE3DD0 /* HotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotLabel.m; sourceTree = "<group>"; };
+		C54F8556252B60E500EE3DD0 /* HotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotLabel.h; sourceTree = "<group>"; };
 		C557DC1524C805DF00754760 /* MJExtension用法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MJExtension用法"; sourceTree = "<group>"; };
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
@@ -1236,8 +1241,6 @@
 		C5FE9C7F24B5F29B007B9878 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		C5FE9C8024B5F29B007B9878 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
 		C5FE9C8124B5F29B007B9878 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
-		C5FE9C8324B5F29B007B9878 /* HotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotLabel.h; sourceTree = "<group>"; };
-		C5FE9C8424B5F29B007B9878 /* HotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotLabel.m; sourceTree = "<group>"; };
 		C5FE9C8624B5F29B007B9878 /* 日期跳动 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "日期跳动"; sourceTree = "<group>"; };
 		C5FE9C8724B5F29B007B9878 /* AnimateToSpecifiedDate_Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimateToSpecifiedDate_Init.h; sourceTree = "<group>"; };
 		C5FE9C8824B5F29B007B9878 /* AnimateToSpecifiedDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateToSpecifiedDateView.m; sourceTree = "<group>"; };
@@ -1683,6 +1686,15 @@
 				C590FF2A24D00A23000F36C9 /* SDWebImage */,
 			);
 			path = "Pod 不进去的";
+			sourceTree = "<group>";
+		};
+		C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */ = {
+			isa = PBXGroup;
+			children = (
+				C54F854C252B609700EE3DD0 /* UITableView+WWFoldableTableView.h */,
+				C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */,
+			);
+			path = "UITableView 折叠功能";
 			sourceTree = "<group>";
 		};
 		C557DC1724C8063700754760 /* MJExtension用法 */ = {
@@ -3098,6 +3110,7 @@
 		C5FE9B1224B5F203007B9878 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */,
 				C5A6D76025243B440096910D /* 专治UITableView相应链断裂 */,
 				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
 			);
@@ -3781,8 +3794,8 @@
 		C5FE9C8224B5F29B007B9878 /* HotLabel */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9C8324B5F29B007B9878 /* HotLabel.h */,
-				C5FE9C8424B5F29B007B9878 /* HotLabel.m */,
+				C54F8556252B60E500EE3DD0 /* HotLabel.h */,
+				C54F8555252B60E500EE3DD0 /* HotLabel.m */,
 			);
 			path = HotLabel;
 			sourceTree = "<group>";
@@ -4327,6 +4340,7 @@
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C5A6D6D3252433CC0096910D /* ZYTextField+HistoryDataList.m in Sources */,
 				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
+				C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */,
 				C590FF3E24D00D23000F36C9 /* SDWebImageCoder.m in Sources */,
 				C533701724DB00280082847C /* BRBaseView.m in Sources */,
 				C5B5204024D6BCC400579178 /* UINavigationController+GKCategory.m in Sources */,
@@ -4358,6 +4372,7 @@
 				C5601F6924F6A02F0070FBD5 /* YHGPUImageBeautifyFilter.m in Sources */,
 				C59B9F4E2527051F0039B485 /* HoveringHeaderView.m in Sources */,
 				C5B1C7B524BAB919001923FB /* LOTRepeaterRenderer.m in Sources */,
+				C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */,
 				C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,
@@ -4451,7 +4466,6 @@
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5A6D505252367870096910D /* BaseVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
-				C5FE9D1E24B5F29C007B9878 /* HotLabel.m in Sources */,
 				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,

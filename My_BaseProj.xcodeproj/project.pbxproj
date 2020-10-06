@@ -38,6 +38,8 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
+		C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */; };
+		C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
 		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
 		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
@@ -498,6 +500,10 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
+		C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
 		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
 		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
@@ -1639,6 +1645,17 @@
 			path = "MJRefresh + Lottie";
 			sourceTree = "<group>";
 		};
+		C546C449252C249A003694FF /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */,
+				C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */,
+				C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */,
+				C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		C54BB50D2518E53F001591C2 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1679,6 +1696,7 @@
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
+				C546C449252C249A003694FF /* FDFullscreenPopGesture */,
 				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
 				C5CF708C24E4307A000DB72D /* MKGPUImageView */,
 				C5336FF424DB00280082847C /* BRPickerView */,
@@ -4240,6 +4258,7 @@
 				C561618124EE4976001CD851 /* MKUploadingVC.m in Sources */,
 				C533701A24DB00280082847C /* BRAddressPickerView.m in Sources */,
 				C5B1C7C124BAB91A001923FB /* LOTValueCallback.m in Sources */,
+				C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
 				C5FE9D1724B5F29C007B9878 /* FSAppIconManager.m in Sources */,
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
 				C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */,
@@ -4402,6 +4421,7 @@
 				C5FE9CE124B5F29C007B9878 /* DIYScanVC.m in Sources */,
 				C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
+				C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				C590FF3A24D00D23000F36C9 /* SDWebImageImageIOCoder.m in Sources */,
 				C5A6D50A252367870096910D /* BaseVC+TZLocationManager.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,

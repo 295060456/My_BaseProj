@@ -17,12 +17,10 @@ target 'My_BaseProj' do
   pod 'FLEX'  # https://github.com/Flipboard/FLEX 调试界面相关插件
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果
   pod 'ReactiveObjC'  # https://github.com/ReactiveCocoa/ReactiveObjC 重量级框架
-#  pod 'EAIntroView' # https://github.com/ealeksandrov/EAIntroView 启动图 框架有点老了
 #  pod 'LBLaunchImageAd' # https://github.com/AllLuckly/LBLaunchImageAd 启动图 未适配iOS 13 拖动到手动Pod自己改
   pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
-  pod 'Texture' #Facebook出品的一款界面框架
-#  pod 'GKNavigationBarViewController' # https://github.com/QuintGao/GKNavigationBarViewController 自定义导航栏，摒弃系统类，无侵入性，耦合度低，推荐使用
-#  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
+#  pod 'Texture' #Facebook出品的一款界面框架  暂时打开会报错 但是还是在更新
+  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
   pod 'GKPageScrollView' # https://github.com/QuintGao/GKPageScrollView iOS类似微博、抖音、网易云等个人详情页滑动嵌套效果
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
@@ -39,12 +37,11 @@ target 'My_BaseProj' do
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'BSYKeyBoard' # https://github.com/baishiyun/BSYKeyBoard
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
-#  pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
+  pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
   pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
   #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
   pod 'FDFullscreenPopGesture'# https://github.com/forkingdog/FDFullscreenPopGesture 一个丝滑的全屏滑动返回手势 A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.
-#  pod 'ZYSuspensionView/SuspensionView' # https://github.com/ripperhe/ZYSuspensionView 悬浮球带点击事件
-  pod 'Debugo' # https://github.com/ripperhe/Debugo ZYSuspensionView/SuspensionView 悬浮球带点击事件 不维护了，作者转向了这个库
+#  pod 'Debugo' # https://github.com/ripperhe/Debugo ZYSuspensionView/SuspensionView 悬浮球带点击事件 不维护了，作者转向了这个库
   pod 'FMDB'  # https://github.com/ccgus/fmdb 数据库第三方框架 A Cocoa / Objective-C wrapper around SQLite
   pod 'WCDB'  # https://github.com/Tencent/wcdb WCDB is a cross-platform database framework developed by WeChat.
   pod 'Shimmer' # Facebook 推出的一款具有闪烁效果的第三方控件
@@ -61,9 +58,7 @@ target 'My_BaseProj' do
   pod 'pop' # https://github.com/facebookarchive/pop 动画 An extensible iOS and OS X animation library, useful for physics-based interactions.
   pod 'AYCheckVersion'  # https://github.com/AYJk/AYCheckVersion 提示更新 Check version from AppStore / 从AppStore检查更新
   pod 'UICountingLabel' # https://github.com/dataxpress/UICountingLabel Lable上的默认值持续变动到指定值 Adds animated counting support to UILabel.
-  #pod 'RegexKitLite'  #第三方正则表达式开源库
   pod 'AwesomeMenu' # https://github.com/levey/AwesomeMenu AwesomeMenu is a menu with the same look as the story menu of Path.
-  pod 'PYSearch'  # https://github.com/ko1o/PYSearch 优雅的搜索控制器取代了UISearchController for iOS（iPhone和iPad） An elegant search controller which replaces the UISearchController for iOS (iPhone & iPad) .
   pod 'TTTAttributedLabel'  # https://github.com/TTTAttributedLabel/TTTAttributedLabel 替代UILabel
   pod 'WebViewJavascriptBridge' # https://github.com/marcuswestin/WebViewJavascriptBridge An iOS/OSX bridge for sending messages between Obj-C and JavaScript in UIWebViews/WebViews
   pod 'HBDNavigationBar'  # https://github.com/listenzz/HBDNavigationBar 自定义UINavigationBar，用于在各种状态之间平滑切换，包括条形样式，条形色调，背景图像，背景alpha，条形隐藏，标题文本属性，色调颜色，阴影隐藏...
@@ -79,7 +74,6 @@ target 'My_BaseProj' do
   pod 'ZWPullMenuView' # https://github.com/wangziwu/ZWPullMenuView 下拉选择视图、支持微信、支付宝等样式。自动计算最优显示位置、动画效果。
   pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
   pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
-#  pod 'ZZCircleProgress'
   pod 'WSLNativeScanTool' # https://github.com/wsl2ls/ScanQRcode 是在利用原生API的条件下封装的二维码扫描工具，支持二维码的扫描、识别图中二维码、生成自定义颜色和中心图标的二维码、监测环境亮度、打开闪光灯这些功能；WSLScanView是参照微信封装的一个扫一扫界面，支持线条颜色、大小、动画图片、矩形扫描框样式的自定义；这个示例本身就是仿照微信的扫一扫功能实现的。
   pod 'TRCustomAlert'
   pod 'Reveal-SDK', :configurations => ['Debug']
@@ -99,14 +93,12 @@ target 'My_BaseProj' do
   pod 'PPBadgeView' #https://github.com/jkpang/PPBadgeView iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
   pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具
-#  pod 'QMUIKit' # https://github.com/Tencent/QMUI_iOS 「很遗憾，没有对iOS 13进行适配」 QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。不管是新项目的创建，或是已有项目的维护，均可使开发效率和项目质量得到大幅度提升。
   #  pod 'DZNEmptyDataSet' # https://github.com/dzenbot/DZNEmptyDataSet 空白数据集显示框架
   pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
   #  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
 #  pod 'FMDB/SQLCipher' # 数据库加解密
 #  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   
-  pod 'GPUImage' # https://github.com/BradLarson/GPUImage
   pod 'JSONModel' # https://github.com/jsonmodel/jsonmodel
   pod 'LBXScan/LBXNative'
   pod 'LBXScan/LBXZXing'
@@ -121,8 +113,8 @@ target 'My_BaseProj' do
 
   #pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_live' # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
 #  pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
-  pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
+#  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
+#  pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
 
   target 'My_BaseProjTests' do
     inherit! :search_paths

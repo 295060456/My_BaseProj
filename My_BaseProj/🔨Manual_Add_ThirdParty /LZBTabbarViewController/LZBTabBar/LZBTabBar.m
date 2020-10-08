@@ -17,6 +17,7 @@
 
 @property(nonatomic,assign)CGFloat itemWidth;
 @property(nonatomic,assign)BOOL isAnimation;
+@property(nonatomic,assign)BOOL isOK;
 
 @end
 
@@ -34,7 +35,12 @@
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [self setupUI];
+
+    if (!self.isOK) {
+        [self setupUI];
+        self.isOK = YES;
+    }
+    
     [self layoutIfNeeded];
 }
 

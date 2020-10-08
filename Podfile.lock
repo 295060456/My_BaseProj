@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - AwesomeMenu (1.0.0)
-  - AWRichText (1.0.1)
   - AYCheckVersion (1.3.5)
   - BEMCheckBox (1.4.1)
   - BSYKeyBoard (1.1.2)
@@ -266,11 +265,11 @@ PODS:
   - YYKit/no-arc (1.0.9)
   - ZBarSDK (1.3.1)
   - ZFJTreeViewKit (1.0.1)
+  - ZWPullMenuView (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking
   - AwesomeMenu
-  - AWRichText
   - AYCheckVersion
   - BEMCheckBox
   - BSYKeyBoard
@@ -344,12 +343,12 @@ DEPENDENCIES:
   - YQImageCompressor
   - YYKit
   - ZFJTreeViewKit
+  - ZWPullMenuView
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - AwesomeMenu
-    - AWRichText
     - AYCheckVersion
     - BEMCheckBox
     - BSYKeyBoard
@@ -444,11 +443,11 @@ SPEC REPOS:
     - YYKit
     - ZBarSDK
     - ZFJTreeViewKit
+    - ZWPullMenuView
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   AwesomeMenu: 34bad7f873e4b3cfaa6651fabbb96607d0e8f2b3
-  AWRichText: 7adc57ff591ef9365cfb3f35aac98b2e97db015d
   AYCheckVersion: 3a313028a34ddfc5ccd16417d0a364fce2bb0add
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BSYKeyBoard: 777eb83fc0aca335f4d94d83eced12c797c654c6
@@ -543,7 +542,8 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
+  ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: da9d7d3fa6a6b41e44bb5f645a32314443ccc1ae
+PODFILE CHECKSUM: f3f4b3204f39d836dcd24b186e4f32f4a65d39a8
 
 COCOAPODS: 1.9.3

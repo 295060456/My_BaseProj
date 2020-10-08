@@ -419,7 +419,6 @@
 /* Begin PBXFileReference section */
 		3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.release.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.release.xcconfig"; sourceTree = "<group>"; };
-		8B272FAB25281E050086E19D /* RVM_Ruby_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = RVM_Ruby_Config; sourceTree = "<group>"; };
 		A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProj.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProj/Pods-My_BaseProj.debug.xcconfig"; sourceTree = "<group>"; };
 		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
 		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
@@ -578,6 +577,7 @@
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "_Nullable等的用法和总结"; sourceTree = "<group>"; };
+		C56E29E0252EC32B004ACCC7 /* cocoapods_gem_ruby */ = {isa = PBXFileReference; lastKnownFileType = text; path = cocoapods_gem_ruby; sourceTree = "<group>"; };
 		C572A28424FCBDDD000A1687 /* UIImage+Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Overlay.h"; sourceTree = "<group>"; };
 		C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Overlay.m"; sourceTree = "<group>"; };
 		C572A28624FCBDDE000A1687 /* UIImage+Tailor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tailor.m"; sourceTree = "<group>"; };
@@ -957,7 +957,7 @@
 		C5D8288F24FB65D8002DD3E6 /* fangzi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fangzi.json; sourceTree = "<group>"; };
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
-		C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20200919_10.png; sourceTree = "<group>"; };
+		C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置view的透明度影响子控件的解决方案.png"; sourceTree = "<group>"; };
 		C5E3C7752517869000F9A150 /* UIImage+screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+screenshot.h"; sourceTree = "<group>"; };
 		C5E3C7762517869000F9A150 /* UIImage+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+screenshot.m"; sourceTree = "<group>"; };
 		C5E3C79E25179B3800F9A150 /* File */ = {isa = PBXFileReference; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
@@ -1032,7 +1032,6 @@
 		C5FE9A8C24B5F0C6007B9878 /* Weex_Config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weex_Config; sourceTree = "<group>"; };
 		C5FE9A8D24B5F0C6007B9878 /* Computer_Config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Computer_Config; sourceTree = "<group>"; };
 		C5FE9A8E24B5F0C6007B9878 /* Flutter_Config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Flutter_Config; sourceTree = "<group>"; };
-		C5FE9A8F24B5F0C6007B9878 /* Cocoapods_Config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cocoapods_Config; sourceTree = "<group>"; };
 		C5FE9A9024B5F0C6007B9878 /* Homebrew_Config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Homebrew_Config; sourceTree = "<group>"; };
 		C5FE9A9C24B5F0EF007B9878 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.0.9.tbd"; sourceTree = "<group>"; };
 		C5FE9A9D24B5F0EF007B9878 /* libstdc++.6.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libstdc++.6.tbd"; sourceTree = "<group>"; };
@@ -1272,7 +1271,7 @@
 		C5FE9D3C24B5F3C6007B9878 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		C5FE9D3D24B5F3C6007B9878 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		C5FE9D3E24B5F3C6007B9878 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C5FE9D4124B5FCC9007B9878 /* Snip20191119_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snip20191119_1.png; sourceTree = "<group>"; };
+		C5FE9D4124B5FCC9007B9878 /* 详解UIScrollView 和UITabableView的滚动区域.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详解UIScrollView 和UITabableView的滚动区域.png"; sourceTree = "<group>"; };
 		CFC957FBFBF881D2D5DF8EB7 /* libPods-My_BaseProjTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProjTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23081BF3446938E018C6095 /* libPods-My_BaseProjUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My_BaseProjUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5580596C353C8DACF01DAD6 /* Pods-My_BaseProjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_BaseProjUITests.debug.xcconfig"; path = "Target Support Files/Pods-My_BaseProjUITests/Pods-My_BaseProjUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1870,6 +1869,15 @@
 				C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */,
 			);
 			path = "签名上架";
+			sourceTree = "<group>";
+		};
+		C56E29DF252EC2BE004ACCC7 /* Cocoapods */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9A8B24B5F0C6007B9878 /* Oh-my-zsh_Config */,
+				C56E29E0252EC32B004ACCC7 /* cocoapods_gem_ruby */,
+			);
+			path = Cocoapods;
 			sourceTree = "<group>";
 		};
 		C572A29424FD2A94000A1687 /* PingTest */ = {
@@ -2542,7 +2550,7 @@
 		C5CF8946252AC328002499C6 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9D4124B5FCC9007B9878 /* Snip20191119_1.png */,
+				C5FE9D4124B5FCC9007B9878 /* 详解UIScrollView 和UITabableView的滚动区域.png */,
 				C5FE9A7B24B5F0B6007B9878 /* cell重用.png */,
 				C5FE9A7E24B5F0B6007B9878 /* TableViewCell自适应 */,
 				C5CF8956252AC380002499C6 /* iOS 只刷新某一行或某一组的cell */,
@@ -2828,7 +2836,7 @@
 				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
 				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
 				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
-				C5E3C64F2515B69300F9A150 /* Snip20200919_10.png */,
+				C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */,
 				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
 				C5FE9A7624B5F0B6007B9878 /* Jose */,
@@ -2846,16 +2854,14 @@
 		C5FE9A8824B5F0BE007B9878 /* Computer_Config */ = {
 			isa = PBXGroup;
 			children = (
+				C56E29DF252EC2BE004ACCC7 /* Cocoapods */,
 				C5FE9A8D24B5F0C6007B9878 /* Computer_Config */,
-				C5FE9A8F24B5F0C6007B9878 /* Cocoapods_Config */,
-				C5FE9A8E24B5F0C6007B9878 /* Flutter_Config */,
 				C5FE9A9024B5F0C6007B9878 /* Homebrew_Config */,
-				C5FE9A8B24B5F0C6007B9878 /* Oh-my-zsh_Config */,
+				C5FE9A8E24B5F0C6007B9878 /* Flutter_Config */,
 				C5FE9A8924B5F0C6007B9878 /* React-native_Config */,
 				C5FE9A8C24B5F0C6007B9878 /* Weex_Config */,
 				C5FE9A8A24B5F0C6007B9878 /* MacPorts_Config */,
 				C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */,
-				8B272FAB25281E050086E19D /* RVM_Ruby_Config */,
 			);
 			path = Computer_Config;
 			sourceTree = "<group>";

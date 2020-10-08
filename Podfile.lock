@@ -52,7 +52,6 @@ PODS:
     - FBAllocationTracker (~> 0.1)
     - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
-  - FDFullscreenPopGesture (1.1)
   - FirebaseAnalytics (6.9.0):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.7)
@@ -127,7 +126,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilitiesLegacy (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - GPUImage (0.1.7)
   - HBDNavigationBar (1.7.7)
   - HCSStarRatingView (1.5)
   - IQKeyboardManager (6.5.6)
@@ -152,6 +150,7 @@ PODS:
   - JJException/Swizzle (0.2.9)
   - JJStockView (0.0.7)
   - JPImageresizerView (1.7.7)
+  - JSONModel (1.8.0)
   - JXCategoryView (1.5.7)
   - LBXScan/LBXNative (2.3):
     - LBXScan/Types (~> 2.2)
@@ -251,14 +250,12 @@ DEPENDENCIES:
   - DoraemonKit
   - DTCoreText
   - FBMemoryProfiler
-  - FDFullscreenPopGesture
   - "FLAnimatedImageView+RGWrapper"
   - FLEX
   - FMDB
   - GKNavigationBar
   - GKPageScrollView
   - GoogleTagManager
-  - GPUImage
   - HBDNavigationBar
   - HCSStarRatingView
   - IQKeyboardManager
@@ -266,6 +263,7 @@ DEPENDENCIES:
   - JJException
   - JJStockView
   - JPImageresizerView
+  - JSONModel
   - JXCategoryView
   - LBXScan/LBXNative
   - LBXScan/LBXZBar
@@ -329,7 +327,6 @@ SPEC REPOS:
     - FBAllocationTracker
     - FBMemoryProfiler
     - FBRetainCycleDetector
-    - FDFullscreenPopGesture
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -348,7 +345,6 @@ SPEC REPOS:
     - GoogleTagManager
     - GoogleUtilities
     - GoogleUtilitiesLegacy
-    - GPUImage
     - HBDNavigationBar
     - HCSStarRatingView
     - IQKeyboardManager
@@ -356,6 +352,7 @@ SPEC REPOS:
     - JJException
     - JJStockView
     - JPImageresizerView
+    - JSONModel
     - JXCategoryView
     - LBXScan
     - LYEmptyView
@@ -421,7 +418,6 @@ SPEC CHECKSUMS:
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
-  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
@@ -440,7 +436,6 @@ SPEC CHECKSUMS:
   GoogleTagManager: 9e7aa92603b3101fcc86f761c927ddd6f4c26c0e
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GoogleUtilitiesLegacy: 5501bedec1646bd284286eb5fc9453f7e23a12f4
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
@@ -448,6 +443,7 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JPImageresizerView: ba2301b87ad03f7a7976deec4ccc75085d29f6c1
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   JXCategoryView: fca2146e87eeaf014c71041337cb07bd4de5830b
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
@@ -498,6 +494,6 @@ SPEC CHECKSUMS:
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 03c3e77c0fac06623c18b2aaf40f99c1a1e8c57a
+PODFILE CHECKSUM: 53342c2b015e45bc2a21ddf2288bc397887f5996
 
 COCOAPODS: 1.9.3

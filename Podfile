@@ -40,7 +40,6 @@ target 'My_BaseProj' do
   pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
   pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
   #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
-  pod 'FDFullscreenPopGesture'# https://github.com/forkingdog/FDFullscreenPopGesture 一个丝滑的全屏滑动返回手势 A UINavigationController's category to enable fullscreen pop gesture with iOS7+ system style.
 #  pod 'Debugo' # https://github.com/ripperhe/Debugo ZYSuspensionView/SuspensionView 悬浮球带点击事件 不维护了，作者转向了这个库
   pod 'FMDB'  # https://github.com/ccgus/fmdb 数据库第三方框架 A Cocoa / Objective-C wrapper around SQLite
   pod 'WCDB'  # https://github.com/Tencent/wcdb WCDB is a cross-platform database framework developed by WeChat.

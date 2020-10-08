@@ -29,7 +29,7 @@ static char *BaseVC_AFNReachability_afNetworkReachabilityManager = "BaseVC_AFNRe
             @strongify(self)
             switch (status) {
                 case AFNetworkReachabilityStatusUnknown:
-                    DLog(@"未知网络");
+                    NSLog(@"未知网络");
                     if (self.UnknownNetWorking) {
                         self.UnknownNetWorking();
                     }
@@ -38,7 +38,7 @@ static char *BaseVC_AFNReachability_afNetworkReachabilityManager = "BaseVC_AFNRe
                     }
                     break;
                 case AFNetworkReachabilityStatusReachableViaWWAN:
-                    DLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
+                    NSLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
                     if (self.ReachableViaWWANNetWorking) {
                         self.ReachableViaWWANNetWorking();
                     }
@@ -47,7 +47,7 @@ static char *BaseVC_AFNReachability_afNetworkReachabilityManager = "BaseVC_AFNRe
                     }
                     break;
                 case AFNetworkReachabilityStatusReachableViaWiFi:
-                    DLog(@"WIFI网络");
+                    NSLog(@"WIFI网络");
                     if (self.ReachableViaWiFiNetWorking) {
                         self.ReachableViaWiFiNetWorking();
                     }
@@ -56,7 +56,7 @@ static char *BaseVC_AFNReachability_afNetworkReachabilityManager = "BaseVC_AFNRe
                     }
                     break;
                 case AFNetworkReachabilityStatusNotReachable:
-                    DLog(@"没有网络");
+                    NSLog(@"没有网络");
                     if (self.NotReachableNetWorking) {
                         self.NotReachableNetWorking();
                     }

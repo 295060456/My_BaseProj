@@ -56,7 +56,6 @@
 #import "SuspendLab.h"
 #import "SuspendView.h"
 #import "MonitorNetwoking.h"
-#import "GPUImageTools.h"
 #import "JhtBannerView.h"
 #import "ZZCircleProgress.h"
 #import "MovieCountDown.h"
@@ -128,10 +127,6 @@
 #import "MKPublickDataManager.h"//数据管理
 #import "YBNotificationManager.h"//通知名字定义
 #import "APIKey.h"
-///视频预览
-#import "CustomerAVPlayerVC.h"
-#import "CustomerAVPlayerView.h"
-#import "CustomerGPUImagePlayerVC.h"
 
 //#import "IsLogin.h"
 //#import "PersonalInfo.h"

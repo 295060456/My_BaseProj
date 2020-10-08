@@ -7,6 +7,7 @@
 //
 
 #import "BaseVC.h"
+#import "JPImageresizerView.h"
 
 typedef enum : NSInteger {
     JPImageresizerConfigureType_1 = 0,//默认配置裁剪图片/GIF（UIImage）

@@ -70,6 +70,7 @@
 		C57D5C57251374CE0073F90B /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */; };
 		C57D5C58251374CE0073F90B /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */; };
 		C586924625300FBD00657CD3 /* 空白图.png in Resources */ = {isa = PBXBuildFile; fileRef = C586924525300FBD00657CD3 /* 空白图.png */; };
+		C586925425301AC000657CD3 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -102,7 +103,6 @@
 		C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */; };
 		C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */; };
 		C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */; };
-		C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
 		C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BED24EFB58B00158D1E /* LZBTabBar.m */; };
 		C5A46BFB24EFB59200158D1E /* LZBTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BF824EFB59200158D1E /* LZBTabBarVC.m */; };
 		C5A6D4FF252367870096910D /* BaseVC+JXCategoryListContentViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */; };
@@ -1233,11 +1233,11 @@
 		C51137BB24E022D2001049D5 /* LZBTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				C5A46BF124EFB58C00158D1E /* LZBTabBarDelegate.h */,
 				C5A46BEF24EFB58C00158D1E /* LZBTabBar.h */,
 				C5A46BED24EFB58B00158D1E /* LZBTabBar.m */,
-				C5A46BF024EFB58C00158D1E /* LZBTabBarItem.h */,
-				C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */,
+				C5A46BF124EFB58C00158D1E /* LZBTabBarDelegate.h */,
+				C586925E25301AD300657CD3 /* LZBTabBarItem_UIButton */,
+				C586924A2530181200657CD3 /* LZBTabBarItem_UIControl */,
 			);
 			path = LZBTabBar;
 			sourceTree = "<group>";
@@ -1684,6 +1684,22 @@
 				C572A2A124FD2FB5000A1687 /* Uses */,
 			);
 			path = "颜色渐变的View，GDFadeView";
+			sourceTree = "<group>";
+		};
+		C586924A2530181200657CD3 /* LZBTabBarItem_UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				C5A46BF024EFB58C00158D1E /* LZBTabBarItem.h */,
+				C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */,
+			);
+			path = LZBTabBarItem_UIControl;
+			sourceTree = "<group>";
+		};
+		C586925E25301AD300657CD3 /* LZBTabBarItem_UIButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LZBTabBarItem_UIButton;
 			sourceTree = "<group>";
 		};
 		C58F03F424EB879700B6D09C /* temp */ = {
@@ -3940,7 +3956,6 @@
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C5FE9D0424B5F29C007B9878 /* TimeManager.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
-				C5A46BF324EFB58C00158D1E /* LZBTabBarItem.m in Sources */,
 				C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
 				C5FE9CDF24B5F29C007B9878 /* Global.m in Sources */,
@@ -4074,6 +4089,7 @@
 				C5A6D50A252367870096910D /* BaseVC+TZLocationManager.m in Sources */,
 				C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */,
 				C5E3C7772517869000F9A150 /* UIImage+screenshot.m in Sources */,
+				C586925425301AC000657CD3 /* LZBTabBarItem.m in Sources */,
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
 				C5D4FBCE24CFDECC0024A292 /* InputView.m in Sources */,
 				C5B1C7BE24BAB91A001923FB /* LOTShapeCircle.m in Sources */,

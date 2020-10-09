@@ -83,7 +83,7 @@
         [item layoutIfNeeded];
         {
             //Lottie 初始化
-            if (_lottieJsonNameStrMutArr) {
+            if (self.lottieJsonNameStrMutArr.count) {
                 LOTAnimationView *animationView = [LOTAnimationView animationNamed:self.lottieJsonNameStrMutArr[index]];
     //            animation.userInteractionEnabled = YES;
     //            animation.loopAnimation//是否循环

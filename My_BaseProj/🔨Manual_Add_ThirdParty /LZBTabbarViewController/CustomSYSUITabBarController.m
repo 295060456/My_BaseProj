@@ -61,7 +61,7 @@ CGFloat LZB_TABBAR_HEIGHT;
  
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_middleItemUp;//决定中间是否突起 必须在p_setUpAllChildViewController 之后
     self.lzb_tabBar.topLine.alpha = 0;//TabBar顶部分割线
-    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+//    self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
     self.lzb_tabBar.backgroundColor = [UIColor blackColor];
 
 //    [self Badge];
@@ -87,10 +87,16 @@ CGFloat LZB_TABBAR_HEIGHT;
     }
     self.viewControllers = (NSArray *)self.mutArr;
     for (int i = 0; i <self.titleStrMutArr.count; i++) {
+//        [self p_setupCustomTBCWithViewController:self.viewControllerMutArr[i]
+//                                           title:self.titleStrMutArr[i]
+//                                     selectImage:self.lottieJsonNameStrMutArr.count ? (UIImage *)self.customSelectedImgMutArr[i] : KIMG(@"空白图")
+//                                   unSelectImage:self.lottieJsonNameStrMutArr.count ? (UIImage *)self.customUnselectedImgMutArr[i] : KIMG(@"空白图")];
+        
         [self p_setupCustomTBCWithViewController:self.viewControllerMutArr[i]
                                            title:self.titleStrMutArr[i]
-                                     selectImage:self.lottieJsonNameStrMutArr.count ? KIMG(@"空白图") : (UIImage *)self.customSelectedImgMutArr[i]
-                                   unSelectImage:self.lottieJsonNameStrMutArr.count ? KIMG(@"空白图") : (UIImage *)self.customUnselectedImgMutArr[i]];
+                                     selectImage:(UIImage *)self.customSelectedImgMutArr[i]
+                                   unSelectImage:(UIImage *)self.customUnselectedImgMutArr[i]];
+        
     }
    
     self.isShouldAnimation = YES;

@@ -158,10 +158,10 @@
                      animated:NO];
 }
 
-- (NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController{
-  if(viewController.navigationController)
-      viewController = viewController.navigationController;
-    return [self.viewControllers indexOfObject:viewController];
+-(NSInteger)indexForTabBarViewControllerViewControllers:(UIViewController *)viewController{
+    if(viewController.navigationController){
+        viewController = viewController.navigationController;
+    }return [self.viewControllers indexOfObject:viewController];
 }
 #pragma mark- tabbarDelegate
 - (BOOL)lzb_tabBar:(LZBTabBar *)tabBar

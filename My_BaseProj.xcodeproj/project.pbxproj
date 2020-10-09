@@ -71,6 +71,7 @@
 		C57D5C58251374CE0073F90B /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */; };
 		C586924625300FBD00657CD3 /* 空白图.png in Resources */ = {isa = PBXBuildFile; fileRef = C586924525300FBD00657CD3 /* 空白图.png */; };
 		C586925425301AC000657CD3 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
+		C586926D25301C4100657CD3 /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C586926C25301C4100657CD3 /* LOTAnimationView+action.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -529,6 +530,8 @@
 		C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@2x.png"; sourceTree = "<group>"; };
 		C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@3x.png"; sourceTree = "<group>"; };
 		C586924525300FBD00657CD3 /* 空白图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空白图.png"; sourceTree = "<group>"; };
+		C586926B25301C4100657CD3 /* LOTAnimationView+action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOTAnimationView+action.h"; sourceTree = "<group>"; };
+		C586926C25301C4100657CD3 /* LOTAnimationView+action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LOTAnimationView+action.m"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -1233,11 +1236,13 @@
 		C51137BB24E022D2001049D5 /* LZBTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				C586925E25301AD300657CD3 /* LZBTabBarItem_UIButton */,
+				C586924A2530181200657CD3 /* LZBTabBarItem_UIControl */,
+				C586926B25301C4100657CD3 /* LOTAnimationView+action.h */,
+				C586926C25301C4100657CD3 /* LOTAnimationView+action.m */,
 				C5A46BEF24EFB58C00158D1E /* LZBTabBar.h */,
 				C5A46BED24EFB58B00158D1E /* LZBTabBar.m */,
 				C5A46BF124EFB58C00158D1E /* LZBTabBarDelegate.h */,
-				C586925E25301AD300657CD3 /* LZBTabBarItem_UIButton */,
-				C586924A2530181200657CD3 /* LZBTabBarItem_UIControl */,
 			);
 			path = LZBTabBar;
 			sourceTree = "<group>";
@@ -4077,6 +4082,7 @@
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
 				C5B1C7DA24BAB91A001923FB /* LOTBezierData.m in Sources */,
 				C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */,
+				C586926D25301C4100657CD3 /* LOTAnimationView+action.m in Sources */,
 				C5FE9CFC24B5F29C007B9878 /* CJTextField.m in Sources */,
 				C5B1C7D424BAB91A001923FB /* LOTAsset.m in Sources */,
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,

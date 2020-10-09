@@ -62,6 +62,7 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.lzb_tabBar.tabBarStyleType = LZBTabBarStyleType_middleItemUp;//决定中间是否突起 必须在p_setUpAllChildViewController 之后
     self.lzb_tabBar.topLine.alpha = 0;//TabBar顶部分割线
     self.lzb_tabBar.lottieJsonNameStrMutArr = self.lottieJsonNameStrMutArr;
+    self.lzb_tabBar.backgroundColor = [UIColor blackColor];
 
 //    [self Badge];
 }
@@ -79,7 +80,7 @@ CGFloat LZB_TABBAR_HEIGHT;
     
 }
 
-- (void)p_setUpAllChildViewController {
+- (void)p_setUpAllChildViewController{
     self.delegate = self;
     for (int i = 0; i < self.viewControllerMutArr.count; i ++) {
         [self.mutArr addObject:(UIViewController *)self.viewControllerMutArr[i]];
@@ -87,18 +88,18 @@ CGFloat LZB_TABBAR_HEIGHT;
     self.viewControllers = (NSArray *)self.mutArr;
     for (int i = 0; i <self.titleStrMutArr.count; i++) {
         [self p_setupCustomTBCWithViewController:self.viewControllerMutArr[i]
-                                           Title:self.titleStrMutArr[i]
-                                     SelectImage:(UIImage *)self.customSelectedImgMutArr[i]
-                                   NnSelectImage:(UIImage *)self.customUnselectedImgMutArr[i]];
+                                           title:self.titleStrMutArr[i]
+                                     selectImage:self.lottieJsonNameStrMutArr.count ? KIMG(@"空白图") : (UIImage *)self.customSelectedImgMutArr[i]
+                                   unSelectImage:self.lottieJsonNameStrMutArr.count ? KIMG(@"空白图") : (UIImage *)self.customUnselectedImgMutArr[i]];
     }
-    self.lzb_tabBar.backgroundColor = [UIColor blackColor];
+   
     self.isShouldAnimation = YES;
 }
 
 -(void)p_setupCustomTBCWithViewController:(UIViewController *)vc
-                                    Title:(NSString *)titleStr
-                              SelectImage:(UIImage *)selectImage
-                            NnSelectImage:(UIImage *)unSelectImage{
+                                    title:(NSString *)titleStr
+                              selectImage:(UIImage *)selectImage
+                            unSelectImage:(UIImage *)unSelectImage{
     vc.lzb_tabBarItem.selectImage = selectImage;
     vc.lzb_tabBarItem.unSelectImage = unSelectImage;
     vc.lzb_tabBarItem.title = titleStr;//下

@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, GLButtonEdgeInsetsStyle) {
      [self.mkZanView setTitle:self.ZanNumStr forState:UIControlStateSelected];
  }
  [self.mkZanView layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
-                                    imageTitleSpace:5];
+                                 imageTitleSpace:5];
 }
 
  *

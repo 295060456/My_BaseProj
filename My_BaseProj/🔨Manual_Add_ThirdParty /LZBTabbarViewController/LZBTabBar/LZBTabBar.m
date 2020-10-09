@@ -44,7 +44,7 @@
     [self layoutIfNeeded];
 }
 
-- (void)setupUI{
+-(void)setupUI{
     self.backgroundView.alpha = 1;
     self.topLine.alpha = 1;
     NSInteger index = 0;
@@ -80,6 +80,7 @@
             }];
         }
         [item setNeedsDisplay];
+        [item layoutIfNeeded];
         {
             //Lottie 初始化
             if (_lottieJsonNameStrMutArr) {
@@ -95,7 +96,9 @@
                 item.animationView = animationView;
                 [item addSubview:animationView];
                 [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.edges.equalTo(item);
+                    make.center.equalTo(item);
+                    make.width.mas_equalTo(item.mj_h / 2);
+                    make.height.mas_equalTo(item.mj_w / 2);
                 }];
 
                 if (animationView.animationProgress == 0) {
@@ -109,7 +112,6 @@
         index++;
     }
 }
-#pragma mark —— API
 ///点击事件
 - (void)tabbarItemDidSelected:(LZBTabBarItem *)item{
     if (self.currentSelectItem != item) {
@@ -219,23 +221,24 @@
 
 #pragma mark —— LazyLoad
 -(UIView *)backgroundView{
-  if(!_backgroundView){
-      _backgroundView = UIView.new;
-      [self addSubview:_backgroundView];
-      [_backgroundView addSubview:self.topLine];
-      _backgroundView.frame = self.bounds;
-  }return _backgroundView;
+    if(!_backgroundView){
+        _backgroundView = UIView.new;
+        [self addSubview:_backgroundView];
+        [_backgroundView addSubview:self.topLine];
+        _backgroundView.frame = self.bounds;
+    }return _backgroundView;
 }
 
 -(UIView *)topLine{
-  if(!_topLine){
-      _topLine = UIView.new;
-      _topLine.backgroundColor = [UIColor colorWithHexString:@"#37A6F0"];//分割线的颜色
-      _topLine.frame = CGRectMake(0,
-                                  0,
-                                  self.bounds.size.width,
-                                  default_TopLine_Height);
-  }return _topLine;
+    if(!_topLine){
+        _topLine = UIView.new;
+        _topLine.backgroundColor = [UIColor colorWithHexString:@"#37A6F0"];//分割线的颜色
+        _topLine.frame = CGRectMake(0,
+                                    0,
+                                    self.bounds.size.width,
+                                    default_TopLine_Height);
+      
+    }return _topLine;
 }
 
 @end

@@ -12,10 +12,13 @@
 @interface LZBTabBarItem()<UIGestureRecognizerDelegate>
 
 @property(nonatomic,copy)TwoDataBlock LZBTabBarItemGestureRecognizerBlock;
+@property(nonatomic,assign)BOOL isOk;
 
 @end
 
 @implementation LZBTabBarItem
+
+@synthesize title = _title;
 
 - (void)dealloc {
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);
@@ -23,75 +26,73 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        [self setupInit];
-        //添加手势
+        _titleOffest = UIOffsetZero;
+        _unselectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12 weight:UIFontWeightRegular],
+                                     NSForegroundColorAttributeName: kWhiteColor};
+
+        _selectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:13 weight:UIFontWeightRegular],
+                                   NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0xf78361"]};
         self.tagGR.enabled = YES;
         self.longPressGR.enabled = YES;
         self.backgroundColor = kWhiteColor;
     }return self;
 }
 
-- (void)setupInit{
-    self.backgroundColor = [UIColor clearColor];
-    //初始化参数
-    _title = @"";
-    _titleOffest = UIOffsetZero;
-    _unselectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12],
-                                 NSForegroundColorAttributeName: kWhiteColor,};
-
-    _selectTitleAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:13],
-                               NSForegroundColorAttributeName: [UIColor colorWithHexString:@"0xf78361"],};
-}
-
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    CGSize frameSize = self.frame.size;
-    CGSize imageSize = CGSizeZero;
-    CGSize titleSize = CGSizeZero;
-    NSDictionary *titleAttributes = nil;
-    UIImage *backgroundImage = nil;
-    UIImage *image = nil;
-    //获得处理的上下文
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSaveGState(context);
-    {
-        //判断是否选中
-        if(self.isSelected){
-            image = self.selectImage;
-            backgroundImage = self.selectBackgroundImage;
-            titleAttributes = self.selectTitleAttributes;
-        }else{
-            image = self.unSelectImage;
-            backgroundImage = self.unselectBackgroundImage;
-            titleAttributes = self.unselectTitleAttributes;
+    
+    if (!self.isOk) {
+        
+        CGSize frameSize = self.frame.size;
+        CGSize imageSize = CGSizeZero;
+        CGSize titleSize = CGSizeZero;
+        NSDictionary *titleAttributes = nil;
+        UIImage *backgroundImage = nil;
+        UIImage *image = nil;
+        //获得处理的上下文
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSaveGState(context);
+        {
+            //判断是否选中
+            if(self.isSelected){
+                image = self.selectImage;
+                backgroundImage = self.selectBackgroundImage;
+                titleAttributes = self.selectTitleAttributes;
+            }else{
+                image = self.unSelectImage;
+                backgroundImage = self.unselectBackgroundImage;
+                titleAttributes = self.unselectTitleAttributes;
+            }
+            imageSize = (image == nil) ? CGSizeZero : image.size;
         }
-        imageSize = (image== nil) ? CGSizeZero : image.size;
-    }
 
-    {
-        if(backgroundImage) [backgroundImage drawInRect:self.bounds];
-        if(self.title.length == 0){//只有图片
-            [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
-                                         (frameSize.height - imageSize.height) * 0.5 + self.imageOffest.vertical,
-                                         imageSize.width,
-                                         imageSize.height)];
-        }else{//图文
-            titleSize = [self.title sizeWithAttributes:titleAttributes];
-            CGFloat imageTopMaigin = (frameSize.height - imageSize.height - titleSize.height) * 0.5;
-            [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
-                                         imageTopMaigin,
-                                         imageSize.width,
-                                         imageSize.height)];
-            //必须先设置颜色
-            CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
-            [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width) * 0.5 + self.titleOffest.horizontal,
-                                              imageTopMaigin+imageSize.height+self.titleOffest.vertical,
-                                              titleSize.width,
-                                              titleSize.height)
-                    withAttributes:titleAttributes];
+        {
+            if(backgroundImage) [backgroundImage drawInRect:self.bounds];
+            if(self.title.length == 0){//只有图片
+                [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
+                                             (frameSize.height - imageSize.height) * 0.5 + self.imageOffest.vertical,
+                                             imageSize.width,
+                                             imageSize.height)];
+            }else{//图文
+                titleSize = [self.title sizeWithAttributes:titleAttributes];
+                CGFloat imageTopMaigin = (frameSize.height - imageSize.height - titleSize.height) * 0.5;
+                [image drawInRect:CGRectMake((frameSize.width - imageSize.width) * 0.5 + self.imageOffest.horizontal,
+                                             imageTopMaigin,
+                                             imageSize.width,
+                                             imageSize.height)];
+                //必须先设置颜色
+                CGContextSetFillColorWithColor(context, [titleAttributes[NSForegroundColorAttributeName] CGColor]);
+                [self.title drawInRect:CGRectMake((frameSize.width - titleSize.width) * 0.5 + self.titleOffest.horizontal,
+                                                  imageTopMaigin+imageSize.height + self.titleOffest.vertical,
+                                                  titleSize.width,
+                                                  titleSize.height)
+                        withAttributes:titleAttributes];
+            }
         }
+        CGContextRestoreGState(context);
+        
+        self.isOk = YES;
     }
-    CGContextRestoreGState(context);
 }
 #pragma mark —— 手势的响应事件
 -(void)LZBTabBarItemTap:(UITapGestureRecognizer *)tapGR{
@@ -108,7 +109,7 @@
         }break;
         case UIGestureRecognizerStateBegan:{
             //长按手势
-            NSLog(@"一个手势已经开始  但尚未改变或者完成时");
+            NSLog(@"一个手势已经开始 但尚未改变或者完成时");
             if (self.LZBTabBarItemGestureRecognizerBlock) {
                 self.LZBTabBarItemGestureRecognizerBlock(self,longPressGR);
             }
@@ -130,12 +131,58 @@
     }
 }
 
--(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock{
-    self.LZBTabBarItemGestureRecognizerBlock = LZBTabBarItemGestureRecognizerBlock;
-}
-
 -(void)setTagger:(NSInteger)tagger{
     _tagger = tagger;
+}
+
+- (void)setSelectImage:(UIImage *)selectImage
+         unselectImage:(UIImage *)unSelectImage{
+  if(self.selectImage != selectImage)
+      self.selectImage = selectImage;
+  if(self.unSelectImage != unSelectImage)
+      self.unSelectImage = unSelectImage;
+}
+
+- (void)setUnSelectImage:(UIImage *)unSelectImage{
+   if((_unSelectImage != unSelectImage) && unSelectImage)
+       _unSelectImage = unSelectImage;
+}
+
+- (void)setSelectImage:(UIImage *)selectImage{
+    if((_selectImage != selectImage) && selectImage)
+        _selectImage = selectImage;
+}
+
+- (void)setBackgroundSelectedImage:(UIImage *)selectedImage
+                   unselectedImage:(UIImage *)unselectedImage{
+    if(self.selectBackgroundImage != selectedImage)
+        self.selectBackgroundImage = selectedImage;
+    if(self.unselectBackgroundImage != unselectedImage)
+        self.unselectBackgroundImage = unselectedImage;
+}
+
+- (void)setUnselectBackgroundImage:(UIImage *)unselectBackgroundImage{
+    if((_unselectBackgroundImage != unselectBackgroundImage) && unselectBackgroundImage)
+        _unselectBackgroundImage = unselectBackgroundImage;
+}
+
+-(void)setSelectBackgroundImage:(UIImage *)selectBackgroundImage{
+    if((_selectBackgroundImage != selectBackgroundImage) && selectBackgroundImage)
+        _selectBackgroundImage = selectBackgroundImage;
+}
+
+- (void)setTitle:(NSString *)title{
+    _title = title;
+    [self setNeedsDisplay];
+    [self layoutIfNeeded];
+}
+
+-(void)setAnimationView:(LOTAnimationView *)animationView{
+    _animationView = animationView;
+}
+
+-(void)gestureRecognizerLZBTabBarItemBlock:(TwoDataBlock)LZBTabBarItemGestureRecognizerBlock{
+    self.LZBTabBarItemGestureRecognizerBlock = LZBTabBarItemGestureRecognizerBlock;
 }
 #pragma mark —— lazyLoad
 -(UITapGestureRecognizer *)tagGR{
@@ -176,50 +223,11 @@
         [self addGestureRecognizer:_longPressGR];
     }return _longPressGR;
 }
-#pragma mark - config
-- (void)setSelectImage:(UIImage *)selectImage
-         unselectImage:(UIImage *)unSelectImage{
-  if(self.selectImage != selectImage)
-      self.selectImage = selectImage;
-  if(self.unSelectImage != unSelectImage)
-      self.unSelectImage = unSelectImage;
-}
 
-- (void)setUnSelectImage:(UIImage *)unSelectImage{
-   if((_unSelectImage != unSelectImage) && unSelectImage)
-       _unSelectImage = unSelectImage;
-}
-
-- (void)setSelectImage:(UIImage *)selectImage{
-    if((_selectImage != selectImage) && selectImage)
-        _selectImage = selectImage;
-}
-
-- (void)setBackgroundSelectedImage:(UIImage *)selectedImage
-                   unselectedImage:(UIImage *)unselectedImage{
-    if(self.selectBackgroundImage != selectedImage)
-        self.selectBackgroundImage = selectedImage;
-    if(self.unselectBackgroundImage != unselectedImage)
-        self.unselectBackgroundImage = unselectedImage;
-}
-
-- (void)setUnselectBackgroundImage:(UIImage *)unselectBackgroundImage{
-    if((_unselectBackgroundImage != unselectBackgroundImage) && unselectBackgroundImage)
-        _unselectBackgroundImage = unselectBackgroundImage;
-}
-
--(void)setSelectBackgroundImage:(UIImage *)selectBackgroundImage{
-    if((_selectBackgroundImage != selectBackgroundImage) && selectBackgroundImage)
-        _selectBackgroundImage = selectBackgroundImage;
-}
-
-- (void)setTitle:(NSString *)title{
-    _title = title;
-    [self setNeedsDisplay];
-}
-
--(void)setAnimationView:(LOTAnimationView *)animationView{
-    _animationView = animationView;
+-(NSString *)title{
+    if (!_title) {
+        _title = @"";
+    }return _title;
 }
 
 @end

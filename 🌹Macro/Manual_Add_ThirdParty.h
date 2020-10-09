@@ -65,7 +65,12 @@
 #import "WGradientProgressView.h"
 
 #pragma mark —— 以下是自定义的
-#import "ToolMacro.h"
+
+#import "MacroDef_Sys.h"
+#import "MacroDef_Cor.h"
+#import "MacroDef_Size.h"
+#import "MacroDef_Func.h"
+
 #import "NSString+Extras.h"
 #import "UITableViewCell+WhiteArrows.h"
 #import "UIControl+XY.h"
@@ -141,9 +146,6 @@
 //#import "LoginVC.h"
 //个人中心
 //#import "PersonalCenterVC.h"
-//搜索
-#import "SearchVC.h"
-#import "SearchView.h"
 //视频播放Cell
 //#import "VideoCell.h"
 //#import "MKRecoderHeader.h"

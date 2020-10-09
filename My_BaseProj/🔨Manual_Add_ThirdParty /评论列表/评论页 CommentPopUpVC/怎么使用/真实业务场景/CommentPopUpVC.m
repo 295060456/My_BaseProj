@@ -148,7 +148,7 @@ UITableViewDelegate
 -(void)cancel{}
 #pragma mark ===================== 下拉刷新===================================
 - (void)pullToRefresh {
-    DLog(@"下拉刷新");
+    NSLog(@"下拉刷新");
     if (self.commentModel.listMytArr.count) {
         [self.commentModel.listMytArr removeAllObjects];
     }
@@ -156,7 +156,7 @@ UITableViewDelegate
 }
 #pragma mark ===================== 上拉加载更多===================================
 - (void)loadMoreRefresh {
-    DLog(@"上拉加载更多");
+    NSLog(@"上拉加载更多");
 }
 
 -(void)endRefreshing:(BOOL)refreshing{

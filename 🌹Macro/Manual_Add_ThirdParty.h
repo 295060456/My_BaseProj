@@ -99,6 +99,7 @@
 #import "NSObject+Random.h"
 #import "NSObject+SYSAlertController.h"
 #import "NSObject+SPAlertController.h"
+#import "NSObject+OpenURL.h"
 
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 #import "UIImage+YBGIF.h"
@@ -123,7 +124,6 @@
 #import "BaseVC+BRPickerView.h"
 #import "BaseVC+GifImageView.h"
 #import "BaseVC+JPImageresizerView.h"
-#import "BaseVC+OpenURL.h"
 #import "BaseVC+BWShareView.h"
 
 #import "AppDelegate.h"

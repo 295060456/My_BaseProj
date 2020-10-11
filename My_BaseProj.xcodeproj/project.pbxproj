@@ -69,6 +69,7 @@
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57D5C57251374CE0073F90B /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */; };
 		C57D5C58251374CE0073F90B /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */; };
+		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
 		C586924625300FBD00657CD3 /* 空白图.png in Resources */ = {isa = PBXBuildFile; fileRef = C586924525300FBD00657CD3 /* 空白图.png */; };
 		C586925425301AC000657CD3 /* LZBTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BEC24EFB58B00158D1E /* LZBTabBarItem.m */; };
 		C586926D25301C4100657CD3 /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C586926C25301C4100657CD3 /* LOTAnimationView+action.m */; };
@@ -116,7 +117,6 @@
 		C5A6D503252367870096910D /* BaseVC+BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EB252367860096910D /* BaseVC+BWShareView.m */; };
 		C5A6D504252367870096910D /* BaseVC+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EC252367860096910D /* BaseVC+BRPickerView.m */; };
 		C5A6D505252367870096910D /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4EE252367860096910D /* BaseVC.m */; };
-		C5A6D506252367870096910D /* BaseVC+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */; };
 		C5A6D507252367870096910D /* BaseVC+TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */; };
 		C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */; };
 		C5A6D509252367870096910D /* BaseVC+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D4F7252367860096910D /* BaseVC+BackBtn.m */; };
@@ -520,6 +520,8 @@
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@2x.png"; sourceTree = "<group>"; };
 		C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@3x.png"; sourceTree = "<group>"; };
+		C57F0D062533369F0080EEF0 /* NSObject+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+OpenURL.h"; sourceTree = "<group>"; };
+		C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OpenURL.m"; sourceTree = "<group>"; };
 		C586924525300FBD00657CD3 /* 空白图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空白图.png"; sourceTree = "<group>"; };
 		C586926B25301C4100657CD3 /* LOTAnimationView+action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LOTAnimationView+action.h"; sourceTree = "<group>"; };
 		C586926C25301C4100657CD3 /* LOTAnimationView+action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LOTAnimationView+action.m"; sourceTree = "<group>"; };
@@ -602,7 +604,6 @@
 		C5A46BF724EFB59200158D1E /* LZBTabBarVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBTabBarVCDelegate.h; sourceTree = "<group>"; };
 		C5A46BF824EFB59200158D1E /* LZBTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBTabBarVC.m; sourceTree = "<group>"; };
 		C5A46BF924EFB59200158D1E /* UIViewController+LZBTabBarVCItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LZBTabBarVCItem.h"; sourceTree = "<group>"; };
-		C5A6D4E1252367850096910D /* BaseVC+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+OpenURL.h"; sourceTree = "<group>"; };
 		C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JXCategoryListContentViewDelegate.m"; sourceTree = "<group>"; };
 		C5A6D4E3252367850096910D /* BaseVC+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+MJRefresh.m"; sourceTree = "<group>"; };
 		C5A6D4E4252367850096910D /* BaseVC+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+AFNReachability.m"; sourceTree = "<group>"; };
@@ -619,7 +620,6 @@
 		C5A6D4EF252367860096910D /* BaseVC+GifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+GifImageView.h"; sourceTree = "<group>"; };
 		C5A6D4F0252367860096910D /* BaseVC+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+JPImageresizerView.h"; sourceTree = "<group>"; };
 		C5A6D4F1252367860096910D /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+OpenURL.m"; sourceTree = "<group>"; };
 		C5A6D4F4252367860096910D /* BaseVC+BWShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BaseVC+BWShareView.h"; sourceTree = "<group>"; };
 		C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+TZImagePickerController.m"; sourceTree = "<group>"; };
 		C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+JPImageresizerView.m"; sourceTree = "<group>"; };
@@ -2835,6 +2835,8 @@
 			isa = PBXGroup;
 			children = (
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
+				C57F0D062533369F0080EEF0 /* NSObject+OpenURL.h */,
+				C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */,
 				C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */,
 				C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */,
 				C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */,
@@ -3025,8 +3027,6 @@
 				C5A6D4F6252367860096910D /* BaseVC+JPImageresizerView.m */,
 				C5A6D4E5252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.h */,
 				C5A6D4E2252367850096910D /* BaseVC+JXCategoryListContentViewDelegate.m */,
-				C5A6D4E1252367850096910D /* BaseVC+OpenURL.h */,
-				C5A6D4F3252367860096910D /* BaseVC+OpenURL.m */,
 				C5A6D4E6252367850096910D /* BaseVC+TZImagePickerController.h */,
 				C5A6D4F5252367860096910D /* BaseVC+TZImagePickerController.m */,
 				C5A6D4ED252367860096910D /* BaseVC+TZImagePickerControllerDelegate.h */,
@@ -3860,6 +3860,7 @@
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
+				C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */,
 				C5FE9CEC24B5F29C007B9878 /* UIImage+TBCityIconFont.m in Sources */,
 				C5FE9CE524B5F29C007B9878 /* BWShareView.m in Sources */,
 				C5FE9B6724B5F203007B9878 /* NSString+Extras.m in Sources */,
@@ -3994,7 +3995,6 @@
 				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
-				C5A6D506252367870096910D /* BaseVC+OpenURL.m in Sources */,
 				C5FAC33124C5747900372BCD /* TBVCell_style_02.m in Sources */,
 				C5B1C7E824BAB91A001923FB /* CALayer+Compat.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,

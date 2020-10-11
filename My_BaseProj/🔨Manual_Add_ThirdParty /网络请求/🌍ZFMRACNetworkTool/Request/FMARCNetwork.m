@@ -228,16 +228,23 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                     if (statusCode == HTTPResponseCodeNotLogin || //用户尚未登录 401
                         statusCode == HTTPResponseCodeAnomalous ||//后台业务代码参数异常 参数异常 550
                         statusCode == HTTPResponseCodeError){//后台代码异常 999
-                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                                   view:nil];
+                        [WHToast showErrorWithMessage:responseObject[HTTPServiceResponseMsgKey]
+                                             duration:2
+                                        finishHandler:^{
+                          
+                        }];
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
                                                                                             code:statusCode];
                         NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
                     }else{//抛其他异常
-                        [MBProgressHUD wj_showPlainText:responseObject[HTTPServiceResponseMsgKey]
-                                                   view:nil];
+                        [WHToast showErrorWithMessage:responseObject[HTTPServiceResponseMsgKey]
+                                             duration:2
+                                        finishHandler:^{
+                          
+                        }];
+                        
                         FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseMsgKey]
                                                                                             code:statusCode];
                         NSLog(@"异常接口路径 %@ %@",request.URL.absoluteString,responseObject[HTTPServiceResponseMsgKey]);
@@ -260,8 +267,11 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         //                [subscriber sendError:parseError];
                 [subscriber sendCompleted];
                 //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
-                [MBProgressHUD wj_showPlainText:msgStr
-                                           view:nil];
+                [WHToast showErrorWithMessage:msgStr
+                                     duration:2
+                                finishHandler:^{
+                  
+                }];
             }
         }];
         [task resume];/// 开启请求任务
@@ -383,9 +393,10 @@ static FMARCNetwork *static_FMARCNetwork = nil;
             CGFloat _percent = uploadProgress.fractionCompleted * 100;
             NSString *str = [NSString stringWithFormat:@"上传图片中...%.2f",_percent];
             NSLog(@"%@",str);
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [MBProgressHUD wj_showPlainText:str
-                                           view:nil];
+            [WHToast showErrorWithMessage:str
+                                 duration:2
+                            finishHandler:^{
+              
             }];
         } completionHandler:^(NSURLResponse * _Nonnull response,
                               id  _Nullable responseObject,
@@ -396,7 +407,6 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                                                                                     code:0];
                 [subscriber sendNext:response];
                 [subscriber sendCompleted];
-                [self demo];
             } else {
                 NSError *parseError = [self errorFromRequestWithTask:task
                                                         httpResponse:(NSHTTPURLResponse *)response
@@ -413,8 +423,11 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                 [subscriber sendNext:response];
                 //[subscriber sendError:parseError];
                 [subscriber sendCompleted];
-                [MBProgressHUD wj_showPlainText:msgStr
-                                           view:nil];
+                [WHToast showErrorWithMessage:msgStr
+                                     duration:2
+                                finishHandler:^{
+                  
+                }];
             }
         }];
         [task resume];
@@ -643,12 +656,17 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         [_manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             if (status == AFNetworkReachabilityStatusUnknown) {
                 NSLog(@"--- 未知网络 ---");
-                [MBProgressHUD wj_showPlainText:@"网络状态未知"
-                                           view:nil];
-                
+                [WHToast showErrorWithMessage:@"网络状态未知"
+                                     duration:2
+                                finishHandler:^{
+                  
+                }];
             }else if (status == AFNetworkReachabilityStatusNotReachable) {
-                [MBProgressHUD wj_showPlainText:@"网络不给力，请检查网络"
-                                           view:nil];
+                [WHToast showErrorWithMessage:@"网络不给力，请检查网络"
+                                     duration:2
+                                finishHandler:^{
+                  
+                }];
             }else{
                 NSLog(@"--- 有网络 ---");
             }
@@ -675,62 +693,9 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
     }return _afNetworkReachabilityManager;
 }
-
-//用例
--(void)demo{
-    
-//    NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
-//    if (statusCode == HTTPResponseCodeSuccess) {
-//        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey]
-//                                                                            code:statusCode];
-//        [subscriber sendNext:response];
-//        [subscriber sendCompleted];
-//    } else {
-//        if (statusCode == HTTPResponseCodeNotLogin) {
-//    //可以在此处理需要登录的逻辑、比如说弹出登录框，但是，一般请求某个 api 判断了是否需要登录就不会进入
-//    //如果进入可一做错误处理
-//            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-//            userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(statusCode);
-//            userInfo[HTTPServiceErrorDescriptionKey] = @"请登录!";
-//            NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain
-//                                                        code:statusCode
-//                                                    userInfo:userInfo];
-//            FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError
-//                                                                              code:statusCode
-//                                                                               msg:@"请登录!"];
-//            [subscriber sendNext:response];
-//            [subscriber sendCompleted];
-//            [MBProgressHUD wj_showPlainText:@"请登录"
-//                                       view:nil];
-//        } else {
-//            NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-//            userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
-//            NSString *msgTips = responseObject[HTTPServiceResponseMsgKey];//取出服务给的提示
-//            if ((msgTips.length == 0 ||
-//                 msgTips == nil ||
-//                 [msgTips isKindOfClass:[NSNull class]])) {//服务器没有返回，错误信息
-//                msgTips = @"服务器出错了，请稍后重试~";
-//            }
-//            userInfo[HTTPServiceErrorMessagesKey] = msgTips;
-//            if (task.currentRequest.URL) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
-//            if (task.error) userInfo[NSUnderlyingErrorKey] = task.error;
-//            NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain
-//                                                        code:statusCode
-//                                                    userInfo:userInfo];
-//            FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError
-//                                                                              code:statusCode
-//                                                                               msg:msgTips];//错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
-//            [subscriber sendNext:response];
-//            [subscriber sendCompleted];
-//            [MBProgressHUD wj_showPlainText:msgTips
-//                                       view:nil];
-//        }
-//    }
-}
 #pragma mark —— 登录模块 在适当的时候调用
 -(void)Login{
 
-    
 }
 
 @end

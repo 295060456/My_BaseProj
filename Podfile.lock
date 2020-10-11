@@ -165,7 +165,6 @@ PODS:
   - LYEmptyView (1.3.1)
   - LYXAlertController (0.0.2)
   - Masonry (1.1.0)
-  - "MBProgressHUD+WJExtension (1.3.1)"
   - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
   - MLeaksFinder (1.0.0):
@@ -185,6 +184,7 @@ PODS:
   - pop (1.0.12)
   - PPBadgeView (3.1.0)
   - PromisesObjC (1.2.11)
+  - RDVTabBarController (1.3.0)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
   - Reveal-SDK (26)
@@ -224,6 +224,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
+  - WHToast (0.0.7)
   - WMZBanner (1.1.5):
     - SDWebImage
   - WSLNativeScanTool (1.0)
@@ -272,7 +273,6 @@ DEPENDENCIES:
   - LYEmptyView
   - LYXAlertController
   - Masonry
-  - "MBProgressHUD+WJExtension"
   - MJExtension
   - MJRefresh
   - MLeaksFinder
@@ -281,6 +281,7 @@ DEPENDENCIES:
   - OpenUDID
   - pop
   - PPBadgeView
+  - RDVTabBarController
   - Reachability
   - ReactiveObjC
   - Reveal-SDK
@@ -302,6 +303,7 @@ DEPENDENCIES:
   - UICountingLabel
   - WCDB
   - WebViewJavascriptBridge
+  - WHToast
   - WMZBanner
   - WSLNativeScanTool
   - WXSTransition
@@ -358,7 +360,6 @@ SPEC REPOS:
     - LYEmptyView
     - LYXAlertController
     - Masonry
-    - "MBProgressHUD+WJExtension"
     - MJExtension
     - MJRefresh
     - MLeaksFinder
@@ -369,6 +370,7 @@ SPEC REPOS:
     - pop
     - PPBadgeView
     - PromisesObjC
+    - RDVTabBarController
     - Reachability
     - ReactiveObjC
     - Reveal-SDK
@@ -393,6 +395,7 @@ SPEC REPOS:
     - WCDB
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
+    - WHToast
     - WMZBanner
     - WSLNativeScanTool
     - WXSTransition
@@ -449,7 +452,6 @@ SPEC CHECKSUMS:
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   LYXAlertController: b1459683e9d3622f697bd1ee6a9e584253b0c8b3
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  "MBProgressHUD+WJExtension": 1d9c93951b49e8c711fef6e6089aa6d7d3321192
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
@@ -460,6 +462,7 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PPBadgeView: b50a223638970fd0781e8753250385864b6dd2fe
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  RDVTabBarController: 28a5c6546b9991cf2712d59947324c6b06603e14
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Reveal-SDK: 5f94f14aff3d5f2a49f246edcd266fa4472679e9
@@ -484,6 +487,7 @@ SPEC CHECKSUMS:
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  WHToast: 11a17a3f09f5f733e32bd6f3338919a448cbb719
   WMZBanner: 515823975ddcc069a7238b6d058d90a3f7f60378
   WSLNativeScanTool: 1540f43317611d6cf948b5dff1cc1483bd39f8a5
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
@@ -494,6 +498,6 @@ SPEC CHECKSUMS:
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 53342c2b015e45bc2a21ddf2288bc397887f5996
+PODFILE CHECKSUM: b19f2d47fee7c4faedc8e30ffbbd4248f7bd9003
 
 COCOAPODS: 1.9.3

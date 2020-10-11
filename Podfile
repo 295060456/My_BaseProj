@@ -51,8 +51,6 @@ target 'My_BaseProj' do
   pod 'HCSStarRatingView' # https://github.com/hsousa/HCSStarRatingView 星级评分显示 Simple star rating view for iOS written in Objective-C
   pod 'NJKWebViewProgress'  # https://github.com/ninjinkun/NJKWebViewProgress Web_View进度条 UIWebView progress interface
   pod 'GoogleTagManager'
-  #pod 'MBProgressHUD'
-  pod 'MBProgressHUD+WJExtension' # https://github.com/WJCha/MBProgressHUD-WJExtension 基于 MBProgressHUD 的封装、并增加了操作成功与失败的HUD动画与祝贺撒花效果
   #pod 'SVProgressHUD' # https://github.com/SVProgressHUD/SVProgressHUD 是一个弹出提示层，用来提示 网络加载 或 提示对错 A clean and lightweight progress HUD for your iOS and tvOS app
   pod 'DDProgressView'  # https://github.com/ddeville/DDProgressView 加载状态显示 A custom UIProgressView à la Twitter for iPhone
   pod 'pop' # https://github.com/facebookarchive/pop 动画 An extensible iOS and OS X animation library, useful for physics-based interactions.

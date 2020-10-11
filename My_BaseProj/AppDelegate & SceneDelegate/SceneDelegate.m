@@ -37,8 +37,11 @@ static SceneDelegate *static_sceneDelegate = nil;
 -(void)KKK:(NSNotification *)noti{
     NSNumber *b = noti.object;
     if (b.intValue == AFNetworkReachabilityStatusNotReachable) {
-        [MBProgressHUD wj_showPlainText:@"没有网络连接"
-                                   view:nil];
+        [WHToast showErrorWithMessage:@"没有网络连接"
+                             duration:2
+                        finishHandler:^{
+          
+        }];
     }
 }
 //系统版本不低于iOS13.0的设备

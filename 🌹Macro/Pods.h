@@ -24,8 +24,7 @@
 #import <Masonry/Masonry.h>
 //#import "PureLayout.h"
 //#import "MyLayout.h"
-#import "MBProgressHUD.h"
-#import "MBProgressHUD+WJExtension.h"
+#import "WHToast.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
 #import "NJKWebViewProgress.h"

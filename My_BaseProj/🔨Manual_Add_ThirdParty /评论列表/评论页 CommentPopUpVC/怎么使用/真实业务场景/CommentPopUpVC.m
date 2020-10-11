@@ -116,8 +116,11 @@ UITableViewDelegate
 -(void)CopyIt{
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.firstCommentModel.content;
-    [MBProgressHUD wj_showPlainText:@"复制成功"
-                               view:nil];
+    [WHToast showErrorWithMessage:@"复制成功"
+                         duration:2
+                    finishHandler:^{
+      
+    }];
 }
 
 -(void)Report{
@@ -137,8 +140,11 @@ UITableViewDelegate
 -(void)copyIt{
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.childCommentModel.content;
-    [MBProgressHUD wj_showPlainText:@"复制成功"
-                               view:nil];
+    [WHToast showErrorWithMessage:@"复制成功"
+                         duration:2
+                    finishHandler:^{
+      
+    }];
 }
 
 -(void)report{

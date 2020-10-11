@@ -89,6 +89,7 @@
 #import "UIView+Measure.h"
 #import "UIView+Animation.h"
 #import "UIView+Gradient.h"
+#import "UIView+Rotate.h"
 
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"

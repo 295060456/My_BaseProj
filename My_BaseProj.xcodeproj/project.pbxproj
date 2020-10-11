@@ -74,6 +74,7 @@
 		C586926D25301C4100657CD3 /* LOTAnimationView+action.m in Sources */ = {isa = PBXBuildFile; fileRef = C586926C25301C4100657CD3 /* LOTAnimationView+action.m */; };
 		C58C61262532B3950092BF89 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C58C61232532B3950092BF89 /* RBCLikeButton.m */; };
 		C58C61272532B3950092BF89 /* RBCLikeButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C58C61252532B3950092BF89 /* RBCLikeButton.bundle */; };
+		C58C62082532FE050092BF89 /* UIView+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = C58C62072532FE050092BF89 /* UIView+Rotate.m */; };
 		C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */; };
 		C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043124EBB63000B6D09C /* MKShootProxy.m */; };
 		C58F043524EBB63000B6D09C /* MKProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043224EBB63000B6D09C /* MKProxy.m */; };
@@ -526,6 +527,8 @@
 		C58C61242532B3950092BF89 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
 		C58C61252532B3950092BF89 /* RBCLikeButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RBCLikeButton.bundle; sourceTree = "<group>"; };
 		C58C61982532B6FF0092BF89 /* 资源文件夹 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "资源文件夹"; sourceTree = "<group>"; };
+		C58C62062532FE050092BF89 /* UIView+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Rotate.h"; sourceTree = "<group>"; };
+		C58C62072532FE050092BF89 /* UIView+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Rotate.m"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -2947,16 +2950,18 @@
 			children = (
 				C5EB98D5250A1736007660B3 /* UIView+Animation.h */,
 				C5EB98D4250A1736007660B3 /* UIView+Animation.m */,
-				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
-				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
-				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
-				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
-				C5FE9B4124B5F203007B9878 /* UIView+Extras.h */,
-				C5FE9B4224B5F203007B9878 /* UIView+Extras.m */,
 				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
 				C59C4A3924E297F6002C2104 /* UIView+Chain.m */,
+				C5FE9B4124B5F203007B9878 /* UIView+Extras.h */,
+				C5FE9B4224B5F203007B9878 /* UIView+Extras.m */,
+				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
+				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
 				C5C67C5124FE4E65000A26B8 /* UIView+Measure.h */,
 				C5C67C5224FE4E65000A26B8 /* UIView+Measure.m */,
+				C58C62062532FE050092BF89 /* UIView+Rotate.h */,
+				C58C62072532FE050092BF89 /* UIView+Rotate.m */,
+				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
+				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -4018,6 +4023,7 @@
 				C5D4FBCE24CFDECC0024A292 /* InputView.m in Sources */,
 				C5B1C7BE24BAB91A001923FB /* LOTShapeCircle.m in Sources */,
 				C533701424DB00280082847C /* BRDatePickerView.m in Sources */,
+				C58C62082532FE050092BF89 /* UIView+Rotate.m in Sources */,
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */,
 				C5EB98D8250A1736007660B3 /* UIView+Animation.m in Sources */,

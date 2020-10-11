@@ -26,7 +26,7 @@
                                                                                 1)};
         self.borderStyle = UITextBorderStyleNone;
         self.backgroundColor = kWhiteColor;
-        [self modifyClearButtonWithImage:KBuddleIMG(@"ZYTextField", nil,nil, @"closeCircle")];
+        [self modifyClearButtonWithImage:KBuddleIMG(nil,@"ZYTextField",nil, @"closeCircle")];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(kd_textFieldDidBeginEditing:)
                                                      name:UITextFieldTextDidBeginEditingNotification

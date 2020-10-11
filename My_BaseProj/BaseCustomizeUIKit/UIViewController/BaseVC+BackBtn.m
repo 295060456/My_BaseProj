@@ -35,7 +35,7 @@ static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
                               forState:UIControlStateNormal];
         [BackBtnCategory setTitle:@"返回"
                          forState:UIControlStateNormal];
-        [BackBtnCategory setImage:KBuddleIMG(@"Others", nil,nil, @"back_white")
+        [BackBtnCategory setImage:KBuddleIMG(nil,@"Others", nil, @"back_white")
                          forState:UIControlStateNormal];
         [[BackBtnCategory rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             [self backBtnClickEvent:x];

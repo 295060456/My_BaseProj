@@ -525,6 +525,7 @@
 		C58C61232532B3950092BF89 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
 		C58C61242532B3950092BF89 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
 		C58C61252532B3950092BF89 /* RBCLikeButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RBCLikeButton.bundle; sourceTree = "<group>"; };
+		C58C61982532B6FF0092BF89 /* 资源文件夹 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "资源文件夹"; sourceTree = "<group>"; };
 		C58F03F124EB871F00B6D09C /* MKLaunchingAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLaunchingAdModel.m; sourceTree = "<group>"; };
 		C58F03F224EB871F00B6D09C /* MKLaunchingAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLaunchingAdModel.h; sourceTree = "<group>"; };
 		C58F043024EBB63000B6D09C /* MKProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKProxy.h; sourceTree = "<group>"; };
@@ -2539,6 +2540,7 @@
 				C52E88D4250F2CEF0070356F /* 加密流程 */,
 				C57AC05025120BA3009EE44D /* 网络请求写法 */,
 				C5633218252AFABD00699392 /* Block */,
+				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

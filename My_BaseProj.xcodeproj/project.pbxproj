@@ -50,6 +50,9 @@
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
+		C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A2D253426BB0038E50C /* SuspendLab.m */; };
+		C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A32253426BB0038E50C /* SuspendBtn.m */; };
+		C55B2A39253426BC0038E50C /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A35253426BB0038E50C /* SuspendView.m */; };
 		C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */ = {isa = PBXBuildFile; fileRef = C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */; };
 		C56161CB24EE7450001CD851 /* 签名上架 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CA24EE7450001CD851 /* 签名上架 */; };
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
@@ -154,9 +157,6 @@
 		C5C67C6124FE4FAB000A26B8 /* CADisplayLink_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5F24FE4FAB000A26B8 /* CADisplayLink_TimerManager.m */; };
 		C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C6324FE4FB1000A26B8 /* NSTimerManager.m */; };
 		C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C7124FF5868000A26B8 /* MovieCountDown.m */; };
-		C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */; };
-		C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70CE24E51A3C000DB72D /* SuspendLab.m */; };
-		C5CF70D424E51A3C000DB72D /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70D024E51A3C000DB72D /* SuspendView.m */; };
 		C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */; };
 		C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70DA24E51CA6000DB72D /* MonitorNetwoking.m */; };
 		C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */; };
@@ -427,6 +427,12 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C55B2A2C253426BB0038E50C /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
+		C55B2A2D253426BB0038E50C /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
+		C55B2A32253426BB0038E50C /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
+		C55B2A33253426BB0038E50C /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
+		C55B2A35253426BB0038E50C /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
+		C55B2A36253426BB0038E50C /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
 		C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "优秀的关于音视频处理的文献资料"; sourceTree = "<group>"; };
 		C56161CA24EE7450001CD851 /* 签名上架 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "签名上架"; sourceTree = "<group>"; };
 		C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "苹果开发者账号申请"; sourceTree = "<group>"; };
@@ -628,12 +634,6 @@
 		C5C67C7024FF5868000A26B8 /* MovieCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCountDown.h; sourceTree = "<group>"; };
 		C5C67C7124FF5868000A26B8 /* MovieCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCountDown.m; sourceTree = "<group>"; };
 		C5C853FC24B5FFEA00B7CDBB /* Tomcat_Config */ = {isa = PBXFileReference; lastKnownFileType = text; path = Tomcat_Config; sourceTree = "<group>"; };
-		C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
-		C5CF70CB24E51A3C000DB72D /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
-		C5CF70CD24E51A3C000DB72D /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
-		C5CF70CE24E51A3C000DB72D /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
-		C5CF70D024E51A3C000DB72D /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
-		C5CF70D124E51A3C000DB72D /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
 		C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuspendView.h"; sourceTree = "<group>"; };
 		C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuspendView.m"; sourceTree = "<group>"; };
 		C5CF70DA24E51CA6000DB72D /* MonitorNetwoking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorNetwoking.m; sourceTree = "<group>"; };
@@ -1429,6 +1429,33 @@
 			path = "热词标签";
 			sourceTree = "<group>";
 		};
+		C55B2A2B253426BB0038E50C /* SuspendLab */ = {
+			isa = PBXGroup;
+			children = (
+				C55B2A2C253426BB0038E50C /* SuspendLab.h */,
+				C55B2A2D253426BB0038E50C /* SuspendLab.m */,
+			);
+			path = SuspendLab;
+			sourceTree = "<group>";
+		};
+		C55B2A31253426BB0038E50C /* SuspendBtn */ = {
+			isa = PBXGroup;
+			children = (
+				C55B2A33253426BB0038E50C /* SuspendBtn.h */,
+				C55B2A32253426BB0038E50C /* SuspendBtn.m */,
+			);
+			path = SuspendBtn;
+			sourceTree = "<group>";
+		};
+		C55B2A34253426BB0038E50C /* SuspendView */ = {
+			isa = PBXGroup;
+			children = (
+				C55B2A36253426BB0038E50C /* SuspendView.h */,
+				C55B2A35253426BB0038E50C /* SuspendView.m */,
+			);
+			path = SuspendView;
+			sourceTree = "<group>";
+		};
 		C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1888,38 +1915,11 @@
 		C5CF70C824E51A3C000DB72D /* Suspend */ = {
 			isa = PBXGroup;
 			children = (
-				C5CF70C924E51A3C000DB72D /* SuspendBtn */,
-				C5CF70CC24E51A3C000DB72D /* SuspendLab */,
-				C5CF70CF24E51A3C000DB72D /* SuspendView */,
+				C55B2A31253426BB0038E50C /* SuspendBtn */,
+				C55B2A2B253426BB0038E50C /* SuspendLab */,
+				C55B2A34253426BB0038E50C /* SuspendView */,
 			);
 			path = Suspend;
-			sourceTree = "<group>";
-		};
-		C5CF70C924E51A3C000DB72D /* SuspendBtn */ = {
-			isa = PBXGroup;
-			children = (
-				C5CF70CB24E51A3C000DB72D /* SuspendBtn.h */,
-				C5CF70CA24E51A3C000DB72D /* SuspendBtn.m */,
-			);
-			path = SuspendBtn;
-			sourceTree = "<group>";
-		};
-		C5CF70CC24E51A3C000DB72D /* SuspendLab */ = {
-			isa = PBXGroup;
-			children = (
-				C5CF70CD24E51A3C000DB72D /* SuspendLab.h */,
-				C5CF70CE24E51A3C000DB72D /* SuspendLab.m */,
-			);
-			path = SuspendLab;
-			sourceTree = "<group>";
-		};
-		C5CF70CF24E51A3C000DB72D /* SuspendView */ = {
-			isa = PBXGroup;
-			children = (
-				C5CF70D124E51A3C000DB72D /* SuspendView.h */,
-				C5CF70D024E51A3C000DB72D /* SuspendView.m */,
-			);
-			path = SuspendView;
 			sourceTree = "<group>";
 		};
 		C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */ = {
@@ -3512,6 +3512,7 @@
 				C5F78AEC24BF297D008A46EC /* FirstClassModel.m in Sources */,
 				C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
+				C55B2A39253426BC0038E50C /* SuspendView.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
@@ -3539,6 +3540,7 @@
 				C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */,
 				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
+				C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
 				C5D4FBC824CFDCF90024A292 /* CommentPopUpCarryOnVC.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
@@ -3662,7 +3664,6 @@
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */,
 				C5C67C5324FE4E65000A26B8 /* UIView+Measure.m in Sources */,
-				C5CF70D424E51A3C000DB72D /* SuspendView.m in Sources */,
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C572A26224FB8CFA000A1687 /* UIViewController+LZBTabBarVCItem.m in Sources */,
 				C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */,
@@ -3672,6 +3673,7 @@
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
 				C590FF3B24D00D23000F36C9 /* SDWebImageCodersManager.m in Sources */,
 				C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */,
+				C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */,
 				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
 				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,
@@ -3690,11 +3692,9 @@
 				C5FE9D1324B5F29C007B9878 /* HWTFCodeView.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */,
-				C5CF70D224E51A3C000DB72D /* SuspendBtn.m in Sources */,
 				C5D4FBD124CFDEDC0024A292 /* CommentPopUpVC.m in Sources */,
 				C5A6D505252367870096910D /* BaseVC.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
-				C5CF70D324E51A3C000DB72D /* SuspendLab.m in Sources */,
 				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5A6D502252367870096910D /* BaseVC+GifImageView.m in Sources */,

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SuspendView : UIView
 
+@property(nonatomic,assign)BOOL isAllowDrag;//是否允许托拽手势
 @property(nonatomic,copy)MKDataBlock suspendViewBlock;
 
 -(void)actionSuspendViewBlock:(MKDataBlock)suspendLabBlock;

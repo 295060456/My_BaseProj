@@ -27,7 +27,7 @@
 }
 
 -(void)drawRect:(CGRect)rect{
-    self.panRcognize.enabled = YES;
+    self.panRcognize.enabled = self.isAllowDrag;
 }
 
 -(void)addEvent:(UIButton *)sender{

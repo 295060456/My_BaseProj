@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SuspendBtn : UIButton
 
+@property(nonatomic,assign)BOOL isAllowDrag;//是否允许托拽手势
+
 @end
 
 NS_ASSUME_NONNULL_END

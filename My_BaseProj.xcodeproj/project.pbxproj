@@ -12,6 +12,9 @@
 		BDD85CE05D5B657110FC2797 /* libPods-My_BaseProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62842F7F87172079CC45EF /* libPods-My_BaseProj.a */; };
 		C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C50ECADC25258877000AE52F /* 音律跳动.bundle */; };
 		C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50ECADE25258878000AE52F /* GifLoopPlayView.m */; };
+		C522CFFB253464B1006A822F /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C522CFF5253464B1006A822F /* NonHoveringHeaderView.m */; };
+		C522CFFC253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C522CFF6253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m */; };
+		C522CFFD253464B1006A822F /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C522CFF8253464B1006A822F /* HoveringHeaderView.m */; };
 		C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8915250F75020070356F /* NSData+CommonCrypto.m */; };
 		C52E894A250F752E0070356F /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E891D250F752D0070356F /* RSAUtil.m */; };
 		C52E894D250F752E0070356F /* AES.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8924250F752D0070356F /* AES.m */; };
@@ -99,11 +102,8 @@
 		C590FF4024D00D23000F36C9 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF3624D00D23000F36C9 /* NSImage+WebCache.m */; };
 		C590FF4324D01041000F36C9 /* UIImage+WebP_Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = C590FF4224D01041000F36C9 /* UIImage+WebP_Diff.m */; };
 		C59B9EC12526F2BE0039B485 /* ZYTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59B9EC02526F2BE0039B485 /* ZYTextField.bundle */; };
-		C59B9F4D2527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F462527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m */; };
-		C59B9F4E2527051F0039B485 /* HoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F472527051F0039B485 /* HoveringHeaderView.m */; };
 		C59B9F4F2527051F0039B485 /* 是否取消悬停 in Resources */ = {isa = PBXBuildFile; fileRef = C59B9F492527051F0039B485 /* 是否取消悬停 */; };
 		C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */; };
-		C59B9F712527079E0039B485 /* NonHoveringHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */; };
 		C59BA396252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C59BA395252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
@@ -317,6 +317,12 @@
 		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
 		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
 		C50ECADE25258878000AE52F /* GifLoopPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifLoopPlayView.m; sourceTree = "<group>"; };
+		C522CFF4253464B1006A822F /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
+		C522CFF5253464B1006A822F /* NonHoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonHoveringHeaderView.m; sourceTree = "<group>"; };
+		C522CFF6253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
+		C522CFF8253464B1006A822F /* HoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoveringHeaderView.m; sourceTree = "<group>"; };
+		C522CFF9253464B1006A822F /* HoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoveringHeaderView.h; sourceTree = "<group>"; };
+		C522CFFA253464B1006A822F /* UITableViewHeaderFooterView+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewHeaderFooterView+Attribute.h"; sourceTree = "<group>"; };
 		C52D2A5124E580790048FEFF /* JXCategoryView */ = {isa = PBXFileReference; lastKnownFileType = text; path = JXCategoryView; sourceTree = "<group>"; };
 		C52E88D4250F2CEF0070356F /* 加密流程 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "加密流程"; sourceTree = "<group>"; };
 		C52E890F250F74B70070356F /* Cryptography.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cryptography.h; sourceTree = "<group>"; };
@@ -517,15 +523,9 @@
 		C590FF4124D01041000F36C9 /* UIImage+WebP_Diff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP_Diff.h"; sourceTree = "<group>"; };
 		C590FF4224D01041000F36C9 /* UIImage+WebP_Diff.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP_Diff.m"; sourceTree = "<group>"; };
 		C59B9EC02526F2BE0039B485 /* ZYTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYTextField.bundle; sourceTree = "<group>"; };
-		C59B9F462527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewHeaderFooterView+Attribute.m"; sourceTree = "<group>"; };
-		C59B9F472527051F0039B485 /* HoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoveringHeaderView.m; sourceTree = "<group>"; };
-		C59B9F482527051F0039B485 /* UITableViewHeaderFooterView+Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewHeaderFooterView+Attribute.h"; sourceTree = "<group>"; };
 		C59B9F492527051F0039B485 /* 是否取消悬停 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "是否取消悬停"; sourceTree = "<group>"; };
-		C59B9F4B2527051F0039B485 /* HoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoveringHeaderView.h; sourceTree = "<group>"; };
 		C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpNonHoveringHeaderFooterView.h; sourceTree = "<group>"; };
 		C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpNonHoveringHeaderFooterView.m; sourceTree = "<group>"; };
-		C59B9F6F2527079E0039B485 /* NonHoveringHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonHoveringHeaderView.h; sourceTree = "<group>"; };
-		C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonHoveringHeaderView.m; sourceTree = "<group>"; };
 		C59BA394252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentPopUpHoveringHeaderFooterView.h; sourceTree = "<group>"; };
 		C59BA395252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentPopUpHoveringHeaderFooterView.m; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
@@ -1039,6 +1039,24 @@
 				C5A46BF524EFB59200158D1E /* UIViewController+LZBTabBarVCItem.m */,
 			);
 			path = LZBTabBarVC;
+			sourceTree = "<group>";
+		};
+		C522CFF3253464B1006A822F /* 不悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C522CFF4253464B1006A822F /* NonHoveringHeaderView.h */,
+				C522CFF5253464B1006A822F /* NonHoveringHeaderView.m */,
+			);
+			path = "不悬停";
+			sourceTree = "<group>";
+		};
+		C522CFF7253464B1006A822F /* 悬停 */ = {
+			isa = PBXGroup;
+			children = (
+				C522CFF8253464B1006A822F /* HoveringHeaderView.m */,
+				C522CFF9253464B1006A822F /* HoveringHeaderView.h */,
+			);
+			path = "悬停";
 			sourceTree = "<group>";
 		};
 		C52D2A5024E580670048FEFF /* JXCategoryView */ = {
@@ -1712,10 +1730,10 @@
 			isa = PBXGroup;
 			children = (
 				C59B9F492527051F0039B485 /* 是否取消悬停 */,
-				C59BA3B5252738A30039B485 /* 不悬停 */,
-				C59BA3B42527389D0039B485 /* 悬停 */,
-				C59B9F482527051F0039B485 /* UITableViewHeaderFooterView+Attribute.h */,
-				C59B9F462527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m */,
+				C522CFF3253464B1006A822F /* 不悬停 */,
+				C522CFF7253464B1006A822F /* 悬停 */,
+				C522CFFA253464B1006A822F /* UITableViewHeaderFooterView+Attribute.h */,
+				C522CFF6253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m */,
 			);
 			path = "🦆UITableViewHeaderFooterView 用作基类";
 			sourceTree = "<group>";
@@ -1743,24 +1761,6 @@
 			children = (
 				C59B9F66252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.h */,
 				C59B9F67252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m */,
-			);
-			path = "不悬停";
-			sourceTree = "<group>";
-		};
-		C59BA3B42527389D0039B485 /* 悬停 */ = {
-			isa = PBXGroup;
-			children = (
-				C59B9F4B2527051F0039B485 /* HoveringHeaderView.h */,
-				C59B9F472527051F0039B485 /* HoveringHeaderView.m */,
-			);
-			path = "悬停";
-			sourceTree = "<group>";
-		};
-		C59BA3B5252738A30039B485 /* 不悬停 */ = {
-			isa = PBXGroup;
-			children = (
-				C59B9F6F2527079E0039B485 /* NonHoveringHeaderView.h */,
-				C59B9F702527079E0039B485 /* NonHoveringHeaderView.m */,
 			);
 			path = "不悬停";
 			sourceTree = "<group>";
@@ -3494,11 +3494,11 @@
 				C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */,
-				C59B9F712527079E0039B485 /* NonHoveringHeaderView.m in Sources */,
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
 				C5FE9CDB24B5F29C007B9878 /* StyleDIY.m in Sources */,
 				C5FE9CED24B5F29C007B9878 /* HAHandleDemoView.m in Sources */,
+				C522CFFB253464B1006A822F /* NonHoveringHeaderView.m in Sources */,
 				C5FE9CF324B5F29C007B9878 /* XLSphereView.m in Sources */,
 				C5C67C5E24FE4FA5000A26B8 /* GCD_TimerManager.m in Sources */,
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
@@ -3534,7 +3534,6 @@
 				C5FE9B6C24B5F203007B9878 /* TBVCell_style_01.m in Sources */,
 				C5A6D6D6252433CC0096910D /* ZYTextField.m in Sources */,
 				C52E895B250F752E0070356F /* GTMBase64.m in Sources */,
-				C59B9F4D2527051F0039B485 /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
 				C5A6D508252367870096910D /* BaseVC+JPImageresizerView.m in Sources */,
@@ -3553,6 +3552,7 @@
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
 				C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */,
 				C590FF3D24D00D23000F36C9 /* SDWebImageCoderHelper.m in Sources */,
+				C522CFFD253464B1006A822F /* HoveringHeaderView.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */,
 				C5A6D501252367870096910D /* BaseVC+AFNReachability.m in Sources */,
@@ -3601,6 +3601,7 @@
 				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C5A6D6D3252433CC0096910D /* ZYTextField+HistoryDataList.m in Sources */,
 				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
+				C522CFFC253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */,
 				C590FF3E24D00D23000F36C9 /* SDWebImageCoder.m in Sources */,
 				C533701724DB00280082847C /* BRBaseView.m in Sources */,
@@ -3622,7 +3623,6 @@
 				C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */,
 				C5FE9CE024B5F29C007B9878 /* CreateBarCodeVC.m in Sources */,
 				C59BA396252737E10039B485 /* CommentPopUpHoveringHeaderFooterView.m in Sources */,
-				C59B9F4E2527051F0039B485 /* HoveringHeaderView.m in Sources */,
 				C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */,
 				C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,

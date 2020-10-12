@@ -8,7 +8,7 @@
 
 #import "MJRefresh.h"
 #import "MJRefreshComponent.h"
-#import "Lottie.h"
+#import <Lottie/Lottie.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -46,7 +46,7 @@
                 if (successBlock) {
                     successBlock(toVC);
                 }
-                [weak_rootVC.navigationController pushViewController:toVC
+                [rootVC_weak_.navigationController pushViewController:toVC
                                                             animated:animated];
             }else{
                 toVC.pushOrPresent = ComingStyle_PRESENT;
@@ -55,7 +55,7 @@
                 if (successBlock) {
                     successBlock(toVC);
                 }
-                [weak_rootVC presentViewController:toVC
+                [rootVC_weak_ presentViewController:toVC
                                           animated:animated
                                         completion:^{}];
             }
@@ -67,7 +67,7 @@
             if (successBlock) {
                 successBlock(toVC);
             }
-            [weak_rootVC presentViewController:toVC
+            [rootVC_weak_ presentViewController:toVC
                                       animated:animated
                                     completion:^{}];
         }break;

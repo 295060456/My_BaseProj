@@ -69,5 +69,6 @@
 #import "SZTextView.h"
 #import "PPBadgeView.h"
 #import "SPAlertController.h"
+#import <Lottie/Lottie.h>
 
 #endif /* Pods_h */

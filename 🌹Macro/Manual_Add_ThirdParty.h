@@ -50,7 +50,6 @@
 //#import "SDWebImageWebP_umbrella.h"
 //#import "YYTimer+Block.h"
 #import "EmptyView.h"
-#import "Lottie.h"
 #import "UIViewController+InteractivePushGesture.h"
 #import "SuspendBtn.h"
 #import "SuspendLab.h"

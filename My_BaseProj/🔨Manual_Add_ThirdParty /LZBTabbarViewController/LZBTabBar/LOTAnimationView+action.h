@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
-#import "LOTAnimationView.h"
+#import <Lottie/LOTAnimationView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

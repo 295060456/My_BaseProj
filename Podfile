@@ -34,7 +34,7 @@ target 'My_BaseProj' do
   #pod 'YYText'
   pod 'RDVTabBarController' # https://github.com/robbdimitrov/RDVTabBarController 
   pod 'SDWebImage'  # https://github.com/SDWebImage/SDWebImage Asynchronous image downloader with cache support as a UIImageView category
-#  pod 'SDWebImage/WebP' # https://github.com/SDWebImage/SDWebImageWebPCoder A WebP coder plugin for SDWebImage, use libwebp
+  pod 'SDWebImageWebPCoder' # https://github.com/SDWebImage/SDWebImageWebPCoder
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'BSYKeyBoard' # https://github.com/baishiyun/BSYKeyBoard
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
@@ -97,6 +97,7 @@ target 'My_BaseProj' do
 #  pod 'FMDB/SQLCipher' # 数据库加解密
 #  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   pod 'WHToast' # https://github.com/remember17/WHToast 一个轻量级的提示控件，没有任何依赖
+  pod 'lottie-ios', '~> 2.5.3'
   
   pod 'JSONModel' # https://github.com/jsonmodel/jsonmodel
   pod 'LBXScan/LBXNative'

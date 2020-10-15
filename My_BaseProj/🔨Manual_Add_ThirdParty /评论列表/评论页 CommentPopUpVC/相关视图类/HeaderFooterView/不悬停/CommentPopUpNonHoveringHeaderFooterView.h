@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CommentPopUpNonHoveringHeaderFooterView : NonHoveringHeaderView
 
+-(instancetype)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier
+                              withData:(id)data;
+
 -(void)actionBlockCommentPopUpNonHoveringHeaderView:(MKDataBlock)commentPopUpNonHoveringHeaderViewBlock;
 
 @end

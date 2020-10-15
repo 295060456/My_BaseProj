@@ -48,7 +48,8 @@
     if (!_path) {
         _path = UIBezierPath.bezierPath;
         for (int i = 0; i < self.pointMutArr.count; i++) {
-            CGPoint retrievedPoint = self.pointMutArr[i].CGPointValue;
+            NSValue *value = self.pointMutArr[i];
+            CGPoint retrievedPoint = value.CGPointValue;
             if (i == 0) {
                 [_path moveToPoint:retrievedPoint];
             }else

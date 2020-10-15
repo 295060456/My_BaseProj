@@ -144,6 +144,8 @@
 		C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */; };
 		C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */; };
 		C5AA4908250C8C2D009F583F /* NSObject+SPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */; };
+		C5AEEAC925384147000E1C5F /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEEAC625384147000E1C5F /* UIView+Animation.m */; };
+		C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEEB3725384310000E1C5F /* UIView+Extras.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B1C72624BAB54D001923FB /* green_lottie_tab_news.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B1C72224BAB54C001923FB /* green_lottie_tab_news.json */; };
 		C5B1C72724BAB54D001923FB /* green_lottie_tab_discover.json in Resources */ = {isa = PBXBuildFile; fileRef = C5B1C72324BAB54C001923FB /* green_lottie_tab_discover.json */; };
@@ -181,7 +183,6 @@
 		C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B524E1642100A38FAF /* UIImage+YBGIF.m */; };
 		C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9B624E1642200A38FAF /* UIImage+Extras.m */; };
 		C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */; };
-		C5EB98D8250A1736007660B3 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB98D4250A1736007660B3 /* UIView+Animation.m */; };
 		C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EB98D6250A1736007660B3 /* UIView+Gradient.m */; };
 		C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F732D225138E4900216DEF /* LCRegExpTool.m */; };
 		C5F78AEB24BF297D008A46EC /* SecondClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F78ADE24BF297D008A46EC /* SecondClassModel.m */; };
@@ -217,7 +218,6 @@
 		C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */; };
 		C5FE9B6C24B5F203007B9878 /* TBVCell_style_01.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3524B5F203007B9878 /* TBVCell_style_01.m */; };
 		C5FE9B6D24B5F203007B9878 /* HQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3A24B5F203007B9878 /* HQTextField.m */; };
-		C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B4224B5F203007B9878 /* UIView+Extras.m */; };
 		C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */; };
 		C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */; };
 		C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */; };
@@ -609,6 +609,10 @@
 		C5AA4904250C8C2D009F583F /* NSObject+SYSAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SYSAlertController.m"; sourceTree = "<group>"; };
 		C5AA4905250C8C2D009F583F /* NSObject+SPAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPAlertController.m"; sourceTree = "<group>"; };
 		C5AA4906250C8C2D009F583F /* NSObject+SYSAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SYSAlertController.h"; sourceTree = "<group>"; };
+		C5AEEAC525384147000E1C5F /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
+		C5AEEAC625384147000E1C5F /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
+		C5AEEB3625384310000E1C5F /* UIView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extras.h"; sourceTree = "<group>"; };
+		C5AEEB3725384310000E1C5F /* UIView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extras.m"; sourceTree = "<group>"; };
 		C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Xcode资料下载"; sourceTree = "<group>"; };
 		C5B1C71F24B894E8001923FB /* URL_Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL_Manager.h; sourceTree = "<group>"; };
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
@@ -685,8 +689,6 @@
 		C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InteractivePushGesture.m"; sourceTree = "<group>"; };
 		C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
 		C5E7D9C624E17A4B00A38FAF /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
-		C5EB98D4250A1736007660B3 /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
-		C5EB98D5250A1736007660B3 /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		C5EB98D6250A1736007660B3 /* UIView+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gradient.m"; sourceTree = "<group>"; };
 		C5EB98D7250A1736007660B3 /* UIView+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gradient.h"; sourceTree = "<group>"; };
 		C5F732D125138E4900216DEF /* LCRegExpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRegExpTool.h; sourceTree = "<group>"; };
@@ -785,8 +787,6 @@
 		C5FE9B3624B5F203007B9878 /* TBVCell_style_01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVCell_style_01.h; sourceTree = "<group>"; };
 		C5FE9B3924B5F203007B9878 /* HQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTextField.h; sourceTree = "<group>"; };
 		C5FE9B3A24B5F203007B9878 /* HQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTextField.m; sourceTree = "<group>"; };
-		C5FE9B4124B5F203007B9878 /* UIView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extras.h"; sourceTree = "<group>"; };
-		C5FE9B4224B5F203007B9878 /* UIView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extras.m"; sourceTree = "<group>"; };
 		C5FE9B4924B5F203007B9878 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		C5FE9B4A24B5F203007B9878 /* NSArray+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extend.h"; sourceTree = "<group>"; };
 		C5FE9B4B24B5F203007B9878 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
@@ -2636,12 +2636,12 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C5EB98D5250A1736007660B3 /* UIView+Animation.h */,
-				C5EB98D4250A1736007660B3 /* UIView+Animation.m */,
+				C5AEEAC525384147000E1C5F /* UIView+Animation.h */,
+				C5AEEAC625384147000E1C5F /* UIView+Animation.m */,
 				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
 				C59C4A3924E297F6002C2104 /* UIView+Chain.m */,
-				C5FE9B4124B5F203007B9878 /* UIView+Extras.h */,
-				C5FE9B4224B5F203007B9878 /* UIView+Extras.m */,
+				C5AEEB3625384310000E1C5F /* UIView+Extras.h */,
+				C5AEEB3725384310000E1C5F /* UIView+Extras.m */,
 				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
 				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
 				C5C67C5124FE4E65000A26B8 /* UIView+Measure.h */,
@@ -3532,6 +3532,7 @@
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */,
+				C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */,
 				C5FE9CEC24B5F29C007B9878 /* UIImage+TBCityIconFont.m in Sources */,
 				C5FE9CE524B5F29C007B9878 /* BWShareView.m in Sources */,
 				C5FE9B6724B5F203007B9878 /* NSString+Extras.m in Sources */,
@@ -3611,7 +3612,6 @@
 				C544D26E2525D7ED003C2A94 /* TestTableViewHeader.m in Sources */,
 				C5FE9B7D24B5F270007B9878 /* CustomSYSUITabBarController.m in Sources */,
 				C58F03F324EB871F00B6D09C /* MKLaunchingAdModel.m in Sources */,
-				C5FE9B7024B5F204007B9878 /* UIView+Extras.m in Sources */,
 				C5A6D6D3252433CC0096910D /* ZYTextField+HistoryDataList.m in Sources */,
 				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
 				C522CFFC253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m in Sources */,
@@ -3673,7 +3673,6 @@
 				C58C62082532FE050092BF89 /* UIView+Rotate.m in Sources */,
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C5A46BF424EFB58C00158D1E /* LZBTabBar.m in Sources */,
-				C5EB98D8250A1736007660B3 /* UIView+Animation.m in Sources */,
 				C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */,
 				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */,
@@ -3718,6 +3717,7 @@
 				C5A7CE9724C7055400E502A9 /* SceneDelegate+LaunchingAd.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
 				C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */,
+				C5AEEAC925384147000E1C5F /* UIView+Animation.m in Sources */,
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,

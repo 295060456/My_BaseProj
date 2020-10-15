@@ -85,7 +85,6 @@
 //    self.gk_navRightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:self.msgBtn],[[UIBarButtonItem alloc] initWithCustomView:self.settingBtn]];
     self.gk_navTitle = @"";
     self.gk_statusBarHidden = NO;
-    [SceneDelegate sharedInstance].customSYSUITabBarController.gk_navigationBar.hidden = YES;
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
@@ -98,7 +97,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = YES;
-    [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated{

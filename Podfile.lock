@@ -75,9 +75,6 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
-  - FLAnimatedImage (1.0.12)
-  - "FLAnimatedImageView+RGWrapper (1.0.0)":
-    - FLAnimatedImage
   - FLEX (4.1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -162,15 +159,6 @@ PODS:
   - LBXScan/Types (2.3)
   - LBXScan/UI (2.3):
     - LBXScan/Types (~> 2.2)
-  - libwebp (1.1.0):
-    - libwebp/demux (= 1.1.0)
-    - libwebp/mux (= 1.1.0)
-    - libwebp/webp (= 1.1.0)
-  - libwebp/demux (1.1.0):
-    - libwebp/webp
-  - libwebp/mux (1.1.0):
-    - libwebp/demux
-  - libwebp/webp (1.1.0)
   - lottie-ios (2.5.3)
   - LYEmptyView (1.3.1)
   - LYXAlertController (0.0.2)
@@ -214,9 +202,6 @@ PODS:
   - SDWebImage (5.9.2):
     - SDWebImage/Core (= 5.9.2)
   - SDWebImage/Core (5.9.2)
-  - SDWebImageWebPCoder (0.6.1):
-    - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.7)
   - Shimmer (1.0.2)
   - SocketRocket (0.5.1)
   - SPAlertController (4.0.0)
@@ -242,8 +227,6 @@ PODS:
     - SDWebImage
   - WSLNativeScanTool (1.0)
   - WXSTransition (1.2.1)
-  - XHLaunchAd (3.9.12):
-    - FLAnimatedImage (~> 1.0.12)
   - YQImageCompressor (1.0.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -264,7 +247,6 @@ DEPENDENCIES:
   - DoraemonKit
   - DTCoreText
   - FBMemoryProfiler
-  - "FLAnimatedImageView+RGWrapper"
   - FLEX
   - FMDB
   - GKNavigationBar
@@ -303,7 +285,6 @@ DEPENDENCIES:
   - RZRichTextView
   - SDCycleScrollView
   - SDWebImage
-  - SDWebImageWebPCoder
   - Shimmer
   - SocketRocket
   - SPAlertController
@@ -322,7 +303,6 @@ DEPENDENCIES:
   - WMZBanner
   - WSLNativeScanTool
   - WXSTransition
-  - XHLaunchAd
   - YQImageCompressor
   - YYKit
   - ZFJTreeViewKit
@@ -348,8 +328,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseInstallations
-    - FLAnimatedImage
-    - "FLAnimatedImageView+RGWrapper"
     - FLEX
     - FMDB
     - GCDWebServer
@@ -372,7 +350,6 @@ SPEC REPOS:
     - JSONModel
     - JXCategoryView
     - LBXScan
-    - libwebp
     - lottie-ios
     - LYEmptyView
     - LYXAlertController
@@ -396,7 +373,6 @@ SPEC REPOS:
     - RZRichTextView
     - SDCycleScrollView
     - SDWebImage
-    - SDWebImageWebPCoder
     - Shimmer
     - SocketRocket
     - SPAlertController
@@ -417,7 +393,6 @@ SPEC REPOS:
     - WMZBanner
     - WSLNativeScanTool
     - WXSTransition
-    - XHLaunchAd
     - YQImageCompressor
     - YYKit
     - ZBarSDK
@@ -443,8 +418,6 @@ SPEC CHECKSUMS:
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
@@ -467,7 +440,6 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   JXCategoryView: fca2146e87eeaf014c71041337cb07bd4de5830b
   LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
-  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   LYXAlertController: b1459683e9d3622f697bd1ee6a9e584253b0c8b3
@@ -491,7 +463,6 @@ SPEC CHECKSUMS:
   RZRichTextView: f17f9fe7e60983090893d1585a429af1a92d40e2
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
-  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f
@@ -512,13 +483,12 @@ SPEC CHECKSUMS:
   WMZBanner: 515823975ddcc069a7238b6d058d90a3f7f60378
   WSLNativeScanTool: 1540f43317611d6cf948b5dff1cc1483bd39f8a5
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
-  XHLaunchAd: 6320f9c68732667323072fc3a5f104e40fbe9cfe
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: b88445aeaa30bfa8ec19171c2f5df97fed8897fa
+PODFILE CHECKSUM: 4f35007bb94151e6dddeb9f6721349a05d9919b3
 
 COCOAPODS: 1.9.3

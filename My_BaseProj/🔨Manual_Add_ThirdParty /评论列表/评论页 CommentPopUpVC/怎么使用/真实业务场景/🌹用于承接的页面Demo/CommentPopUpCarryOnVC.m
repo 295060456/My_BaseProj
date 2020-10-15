@@ -211,7 +211,6 @@
         self.commentPopUpVC.view.mj_y = SCREEN_HEIGHT / 2;
         self.isCommentPopUpVCOpen = !self.isCommentPopUpVCOpen;
         self.CommentPopUpVC_Y = self.commentPopUpVC.view.mj_y;
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = YES;
     }];
 }
 
@@ -230,7 +229,6 @@
         [self->_commentPopUpVC removeFromParentViewController];
         self->_commentPopUpVC = nil;
         self.isCommentPopUpVCOpen = !self.isCommentPopUpVCOpen;
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
     }];
 }
 
@@ -247,7 +245,6 @@
         [self->_commentPopUpVC removeFromParentViewController];
         self->_commentPopUpVC = nil;
         self.isCommentPopUpVCOpen = !self.isCommentPopUpVCOpen;
-        [SceneDelegate sharedInstance].customSYSUITabBarController.lzb_tabBarHidden = NO;
     }];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches

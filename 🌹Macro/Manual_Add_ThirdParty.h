@@ -37,7 +37,6 @@
 #import "TBCityIconFont.h"
 #import "UIImage+TBCityIconFont.h"
 #import "CountdownView.h"//圆形倒计时进度条（中间有字，可点击回调）
-#import "NSObject+LBLaunchImage.h"
 #import "HWTextCodeView.h"
 #import "LMHWaterFallLayout.h"
 #import "NJKWebViewProgressView.h"
@@ -127,9 +126,6 @@
 //UINavigationController
 #import "BaseNavigationVC.h"
 
-#import "AppDelegate.h"
-#import "SceneDelegate.h"
-#import <VideoToolbox/VideoToolbox.h>//FFmpeg 需要
 ///一些工具库
 #import "MKPublickDataManager.h"//数据管理
 #import "YBNotificationManager.h"//通知名字定义
@@ -139,9 +135,6 @@
 //#import "PersonalInfo.h"
 //#import "NSlogToDocumentFolder.h"//上线需要去掉
 ///公用的类和库
-//替代系统的TabBarController
-#import "LZBTabBarVC.h"
-#import "CustomSYSUITabBarController.h"
 //URL
 #import "URL_Manager.h"
 //登录

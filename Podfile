@@ -18,14 +18,14 @@ target 'My_BaseProj' do
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果
   pod 'ReactiveObjC'  # https://github.com/ReactiveCocoa/ReactiveObjC 重量级框架
 #  pod 'LBLaunchImageAd' # https://github.com/AllLuckly/LBLaunchImageAd 启动图 未适配iOS 13 拖动到手动Pod自己改
-  pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
+#  pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
 #  pod 'Texture' #Facebook出品的一款界面框架  暂时打开会报错 但是还是在更新
   pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
   pod 'GKPageScrollView' # https://github.com/QuintGao/GKPageScrollView iOS类似微博、抖音、网易云等个人详情页滑动嵌套效果
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   #pod 'PureLayout'
   #pod 'MyLayout'
-  pod 'XHLaunchAd' # https://github.com/CoderZhuXH/XHLaunchAd 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
+#  pod 'XHLaunchAd' # https://github.com/CoderZhuXH/XHLaunchAd 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
   pod 'AFNetworking'  # https://github.com/AFNetworking/AFNetworking A delightful networking framework for iOS, macOS, watchOS, and tvOS.
   pod 'Reachability'  # https://github.com/tonymillion/Reachability 检查联网情况
   pod 'MJRefresh' # https://github.com/CoderMJLee/MJRefresh An easy way to use pull-to-refresh
@@ -34,7 +34,7 @@ target 'My_BaseProj' do
   #pod 'YYText'
   pod 'RDVTabBarController' # https://github.com/robbdimitrov/RDVTabBarController 
   pod 'SDWebImage'  # https://github.com/SDWebImage/SDWebImage Asynchronous image downloader with cache support as a UIImageView category
-  pod 'SDWebImageWebPCoder' # https://github.com/SDWebImage/SDWebImageWebPCoder
+#  pod 'SDWebImageWebPCoder' # https://github.com/SDWebImage/SDWebImageWebPCoder
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'BSYKeyBoard' # https://github.com/baishiyun/BSYKeyBoard
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS

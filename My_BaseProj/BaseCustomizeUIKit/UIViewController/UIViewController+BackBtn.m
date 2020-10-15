@@ -1,15 +1,13 @@
 //
-//  BaseVC+BackBtn.m
-//  MonkeyKingVideo
+//  UIViewController+BackBtn.m
+//  UBallLive
 //
-//  Created by Jobs on 2020/8/4.
-//  Copyright © 2020 Jobs. All rights reserved.
+//  Created by Jobs on 2020/10/12.
 //
 
-#import "BaseVC+BackBtn.h"
-#import <objc/runtime.h>
+#import "UIViewController+BackBtn.h"
 
-@implementation BaseVC (BackBtn)
+@implementation UIViewController (BackBtn)
 
 static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
 @dynamic backBtnCategory;
@@ -35,7 +33,7 @@ static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
                               forState:UIControlStateNormal];
         [BackBtnCategory setTitle:@"返回"
                          forState:UIControlStateNormal];
-        [BackBtnCategory setImage:KBuddleIMG(nil,@"Others", nil, @"back_white")
+        [BackBtnCategory setImage:KBuddleIMG(nil, @"Others", nil, @"back_white")
                          forState:UIControlStateNormal];
         [[BackBtnCategory rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             [self backBtnClickEvent:x];
@@ -53,5 +51,6 @@ static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
                              backBtnCategory,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
 
 @end

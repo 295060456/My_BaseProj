@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScanResultViewController : BaseVC
+@interface ScanResultViewController : UIViewController
 
 + (instancetype _Nullable )ComingFromVC:(UIViewController *_Nullable)rootVC
                               withStyle:(ComingStyle)comingStyle

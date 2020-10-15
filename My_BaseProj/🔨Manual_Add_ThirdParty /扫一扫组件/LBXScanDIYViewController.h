@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, SCANCODETYPE) {
 /*
  *  因为要使用我本地的BaseVC，而直接在pod安装的LBXScanViewController文件里面修改，因为编译顺序的问题，会导致引用头文件BaseVC.h失败，所以权衡之下，希望用一种影响范围最小的方法去解决它，那么只能新建立一个DIY的类，这个类除了继承从UIViewController改变成了BaseVC
  */
-@interface LBXScanDIYViewController : BaseVC
+@interface LBXScanDIYViewController : UIViewController
 
 #pragma mark ---- 需要初始化参数 ------
 //当前选择的扫码库

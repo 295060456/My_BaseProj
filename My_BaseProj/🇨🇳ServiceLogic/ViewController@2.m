@@ -10,7 +10,6 @@
 
 #import "MJRefreshComponent+Lottie.h"
 #import "TestTableViewHeader.h"
-#import "BaseVC+MJRefresh.h"
 
 ///视频框架
 //#import <libavformat/avformat.h>

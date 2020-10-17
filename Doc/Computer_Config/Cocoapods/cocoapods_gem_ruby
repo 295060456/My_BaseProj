@@ -52,7 +52,7 @@
 安装rvm{
 
     brew install gnupg   // Mac OS X不附带gpg，因此在安装公钥之前，您需要安装gpg
-    gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB  // 安装完gpg之后，你可以安装mpapis公钥：
+    gpg --keyserver hkp://pgp.mit.edu --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB  // 安装完gpg之后，你可以安装mpapis公钥：//!!!
 
     // 安装最新版本的Ruby的RVM
     curl -L get.rvm.io | bash -s stable 或者 curl -sSL https://get.rvm.io | bash -s stable --ruby

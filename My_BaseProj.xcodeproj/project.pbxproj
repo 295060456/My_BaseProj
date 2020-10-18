@@ -53,6 +53,7 @@
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
+		C55AF596253C492100C558C4 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C55AF595253C492100C558C4 /* CollectionViewCell.m */; };
 		C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A2D253426BB0038E50C /* SuspendLab.m */; };
 		C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A32253426BB0038E50C /* SuspendBtn.m */; };
 		C55B2A39253426BC0038E50C /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A35253426BB0038E50C /* SuspendView.m */; };
@@ -461,6 +462,8 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C55AF594253C492100C558C4 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		C55AF595253C492100C558C4 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		C55B2A2C253426BB0038E50C /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
 		C55B2A2D253426BB0038E50C /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
 		C55B2A32253426BB0038E50C /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
@@ -1479,6 +1482,15 @@
 				C5FE9C8E24B5F29B007B9878 /* LXTagsView */,
 			);
 			path = "热词标签";
+			sourceTree = "<group>";
+		};
+		C55AF593253C492100C558C4 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C55AF594253C492100C558C4 /* CollectionViewCell.h */,
+				C55AF595253C492100C558C4 /* CollectionViewCell.m */,
+			);
+			path = UICollectionViewCell;
 			sourceTree = "<group>";
 		};
 		C55B2A2B253426BB0038E50C /* SuspendLab */ = {
@@ -2561,6 +2573,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C55AF593253C492100C558C4 /* UICollectionViewCell */,
 				C56E338C252F4A63004ACCC7 /* UILabel */,
 				C59B9F45252705130039B485 /* 🦆UITableViewHeaderFooterView 用作基类 */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
@@ -3690,6 +3703,7 @@
 				C55D3CAD2538856100CFCF73 /* XHLaunchImageView.m in Sources */,
 				C5FE9CF324B5F29C007B9878 /* XLSphereView.m in Sources */,
 				C5C67C5E24FE4FA5000A26B8 /* GCD_TimerManager.m in Sources */,
+				C55AF596253C492100C558C4 /* CollectionViewCell.m in Sources */,
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
 				C55D40422538898900CFCF73 /* FLAnimatedImage.m in Sources */,
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,

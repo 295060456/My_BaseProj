@@ -124,6 +124,8 @@
 //#import "UIViewController+NavigationBarHiddenMgr.h"
 //UINavigationController
 #import "BaseNavigationVC.h"
+//UICollectionViewCell
+#import "CollectionViewCell.h"
 
 ///一些工具库
 #import "MKPublickDataManager.h"//数据管理

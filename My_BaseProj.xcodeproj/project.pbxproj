@@ -2768,14 +2768,14 @@
 		C5FE9B3424B5F203007B9878 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */,
-				C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */,
 				C5FE9B3624B5F203007B9878 /* TBVCell_style_01.h */,
 				C5FE9B3524B5F203007B9878 /* TBVCell_style_01.m */,
 				C5FAC32F24C5747900372BCD /* TBVCell_style_02.h */,
 				C5FAC33024C5747900372BCD /* TBVCell_style_02.m */,
 				C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */,
 				C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */,
+				C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */,
+				C57D5C56251374CE0073F90B /* WhiteRightArrow@3x.png */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";

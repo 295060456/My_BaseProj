@@ -55,6 +55,7 @@
 #import "BRPickerView.h"
 #import "JJStockView.h"
 #import "LBXScanView.h"
+#import "TKCarouselView.h"
 //#import "Debugo.h"
 #import "UIViewController+CWLateralSlide.h"
 #import <YXAlertController.h>

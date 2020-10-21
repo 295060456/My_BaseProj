@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-// 超过 6 个 系统会变成更多
+// 超过 6 个 系统会变成更多，过不了审核
 @interface CustomTabBar : UITabBar
 
 @property(nonatomic,strong)UIColor *__nullable bgColor;

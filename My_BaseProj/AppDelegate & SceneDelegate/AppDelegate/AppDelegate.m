@@ -140,15 +140,31 @@ didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
 -(TabbarVC *)tabbarVC{
     if (!_tabbarVC) {
         _tabbarVC = TabbarVC.new;
+//        _tabbarVC.isOpenScrollTabbar = NO;
         _tabbarVC.myTabBar.offsetHeight = 5;
-    
-        [_tabbarVC.humpIndex addObject:@(2)];
+        [_tabbarVC.childMutArr addObject:childViewController_customStyle(ViewController_1.new,
+                                                                         @"首页",
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"community_selected"),
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"community_unselected"),
+                                                                         0,
+                                                                         @"home_priase_animation",
+                                                                         1)];
         
-        [_tabbarVC.childMutArr addObject:ViewController_1.new];
-        [_tabbarVC.childMutArr addObject:ViewController_2.new];
-        [_tabbarVC.childMutArr addObject:ViewController_3.new];
-        [_tabbarVC.childMutArr addObject:ViewController_4.new];
-        [_tabbarVC.childMutArr addObject:ViewController_5.new];
+        [_tabbarVC.childMutArr addObject:childViewController_customStyle(ViewController_2.new,
+                                                                         @"精彩生活",
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"post_selected"),
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"post_unselected"),
+                                                                         30,
+                                                                         @"green_lottie_tab_home",
+                                                                         1)];
+        
+        [_tabbarVC.childMutArr addObject:childViewController_customStyle(ViewController_3.new,
+                                                                         @"发现",
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"My_selected"),
+                                                                         KBuddleIMG(nil, @"TabbaritemImage", nil, @"My_unselected"),
+                                                                         0,
+                                                                         @"green_lottie_tab_mine",
+                                                                         1)];
     }return _tabbarVC;
 }
 

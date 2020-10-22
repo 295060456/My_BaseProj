@@ -78,7 +78,6 @@
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */; };
-		C572769225408AEA002373D7 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C572769125408AEA002373D7 /* BaseNavigationVC.m */; };
 		C572769925408AF1002373D7 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572769725408AF1002373D7 /* NavigationBar.m */; };
 		C572785A254094C2002373D7 /* UITabBarItem+TLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */; };
 		C572785B254094C2002373D7 /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727818254094C2002373D7 /* TabBarItem.m */; };
@@ -154,6 +153,8 @@
 		C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEEB3725384310000E1C5F /* UIView+Extras.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
+		C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C243712541550E00CB55F5 /* BaseNavigationVC.m */; };
+		C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */; };
 		C5C67C5324FE4E65000A26B8 /* UIView+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5224FE4E65000A26B8 /* UIView+Measure.m */; };
@@ -479,8 +480,6 @@
 		C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extra.m"; sourceTree = "<group>"; };
 		C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
-		C572769025408AEA002373D7 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
-		C572769125408AEA002373D7 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C572769725408AF1002373D7 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		C572769825408AF1002373D7 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
 		C5727813254094C2002373D7 /* TabbarControllerSysEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarControllerSysEx.h; sourceTree = "<group>"; };
@@ -628,6 +627,11 @@
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
+		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
+		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
+		C5C2441425417C5A00CB55F5 /* UUMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMarqueeView.h; sourceTree = "<group>"; };
+		C5C2441525417C5A00CB55F5 /* 跑马灯效果 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "跑马灯效果"; sourceTree = "<group>"; };
+		C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMarqueeView.m; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDownBtn.m"; sourceTree = "<group>"; };
@@ -1937,6 +1941,16 @@
 			path = "图形验证码";
 			sourceTree = "<group>";
 		};
+		C5C2441325417C5A00CB55F5 /* 跑马灯效果 */ = {
+			isa = PBXGroup;
+			children = (
+				C5C2441525417C5A00CB55F5 /* 跑马灯效果 */,
+				C5C2441425417C5A00CB55F5 /* UUMarqueeView.h */,
+				C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */,
+			);
+			path = "跑马灯效果";
+			sourceTree = "<group>";
+		};
 		C5C67C5424FE4F6C000A26B8 /* TimerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2389,6 +2403,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
 				C5013A8C2536CB5400F4E87D /* 不规则多边形按钮 */,
 				C55AAB5A2532B03500335ACC /* 热词标签 */,
@@ -2611,8 +2626,8 @@
 		C5FE9B2424B5F203007B9878 /* UINavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				C572769025408AEA002373D7 /* BaseNavigationVC.h */,
-				C572769125408AEA002373D7 /* BaseNavigationVC.m */,
+				C5C243722541550E00CB55F5 /* BaseNavigationVC.h */,
+				C5C243712541550E00CB55F5 /* BaseNavigationVC.m */,
 			);
 			path = UINavigationController;
 			sourceTree = "<group>";
@@ -3638,7 +3653,6 @@
 				C5F78AED24BF297D008A46EC /* InfoTBVCell.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
 				C59B9F68252707480039B485 /* CommentPopUpNonHoveringHeaderFooterView.m in Sources */,
-				C572769225408AEA002373D7 /* BaseNavigationVC.m in Sources */,
 				C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,
 				C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */,
@@ -3655,6 +3669,7 @@
 				C522CFFC253464B1006A822F /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */,
 				C533701724DB00280082847C /* BRBaseView.m in Sources */,
+				C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */,
 				C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */,
 				C5FE9CDE24B5F29C007B9878 /* LBXScanDIYView.m in Sources */,
 				C55D3CAC2538856100CFCF73 /* XHLaunchAdButton.m in Sources */,
@@ -3701,6 +3716,7 @@
 				C5914AE825384A2F007777A6 /* UIViewController+BWShareView.m in Sources */,
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5FE9CDD24B5F29C007B9878 /* ScanResultViewController.m in Sources */,
+				C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */,
 				C5FE9CE124B5F29C007B9878 /* DIYScanVC.m in Sources */,
 				C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,

@@ -121,3 +121,10 @@ gem{
     gem sources --remove https://rubygems.org/
     gem sources --add https://gems.ruby-china.com/
 }
+
+Cocoapods-Pod仓库dependency反向依赖查询{ //https://blog.csdn.net/xiaofei125145/article/details/80642945
+    安装 gem gem install reversepoddependency
+    执行如下命令得到结果
+    specbackwarddependency 本地repo路径 pod名称
+    //例如：specbackwarddependency ~/.cocoapods/repos/master AFNetworking
+}

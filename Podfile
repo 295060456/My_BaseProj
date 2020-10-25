@@ -26,6 +26,7 @@ def debugPods
   pod 'CocoaLumberjack' # https://github.com/CocoaLumberjack/CocoaLumberjack A fast & simple, yet powerful & flexible logging framework for Mac and iOS
   pod 'Reveal-SDK',:configurations => ['Debug']
   pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
+  #  pod 'FBRetainCycleDetector' # https://github.com/facebook/FBRetainCycleDetector
   #  pod 'CocoaDebug' # https://github.com/CocoaDebug/CocoaDebug
   #  pod 'MLeaksFinder'  # 在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
   #  pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.

@@ -108,7 +108,7 @@
     // 开始安装CocoaPods
     sudo gem install -n /usr/local/bin cocoapods
     // 安装最新版cocoapods
-    sudo gem install cocoapods --pre
+    sudo gem install cocoapods --pre  <——————这句升级 可以不用--pre
     // 安装本地库
     pod setup
     //如果安装了多个Xcode使用下面的命令选择（一般需要选择最近的Xcode版本）

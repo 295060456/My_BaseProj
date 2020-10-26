@@ -528,6 +528,20 @@
 		C572A2A124FD2FB5000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C5766CF92546B72D00C382C8 /* UIViewController+JXPagerViewListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXPagerViewListViewDelegate.m"; sourceTree = "<group>"; };
 		C5766CFA2546B72E00C382C8 /* UIViewController+JXPagerViewListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JXPagerViewListViewDelegate.h"; sourceTree = "<group>"; };
+		C57678172546CA3600C382C8 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
+		C576781B2546CA3600C382C8 /* DynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicVC.h; sourceTree = "<group>"; };
+		C576781C2546CA3600C382C8 /* CommentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentVC.h; sourceTree = "<group>"; };
+		C576781D2546CA3600C382C8 /* VideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
+		C576781E2546CA3600C382C8 /* ReleaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseVC.h; sourceTree = "<group>"; };
+		C576781F2546CA3600C382C8 /* ForecastVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastVC.h; sourceTree = "<group>"; };
+		C57678202546CA3600C382C8 /* VideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoVC.m; sourceTree = "<group>"; };
+		C57678212546CA3600C382C8 /* CommentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentVC.m; sourceTree = "<group>"; };
+		C57678222546CA3600C382C8 /* DynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicVC.m; sourceTree = "<group>"; };
+		C57678232546CA3600C382C8 /* ForecastVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForecastVC.m; sourceTree = "<group>"; };
+		C57678242546CA3600C382C8 /* ReleaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseVC.m; sourceTree = "<group>"; };
+		C57678272546CA3700C382C8 /* PagingViewTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagingViewTableHeaderView.m; sourceTree = "<group>"; };
+		C57678282546CA3700C382C8 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
+		C57678302546CA3700C382C8 /* PagingViewTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PagingViewTableHeaderView.h; sourceTree = "<group>"; };
 		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
 		C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
@@ -1053,6 +1067,7 @@
 		C52D2A5024E580670048FEFF /* JXCategoryView */ = {
 			isa = PBXGroup;
 			children = (
+				C57678102546CA1800C382C8 /* 下拉headerView变大+红点提示 demo */,
 				C52D2A5124E580790048FEFF /* JXCategoryView */,
 			);
 			path = JXCategoryView;
@@ -1750,6 +1765,35 @@
 				C5914AD525384A2F007777A6 /* UIViewController+TZLocationManager.m */,
 			);
 			path = "UIViewController+TZImagePickerController";
+			sourceTree = "<group>";
+		};
+		C57678102546CA1800C382C8 /* 下拉headerView变大+红点提示 demo */ = {
+			isa = PBXGroup;
+			children = (
+				C57678302546CA3700C382C8 /* PagingViewTableHeaderView.h */,
+				C57678272546CA3700C382C8 /* PagingViewTableHeaderView.m */,
+				C57678282546CA3700C382C8 /* ViewController@5.h */,
+				C57678172546CA3600C382C8 /* ViewController@5.m */,
+				C576781A2546CA3600C382C8 /* 我的 子页面控制器 */,
+			);
+			path = "下拉headerView变大+红点提示 demo";
+			sourceTree = "<group>";
+		};
+		C576781A2546CA3600C382C8 /* 我的 子页面控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				C576781C2546CA3600C382C8 /* CommentVC.h */,
+				C57678212546CA3600C382C8 /* CommentVC.m */,
+				C576781B2546CA3600C382C8 /* DynamicVC.h */,
+				C57678222546CA3600C382C8 /* DynamicVC.m */,
+				C576781F2546CA3600C382C8 /* ForecastVC.h */,
+				C57678232546CA3600C382C8 /* ForecastVC.m */,
+				C576781E2546CA3600C382C8 /* ReleaseVC.h */,
+				C57678242546CA3600C382C8 /* ReleaseVC.m */,
+				C576781D2546CA3600C382C8 /* VideoVC.h */,
+				C57678202546CA3600C382C8 /* VideoVC.m */,
+			);
+			path = "我的 子页面控制器";
 			sourceTree = "<group>";
 		};
 		C58F042F24EBB63000B6D09C /* MKProxy */ = {

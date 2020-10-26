@@ -63,7 +63,7 @@ def photoAlbum
 ## 富文本
 def richText
   pod 'DTCoreText'  #https://github.com/Cocoanetics/DTCoreText 解析HTML与CSS最终用CoreText绘制出来，通常用于在一些需要显示富文本的场景下代替低性能的UIWebView 比较麻烦
-  pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
+#  pod 'RZRichTextView' # https://github.com/rztime/RZRichTextView  富文本编辑器
   end
 ## Label
 def label
@@ -72,9 +72,9 @@ def label
   end
 ## 开屏广告
 def ad
-  #  pod 'XHLaunchAd' # https://github.com/CoderZhuXH/XHLaunchAd 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
+#    pod 'XHLaunchAd' # https://github.com/CoderZhuXH/XHLaunchAd 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
   #  pod 'LBLaunchImageAd' # https://github.com/AllLuckly/LBLaunchImageAd 启动图 未适配iOS 13 拖动到手动Pod自己改
-  #  pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
+    pod 'FLAnimatedImageView+RGWrapper' # https://github.com/RengeRenge/FLAnimatedImageView-RGWrapper FLAnimatedImage是适用于iOS的高性能动画GIF引擎
   end
 ## 约束框架
 def constraint
@@ -97,10 +97,10 @@ def ui
   pod 'UICountingLabel' # https://github.com/dataxpress/UICountingLabel Lable上的默认值持续变动到指定值 Adds animated counting support to UILabel.
   pod 'JJStockView' # https://github.com/jezzmemo/JJStockView Excel iOS股票,课程表,表格控件
   pod 'ZWPullMenuView' # https://github.com/wangziwu/ZWPullMenuView 下拉选择视图、支持微信、支付宝等样式。自动计算最优显示位置、动画效果。
-  pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
+#  pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式 手动管理pods
   pod 'HBDNavigationBar'  # https://github.com/listenzz/HBDNavigationBar 自定义UINavigationBar，用于在各种状态之间平滑切换，包括条形样式，条形色调，背景图像，背景alpha，条形隐藏，标题文本属性，色调颜色，阴影隐藏...
   pod 'WXSTransition' # https://github.com/alanwangmodify/WXSTransition 这是一个界面转场动画集。 目前只支持纯代码 已支持手势返回
-  pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView
+#  pod 'SDCycleScrollView' # https://github.com/gsdios/SDCycleScrollView
   pod 'TKCarouselView' # https://github.com/libtinker/TKCarouselView
   pod 'BSYKeyBoard' # https://github.com/baishiyun/BSYKeyBoard
   pod 'CWLateralSlide' # https://github.com/ChavezChen/CWLateralSlide
@@ -125,27 +125,27 @@ def ui
 end
 ## 提示相关
 def alert
-  pod 'LYXAlertController' # https://github.com/liuyunxinok/LYXAlertController 为解决UIAlertController的UI（字体颜色，action背景色,字体大小等）设置局限，故自己封装一个YXAlertController，可以随意进行颜色和字体设置。样式大小，title和message的行距缩进与系统样式保持一致。
+  pod 'TFPopup'# https://github.com/shmxybfq/TFPopup 不耦合view代码,可以为已创建过 / 未创建过的view添加弹出方式;只是一种弹出方式;
   pod 'SPAlertController'# https://github.com/SPStore/SPAlertController 深度定制AlertController
-  pod 'TRCustomAlert'
   pod 'WHToast' # https://github.com/remember17/WHToast 一个轻量级的提示控件，没有任何依赖
-  #pod 'SVProgressHUD' # https://github.com/SVProgressHUD/SVProgressHUD 是一个弹出提示层，用来提示 网络加载 或 提示对错 A clean and lightweight progress HUD for your iOS and tvOS app
+  # pod 'TRCustomAlert' # https://github.com/troila-mobile/troila-mobie-CustomAlert-iOS
+  # pod 'SVProgressHUD' # https://github.com/SVProgressHUD/SVProgressHUD 是一个弹出提示层，用来提示 网络加载 或 提示对错 A clean and lightweight progress HUD for your iOS and tvOS app
 end
 ## 数据库
 def database
   pod 'FMDB'  # https://github.com/ccgus/fmdb 数据库第三方框架 A Cocoa / Objective-C wrapper around SQLite
   pod 'WCDB'  # https://github.com/Tencent/wcdb WCDB is a cross-platform database framework developed by WeChat.
-  #  pod 'FMDB/SQLCipher' # 数据库加解密
-  #  pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
+  # pod 'FMDB/SQLCipher' # 数据库加解密
+  # pod 'LKDBHelper' # https://github.com/li6185377/LKDBHelper-SQLite-ORM
   end
 ## 二维码相关
 def qrCode
   pod 'WSLNativeScanTool' # https://github.com/wsl2ls/ScanQRcode 是在利用原生API的条件下封装的二维码扫描工具，支持二维码的扫描、识别图中二维码、生成自定义颜色和中心图标的二维码、监测环境亮度、打开闪光灯这些功能；WSLScanView是参照微信封装的一个扫一扫界面，支持线条颜色、大小、动画图片、矩形扫描框样式的自定义；这个示例本身就是仿照微信的扫一扫功能实现的。
-  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
-  pod 'LBXScan/LBXNative'
-  pod 'LBXScan/LBXZXing'
-  pod 'LBXScan/LBXZBar'
-  pod 'LBXScan/UI'
+#  pod 'LBXScan' # https://github.com/MxABC/LBXScan iOS 二维码、条形码
+#  pod 'LBXScan/LBXNative'
+#  pod 'LBXScan/LBXZXing'
+#  pod 'LBXScan/LBXZBar'
+#  pod 'LBXScan/UI'
   end
 ## 视频相关框架
 def videoFunc

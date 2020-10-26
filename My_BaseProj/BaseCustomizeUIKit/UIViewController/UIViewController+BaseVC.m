@@ -36,7 +36,7 @@ static char *UIViewController_BaseVC_pushOrPresent = "UIViewController_BaseVC_pu
                 if (successBlock) {
                     successBlock(toVC);
                 }
-                [rootVC_weak_.navigationController pushViewController:toVC
+                [weak_rootVC.navigationController pushViewController:toVC
                                                             animated:animated];
             }else{
                 toVC.pushOrPresent = ComingStyle_PRESENT;
@@ -45,7 +45,7 @@ static char *UIViewController_BaseVC_pushOrPresent = "UIViewController_BaseVC_pu
                 if (successBlock) {
                     successBlock(toVC);
                 }
-                [rootVC_weak_ presentViewController:toVC
+                [weak_rootVC presentViewController:toVC
                                           animated:animated
                                         completion:^{}];
             }
@@ -57,7 +57,7 @@ static char *UIViewController_BaseVC_pushOrPresent = "UIViewController_BaseVC_pu
             if (successBlock) {
                 successBlock(toVC);
             }
-            [rootVC_weak_ presentViewController:toVC
+            [weak_rootVC presentViewController:toVC
                                       animated:animated
                                     completion:^{}];
         }break;

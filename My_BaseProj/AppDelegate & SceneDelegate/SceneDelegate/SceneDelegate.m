@@ -8,6 +8,7 @@
 
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
+#import "AppDelegate+PopupView.h"
 
 API_AVAILABLE(ios(13.0))
 
@@ -49,8 +50,8 @@ willConnectToSession:(UISceneSession *)session
         self.windowScene = (UIWindowScene *)scene;
         XHLaunchAd * ad = [XHLaunchAd setWaitDataDuration:10];
         [ad scene:self.windowScene];
-        [self.window setRootViewController:AppDelegate.sharedInstance.tabbarVC];
-        [self.window makeKeyAndVisible];
+        self.window.alpha = 1;
+        [[AppDelegate sharedInstance] Popupview];// 弹出框
     }
 }
 
@@ -80,5 +81,11 @@ willConnectToSession:(UISceneSession *)session
     [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
 #pragma mark —— lazyLoad
+-(UIWindow *)window{
+    [_window setRootViewController:AppDelegate.sharedInstance.tabbarVC];
+    [_window makeKeyAndVisible];
+    return _window;
+}
+
 
 @end

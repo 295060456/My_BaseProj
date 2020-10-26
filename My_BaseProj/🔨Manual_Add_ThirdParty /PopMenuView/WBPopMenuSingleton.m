@@ -40,7 +40,7 @@
     self.item = item;
     self.action = [action copy];
     if (_popMenuView) {
-        [self_weak_ hideMenu];
+        [weak_self hideMenu];
     }
     [UIView animateWithDuration:0.3f
                      animations:^{

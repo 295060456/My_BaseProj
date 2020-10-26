@@ -16,7 +16,7 @@
 #import "RYCuteView.h"
 #import "XWCountryCodeController.h"
 #import "HAHandleDemoView.h"
-#import "SDCycleScrollView.h"
+//#import "SDCycleScrollView.h"
 #import "SoundBtn.h"
 #import "LXTagsView.h"
 #import "TouchID.h"
@@ -123,6 +123,7 @@
 #import "UIViewController+TZImagePickerControllerDelegate.h"
 #import "UIViewController+TZLocationManager.h"
 #import "UIViewController+NavigationBar.h"
+#import "UIViewController+TFPopup.h"
 //UINavigationController
 #import "BaseNavigationVC.h"
 //UINavigationBar
@@ -149,9 +150,9 @@
 //#import "VideoCell.h"
 //#import "MKRecoderHeader.h"
 //扫一扫
-#import "LBXScanDIYViewController.h"
-#import "Global.h"
-#import "StyleDIY.h"
+//#import "LBXScanDIYViewController.h"
+//#import "Global.h"
+//#import "StyleDIY.h"
 //评论列表的
 #import "PopUpVC.h"//弹窗小控件（高仿今日头条App评论弹窗框架）
 #import "CommentPopUpNonHoveringHeaderFooterView.h"

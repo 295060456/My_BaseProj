@@ -13,11 +13,14 @@
 #import <DoraemonKit/DoraemonManager.h>
 #endif
 
+#import "NoticePopupView.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(readonly,strong)NSPersistentCloudKitContainer *persistentContainer;
 @property(nonatomic,strong)UIWindow *window;//仅仅为了iOS 13 版本向下兼容而存在
 @property(nonatomic,strong)TabbarVC *tabbarVC;
+@property(nonatomic,strong)NoticePopupView *popupView;
 
 - (void)saveContext;
 +(AppDelegate *)sharedInstance;

@@ -124,6 +124,9 @@
 #import "UIViewController+TZLocationManager.h"
 #import "UIViewController+NavigationBar.h"
 #import "UIViewController+TFPopup.h"
+//UITableViewHeaderFooterView
+#import "ViewForTableViewFooter.h"
+#import "ViewForTableViewHeader.h"
 //UINavigationController
 #import "BaseNavigationVC.h"
 //UINavigationBar
@@ -153,14 +156,9 @@
 //#import "LBXScanDIYViewController.h"
 //#import "Global.h"
 //#import "StyleDIY.h"
-//评论列表的
-#import "PopUpVC.h"//弹窗小控件（高仿今日头条App评论弹窗框架）
-#import "CommentPopUpNonHoveringHeaderFooterView.h"
-#import "HoveringHeaderView.h"
-#import "UITableViewHeaderFooterView+Attribute.h"
+
 ///Model
 #import "BaseModel.h"
 #import "MyVCModel.h"
-#import "MKCommentModel.h"
 
 #endif /* Manual_Add_ThirdParty_h */

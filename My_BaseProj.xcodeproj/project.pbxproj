@@ -38,6 +38,7 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
+		C54662F0254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m in Sources */ = {isa = PBXBuildFile; fileRef = C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */; };
 		C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */; };
 		C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
@@ -377,6 +378,8 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
+		C54662EE254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFZShopCatoryFlowLayput.h; sourceTree = "<group>"; };
+		C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFZShopCatoryFlowLayput.m; sourceTree = "<group>"; };
 		C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
@@ -1291,6 +1294,15 @@
 				C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */,
 			);
 			path = "MJRefresh + Lottie";
+			sourceTree = "<group>";
+		};
+		C54662E7254C4A3200E4B455 /* 给UICollectionView每个section加背景 */ = {
+			isa = PBXGroup;
+			children = (
+				C54662EE254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.h */,
+				C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */,
+			);
+			path = "给UICollectionView每个section加背景";
 			sourceTree = "<group>";
 		};
 		C546C449252C249A003694FF /* FDFullscreenPopGesture */ = {
@@ -2316,6 +2328,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C54662E7254C4A3200E4B455 /* 给UICollectionView每个section加背景 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
 				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
@@ -3492,6 +3505,7 @@
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
 				C5914AEB25384A2F007777A6 /* UIViewController+BaseVC.m in Sources */,
 				C5914ADF25384A2F007777A6 /* UIViewController+BackBtn.m in Sources */,
+				C54662F0254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */,
 				C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */,
 				C5FE9D1524B5F29C007B9878 /* HWTFCodeBView.m in Sources */,

@@ -22,6 +22,13 @@
 		C52E895B250F752E0070356F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8949250F752E0070356F /* GTMBase64.m */; };
 		C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E89682510B4080070356F /* UITextField+Extend.m */; };
 		C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */; };
+		C530AC16254D983800EDEDC8 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC09254D983800EDEDC8 /* LMHWaterFallLayout.m */; };
+		C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC0C254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m */; };
+		C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */; };
+		C530AC19254D983800EDEDC8 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC12254D983800EDEDC8 /* CollectionViewCell.m */; };
+		C530AC1A254D983800EDEDC8 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC15254D983800EDEDC8 /* CollectionReusableView.m */; };
+		C530AD56254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */; };
+		C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD4F254D989000EDEDC8 /* CollectionView.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
 		C533701124DB00280082847C /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF924DB00280082847C /* BRStringPickerView.m */; };
 		C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FFC24DB00280082847C /* BRDatePickerView+BR.m */; };
@@ -38,7 +45,6 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
-		C54662F0254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m in Sources */ = {isa = PBXBuildFile; fileRef = C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */; };
 		C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */; };
 		C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
@@ -50,7 +56,6 @@
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
-		C55AF596253C492100C558C4 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C55AF595253C492100C558C4 /* CollectionViewCell.m */; };
 		C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A2D253426BB0038E50C /* SuspendLab.m */; };
 		C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A32253426BB0038E50C /* SuspendBtn.m */; };
 		C55B2A39253426BC0038E50C /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A35253426BB0038E50C /* SuspendView.m */; };
@@ -195,8 +200,6 @@
 		C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC124B5F19E007B9878 /* ViewController@1.m */; };
 		C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC224B5F19E007B9878 /* ViewController@4.m */; };
 		C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC524B5F19E007B9878 /* ViewController@3.m */; };
-		C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B0A24B5F203007B9878 /* HQCollectionViewFlowLayout.m */; };
-		C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B0B24B5F203007B9878 /* LMHWaterFallLayout.m */; };
 		C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B1424B5F203007B9878 /* 专治UITableView相应链断裂 */; };
 		C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */; };
 		C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1724B5F203007B9878 /* UIButton+Block.m */; };
@@ -347,6 +350,21 @@
 		C52E89692510B4080070356F /* UITextField+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extend.h"; sourceTree = "<group>"; };
 		C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
+		C530AC08254D983800EDEDC8 /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
+		C530AC09254D983800EDEDC8 /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
+		C530AC0B254D983800EDEDC8 /* KFZShopCatoryFlowLayput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFZShopCatoryFlowLayput.h; sourceTree = "<group>"; };
+		C530AC0C254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFZShopCatoryFlowLayput.m; sourceTree = "<group>"; };
+		C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		C530AC0F254D983800EDEDC8 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		C530AC11254D983800EDEDC8 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		C530AC12254D983800EDEDC8 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		C530AC14254D983800EDEDC8 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		C530AC15254D983800EDEDC8 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		C530AD4E254D989000EDEDC8 /* CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
+		C530AD4F254D989000EDEDC8 /* CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
+		C530AD54254D98AE00EDEDC8 /* UICollectionView+RegisterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+RegisterClass.h"; sourceTree = "<group>"; };
+		C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+RegisterClass.m"; sourceTree = "<group>"; };
+		C530AD5A254D98B200EDEDC8 /* 我为什么要这么做 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "我为什么要这么做"; sourceTree = "<group>"; };
 		C5336FF624DB00280082847C /* BRResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRResultModel.m; sourceTree = "<group>"; };
 		C5336FF724DB00280082847C /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
 		C5336FF824DB00280082847C /* BRResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRResultModel.h; sourceTree = "<group>"; };
@@ -378,8 +396,6 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
-		C54662EE254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFZShopCatoryFlowLayput.h; sourceTree = "<group>"; };
-		C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFZShopCatoryFlowLayput.m; sourceTree = "<group>"; };
 		C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
@@ -411,8 +427,6 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		C55AF594253C492100C558C4 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		C55AF595253C492100C558C4 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		C55B2A2C253426BB0038E50C /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
 		C55B2A2D253426BB0038E50C /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
 		C55B2A32253426BB0038E50C /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
@@ -768,10 +782,6 @@
 		C5FE9AC624B5F19E007B9878 /* ViewController@1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController@1.h"; sourceTree = "<group>"; };
 		C5FE9AC724B5F19E007B9878 /* ViewController@4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController@4.h"; sourceTree = "<group>"; };
 		C5FE9B0524B5F1F2007B9878 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		C5FE9B0924B5F203007B9878 /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
-		C5FE9B0A24B5F203007B9878 /* HQCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		C5FE9B0B24B5F203007B9878 /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
-		C5FE9B0C24B5F203007B9878 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewer.h; sourceTree = "<group>"; };
 		C5FE9B1424B5F203007B9878 /* 专治UITableView相应链断裂 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "专治UITableView相应链断裂"; sourceTree = "<group>"; };
 		C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewer.m; sourceTree = "<group>"; };
@@ -1210,6 +1220,73 @@
 			path = "UITextField+Extend";
 			sourceTree = "<group>";
 		};
+		C530AC06254D983800EDEDC8 /* UICollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC07254D983800EDEDC8 /* LMHWaterFallLayout */,
+				C530AC0A254D983800EDEDC8 /* 给UICollectionView每个section加背景 */,
+				C530AC0D254D983800EDEDC8 /* UICollectionView 实现类似于UITableView的悬停效果 */,
+			);
+			path = UICollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		C530AC07254D983800EDEDC8 /* LMHWaterFallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC08254D983800EDEDC8 /* LMHWaterFallLayout.h */,
+				C530AC09254D983800EDEDC8 /* LMHWaterFallLayout.m */,
+			);
+			path = LMHWaterFallLayout;
+			sourceTree = "<group>";
+		};
+		C530AC0A254D983800EDEDC8 /* 给UICollectionView每个section加背景 */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC0B254D983800EDEDC8 /* KFZShopCatoryFlowLayput.h */,
+				C530AC0C254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m */,
+			);
+			path = "给UICollectionView每个section加背景";
+			sourceTree = "<group>";
+		};
+		C530AC0D254D983800EDEDC8 /* UICollectionView 实现类似于UITableView的悬停效果 */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC0F254D983800EDEDC8 /* HQCollectionViewFlowLayout.h */,
+				C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */,
+			);
+			path = "UICollectionView 实现类似于UITableView的悬停效果";
+			sourceTree = "<group>";
+		};
+		C530AC10254D983800EDEDC8 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC11254D983800EDEDC8 /* CollectionViewCell.h */,
+				C530AC12254D983800EDEDC8 /* CollectionViewCell.m */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C530AC13254D983800EDEDC8 /* UICollectionReusableView 用作基类 */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC14254D983800EDEDC8 /* CollectionReusableView.h */,
+				C530AC15254D983800EDEDC8 /* CollectionReusableView.m */,
+			);
+			path = "UICollectionReusableView 用作基类";
+			sourceTree = "<group>";
+		};
+		C530AD4C254D986F00EDEDC8 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C530AD5A254D98B200EDEDC8 /* 我为什么要这么做 */,
+				C530AD54254D98AE00EDEDC8 /* UICollectionView+RegisterClass.h */,
+				C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */,
+				C530AD4E254D989000EDEDC8 /* CollectionView.h */,
+				C530AD4F254D989000EDEDC8 /* CollectionView.m */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
 		C5336FF424DB00280082847C /* BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1294,15 +1371,6 @@
 				C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */,
 			);
 			path = "MJRefresh + Lottie";
-			sourceTree = "<group>";
-		};
-		C54662E7254C4A3200E4B455 /* 给UICollectionView每个section加背景 */ = {
-			isa = PBXGroup;
-			children = (
-				C54662EE254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.h */,
-				C54662EF254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m */,
-			);
-			path = "给UICollectionView每个section加背景";
 			sourceTree = "<group>";
 		};
 		C546C449252C249A003694FF /* FDFullscreenPopGesture */ = {
@@ -1395,15 +1463,6 @@
 				C5FE9C8E24B5F29B007B9878 /* LXTagsView */,
 			);
 			path = "热词标签";
-			sourceTree = "<group>";
-		};
-		C55AF593253C492100C558C4 /* UICollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C55AF594253C492100C558C4 /* CollectionViewCell.h */,
-				C55AF595253C492100C558C4 /* CollectionViewCell.m */,
-			);
-			path = UICollectionViewCell;
 			sourceTree = "<group>";
 		};
 		C55B2A2B253426BB0038E50C /* SuspendLab */ = {
@@ -2328,7 +2387,6 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
-				C54662E7254C4A3200E4B455 /* 给UICollectionView每个section加背景 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
 				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
@@ -2394,6 +2452,10 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C530AD4C254D986F00EDEDC8 /* UICollectionView */,
+				C530AC13254D983800EDEDC8 /* UICollectionReusableView 用作基类 */,
+				C530AC10254D983800EDEDC8 /* UICollectionViewCell */,
+				C530AC06254D983800EDEDC8 /* UICollectionViewFlowLayout */,
 				C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */,
 				C5FE9B2C24B5F203007B9878 /* CALayer */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
@@ -2402,8 +2464,6 @@
 				C5FE9B2724B5F203007B9878 /* NSString */,
 				C5FE9B4D24B5F203007B9878 /* RedefineSys */,
 				C5FE9B1624B5F203007B9878 /* UIButton */,
-				C55AF593253C492100C558C4 /* UICollectionViewCell */,
-				C5FE9B0824B5F203007B9878 /* UICollectionViewFlowLayout */,
 				C5FE9B2124B5F203007B9878 /* UIColor */,
 				C5FE9B0D24B5F203007B9878 /* UIImage */,
 				C5FE9B3124B5F203007B9878 /* UIImageView */,
@@ -2453,17 +2513,6 @@
 				C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */,
 			);
 			path = "🇨🇳ServiceLogic";
-			sourceTree = "<group>";
-		};
-		C5FE9B0824B5F203007B9878 /* UICollectionViewFlowLayout */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9B0924B5F203007B9878 /* LMHWaterFallLayout.h */,
-				C5FE9B0A24B5F203007B9878 /* HQCollectionViewFlowLayout.m */,
-				C5FE9B0B24B5F203007B9878 /* LMHWaterFallLayout.m */,
-				C5FE9B0C24B5F203007B9878 /* HQCollectionViewFlowLayout.h */,
-			);
-			path = UICollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
 		C5FE9B0D24B5F203007B9878 /* UIImage */ = {
@@ -3424,6 +3473,7 @@
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */,
+				C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5767BA525470BD100C382C8 /* WMZBannerFlowLayout.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
@@ -3436,7 +3486,7 @@
 				C55D3CAD2538856100CFCF73 /* XHLaunchImageView.m in Sources */,
 				C5FE9CF324B5F29C007B9878 /* XLSphereView.m in Sources */,
 				C5C67C5E24FE4FA5000A26B8 /* GCD_TimerManager.m in Sources */,
-				C55AF596253C492100C558C4 /* CollectionViewCell.m in Sources */,
+				C530AD56254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m in Sources */,
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
 				C5727873254094C2002373D7 /* UITabBar+Ex.m in Sources */,
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,
@@ -3494,6 +3544,7 @@
 				C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */,
 				C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */,
 				C5767BA725470BD100C382C8 /* WMZBannerView.m in Sources */,
+				C530AC19254D983800EDEDC8 /* CollectionViewCell.m in Sources */,
 				C572785F254094C2002373D7 /* JobsPullListTBVCell.m in Sources */,
 				C5FE9D0F24B5F29C007B9878 /* XLChannelHeader.m in Sources */,
 				C5914C6D253850B6007777A6 /* UIViewController+Shake.m in Sources */,
@@ -3505,7 +3556,6 @@
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
 				C5914AEB25384A2F007777A6 /* UIViewController+BaseVC.m in Sources */,
 				C5914ADF25384A2F007777A6 /* UIViewController+BackBtn.m in Sources */,
-				C54662F0254C4A3D00E4B455 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */,
 				C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */,
 				C5FE9D1524B5F29C007B9878 /* HWTFCodeBView.m in Sources */,
@@ -3524,6 +3574,8 @@
 				C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */,
 				C5914AE725384A2F007777A6 /* UIViewController+GifImageView.m in Sources */,
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
+				C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */,
+				C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */,
 				C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
 				C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */,
@@ -3534,8 +3586,10 @@
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
 				C572785C254094C2002373D7 /* TabBarControllerConfig.m in Sources */,
 				C5914AEA25384A2F007777A6 /* UIViewController+MJRefresh.m in Sources */,
+				C530AC1A254D983800EDEDC8 /* CollectionReusableView.m in Sources */,
 				C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */,
 				C544D26E2525D7ED003C2A94 /* TestTableViewHeader.m in Sources */,
+				C530AC16254D983800EDEDC8 /* LMHWaterFallLayout.m in Sources */,
 				C5A6D6D3252433CC0096910D /* ZYTextField+HistoryDataList.m in Sources */,
 				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
 				C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */,
@@ -3599,7 +3653,6 @@
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C55D3CB52538856100CFCF73 /* XHLaunchAdImageManager.m in Sources */,
 				C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */,
-				C5FE9B5A24B5F203007B9878 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5767B3B254709FD00C382C8 /* AppDelegate+PopupView.m in Sources */,
 				C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */,
 				C5727868254094C2002373D7 /* TLTabBarAnimation.m in Sources */,
@@ -3637,7 +3690,6 @@
 				C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */,
 				C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */,
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
-				C5FE9B5B24B5F203007B9878 /* LMHWaterFallLayout.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,

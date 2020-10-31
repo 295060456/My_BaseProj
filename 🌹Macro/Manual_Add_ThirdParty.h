@@ -107,6 +107,19 @@
 #import "UIImage+screenshot.h"
 #import "LoadingImage.h"
 
+//UICollectionView
+#import "UICollectionView+RegisterClass.h"
+//UICollectionView
+#import "CollectionView.h"
+//UICollectionReusableView
+#import "CollectionReusableView.h"
+//UICollectionViewCell
+#import "CollectionViewCell.h"
+//UICollectionViewLayout
+#import "LMHWaterFallLayout.h"
+#import "KFZShopCatoryFlowLayput.h"//给UICollectionView每个section加背景
+#import "HQCollectionViewFlowLayout.h"//UICollectionView 实现类似于UITableView的悬停效果
+
 //#import "UIView+JHGestureBlock.h"
 //UIViewController
 #import "UIViewController+BaseVC.h"
@@ -131,8 +144,6 @@
 #import "BaseNavigationVC.h"
 //UINavigationBar
 #import "NavigationBar.h"
-//UICollectionViewCell
-#import "CollectionViewCell.h"
 
 ///一些工具库
 #import "MKPublickDataManager.h"//数据管理

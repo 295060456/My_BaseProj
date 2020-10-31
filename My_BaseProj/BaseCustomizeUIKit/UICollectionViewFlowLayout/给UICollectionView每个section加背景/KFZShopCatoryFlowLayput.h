@@ -9,16 +9,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- 自定义section背景view 注意继承于UICollectionReusableView
- */
-@interface KFZShopCatorySectionWhiteBgView : UICollectionReusableView
-
-@property(nonatomic,strong)UIColor *bgCor;
-@property(nonatomic,assign)CGFloat cornerRadius;
-
-@end
-
 @interface KFZShopCatoryFlowLayput : UICollectionViewFlowLayout
 
 @property(nonatomic,strong)NSMutableArray <NSNumber *>*affectedSectionsMutArr;//受影响的section组

@@ -7,35 +7,31 @@
 
 #import "KFZShopCatoryFlowLayput.h"
 
-@interface KFZShopCatorySectionWhiteBgView ()
+/**
+    自定义section背景view 注意继承于UICollectionReusableView
+    有点内部类的味道，你品、你细品
+ */
+@interface KFZShopCatorySectionWhiteBgView : UICollectionReusableView
 
 @end
 
 @implementation KFZShopCatorySectionWhiteBgView
 
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    NSLog(@"");
+}
+
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
-    self.backgroundColor = self.bgCor;
+    self.backgroundColor = kWhiteColor;
     //加阴影立体效果
     [self shadowCellWithLayerCornerRadius:defaultValue
                          layerShadowColor:defaultObj
                         layerShadowRadius:defaultValue
                        layerShadowOpacity:defaultValue];
     
-    self.layer.cornerRadius = self.cornerRadius;
-}
-
-#pragma mark —— lazyLoad
--(UIColor *)bgCor{
-    if (!_bgCor) {
-        _bgCor = kWhiteColor;
-    }return _bgCor;
-}
-
--(CGFloat)cornerRadius{
-    if (_cornerRadius == 0) {
-        _cornerRadius = 8;
-    }return _cornerRadius;
+    self.layer.cornerRadius = 8;
 }
 
 @end
@@ -54,6 +50,10 @@
     
     NSInteger sections = self.collectionView.numberOfSections;
     if (sections == 0) {//没有内容直接返回
+        return;
+    }
+    
+    if (self.affectedSectionsMutArr.count == 0) {
         return;
     }
     

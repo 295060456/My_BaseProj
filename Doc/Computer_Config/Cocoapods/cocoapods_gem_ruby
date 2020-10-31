@@ -128,3 +128,7 @@ Cocoapods-Pod仓库dependency反向依赖查询{ //https://blog.csdn.net/xiaofei
     specbackwarddependency 本地repo路径 pod名称
     //例如：specbackwarddependency ~/.cocoapods/repos/master AFNetworking
 }
+
+升级本地cocoapods库{
+    pod repo update
+}

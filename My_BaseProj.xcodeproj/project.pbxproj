@@ -662,6 +662,7 @@
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
+		C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */ = {isa = PBXFileReference; lastKnownFileType = text; path = "unknown class viewcontroller in interface builder file"; sourceTree = "<group>"; };
 		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
 		C5C2441425417C5A00CB55F5 /* UUMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMarqueeView.h; sourceTree = "<group>"; };
@@ -2288,6 +2289,7 @@
 				C57AC05025120BA3009EE44D /* 网络请求写法 */,
 				C5633218252AFABD00699392 /* Block */,
 				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
+				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

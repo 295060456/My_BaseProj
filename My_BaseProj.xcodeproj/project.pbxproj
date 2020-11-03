@@ -53,6 +53,8 @@
 		C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */; };
 		C54BB51F2518E559001591C2 /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB51A2518E559001591C2 /* ZBRequestManager.m */; };
 		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
+		C54CC4122551454B00C69C1F /* UIView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */; };
+		C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */; };
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
@@ -418,6 +420,10 @@
 		C54BB51A2518E559001591C2 /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
 		C54BB5262518E570001591C2 /* ZBNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZBNetworking; sourceTree = "<group>"; };
 		C54C78A024D2AD460052BE0B /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
+		C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZFPlayer.h"; sourceTree = "<group>"; };
+		C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFPlayer.m"; sourceTree = "<group>"; };
+		C54CC41A2551456800C69C1F /* CustomZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomZFPlayerControlView.h; sourceTree = "<group>"; };
+		C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomZFPlayerControlView.m; sourceTree = "<group>"; };
 		C54F104924C472E100EE1E67 /* 使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "使用说明"; sourceTree = "<group>"; };
 		C54F854C252B609700EE3DD0 /* UITableView+WWFoldableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WWFoldableTableView.h"; sourceTree = "<group>"; };
 		C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
@@ -1425,6 +1431,15 @@
 			path = ZBNetworking;
 			sourceTree = "<group>";
 		};
+		C54CC4162551456100C69C1F /* 播放器控制层 */ = {
+			isa = PBXGroup;
+			children = (
+				C54CC41A2551456800C69C1F /* CustomZFPlayerControlView.h */,
+				C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */,
+			);
+			path = "播放器控制层";
+			sourceTree = "<group>";
+		};
 		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2389,6 +2404,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C54CC4162551456100C69C1F /* 播放器控制层 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
 				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
@@ -2675,6 +2691,8 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */,
+				C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */,
 				C5AEEAC525384147000E1C5F /* UIView+Animation.h */,
 				C5AEEAC625384147000E1C5F /* UIView+Animation.m */,
 				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
@@ -3583,6 +3601,7 @@
 				C52E896A2510B4080070356F /* UITextField+Extend.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,
 				C5E7D9B124E1640E00A38FAF /* NSObject+Sound.m in Sources */,
+				C54CC4122551454B00C69C1F /* UIView+ZFPlayer.m in Sources */,
 				C5FE9D2424B5F29C007B9878 /* NSString+Extension.m in Sources */,
 				C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */,
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
@@ -3652,6 +3671,7 @@
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
 				C533701424DB00280082847C /* BRDatePickerView.m in Sources */,
 				C5727860254094C2002373D7 /* JobsPullListAutoSizeView.m in Sources */,
+				C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */,
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,
 				C55D3CB52538856100CFCF73 /* XHLaunchAdImageManager.m in Sources */,
 				C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */,

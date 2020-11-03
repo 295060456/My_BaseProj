@@ -150,15 +150,15 @@ def qrCode
 ## 视频相关框架
 def videoFunc
   
-  #pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
-  #pod 'ZFPlayer/ControlView'
-  #pod 'ZFPlayer/AVPlayer'
-  #pod 'ZFPlayer/ijkplayer'
-  #pod 'ZFPlayer/KSYMediaPlayer'
-  #pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_live' # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-  #pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
-  #pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
-  #pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
+  pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
+  pod 'ZFPlayer/ControlView'
+  pod 'ZFPlayer/AVPlayer'
+  pod 'ZFPlayer/ijkplayer'
+#  pod 'ZFPlayer/KSYMediaPlayer'
+#  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_live' # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
+#  pod 'KSYMediaPlayer_iOS'  # https://github.com/ksvc/KSYMediaPlayer_iOS 金山云iOS播放SDK（KSYUN Live Streaming player SDK），支持RTMP HTTP-FLV HLS 协议（supporting RTMP HTTP-FLV HLS protocol），直播延时2-3秒（Living delay 2 or 3 seconds
+#  pod 'KSYMediaPlayer_iOS/KSYMediaPlayer_vod'
+#  pod 'ksyhttpcache' # https://github.com/ksvc/ksyhttpcache_ios 金山云iOS平台http缓存SDK，可方便地与播放器集成，实现http视频边播放边下载（缓存）功能
   end
 ## 写的比较好的Demo
 def goodDemo

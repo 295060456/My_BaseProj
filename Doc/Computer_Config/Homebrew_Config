@@ -4,6 +4,7 @@ Homebrew
 //以下命令直接拖动到命令行批量运行下载和更新
 brew cask install cakebrew
 brew cask install launchrocket
+brew install tree
 brew install carthage
 brew install php
 brew install mysql

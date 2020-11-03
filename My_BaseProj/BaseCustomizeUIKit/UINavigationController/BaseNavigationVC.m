@@ -57,6 +57,16 @@
     [super viewWillAppear:animated];
     self.navigationBar.hidden = YES;// [self setNavigationBarHidden:YES animated:YES]; 这么写不行
 }
+//在指定的单独的控制器里面更改状态栏的颜色（不是全局统一样式的批量改）
+/** 同时在指定的控制器里面实现此方法
+ *  资料来源：https://www.jianshu.com/p/25e9c1a864be
+ *  - (UIStatusBarStyle)preferredStatusBarStyle {
+        return UIStatusBarStyleLightContent;
+    }
+ */
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return self.topViewController;
+}
 
 - (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers{
     [self setViewControllers:viewControllers animated:YES];

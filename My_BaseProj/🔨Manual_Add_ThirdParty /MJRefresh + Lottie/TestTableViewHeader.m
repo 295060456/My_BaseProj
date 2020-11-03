@@ -51,7 +51,7 @@
     });
 }
 
--(void)actionBlockTestTableViewHeader:(MKDataBlock)testTableViewHeaderBlock{
+-(void)actionBlockTestTableViewHeader:(MKDataBlock _Nullable)testTableViewHeaderBlock{
     _testTableViewHeaderBlock = testTableViewHeaderBlock;
 }
 #pragma mark - 实时监听控件 scrollViewContentOffset

@@ -66,7 +66,7 @@
     }];
 }
 
--(void)actionMovieCountDownFinishBlock:(MKDataBlock)movieCountDownFinishBlock{
+-(void)actionMovieCountDownFinishBlock:(MKDataBlock _Nullable)movieCountDownFinishBlock{
     _movieCountDownFinishBlock = movieCountDownFinishBlock;
 }
 

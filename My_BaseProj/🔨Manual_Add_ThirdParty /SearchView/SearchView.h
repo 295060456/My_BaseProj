@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray <UIButton *>*btnMutArr;
 @property(nonatomic,strong)NSArray <NSString *>*btnTitleArr;
 
--(void)actionBlock:(MKDataBlock)block;
+-(void)actionBlock:(MKDataBlock _Nullable)block;
 -(instancetype)initWithBtnTitleMutArr:(NSArray *)btnTitleMutArr;
 
 @end

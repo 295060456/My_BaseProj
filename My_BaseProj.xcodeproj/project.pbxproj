@@ -47,6 +47,7 @@
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
 		C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */; };
 		C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */; };
+		C54B3BCB25525EF8003BE195 /* UIFont+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3BC925525EF8003BE195 /* UIFont+Extras.m */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
 		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
 		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
@@ -128,7 +129,6 @@
 		C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */; };
 		C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044624EBCC5C00B6D09C /* JhtBannerView.m */; };
 		C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */; };
-		C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F046424EBD66100B6D09C /* ShowAvailableFont.m */; };
 		C5914ADF25384A2F007777A6 /* UIViewController+BackBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914AC225384A2D007777A6 /* UIViewController+BackBtn.m */; };
 		C5914AE125384A2F007777A6 /* UIViewController+TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914AC625384A2E007777A6 /* UIViewController+TZImagePickerController.m */; };
 		C5914AE225384A2F007777A6 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914AC925384A2E007777A6 /* UIViewController+TZImagePickerControllerDelegate.m */; };
@@ -406,6 +406,8 @@
 		C5470F1225309B5C00651ACE /* MacroDef_Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Func.h; sourceTree = "<group>"; };
 		C5470F1325309B5C00651ACE /* MacroDef_Cor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Cor.h; sourceTree = "<group>"; };
 		C5470F1425309B5C00651ACE /* MacroDef_Sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Sys.h; sourceTree = "<group>"; };
+		C54B3BC925525EF8003BE195 /* UIFont+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extras.m"; sourceTree = "<group>"; };
+		C54B3BCA25525EF8003BE195 /* UIFont+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extras.h"; sourceTree = "<group>"; };
 		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
 		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
 		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
@@ -601,8 +603,6 @@
 		C58F044824EBCC8200B6D09C /* Use */ = {isa = PBXFileReference; lastKnownFileType = text; path = Use; sourceTree = "<group>"; };
 		C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Measure.h"; sourceTree = "<group>"; };
 		C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Measure.m"; sourceTree = "<group>"; };
-		C58F046324EBD66100B6D09C /* ShowAvailableFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAvailableFont.h; sourceTree = "<group>"; };
-		C58F046424EBD66100B6D09C /* ShowAvailableFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAvailableFont.m; sourceTree = "<group>"; };
 		C5914AC225384A2D007777A6 /* UIViewController+BackBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackBtn.m"; sourceTree = "<group>"; };
 		C5914AC325384A2D007777A6 /* UIViewController+GifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GifImageView.h"; sourceTree = "<group>"; };
 		C5914AC525384A2E007777A6 /* UIViewController+JPImageresizerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JPImageresizerView.h"; sourceTree = "<group>"; };
@@ -1402,6 +1402,15 @@
 			path = "各项宏定义";
 			sourceTree = "<group>";
 		};
+		C54B3BC225525EE0003BE195 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				C54B3BCA25525EF8003BE195 /* UIFont+Extras.h */,
+				C54B3BC925525EF8003BE195 /* UIFont+Extras.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
 		C54BB50D2518E53F001591C2 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1939,15 +1948,6 @@
 			path = JhtBannerCardView;
 			sourceTree = "<group>";
 		};
-		C58F046224EBD65800B6D09C /* iOS打印全员字体 */ = {
-			isa = PBXGroup;
-			children = (
-				C58F046324EBD66100B6D09C /* ShowAvailableFont.h */,
-				C58F046424EBD66100B6D09C /* ShowAvailableFont.m */,
-			);
-			path = "iOS打印全员字体";
-			sourceTree = "<group>";
-		};
 		C590FF7124D06B75000F36C9 /* CJTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -2420,7 +2420,6 @@
 				C5C67C6F24FF5861000A26B8 /* 电影倒计时特效 */,
 				C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */,
 				C572A29424FD2A94000A1687 /* PingTest */,
-				C58F046224EBD65800B6D09C /* iOS打印全员字体 */,
 				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
 				C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */,
 				C5CF70C824E51A3C000DB72D /* Suspend */,
@@ -2470,6 +2469,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C54B3BC225525EE0003BE195 /* UIFont */,
 				C530AD4C254D986F00EDEDC8 /* UICollectionView */,
 				C530AC13254D983800EDEDC8 /* UICollectionReusableView 用作基类 */,
 				C530AC10254D983800EDEDC8 /* UICollectionViewCell */,
@@ -3633,6 +3633,7 @@
 				C5914AE225384A2F007777A6 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */,
 				C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */,
 				C55D3C812538838C00CFCF73 /* AppDelegate+Func.m in Sources */,
+				C54B3BCB25525EF8003BE195 /* UIFont+Extras.m in Sources */,
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
 				C52F595724CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m in Sources */,
 				C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */,
@@ -3722,7 +3723,6 @@
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
-				C58F046524EBD66100B6D09C /* ShowAvailableFont.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

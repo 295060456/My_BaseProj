@@ -106,8 +106,8 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-                                                                        object:@(AFNetworkReachabilityStatusUnknown)];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+//                                                                        object:@(AFNetworkReachabilityStatusUnknown)];
                 }break;
                 case AFNetworkReachabilityStatusReachableViaWWAN:{
                     NSLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
@@ -117,8 +117,8 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-                                                                        object:@(AFNetworkReachabilityStatusReachableViaWWAN)];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+//                                                                        object:@(AFNetworkReachabilityStatusReachableViaWWAN)];
                 }break;
                 case AFNetworkReachabilityStatusReachableViaWiFi:{
                     NSLog(@"WIFI网络");
@@ -128,24 +128,24 @@ static FMARCNetwork *static_FMARCNetwork = nil;
                     if (self.ReachableNetWorking) {
                         self.ReachableNetWorking();
                     }
-                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-                                                                        object:@(AFNetworkReachabilityStatusReachableViaWiFi)];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+//                                                                        object:@(AFNetworkReachabilityStatusReachableViaWiFi)];
                 } break;
                 case AFNetworkReachabilityStatusNotReachable:{
                     NSLog(@"没有网络");
                     if (self.NotReachableNetWorking) {
                         self.NotReachableNetWorking();
                     }
-                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+//                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
                 }break;
                 default:{
                     NSLog(@"没有网络");
                     if (self.NotReachableNetWorking) {
                         self.NotReachableNetWorking();
                     }
-                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
+//                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
                 }break;
             }}];
     }

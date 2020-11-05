@@ -79,6 +79,7 @@
 		C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */ = {isa = PBXBuildFile; fileRef = C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */; };
 		C56161CB24EE7450001CD851 /* 签名上架 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CA24EE7450001CD851 /* 签名上架 */; };
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
+		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
@@ -473,6 +474,10 @@
 		C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "优秀的关于音视频处理的文献资料"; sourceTree = "<group>"; };
 		C56161CA24EE7450001CD851 /* 签名上架 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "签名上架"; sourceTree = "<group>"; };
 		C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "苹果开发者账号申请"; sourceTree = "<group>"; };
+		C56206BE2553FD1000FE435F /* NSObject+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNReachability.h"; sourceTree = "<group>"; };
+		C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNReachability.m"; sourceTree = "<group>"; };
+		C56207F02553FE8700FE435F /* 验证码按钮单例封装.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "验证码按钮单例封装.md"; sourceTree = "<group>"; };
+		C56207F22553FF1A00FE435F /* 高度自定义的按钮.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "高度自定义的按钮.md"; sourceTree = "<group>"; };
 		C5633218252AFABD00699392 /* Block */ = {isa = PBXFileReference; lastKnownFileType = text; path = Block; sourceTree = "<group>"; };
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
@@ -954,7 +959,6 @@
 		C5FE9C9424B5F29B007B9878 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		C5FE9C9524B5F29B007B9878 /* UIColor+LXExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LXExpand.m"; sourceTree = "<group>"; };
 		C5FE9C9624B5F29B007B9878 /* LXTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXTagsView.m; sourceTree = "<group>"; };
-		C5FE9CAA24B5F29B007B9878 /* 验证码按钮单例封装 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "验证码按钮单例封装"; sourceTree = "<group>"; };
 		C5FE9D3224B5F2E6007B9878 /* PersonalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfo.h; sourceTree = "<group>"; };
 		C5FE9D3324B5F2E6007B9878 /* PersonalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfo.m; sourceTree = "<group>"; };
 		C5FE9D3424B5F2E6007B9878 /* IsLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsLogin.m; sourceTree = "<group>"; };
@@ -1617,10 +1621,10 @@
 		C56E338C252F4A63004ACCC7 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				C54B3EB725529771003BE195 /* UILabel+RichText.h */,
-				C54B3EB825529771003BE195 /* UILabel+RichText.m */,
 				C56E338D252F4A6C004ACCC7 /* UILabel+Extra.h */,
 				C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */,
+				C54B3EB725529771003BE195 /* UILabel+RichText.h */,
+				C54B3EB825529771003BE195 /* UILabel+RichText.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -2434,7 +2438,6 @@
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
 				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
 				C5FE9BFF24B5F299007B9878 /* 分享控件 */,
-				C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */,
 				C5FE9BAB24B5F298007B9878 /* 高仿iOS长按删除+抖动 */,
 				C5FE9B9924B5F298007B9878 /* 加密体系 */,
 				C5FE9BD224B5F298007B9878 /* 截获导航控制器系统返回按钮的点击pop及右滑pop事件 */,
@@ -2458,7 +2461,6 @@
 				C5FE9C2E24B5F29A007B9878 /* TouchID */,
 				C5FE9C7A24B5F29B007B9878 /* UIControl+XY */,
 				C5FE9C1624B5F299007B9878 /* UIDevice+XMUtils */,
-				C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */,
 				C5FE9BFC24B5F299007B9878 /* WaterMark */,
 				C5FE9C2224B5F29A007B9878 /* WebSocket */,
 				C5FE9B8124B5F298007B9878 /* XDSDropDownMenu */,
@@ -2571,6 +2573,8 @@
 		C5FE9B1624B5F203007B9878 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */,
+				C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */,
 				C5FE9B1824B5F203007B9878 /* UIButton+Block.h */,
 				C5FE9B1724B5F203007B9878 /* UIButton+Block.m */,
 			);
@@ -2581,6 +2585,12 @@
 			isa = PBXGroup;
 			children = (
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
+				C56206BE2553FD1000FE435F /* NSObject+AFNReachability.h */,
+				C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */,
+				C5E7D9AE24E1640E00A38FAF /* NSObject+Extras.h */,
+				C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */,
+				C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */,
+				C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */,
 				C57F0D062533369F0080EEF0 /* NSObject+OpenURL.h */,
 				C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */,
 				C59D9AAF24F8DF9200A74CE9 /* NSObject+Random.h */,
@@ -2589,10 +2599,6 @@
 				C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */,
 				C5E7D9AA24E1640D00A38FAF /* NSObject+Sound.h */,
 				C5E7D9AC24E1640E00A38FAF /* NSObject+Sound.m */,
-				C5E7D9AE24E1640E00A38FAF /* NSObject+Extras.h */,
-				C5E7D9AB24E1640D00A38FAF /* NSObject+Extras.m */,
-				C58F044A24EBCD7100B6D09C /* NSObject+Measure.h */,
-				C58F044B24EBCD7100B6D09C /* NSObject+Measure.m */,
 				C5E7D9AF24E1640E00A38FAF /* NSObject+Time.h */,
 				C5E7D9AD24E1640E00A38FAF /* NSObject+Time.m */,
 			);
@@ -2696,8 +2702,6 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */,
-				C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */,
 				C5AEEAC525384147000E1C5F /* UIView+Animation.h */,
 				C5AEEAC625384147000E1C5F /* UIView+Animation.m */,
 				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
@@ -2710,6 +2714,8 @@
 				C5C67C5224FE4E65000A26B8 /* UIView+Measure.m */,
 				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
 				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
+				C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */,
+				C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -3204,6 +3210,7 @@
 		C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */ = {
 			isa = PBXGroup;
 			children = (
+				C56207F22553FF1A00FE435F /* 高度自定义的按钮.md */,
 				C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */,
 				C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */,
 			);
@@ -3213,7 +3220,7 @@
 		C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9CAA24B5F29B007B9878 /* 验证码按钮单例封装 */,
+				C56207F02553FE8700FE435F /* 验证码按钮单例封装.md */,
 				C5C67C4F24FE4A37000A26B8 /* UIButton+CountDownBtn.h */,
 				C5C67C4E24FE4A36000A26B8 /* UIButton+CountDownBtn.m */,
 			);
@@ -3540,6 +3547,7 @@
 				C5FE9CE524B5F29C007B9878 /* BWShareView.m in Sources */,
 				C5FE9B6724B5F203007B9878 /* NSString+Extras.m in Sources */,
 				C5FE9CB524B5F29C007B9878 /* PopUpVC.m in Sources */,
+				C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */,
 				C5727862254094C2002373D7 /* TransitionAnimation.m in Sources */,
 				C5FE9AB624B5F0EF007B9878 /* NSlogToDocumentFolder.m in Sources */,
 				C5914AE625384A2F007777A6 /* UIViewController+JXCategoryListContentViewDelegate.m in Sources */,

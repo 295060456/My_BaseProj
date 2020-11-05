@@ -83,75 +83,6 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         [self.manager.reachabilityManager startMonitoring];
     }return self;
 }
-
-- (void)AFNReachability {
-    //2.监听网络状态的改变
-    /*
-     AFNetworkReachabilityStatusUnknown          = 未知
-     AFNetworkReachabilityStatusNotReachable     = 没有网络
-     AFNetworkReachabilityStatusReachableViaWWAN = 3G
-     AFNetworkReachabilityStatusReachableViaWiFi = WIFI
-     */
-    @weakify(self)
-    if (!_isRequestFinish) {
-        //如果没有请求完成就检测网络
-        [self.afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            @strongify(self)
-            switch (status) {
-                case AFNetworkReachabilityStatusUnknown:{
-                    NSLog(@"未知网络");
-                    if (self.UnknownNetWorking) {
-                        self.UnknownNetWorking();
-                    }
-                    if (self.ReachableNetWorking) {
-                        self.ReachableNetWorking();
-                    }
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-//                                                                        object:@(AFNetworkReachabilityStatusUnknown)];
-                }break;
-                case AFNetworkReachabilityStatusReachableViaWWAN:{
-                    NSLog(@"3G网络");//不是WiFi的网络都会识别成3G网络.比如2G/3G/4G网络
-                    if (self.ReachableViaWWANNetWorking) {
-                        self.ReachableViaWWANNetWorking();
-                    }
-                    if (self.ReachableNetWorking) {
-                        self.ReachableNetWorking();
-                    }
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-//                                                                        object:@(AFNetworkReachabilityStatusReachableViaWWAN)];
-                }break;
-                case AFNetworkReachabilityStatusReachableViaWiFi:{
-                    NSLog(@"WIFI网络");
-                    if (self.ReachableViaWiFiNetWorking) {
-                        self.ReachableViaWiFiNetWorking();
-                    }
-                    if (self.ReachableNetWorking) {
-                        self.ReachableNetWorking();
-                    }
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-//                                                                        object:@(AFNetworkReachabilityStatusReachableViaWiFi)];
-                } break;
-                case AFNetworkReachabilityStatusNotReachable:{
-                    NSLog(@"没有网络");
-                    if (self.NotReachableNetWorking) {
-                        self.NotReachableNetWorking();
-                    }
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-//                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
-                }break;
-                default:{
-                    NSLog(@"没有网络");
-                    if (self.NotReachableNetWorking) {
-                        self.NotReachableNetWorking();
-                    }
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:MKAFNReachability
-//                                                                        object:@(AFNetworkReachabilityStatusNotReachable)];
-                }break;
-            }}];
-    }
-    [self.afNetworkReachabilityManager startMonitoring];
-}
-
 /**
 网络请求，简便方案
 
@@ -685,13 +616,6 @@ static FMARCNetwork *static_FMARCNetwork = nil;
         //主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
         _securityPolicy.validatesDomainName = NO;
     }return _securityPolicy;
-}
-
--(AFNetworkReachabilityManager *)afNetworkReachabilityManager{
-    if (!_afNetworkReachabilityManager) {
-//        1.创建网络监听管理者
-        _afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
-    }return _afNetworkReachabilityManager;
 }
 #pragma mark —— 登录模块 在适当的时候调用
 -(void)Login{

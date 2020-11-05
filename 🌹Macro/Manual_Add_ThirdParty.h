@@ -99,6 +99,7 @@
 #import "NSObject+SYSAlertController.h"
 #import "NSObject+SPAlertController.h"
 #import "NSObject+OpenURL.h"
+#import "NSObject+AFNReachability.h"
 //UIImageView
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 //UIImage

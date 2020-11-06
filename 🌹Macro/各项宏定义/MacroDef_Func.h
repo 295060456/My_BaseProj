@@ -8,13 +8,13 @@
 #ifndef MacroDef_Func_h
 #define MacroDef_Func_h
 
-#import "SceneDelegate.h"
 #import "MacroDef_Sys.h"
+#import "UBLSceneDelegate.h"
 
 static inline UIWindow * getMainWindow(){
     UIWindow *window = nil;
     if (@available(iOS 13.0, *)) {
-        window = [SceneDelegate sharedInstance].window;
+        window = [UBLSceneDelegate sharedInstance].window;
     }else{
         window = UIApplication.sharedApplication.delegate.window;
 //        [UIApplication sharedApplication].keyWindow
@@ -45,14 +45,6 @@ static inline id getSceneDelegate(){
     }return sceneDelegate;
 }
 
-static inline CGFloat Top(){
-    static CGFloat value = 0;
-    static dispatch_once_t once_t = 0;
-    dispatch_once(&once_t, ^{
-        value = isiPhoneX_series() ? 88.0f : 64.0f;
-    });
-    return value;
-}
 #pragma mark ======================================== 字体 ================================================
 #define kFontSize(x) [UIFont systemFontOfSize:x weight:UIFontWeightRegular]
 
@@ -94,7 +86,7 @@ return; \
 #pragma mark ======================================== 其他 =================================================
 #define ReuseIdentifier NSStringFromClass ([self class])
 #define CurrentThread [NSThread currentThread]
-#define PrintRetainCount(obj) printf("Retain Count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));
+#define PrintRetainCount(obj) printf("Retain Count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));//打印引用计数器
 //- (void)add:(NSString *)txt{}
 #define addText(fmt, ...) [self add:[NSString stringWithFormat:fmt, ##__VA_ARGS__]]//多参数
 

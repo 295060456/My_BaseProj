@@ -582,6 +582,7 @@
 		C5767BA225470BD100C382C8 /* WMZBannerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerParam.h; sourceTree = "<group>"; };
 		C5767BA325470BD100C382C8 /* WMZBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerView.h; sourceTree = "<group>"; };
 		C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerOverLayout.m; sourceTree = "<group>"; };
+		C5788CA425592D14009D46E3 /* 关于响应链的一些研究成果.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于响应链的一些研究成果.md"; sourceTree = "<group>"; };
 		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
 		C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
@@ -1872,6 +1873,14 @@
 			path = WMZBanner;
 			sourceTree = "<group>";
 		};
+		C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */ = {
+			isa = PBXGroup;
+			children = (
+				C5788CA425592D14009D46E3 /* 关于响应链的一些研究成果.md */,
+			);
+			path = "关于响应链的一些研究成果";
+			sourceTree = "<group>";
+		};
 		C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2290,6 +2299,7 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */,
 				C5CF8946252AC328002499C6 /* UITableView */,
 				C5E3C79D25179B2100F9A150 /* FFmpeg */,
 				C56161C924EE743F001CD851 /* 签名上架 */,

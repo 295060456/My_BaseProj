@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController_5 : UIViewController
+@interface ViewControllerDemo : UIViewController
 
 @end
 

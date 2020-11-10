@@ -18,7 +18,7 @@
 static const CGFloat JXTableHeaderViewHeight = 200;
 static const CGFloat JXheightForHeaderInSection = 50;
 
-@interface ViewController_5 ()
+@interface ViewControllerDemo ()
 <
 JXPagerViewDelegate,
 JXCategoryViewDelegate
@@ -35,7 +35,7 @@ JXCategoryViewDelegate
 
 @end
 
-@implementation ViewController_5
+@implementation ViewControllerDemo
 
 - (void)dealloc {
     NSLog(@"Running self.class = %@;NSStringFromSelector(_cmd) = '%@';__FUNCTION__ = %s", self.class, NSStringFromSelector(_cmd),__FUNCTION__);

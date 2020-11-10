@@ -9,12 +9,12 @@
 #define MacroDef_Func_h
 
 #import "MacroDef_Sys.h"
-#import "UBLSceneDelegate.h"
+#import "SceneDelegate.h"
 
 static inline UIWindow * getMainWindow(){
     UIWindow *window = nil;
     if (@available(iOS 13.0, *)) {
-        window = [UBLSceneDelegate sharedInstance].window;
+        window = [SceneDelegate sharedInstance].window;
     }else{
         window = UIApplication.sharedApplication.delegate.window;
 //        [UIApplication sharedApplication].keyWindow

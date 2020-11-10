@@ -1303,6 +1303,16 @@
 			path = UICollectionView;
 			sourceTree = "<group>";
 		};
+		C531CFBA255A8903005304F6 /* Lottie资源文件 */ = {
+			isa = PBXGroup;
+			children = (
+				C544D2E42525DC2F003C2A94 /* 12345.json */,
+				C544D2E62525DC2F003C2A94 /* 1234.json */,
+				C544D2E52525DC2F003C2A94 /* 123.json */,
+			);
+			path = "Lottie资源文件";
+			sourceTree = "<group>";
+		};
 		C5336FF424DB00280082847C /* BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1376,24 @@
 			path = AddressPickerView;
 			sourceTree = "<group>";
 		};
+		C53418EE255A819E00DFAFE4 /* TBVCell_style_01 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9B3624B5F203007B9878 /* TBVCell_style_01.h */,
+				C5FE9B3524B5F203007B9878 /* TBVCell_style_01.m */,
+			);
+			path = TBVCell_style_01;
+			sourceTree = "<group>";
+		};
+		C53418F2255A81A500DFAFE4 /* TBVCell_style_02 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FAC32F24C5747900372BCD /* TBVCell_style_02.h */,
+				C5FAC33024C5747900372BCD /* TBVCell_style_02.m */,
+			);
+			path = TBVCell_style_02;
+			sourceTree = "<group>";
+		};
 		C5379EAF24D149370078880F /* AppDelegate & SceneDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -1378,9 +1406,7 @@
 		C544D2722525D7F1003C2A94 /* MJRefresh + Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				C544D2E52525DC2F003C2A94 /* 123.json */,
-				C544D2E62525DC2F003C2A94 /* 1234.json */,
-				C544D2E42525DC2F003C2A94 /* 12345.json */,
+				C531CFBA255A8903005304F6 /* Lottie资源文件 */,
 				C544D23C2525CBC4003C2A94 /* MJRefreshComponent+Lottie.h */,
 				C544D23D2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m */,
 				C544D26C2525D7ED003C2A94 /* TestTableViewHeader.h */,
@@ -2667,10 +2693,8 @@
 		C5FE9B3424B5F203007B9878 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B3624B5F203007B9878 /* TBVCell_style_01.h */,
-				C5FE9B3524B5F203007B9878 /* TBVCell_style_01.m */,
-				C5FAC32F24C5747900372BCD /* TBVCell_style_02.h */,
-				C5FAC33024C5747900372BCD /* TBVCell_style_02.m */,
+				C53418EE255A819E00DFAFE4 /* TBVCell_style_01 */,
+				C53418F2255A81A500DFAFE4 /* TBVCell_style_02 */,
 				C52F595524CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.h */,
 				C52F595624CDC9D4001F72B3 /* UITableViewCell+WhiteArrows.m */,
 				C57D5C55251374CE0073F90B /* WhiteRightArrow@2x.png */,

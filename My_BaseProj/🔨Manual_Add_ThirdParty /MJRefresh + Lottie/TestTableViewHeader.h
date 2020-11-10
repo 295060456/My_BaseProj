@@ -11,6 +11,7 @@
 @interface TestTableViewHeader : MJRefreshGifHeader
 
 -(void)endRefreshing;
+-(void)actionBlockTestTableViewHeader:(MKDataBlock _Nullable)testTableViewHeaderBlock;
 
 @end
 

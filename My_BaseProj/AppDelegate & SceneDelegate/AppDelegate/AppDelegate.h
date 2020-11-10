@@ -23,7 +23,7 @@
 @property(nonatomic,strong)NoticePopupView *popupView;
 
 - (void)saveContext;
-+(AppDelegate *)sharedInstance;
++(instancetype)sharedInstance;
 
 @end
 

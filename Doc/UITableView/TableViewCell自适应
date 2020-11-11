@@ -1,6 +1,6 @@
 1、- (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SCALING_RATIO(50);
+    return 50;
 }//这个方法注销，不予实现
 
 2、整个cell上面加与cell同样大小的label，make.edges.equalTo(self.contentView);_lab.lineBreakMode = NSLineBreakByWordWrapping;

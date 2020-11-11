@@ -70,7 +70,7 @@
          @weakify(self)
         _popMenuView = [[WBPopMenuView alloc] initWithFrame:[[UIApplication sharedApplication] windows].firstObject.bounds
                                                   QPetFrame:self.framer
-                                             menuCellHeight:SCALING_RATIO(40)
+                                             menuCellHeight:40
                                                   menuWidth:self.width
                                                       items:self.item
                                                      action:^(NSInteger index) {

@@ -26,10 +26,17 @@ def debugPods
   pod 'CocoaLumberjack' # https://github.com/CocoaLumberjack/CocoaLumberjack A fast & simple, yet powerful & flexible logging framework for Mac and iOS
   pod 'Reveal-SDK',:configurations => ['Debug']
   pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
-  #  pod 'FBRetainCycleDetector' # https://github.com/facebook/FBRetainCycleDetector
+  pod 'FBRetainCycleDetector' # https://github.com/facebook/FBRetainCycleDetector
   #  pod 'CocoaDebug' # https://github.com/CocoaDebug/CocoaDebug
   #  pod 'MLeaksFinder'  # 在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
   #  pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
+  end
+def longConnection
+  pod 'CocoaAsyncSocket' # https://github.com/robbiehanson/CocoaAsyncSocket WebSocket的OC框架
+  # CocoaAsyncSocket 的学习资料
+  # https://juejin.im/post/6844904062408720391#heading-0
+  # https://www.jianshu.com/p/9153d5628363
+  pod 'MQTTClient' # https://github.com/novastone-media/MQTT-Client-Framework
   end
 # 几乎每个App都用到的框架
 def appCommon
@@ -220,6 +227,7 @@ target 'My_BaseProj' do
   # Pods for My_BaseProj
 
   debugPods
+  longConnection
   appCommon
   ui
   alert

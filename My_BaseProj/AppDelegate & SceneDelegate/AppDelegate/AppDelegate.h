@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
-#ifdef DEBUG
-#import <DoraemonKit/DoraemonManager.h>
-#endif
-
+#import "TabbarVC.h"
 #import "NoticePopupView.h"
+
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -34,7 +34,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (CGFloat) tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return SCALING_RATIO(40);
+    return 40;
 }
 
 - (void) tableView:(UITableView *)tableView

@@ -379,7 +379,7 @@
         [self.view addSubview:_topTitle];
         [_topTitle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view);
-            make.size.mas_equalTo(CGSizeMake(SCALING_RATIO(145), SCALING_RATIO(60)));
+            make.size.mas_equalTo(CGSizeMake(145, 60));
             make.top.equalTo(self.qRScanView);
         }];
     }return _topTitle;

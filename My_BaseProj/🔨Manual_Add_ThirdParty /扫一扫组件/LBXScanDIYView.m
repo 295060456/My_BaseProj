@@ -90,7 +90,7 @@ NS_ASSUME_NONNULL_END
         [self addSubview:_labelReadying];
         [_labelReadying mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.activityView);
-            make.top.equalTo(self.activityView).offset(SCALING_RATIO(15));
+            make.top.equalTo(self.activityView).offset(15);
         }];
     }return _labelReadying;
 }

@@ -8,7 +8,7 @@
 
 #import "SearchView.h"
 
-#define BtnDefaultWidth SCALING_RATIO(100)
+#define BtnDefaultWidth 100
 
 @interface SearchView ()
 <
@@ -30,7 +30,7 @@ UIScrollViewDelegate
         self.backgroundColor = kClearColor;
         
         if (btnTitleMutArr.count < 5) {
-            self.BtnWidth = (MAINSCREEN_WIDTH - SCALING_RATIO(5) * 2 - SCALING_RATIO(10) * (btnTitleMutArr.count - 1))/ btnTitleMutArr.count;
+            self.BtnWidth = (MAINSCREEN_WIDTH - 5 * 2 - 10 * (btnTitleMutArr.count - 1))/ btnTitleMutArr.count;
         }else{
             self.BtnWidth = BtnDefaultWidth;
         }
@@ -83,10 +83,10 @@ UIScrollViewDelegate
             [btn setTitleColor:kBlackColor
                       forState:UIControlStateNormal];
             [self.scrollView addSubview:btn];
-            btn.frame = CGRectMake((self.BtnWidth + SCALING_RATIO(10)) * (i) + SCALING_RATIO(5),
+            btn.frame = CGRectMake((self.BtnWidth + 10) * (i) + 5,
                                    0,
                                    self.BtnWidth,
-                                   SCALING_RATIO(30));
+                                   30);
             [self.btnMutArr addObject:btn];
         }
     }return self;
@@ -106,7 +106,7 @@ UIScrollViewDelegate
 //        _scrollView.alwaysBounceHorizontal = YES;//禁止左右滚动
 //        _scrollView.alwaysBounceVertical = NO;//禁止上下滚动
         _scrollView.pagingEnabled = YES;
-        _scrollView.contentSize = CGSizeMake((SCALING_RATIO(100) + SCALING_RATIO(10)) * (self.btnTitleArr.count) + SCALING_RATIO(5),
+        _scrollView.contentSize = CGSizeMake((100 + 10) * (self.btnTitleArr.count) + 5,
                                              55);
         _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = YES;

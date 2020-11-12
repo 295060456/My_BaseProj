@@ -109,7 +109,7 @@
 #import "GKNavigationBar.h"
 #endif
 
-#if __has_include(<GKPageScrollView/GKPageScrollView.h>)
+#if __has_include(<TFPopup/TFPopup.h>)
 #import <TFPopup/TFPopup.h>
 #else
 #import "TFPopup.h"
@@ -127,7 +127,7 @@
 #import "LYEmptyViewHeader.h"
 #endif
 
-#if __has_include(<Masonry/Masonry.h>)
+#if __has_include(<WHToast/WHToast.h>)
 #import <WHToast/WHToast.h>
 #else
 #import "WHToast.h"

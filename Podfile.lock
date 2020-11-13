@@ -154,6 +154,7 @@ PODS:
   - lottie-ios (2.5.3)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
+  - MGSwipeTableCell (1.6.11)
   - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
   - MQTTClient (0.15.3):
@@ -258,6 +259,7 @@ DEPENDENCIES:
   - lottie-ios (~> 2.5.3)
   - LYEmptyView
   - Masonry
+  - MGSwipeTableCell
   - MJExtension
   - MJRefresh
   - MQTTClient
@@ -345,6 +347,7 @@ SPEC REPOS:
     - lottie-ios
     - LYEmptyView
     - Masonry
+    - MGSwipeTableCell
     - MJExtension
     - MJRefresh
     - MQTTClient
@@ -432,6 +435,7 @@ SPEC CHECKSUMS:
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
@@ -473,6 +477,6 @@ SPEC CHECKSUMS:
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 147f6bd0aa2d3954c70ca30b04d2b1beddbc3c79
+PODFILE CHECKSUM: 19cbefbd67c899272249a235579b165d091b871d
 
 COCOAPODS: 1.10.0

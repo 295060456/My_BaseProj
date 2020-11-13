@@ -99,7 +99,7 @@ def ui
   label ## Label
   ad ## 开屏广告
 
-  
+  pod 'MGSwipeTableCell' # https://github.com/MortimerGoro/MGSwipeTableCell 滑动tableViewCell
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果
   pod 'UICountingLabel' # https://github.com/dataxpress/UICountingLabel Lable上的默认值持续变动到指定值 Adds animated counting support to UILabel.
   pod 'JJStockView' # https://github.com/jezzmemo/JJStockView Excel iOS股票,课程表,表格控件

@@ -133,6 +133,12 @@
 #import "WHToast.h"
 #endif
 
+#if __has_include(<MGSwipeTableCell/MGSwipeTableCell.h>)
+#import <MGSwipeTableCell/MGSwipeTableCell.h>
+#else
+#import "MGSwipeTableCell.h"
+#endif
+
 #import <Shimmer/Shimmer-umbrella.h>
 
 //WebSocket

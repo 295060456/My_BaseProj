@@ -9,10 +9,11 @@
 #import "UITabBar+Ex.h"
 
 #import <UIKit/UIKit.h>
+
 #if __has_include(<lottie-ios/Lottie.h>)
 #import <lottie-ios/Lottie.h>
 #else
-//#import "Lottie.h"
+#import "Lottie.h"
 #endif
 
 #import <objc/runtime.h>

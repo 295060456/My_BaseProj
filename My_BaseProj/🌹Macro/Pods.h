@@ -139,6 +139,12 @@
 #import "MGSwipeTableCell.h"
 #endif
 
+#if __has_include(<lottie-ios/Lottie.h>)
+#import <lottie-ios/Lottie.h>
+#else
+#import "Lottie.h"
+#endif
+
 #import <Shimmer/Shimmer-umbrella.h>
 
 //WebSocket
@@ -194,7 +200,6 @@
 #import "YQImageCompressTool.h"
 #import <TXFileOperation.h>
 #import "SZTextView.h"
-#import <Lottie/Lottie.h>
 #import "XHLaunchAd.h"
 
 //#import "PureLayout.h"

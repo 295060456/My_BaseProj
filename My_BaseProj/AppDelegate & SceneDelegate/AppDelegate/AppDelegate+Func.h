@@ -7,6 +7,34 @@
 
 #import "AppDelegate.h"
 
+#if __has_include(<Reachability/Reachability.h>)
+#import <Reachability/Reachability.h>
+#else
+#import "Reachability.h"//检查联网情况
+#endif
+
+#if __has_include(<GKNavigationBar/GKNavigationBar.h>)
+#import <GKNavigationBar/GKNavigationBar.h>
+#else
+#import "GKNavigationBar.h"
+#endif
+
+#if __has_include(<IQKeyboardManager/IQKeyboardManager.h>)
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#else
+#import "IQKeyboardManager.h"
+#endif
+
+#if DEBUG
+
+#if __has_include(<DoraemonManager/DoraemonManager.h>)
+#import <DoraemonKit/DoraemonManager.h>
+#else
+#import "DoraemonManager.h"
+#endif
+
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate (Func)

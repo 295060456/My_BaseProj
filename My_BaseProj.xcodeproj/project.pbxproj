@@ -147,6 +147,8 @@
 		C5914AEA25384A2F007777A6 /* UIViewController+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADD25384A2F007777A6 /* UIViewController+MJRefresh.m */; };
 		C5914AEB25384A2F007777A6 /* UIViewController+BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */; };
 		C5914C6D253850B6007777A6 /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914C6B253850B6007777A6 /* UIViewController+Shake.m */; };
+		C591EED02563C802005B78CC /* JsonRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C591EECE2563C802005B78CC /* JsonRes.bundle */; };
+		C591EED12563C802005B78CC /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C591EECF2563C802005B78CC /* CustomGifHeader.m */; };
 		C59B9EC12526F2BE0039B485 /* ZYTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59B9EC02526F2BE0039B485 /* ZYTextField.bundle */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
@@ -645,6 +647,9 @@
 		C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BaseVC.m"; sourceTree = "<group>"; };
 		C5914C6B253850B6007777A6 /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
 		C5914C6C253850B6007777A6 /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Shake.h"; sourceTree = "<group>"; };
+		C591EECD2563C802005B78CC /* CustomGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGifHeader.h; sourceTree = "<group>"; };
+		C591EECE2563C802005B78CC /* JsonRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JsonRes.bundle; sourceTree = "<group>"; };
+		C591EECF2563C802005B78CC /* CustomGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGifHeader.m; sourceTree = "<group>"; };
 		C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "同一应用设置不同图标和名称.docx"; sourceTree = "<group>"; };
 		C59B9EC02526F2BE0039B485 /* ZYTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYTextField.bundle; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
@@ -2007,6 +2012,16 @@
 			path = CJTextField;
 			sourceTree = "<group>";
 		};
+		C591EECC2563C802005B78CC /* CustomGifHeader */ = {
+			isa = PBXGroup;
+			children = (
+				C591EECD2563C802005B78CC /* CustomGifHeader.h */,
+				C591EECE2563C802005B78CC /* JsonRes.bundle */,
+				C591EECF2563C802005B78CC /* CustomGifHeader.m */,
+			);
+			path = CustomGifHeader;
+			sourceTree = "<group>";
+		};
 		C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -2456,6 +2471,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C591EECC2563C802005B78CC /* CustomGifHeader */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
 				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
@@ -3413,6 +3429,7 @@
 				C5FE9A4724B5EF2C007B9878 /* Assets.xcassets in Resources */,
 				C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */,
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
+				C591EED02563C802005B78CC /* JsonRes.bundle in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
 				C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */,
@@ -3710,6 +3727,7 @@
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
+				C591EED12563C802005B78CC /* CustomGifHeader.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
 				C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */,

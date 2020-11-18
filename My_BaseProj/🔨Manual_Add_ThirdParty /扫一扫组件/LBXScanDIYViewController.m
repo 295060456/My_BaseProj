@@ -57,7 +57,11 @@
 //        _qRScanView.frame = rect;
         [_qRScanView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self.view);
-            make.top.equalTo(self.gk_navigationBar.mas_bottom);
+            if (self.gk_navBarAlpha && !self.gk_navigationBar.hidden) {//显示
+                make.top.equalTo(self.gk_navigationBar.mas_bottom);
+            }else{
+                make.top.equalTo(self.view.mas_top);
+            }
         }];
     }
     if (!_cameraInvokeMsg) {

@@ -726,6 +726,7 @@
 		C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFolderHandleTool.h; sourceTree = "<group>"; };
 		C5D4FBD924CFE0840024A292 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		C5D4FBDA24CFE0840024A292 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		C5D5B6302566447000C79CBF /* 权限 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "权限"; sourceTree = "<group>"; };
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置view的透明度影响子控件的解决方案.png"; sourceTree = "<group>"; };
@@ -2372,6 +2373,7 @@
 				C5633218252AFABD00699392 /* Block */,
 				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
 				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
+				C5D5B6302566447000C79CBF /* 权限 */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

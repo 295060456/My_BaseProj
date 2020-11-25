@@ -51,7 +51,7 @@
 		C54AB07E255E5EED000A314D /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AB078255E5EED000A314D /* UITableViewCell+WhiteArrows.m */; };
 		C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AB07B255E5EED000A314D /* UITableViewCell+Margin.m */; };
 		C54B3BCB25525EF8003BE195 /* UIFont+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3BC925525EF8003BE195 /* UIFont+Extras.m */; };
-		C54B3EB925529771003BE195 /* UILabel+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3EB825529771003BE195 /* UILabel+RichText.m */; };
+		C54B3EB925529771003BE195 /* NSObject+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3EB825529771003BE195 /* NSObject+RichText.m */; };
 		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
 		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
 		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
@@ -417,8 +417,8 @@
 		C54AB07B255E5EED000A314D /* UITableViewCell+Margin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Margin.m"; sourceTree = "<group>"; };
 		C54B3BC925525EF8003BE195 /* UIFont+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extras.m"; sourceTree = "<group>"; };
 		C54B3BCA25525EF8003BE195 /* UIFont+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extras.h"; sourceTree = "<group>"; };
-		C54B3EB725529771003BE195 /* UILabel+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+RichText.h"; sourceTree = "<group>"; };
-		C54B3EB825529771003BE195 /* UILabel+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+RichText.m"; sourceTree = "<group>"; };
+		C54B3EB725529771003BE195 /* NSObject+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RichText.h"; sourceTree = "<group>"; };
+		C54B3EB825529771003BE195 /* NSObject+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RichText.m"; sourceTree = "<group>"; };
 		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
 		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
 		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
@@ -560,6 +560,8 @@
 		C572A29E24FD2F99000A1687 /* GDFadeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDFadeView.h; sourceTree = "<group>"; };
 		C572A29F24FD2F99000A1687 /* GDFadeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDFadeView.m; sourceTree = "<group>"; };
 		C572A2A124FD2FB5000A1687 /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
+		C5765CEE256D426D004B3A96 /* 过滤删除.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "过滤删除.md"; sourceTree = "<group>"; };
+		C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "键盘方法生命周期.md"; sourceTree = "<group>"; };
 		C5766CF92546B72D00C382C8 /* UIViewController+JXPagerViewListViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXPagerViewListViewDelegate.m"; sourceTree = "<group>"; };
 		C5766CFA2546B72E00C382C8 /* UIViewController+JXPagerViewListViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JXPagerViewListViewDelegate.h"; sourceTree = "<group>"; };
 		C57678172546CA3600C382C8 /* ViewControllerDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDemo.m; sourceTree = "<group>"; };
@@ -1663,8 +1665,6 @@
 			children = (
 				C56E338D252F4A6C004ACCC7 /* UILabel+Extra.h */,
 				C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */,
-				C54B3EB725529771003BE195 /* UILabel+RichText.h */,
-				C54B3EB825529771003BE195 /* UILabel+RichText.m */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -2376,6 +2376,8 @@
 				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
 				C5D5B6302566447000C79CBF /* 权限 */,
 				C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */,
+				C5765CEE256D426D004B3A96 /* 过滤删除.md */,
+				C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
@@ -2647,6 +2649,8 @@
 		C5FE9B1A24B5F203007B9878 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C54B3EB725529771003BE195 /* NSObject+RichText.h */,
+				C54B3EB825529771003BE195 /* NSObject+RichText.m */,
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
 				C56206BE2553FD1000FE435F /* NSObject+AFNReachability.h */,
 				C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */,
@@ -3785,7 +3789,7 @@
 				C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */,
 				C55D3CB02538856100CFCF73 /* XHLaunchAdController.m in Sources */,
 				C5FE9D1324B5F29C007B9878 /* HWTFCodeView.m in Sources */,
-				C54B3EB925529771003BE195 /* UILabel+RichText.m in Sources */,
+				C54B3EB925529771003BE195 /* NSObject+RichText.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5CF70DC24E51CA6000DB72D /* MonitorNetwoking.m in Sources */,
 				C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */,

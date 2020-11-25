@@ -30,7 +30,7 @@
 #import "UIView+Measure.h"
 #import "CustomTabBar.h"
 #import "SuspendBtn.h"
-
+#import "JobsPullListAutoSizeView.h"
 #import "TabBarControllerConfig.h"
 
 /*

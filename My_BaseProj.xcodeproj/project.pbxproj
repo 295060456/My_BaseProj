@@ -515,6 +515,7 @@
 		C56E3D832547116B00B9F555 /* ⚽️PicResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "⚽️PicResource"; sourceTree = "<group>"; };
 		C56E3E0A2547122700B9F555 /* 资源文件 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "资源文件"; sourceTree = "<group>"; };
 		C56E3E0F254714B900B9F555 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
+		C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "谁说HTTP GET就不能通过Body来发送数据呢？.md"; sourceTree = "<group>"; };
 		C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
 		C572769725408AF1002373D7 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
@@ -2378,6 +2379,7 @@
 				C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */,
 				C5765CEE256D426D004B3A96 /* 过滤删除.md */,
 				C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */,
+				C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

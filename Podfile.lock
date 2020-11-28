@@ -189,10 +189,13 @@ PODS:
     - SDWebImage/Core (= 5.9.4)
   - SDWebImage/Core (5.9.4)
   - Shimmer (1.0.2)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
   - SocketRocket (0.5.1)
   - SPAlertController (4.0.0)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - Starscream (3.1.1)
   - SZTextView (1.3.0)
   - TFPopup (1.3.0)
   - TKCarouselView (1.2.0)
@@ -275,6 +278,7 @@ DEPENDENCIES:
   - RQShineLabel
   - SDWebImage
   - Shimmer
+  - Socket.IO-Client-Swift (~> 15.2.0)
   - SocketRocket
   - SPAlertController
   - SZTextView
@@ -365,9 +369,11 @@ SPEC REPOS:
     - RQShineLabel
     - SDWebImage
     - Shimmer
+    - Socket.IO-Client-Swift
     - SocketRocket
     - SPAlertController
     - SQLiteRepairKit
+    - Starscream
     - SZTextView
     - TFPopup
     - TKCarouselView
@@ -453,9 +459,11 @@ SPEC CHECKSUMS:
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   TFPopup: e1396132337290244668fdd8a7faf8ff461c481b
   TKCarouselView: 3fde35add8c169c6df14b7d7c5395383c6a51be4
@@ -477,6 +485,6 @@ SPEC CHECKSUMS:
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 19cbefbd67c899272249a235579b165d091b871d
+PODFILE CHECKSUM: 56712085b1a239299d583e539d3908857ee9fc39
 
 COCOAPODS: 1.10.0

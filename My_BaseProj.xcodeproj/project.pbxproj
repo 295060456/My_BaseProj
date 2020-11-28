@@ -62,6 +62,7 @@
 		C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */; };
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
+		C55391652572803A008BB60F /* SocketIOTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C55391602572803A008BB60F /* SocketIOTools.m */; };
 		C55695D4255BFC3A005C1361 /* NSString+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C55695CC255BFC39005C1361 /* NSString+Extras.m */; };
 		C55695D5255BFC3A005C1361 /* TimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55695CE255BFC39005C1361 /* TimeModel.m */; };
 		C55695D6255BFC3A005C1361 /* NSString+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C55695D3255BFC3A005C1361 /* NSString+Time.m */; };
@@ -442,6 +443,11 @@
 		C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
 		C54F8555252B60E500EE3DD0 /* HotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotLabel.m; sourceTree = "<group>"; };
 		C54F8556252B60E500EE3DD0 /* HotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotLabel.h; sourceTree = "<group>"; };
+		C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My_BaseProj-Bridging-Header.h"; sourceTree = "<group>"; };
+		C55391602572803A008BB60F /* SocketIOTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTools.m; sourceTree = "<group>"; };
+		C55391622572803A008BB60F /* UBLLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLivingVC.m; sourceTree = "<group>"; };
+		C55391632572803A008BB60F /* UBLLivingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLLivingVC.h; sourceTree = "<group>"; };
+		C55391642572803A008BB60F /* SocketIOTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTools.h; sourceTree = "<group>"; };
 		C55695CB255BFC39005C1361 /* NSString+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extras.h"; sourceTree = "<group>"; };
 		C55695CC255BFC39005C1361 /* NSString+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extras.m"; sourceTree = "<group>"; };
 		C55695CD255BFC39005C1361 /* TimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeModel.h; sourceTree = "<group>"; };
@@ -1520,6 +1526,25 @@
 			path = "UITableView 折叠功能";
 			sourceTree = "<group>";
 		};
+		C553915F2572803A008BB60F /* SocketTools */ = {
+			isa = PBXGroup;
+			children = (
+				C55391612572803A008BB60F /* 使用范例 */,
+				C55391642572803A008BB60F /* SocketIOTools.h */,
+				C55391602572803A008BB60F /* SocketIOTools.m */,
+			);
+			path = SocketTools;
+			sourceTree = "<group>";
+		};
+		C55391612572803A008BB60F /* 使用范例 */ = {
+			isa = PBXGroup;
+			children = (
+				C55391632572803A008BB60F /* UBLLivingVC.h */,
+				C55391622572803A008BB60F /* UBLLivingVC.m */,
+			);
+			path = "使用范例";
+			sourceTree = "<group>";
+		};
 		C557DC1724C8063700754760 /* MJExtension用法 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2442,9 +2467,9 @@
 		C5FE9AA424B5F0EF007B9878 /* LYLUnicode */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9AA524B5F0EF007B9878 /* LYLUnicode.m */,
 				C5FE9AA624B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */,
 				C5FE9AA724B5F0EF007B9878 /* LYLUnicode.h */,
+				C5FE9AA524B5F0EF007B9878 /* LYLUnicode.m */,
 			);
 			path = LYLUnicode;
 			sourceTree = "<group>";
@@ -2479,6 +2504,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C553915F2572803A008BB60F /* SocketTools */,
 				C591EECC2563C802005B78CC /* CustomGifHeader */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
@@ -2575,11 +2601,12 @@
 			isa = PBXGroup;
 			children = (
 				C5470F0D25309B5200651ACE /* 各项宏定义 */,
+				C5FE9B4E24B5F203007B9878 /* Notification */,
+				C5A7CE9924C70AA600E502A9 /* URL_Manager */,
+				C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */,
 				C5FE9A7224B5F084007B9878 /* PrefixHeader.pch */,
 				C5FE9B5024B5F203007B9878 /* AABlock.h */,
 				C5FE9B0524B5F1F2007B9878 /* APIKey.h */,
-				C5FE9B4E24B5F203007B9878 /* Notification */,
-				C5A7CE9924C70AA600E502A9 /* URL_Manager */,
 				C5FE9A7424B5F084007B9878 /* DefineStructure.h */,
 				C5FE9A7124B5F084007B9878 /* Pods.h */,
 				C5FE9A7024B5F084007B9878 /* Manual_Add_ThirdParty.h */,
@@ -3377,6 +3404,7 @@
 				TargetAttributes = {
 					C5FE9A3324B5EF2B007B9878 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1220;
 					};
 					C5FE9A5124B5EF2C007B9878 = {
 						CreatedOnToolsVersion = 11.5;
@@ -3596,6 +3624,7 @@
 				C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */,
 				C5FE9D1224B5F29C007B9878 /* GettingDeviceIP.m in Sources */,
 				C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */,
+				C55391652572803A008BB60F /* SocketIOTools.m in Sources */,
 				C5FE9CEB24B5F29C007B9878 /* TBCityIconInfo.m in Sources */,
 				C58C61262532B3950092BF89 /* RBCLikeButton.m in Sources */,
 				C5FE9CE724B5F29C007B9878 /* BWItemCollectionViewCell.m in Sources */,
@@ -3978,6 +4007,7 @@
 			baseConfigurationReference = A1C15F26FCE02130CF19373F /* Pods-My_BaseProj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K92UCMVH8G;
@@ -3995,6 +4025,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "My_BaseProj/My_BaseProj-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};
@@ -4005,6 +4038,7 @@
 			baseConfigurationReference = 74B4AD0F4C0F5A2111506268 /* Pods-My_BaseProj.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -4022,6 +4056,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "My-BaseProj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "My_BaseProj/My_BaseProj-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};

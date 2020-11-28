@@ -152,6 +152,8 @@
 #import "YBNotificationManager.h"//通知名字定义
 #import "APIKey.h"
 
+#import "My_BaseProj-Bridging-Header.h"
+
 //#import "IsLogin.h"
 //#import "PersonalInfo.h"
 //#import "NSlogToDocumentFolder.h"//上线需要去掉

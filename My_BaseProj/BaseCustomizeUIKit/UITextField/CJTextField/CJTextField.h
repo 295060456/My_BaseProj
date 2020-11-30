@@ -22,12 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CJTextField : UITextField
 
-@property(nonatomic,assign)BOOL isShowSecurityMode;
 @property(nonatomic,weak)id <CJTextFieldDeleteDelegate>cj_delegate;
-///输入的和某个预设定值不一致的时候，抖动动画
-- (void)isValidate:(NSString *)validate;
-///输入的为空，抖动动画
--(void)isEmptyText;
 
 @end
 

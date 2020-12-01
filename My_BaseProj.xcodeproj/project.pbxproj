@@ -61,6 +61,7 @@
 		C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */; };
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
+		C54FE244257671C900937C11 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54FE242257671C900937C11 /* BaseViewController.m */; };
 		C55166642575202D00FF5217 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C55166562575202C00FF5217 /* ZYTextField.m */; };
 		C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */; };
 		C55166662575202D00FF5217 /* ZYTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C551665A2575202D00FF5217 /* ZYTextField.bundle */; };
@@ -441,6 +442,8 @@
 		C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
 		C54F8555252B60E500EE3DD0 /* HotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotLabel.m; sourceTree = "<group>"; };
 		C54F8556252B60E500EE3DD0 /* HotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotLabel.h; sourceTree = "<group>"; };
+		C54FE242257671C900937C11 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C54FE243257671C900937C11 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		C55166562575202C00FF5217 /* ZYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
 		C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZYTextField+HistoryDataList.m"; sourceTree = "<group>"; };
 		C55166582575202C00FF5217 /* ZYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
@@ -1515,6 +1518,44 @@
 				C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */,
 			);
 			path = "UITableView 折叠功能";
+			sourceTree = "<group>";
+		};
+		C54FE240257671B100937C11 /* UIViewController+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5766CEF2546B6FD00C382C8 /* UIViewController+TZImagePickerController */,
+				C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */,
+				C5767B30254709DC00C382C8 /* UIViewController+TFPopup.h */,
+				C5767B31254709DC00C382C8 /* UIViewController+TFPopup.m */,
+				C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */,
+				C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */,
+				C5914C6C253850B6007777A6 /* UIViewController+Shake.h */,
+				C5914C6B253850B6007777A6 /* UIViewController+Shake.m */,
+				C5914AD325384A2F007777A6 /* UIViewController+BackBtn.h */,
+				C5914AC225384A2D007777A6 /* UIViewController+BackBtn.m */,
+				C5914AC725384A2E007777A6 /* UIViewController+BaseVC.h */,
+				C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */,
+				C5914ACB25384A2E007777A6 /* UIViewController+BRPickerView.h */,
+				C5914ADC25384A2F007777A6 /* UIViewController+BRPickerView.m */,
+				C5914AD625384A2F007777A6 /* UIViewController+BWShareView.h */,
+				C5914AD925384A2F007777A6 /* UIViewController+BWShareView.m */,
+				C5914AC325384A2D007777A6 /* UIViewController+GifImageView.h */,
+				C5914AD825384A2F007777A6 /* UIViewController+GifImageView.m */,
+				C5914AC525384A2E007777A6 /* UIViewController+JPImageresizerView.h */,
+				C5914AD425384A2F007777A6 /* UIViewController+JPImageresizerView.m */,
+				C5914ACC25384A2E007777A6 /* UIViewController+MJRefresh.h */,
+				C5914ADD25384A2F007777A6 /* UIViewController+MJRefresh.m */,
+			);
+			path = "UIViewController+Category";
+			sourceTree = "<group>";
+		};
+		C54FE241257671C300937C11 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C54FE243257671C900937C11 /* BaseViewController.h */,
+				C54FE242257671C900937C11 /* BaseViewController.m */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		C55166552575202C00FF5217 /* ZYTextField */ = {
@@ -2855,28 +2896,8 @@
 		C5FE9B5624B5F203007B9878 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5766CEF2546B6FD00C382C8 /* UIViewController+TZImagePickerController */,
-				C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */,
-				C5767B30254709DC00C382C8 /* UIViewController+TFPopup.h */,
-				C5767B31254709DC00C382C8 /* UIViewController+TFPopup.m */,
-				C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */,
-				C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */,
-				C5914C6C253850B6007777A6 /* UIViewController+Shake.h */,
-				C5914C6B253850B6007777A6 /* UIViewController+Shake.m */,
-				C5914AD325384A2F007777A6 /* UIViewController+BackBtn.h */,
-				C5914AC225384A2D007777A6 /* UIViewController+BackBtn.m */,
-				C5914AC725384A2E007777A6 /* UIViewController+BaseVC.h */,
-				C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */,
-				C5914ACB25384A2E007777A6 /* UIViewController+BRPickerView.h */,
-				C5914ADC25384A2F007777A6 /* UIViewController+BRPickerView.m */,
-				C5914AD625384A2F007777A6 /* UIViewController+BWShareView.h */,
-				C5914AD925384A2F007777A6 /* UIViewController+BWShareView.m */,
-				C5914AC325384A2D007777A6 /* UIViewController+GifImageView.h */,
-				C5914AD825384A2F007777A6 /* UIViewController+GifImageView.m */,
-				C5914AC525384A2E007777A6 /* UIViewController+JPImageresizerView.h */,
-				C5914AD425384A2F007777A6 /* UIViewController+JPImageresizerView.m */,
-				C5914ACC25384A2E007777A6 /* UIViewController+MJRefresh.h */,
-				C5914ADD25384A2F007777A6 /* UIViewController+MJRefresh.m */,
+				C54FE241257671C300937C11 /* BaseViewController */,
+				C54FE240257671B100937C11 /* UIViewController+Category */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -3709,6 +3730,7 @@
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */,
 				C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */,
+				C54FE244257671C900937C11 /* BaseViewController.m in Sources */,
 				C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,
 				C5FE9D0924B5F29C007B9878 /* WBPopMenuModel.m in Sources */,

@@ -118,6 +118,8 @@
 		C56BA7DC257892F400D054D0 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D1257892F300D054D0 /* NSString+ZBUTF8Encoding.m */; };
 		C56BA7DD257892F400D054D0 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D2257892F300D054D0 /* ZBCacheManager.m */; };
 		C56BA7DE257892F400D054D0 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D3257892F300D054D0 /* ZBURLRequest.m */; };
+		C56BAED52578B31500D054D0 /* JobsAppDoor.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BAED42578B31500D054D0 /* JobsAppDoor.m */; };
+		C56BAEE62578B43800D054D0 /* JobsAppDoorContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BAEE52578B43800D054D0 /* JobsAppDoorContentView.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
 		C56E3E0B2547122700B9F555 /* 资源文件 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0A2547122700B9F555 /* 资源文件 */; };
@@ -584,6 +586,12 @@
 		C56BA7D7257892F300D054D0 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
 		C56BA7D8257892F300D054D0 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
 		C56BA7D9257892F400D054D0 /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
+		C56BAED12578B28100D054D0 /* 我自己写的.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "我自己写的.md"; sourceTree = "<group>"; };
+		C56BAED22578B29400D054D0 /* 尝试高仿蜜柚.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "尝试高仿蜜柚.md"; sourceTree = "<group>"; };
+		C56BAED32578B31500D054D0 /* JobsAppDoor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsAppDoor.h; sourceTree = "<group>"; };
+		C56BAED42578B31500D054D0 /* JobsAppDoor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsAppDoor.m; sourceTree = "<group>"; };
+		C56BAEE42578B43800D054D0 /* JobsAppDoorContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsAppDoorContentView.h; sourceTree = "<group>"; };
+		C56BAEE52578B43800D054D0 /* JobsAppDoorContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsAppDoorContentView.m; sourceTree = "<group>"; };
 		C56E29E0252EC32B004ACCC7 /* cocoapods_gem_ruby */ = {isa = PBXFileReference; lastKnownFileType = text; path = cocoapods_gem_ruby; sourceTree = "<group>"; };
 		C56E338D252F4A6C004ACCC7 /* UILabel+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extra.h"; sourceTree = "<group>"; };
 		C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extra.m"; sourceTree = "<group>"; };
@@ -1816,9 +1824,8 @@
 		C56BA67325788EF300D054D0 /* AppDoor */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA67425788EF300D054D0 /* Controller */,
-				C56BA68125788EF300D054D0 /* Model */,
-				C56BA68225788EF300D054D0 /* View */,
+				C56BAED02578B1D600D054D0 /* 模式2 */,
+				C56BAECF2578B1C800D054D0 /* 模式1 */,
 			);
 			path = AppDoor;
 			sourceTree = "<group>";
@@ -1826,8 +1833,8 @@
 		C56BA67425788EF300D054D0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA67525788EF300D054D0 /* RetrievePassword */,
 				C56BA67E25788EF300D054D0 /* LoginAndRegister */,
+				C56BA67525788EF300D054D0 /* RetrievePassword */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1869,9 +1876,9 @@
 			isa = PBXGroup;
 			children = (
 				C56BA68325788EF300D054D0 /* UBLDoor.h */,
-				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
 				C56BA68725788EF300D054D0 /* 输入框样式 */,
 				C56BA69D25788EF300D054D0 /* RetrievePasswordView */,
+				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
 				C56BA6A225788EF300D054D0 /* UBLLogoContentView */,
 				C56BA6A525788EF300D054D0 /* UBLRegisterContentView */,
 			);
@@ -1881,8 +1888,8 @@
 		C56BA68425788EF300D054D0 /* UBLLoginContentView */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68525788EF300D054D0 /* UBLLoginContentView.m */,
 				C56BA68625788EF300D054D0 /* UBLLoginContentView.h */,
+				C56BA68525788EF300D054D0 /* UBLLoginContentView.m */,
 			);
 			path = UBLLoginContentView;
 			sourceTree = "<group>";
@@ -1890,8 +1897,8 @@
 		C56BA68725788EF300D054D0 /* 输入框样式 */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */,
 				C56BA69C25788EF300D054D0 /* UBLDoorInputView.h */,
+				C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */,
 			);
 			path = "输入框样式";
 			sourceTree = "<group>";
@@ -1901,9 +1908,9 @@
 			children = (
 				C56BA68925788EF300D054D0 /* 输入框样式_1 */,
 				C56BA68D25788EF300D054D0 /* 输入框样式_2 */,
-				C56BA69125788EF300D054D0 /* 输入框样式基类 */,
-				C56BA69425788EF300D054D0 /* 输入框样式_4 */,
 				C56BA69825788EF300D054D0 /* 输入框样式_3 */,
+				C56BA69425788EF300D054D0 /* 输入框样式_4 */,
+				C56BA69125788EF300D054D0 /* 输入框样式基类 */,
 			);
 			path = UBLDoorInputViewStyle;
 			sourceTree = "<group>";
@@ -1961,9 +1968,9 @@
 			isa = PBXGroup;
 			children = (
 				C56BA69E25788EF300D054D0 /* UBLRetrievePasswordTBVCell.h */,
-				C56BA69F25788EF300D054D0 /* UBLScheduleView.m */,
 				C56BA6A025788EF300D054D0 /* UBLRetrievePasswordTBVCell.m */,
 				C56BA6A125788EF300D054D0 /* UBLScheduleView.h */,
+				C56BA69F25788EF300D054D0 /* UBLScheduleView.m */,
 			);
 			path = RetrievePasswordView;
 			sourceTree = "<group>";
@@ -1980,8 +1987,8 @@
 		C56BA6A525788EF300D054D0 /* UBLRegisterContentView */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA6A625788EF300D054D0 /* UBLRegisterContentView.m */,
 				C56BA6A725788EF300D054D0 /* UBLRegisterContentView.h */,
+				C56BA6A625788EF300D054D0 /* UBLRegisterContentView.m */,
 			);
 			path = UBLRegisterContentView;
 			sourceTree = "<group>";
@@ -2009,6 +2016,45 @@
 				C5FE9A4624B5EF2C007B9878 /* Assets.xcassets */,
 			);
 			path = "项目资源";
+			sourceTree = "<group>";
+		};
+		C56BAECF2578B1C800D054D0 /* 模式1 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BAED12578B28100D054D0 /* 我自己写的.md */,
+				C56BA67425788EF300D054D0 /* Controller */,
+				C56BA68125788EF300D054D0 /* Model */,
+				C56BA68225788EF300D054D0 /* View */,
+			);
+			path = "模式1";
+			sourceTree = "<group>";
+		};
+		C56BAED02578B1D600D054D0 /* 模式2 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BAED22578B29400D054D0 /* 尝试高仿蜜柚.md */,
+				C56BAEDD2578B3E900D054D0 /* ViewController */,
+				C56BAED92578B3D700D054D0 /* View */,
+			);
+			path = "模式2";
+			sourceTree = "<group>";
+		};
+		C56BAED92578B3D700D054D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C56BAEE42578B43800D054D0 /* JobsAppDoorContentView.h */,
+				C56BAEE52578B43800D054D0 /* JobsAppDoorContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C56BAEDD2578B3E900D054D0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C56BAED32578B31500D054D0 /* JobsAppDoor.h */,
+				C56BAED42578B31500D054D0 /* JobsAppDoor.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C56E29DF252EC2BE004ACCC7 /* Cocoapods */ = {
@@ -4050,6 +4096,7 @@
 				C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */,
 				C52E894F250F752E0070356F /* AESCipher.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
+				C56BAEE62578B43800D054D0 /* JobsAppDoorContentView.m in Sources */,
 				C5914AE225384A2F007777A6 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */,
 				C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */,
 				C55D3C812538838C00CFCF73 /* AppDelegate+Func.m in Sources */,
@@ -4150,6 +4197,7 @@
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C56BA6AD25788EF400D054D0 /* UBLLoginContentView.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
+				C56BAED52578B31500D054D0 /* JobsAppDoor.m in Sources */,
 				C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */,
 				C56BA6AF25788EF400D054D0 /* UBLDoorInputViewStyle_1.m in Sources */,
 			);

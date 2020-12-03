@@ -51,11 +51,6 @@
 		C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AB07B255E5EED000A314D /* UITableViewCell+Margin.m */; };
 		C54B3BCB25525EF8003BE195 /* UIFont+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3BC925525EF8003BE195 /* UIFont+Extras.m */; };
 		C54B3EB925529771003BE195 /* NSObject+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B3EB825529771003BE195 /* NSObject+RichText.m */; };
-		C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5132518E558001591C2 /* ZBURLRequest.m */; };
-		C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5142518E558001591C2 /* ZBCacheManager.m */; };
-		C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5162518E559001591C2 /* ZBRequestEngine.m */; };
-		C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */; };
-		C54BB51F2518E559001591C2 /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C54BB51A2518E559001591C2 /* ZBRequestManager.m */; };
 		C54C78A124D2AD460052BE0B /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C54C78A024D2AD460052BE0B /* Sound.wav */; };
 		C54CC4122551454B00C69C1F /* UIView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */; };
 		C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CC41B2551456800C69C1F /* CustomZFPlayerControlView.m */; };
@@ -94,6 +89,35 @@
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
 		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
+		C56BA6A825788EF400D054D0 /* UBLMailboxVerificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA67A25788EF300D054D0 /* UBLMailboxVerificationVC.m */; };
+		C56BA6A925788EF400D054D0 /* UBLChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA67B25788EF300D054D0 /* UBLChangePasswordVC.m */; };
+		C56BA6AA25788EF400D054D0 /* UBLRetrievePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA67C25788EF300D054D0 /* UBLRetrievePasswordVC.m */; };
+		C56BA6AB25788EF400D054D0 /* UBLMobilePhoneVerificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA67D25788EF300D054D0 /* UBLMobilePhoneVerificationVC.m */; };
+		C56BA6AC25788EF400D054D0 /* UBLDoorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA67F25788EF300D054D0 /* UBLDoorVC.m */; };
+		C56BA6AD25788EF400D054D0 /* UBLLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA68525788EF300D054D0 /* UBLLoginContentView.m */; };
+		C56BA6AE25788EF400D054D0 /* 输入框样式_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C56BA68A25788EF300D054D0 /* 输入框样式_1.png */; };
+		C56BA6AF25788EF400D054D0 /* UBLDoorInputViewStyle_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA68B25788EF300D054D0 /* UBLDoorInputViewStyle_1.m */; };
+		C56BA6B025788EF400D054D0 /* UBLDoorInputViewStyle_2.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */; };
+		C56BA6B125788EF400D054D0 /* 输入框样式_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C56BA68F25788EF300D054D0 /* 输入框样式_2.png */; };
+		C56BA6B225788EF400D054D0 /* UBLDoorInputViewBaseStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA69325788EF300D054D0 /* UBLDoorInputViewBaseStyle.m */; };
+		C56BA6B325788EF400D054D0 /* UBLDoorInputViewStyle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */; };
+		C56BA6B425788EF400D054D0 /* UBLDoorInputViewStyle_4.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA69725788EF300D054D0 /* UBLDoorInputViewStyle_4.m */; };
+		C56BA6B525788EF400D054D0 /* 输入框样式_3.png in Resources */ = {isa = PBXBuildFile; fileRef = C56BA69A25788EF300D054D0 /* 输入框样式_3.png */; };
+		C56BA6B625788EF400D054D0 /* UBLDoorInputViewStyle_3.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA69B25788EF300D054D0 /* UBLDoorInputViewStyle_3.m */; };
+		C56BA6B725788EF400D054D0 /* UBLScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA69F25788EF300D054D0 /* UBLScheduleView.m */; };
+		C56BA6B825788EF400D054D0 /* UBLRetrievePasswordTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6A025788EF300D054D0 /* UBLRetrievePasswordTBVCell.m */; };
+		C56BA6B925788EF400D054D0 /* UBLLogoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6A425788EF300D054D0 /* UBLLogoContentView.m */; };
+		C56BA6BA25788EF400D054D0 /* UBLRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6A625788EF300D054D0 /* UBLRegisterContentView.m */; };
+		C56BA6C02578902B00D054D0 /* UBLUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6BE2578902B00D054D0 /* UBLUserInfo.m */; };
+		C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */; };
+		C56BA6D22578925500D054D0 /* UBLNetWorkResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CA2578925500D054D0 /* UBLNetWorkResult.m */; };
+		C56BA6D32578925500D054D0 /* UBLUrlConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CB2578925500D054D0 /* UBLUrlConst.m */; };
+		C56BA6D42578925500D054D0 /* UBLNetWorkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CC2578925500D054D0 /* UBLNetWorkClient.m */; };
+		C56BA7DA257892F400D054D0 /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7CE257892F300D054D0 /* ZBRequestManager.m */; };
+		C56BA7DB257892F400D054D0 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D0257892F300D054D0 /* ZBRequestEngine.m */; };
+		C56BA7DC257892F400D054D0 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D1257892F300D054D0 /* NSString+ZBUTF8Encoding.m */; };
+		C56BA7DD257892F400D054D0 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D2257892F300D054D0 /* ZBCacheManager.m */; };
+		C56BA7DE257892F400D054D0 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA7D3257892F300D054D0 /* ZBURLRequest.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
 		C56E3E0B2547122700B9F555 /* 资源文件 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0A2547122700B9F555 /* 资源文件 */; };
@@ -419,18 +443,6 @@
 		C54B3BCA25525EF8003BE195 /* UIFont+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extras.h"; sourceTree = "<group>"; };
 		C54B3EB725529771003BE195 /* NSObject+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RichText.h"; sourceTree = "<group>"; };
 		C54B3EB825529771003BE195 /* NSObject+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RichText.m"; sourceTree = "<group>"; };
-		C54BB50F2518E558001591C2 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
-		C54BB5102518E558001591C2 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
-		C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
-		C54BB5122518E558001591C2 /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
-		C54BB5132518E558001591C2 /* ZBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBURLRequest.m; sourceTree = "<group>"; };
-		C54BB5142518E558001591C2 /* ZBCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCacheManager.m; sourceTree = "<group>"; };
-		C54BB5152518E559001591C2 /* ZBRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestEngine.h; sourceTree = "<group>"; };
-		C54BB5162518E559001591C2 /* ZBRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestEngine.m; sourceTree = "<group>"; };
-		C54BB5172518E559001591C2 /* ZBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestManager.h; sourceTree = "<group>"; };
-		C54BB5182518E559001591C2 /* ZBRequestConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestConst.h; sourceTree = "<group>"; };
-		C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZBUTF8Encoding.m"; sourceTree = "<group>"; };
-		C54BB51A2518E559001591C2 /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
 		C54BB5262518E570001591C2 /* ZBNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZBNetworking; sourceTree = "<group>"; };
 		C54C78A024D2AD460052BE0B /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
 		C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZFPlayer.h"; sourceTree = "<group>"; };
@@ -513,6 +525,65 @@
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "_Nullable等的用法和总结"; sourceTree = "<group>"; };
+		C56BA67625788EF300D054D0 /* UBLRetrievePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLRetrievePasswordVC.h; sourceTree = "<group>"; };
+		C56BA67725788EF300D054D0 /* UBLChangePasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLChangePasswordVC.h; sourceTree = "<group>"; };
+		C56BA67825788EF300D054D0 /* UBLMailboxVerificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLMailboxVerificationVC.h; sourceTree = "<group>"; };
+		C56BA67925788EF300D054D0 /* UBLMobilePhoneVerificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLMobilePhoneVerificationVC.h; sourceTree = "<group>"; };
+		C56BA67A25788EF300D054D0 /* UBLMailboxVerificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLMailboxVerificationVC.m; sourceTree = "<group>"; };
+		C56BA67B25788EF300D054D0 /* UBLChangePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLChangePasswordVC.m; sourceTree = "<group>"; };
+		C56BA67C25788EF300D054D0 /* UBLRetrievePasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLRetrievePasswordVC.m; sourceTree = "<group>"; };
+		C56BA67D25788EF300D054D0 /* UBLMobilePhoneVerificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLMobilePhoneVerificationVC.m; sourceTree = "<group>"; };
+		C56BA67F25788EF300D054D0 /* UBLDoorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorVC.m; sourceTree = "<group>"; };
+		C56BA68025788EF300D054D0 /* UBLDoorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorVC.h; sourceTree = "<group>"; };
+		C56BA68325788EF300D054D0 /* UBLDoor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoor.h; sourceTree = "<group>"; };
+		C56BA68525788EF300D054D0 /* UBLLoginContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLoginContentView.m; sourceTree = "<group>"; };
+		C56BA68625788EF300D054D0 /* UBLLoginContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLLoginContentView.h; sourceTree = "<group>"; };
+		C56BA68A25788EF300D054D0 /* 输入框样式_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "输入框样式_1.png"; sourceTree = "<group>"; };
+		C56BA68B25788EF300D054D0 /* UBLDoorInputViewStyle_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorInputViewStyle_1.m; sourceTree = "<group>"; };
+		C56BA68C25788EF300D054D0 /* UBLDoorInputViewStyle_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputViewStyle_1.h; sourceTree = "<group>"; };
+		C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorInputViewStyle_2.m; sourceTree = "<group>"; };
+		C56BA68F25788EF300D054D0 /* 输入框样式_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "输入框样式_2.png"; sourceTree = "<group>"; };
+		C56BA69025788EF300D054D0 /* UBLDoorInputViewStyle_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputViewStyle_2.h; sourceTree = "<group>"; };
+		C56BA69225788EF300D054D0 /* UBLDoorInputViewBaseStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputViewBaseStyle.h; sourceTree = "<group>"; };
+		C56BA69325788EF300D054D0 /* UBLDoorInputViewBaseStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorInputViewBaseStyle.m; sourceTree = "<group>"; };
+		C56BA69525788EF300D054D0 /* UBLDoorInputViewStyle_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputViewStyle_4.h; sourceTree = "<group>"; };
+		C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UBLDoorInputViewStyle_4.png; sourceTree = "<group>"; };
+		C56BA69725788EF300D054D0 /* UBLDoorInputViewStyle_4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorInputViewStyle_4.m; sourceTree = "<group>"; };
+		C56BA69925788EF300D054D0 /* UBLDoorInputViewStyle_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputViewStyle_3.h; sourceTree = "<group>"; };
+		C56BA69A25788EF300D054D0 /* 输入框样式_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "输入框样式_3.png"; sourceTree = "<group>"; };
+		C56BA69B25788EF300D054D0 /* UBLDoorInputViewStyle_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLDoorInputViewStyle_3.m; sourceTree = "<group>"; };
+		C56BA69C25788EF300D054D0 /* UBLDoorInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLDoorInputView.h; sourceTree = "<group>"; };
+		C56BA69E25788EF300D054D0 /* UBLRetrievePasswordTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLRetrievePasswordTBVCell.h; sourceTree = "<group>"; };
+		C56BA69F25788EF300D054D0 /* UBLScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLScheduleView.m; sourceTree = "<group>"; };
+		C56BA6A025788EF300D054D0 /* UBLRetrievePasswordTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLRetrievePasswordTBVCell.m; sourceTree = "<group>"; };
+		C56BA6A125788EF300D054D0 /* UBLScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLScheduleView.h; sourceTree = "<group>"; };
+		C56BA6A325788EF300D054D0 /* UBLLogoContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLLogoContentView.h; sourceTree = "<group>"; };
+		C56BA6A425788EF300D054D0 /* UBLLogoContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLogoContentView.m; sourceTree = "<group>"; };
+		C56BA6A625788EF300D054D0 /* UBLRegisterContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLRegisterContentView.m; sourceTree = "<group>"; };
+		C56BA6A725788EF300D054D0 /* UBLRegisterContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLRegisterContentView.h; sourceTree = "<group>"; };
+		C56BA6BE2578902B00D054D0 /* UBLUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLUserInfo.m; sourceTree = "<group>"; };
+		C56BA6BF2578902B00D054D0 /* UBLUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLUserInfo.h; sourceTree = "<group>"; };
+		C56BA6C42578913D00D054D0 /* MacroDef_App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_App.h; sourceTree = "<group>"; };
+		C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLNetWorkManager.m; sourceTree = "<group>"; };
+		C56BA6CA2578925500D054D0 /* UBLNetWorkResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLNetWorkResult.m; sourceTree = "<group>"; };
+		C56BA6CB2578925500D054D0 /* UBLUrlConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLUrlConst.m; sourceTree = "<group>"; };
+		C56BA6CC2578925500D054D0 /* UBLNetWorkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLNetWorkClient.m; sourceTree = "<group>"; };
+		C56BA6CD2578925500D054D0 /* UBLNetWorkResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLNetWorkResult.h; sourceTree = "<group>"; };
+		C56BA6CE2578925500D054D0 /* UBLNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLNetWorkManager.h; sourceTree = "<group>"; };
+		C56BA6CF2578925500D054D0 /* UBLUrlConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLUrlConst.h; sourceTree = "<group>"; };
+		C56BA6D02578925500D054D0 /* UBLNetWorkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLNetWorkClient.h; sourceTree = "<group>"; };
+		C56BA7CE257892F300D054D0 /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
+		C56BA7CF257892F300D054D0 /* ZBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestManager.h; sourceTree = "<group>"; };
+		C56BA7D0257892F300D054D0 /* ZBRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestEngine.m; sourceTree = "<group>"; };
+		C56BA7D1257892F300D054D0 /* NSString+ZBUTF8Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZBUTF8Encoding.m"; sourceTree = "<group>"; };
+		C56BA7D2257892F300D054D0 /* ZBCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCacheManager.m; sourceTree = "<group>"; };
+		C56BA7D3257892F300D054D0 /* ZBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBURLRequest.m; sourceTree = "<group>"; };
+		C56BA7D4257892F300D054D0 /* ZBRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestEngine.h; sourceTree = "<group>"; };
+		C56BA7D5257892F300D054D0 /* ZBRequestConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestConst.h; sourceTree = "<group>"; };
+		C56BA7D6257892F300D054D0 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
+		C56BA7D7257892F300D054D0 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
+		C56BA7D8257892F300D054D0 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
+		C56BA7D9257892F400D054D0 /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
 		C56E29E0252EC32B004ACCC7 /* cocoapods_gem_ruby */ = {isa = PBXFileReference; lastKnownFileType = text; path = cocoapods_gem_ruby; sourceTree = "<group>"; };
 		C56E338D252F4A6C004ACCC7 /* UILabel+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extra.h"; sourceTree = "<group>"; };
 		C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extra.m"; sourceTree = "<group>"; };
@@ -1424,6 +1495,7 @@
 		C5470F0D25309B5200651ACE /* 各项宏定义 */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA6C42578913D00D054D0 /* MacroDef_App.h */,
 				C5470F1325309B5C00651ACE /* MacroDef_Cor.h */,
 				C5470F1225309B5C00651ACE /* MacroDef_Func.h */,
 				C5470F1125309B5C00651ACE /* MacroDef_Size.h */,
@@ -1464,6 +1536,7 @@
 		C54BB50D2518E53F001591C2 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA6C82578925500D054D0 /* UBLNetWork */,
 				C5FE9B8A24B5F298007B9878 /* 🌍ZFMRACNetworkTool */,
 				C54BB50E2518E546001591C2 /* ZBNetworking */,
 			);
@@ -1473,19 +1546,19 @@
 		C54BB50E2518E546001591C2 /* ZBNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA7D8257892F300D054D0 /* NSString+ZBUTF8Encoding.h */,
+				C56BA7D1257892F300D054D0 /* NSString+ZBUTF8Encoding.m */,
+				C56BA7D9257892F400D054D0 /* ZBCacheManager.h */,
+				C56BA7D2257892F300D054D0 /* ZBCacheManager.m */,
 				C54BB5262518E570001591C2 /* ZBNetworking */,
-				C54BB5112518E558001591C2 /* NSString+ZBUTF8Encoding.h */,
-				C54BB5192518E559001591C2 /* NSString+ZBUTF8Encoding.m */,
-				C54BB5122518E558001591C2 /* ZBCacheManager.h */,
-				C54BB5142518E558001591C2 /* ZBCacheManager.m */,
-				C54BB50F2518E558001591C2 /* ZBNetworking.h */,
-				C54BB5182518E559001591C2 /* ZBRequestConst.h */,
-				C54BB5152518E559001591C2 /* ZBRequestEngine.h */,
-				C54BB5162518E559001591C2 /* ZBRequestEngine.m */,
-				C54BB5172518E559001591C2 /* ZBRequestManager.h */,
-				C54BB51A2518E559001591C2 /* ZBRequestManager.m */,
-				C54BB5102518E558001591C2 /* ZBURLRequest.h */,
-				C54BB5132518E558001591C2 /* ZBURLRequest.m */,
+				C56BA7D6257892F300D054D0 /* ZBNetworking.h */,
+				C56BA7D5257892F300D054D0 /* ZBRequestConst.h */,
+				C56BA7D4257892F300D054D0 /* ZBRequestEngine.h */,
+				C56BA7D0257892F300D054D0 /* ZBRequestEngine.m */,
+				C56BA7CF257892F300D054D0 /* ZBRequestManager.h */,
+				C56BA7CE257892F300D054D0 /* ZBRequestManager.m */,
+				C56BA7D7257892F300D054D0 /* ZBURLRequest.h */,
+				C56BA7D3257892F300D054D0 /* ZBURLRequest.m */,
 			);
 			path = ZBNetworking;
 			sourceTree = "<group>";
@@ -1738,6 +1811,194 @@
 				C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */,
 			);
 			path = "签名上架";
+			sourceTree = "<group>";
+		};
+		C56BA67325788EF300D054D0 /* AppDoor */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA67425788EF300D054D0 /* Controller */,
+				C56BA68125788EF300D054D0 /* Model */,
+				C56BA68225788EF300D054D0 /* View */,
+			);
+			path = AppDoor;
+			sourceTree = "<group>";
+		};
+		C56BA67425788EF300D054D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA67525788EF300D054D0 /* RetrievePassword */,
+				C56BA67E25788EF300D054D0 /* LoginAndRegister */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C56BA67525788EF300D054D0 /* RetrievePassword */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA67625788EF300D054D0 /* UBLRetrievePasswordVC.h */,
+				C56BA67725788EF300D054D0 /* UBLChangePasswordVC.h */,
+				C56BA67825788EF300D054D0 /* UBLMailboxVerificationVC.h */,
+				C56BA67925788EF300D054D0 /* UBLMobilePhoneVerificationVC.h */,
+				C56BA67A25788EF300D054D0 /* UBLMailboxVerificationVC.m */,
+				C56BA67B25788EF300D054D0 /* UBLChangePasswordVC.m */,
+				C56BA67C25788EF300D054D0 /* UBLRetrievePasswordVC.m */,
+				C56BA67D25788EF300D054D0 /* UBLMobilePhoneVerificationVC.m */,
+			);
+			path = RetrievePassword;
+			sourceTree = "<group>";
+		};
+		C56BA67E25788EF300D054D0 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA67F25788EF300D054D0 /* UBLDoorVC.m */,
+				C56BA68025788EF300D054D0 /* UBLDoorVC.h */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		C56BA68125788EF300D054D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA6BF2578902B00D054D0 /* UBLUserInfo.h */,
+				C56BA6BE2578902B00D054D0 /* UBLUserInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C56BA68225788EF300D054D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68325788EF300D054D0 /* UBLDoor.h */,
+				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
+				C56BA68725788EF300D054D0 /* 输入框样式 */,
+				C56BA69D25788EF300D054D0 /* RetrievePasswordView */,
+				C56BA6A225788EF300D054D0 /* UBLLogoContentView */,
+				C56BA6A525788EF300D054D0 /* UBLRegisterContentView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C56BA68425788EF300D054D0 /* UBLLoginContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68525788EF300D054D0 /* UBLLoginContentView.m */,
+				C56BA68625788EF300D054D0 /* UBLLoginContentView.h */,
+			);
+			path = UBLLoginContentView;
+			sourceTree = "<group>";
+		};
+		C56BA68725788EF300D054D0 /* 输入框样式 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */,
+				C56BA69C25788EF300D054D0 /* UBLDoorInputView.h */,
+			);
+			path = "输入框样式";
+			sourceTree = "<group>";
+		};
+		C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68925788EF300D054D0 /* 输入框样式_1 */,
+				C56BA68D25788EF300D054D0 /* 输入框样式_2 */,
+				C56BA69125788EF300D054D0 /* 输入框样式基类 */,
+				C56BA69425788EF300D054D0 /* 输入框样式_4 */,
+				C56BA69825788EF300D054D0 /* 输入框样式_3 */,
+			);
+			path = UBLDoorInputViewStyle;
+			sourceTree = "<group>";
+		};
+		C56BA68925788EF300D054D0 /* 输入框样式_1 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68A25788EF300D054D0 /* 输入框样式_1.png */,
+				C56BA68B25788EF300D054D0 /* UBLDoorInputViewStyle_1.m */,
+				C56BA68C25788EF300D054D0 /* UBLDoorInputViewStyle_1.h */,
+			);
+			path = "输入框样式_1";
+			sourceTree = "<group>";
+		};
+		C56BA68D25788EF300D054D0 /* 输入框样式_2 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */,
+				C56BA68F25788EF300D054D0 /* 输入框样式_2.png */,
+				C56BA69025788EF300D054D0 /* UBLDoorInputViewStyle_2.h */,
+			);
+			path = "输入框样式_2";
+			sourceTree = "<group>";
+		};
+		C56BA69125788EF300D054D0 /* 输入框样式基类 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA69225788EF300D054D0 /* UBLDoorInputViewBaseStyle.h */,
+				C56BA69325788EF300D054D0 /* UBLDoorInputViewBaseStyle.m */,
+			);
+			path = "输入框样式基类";
+			sourceTree = "<group>";
+		};
+		C56BA69425788EF300D054D0 /* 输入框样式_4 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA69525788EF300D054D0 /* UBLDoorInputViewStyle_4.h */,
+				C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */,
+				C56BA69725788EF300D054D0 /* UBLDoorInputViewStyle_4.m */,
+			);
+			path = "输入框样式_4";
+			sourceTree = "<group>";
+		};
+		C56BA69825788EF300D054D0 /* 输入框样式_3 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA69925788EF300D054D0 /* UBLDoorInputViewStyle_3.h */,
+				C56BA69A25788EF300D054D0 /* 输入框样式_3.png */,
+				C56BA69B25788EF300D054D0 /* UBLDoorInputViewStyle_3.m */,
+			);
+			path = "输入框样式_3";
+			sourceTree = "<group>";
+		};
+		C56BA69D25788EF300D054D0 /* RetrievePasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA69E25788EF300D054D0 /* UBLRetrievePasswordTBVCell.h */,
+				C56BA69F25788EF300D054D0 /* UBLScheduleView.m */,
+				C56BA6A025788EF300D054D0 /* UBLRetrievePasswordTBVCell.m */,
+				C56BA6A125788EF300D054D0 /* UBLScheduleView.h */,
+			);
+			path = RetrievePasswordView;
+			sourceTree = "<group>";
+		};
+		C56BA6A225788EF300D054D0 /* UBLLogoContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA6A325788EF300D054D0 /* UBLLogoContentView.h */,
+				C56BA6A425788EF300D054D0 /* UBLLogoContentView.m */,
+			);
+			path = UBLLogoContentView;
+			sourceTree = "<group>";
+		};
+		C56BA6A525788EF300D054D0 /* UBLRegisterContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA6A625788EF300D054D0 /* UBLRegisterContentView.m */,
+				C56BA6A725788EF300D054D0 /* UBLRegisterContentView.h */,
+			);
+			path = UBLRegisterContentView;
+			sourceTree = "<group>";
+		};
+		C56BA6C82578925500D054D0 /* UBLNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA6D02578925500D054D0 /* UBLNetWorkClient.h */,
+				C56BA6CC2578925500D054D0 /* UBLNetWorkClient.m */,
+				C56BA6CE2578925500D054D0 /* UBLNetWorkManager.h */,
+				C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */,
+				C56BA6CD2578925500D054D0 /* UBLNetWorkResult.h */,
+				C56BA6CA2578925500D054D0 /* UBLNetWorkResult.m */,
+				C56BA6CF2578925500D054D0 /* UBLUrlConst.h */,
+				C56BA6CB2578925500D054D0 /* UBLUrlConst.m */,
+			);
+			path = UBLNetWork;
 			sourceTree = "<group>";
 		};
 		C56E29DF252EC2BE004ACCC7 /* Cocoapods */ = {
@@ -2565,6 +2826,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA67325788EF300D054D0 /* AppDoor */,
 				C553915F2572803A008BB60F /* SocketTools */,
 				C591EECC2563C802005B78CC /* CustomGifHeader */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
@@ -3473,10 +3735,12 @@
 				C544D2E72525DC2F003C2A94 /* 12345.json in Resources */,
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */,
+				C56BA6B125788EF400D054D0 /* 输入框样式_2.png in Resources */,
 				C5727867254094C2002373D7 /* 参考demo in Resources */,
 				C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */,
 				C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */,
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
+				C56BA6B525788EF400D054D0 /* 输入框样式_3.png in Resources */,
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */,
 				C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */,
@@ -3490,8 +3754,10 @@
 				C54C78A124D2AD460052BE0B /* Sound.wav in Resources */,
 				C591EED02563C802005B78CC /* JsonRes.bundle in Resources */,
 				C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */,
+				C56BA6AE25788EF400D054D0 /* 输入框样式_1.png in Resources */,
 				C5FE9B5E24B5F203007B9878 /* 专治UITableView相应链断裂 in Resources */,
 				C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */,
+				C56BA6B325788EF400D054D0 /* UBLDoorInputViewStyle_4.png in Resources */,
 				C5FE9CD324B5F29C007B9878 /* sortedNameCH.plist in Resources */,
 				C572785E254094C2002373D7 /* JobsPullListAutoSizeView in Resources */,
 			);
@@ -3623,11 +3889,13 @@
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */,
+				C56BA6AC25788EF400D054D0 /* UBLDoorVC.m in Sources */,
 				C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5767BA525470BD100C382C8 /* WMZBannerFlowLayout.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
 				C55695D5255BFC3A005C1361 /* TimeModel.m in Sources */,
+				C56BA7DA257892F400D054D0 /* ZBRequestManager.m in Sources */,
 				C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */,
@@ -3644,11 +3912,12 @@
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,
 				C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */,
 				C5FE9D1224B5F29C007B9878 /* GettingDeviceIP.m in Sources */,
-				C54BB51E2518E559001591C2 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C55391652572803A008BB60F /* SocketIOTools.m in Sources */,
 				C5FE9CEB24B5F29C007B9878 /* TBCityIconInfo.m in Sources */,
 				C58C61262532B3950092BF89 /* RBCLikeButton.m in Sources */,
+				C56BA7DC257892F400D054D0 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5FE9CE724B5F29C007B9878 /* BWItemCollectionViewCell.m in Sources */,
+				C56BA6D32578925500D054D0 /* UBLUrlConst.m in Sources */,
 				C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */,
 				C55D3CB32538856100CFCF73 /* XHLaunchAdConfiguration.m in Sources */,
 				C5727863254094C2002373D7 /* TransitionController.m in Sources */,
@@ -3658,6 +3927,7 @@
 				C55B2A39253426BC0038E50C /* SuspendView.m in Sources */,
 				C55695D6255BFC3A005C1361 /* NSString+Time.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
+				C56BA6AB25788EF400D054D0 /* UBLMobilePhoneVerificationVC.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
@@ -3684,16 +3954,20 @@
 				C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */,
 				C5FE9CB224B5F29C007B9878 /* FMHttpResonse.m in Sources */,
 				C55166682575202D00FF5217 /* CJTextField.m in Sources */,
+				C56BA6A925788EF400D054D0 /* UBLChangePasswordVC.m in Sources */,
 				C55D3CB12538856100CFCF73 /* XHLaunchAdDownloader.m in Sources */,
 				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
 				C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
+				C56BA6B025788EF400D054D0 /* UBLDoorInputViewStyle_2.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
+				C56BA7DB257892F400D054D0 /* ZBRequestEngine.m in Sources */,
 				C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */,
-				C54BB51B2518E559001591C2 /* ZBURLRequest.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
+				C56BA6BA25788EF400D054D0 /* UBLRegisterContentView.m in Sources */,
+				C56BA6B625788EF400D054D0 /* UBLDoorInputViewStyle_3.m in Sources */,
 				C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */,
 				C5C67C6424FE4FB1000A26B8 /* NSTimerManager.m in Sources */,
 				C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */,
@@ -3705,6 +3979,7 @@
 				C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */,
 				C58F044C24EBCD7100B6D09C /* NSObject+Measure.m in Sources */,
 				C5914AE525384A2F007777A6 /* UIViewController+TZLocationManager.m in Sources */,
+				C56BA7DE257892F400D054D0 /* ZBURLRequest.m in Sources */,
 				C5766CFB2546B72E00C382C8 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
 				C5FE9D2224B5F29C007B9878 /* XXTools.m in Sources */,
@@ -3713,18 +3988,21 @@
 				C5E7D9B224E1640E00A38FAF /* NSObject+Time.m in Sources */,
 				C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */,
 				C5FE9D1524B5F29C007B9878 /* HWTFCodeBView.m in Sources */,
+				C56BA6D42578925500D054D0 /* UBLNetWorkClient.m in Sources */,
 				C572A28924FCBDDE000A1687 /* UIImage+Tailor.m in Sources */,
+				C56BA7DD257892F400D054D0 /* ZBCacheManager.m in Sources */,
 				C5FE9D1024B5F29C007B9878 /* XLChannelView.m in Sources */,
 				C544D23E2525CBC4003C2A94 /* MJRefreshComponent+Lottie.m in Sources */,
 				C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */,
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5C67C5B24FE4F9C000A26B8 /* Nanosecond_TimerManager.m in Sources */,
+				C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */,
+				C56BA6D22578925500D054D0 /* UBLNetWorkResult.m in Sources */,
 				C52E8958250F752E0070356F /* NSData+Base64.m in Sources */,
 				C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */,
 				C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */,
 				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5FE9CBF24B5F29C007B9878 /* ECAuthorizationTools.m in Sources */,
-				C54BB51F2518E559001591C2 /* ZBRequestManager.m in Sources */,
 				C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */,
 				C5914AE725384A2F007777A6 /* UIViewController+GifImageView.m in Sources */,
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
@@ -3760,6 +4038,7 @@
 				C5767BAA25470BD100C382C8 /* WMZBannerOverLayout.m in Sources */,
 				C533701824DB00280082847C /* NSBundle+BRPickerView.m in Sources */,
 				C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */,
+				C56BA6B725788EF400D054D0 /* UBLScheduleView.m in Sources */,
 				C5FE9D1B24B5F29C007B9878 /* UIControl+XY.m in Sources */,
 				C52E894F250F752E0070356F /* AESCipher.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
@@ -3770,24 +4049,27 @@
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
 				C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */,
 				C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */,
+				C56BA6C02578902B00D054D0 /* UBLUserInfo.m in Sources */,
 				C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */,
 				C55166692575202D00FF5217 /* UITextField+Extend.m in Sources */,
 				C55D3CB42538856100CFCF73 /* XHLaunchAdCache.m in Sources */,
 				C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */,
-				C54BB51D2518E559001591C2 /* ZBRequestEngine.m in Sources */,
 				C5FE9D1124B5F29C007B9878 /* XLChannelItem.m in Sources */,
 				C5FE9D0824B5F29C007B9878 /* WBPopMenuSingleton.m in Sources */,
 				C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */,
 				C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */,
 				C572769925408AF1002373D7 /* NavigationBar.m in Sources */,
 				C572785D254094C2002373D7 /* TabbarVC.m in Sources */,
+				C56BA6B925788EF400D054D0 /* UBLLogoContentView.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C5FE9CCE24B5F29C007B9878 /* UIViewController+BackButtonHandler.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */,
+				C56BA6AA25788EF400D054D0 /* UBLRetrievePasswordVC.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
+				C56BA6B225788EF400D054D0 /* UBLDoorInputViewBaseStyle.m in Sources */,
 				C591EED12563C802005B78CC /* CustomGifHeader.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
@@ -3795,7 +4077,7 @@
 				C5914AE825384A2F007777A6 /* UIViewController+BWShareView.m in Sources */,
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */,
-				C54BB51C2518E559001591C2 /* ZBCacheManager.m in Sources */,
+				C56BA6B825788EF400D054D0 /* UBLRetrievePasswordTBVCell.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
 				C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				C5914AE425384A2F007777A6 /* UIViewController+JPImageresizerView.m in Sources */,
@@ -3827,6 +4109,7 @@
 				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
 				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,
+				C56BA6B425788EF400D054D0 /* UBLDoorInputViewStyle_4.m in Sources */,
 				C5FE9CE424B5F29C007B9878 /* BWItemModel.m in Sources */,
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */,
@@ -3849,6 +4132,7 @@
 				C5FE9D2024B5F29C007B9878 /* AnimateToSpecifiedDateView.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5FE9CDA24B5F29C007B9878 /* SoundBtn.m in Sources */,
+				C56BA6A825788EF400D054D0 /* UBLMailboxVerificationVC.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,
 				C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,
@@ -3856,8 +4140,10 @@
 				C5AEEAC925384147000E1C5F /* UIView+Animation.m in Sources */,
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
+				C56BA6AD25788EF400D054D0 /* UBLLoginContentView.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
 				C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */,
+				C56BA6AF25788EF400D054D0 /* UBLDoorInputViewStyle_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

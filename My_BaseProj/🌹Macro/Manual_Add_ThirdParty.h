@@ -64,6 +64,7 @@
 
 #pragma mark —— 以下是自定义的
 
+#import "MacroDef_App.h"
 #import "MacroDef_Sys.h"
 #import "MacroDef_Cor.h"
 #import "MacroDef_Size.h"

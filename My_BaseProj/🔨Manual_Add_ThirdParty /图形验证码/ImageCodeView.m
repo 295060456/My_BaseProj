@@ -13,7 +13,6 @@
 @interface ImageCodeView ()
 
 @property(nonatomic,strong)UITapGestureRecognizer *changeCodeTap;
-@property(nonatomic,copy)MKDataBlock imageCodeViewBlock;
 
 @end
 
@@ -83,27 +82,21 @@
         NSInteger index = arc4random() % (self.CodeArr.count - 1);
         [tmpStr appendString:[self.CodeArr objectAtIndex:index]];
     }
-    _CodeStr = [NSString stringWithFormat:@"%@",tmpStr];
+    self.CodeStr = [NSString stringWithFormat:@"%@",tmpStr];
 }
 ///点击、刷新验证码
 -(void)changeCode:(UITapGestureRecognizer *)sender{
-    @weakify(self)
-//    [NSObject getAuthCode_networking:^(id data) {
+//    @weakify(self)
+//    [UBLNetWorkManager getRequestWithUrlPath:UBLUrlUserRandCode
+//                                  parameters:@{}
+//                                    finished:^(UBLNetWorkResult * _Nonnull result) {
 //        @strongify(self)
-//        if ([data isKindOfClass:NSDictionary.class]) {
-//            self.CodeStr = data[@"imgCode"];
-//            self.backgroundColor = self.bgColor;
-//            NSLog(@"我是验证码：%@",self.CodeStr);
-//            [self setNeedsDisplay];
-//            if (self.imageCodeViewBlock) {
-//                self.imageCodeViewBlock(data);
-//            }
+//        if (!result.error) {
+//            self.captchaKey = result.resultData[@"captchaKey"];
+//            self.CodeStr = result.resultData[@"imgCode"];
+//            NSLog(@"我是图形验证码:%@",self.CodeStr);
 //        }
 //    }];
-}
-
--(void)actionBlockImageCodeView:(MKDataBlock _Nullable)imageCodeViewBlock{
-    _imageCodeViewBlock = imageCodeViewBlock;
 }
 
 -(void)setCodeStr:(NSString *)CodeStr{
@@ -118,7 +111,8 @@
 #pragma mark —— lazyLoad
 -(NSString *)CodeStr{
     if (!_CodeStr) {
-        [self getStrCode];
+//        [self getStrCode];
+        [self changeCode:nil];
     }return _CodeStr;
 }
 
@@ -138,7 +132,7 @@
 
 -(UIColor *)color{
     if (!_color) {
-        _color = kWhiteColor;
+        _color = KGreenColor;
     }return _color;
 }
 

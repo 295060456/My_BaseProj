@@ -43,11 +43,11 @@ JXCategoryTitleViewDataSource
     [super viewDidLoad];
     self.view.backgroundColor = RandomColor;
     
-    [self configChatRoomIMwithSocketIO];
-    [self receiveMeg];
-    [self joinRoom];
-    [self leaveRoom];
-    [self onlineCount];
+//    [self configChatRoomIMwithSocketIO];
+//    [self receiveMeg];
+//    [self joinRoom];
+//    [self leaveRoom];
+//    [self onlineCount];
     
     self.userHeaderView.alpha = 1;
     self.categoryTitleView.alpha  = 1;
@@ -58,116 +58,116 @@ JXCategoryTitleViewDataSource
      protocolType:源协议类型, m3u8, flv【非必须参数】
      */
     @weakify(self)
-    [UBLNetWorkManager getRequestWithUrlPath:[NSString stringWithFormat:@"%@?%@&%@",UBLUrlRoomDetail,@"roomId=100032",@"streamSharpness=?",@"protocolType=?"]
-                                  parameters:@{
-                                      @"roomId":@"1000032",//直播间ID 【非必须参数】
-                                      @"streamSharpness":@"",//流分辨率, ld: 标清, hd: 高清, cnhd: 中文高清, wx: 卫星, 默认返回分辨率最高的【非必须参数】
-                                      @"protocolType":@""//源协议类型, m3u8, flv【非必须参数】
-                                  }
-                                    finished:^(UBLNetWorkResult * _Nonnull result) {
-        @strongify(self)
-        NSLog(@"result = %@",result);
-        self.livingModel = [UBLLivingModel mj_objectWithKeyValues:result.resultData];
-        [self.livingNavView richElementsInViewWithModel:self.livingModel];
-        [self.attentionBtn setTitle:[NSString ensureNonnullString:[NSString stringWithFormat:@"%ld",self.livingModel.fansNum] ReplaceStr:@"暂无数据"]
-                           forState:UIControlStateNormal];
-        [self.attentionBtn setTitle:[NSString ensureNonnullString:[NSString stringWithFormat:@"%ld",self.livingModel.fansNum] ReplaceStr:@"暂无数据"]
-                           forState:UIControlStateSelected];
-        
-        UBLChatVC *chatVC = (UBLChatVC *)self.childVCMutArr[0];
-        [chatVC setScrollContentMutArr:(NSMutableArray *)@[[NSString ensureNonnullString:self.livingModel.announcement ReplaceStr:@"暂无数据"]]];
-        chatVC.scrollLabelView.alpha = 1;
-        
-        self.attentionBtn.selected = self.livingModel.is_attention;
-        //1、flv；2、hls；3、flvs；4、hlss
-//        self.userHeaderView.assetURLStr = @"http://liveplay.yikating.net/live/100037.flv?txSecret=799b50d5a0caebe99c7539995bf5697e&txTime=5FC10589";//临时测试的流地址数据
-//        self.userHeaderView.assetURLStr = [[NSBundle mainBundle] pathForResource:@"iph_X" ofType:@"mp4"];//本地文件可以正常播放
-        self.userHeaderView.assetURLStr = self.livingModel.playAddr[3].playUrl;//服务器地址
-        NSLog(@"流地址：%@",self.userHeaderView.assetURLStr);
-    }];
+//    [UBLNetWorkManager getRequestWithUrlPath:[NSString stringWithFormat:@"%@?%@&%@",UBLUrlRoomDetail,@"roomId=100032",@"streamSharpness=?",@"protocolType=?"]
+//                                  parameters:@{
+//                                      @"roomId":@"1000032",//直播间ID 【非必须参数】
+//                                      @"streamSharpness":@"",//流分辨率, ld: 标清, hd: 高清, cnhd: 中文高清, wx: 卫星, 默认返回分辨率最高的【非必须参数】
+//                                      @"protocolType":@""//源协议类型, m3u8, flv【非必须参数】
+//                                  }
+//                                    finished:^(UBLNetWorkResult * _Nonnull result) {
+//        @strongify(self)
+//        NSLog(@"result = %@",result);
+//        self.livingModel = [UBLLivingModel mj_objectWithKeyValues:result.resultData];
+//        [self.livingNavView richElementsInViewWithModel:self.livingModel];
+//        [self.attentionBtn setTitle:[NSString ensureNonnullString:[NSString stringWithFormat:@"%ld",self.livingModel.fansNum] ReplaceStr:@"暂无数据"]
+//                           forState:UIControlStateNormal];
+//        [self.attentionBtn setTitle:[NSString ensureNonnullString:[NSString stringWithFormat:@"%ld",self.livingModel.fansNum] ReplaceStr:@"暂无数据"]
+//                           forState:UIControlStateSelected];
+//
+//        UBLChatVC *chatVC = (UBLChatVC *)self.childVCMutArr[0];
+//        [chatVC setScrollContentMutArr:(NSMutableArray *)@[[NSString ensureNonnullString:self.livingModel.announcement ReplaceStr:@"暂无数据"]]];
+//        chatVC.scrollLabelView.alpha = 1;
+//
+//        self.attentionBtn.selected = self.livingModel.is_attention;
+//        //1、flv；2、hls；3、flvs；4、hlss
+////        self.userHeaderView.assetURLStr = @"http://liveplay.yikating.net/live/100037.flv?txSecret=799b50d5a0caebe99c7539995bf5697e&txTime=5FC10589";//临时测试的流地址数据
+////        self.userHeaderView.assetURLStr = [[NSBundle mainBundle] pathForResource:@"iph_X" ofType:@"mp4"];//本地文件可以正常播放
+//        self.userHeaderView.assetURLStr = self.livingModel.playAddr[3].playUrl;//服务器地址
+//        NSLog(@"流地址：%@",self.userHeaderView.assetURLStr);
+//    }];
 }
 //
 //sendMsg
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self sendMsg];
+//    [self sendMsg];
 }
 
 -(void)configChatRoomIMwithSocketIO{
-    SocketIOTools.sharedInstance.urlStr = @"http://222.186.150.148:8002/chat";//@"http://172.24.135.22:9092/chat";//
-
-    id info1 = @{@"roomId":@"10080",
-                  @"token":@"295060456",
-                  @"user":@{@"username":@"Jobs"}};
-    //链接消息
-    @weakify(self)
-    [SocketIOTools.sharedInstance linkServerWithInfo:info1
-                                         serverBlock:^(id data) {
-        @strongify(self);
-        if ([data isKindOfClass:SocketIOModel.class]) {
-            SocketIOModel *socketIOModel = (SocketIOModel *)data;
-            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
-        }
-    }];
+//    SocketIOTools.sharedInstance.urlStr = @"http://222.186.150.148:8002/chat";//@"http://172.24.135.22:9092/chat";//
+//
+//    id info1 = @{@"roomId":@"10080",
+//                  @"token":@"295060456",
+//                  @"user":@{@"username":@"Jobs"}};
+//    //链接消息
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance linkServerWithInfo:info1
+//                                         serverBlock:^(id data) {
+//        @strongify(self);
+//        if ([data isKindOfClass:SocketIOModel.class]) {
+//            SocketIOModel *socketIOModel = (SocketIOModel *)data;
+//            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
+//        }
+//    }];
 }
 //订阅消息:加入房间 链接以后立即订阅
 -(void)joinRoom{
-    @weakify(self)
-    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"joinRoom"
-                                         withServerDataBlock:^(id data) {
-        @strongify(self);
-        if ([data isKindOfClass:SocketIOModel.class]) {
-            SocketIOModel *socketIOModel = (SocketIOModel *)data;
-            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
-        }
-    }];
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"joinRoom"
+//                                         withServerDataBlock:^(id data) {
+//        @strongify(self);
+//        if ([data isKindOfClass:SocketIOModel.class]) {
+//            SocketIOModel *socketIOModel = (SocketIOModel *)data;
+//            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
+//        }
+//    }];
 }
 //订阅消息:离开房间(为了防止一台设备、一个IP、PC端多窗口事件，所以有且仅有所有的该主token名下的全部“子token”全部退出的时候，才会收到leaveRoom频道发送的退出消息)  链接以后立即订阅
 -(void)leaveRoom{
-    @weakify(self)
-    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"leaveRoom"
-                                         withServerDataBlock:^(id data) {
-        @strongify(self);
-        if ([data isKindOfClass:SocketIOModel.class]) {
-            SocketIOModel *socketIOModel = (SocketIOModel *)data;
-            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
-        }
-    }];
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"leaveRoom"
+//                                         withServerDataBlock:^(id data) {
+//        @strongify(self);
+//        if ([data isKindOfClass:SocketIOModel.class]) {
+//            SocketIOModel *socketIOModel = (SocketIOModel *)data;
+//            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
+//        }
+//    }];
 }
 //订阅消息:房间在线人数变化 链接以后立即订阅
 -(void)onlineCount{
-    @weakify(self)
-    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"onlineCount"
-                                         withServerDataBlock:^(id data) {
-        @strongify(self);
-        if ([data isKindOfClass:SocketIOModel.class]) {
-            SocketIOModel *socketIOModel = (SocketIOModel *)data;
-            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
-        }
-    }];
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"onlineCount"
+//                                         withServerDataBlock:^(id data) {
+//        @strongify(self);
+//        if ([data isKindOfClass:SocketIOModel.class]) {
+//            SocketIOModel *socketIOModel = (SocketIOModel *)data;
+//            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
+//        }
+//    }];
 }
 //接受消息
 -(void)receiveMeg{
-    @weakify(self)
-    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"message"
-                                         withServerDataBlock:^(id data) {
-        @strongify(self);
-        if ([data isKindOfClass:SocketIOModel.class]) {
-            SocketIOModel *socketIOModel = (SocketIOModel *)data;
-            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
-        }
-    }];
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance recevieInfoFromChannelName:@"message"
+//                                         withServerDataBlock:^(id data) {
+//        @strongify(self);
+//        if ([data isKindOfClass:SocketIOModel.class]) {
+//            SocketIOModel *socketIOModel = (SocketIOModel *)data;
+//            NSLog(@"频道名:%@,服务器返回数据:%@",socketIOModel.channelName,socketIOModel.serverReturnData);
+//        }
+//    }];
 }
 //发送消息
 -(void)sendMsg{
-    @weakify(self)
-    [SocketIOTools.sharedInstance sendInfoToServer:@{
-        @"messageId": @"88889999", // 消息唯一ID
-        @"username": @"88889999", // 根据产品需求进入直播间但未登录统一username为"访客"
-        @"messageType": @(1),   // 1文本, 2礼物, 3表情,
-        @"message": @"消息"  // 消息
-    }
-                                       channelName:@"message"
-                                   withReturnBlock:nil];
+//    @weakify(self)
+//    [SocketIOTools.sharedInstance sendInfoToServer:@{
+//        @"messageId": @"88889999", // 消息唯一ID
+//        @"username": @"88889999", // 根据产品需求进入直播间但未登录统一username为"访客"
+//        @"messageType": @(1),   // 1文本, 2礼物, 3表情,
+//        @"message": @"消息"  // 消息
+//    }
+//                                       channelName:@"message"
+//                                   withReturnBlock:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

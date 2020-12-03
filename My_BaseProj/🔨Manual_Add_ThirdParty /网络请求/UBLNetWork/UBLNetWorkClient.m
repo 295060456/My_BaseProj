@@ -27,10 +27,10 @@
         
 #if DEBUG
 //        client.baseUrlString = @"http://222.186.150.148:13000";
-        client.baseUrlString = [NSString stringWithFormat:@"%@:%@",UBLBaseURL,UBLUrlPort];
+//        client.baseUrlString = [NSString stringWithFormat:@"%@:%@",UBLBaseURL,UBLUrlPort];
         //@"http://222.186.150.148:12100";
 #else
-        client.baseUrlString = [NSString stringWithFormat:@"%@:%@",UBLBaseURL,UBLUrlPort];
+//        client.baseUrlString = [NSString stringWithFormat:@"%@:%@",UBLBaseURL,UBLUrlPort];
 #endif
 
     });

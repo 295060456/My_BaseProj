@@ -101,7 +101,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 //    [dict setValue:[NSString stringWithFormat:@"Bearer %@", @""] forKey:@"Authorization"];
     [dict setValue:@"0" forKey:@"hq_source"];
-    [dict setValue:[UBLTools idfv] forKey:@"hq_deviceId"];
+//    [dict setValue:[UBLTools idfv] forKey:@"hq_deviceId"];
     return dict;
     
 }

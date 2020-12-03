@@ -13,7 +13,7 @@
 + (instancetype)resultWithError:(NSError *)error {
     UBLNetWorkResult *result = [[UBLNetWorkResult alloc] init];
     result.error = error;
-    [MBProgressHUD showError:result.error.userInfo[@"NSLocalizedDescription"]];
+//    [MBProgressHUD showError:result.error.userInfo[@"NSLocalizedDescription"]];
     return result;
 }
 

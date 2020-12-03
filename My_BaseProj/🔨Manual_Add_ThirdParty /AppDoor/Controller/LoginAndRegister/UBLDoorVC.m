@@ -133,9 +133,9 @@ ZFPlayerController *ZFPlayer_DoorVC;
                     }];
                 }else if ([btn.titleLabel.text isEqualToString:@"登录"]){
                     [self.view endEditing:YES];
-                    UBLDoorInputViewStyle_3 *用户名 = (UBLDoorInputViewStyle_3 *)self.loginContentView.inputViewMutArr[0];
-                    UBLDoorInputViewStyle_3 *密码 = (UBLDoorInputViewStyle_3 *)self.loginContentView.inputViewMutArr[1];
-                    @weakify(self)
+//                    UBLDoorInputViewStyle_3 *用户名 = (UBLDoorInputViewStyle_3 *)self.loginContentView.inputViewMutArr[0];
+//                    UBLDoorInputViewStyle_3 *密码 = (UBLDoorInputViewStyle_3 *)self.loginContentView.inputViewMutArr[1];
+//                    @weakify(self)
 //                    [UBLNetWorkManager postRequestWithUrlPath:UBLUrlUserLogin
 //                                                   parameters:@{
 //                                                       @"account":用户名.tf.text,

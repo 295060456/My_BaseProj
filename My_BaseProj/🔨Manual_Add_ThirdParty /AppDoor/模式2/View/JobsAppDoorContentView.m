@@ -18,8 +18,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 @property(nonatomic,strong)UIButton *abandonLoginBtn;//随便逛逛按钮
 @property(nonatomic,strong)UIButton *loginBtn;//登录按钮
 @property(nonatomic,strong)UIButton *registerBtn;//注册按钮
-@property(nonatomic,strong)NSMutableArray <NSString *>*loginTitleMutArr;
-@property(nonatomic,strong)NSMutableArray <NSString *>*registerTitleMutArr;
+
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*doorInputViewBaseStyleMutArr;
+
 @property(nonatomic,assign)BOOL isOK;
 @property(nonatomic,copy)MKDataBlock jobsAppDoorContentViewBlock;
 
@@ -39,6 +42,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         //进页面最初是登录
         self.toRegisterBtn.alpha = 1;
         self.titleLab.alpha = 1;
+        [self makeInputView];
         self.abandonLoginBtn.alpha = 1;
         self.loginBtn.alpha = 1;
         self.isOK = YES;
@@ -50,8 +54,25 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 }
 
 -(void)makeInputView{
-//    UBLDoorInputViewStyle_3 *inputView;
-    
+    for (int i = 0; i < self.loginDoorInputViewBaseStyleModelMutArr.count; i++) {
+        DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
+        [self.doorInputViewBaseStyleMutArr addObject:inputView];
+        [inputView richElementsInViewWithModel:self.loginDoorInputViewBaseStyleModelMutArr[i]];
+        @weakify(self)
+        [inputView actionBlockDoorInputViewStyle_3:^(id data) {
+            @strongify(self)
+        }];
+        [self addSubview:inputView];
+        inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
+        inputView.mj_x = 20;
+        if (i == 0) {
+            inputView.top = self.titleLab.bottom + 20;//20是偏移量
+        }else if(i == 1){
+            DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i - 1];
+            inputView.top = lastObj.bottom + 10;//10是偏移量
+        }else{}
+        [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
+    }
 }
 
 -(void)animationChangeRegisterBtnFrame{
@@ -84,6 +105,12 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                                 forState:UIControlStateNormal];
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
+            
+            for (int i = 0; i < self.doorInputViewBaseStyleMutArr.count; i++) {
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i];
+                inputView.mj_x += RegisterBtnWidth;
+            }
+            
         }else{
             
             self.registerBtn.alpha = 0;
@@ -96,6 +123,10 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                                 forState:UIControlStateNormal];
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
+            for (int i = 0; i < self.doorInputViewBaseStyleMutArr.count; i++) {
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i];
+                inputView.mj_x = 20;
+            }
         }
         
         if (self.jobsAppDoorContentViewBlock) {
@@ -104,6 +135,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         
         [self.toRegisterBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
                                          imageTitleSpace:8];
+        
+
     } completion:^(BOOL finished) {
         
     }];
@@ -147,25 +180,6 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         _titleLab.centerX = (self.mj_w - self.toRegisterBtn.mj_w) / 2;
         _titleLab.top = 20;
     }return _titleLab;
-}
-
--(NSMutableArray<NSString *> *)loginTitleMutArr{
-    if (!_loginTitleMutArr) {
-        _loginTitleMutArr = NSMutableArray.array;
-        [_loginTitleMutArr addObject:@"用户名"];
-        [_loginTitleMutArr addObject:@"密码"];
-    }return _loginTitleMutArr;
-}
-
--(NSMutableArray<NSString *> *)registerTitleMutArr{
-    if (!_registerTitleMutArr) {
-        _registerTitleMutArr = NSMutableArray.array;
-        [_registerTitleMutArr addObject:@"用户名"];
-        [_registerTitleMutArr addObject:@"密码"];
-        [_registerTitleMutArr addObject:@"确认密码"];
-        [_registerTitleMutArr addObject:@"推广码（可不填写）"];
-        [_registerTitleMutArr addObject:@"图形验证码"];
-    }return _registerTitleMutArr;
 }
 
 -(UIButton *)abandonLoginBtn{
@@ -224,6 +238,75 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         _registerBtn.bottom = self.height - 30;
         _registerBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
     }return _registerBtn;
+}
+
+-(NSMutableArray<DoorInputViewBaseStyleModel *> *)loginDoorInputViewBaseStyleModelMutArr{
+    if (!_loginDoorInputViewBaseStyleModelMutArr) {
+        _loginDoorInputViewBaseStyleModelMutArr = NSMutableArray.array;
+        
+        DoorInputViewBaseStyleModel *用户名 = DoorInputViewBaseStyleModel.new;
+        用户名.leftViewIMG = KIMG(@"用户名称");
+        用户名.placeHolderStr = @"用户名";
+        用户名.isShowDelBtn = YES;
+        用户名.isShowSecurityBtn = NO;
+        [_loginDoorInputViewBaseStyleModelMutArr addObject:用户名];
+        
+        DoorInputViewBaseStyleModel *密码 = DoorInputViewBaseStyleModel.new;
+        密码.leftViewIMG = KIMG(@"Lock");
+        密码.placeHolderStr = @"密码";
+        密码.isShowDelBtn = YES;
+        密码.isShowSecurityBtn = YES;
+        [_loginDoorInputViewBaseStyleModelMutArr addObject:密码];
+        
+    }return _loginDoorInputViewBaseStyleModelMutArr;
+}
+
+-(NSMutableArray<DoorInputViewBaseStyleModel *> *)registerDoorInputViewBaseStyleModelMutArr{
+    if (!_registerDoorInputViewBaseStyleModelMutArr) {
+        _registerDoorInputViewBaseStyleModelMutArr = NSMutableArray.array;
+        
+        DoorInputViewBaseStyleModel *用户名 = DoorInputViewBaseStyleModel.new;
+        用户名.leftViewIMG = KIMG(@"用户名称");
+        用户名.placeHolderStr = @"用户名";
+        用户名.isShowDelBtn = YES;
+        用户名.isShowSecurityBtn = NO;
+        [_registerDoorInputViewBaseStyleModelMutArr addObject:用户名];
+        
+        DoorInputViewBaseStyleModel *密码 = DoorInputViewBaseStyleModel.new;
+        密码.leftViewIMG = KIMG(@"Lock");
+        密码.placeHolderStr = @"密码";
+        密码.isShowDelBtn = YES;
+        密码.isShowSecurityBtn = YES;
+        [_registerDoorInputViewBaseStyleModelMutArr addObject:密码];
+        
+        DoorInputViewBaseStyleModel *确认密码 = DoorInputViewBaseStyleModel.new;
+        确认密码.leftViewIMG = KIMG(@"Lock");
+        确认密码.placeHolderStr = @"确认密码";
+        确认密码.isShowDelBtn = YES;
+        确认密码.isShowSecurityBtn = YES;
+        [_registerDoorInputViewBaseStyleModelMutArr addObject:确认密码];
+        
+        DoorInputViewBaseStyleModel *推广码 = DoorInputViewBaseStyleModel.new;
+        推广码.leftViewIMG = KIMG(@"推广码");
+        推广码.placeHolderStr = @"推广码（可不填写）";
+        推广码.isShowDelBtn = YES;
+        推广码.isShowSecurityBtn = NO;
+        [_registerDoorInputViewBaseStyleModelMutArr addObject:推广码];
+        
+        DoorInputViewBaseStyleModel *图形验证码 = DoorInputViewBaseStyleModel.new;
+        图形验证码.leftViewIMG = KIMG(@"验证ICON");
+        图形验证码.placeHolderStr = @"推广码";
+        图形验证码.isShowDelBtn = YES;
+        图形验证码.isShowSecurityBtn = NO;
+        [_registerDoorInputViewBaseStyleModelMutArr addObject:图形验证码];
+        
+    }return _registerDoorInputViewBaseStyleModelMutArr;
+}
+
+-(NSMutableArray<DoorInputViewBaseStyle *> *)doorInputViewBaseStyleMutArr{
+    if (!_doorInputViewBaseStyleMutArr) {
+        _doorInputViewBaseStyleMutArr = NSMutableArray.array;
+    }return _doorInputViewBaseStyleMutArr;
 }
 
 @end

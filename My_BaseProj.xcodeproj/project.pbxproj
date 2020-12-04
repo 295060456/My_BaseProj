@@ -198,8 +198,12 @@
 		C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEEB3725384310000E1C5F /* UIView+Extras.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
-		C5BCDB69257A2FFB00C80FE3 /* 客服@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */; };
-		C5BCDB6A257A2FFB00C80FE3 /* 客服@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */; };
+		C5BCDC7B257A38F800C80FE3 /* DoorInputViewBaseStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDC7A257A38F800C80FE3 /* DoorInputViewBaseStyle.m */; };
+		C5BCDC81257A391800C80FE3 /* DoorInputViewBaseStyle_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDC80257A391800C80FE3 /* DoorInputViewBaseStyle_1.m */; };
+		C5BCDC87257A392500C80FE3 /* DoorInputViewBaseStyle_2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDC86257A392500C80FE3 /* DoorInputViewBaseStyle_2.m */; };
+		C5BCDC8D257A392E00C80FE3 /* DoorInputViewBaseStyle_3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDC8C257A392E00C80FE3 /* DoorInputViewBaseStyle_3.m */; };
+		C5BCDC93257A393800C80FE3 /* DoorInputViewBaseStyle_4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDC92257A393800C80FE3 /* DoorInputViewBaseStyle_4.m */; };
+		C5BCDD0D257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BCDD0C257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.m */; };
 		C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C243712541550E00CB55F5 /* BaseNavigationVC.m */; };
 		C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
@@ -789,8 +793,22 @@
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
-		C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客服@3x.png"; sourceTree = "<group>"; };
-		C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客服@2x.png"; sourceTree = "<group>"; };
+		C5BCDB7C257A383800C80FE3 /* DoorInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputView.h; sourceTree = "<group>"; };
+		C5BCDC75257A388D00C80FE3 /* UBLDoorInputViewStyle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UBLDoorInputViewStyle_4.png; sourceTree = "<group>"; };
+		C5BCDC76257A389200C80FE3 /* 输入框样式_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "输入框样式_3.png"; sourceTree = "<group>"; };
+		C5BCDC77257A389F00C80FE3 /* 输入框样式_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "输入框样式_1.png"; sourceTree = "<group>"; };
+		C5BCDC79257A38F800C80FE3 /* DoorInputViewBaseStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputViewBaseStyle.h; sourceTree = "<group>"; };
+		C5BCDC7A257A38F800C80FE3 /* DoorInputViewBaseStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorInputViewBaseStyle.m; sourceTree = "<group>"; };
+		C5BCDC7F257A391800C80FE3 /* DoorInputViewBaseStyle_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputViewBaseStyle_1.h; sourceTree = "<group>"; };
+		C5BCDC80257A391800C80FE3 /* DoorInputViewBaseStyle_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorInputViewBaseStyle_1.m; sourceTree = "<group>"; };
+		C5BCDC85257A392500C80FE3 /* DoorInputViewBaseStyle_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputViewBaseStyle_2.h; sourceTree = "<group>"; };
+		C5BCDC86257A392500C80FE3 /* DoorInputViewBaseStyle_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorInputViewBaseStyle_2.m; sourceTree = "<group>"; };
+		C5BCDC8B257A392E00C80FE3 /* DoorInputViewBaseStyle_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputViewBaseStyle_3.h; sourceTree = "<group>"; };
+		C5BCDC8C257A392E00C80FE3 /* DoorInputViewBaseStyle_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorInputViewBaseStyle_3.m; sourceTree = "<group>"; };
+		C5BCDC91257A393800C80FE3 /* DoorInputViewBaseStyle_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoorInputViewBaseStyle_4.h; sourceTree = "<group>"; };
+		C5BCDC92257A393800C80FE3 /* DoorInputViewBaseStyle_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoorInputViewBaseStyle_4.m; sourceTree = "<group>"; };
+		C5BCDD0B257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DoorInputViewBaseStyleModel.h; path = "My_BaseProj/🔨Manual_Add_ThirdParty /AppDoor/模式2/View/输入框样式/DoorInputView/DoorInputViewBaseStyleModel.h"; sourceTree = SOURCE_ROOT; };
+		C5BCDD0C257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DoorInputViewBaseStyleModel.m; path = "My_BaseProj/🔨Manual_Add_ThirdParty /AppDoor/模式2/View/输入框样式/DoorInputView/DoorInputViewBaseStyleModel.m"; sourceTree = SOURCE_ROOT; };
 		C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */ = {isa = PBXFileReference; lastKnownFileType = text; path = "unknown class viewcontroller in interface builder file"; sourceTree = "<group>"; };
 		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
@@ -1828,7 +1846,6 @@
 		C56BA67325788EF300D054D0 /* AppDoor */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68725788EF300D054D0 /* 模式1&2共用的输入框样式 */,
 				C56BAECF2578B1C800D054D0 /* 模式1 */,
 				C56BAED02578B1D600D054D0 /* 模式2 */,
 			);
@@ -1880,6 +1897,7 @@
 		C56BA68225788EF300D054D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA68725788EF300D054D0 /* 输入框样式 */,
 				C56BA68325788EF300D054D0 /* UBLDoor.h */,
 				C56BA69D25788EF300D054D0 /* RetrievePasswordView */,
 				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
@@ -1898,13 +1916,13 @@
 			path = UBLLoginContentView;
 			sourceTree = "<group>";
 		};
-		C56BA68725788EF300D054D0 /* 模式1&2共用的输入框样式 */ = {
+		C56BA68725788EF300D054D0 /* 输入框样式 */ = {
 			isa = PBXGroup;
 			children = (
 				C56BA69C25788EF300D054D0 /* UBLDoorInputView.h */,
 				C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */,
 			);
-			path = "模式1&2共用的输入框样式";
+			path = "输入框样式";
 			sourceTree = "<group>";
 		};
 		C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */ = {
@@ -1932,7 +1950,6 @@
 		C56BA68D25788EF300D054D0 /* 输入框样式_2 */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68F25788EF300D054D0 /* 输入框样式_2.png */,
 				C56BA69025788EF300D054D0 /* UBLDoorInputViewStyle_2.h */,
 				C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */,
 			);
@@ -1951,9 +1968,9 @@
 		C56BA69425788EF300D054D0 /* 输入框样式_4 */ = {
 			isa = PBXGroup;
 			children = (
+				C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */,
 				C56BA69525788EF300D054D0 /* UBLDoorInputViewStyle_4.h */,
 				C56BA69725788EF300D054D0 /* UBLDoorInputViewStyle_4.m */,
-				C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */,
 			);
 			path = "输入框样式_4";
 			sourceTree = "<group>";
@@ -2037,7 +2054,6 @@
 			isa = PBXGroup;
 			children = (
 				C56BAED22578B29400D054D0 /* 尝试高仿蜜柚.md */,
-				C5BCDB66257A2FEE00C80FE3 /* 资源文件 */,
 				C56BAEDD2578B3E900D054D0 /* ViewController */,
 				C56BAED92578B3D700D054D0 /* View */,
 			);
@@ -2047,6 +2063,7 @@
 		C56BAED92578B3D700D054D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5BCDB7B257A380800C80FE3 /* 输入框样式 */,
 				C56BAEE42578B43800D054D0 /* JobsAppDoorContentView.h */,
 				C56BAEE52578B43800D054D0 /* JobsAppDoorContentView.m */,
 			);
@@ -2497,13 +2514,76 @@
 			path = "图形验证码";
 			sourceTree = "<group>";
 		};
-		C5BCDB66257A2FEE00C80FE3 /* 资源文件 */ = {
+		C5BCDB7B257A380800C80FE3 /* 输入框样式 */ = {
 			isa = PBXGroup;
 			children = (
-				C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */,
-				C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */,
+				C5BCDB7D257A384200C80FE3 /* DoorInputView */,
+				C5BCDB7C257A383800C80FE3 /* DoorInputView.h */,
 			);
-			path = "资源文件";
+			path = "输入框样式";
+			sourceTree = "<group>";
+		};
+		C5BCDB7D257A384200C80FE3 /* DoorInputView */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDB7E257A384D00C80FE3 /* 输入框样式_1 */,
+				C5BCDB7F257A386400C80FE3 /* 输入框样式_2 */,
+				C5BCDC6D257A387700C80FE3 /* 输入框样式_3 */,
+				C5BCDC71257A387C00C80FE3 /* 输入框样式_4 */,
+				C5BCDC78257A38DE00C80FE3 /* 输入框样式基类 */,
+			);
+			path = DoorInputView;
+			sourceTree = "<group>";
+		};
+		C5BCDB7E257A384D00C80FE3 /* 输入框样式_1 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDC77257A389F00C80FE3 /* 输入框样式_1.png */,
+				C5BCDC7F257A391800C80FE3 /* DoorInputViewBaseStyle_1.h */,
+				C5BCDC80257A391800C80FE3 /* DoorInputViewBaseStyle_1.m */,
+			);
+			path = "输入框样式_1";
+			sourceTree = "<group>";
+		};
+		C5BCDB7F257A386400C80FE3 /* 输入框样式_2 */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA68F25788EF300D054D0 /* 输入框样式_2.png */,
+				C5BCDC85257A392500C80FE3 /* DoorInputViewBaseStyle_2.h */,
+				C5BCDC86257A392500C80FE3 /* DoorInputViewBaseStyle_2.m */,
+			);
+			path = "输入框样式_2";
+			sourceTree = "<group>";
+		};
+		C5BCDC6D257A387700C80FE3 /* 输入框样式_3 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDC76257A389200C80FE3 /* 输入框样式_3.png */,
+				C5BCDC8B257A392E00C80FE3 /* DoorInputViewBaseStyle_3.h */,
+				C5BCDC8C257A392E00C80FE3 /* DoorInputViewBaseStyle_3.m */,
+			);
+			path = "输入框样式_3";
+			sourceTree = "<group>";
+		};
+		C5BCDC71257A387C00C80FE3 /* 输入框样式_4 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDC75257A388D00C80FE3 /* UBLDoorInputViewStyle_4.png */,
+				C5BCDC91257A393800C80FE3 /* DoorInputViewBaseStyle_4.h */,
+				C5BCDC92257A393800C80FE3 /* DoorInputViewBaseStyle_4.m */,
+			);
+			path = "输入框样式_4";
+			sourceTree = "<group>";
+		};
+		C5BCDC78257A38DE00C80FE3 /* 输入框样式基类 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDC79257A38F800C80FE3 /* DoorInputViewBaseStyle.h */,
+				C5BCDC7A257A38F800C80FE3 /* DoorInputViewBaseStyle.m */,
+				C5BCDD0B257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.h */,
+				C5BCDD0C257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.m */,
+			);
+			path = "输入框样式基类";
 			sourceTree = "<group>";
 		};
 		C5C2441325417C5A00CB55F5 /* 跑马灯效果 */ = {
@@ -3813,9 +3893,7 @@
 				C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */,
 				C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */,
 				C58C61272532B3950092BF89 /* RBCLikeButton.bundle in Resources */,
-				C5BCDB69257A2FFB00C80FE3 /* 客服@3x.png in Resources */,
 				C54AB07D255E5EED000A314D /* WhiteRightArrow@3x.png in Resources */,
-				C5BCDB6A257A2FFB00C80FE3 /* 客服@2x.png in Resources */,
 				C56161CB24EE7450001CD851 /* 签名上架 in Resources */,
 				C544D2E92525DC2F003C2A94 /* 1234.json in Resources */,
 				C55166662575202D00FF5217 /* ZYTextField.bundle in Resources */,
@@ -3967,6 +4045,7 @@
 				C55695D5255BFC3A005C1361 /* TimeModel.m in Sources */,
 				C56BA7DA257892F400D054D0 /* ZBRequestManager.m in Sources */,
 				C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */,
+				C5BCDC7B257A38F800C80FE3 /* DoorInputViewBaseStyle.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */,
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
@@ -4077,6 +4156,7 @@
 				C5914AE725384A2F007777A6 /* UIViewController+GifImageView.m in Sources */,
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */,
+				C5BCDC8D257A392E00C80FE3 /* DoorInputViewBaseStyle_3.m in Sources */,
 				C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */,
 				C54FE244257671C900937C11 /* BaseViewController.m in Sources */,
 				C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */,
@@ -4141,6 +4221,7 @@
 				C56BA6AA25788EF400D054D0 /* UBLRetrievePasswordVC.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C56BA6B225788EF400D054D0 /* UBLDoorInputViewBaseStyle.m in Sources */,
+				C5BCDC87257A392500C80FE3 /* DoorInputViewBaseStyle_2.m in Sources */,
 				C591EED12563C802005B78CC /* CustomGifHeader.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
@@ -4167,6 +4248,7 @@
 				C5727868254094C2002373D7 /* TLTabBarAnimation.m in Sources */,
 				C5C67C5324FE4E65000A26B8 /* UIView+Measure.m in Sources */,
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
+				C5BCDC81257A391800C80FE3 /* DoorInputViewBaseStyle_1.m in Sources */,
 				C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
 				C5AA4908250C8C2D009F583F /* NSObject+SPAlertController.m in Sources */,
@@ -4174,6 +4256,7 @@
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
 				C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */,
+				C5BCDD0D257A3AF900C80FE3 /* DoorInputViewBaseStyleModel.m in Sources */,
 				C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */,
 				C572785B254094C2002373D7 /* TabBarItem.m in Sources */,
 				C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */,
@@ -4188,6 +4271,7 @@
 				C5FE9CE824B5F29C007B9878 /* LongPressToDeleteImageView.m in Sources */,
 				C533701124DB00280082847C /* BRStringPickerView.m in Sources */,
 				C5914AE125384A2F007777A6 /* UIViewController+TZImagePickerController.m in Sources */,
+				C5BCDC93257A393800C80FE3 /* DoorInputViewBaseStyle_4.m in Sources */,
 				C55166642575202D00FF5217 /* ZYTextField.m in Sources */,
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,

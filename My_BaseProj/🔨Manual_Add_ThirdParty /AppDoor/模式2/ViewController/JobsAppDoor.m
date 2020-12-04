@@ -19,7 +19,6 @@
 @property(nonatomic,strong)UBLLogoContentView *logoContentView;
 @property(nonatomic,strong)UIButton *customerServiceBtn;
 
-
 @end
 
 @implementation JobsAppDoor

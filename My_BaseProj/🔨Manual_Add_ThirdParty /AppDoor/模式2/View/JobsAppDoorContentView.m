@@ -21,7 +21,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
-@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*doorInputViewBaseStyleMutArr;
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*loginDoorInputViewBaseStyleMutArr;
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 
 @property(nonatomic,assign)BOOL isOK;
 @property(nonatomic,copy)MKDataBlock jobsAppDoorContentViewBlock;
@@ -56,7 +57,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 -(void)makeInputView{
     for (int i = 0; i < self.loginDoorInputViewBaseStyleModelMutArr.count; i++) {
         DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
-        [self.doorInputViewBaseStyleMutArr addObject:inputView];
+        [self.loginDoorInputViewBaseStyleMutArr addObject:inputView];
         [inputView richElementsInViewWithModel:self.loginDoorInputViewBaseStyleModelMutArr[i]];
         @weakify(self)
         [inputView actionBlockDoorInputViewStyle_3:^(id data) {
@@ -68,7 +69,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         if (i == 0) {
             inputView.top = self.titleLab.bottom + 20;//20是偏移量
         }else if(i == 1){
-            DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i - 1];
+            DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
             inputView.top = lastObj.bottom + 10;//10是偏移量
         }else{}
         [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
@@ -106,11 +107,40 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
             
-            for (int i = 0; i < self.doorInputViewBaseStyleMutArr.count; i++) {
-                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i];
+            for (int i = 0;
+                 i < self.loginDoorInputViewBaseStyleMutArr.count;
+                 i++) {
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i];
                 inputView.mj_x += RegisterBtnWidth;
             }
             
+            if (self.registerDoorInputViewBaseStyleMutArr.count) {//不是第一次
+                for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
+                     i < self.registerDoorInputViewBaseStyleModelMutArr.count;
+                     i++) {
+                    DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i];
+                    inputView.alpha = 1;
+                }
+            }else{//第一次
+                [self.registerDoorInputViewBaseStyleMutArr addObjectsFromArray:self.loginDoorInputViewBaseStyleMutArr];
+                for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
+                     i < self.registerDoorInputViewBaseStyleModelMutArr.count;
+                     i++) {
+                    DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
+                    [self addSubview:inputView];
+                    [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
+                    [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
+                    @weakify(self)
+                    [inputView actionBlockDoorInputViewStyle_3:^(id data) {
+                        @strongify(self)
+                    }];
+                    DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i - 1];
+                    inputView.top = lastObj.bottom + 10;//10是偏移量
+                    inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
+                    inputView.mj_x = 20 + RegisterBtnWidth;
+                    [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
+                }
+            }
         }else{
             
             self.registerBtn.alpha = 0;
@@ -123,9 +153,16 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                                 forState:UIControlStateNormal];
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
-            for (int i = 0; i < self.doorInputViewBaseStyleMutArr.count; i++) {
-                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.doorInputViewBaseStyleMutArr[i];
+            for (int i = 0; i < self.loginDoorInputViewBaseStyleMutArr.count; i++) {
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i];
                 inputView.mj_x = 20;
+            }
+            
+            for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
+                 i < self.registerDoorInputViewBaseStyleModelMutArr.count;
+                 i++) {
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i];
+                inputView.alpha = 0;
             }
         }
         
@@ -303,10 +340,16 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
     }return _registerDoorInputViewBaseStyleModelMutArr;
 }
 
--(NSMutableArray<DoorInputViewBaseStyle *> *)doorInputViewBaseStyleMutArr{
-    if (!_doorInputViewBaseStyleMutArr) {
-        _doorInputViewBaseStyleMutArr = NSMutableArray.array;
-    }return _doorInputViewBaseStyleMutArr;
+-(NSMutableArray<DoorInputViewBaseStyle *> *)loginDoorInputViewBaseStyleMutArr{
+    if (!_loginDoorInputViewBaseStyleMutArr) {
+        _loginDoorInputViewBaseStyleMutArr = NSMutableArray.array;
+    }return _loginDoorInputViewBaseStyleMutArr;
+}
+
+-(NSMutableArray<DoorInputViewBaseStyle *> *)registerDoorInputViewBaseStyleMutArr{
+    if (!_registerDoorInputViewBaseStyleMutArr) {
+        _registerDoorInputViewBaseStyleMutArr = NSMutableArray.array;
+    }return _registerDoorInputViewBaseStyleMutArr;
 }
 
 @end

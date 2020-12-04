@@ -282,6 +282,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         用户名.placeHolderStr = @"用户名";
         用户名.isShowDelBtn = YES;
         用户名.isShowSecurityBtn = NO;
+        用户名.returnKeyType = UIReturnKeyDone;
+        用户名.keyboardAppearance = UIKeyboardAppearanceAlert;
+        用户名.leftViewMode = UITextFieldViewModeAlways;
         [_loginDoorInputViewBaseStyleModelMutArr addObject:用户名];
         
         DoorInputViewBaseStyleModel *密码 = DoorInputViewBaseStyleModel.new;
@@ -289,6 +292,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         密码.placeHolderStr = @"密码";
         密码.isShowDelBtn = YES;
         密码.isShowSecurityBtn = YES;
+        密码.selectedSecurityBtnIMG = KIMG(@"codeEncode");//闭眼
+        密码.unSelectedSecurityBtnIMG =KIMG(@"codeDecode");//开眼
+        密码.returnKeyType = UIReturnKeyDone;
+        密码.keyboardAppearance = UIKeyboardAppearanceAlert;
+        密码.leftViewMode = UITextFieldViewModeAlways;
         [_loginDoorInputViewBaseStyleModelMutArr addObject:密码];
         
     }return _loginDoorInputViewBaseStyleModelMutArr;
@@ -303,6 +311,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         用户名.placeHolderStr = @"用户名";
         用户名.isShowDelBtn = YES;
         用户名.isShowSecurityBtn = NO;
+        用户名.returnKeyType = UIReturnKeyDone;
+        用户名.keyboardAppearance = UIKeyboardAppearanceAlert;
+        用户名.leftViewMode = UITextFieldViewModeAlways;
         [_registerDoorInputViewBaseStyleModelMutArr addObject:用户名];
         
         DoorInputViewBaseStyleModel *密码 = DoorInputViewBaseStyleModel.new;
@@ -310,6 +321,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         密码.placeHolderStr = @"密码";
         密码.isShowDelBtn = YES;
         密码.isShowSecurityBtn = YES;
+        密码.returnKeyType = UIReturnKeyDone;
+        密码.keyboardAppearance = UIKeyboardAppearanceAlert;
+        密码.selectedSecurityBtnIMG = KIMG(@"codeEncode");//闭眼
+        密码.unSelectedSecurityBtnIMG = KIMG(@"codeDecode");//开眼
+        密码.leftViewMode = UITextFieldViewModeAlways;
         [_registerDoorInputViewBaseStyleModelMutArr addObject:密码];
         
         DoorInputViewBaseStyleModel *确认密码 = DoorInputViewBaseStyleModel.new;
@@ -317,6 +333,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         确认密码.placeHolderStr = @"确认密码";
         确认密码.isShowDelBtn = YES;
         确认密码.isShowSecurityBtn = YES;
+        确认密码.returnKeyType = UIReturnKeyDone;
+        确认密码.keyboardAppearance = UIKeyboardAppearanceAlert;
+        确认密码.selectedSecurityBtnIMG = KIMG(@"codeEncode");//闭眼
+        确认密码.unSelectedSecurityBtnIMG =KIMG(@"codeDecode");//开眼
+        确认密码.leftViewMode = UITextFieldViewModeAlways;
         [_registerDoorInputViewBaseStyleModelMutArr addObject:确认密码];
         
         DoorInputViewBaseStyleModel *推广码 = DoorInputViewBaseStyleModel.new;
@@ -324,6 +345,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         推广码.placeHolderStr = @"推广码（可不填写）";
         推广码.isShowDelBtn = YES;
         推广码.isShowSecurityBtn = NO;
+        推广码.returnKeyType = UIReturnKeyDone;
+        推广码.keyboardAppearance = UIKeyboardAppearanceAlert;
+        推广码.leftViewMode = UITextFieldViewModeAlways;
         [_registerDoorInputViewBaseStyleModelMutArr addObject:推广码];
         
         DoorInputViewBaseStyleModel *图形验证码 = DoorInputViewBaseStyleModel.new;
@@ -331,6 +355,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         图形验证码.placeHolderStr = @"推广码";
         图形验证码.isShowDelBtn = YES;
         图形验证码.isShowSecurityBtn = NO;
+        图形验证码.returnKeyType = UIReturnKeyDone;
+        图形验证码.keyboardAppearance = UIKeyboardAppearanceAlert;
+        图形验证码.leftViewMode = UITextFieldViewModeAlways;
         [_registerDoorInputViewBaseStyleModelMutArr addObject:图形验证码];
         
     }return _registerDoorInputViewBaseStyleModelMutArr;

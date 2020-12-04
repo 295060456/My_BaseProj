@@ -198,6 +198,8 @@
 		C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEEB3725384310000E1C5F /* UIView+Extras.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
+		C5BCDB69257A2FFB00C80FE3 /* 客服@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */; };
+		C5BCDB6A257A2FFB00C80FE3 /* 客服@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */; };
 		C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C243712541550E00CB55F5 /* BaseNavigationVC.m */; };
 		C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
@@ -787,6 +789,8 @@
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
+		C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客服@3x.png"; sourceTree = "<group>"; };
+		C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "客服@2x.png"; sourceTree = "<group>"; };
 		C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */ = {isa = PBXFileReference; lastKnownFileType = text; path = "unknown class viewcontroller in interface builder file"; sourceTree = "<group>"; };
 		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
@@ -1824,8 +1828,9 @@
 		C56BA67325788EF300D054D0 /* AppDoor */ = {
 			isa = PBXGroup;
 			children = (
-				C56BAED02578B1D600D054D0 /* 模式2 */,
+				C56BA68725788EF300D054D0 /* 模式1&2共用的输入框样式 */,
 				C56BAECF2578B1C800D054D0 /* 模式1 */,
+				C56BAED02578B1D600D054D0 /* 模式2 */,
 			);
 			path = AppDoor;
 			sourceTree = "<group>";
@@ -1876,7 +1881,6 @@
 			isa = PBXGroup;
 			children = (
 				C56BA68325788EF300D054D0 /* UBLDoor.h */,
-				C56BA68725788EF300D054D0 /* 输入框样式 */,
 				C56BA69D25788EF300D054D0 /* RetrievePasswordView */,
 				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
 				C56BA6A225788EF300D054D0 /* UBLLogoContentView */,
@@ -1894,13 +1898,13 @@
 			path = UBLLoginContentView;
 			sourceTree = "<group>";
 		};
-		C56BA68725788EF300D054D0 /* 输入框样式 */ = {
+		C56BA68725788EF300D054D0 /* 模式1&2共用的输入框样式 */ = {
 			isa = PBXGroup;
 			children = (
 				C56BA69C25788EF300D054D0 /* UBLDoorInputView.h */,
 				C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */,
 			);
-			path = "输入框样式";
+			path = "模式1&2共用的输入框样式";
 			sourceTree = "<group>";
 		};
 		C56BA68825788EF300D054D0 /* UBLDoorInputViewStyle */ = {
@@ -1919,8 +1923,8 @@
 			isa = PBXGroup;
 			children = (
 				C56BA68A25788EF300D054D0 /* 输入框样式_1.png */,
-				C56BA68B25788EF300D054D0 /* UBLDoorInputViewStyle_1.m */,
 				C56BA68C25788EF300D054D0 /* UBLDoorInputViewStyle_1.h */,
+				C56BA68B25788EF300D054D0 /* UBLDoorInputViewStyle_1.m */,
 			);
 			path = "输入框样式_1";
 			sourceTree = "<group>";
@@ -1928,9 +1932,9 @@
 		C56BA68D25788EF300D054D0 /* 输入框样式_2 */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */,
 				C56BA68F25788EF300D054D0 /* 输入框样式_2.png */,
 				C56BA69025788EF300D054D0 /* UBLDoorInputViewStyle_2.h */,
+				C56BA68E25788EF300D054D0 /* UBLDoorInputViewStyle_2.m */,
 			);
 			path = "输入框样式_2";
 			sourceTree = "<group>";
@@ -1948,8 +1952,8 @@
 			isa = PBXGroup;
 			children = (
 				C56BA69525788EF300D054D0 /* UBLDoorInputViewStyle_4.h */,
-				C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */,
 				C56BA69725788EF300D054D0 /* UBLDoorInputViewStyle_4.m */,
+				C56BA69625788EF300D054D0 /* UBLDoorInputViewStyle_4.png */,
 			);
 			path = "输入框样式_4";
 			sourceTree = "<group>";
@@ -1957,8 +1961,8 @@
 		C56BA69825788EF300D054D0 /* 输入框样式_3 */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA69925788EF300D054D0 /* UBLDoorInputViewStyle_3.h */,
 				C56BA69A25788EF300D054D0 /* 输入框样式_3.png */,
+				C56BA69925788EF300D054D0 /* UBLDoorInputViewStyle_3.h */,
 				C56BA69B25788EF300D054D0 /* UBLDoorInputViewStyle_3.m */,
 			);
 			path = "输入框样式_3";
@@ -2033,6 +2037,7 @@
 			isa = PBXGroup;
 			children = (
 				C56BAED22578B29400D054D0 /* 尝试高仿蜜柚.md */,
+				C5BCDB66257A2FEE00C80FE3 /* 资源文件 */,
 				C56BAEDD2578B3E900D054D0 /* ViewController */,
 				C56BAED92578B3D700D054D0 /* View */,
 			);
@@ -2490,6 +2495,15 @@
 				C5B5EF73250D247900DCDA93 /* ImageCodeView.m */,
 			);
 			path = "图形验证码";
+			sourceTree = "<group>";
+		};
+		C5BCDB66257A2FEE00C80FE3 /* 资源文件 */ = {
+			isa = PBXGroup;
+			children = (
+				C5BCDB68257A2FFB00C80FE3 /* 客服@2x.png */,
+				C5BCDB67257A2FFB00C80FE3 /* 客服@3x.png */,
+			);
+			path = "资源文件";
 			sourceTree = "<group>";
 		};
 		C5C2441325417C5A00CB55F5 /* 跑马灯效果 */ = {
@@ -3799,7 +3813,9 @@
 				C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */,
 				C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */,
 				C58C61272532B3950092BF89 /* RBCLikeButton.bundle in Resources */,
+				C5BCDB69257A2FFB00C80FE3 /* 客服@3x.png in Resources */,
 				C54AB07D255E5EED000A314D /* WhiteRightArrow@3x.png in Resources */,
+				C5BCDB6A257A2FFB00C80FE3 /* 客服@2x.png in Resources */,
 				C56161CB24EE7450001CD851 /* 签名上架 in Resources */,
 				C544D2E92525DC2F003C2A94 /* 1234.json in Resources */,
 				C55166662575202D00FF5217 /* ZYTextField.bundle in Resources */,

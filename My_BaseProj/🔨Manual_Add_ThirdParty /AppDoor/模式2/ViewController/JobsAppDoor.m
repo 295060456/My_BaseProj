@@ -10,6 +10,9 @@
 #import "JobsAppDoorContentView.h"
 #import "UBLLogoContentView.h"
 
+#define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 2 // 竖形按钮在左边
+#define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
+
 @interface JobsAppDoor ()
 
 @property(nonatomic,strong)JobsAppDoorContentView *jobsAppDoorContentView;
@@ -56,21 +59,21 @@
         @weakify(self)
         [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(UIButton *data) {
             @strongify(self)
-            if (data.selected) {
+            if (data.selected) {//竖形按钮在左边
                 self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                  MAINSCREEN_HEIGHT / 4,
                                                                  MAINSCREEN_WIDTH - 40,
-                                                                 MAINSCREEN_HEIGHT / 3);
+                                                                 JobsAppDoorContentViewLeftHeight);
                 
                 data.frame = CGRectMake(0,
                                         0,
                                         64,
                                         self->_jobsAppDoorContentView.mj_h);
-            }else{
+            }else{//竖形按钮在右边
                 self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                  MAINSCREEN_HEIGHT / 4,
                                                                  MAINSCREEN_WIDTH - 40,
-                                                                 MAINSCREEN_HEIGHT / 2);
+                                                                 JobsAppDoorContentViewRightHeight);
                 data.frame = CGRectMake(self->_jobsAppDoorContentView.mj_w - 64,
                                         0,
                                         64,
@@ -83,7 +86,7 @@
         _jobsAppDoorContentView.frame = CGRectMake(20,
                                                    MAINSCREEN_HEIGHT / 4,
                                                    MAINSCREEN_WIDTH - 40,
-                                                   MAINSCREEN_HEIGHT / 2);
+                                                   JobsAppDoorContentViewRightHeight);
         [UIView cornerCutToCircleWithView:_jobsAppDoorContentView
                           AndCornerRadius:8];
     }return _jobsAppDoorContentView;
@@ -92,8 +95,10 @@
 -(UIButton *)customerServiceBtn{
     if (!_customerServiceBtn) {
         _customerServiceBtn = UIButton.new;
-        [_customerServiceBtn setTitle:@"人工客服" forState:UIControlStateNormal];
-//        [_customerServiceBtn setImage:KIMG(@"") forState:UIControlStateNormal];
+        [_customerServiceBtn setTitle:@"人工客服"
+                             forState:UIControlStateNormal];
+        [_customerServiceBtn setImage:KIMG(@"客服")
+                             forState:UIControlStateNormal];
         [self.view addSubview:_customerServiceBtn];
         _customerServiceBtn.size = CGSizeMake(MAINSCREEN_WIDTH / 3, MAINSCREEN_WIDTH / 9);
         _customerServiceBtn.centerX = self.view.centerX;

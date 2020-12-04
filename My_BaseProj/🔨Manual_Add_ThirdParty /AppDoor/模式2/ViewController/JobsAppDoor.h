@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 #import "JobsAppDoorContentView.h"
+#import "JobsAppDoorContentView.h"
+#import "UBLLogoContentView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

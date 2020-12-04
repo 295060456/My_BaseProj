@@ -11,11 +11,18 @@
 #import "DoorInputView.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@interface JobsAppDoorContentViewModel : NSObject
+
+@property(nonatomic,assign)CGFloat contentViewLeftHeight;// 竖形按钮在左边
+@property(nonatomic,assign)CGFloat contentViewRightHeight;// 竖形按钮在右边
+
+@end
 
 @interface JobsAppDoorContentView : UIView
 
 @property(nonatomic,strong)UIButton *toRegisterBtn;//去注册
 
+-(void)richElementsInViewWithModel:(JobsAppDoorContentViewModel *_Nullable)appDoorContentViewModel;//外层数据渲染
 -(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock;
 
 @end

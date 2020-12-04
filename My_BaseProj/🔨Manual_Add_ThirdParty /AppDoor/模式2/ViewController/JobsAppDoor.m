@@ -7,8 +7,6 @@
 //
 
 #import "JobsAppDoor.h"
-#import "JobsAppDoorContentView.h"
-#import "UBLLogoContentView.h"
 
 #define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 2 // 竖形按钮在左边
 #define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
@@ -55,6 +53,12 @@
 -(JobsAppDoorContentView *)jobsAppDoorContentView{
     if (!_jobsAppDoorContentView) {
         _jobsAppDoorContentView = JobsAppDoorContentView.new;
+        
+        JobsAppDoorContentViewModel *appDoorContentViewModel = JobsAppDoorContentViewModel.new;
+        appDoorContentViewModel.contentViewLeftHeight = JobsAppDoorContentViewLeftHeight;
+        appDoorContentViewModel.contentViewRightHeight = JobsAppDoorContentViewRightHeight;
+        
+        [_jobsAppDoorContentView richElementsInViewWithModel:appDoorContentViewModel];
         @weakify(self)
         [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(UIButton *data) {
             @strongify(self)

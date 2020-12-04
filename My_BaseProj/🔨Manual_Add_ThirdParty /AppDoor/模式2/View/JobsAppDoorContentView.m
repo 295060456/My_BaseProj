@@ -16,8 +16,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 
 @property(nonatomic,strong)UILabel *titleLab;//标题
 @property(nonatomic,strong)UIButton *abandonLoginBtn;//随便逛逛按钮
-@property(nonatomic,strong)UIButton *loginBtn;//登录按钮
-@property(nonatomic,strong)UIButton *registerBtn;//注册按钮
+@property(nonatomic,strong)UIButton *sendBtn;//登录 & 注册按钮
 
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
@@ -25,6 +24,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 
 @property(nonatomic,assign)BOOL isOK;
+@property(nonatomic,strong)JobsAppDoorContentViewModel *appDoorContentViewModel;
 @property(nonatomic,copy)MKDataBlock jobsAppDoorContentViewBlock;
 
 @end
@@ -45,7 +45,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         self.titleLab.alpha = 1;
         [self makeInputView];
         self.abandonLoginBtn.alpha = 1;
-        self.loginBtn.alpha = 1;
+        self.sendBtn.alpha = 1;
         self.isOK = YES;
     }
 }
@@ -76,6 +76,10 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
     }
 }
 
+-(void)richElementsInViewWithModel:(JobsAppDoorContentViewModel *_Nullable)appDoorContentViewModel{
+    self.appDoorContentViewModel = appDoorContentViewModel;
+}
+
 -(void)animationChangeRegisterBtnFrame{
     /*
      *    使用弹簧的描述时间曲线来执行动画 ,当dampingRatio == 1 时,动画会平稳的减速到最终的模型值,而不会震荡.
@@ -96,9 +100,13 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         @strongify(self)
         if (self.toRegisterBtn.selected) {
             
-            self.registerBtn.alpha = 1;
             self.abandonLoginBtn.alpha = 0;
-            self.loginBtn.alpha = 0;
+            
+            [self.sendBtn setTitle:@"注册"
+                          forState:UIControlStateNormal];
+            self.sendBtn.mj_x = self.toRegisterBtn.mj_w + 20;
+            self.sendBtn.bottom = self.appDoorContentViewModel.contentViewLeftHeight - 30;
+            self.sendBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
             
             self.titleLab.centerX = (self.mj_w + self.toRegisterBtn.mj_w) / 2;
             self.titleLab.text = @"注册";
@@ -143,9 +151,13 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
             }
         }else{
             
-            self.registerBtn.alpha = 0;
             self.abandonLoginBtn.alpha = 1;
-            self.loginBtn.alpha = 1;
+            
+            [self.sendBtn setTitle:@"登录"
+                          forState:UIControlStateNormal];
+            self.sendBtn.mj_x = 20;
+            self.sendBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
+            self.sendBtn.bottom = self.abandonLoginBtn.top - 10;
             
             self.titleLab.centerX = (self.mj_w - self.toRegisterBtn.mj_w) / 2;
             self.titleLab.text = @"登录";
@@ -239,42 +251,26 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
     }return _abandonLoginBtn;
 }
 
--(UIButton *)loginBtn{
-    if (!_loginBtn) {
-        _loginBtn = UIButton.new;
-        [_loginBtn setTitle:@"登录"
+-(UIButton *)sendBtn{
+    if (!_sendBtn) {
+        _sendBtn = UIButton.new;
+        [_sendBtn setTitle:@"登录"
                    forState:UIControlStateNormal];
-        _loginBtn.backgroundColor = [KSystemPinkColor colorWithAlphaComponent:0.7];
-        [_loginBtn setTitleColor:kWhiteColor
+        _sendBtn.backgroundColor = [KSystemPinkColor colorWithAlphaComponent:0.7];
+        [_sendBtn setTitleColor:kWhiteColor
                         forState:UIControlStateNormal];
-        _loginBtn.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
-        [_loginBtn.titleLabel sizeToFit];
+        _sendBtn.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
+        [_sendBtn.titleLabel sizeToFit];
         @weakify(self)
-        [[_loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [[_sendBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
         }];
-        [self addSubview:_loginBtn];
-        _loginBtn.mj_x = 20;
-        _loginBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
-        _loginBtn.bottom = self.abandonLoginBtn.top - 10;
-        [UIView cornerCutToCircleWithView:_loginBtn AndCornerRadius:_loginBtn.mj_h / 2];
-    }return _loginBtn;
-}
-
--(UIButton *)registerBtn{
-    if (!_registerBtn) {
-        _registerBtn = UIButton.new;
-        [_registerBtn setTitle:@"注册"
-                      forState:UIControlStateNormal];
-        @weakify(self)
-        [[_registerBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self)
-        }];
-        [self addSubview:_registerBtn];
-        _registerBtn.mj_x = self.toRegisterBtn.mj_x + self.toRegisterBtn.mj_w + 10;//10是偏移量
-        _registerBtn.bottom = self.height - 30;
-        _registerBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
-    }return _registerBtn;
+        [self addSubview:_sendBtn];
+        _sendBtn.mj_x = 20;
+        _sendBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
+        _sendBtn.bottom = self.abandonLoginBtn.top - 10;
+        [UIView cornerCutToCircleWithView:_sendBtn AndCornerRadius:_sendBtn.mj_h / 2];
+    }return _sendBtn;
 }
 
 -(NSMutableArray<DoorInputViewBaseStyleModel *> *)loginDoorInputViewBaseStyleModelMutArr{
@@ -353,3 +349,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 }
 
 @end
+
+@implementation JobsAppDoorContentViewModel
+
+@end
+
+

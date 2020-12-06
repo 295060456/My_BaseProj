@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JobsAppDoorContentView : UIView
 
 @property(nonatomic,strong)UIButton *toRegisterBtn;//去注册
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*loginDoorInputViewBaseStyleMutArr;
+@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 
 -(void)richElementsInViewWithModel:(JobsAppDoorContentViewModel *_Nullable)appDoorContentViewModel;//外层数据渲染
 -(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock;

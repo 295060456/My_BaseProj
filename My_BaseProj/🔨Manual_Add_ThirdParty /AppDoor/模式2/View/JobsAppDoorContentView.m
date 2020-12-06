@@ -20,8 +20,6 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
-@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*loginDoorInputViewBaseStyleMutArr;
-@property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 
 @property(nonatomic,assign)BOOL isOK;
 @property(nonatomic,strong)JobsAppDoorContentViewModel *appDoorContentViewModel;
@@ -73,6 +71,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
             inputView.top = lastObj.bottom + 10;//10是偏移量
         }else{}
         [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
+        [self layoutIfNeeded];// 这句话不加，不刷新界面，placeHolder会出现异常
     }
 }
 
@@ -184,8 +183,6 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         
         [self.toRegisterBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
                                          imageTitleSpace:8];
-        
-
     } completion:^(BOOL finished) {
         
     }];

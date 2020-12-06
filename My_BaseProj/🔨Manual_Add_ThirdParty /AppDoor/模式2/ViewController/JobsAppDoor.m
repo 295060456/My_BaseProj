@@ -8,14 +8,20 @@
 
 #import "JobsAppDoor.h"
 
-#define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 2 // 竖形按钮在左边
+#define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 1.7 // 竖形按钮在左边
 #define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
 
 @interface JobsAppDoor ()
 
-@property(nonatomic,strong)JobsAppDoorContentView *jobsAppDoorContentView;
 @property(nonatomic,strong)UBLLogoContentView *logoContentView;
+@property(nonatomic,strong)JobsAppDoorContentView *jobsAppDoorContentView;
 @property(nonatomic,strong)UIButton *customerServiceBtn;
+//只要有一个TF还在编辑那么就是在编辑
+@property(nonatomic,assign)BOOL loginDoorInputEditing;
+@property(nonatomic,assign)BOOL registerDoorInputEditing;
+@property(nonatomic,assign)CGFloat logoContentViewY;//初始高度
+@property(nonatomic,assign)CGFloat jobsAppDoorContentViewY;//初始高度
+@property(nonatomic,assign)CGFloat customerServiceBtnY;//初始高度
 
 @end
 
@@ -23,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self keyboard];
     self.view.backgroundColor = kBlueColor;
 //    self.setupNavigationBarHidden = YES;
     [UIView animationAlert:self.jobsAppDoorContentView];
@@ -37,6 +44,50 @@
     self.navigationController.navigationBarHidden = YES;
     [self.navigationController setNavigationBarHidden:YES animated:true];
 }
+
+-(void)keyboard{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillChangeFrameNotification:)
+                                                 name:UIKeyboardWillChangeFrameNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidChangeFrameNotification:)
+                                                 name:UIKeyboardDidChangeFrameNotification
+                                               object:nil];
+}
+//键盘 弹出 和 收回 走这个方法
+-(void)keyboardWillChangeFrameNotification:(NSNotification *)notification{}
+
+-(void)keyboardDidChangeFrameNotification:(NSNotification *)notification{
+//    NSDictionary *userInfo = notification.userInfo;
+//    CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+//    CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    CGFloat KeyboardOffsetY = beginFrame.origin.y - endFrame.origin.y;
+    
+    long index = 0;
+    for (DoorInputViewBaseStyle_3 *inputView in self.jobsAppDoorContentView.loginDoorInputViewBaseStyleMutArr) {
+        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
+        ZYTextField *tf = object_getIvar(inputView, ivar);
+        self.loginDoorInputEditing |= tf.editing;
+        if (tf.editing) {
+            NSLog(@"FFF = %ld",index);
+            self.jobsAppDoorContentView.mj_y -= 40 * (index + 1);
+            self.logoContentView.mj_y -= 40 * (index + 1);
+            self.customerServiceBtn.mj_y -= 40 * (index + 1);
+        }
+        index += 1;
+    }
+    
+    if (!self.loginDoorInputEditing) {
+        NSLog(@"");
+        self.jobsAppDoorContentView.mj_y = self.jobsAppDoorContentViewY;
+        self.logoContentView.mj_y = self.logoContentViewY;
+        self.customerServiceBtn.mj_y = self.customerServiceBtnY;
+    }
+    
+    self.loginDoorInputEditing = NO;//置空状态
+}
 #pragma mark —— lazyLoad
 -(UBLLogoContentView *)logoContentView{
     if (!_logoContentView) {
@@ -47,6 +98,8 @@
             make.bottom.equalTo(self.jobsAppDoorContentView.mas_top).offset(-50);
             make.centerX.equalTo(self.view);
         }];
+        [self.view layoutIfNeeded];
+        self.logoContentViewY = self.logoContentView.mj_y;
     }return _logoContentView;
 }
 
@@ -90,6 +143,7 @@
                                                    MAINSCREEN_HEIGHT / 4,
                                                    MAINSCREEN_WIDTH - 40,
                                                    JobsAppDoorContentViewRightHeight);
+        self.jobsAppDoorContentViewY = _jobsAppDoorContentView.mj_y;
         [UIView cornerCutToCircleWithView:_jobsAppDoorContentView
                           AndCornerRadius:8];
     }return _jobsAppDoorContentView;
@@ -106,6 +160,7 @@
         _customerServiceBtn.size = CGSizeMake(MAINSCREEN_WIDTH / 3, MAINSCREEN_WIDTH / 9);
         _customerServiceBtn.centerX = self.view.centerX;
         _customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
+        self.customerServiceBtnY = _customerServiceBtn.mj_y;
         @weakify(self)
         [[_customerServiceBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             //点击事件

@@ -9,7 +9,7 @@
 #import "ViewController@3.h"
 
 #import "UBLDoorVC.h"
-#import "JobsAppDoor.h"
+#import "JobsAppDoorVC.h"
 
 @interface ViewController_3 ()
 
@@ -30,7 +30,7 @@
           withEvent:(UIEvent *)event{
     //尝试高仿蜜柚 登录注册忘记密码
     [UIViewController comingFromVC:self
-                              toVC:JobsAppDoor.new
+                              toVC:JobsAppDoorVC.new
                        comingStyle:ComingStyle_PUSH
                  presentationStyle:[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
                      requestParams:@(doorBgType_Image)

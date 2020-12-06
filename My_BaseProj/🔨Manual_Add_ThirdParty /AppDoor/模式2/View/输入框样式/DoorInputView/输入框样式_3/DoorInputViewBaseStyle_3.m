@@ -43,7 +43,9 @@ UITextFieldDelegate
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
 - (BOOL)textFieldShouldBeginEditing:(ZYTextField *)textField{
-    return YES;
+    if (self.doorInputViewStyle_3Block) {
+        self.doorInputViewStyle_3Block(textField);
+    }return YES;
 }
 //告诉委托人在指定的文本字段中开始编辑
 - (void)textFieldDidBeginEditing:(UITextField *)textField{

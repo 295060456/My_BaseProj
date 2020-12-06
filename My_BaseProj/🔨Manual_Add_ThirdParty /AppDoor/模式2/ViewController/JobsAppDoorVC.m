@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
-#import "JobsAppDoor.h"
+#import "JobsAppDoorVC.h"
 
 #define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 1.7 // 竖形按钮在左边
 #define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     CurrentPage_register
 };
 
-@interface JobsAppDoor ()
+@interface JobsAppDoorVC ()
 
 @property(nonatomic,strong)UBLLogoContentView *logoContentView;
 @property(nonatomic,strong)JobsAppDoorContentView *jobsAppDoorContentView;
@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
 
 @end
 
-@implementation JobsAppDoor
+@implementation JobsAppDoorVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -128,33 +128,40 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
         
         [_jobsAppDoorContentView richElementsInViewWithModel:appDoorContentViewModel];
         @weakify(self)
-        [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(UIButton *data) {
+        //监测输入字符回调 和 激活的textField 和 toRegisterBtn点击事件
+        [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(id data) {
             @strongify(self)
-            if (data.selected) {//竖形按钮在左边
-                self.currentPage = CurrentPage_register;//注册页面
-                self->_jobsAppDoorContentView.frame = CGRectMake(20,
-                                                                 MAINSCREEN_HEIGHT / 4,
-                                                                 MAINSCREEN_WIDTH - 40,
-                                                                 JobsAppDoorContentViewLeftHeight);
+            if ([data isKindOfClass:UIButton.class]) {
+                UIButton *btn = (UIButton *)data;
+                if (btn.selected) {//竖形按钮在左边
+                    self.currentPage = CurrentPage_register;//注册页面
+                    self->_jobsAppDoorContentView.frame = CGRectMake(20,
+                                                                     MAINSCREEN_HEIGHT / 4,
+                                                                     MAINSCREEN_WIDTH - 40,
+                                                                     JobsAppDoorContentViewLeftHeight);
+                    
+                    btn.frame = CGRectMake(0,
+                                            0,
+                                            64,
+                                            self->_jobsAppDoorContentView.mj_h);
+                }else{//竖形按钮在右边
+                    self.currentPage = CurrentPage_login;//登录页面
+                    self->_jobsAppDoorContentView.frame = CGRectMake(20,
+                                                                     MAINSCREEN_HEIGHT / 4,
+                                                                     MAINSCREEN_WIDTH - 40,
+                                                                     JobsAppDoorContentViewRightHeight);
+                    btn.frame = CGRectMake(self->_jobsAppDoorContentView.mj_w - 64,
+                                            0,
+                                            64,
+                                            self->_jobsAppDoorContentView.mj_h);
+                }
+                self.customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
+                self.customerServiceBtnY =  self.customerServiceBtn.mj_y;
+            }else if ([data isKindOfClass:ZYTextField.class]){
                 
-                data.frame = CGRectMake(0,
-                                        0,
-                                        64,
-                                        self->_jobsAppDoorContentView.mj_h);
-            }else{//竖形按钮在右边
-                self.currentPage = CurrentPage_login;//登录页面
-                self->_jobsAppDoorContentView.frame = CGRectMake(20,
-                                                                 MAINSCREEN_HEIGHT / 4,
-                                                                 MAINSCREEN_WIDTH - 40,
-                                                                 JobsAppDoorContentViewRightHeight);
-                data.frame = CGRectMake(self->_jobsAppDoorContentView.mj_w - 64,
-                                        0,
-                                        64,
-                                        self->_jobsAppDoorContentView.mj_h);
-            }
-            
-            self.customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
-            self.customerServiceBtnY =  self.customerServiceBtn.mj_y;
+            }else if ([data isKindOfClass:NSString.class]){
+                
+            }else{}
         }];
         [self.view addSubview:_jobsAppDoorContentView];
         _jobsAppDoorContentView.frame = CGRectMake(20,

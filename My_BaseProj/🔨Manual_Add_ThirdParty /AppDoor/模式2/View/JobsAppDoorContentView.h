@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 
 -(void)richElementsInViewWithModel:(JobsAppDoorContentViewModel *_Nullable)appDoorContentViewModel;//外层数据渲染
--(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock;
+-(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock;//监测输入字符回调 和 激活的textField 和 toRegisterBtn点击事件
 
 @end
 

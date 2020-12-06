@@ -60,6 +60,9 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         @weakify(self)
         [inputView actionBlockDoorInputViewStyle_3:^(id data) {
             @strongify(self)
+            if (self.jobsAppDoorContentViewBlock) {
+                self.jobsAppDoorContentViewBlock(data);//监测输入字符回调 和 激活的textField
+            }
         }];
         [self addSubview:inputView];
         inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);

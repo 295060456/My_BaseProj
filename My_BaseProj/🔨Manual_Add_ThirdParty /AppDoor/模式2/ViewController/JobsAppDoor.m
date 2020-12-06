@@ -11,6 +11,11 @@
 #define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 1.7 // 竖形按钮在左边
 #define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
 
+typedef NS_ENUM(NSInteger, CurrentPage) {
+    CurrentPage_login = 0,
+    CurrentPage_register
+};
+
 @interface JobsAppDoor ()
 
 @property(nonatomic,strong)UBLLogoContentView *logoContentView;
@@ -22,6 +27,7 @@
 @property(nonatomic,assign)CGFloat logoContentViewY;//初始高度
 @property(nonatomic,assign)CGFloat jobsAppDoorContentViewY;//初始高度
 @property(nonatomic,assign)CGFloat customerServiceBtnY;//初始高度
+@property(nonatomic,assign)CurrentPage currentPage;
 
 @end
 
@@ -29,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.currentPage = CurrentPage_login;//默认页面是登录
     [self keyboard];
     self.view.backgroundColor = kBlueColor;
 //    self.setupNavigationBarHidden = YES;
@@ -64,14 +71,22 @@
 //    CGRect beginFrame = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
 //    CGRect endFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
 //    CGFloat KeyboardOffsetY = beginFrame.origin.y - endFrame.origin.y;
+
+    NSMutableArray * (^currentPageDataMutArr)(CurrentPage currentPage) = ^(CurrentPage currentPage){
+        if (currentPage == CurrentPage_login) {
+            return self.jobsAppDoorContentView.loginDoorInputViewBaseStyleMutArr;
+        }else{
+            return self.jobsAppDoorContentView.registerDoorInputViewBaseStyleMutArr;
+        }
+    };
     
     long index = 0;
-    for (DoorInputViewBaseStyle_3 *inputView in self.jobsAppDoorContentView.loginDoorInputViewBaseStyleMutArr) {
+    for (DoorInputViewBaseStyle_3 *inputView in currentPageDataMutArr(self.currentPage)) {
         Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
         ZYTextField *tf = object_getIvar(inputView, ivar);
         self.loginDoorInputEditing |= tf.editing;
         if (tf.editing) {
-            NSLog(@"FFF = %ld",index);
+            NSLog(@"FFF = %ld",index);//当前被激活的idx
             self.jobsAppDoorContentView.mj_y -= 40 * (index + 1);
             self.logoContentView.mj_y -= 40 * (index + 1);
             self.customerServiceBtn.mj_y -= 40 * (index + 1);
@@ -116,6 +131,7 @@
         [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(UIButton *data) {
             @strongify(self)
             if (data.selected) {//竖形按钮在左边
+                self.currentPage = CurrentPage_register;//注册页面
                 self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                  MAINSCREEN_HEIGHT / 4,
                                                                  MAINSCREEN_WIDTH - 40,
@@ -126,6 +142,7 @@
                                         64,
                                         self->_jobsAppDoorContentView.mj_h);
             }else{//竖形按钮在右边
+                self.currentPage = CurrentPage_login;//登录页面
                 self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                  MAINSCREEN_HEIGHT / 4,
                                                                  MAINSCREEN_WIDTH - 40,
@@ -137,6 +154,7 @@
             }
             
             self.customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
+            self.customerServiceBtnY =  self.customerServiceBtn.mj_y;
         }];
         [self.view addSubview:_jobsAppDoorContentView];
         _jobsAppDoorContentView.frame = CGRectMake(20,

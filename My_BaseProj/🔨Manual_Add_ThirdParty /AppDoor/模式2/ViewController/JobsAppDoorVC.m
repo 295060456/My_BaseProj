@@ -27,7 +27,9 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
 @property(nonatomic,assign)CGFloat logoContentViewY;//初始高度
 @property(nonatomic,assign)CGFloat jobsAppDoorContentViewY;//初始高度
 @property(nonatomic,assign)CGFloat customerServiceBtnY;//初始高度
-@property(nonatomic,assign)CurrentPage currentPage;
+@property(nonatomic,assign)CurrentPage currentPage;//当前的页面位置
+@property(nonatomic,assign)NSInteger currentActivateTFIndex;//当前被激活的输入框的序列号
+@property(nonatomic,assign)NSInteger lastTimeActivateTFIndex;//上一时刻被激活的输入框的序列号
 
 @end
 
@@ -80,25 +82,30 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
         }
     };
     
-    long index = 0;
+    NSInteger index = 0;
     for (DoorInputViewBaseStyle_3 *inputView in currentPageDataMutArr(self.currentPage)) {
         Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
         ZYTextField *tf = object_getIvar(inputView, ivar);
         self.loginDoorInputEditing |= tf.editing;
         if (tf.editing) {
             NSLog(@"FFF = %ld",index);//当前被激活的idx
-            self.jobsAppDoorContentView.mj_y -= 40 * (index + 1);
-            self.logoContentView.mj_y -= 40 * (index + 1);
-            self.customerServiceBtn.mj_y -= 40 * (index + 1);
+            self.lastTimeActivateTFIndex = self.currentActivateTFIndex;
+            self.currentActivateTFIndex = index;//赋予新值。因为同一时刻，textField有且只有一个被激活
         }
         index += 1;
     }
     
     if (!self.loginDoorInputEditing) {
-        NSLog(@"");
+        NSLog(@"没有在编辑");
         self.jobsAppDoorContentView.mj_y = self.jobsAppDoorContentViewY;
         self.logoContentView.mj_y = self.logoContentViewY;
         self.customerServiceBtn.mj_y = self.customerServiceBtnY;
+    }else{
+        NSLog(@"在编辑");
+        NSInteger offsetIdx = self.currentActivateTFIndex - self.lastTimeActivateTFIndex;
+        self.jobsAppDoorContentView.mj_y -= 40 * (offsetIdx + 0);
+        self.logoContentView.mj_y -= 40 * (offsetIdx + 0);
+        self.customerServiceBtn.mj_y -= 40 * (offsetIdx + 0);
     }
     
     self.loginDoorInputEditing = NO;//置空状态

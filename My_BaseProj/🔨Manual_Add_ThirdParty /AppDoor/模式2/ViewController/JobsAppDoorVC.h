@@ -8,7 +8,6 @@
 
 #import "BaseViewController.h"
 #import "JobsAppDoorContentView.h"
-#import "JobsAppDoorContentView.h"
 #import "CustomZFPlayerControlView.h"
 #import "UBLLogoContentView.h"
 

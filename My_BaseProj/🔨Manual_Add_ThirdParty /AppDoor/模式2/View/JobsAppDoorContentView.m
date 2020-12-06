@@ -17,6 +17,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 @property(nonatomic,strong)UILabel *titleLab;//标题
 @property(nonatomic,strong)UIButton *abandonLoginBtn;//随便逛逛按钮
 @property(nonatomic,strong)UIButton *sendBtn;//登录 & 注册按钮
+@property(nonatomic,strong)UIButton *toRegisterBtn;//去注册
 
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
@@ -31,7 +32,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 
 -(instancetype)init{
     if (self = [super init]) {
-        self.backgroundColor = [kWhiteColor colorWithAlphaComponent:0.7];
+        self.backgroundColor = Cor2;
     }return self;
 }
 
@@ -195,8 +196,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
     if (!_toRegisterBtn) {
         _toRegisterBtn = UIButton.new;
         _toRegisterBtn.titleLabel.numberOfLines = 0;
-        _toRegisterBtn.backgroundColor = [kBlackColor colorWithAlphaComponent:.6f];
-        _toRegisterBtn.titleLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];
+        _toRegisterBtn.backgroundColor = Cor1;
+        [_toRegisterBtn setTitleColor:Cor2
+                             forState:UIControlStateNormal];
+        _toRegisterBtn.titleLabel.font = [UIFont systemFontOfSize:13
+                                                           weight:UIFontWeightMedium];
         [_toRegisterBtn setTitle:@"新\n用\n户\n注\n册"
                         forState:UIControlStateNormal];
         [_toRegisterBtn setImage:KIMG(@"用户名称")
@@ -223,7 +227,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         _titleLab = UILabel.new;
         _titleLab.text = @"登录";
         _titleLab.textColor = kWhiteColor;
-        _titleLab.font = [UIFont systemFontOfSize:20 weight:UIFontWeightRegular];
+        _titleLab.font = [UIFont systemFontOfSize:20
+                                           weight:UIFontWeightRegular];
         [_titleLab sizeToFit];
         [self addSubview:_titleLab];
         _titleLab.centerX = (self.mj_w - self.toRegisterBtn.mj_w) / 2;
@@ -238,7 +243,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                           forState:UIControlStateNormal];
         [_abandonLoginBtn setTitleColor:kWhiteColor
                                forState:UIControlStateNormal];
-        _abandonLoginBtn.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
+        _abandonLoginBtn.titleLabel.font = [UIFont systemFontOfSize:15
+                                                             weight:UIFontWeightSemibold];
         [_abandonLoginBtn.titleLabel sizeToFit];
         @weakify(self)
         [[_abandonLoginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -259,7 +265,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         _sendBtn.backgroundColor = [KSystemPinkColor colorWithAlphaComponent:0.7];
         [_sendBtn setTitleColor:kWhiteColor
                         forState:UIControlStateNormal];
-        _sendBtn.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
+        _sendBtn.titleLabel.font = [UIFont systemFontOfSize:15
+                                                     weight:UIFontWeightSemibold];
         [_sendBtn.titleLabel sizeToFit];
         @weakify(self)
         [[_sendBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {

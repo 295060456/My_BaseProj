@@ -157,6 +157,7 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
 -(JobsAppDoorContentView *)jobsAppDoorContentView{
     if (!_jobsAppDoorContentView) {
         _jobsAppDoorContentView = JobsAppDoorContentView.new;
+        _jobsAppDoorContentView.backgroundColor = Cor2;
         
         JobsAppDoorContentViewModel *appDoorContentViewModel = JobsAppDoorContentViewModel.new;
         appDoorContentViewModel.contentViewLeftHeight = JobsAppDoorContentViewLeftHeight;
@@ -174,6 +175,13 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
                 self.lastTimeActivateTFIndex = 0;
                 
                 if (btn.selected) {//竖形按钮在左边
+                    
+                    self->_jobsAppDoorContentView.backgroundColor = Cor1;
+                    Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
+                    UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
+                    toRegisterBtn.backgroundColor = Cor2;
+                    [toRegisterBtn setTitleColor:Cor1 forState:UIControlStateNormal];
+                    
                     self.currentPage = CurrentPage_register;//注册页面
                     self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                      MAINSCREEN_HEIGHT / 4,
@@ -185,6 +193,13 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
                                             64,
                                             self->_jobsAppDoorContentView.mj_h);
                 }else{//竖形按钮在右边
+                    
+                    self->_jobsAppDoorContentView.backgroundColor = Cor2;
+                    Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
+                    UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
+                    toRegisterBtn.backgroundColor = Cor1;
+                    [toRegisterBtn setTitleColor:Cor2 forState:UIControlStateNormal];
+                    
                     self.currentPage = CurrentPage_login;//登录页面
                     self->_jobsAppDoorContentView.frame = CGRectMake(20,
                                                                      MAINSCREEN_HEIGHT / 4,
@@ -245,10 +260,10 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
         _playerManager.shouldAutoPlay = YES;
 
         if (isiPhoneX_series()) {
-            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"iph_X"
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"welcome_video"
                                                                                              ofType:@"mp4"]];
         }else{
-            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"非iph_X"
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"welcome_video"
                                                                                              ofType:@"mp4"]];
         }
     }return _playerManager;

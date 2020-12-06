@@ -123,7 +123,7 @@
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
 		C56E3E0B2547122700B9F555 /* 资源文件 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0A2547122700B9F555 /* 资源文件 */; };
-		C56E3E10254714BA00B9F555 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0F254714B900B9F555 /* iph_X.mp4 */; };
+		C56F8237257CE2FF00AD621C /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C56F8236257CE2FF00AD621C /* welcome_video.mp4 */; };
 		C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */; };
 		C572769925408AF1002373D7 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572769725408AF1002373D7 /* NavigationBar.m */; };
 		C572785A254094C2002373D7 /* UITabBarItem+TLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */; };
@@ -618,6 +618,7 @@
 		C56E3D832547116B00B9F555 /* ⚽️PicResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "⚽️PicResource"; sourceTree = "<group>"; };
 		C56E3E0A2547122700B9F555 /* 资源文件 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "资源文件"; sourceTree = "<group>"; };
 		C56E3E0F254714B900B9F555 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
+		C56F8236257CE2FF00AD621C /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
 		C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "谁说HTTP GET就不能通过Body来发送数据呢？.md"; sourceTree = "<group>"; };
 		C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
@@ -2032,6 +2033,7 @@
 		C56BAADD2578AF2400D054D0 /* 项目资源 */ = {
 			isa = PBXGroup;
 			children = (
+				C56F8236257CE2FF00AD621C /* welcome_video.mp4 */,
 				C56E3E0F254714B900B9F555 /* iph_X.mp4 */,
 				C56E3D832547116B00B9F555 /* ⚽️PicResource */,
 				C5FE9A4624B5EF2C007B9878 /* Assets.xcassets */,
@@ -3879,13 +3881,13 @@
 				C5727861254094C2002373D7 /* 功能性动效：手势横向滚动子VC联动Tabbar切换 in Resources */,
 				C557DC1624C805DF00754760 /* MJExtension用法 in Resources */,
 				C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */,
-				C56E3E10254714BA00B9F555 /* iph_X.mp4 in Resources */,
 				C544D2E72525DC2F003C2A94 /* 12345.json in Resources */,
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */,
 				C56BA6B125788EF400D054D0 /* 输入框样式_2.png in Resources */,
 				C5727867254094C2002373D7 /* 参考demo in Resources */,
 				C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */,
+				C56F8237257CE2FF00AD621C /* welcome_video.mp4 in Resources */,
 				C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */,
 				C533701524DB00280082847C /* BRPickerView.bundle in Resources */,
 				C56BA6B525788EF400D054D0 /* 输入框样式_3.png in Resources */,

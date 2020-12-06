@@ -10,6 +10,9 @@
 #import "DoorInputViewBaseStyleModel.h"
 #import "DoorInputView.h"
 
+#define Cor1 [kBlackColor colorWithAlphaComponent:0.6f]
+#define Cor2 [kWhiteColor colorWithAlphaComponent:0.7f]
+
 NS_ASSUME_NONNULL_BEGIN
 @interface JobsAppDoorContentViewModel : NSObject
 
@@ -20,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JobsAppDoorContentView : UIView
 
-@property(nonatomic,strong)UIButton *toRegisterBtn;//去注册
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*loginDoorInputViewBaseStyleMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyle *>*registerDoorInputViewBaseStyleMutArr;
 

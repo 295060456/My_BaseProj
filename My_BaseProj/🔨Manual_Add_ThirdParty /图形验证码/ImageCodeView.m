@@ -86,17 +86,7 @@
 }
 ///点击、刷新验证码
 -(void)changeCode:(UITapGestureRecognizer *)sender{
-//    @weakify(self)
-//    [UBLNetWorkManager getRequestWithUrlPath:UBLUrlUserRandCode
-//                                  parameters:@{}
-//                                    finished:^(UBLNetWorkResult * _Nonnull result) {
-//        @strongify(self)
-//        if (!result.error) {
-//            self.captchaKey = result.resultData[@"captchaKey"];
-//            self.CodeStr = result.resultData[@"imgCode"];
-//            NSLog(@"我是图形验证码:%@",self.CodeStr);
-//        }
-//    }];
+    [self getStrCode];
 }
 
 -(void)setCodeStr:(NSString *)CodeStr{

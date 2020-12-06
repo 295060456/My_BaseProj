@@ -11,6 +11,7 @@
 //可以发现：（animateWithDuration + Masonry，动画参数设置无效）
 static float ThingsHeight = 50;//边角半圆形控件的高度
 static float RegisterBtnWidth = 64;//竖形按钮的宽度
+static float InputViewOffset = 15;//输入框承接控件之间的上下间距
 
 @interface JobsAppDoorContentView ()
 
@@ -55,11 +56,11 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
 
 -(void)makeInputView{
     for (int i = 0; i < self.loginDoorInputViewBaseStyleModelMutArr.count; i++) {
-        DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
+        DoorInputViewBaseStyle_4 *inputView = DoorInputViewBaseStyle_4.new;
         [self.loginDoorInputViewBaseStyleMutArr addObject:inputView];
         [inputView richElementsInViewWithModel:self.loginDoorInputViewBaseStyleModelMutArr[i]];
         @weakify(self)
-        [inputView actionBlockDoorInputViewStyle_3:^(id data) {
+        [inputView actionBlockDoorInputViewStyle_4:^(id data) {
             @strongify(self)
             if (self.jobsAppDoorContentViewBlock) {
                 self.jobsAppDoorContentViewBlock(data);//data：监测输入字符回调 和 激活的textField
@@ -71,8 +72,8 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
         if (i == 0) {
             inputView.top = self.titleLab.bottom + 20;//20是偏移量
         }else if(i == 1){
-            DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
-            inputView.top = lastObj.bottom + 10;//10是偏移量
+            DoorInputViewBaseStyle_4 *lastObj = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
+            inputView.top = lastObj.bottom + InputViewOffset;
         }else{}
         [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
         [self layoutIfNeeded];// 这句话不加，不刷新界面，placeHolder会出现异常
@@ -121,7 +122,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
             for (int i = 0;
                  i < self.loginDoorInputViewBaseStyleMutArr.count;
                  i++) {
-                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i];
+                DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i];
                 inputView.mj_x += RegisterBtnWidth;
             }
             
@@ -129,7 +130,7 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                 for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
                      i < self.registerDoorInputViewBaseStyleModelMutArr.count;
                      i++) {
-                    DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i];
+                    DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.registerDoorInputViewBaseStyleMutArr[i];
                     inputView.alpha = 1;
                 }
             }else{//第一次
@@ -137,16 +138,16 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
                 for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
                      i < self.registerDoorInputViewBaseStyleModelMutArr.count;
                      i++) {
-                    DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
+                    DoorInputViewBaseStyle_4 *inputView = DoorInputViewBaseStyle_4.new;
                     [self addSubview:inputView];
                     [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
                     [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
                     @weakify(self)
-                    [inputView actionBlockDoorInputViewStyle_3:^(id data) {
+                    [inputView actionBlockDoorInputViewStyle_4:^(id data) {
                         @strongify(self)
                     }];
-                    DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i - 1];
-                    inputView.top = lastObj.bottom + 10;//10是偏移量
+                    DoorInputViewBaseStyle_4 *lastObj = (DoorInputViewBaseStyle_4 *)self.registerDoorInputViewBaseStyleMutArr[i - 1];
+                    inputView.top = lastObj.bottom + InputViewOffset;
                     inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
                     inputView.mj_x = 20 + RegisterBtnWidth;
                     [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
@@ -169,14 +170,14 @@ static float RegisterBtnWidth = 64;//竖形按钮的宽度
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
             for (int i = 0; i < self.loginDoorInputViewBaseStyleMutArr.count; i++) {
-                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i];
+                DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i];
                 inputView.mj_x = 20;
             }
             
             for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
                  i < self.registerDoorInputViewBaseStyleModelMutArr.count;
                  i++) {
-                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.registerDoorInputViewBaseStyleMutArr[i];
+                DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.registerDoorInputViewBaseStyleMutArr[i];
                 inputView.alpha = 0;
             }
         }

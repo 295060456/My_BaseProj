@@ -245,7 +245,7 @@
                                             [UIScreen mainScreen].bounds.size.width,
                                             [UIScreen mainScreen].bounds.size.height);
     //广告视频URLString/或本地视频名(请带上后缀)
-    videoAdconfiguration.videoNameOrURLString = @"iph_X.mp4";
+    videoAdconfiguration.videoNameOrURLString = @"welcome_video.mp4";
     //是否关闭音频
     videoAdconfiguration.muted = NO;
     //视频填充模式

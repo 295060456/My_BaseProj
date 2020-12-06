@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)NSString *titleStr;
 @property(nonatomic,strong)ZYTextField *tf;
-//@property(nonatomic,strong)JobsTextField *tf;
 @property(nonatomic,strong)UIButton *countDownBtn;
 @property(nonatomic,assign)CGFloat inputViewWidth;
 @property(nonatomic,assign)CGFloat inputViewHeight;

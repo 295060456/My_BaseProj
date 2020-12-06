@@ -285,10 +285,10 @@ ZFPlayerController *ZFPlayer_DoorVC;
         _playerManager.shouldAutoPlay = YES;
 
         if (isiPhoneX_series()) {
-            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"iph_X"
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"welcome_video"
                                                                                              ofType:@"mp4"]];
         }else{
-            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"非iph_X"
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"welcome_video"
                                                                                              ofType:@"mp4"]];
         }
     }return _playerManager;

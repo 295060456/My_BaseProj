@@ -123,7 +123,7 @@ static char *UIButton_CountDownBtn_isCanBeClickWhenTimerCycle = "UIButton_CountD
                 self.isCountDownClockFinished = NO;
                 self.isCountDownClockOpen = NO;
                 
-//                    [self timeFailBeginFrom:self.count];//根据需求来
+                [self timeFailBeginFrom:self.count];//根据需求来
             }
             
             if (self.countDownClickEventBlock) {

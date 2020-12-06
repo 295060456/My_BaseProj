@@ -112,8 +112,8 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     };
     
     NSInteger index = 0;
-    for (DoorInputViewBaseStyle_3 *inputView in currentPageDataMutArr(self.currentPage)) {
-        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
+    for (DoorInputViewBaseStyle_1 *inputView in currentPageDataMutArr(self.currentPage)) {
+        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_1 class], "_tf");//必须是下划线接属性
         ZYTextField *tf = object_getIvar(inputView, ivar);
         self.loginDoorInputEditing |= tf.editing;
         if (tf.editing) {
@@ -187,7 +187,6 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
                                                                      MAINSCREEN_HEIGHT / 4,
                                                                      MAINSCREEN_WIDTH - 40,
                                                                      JobsAppDoorContentViewLeftHeight);
-                    
                     btn.frame = CGRectMake(0,
                                             0,
                                             64,

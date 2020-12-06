@@ -7,12 +7,15 @@
 //
 
 #import "DoorInputViewBaseStyle.h"
+#import "DoorInputViewBaseStyleModel.h"
+#import "ImageCodeView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DoorInputViewBaseStyle_2 : DoorInputViewBaseStyle
 
--(void)richElementsInViewWithModel:(id _Nullable)model;//外层数据渲染
+-(void)richElementsInViewWithModel:(DoorInputViewBaseStyleModel *_Nullable)doorInputViewBaseStyleModel;//外层数据渲染
+-(void)actionBlockDoorInputViewStyle_2:(MKDataBlock)doorInputViewStyle_2Block;//监测输入字符回调 和 激活的textField
 
 @end
 

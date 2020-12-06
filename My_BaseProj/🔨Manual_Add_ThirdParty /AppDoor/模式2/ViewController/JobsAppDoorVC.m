@@ -16,11 +16,17 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     CurrentPage_register
 };
 
+//ZFPlayerController *ZFPlayer_DoorVC;
+
 @interface JobsAppDoorVC ()
 
 @property(nonatomic,strong)UBLLogoContentView *logoContentView;
 @property(nonatomic,strong)JobsAppDoorContentView *jobsAppDoorContentView;
 @property(nonatomic,strong)UIButton *customerServiceBtn;
+@property(nonatomic,strong)UIImageView *bgImgV;
+@property(nonatomic,strong)ZFPlayerController *player;
+@property(nonatomic,strong)ZFAVPlayerManager *playerManager;
+@property(nonatomic,strong,nullable)CustomZFPlayerControlView *customPlayerControlView;
 //只要有一个TF还在编辑那么就是在编辑
 @property(nonatomic,assign)BOOL loginDoorInputEditing;
 @property(nonatomic,assign)BOOL registerDoorInputEditing;
@@ -35,15 +41,26 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
 
 @implementation JobsAppDoorVC
 
+-(void)loadView{
+    [super loadView];
+    if ([self.requestParams integerValue] == JobsAppDoorBgType_Image) {
+        self.view = self.bgImgV;
+    }else if ([self.requestParams integerValue] == JobsAppDoorBgType_video){
+        [self.player.currentPlayerManager play];
+    }else{}
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.currentPage = CurrentPage_login;//默认页面是登录
     [self keyboard];
     self.view.backgroundColor = kBlueColor;
 //    self.setupNavigationBarHidden = YES;
+    
     [UIView animationAlert:self.jobsAppDoorContentView];
     [UIView animationAlert:self.logoContentView];
     [UIView animationAlert:self.customerServiceBtn];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -53,6 +70,18 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     self.navigationController.navigationBarHidden = YES;
     [self.navigationController setNavigationBarHidden:YES animated:true];
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if ([self.requestParams integerValue] == JobsAppDoorBgType_Image) {
+        
+    }else if ([self.requestParams integerValue] == JobsAppDoorBgType_video){
+        if (self.player.currentPlayerManager.isPlaying) {
+            [self.player.currentPlayerManager pause];
+        }
+    }else{}
+}
+
 
 -(void)keyboard{
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -140,6 +169,10 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
             @strongify(self)
             if ([data isKindOfClass:UIButton.class]) {
                 UIButton *btn = (UIButton *)data;
+                //状态置空
+                self.currentActivateTFIndex = 0;
+                self.lastTimeActivateTFIndex = 0;
+                
                 if (btn.selected) {//竖形按钮在左边
                     self.currentPage = CurrentPage_register;//注册页面
                     self->_jobsAppDoorContentView.frame = CGRectMake(20,
@@ -190,7 +223,7 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
                              forState:UIControlStateNormal];
         [self.view addSubview:_customerServiceBtn];
         _customerServiceBtn.size = CGSizeMake(MAINSCREEN_WIDTH / 3, MAINSCREEN_WIDTH / 9);
-        _customerServiceBtn.centerX = self.view.centerX;
+        _customerServiceBtn.centerX = MAINSCREEN_WIDTH / 2;
         _customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
         self.customerServiceBtnY = _customerServiceBtn.mj_y;
         @weakify(self)
@@ -205,5 +238,54 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
                      AndBorderWidth:2];
     }return _customerServiceBtn;
 }
+
+-(ZFAVPlayerManager *)playerManager{
+    if (!_playerManager) {
+        _playerManager = ZFAVPlayerManager.new;
+        _playerManager.shouldAutoPlay = YES;
+
+        if (isiPhoneX_series()) {
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"iph_X"
+                                                                                             ofType:@"mp4"]];
+        }else{
+            _playerManager.assetURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"非iph_X"
+                                                                                             ofType:@"mp4"]];
+        }
+    }return _playerManager;
+}
+
+-(ZFPlayerController *)player{
+    if (!_player) {
+        @weakify(self)
+        _player = [[ZFPlayerController alloc] initWithPlayerManager:self.playerManager
+                                                      containerView:self.view];
+        _player.controlView = self.customPlayerControlView;
+//        ZFPlayer_DoorVC = _player;
+        [_player setPlayerDidToEnd:^(id<ZFPlayerMediaPlayback>  _Nonnull asset) {
+            @strongify(self)
+            [self.playerManager replay];//设置循环播放
+        }];
+    }return _player;
+}
+
+-(CustomZFPlayerControlView *)customPlayerControlView{
+    if (!_customPlayerControlView) {
+        _customPlayerControlView = CustomZFPlayerControlView.new;
+        @weakify(self)
+        [_customPlayerControlView actionCustomZFPlayerControlViewBlock:^(id data, id data2) {
+            @strongify(self)
+            [self.view endEditing:YES];
+        }];
+    }return _customPlayerControlView;
+}
+
+-(UIImageView *)bgImgV{
+    if (!_bgImgV) {
+        _bgImgV = UIImageView.new;
+        _bgImgV.image = KIMG(@"AppDoorBgImage");
+        _bgImgV.userInteractionEnabled = YES;
+    }return _bgImgV;
+}
+
 
 @end

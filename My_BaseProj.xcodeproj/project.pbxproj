@@ -1897,8 +1897,8 @@
 		C56BA68225788EF300D054D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA68725788EF300D054D0 /* 输入框样式 */,
 				C56BA68325788EF300D054D0 /* UBLDoor.h */,
+				C56BA68725788EF300D054D0 /* 输入框样式 */,
 				C56BA69D25788EF300D054D0 /* RetrievePasswordView */,
 				C56BA68425788EF300D054D0 /* UBLLoginContentView */,
 				C56BA6A225788EF300D054D0 /* UBLLogoContentView */,

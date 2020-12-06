@@ -33,7 +33,7 @@
                               toVC:JobsAppDoorVC.new
                        comingStyle:ComingStyle_PUSH
                  presentationStyle:[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
-                     requestParams:@(doorBgType_Image)
+                     requestParams:@(JobsAppDoorBgType_video)
           hidesBottomBarWhenPushed:YES
                           animated:YES
                            success:^(id data) {

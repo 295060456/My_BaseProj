@@ -53,14 +53,14 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
 -(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock{
     self.jobsAppDoorContentViewBlock = jobsAppDoorContentViewBlock;
 }
-
+//Core
 -(void)makeInputView{
     for (int i = 0; i < self.loginDoorInputViewBaseStyleModelMutArr.count; i++) {
-        DoorInputViewBaseStyle_4 *inputView = DoorInputViewBaseStyle_4.new;
+        DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
         [self.loginDoorInputViewBaseStyleMutArr addObject:inputView];
         [inputView richElementsInViewWithModel:self.loginDoorInputViewBaseStyleModelMutArr[i]];
         @weakify(self)
-        [inputView actionBlockDoorInputViewStyle_4:^(id data) {
+        [inputView actionBlockDoorInputViewStyle_3:^(id data) {
             @strongify(self)
             if (self.jobsAppDoorContentViewBlock) {
                 self.jobsAppDoorContentViewBlock(data);//data：监测输入字符回调 和 激活的textField
@@ -72,7 +72,7 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
         if (i == 0) {
             inputView.top = self.titleLab.bottom + 20;//20是偏移量
         }else if(i == 1){
-            DoorInputViewBaseStyle_4 *lastObj = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
+            DoorInputViewBaseStyle_3 *lastObj = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
             inputView.top = lastObj.bottom + InputViewOffset;
         }else{}
         inputView.layer.cornerRadius = ThingsHeight / 2;
@@ -118,11 +118,10 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
                                 forState:UIControlStateNormal];
             [self.toRegisterBtn setImage:KIMG(@"用户名称")
                                 forState:UIControlStateNormal];
-            
             for (int i = 0;
                  i < self.loginDoorInputViewBaseStyleMutArr.count;
                  i++) {
-                DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i];
+                DoorInputViewBaseStyle_3 *inputView = (DoorInputViewBaseStyle_3 *)self.loginDoorInputViewBaseStyleMutArr[i];
                 inputView.mj_x += RegisterBtnWidth;
             }
             
@@ -130,7 +129,7 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
                 for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
                      i < self.registerDoorInputViewBaseStyleModelMutArr.count;
                      i++) {
-                    DoorInputViewBaseStyle_4 *inputView = (DoorInputViewBaseStyle_4 *)self.registerDoorInputViewBaseStyleMutArr[i];
+                    DoorInputViewBaseStyle *inputView = (DoorInputViewBaseStyle *)self.registerDoorInputViewBaseStyleMutArr[i];
                     inputView.alpha = 1;
                 }
             }else{//第一次
@@ -138,20 +137,48 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
                 for (long i = self.loginDoorInputViewBaseStyleMutArr.count;
                      i < self.registerDoorInputViewBaseStyleModelMutArr.count;
                      i++) {
-                    DoorInputViewBaseStyle_4 *inputView = DoorInputViewBaseStyle_4.new;
-                    [self addSubview:inputView];
-                    [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
-                    [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
-                    @weakify(self)
-                    //监测输入字符回调 和 激活的textField
-                    [inputView actionBlockDoorInputViewStyle_4:^(id data) {
-                        @strongify(self)
-                    }];
-                    DoorInputViewBaseStyle_4 *lastObj = (DoorInputViewBaseStyle_4 *)self.registerDoorInputViewBaseStyleMutArr[i - 1];
-                    inputView.top = lastObj.bottom + InputViewOffset;
-                    inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
-                    inputView.mj_x = 20 + RegisterBtnWidth;
-                    inputView.layer.cornerRadius = ThingsHeight / 2;
+
+                    DoorInputViewBaseStyle *doorInputViewBaseStyle = nil;
+                    if (i == self.loginDoorInputViewBaseStyleMutArr.count) {// 确认密码
+                        DoorInputViewBaseStyle_3 *inputView = DoorInputViewBaseStyle_3.new;
+                        doorInputViewBaseStyle = (DoorInputViewBaseStyle *)inputView;
+                        [self addSubview:inputView];
+                        [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
+                        [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
+                        @weakify(self)
+                        //监测输入字符回调 和 激活的textField
+                        [inputView actionBlockDoorInputViewStyle_3:^(id data) {
+                            @strongify(self)
+                        }];
+                    }else if (i == self.loginDoorInputViewBaseStyleMutArr.count + 1){// 手机验证码
+                        DoorInputViewBaseStyle_1 *inputView = DoorInputViewBaseStyle_1.new;
+                        doorInputViewBaseStyle = (DoorInputViewBaseStyle *)inputView;
+                        [self addSubview:inputView];
+                        [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
+                        [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
+                        @weakify(self)
+                        //监测输入字符回调 和 激活的textField
+                        [inputView actionBlockDoorInputViewStyle_1:^(id data) {
+                            @strongify(self)
+                        }];
+                    }else if (i == self.loginDoorInputViewBaseStyleMutArr.count + 2){// 图形验证码
+                        DoorInputViewBaseStyle_4 *inputView = DoorInputViewBaseStyle_4.new;
+                        doorInputViewBaseStyle = (DoorInputViewBaseStyle *)inputView;
+                        [self addSubview:inputView];
+                        [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
+                        [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
+                        @weakify(self)
+                        //监测输入字符回调 和 激活的textField
+                        [inputView actionBlockDoorInputViewStyle_4:^(id data) {
+                            @strongify(self)
+                        }];
+                    }else{}
+                    
+                    DoorInputViewBaseStyle *lastObj = (DoorInputViewBaseStyle *)self.registerDoorInputViewBaseStyleMutArr[i - 1];
+                    doorInputViewBaseStyle.top = lastObj.bottom + InputViewOffset;
+                    doorInputViewBaseStyle.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
+                    doorInputViewBaseStyle.mj_x = 20 + RegisterBtnWidth;
+                    doorInputViewBaseStyle.layer.cornerRadius = ThingsHeight / 2;
                 }
             }
         }else{
@@ -353,8 +380,8 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
         [_registerDoorInputViewBaseStyleModelMutArr addObject:确认密码];
         
         DoorInputViewBaseStyleModel *推广码 = DoorInputViewBaseStyleModel.new;
-        推广码.leftViewIMG = KIMG(@"推广码");
-        推广码.placeHolderStr = @"推广码（可不填写）";
+        推广码.leftViewIMG = KIMG(@"手机验证码");
+        推广码.placeHolderStr = @"手机验证码";
         推广码.isShowDelBtn = YES;
         推广码.isShowSecurityBtn = NO;
         推广码.returnKeyType = UIReturnKeyDone;
@@ -364,7 +391,7 @@ static float InputViewOffset = 20;//输入框承接控件之间的上下间距
         
         DoorInputViewBaseStyleModel *图形验证码 = DoorInputViewBaseStyleModel.new;
         图形验证码.leftViewIMG = KIMG(@"验证ICON");
-        图形验证码.placeHolderStr = @"推广码";
+        图形验证码.placeHolderStr = @"图形验证码";
         图形验证码.isShowDelBtn = YES;
         图形验证码.isShowSecurityBtn = NO;
         图形验证码.returnKeyType = UIReturnKeyDone;

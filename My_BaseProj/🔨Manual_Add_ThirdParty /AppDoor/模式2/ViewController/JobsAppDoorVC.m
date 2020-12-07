@@ -113,14 +113,29 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     
     NSInteger index = 0;
     for (DoorInputViewBaseStyle_4 *inputView in currentPageDataMutArr(self.currentPage)) {
-        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_4 class], "_tf");//必须是下划线接属性
-        JobsMagicTextField *tf = object_getIvar(inputView, ivar);
-        self.loginDoorInputEditing |= tf.editing;
-        if (tf.editing) {
-            NSLog(@"FFF = %ld",index);//当前被激活的idx
-            self.lastTimeActivateTFIndex = self.currentActivateTFIndex;
-            self.currentActivateTFIndex = index;//赋予新值。因为同一时刻，textField有且只有一个被激活
+        Ivar ivar = nil;
+        if (index == 0) {
+            ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
+        }else if (index == 1){
+            ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
+        }else if (index == 2){
+            ivar = class_getInstanceVariable([DoorInputViewBaseStyle_3 class], "_tf");//必须是下划线接属性
+        }else if (index == 3){
+            ivar = class_getInstanceVariable([DoorInputViewBaseStyle_1 class], "_tf");//必须是下划线接属性
+        }else if (index == 4){
+            ivar = class_getInstanceVariable([DoorInputViewBaseStyle_4 class], "_tf");//必须是下划线接属性
+        }else{}
+        
+        if (ivar) {
+            JobsMagicTextField *tf = object_getIvar(inputView, ivar);
+            self.loginDoorInputEditing |= tf.editing;
+            if (tf.editing) {
+                NSLog(@"FFF = %ld",index);//当前被激活的idx
+                self.lastTimeActivateTFIndex = self.currentActivateTFIndex;
+                self.currentActivateTFIndex = index;//赋予新值。因为同一时刻，textField有且只有一个被激活
+            }
         }
+        
         index += 1;
     }
     

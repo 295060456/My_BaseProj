@@ -160,8 +160,9 @@ replacementString:(NSString *)string{
         _tf.keyboardAppearance = self.doorInputViewBaseStyleModel.keyboardAppearance;
 
         _tf.animationColor = kWhiteColor;
-        _tf.placeHolderAlignment = PlaceHolderAlignmentRight;
+        _tf.placeHolderAlignment = PlaceHolderAlignmentLeft;
         _tf.moveDistance = 40;
+        _tf.placeHolderOffset = 20;
         
         [self addSubview:_tf];
         [_tf mas_makeConstraints:^(MASConstraintMaker *make) {

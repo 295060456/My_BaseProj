@@ -15,7 +15,6 @@ UITextFieldDelegate
 //UI
 @property(nonatomic,strong)UIButton *countDownBtn;
 @property(nonatomic,strong)JobsMagicTextField *tf;
-@property(nonatomic,strong)UILabel *titleLab;
 //Data
 @property(nonatomic,strong)NSString *titleStr_1;
 @property(nonatomic,strong)NSString *titleStr_2;
@@ -31,8 +30,8 @@ UITextFieldDelegate
 - (instancetype)init{
     if (self = [super init]) {
 //        self.backgroundColor = kRedColor;
-        self.titleStr_1 = @"开始";
-        self.titleStr_2 = @"倒计时";
+        self.titleStr_1 = @"点击";
+        self.titleStr_2 = @"发送验证码";
         [UIView colourToLayerOfView:self
                          WithColour:kWhiteColor
                      AndBorderWidth:1];
@@ -122,7 +121,6 @@ replacementString:(NSString *)string{
     self.doorInputViewBaseStyleModel = doorInputViewBaseStyleModel;
     self.countDownBtn.alpha = 1;
     self.tf.alpha = 1;
-    self.titleLab.alpha = 1;
 }
 
 -(void)actionBlockDoorInputViewStyle_1:(MKDataBlock)doorInputViewStyle_1Block{
@@ -132,19 +130,19 @@ replacementString:(NSString *)string{
 -(UIButton *)countDownBtn{
     if (!_countDownBtn) {
         _countDownBtn = [[UIButton alloc] initWithRichTextRunningDataMutArr:self.richLabelDataStringsMutArr
-                                                             countDownBtnType:CountDownBtnType_countDown
-                                                                      runType:CountDownBtnRunType_manual
-                                                             layerBorderWidth:1
-                                                            layerCornerRadius:1
-                                                             layerBorderColor:kClearColor
-                                                                   titleColor:kWhiteColor
-                                                                titleBeginStr:@""
-                                                               titleLabelFont:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]];
+                                                           countDownBtnType:CountDownBtnType_countDown
+                                                                    runType:CountDownBtnRunType_manual
+                                                           layerBorderWidth:1
+                                                          layerCornerRadius:1
+                                                           layerBorderColor:kClearColor
+                                                                 titleColor:kWhiteColor
+                                                              titleBeginStr:@""
+                                                             titleLabelFont:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]];
 
-        _countDownBtn.titleRuningStr = @"开始倒计时了";
+        _countDownBtn.titleRuningStr = @"重新发送";
         _countDownBtn.count = 60;
         _countDownBtn.showTimeType = ShowTimeType_SS;
-        _countDownBtn.bgCountDownColor = kCyanColor;
+        _countDownBtn.bgCountDownColor = kClearColor;
         _countDownBtn.cequenceForShowTitleRuningStrType = CequenceForShowTitleRuningStrType_tail;
         _countDownBtn.countDownBtnNewLineType = CountDownBtnNewLineType_newLine;
 
@@ -153,6 +151,10 @@ replacementString:(NSString *)string{
             make.top.right.bottom.equalTo(self);
             make.width.mas_equalTo(80);
         }];
+        
+//        [UIView appointCornerCutToCircleWithTargetView:_countDownBtn
+//                                     byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
+//                                           cornerRadii:CGSizeMake(_countDownBtn.mj_h / 2, _countDownBtn.mj_h / 2)];
 
     }return _countDownBtn;
 }
@@ -216,12 +218,5 @@ replacementString:(NSString *)string{
         }];
     }return _tf;
 }
-
--(UILabel *)titleLab{
-    if (!_titleLab) {
-        _titleLab = UILabel.new;
-    }return _titleLab;
-}
-
 
 @end

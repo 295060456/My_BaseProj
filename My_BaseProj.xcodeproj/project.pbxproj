@@ -11,6 +11,7 @@
 		341007DD52D6C17FF6358EC0 /* Pods_My_BaseProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A3948D098931B2E7BD21BF /* Pods_My_BaseProjUITests.framework */; };
 		A696E24AD8E0BF2AF63186BE /* Pods_My_BaseProjTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446C84083286B73C91E4A08F /* Pods_My_BaseProjTests.framework */; };
 		C5013A8F2536CB6600F4E87D /* IrregularBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5013A8E2536CB6600F4E87D /* IrregularBtn.m */; };
+		C508964F257DD10E00B2A1F7 /* JobsMagicTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C508964D257DD10E00B2A1F7 /* JobsMagicTextField.m */; };
 		C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C50ECADC25258877000AE52F /* 音律跳动.bundle */; };
 		C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50ECADE25258878000AE52F /* GifLoopPlayView.m */; };
 		C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8915250F75020070356F /* NSData+CommonCrypto.m */; };
@@ -344,6 +345,8 @@
 		B5A3948D098931B2E7BD21BF /* Pods_My_BaseProjUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_BaseProjUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5013A8D2536CB6500F4E87D /* IrregularBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularBtn.h; sourceTree = "<group>"; };
 		C5013A8E2536CB6600F4E87D /* IrregularBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrregularBtn.m; sourceTree = "<group>"; };
+		C508964D257DD10E00B2A1F7 /* JobsMagicTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsMagicTextField.m; sourceTree = "<group>"; };
+		C508964E257DD10E00B2A1F7 /* JobsMagicTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsMagicTextField.h; sourceTree = "<group>"; };
 		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
 		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
 		C50ECADE25258878000AE52F /* GifLoopPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifLoopPlayView.m; sourceTree = "<group>"; };
@@ -1153,6 +1156,15 @@
 			path = "不规则多边形按钮";
 			sourceTree = "<group>";
 		};
+		C5089643257DD10000B2A1F7 /* JobsMagicTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C508964E257DD10E00B2A1F7 /* JobsMagicTextField.h */,
+				C508964D257DD10E00B2A1F7 /* JobsMagicTextField.m */,
+			);
+			path = JobsMagicTextField;
+			sourceTree = "<group>";
+		};
 		C50ECAC82525884A000AE52F /* 音律跳动 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1666,10 +1678,10 @@
 		C55166552575202C00FF5217 /* ZYTextField */ = {
 			isa = PBXGroup;
 			children = (
-				C55166562575202C00FF5217 /* ZYTextField.m */,
-				C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */,
 				C55166582575202C00FF5217 /* ZYTextField.h */,
+				C55166562575202C00FF5217 /* ZYTextField.m */,
 				C55166592575202D00FF5217 /* ZYTextField+HistoryDataList.h */,
+				C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */,
 			);
 			path = ZYTextField;
 			sourceTree = "<group>";
@@ -1686,8 +1698,8 @@
 		C551665E2575202D00FF5217 /* CJTextField */ = {
 			isa = PBXGroup;
 			children = (
-				C551665F2575202D00FF5217 /* CJTextField.m */,
 				C55166602575202D00FF5217 /* CJTextField.h */,
+				C551665F2575202D00FF5217 /* CJTextField.m */,
 			);
 			path = CJTextField;
 			sourceTree = "<group>";
@@ -2156,9 +2168,9 @@
 			isa = PBXGroup;
 			children = (
 				C5727815254094C2002373D7 /* TabBarItem.h */,
-				C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */,
-				C5727817254094C2002373D7 /* UITabBarItem+TLAnimation.h */,
 				C5727818254094C2002373D7 /* TabBarItem.m */,
+				C5727817254094C2002373D7 /* UITabBarItem+TLAnimation.h */,
+				C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */,
 			);
 			path = UITabBarItem;
 			sourceTree = "<group>";
@@ -3239,6 +3251,7 @@
 		C5FE9B3724B5F203007B9878 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				C5089643257DD10000B2A1F7 /* JobsMagicTextField */,
 				C551665E2575202D00FF5217 /* CJTextField */,
 				C551665B2575202D00FF5217 /* HQTextField */,
 				C55166612575202D00FF5217 /* UITextField+Extend */,
@@ -4226,6 +4239,7 @@
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C56BA6B225788EF400D054D0 /* UBLDoorInputViewBaseStyle.m in Sources */,
 				C5BCDC87257A392500C80FE3 /* DoorInputViewBaseStyle_2.m in Sources */,
+				C508964F257DD10E00B2A1F7 /* JobsMagicTextField.m in Sources */,
 				C591EED12563C802005B78CC /* CustomGifHeader.m in Sources */,
 				C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */,
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,

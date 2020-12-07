@@ -11,14 +11,14 @@
 //可以发现：（animateWithDuration + Masonry，动画参数设置无效）
 static float ThingsHeight = 50;//边角半圆形控件的高度
 static float RegisterBtnWidth = 64;//竖形按钮的宽度
-static float InputViewOffset = 15;//输入框承接控件之间的上下间距
+static float InputViewOffset = 20;//输入框承接控件之间的上下间距
 
 @interface JobsAppDoorContentView ()
 
 @property(nonatomic,strong)UILabel *titleLab;//标题
 @property(nonatomic,strong)UIButton *abandonLoginBtn;//随便逛逛按钮
-@property(nonatomic,strong)UIButton *sendBtn;//登录 & 注册按钮
 @property(nonatomic,strong)UIButton *toRegisterBtn;//去注册
+@property(nonatomic,strong)UIButton *sendBtn;//登录 & 注册按钮 （本页面请求可以不用jobsAppDoorContentViewBlock回调）
 
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
 @property(nonatomic,strong)NSMutableArray <DoorInputViewBaseStyleModel *>*registerDoorInputViewBaseStyleModelMutArr;
@@ -49,7 +49,7 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
         self.isOK = YES;
     }
 }
-
+//监测输入字符回调 和 激活的textField 和 toRegisterBtn/abandonLoginBtn点击事件
 -(void)actionBlockJobsAppDoorContentView:(MKDataBlock)jobsAppDoorContentViewBlock{
     self.jobsAppDoorContentViewBlock = jobsAppDoorContentViewBlock;
 }
@@ -75,7 +75,7 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
             DoorInputViewBaseStyle_4 *lastObj = (DoorInputViewBaseStyle_4 *)self.loginDoorInputViewBaseStyleMutArr[i - 1];
             inputView.top = lastObj.bottom + InputViewOffset;
         }else{}
-        [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
+        inputView.layer.cornerRadius = ThingsHeight / 2;
         [self layoutIfNeeded];// 这句话不加，不刷新界面，placeHolder会出现异常
     }
 }
@@ -109,7 +109,7 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
             [self.sendBtn setTitle:@"注册"
                           forState:UIControlStateNormal];
             self.sendBtn.mj_x = self.toRegisterBtn.mj_w + 20;
-            self.sendBtn.bottom = self.appDoorContentViewModel.contentViewLeftHeight - 30;
+            self.sendBtn.bottom = self.appDoorContentViewModel.contentViewLeftHeight - 20;
             self.sendBtn.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
             
             self.titleLab.centerX = (self.mj_w + self.toRegisterBtn.mj_w) / 2;
@@ -143,6 +143,7 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
                     [self.registerDoorInputViewBaseStyleMutArr addObject:inputView];
                     [inputView richElementsInViewWithModel:self.registerDoorInputViewBaseStyleModelMutArr[i]];
                     @weakify(self)
+                    //监测输入字符回调 和 激活的textField
                     [inputView actionBlockDoorInputViewStyle_4:^(id data) {
                         @strongify(self)
                     }];
@@ -150,7 +151,7 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
                     inputView.top = lastObj.bottom + InputViewOffset;
                     inputView.size = CGSizeMake(self.mj_w - self.toRegisterBtn.mj_w - 40, ThingsHeight);
                     inputView.mj_x = 20 + RegisterBtnWidth;
-                    [UIView cornerCutToCircleWithView:inputView AndCornerRadius:ThingsHeight / 2];
+                    inputView.layer.cornerRadius = ThingsHeight / 2;
                 }
             }
         }else{
@@ -250,6 +251,9 @@ static float InputViewOffset = 15;//输入框承接控件之间的上下间距
         @weakify(self)
         [[_abandonLoginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self)
+            if (self.jobsAppDoorContentViewBlock) {
+                self.jobsAppDoorContentViewBlock(x);
+            }
         }];
         [self addSubview:_abandonLoginBtn];
         _abandonLoginBtn.mj_x = self.titleLab.mj_x;

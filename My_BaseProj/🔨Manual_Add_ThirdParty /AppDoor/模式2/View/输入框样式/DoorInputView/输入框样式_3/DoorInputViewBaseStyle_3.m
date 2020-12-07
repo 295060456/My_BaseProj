@@ -14,7 +14,7 @@ UITextFieldDelegate
 >
 //UI
 @property(nonatomic,strong)UIButton *securityModeBtn;
-@property(nonatomic,strong)ZYTextField *tf;
+@property(nonatomic,strong)JobsMagicTextField *tf;
 //Data
 @property(nonatomic,strong)DoorInputViewBaseStyleModel *doorInputViewBaseStyleModel;
 @property(nonatomic,assign)BOOL isOK;
@@ -42,28 +42,28 @@ UITextFieldDelegate
 }
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
-- (BOOL)textFieldShouldBeginEditing:(ZYTextField *)textField{
+- (BOOL)textFieldShouldBeginEditing:(JobsMagicTextField *)textField{
     if (self.doorInputViewStyle_3Block) {
         self.doorInputViewStyle_3Block(textField);
     }return YES;
 }
 //告诉委托人在指定的文本字段中开始编辑
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
+- (void)textFieldDidBeginEditing:(JobsMagicTextField *)textField{
 
 }
 //询问委托人是否应在指定的文本字段中停止编辑
-- (BOOL)textFieldShouldEndEditing:(ZYTextField *)textField{
+- (BOOL)textFieldShouldEndEditing:(JobsMagicTextField *)textField{
     return YES;
 }
 //告诉委托人对指定的文本字段停止编辑
-- (void)textFieldDidEndEditing:(ZYTextField *)textField{
+- (void)textFieldDidEndEditing:(JobsMagicTextField *)textField{
     [self.tf isEmptyText];
 }
 //告诉委托人对指定的文本字段停止编辑
-//- (void)textFieldDidEndEditing:(UITextField *)textField
+//- (void)textFieldDidEndEditing:(JobsMagicTextField *)textField
 //reason:(UITextFieldDidEndEditingReason)reason{}
 //询问委托人是否应该更改指定的文本
-- (BOOL)textField:(ZYTextField *)textField
+- (BOOL)textField:(JobsMagicTextField *)textField
 shouldChangeCharactersInRange:(NSRange)range
 replacementString:(NSString *)string{
     
@@ -99,14 +99,14 @@ replacementString:(NSString *)string{
     }return YES;
 }
 //询问委托人是否应删除文本字段的当前内容
-//- (BOOL)textFieldShouldClear:(UITextField *)textField
+//- (BOOL)textFieldShouldClear:(JobsMagicTextField *)textField
 //询问委托人文本字段是否应处理按下返回按钮
-- (BOOL)textFieldShouldReturn:(ZYTextField *)textField{
+- (BOOL)textFieldShouldReturn:(JobsMagicTextField *)textField{
     [self endEditing:YES];
     return YES;
 }
 
-- (void)textFieldDidChange:(UITextField *)textField {
+- (void)textFieldDidChange:(JobsMagicTextField *)textField {
     NSLog(@"SSSSresString = %@",textField.text);
     if ([textField.placeholder isEqualToString:@"6-12位字母或数字的密码"] ||
         [textField.placeholder isEqualToString:@"确认密码"]) {
@@ -149,9 +149,9 @@ replacementString:(NSString *)string{
     }return _securityModeBtn;
 }
 
--(ZYTextField *)tf{
+-(JobsMagicTextField *)tf{
     if (!_tf) {
-        _tf = ZYTextField.new;
+        _tf = JobsMagicTextField.new;
         _tf.delegate = self;
         _tf.leftView = [[UIImageView alloc] initWithImage:self.doorInputViewBaseStyleModel.leftViewIMG];
         _tf.leftViewMode = self.doorInputViewBaseStyleModel.leftViewMode;
@@ -159,10 +159,9 @@ replacementString:(NSString *)string{
         _tf.returnKeyType = self.doorInputViewBaseStyleModel.returnKeyType;
         _tf.keyboardAppearance = self.doorInputViewBaseStyleModel.keyboardAppearance;
 
+        _tf.animationColor = kWhiteColor;
         _tf.placeHolderAlignment = PlaceHolderAlignmentRight;
-//        _tf.placeHolderOffset = 10;
-//        _tf.leftViewOffsetX = 20;
-//        _tf.rightViewOffsetX = 15;
+        _tf.moveDistance = 40;
         
         [self addSubview:_tf];
         [_tf mas_makeConstraints:^(MASConstraintMaker *make) {

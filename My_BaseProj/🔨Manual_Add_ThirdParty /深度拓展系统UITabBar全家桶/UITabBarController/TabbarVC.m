@@ -137,8 +137,8 @@ UIViewController *childViewController_SystemStyle(UIViewController *viewControll
         
         UIViewController *viewController = self.childMutArr[i];
         //
-        [self addLottieImage:viewController
-                 lottieImage:config.lottieName];
+//        [self addLottieImage:viewController
+//                 lottieImage:config.lottieName];
         
         viewController.title = config.title;
         viewController.tabBarItem = [[TabBarItem alloc] initWithConfig:config];

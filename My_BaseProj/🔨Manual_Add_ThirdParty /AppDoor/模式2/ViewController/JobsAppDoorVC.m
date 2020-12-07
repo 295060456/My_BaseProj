@@ -9,7 +9,7 @@
 #import "JobsAppDoorVC.h"
 
 #define JobsAppDoorContentViewLeftHeight  MAINSCREEN_HEIGHT / 1.7 // 竖形按钮在左边
-#define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 3 // 竖形按钮在右边
+#define JobsAppDoorContentViewRightHeight  MAINSCREEN_HEIGHT / 2.5 // 竖形按钮在右边
 
 typedef NS_ENUM(NSInteger, CurrentPage) {
     CurrentPage_login = 0,
@@ -112,9 +112,9 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
     };
     
     NSInteger index = 0;
-    for (DoorInputViewBaseStyle_1 *inputView in currentPageDataMutArr(self.currentPage)) {
-        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_1 class], "_tf");//必须是下划线接属性
-        ZYTextField *tf = object_getIvar(inputView, ivar);
+    for (DoorInputViewBaseStyle_4 *inputView in currentPageDataMutArr(self.currentPage)) {
+        Ivar ivar = class_getInstanceVariable([DoorInputViewBaseStyle_4 class], "_tf");//必须是下划线接属性
+        JobsMagicTextField *tf = object_getIvar(inputView, ivar);
         self.loginDoorInputEditing |= tf.editing;
         if (tf.editing) {
             NSLog(@"FFF = %ld",index);//当前被激活的idx
@@ -165,53 +165,60 @@ typedef NS_ENUM(NSInteger, CurrentPage) {
         
         [_jobsAppDoorContentView richElementsInViewWithModel:appDoorContentViewModel];
         @weakify(self)
-        //监测输入字符回调 和 激活的textField 和 toRegisterBtn点击事件
+        //监测输入字符回调 和 激活的textField 和 toRegisterBtn/abandonLoginBtn点击事件
         [_jobsAppDoorContentView actionBlockJobsAppDoorContentView:^(id data) {
             @strongify(self)
             if ([data isKindOfClass:UIButton.class]) {
                 UIButton *btn = (UIButton *)data;
-                //状态置空
-                self.currentActivateTFIndex = 0;
-                self.lastTimeActivateTFIndex = 0;
-                
-                if (btn.selected) {//竖形按钮在左边
+                if ([btn.titleLabel.text isEqualToString:@"新\n用\n户\n注\n册"] || [btn.titleLabel.text isEqualToString:@"返\n回\n登\n录"]) {
+                    UIButton *toRegisterBtn = (UIButton *)data;
+                    //状态置空
+                    self.currentActivateTFIndex = 0;
+                    self.lastTimeActivateTFIndex = 0;
                     
-                    self->_jobsAppDoorContentView.backgroundColor = Cor1;
-                    Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
-                    UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
-                    toRegisterBtn.backgroundColor = Cor2;
-                    [toRegisterBtn setTitleColor:Cor1 forState:UIControlStateNormal];
-                    
-                    self.currentPage = CurrentPage_register;//注册页面
-                    self->_jobsAppDoorContentView.frame = CGRectMake(20,
-                                                                     MAINSCREEN_HEIGHT / 4,
-                                                                     MAINSCREEN_WIDTH - 40,
-                                                                     JobsAppDoorContentViewLeftHeight);
-                    btn.frame = CGRectMake(0,
-                                            0,
-                                            64,
-                                            self->_jobsAppDoorContentView.mj_h);
-                }else{//竖形按钮在右边
-                    
-                    self->_jobsAppDoorContentView.backgroundColor = Cor2;
-                    Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
-                    UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
-                    toRegisterBtn.backgroundColor = Cor1;
-                    [toRegisterBtn setTitleColor:Cor2 forState:UIControlStateNormal];
-                    
-                    self.currentPage = CurrentPage_login;//登录页面
-                    self->_jobsAppDoorContentView.frame = CGRectMake(20,
-                                                                     MAINSCREEN_HEIGHT / 4,
-                                                                     MAINSCREEN_WIDTH - 40,
-                                                                     JobsAppDoorContentViewRightHeight);
-                    btn.frame = CGRectMake(self->_jobsAppDoorContentView.mj_w - 64,
-                                            0,
-                                            64,
-                                            self->_jobsAppDoorContentView.mj_h);
+                    if (toRegisterBtn.selected) {//竖形按钮在左边
+                        
+                        self->_jobsAppDoorContentView.backgroundColor = Cor1;
+                        Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
+                        UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
+                        toRegisterBtn.backgroundColor = Cor2;
+                        [toRegisterBtn setTitleColor:Cor1 forState:UIControlStateNormal];
+                        
+                        self.currentPage = CurrentPage_register;//注册页面
+                        self->_jobsAppDoorContentView.frame = CGRectMake(20,
+                                                                         MAINSCREEN_HEIGHT / 4,
+                                                                         MAINSCREEN_WIDTH - 40,
+                                                                         JobsAppDoorContentViewLeftHeight);
+                        toRegisterBtn.frame = CGRectMake(0,
+                                                         0,
+                                                         64,
+                                                         self->_jobsAppDoorContentView.mj_h);
+                    }else{//竖形按钮在右边
+                        
+                        self->_jobsAppDoorContentView.backgroundColor = Cor2;
+                        Ivar ivar = class_getInstanceVariable([JobsAppDoorContentView class], "_toRegisterBtn");//必须是下划线接属性
+                        UIButton *toRegisterBtn = object_getIvar(self->_jobsAppDoorContentView, ivar);
+                        toRegisterBtn.backgroundColor = Cor1;
+                        [toRegisterBtn setTitleColor:Cor2 forState:UIControlStateNormal];
+                        
+                        self.currentPage = CurrentPage_login;//登录页面
+                        self->_jobsAppDoorContentView.frame = CGRectMake(20,
+                                                                         MAINSCREEN_HEIGHT / 4,
+                                                                         MAINSCREEN_WIDTH - 40,
+                                                                         JobsAppDoorContentViewRightHeight);
+                        toRegisterBtn.frame = CGRectMake(self->_jobsAppDoorContentView.mj_w - 64,
+                                                         0,
+                                                         64,
+                                                         self->_jobsAppDoorContentView.mj_h);
+                    }
+                    self.customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
+                    self.customerServiceBtnY =  self.customerServiceBtn.mj_y;
                 }
-                self.customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
-                self.customerServiceBtnY =  self.customerServiceBtn.mj_y;
-            }else if ([data isKindOfClass:ZYTextField.class]){
+                else if ([btn.titleLabel.text isEqualToString:@"随便逛逛"]){
+                    UIButton *abandonLoginBtn = (UIButton *)data;
+                    [self backBtnClickEvent:abandonLoginBtn];
+                }
+            }else if ([data isKindOfClass:JobsMagicTextField.class]){
                 
             }else if ([data isKindOfClass:NSString.class]){
                 

@@ -8,6 +8,7 @@
 
 #import "DoorInputViewBaseStyle.h"
 #import "DoorInputViewBaseStyleModel.h"
+#import "JobsMagicTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -44,7 +44,6 @@
 #import "BWShareView.h"
 #import "BWItemModel.h"
 #import "RBCLikeButton.h"//高仿抖音点赞动画
-#import "ZYTextField.h"
 #import "FileFolderHandleTool.h"
 //#import "SDWebImageWebP_umbrella.h"
 //#import "YYTimer+Block.h"
@@ -101,6 +100,13 @@
 #import "NSObject+SPAlertController.h"
 #import "NSObject+OpenURL.h"
 #import "NSObject+AFNReachability.h"
+//UITextField
+#import "JobsMagicTextField.h"
+#import "CJTextField.h"
+#import "HQTextField.h"
+#import "UITextField+Extend.h"
+#import "ZYTextField.h"
+#import "ZYTextField+HistoryDataList.h"
 //UIImageView
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
 //UIImage

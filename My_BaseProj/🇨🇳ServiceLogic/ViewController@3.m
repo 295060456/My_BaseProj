@@ -31,8 +31,8 @@
     //尝试高仿蜜柚 登录注册忘记密码
     [UIViewController comingFromVC:self
                               toVC:JobsAppDoorVC.new
-                       comingStyle:ComingStyle_PUSH
-                 presentationStyle:[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
+                       comingStyle:ComingStyle_PRESENT
+                 presentationStyle:UIModalPresentationFullScreen//[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
                      requestParams:@(JobsAppDoorBgType_video)
           hidesBottomBarWhenPushed:YES
                           animated:YES

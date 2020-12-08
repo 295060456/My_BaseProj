@@ -11,6 +11,12 @@
 
 #if DEBUG
 
+#if __has_include(<FLEX/FLEX.h>)
+#import <FLEX/FLEX.h>
+#else
+#import "FLEX.h"
+#endif
+
 #if __has_include(<FBRetainCycleDetector/FBRetainCycleDetector.h>)
 #import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 #else
@@ -139,18 +145,146 @@
 #import "MGSwipeTableCell.h"
 #endif
 
+#if __has_include(<TZImagePickerController/TZImagePickerController.h>)
+#import <TZImagePickerController/TZImagePickerController.h>
+#else
+#import "TZImagePickerController.h"
+#endif
+
 #if __has_include(<lottie-ios/Lottie.h>)
 #import <lottie-ios/Lottie.h>
 #else
 #import "Lottie.h"
 #endif
 
-#import <Shimmer/Shimmer-umbrella.h>
+#if __has_include(<YQImageCompressTool/YQImageCompressTool.h>)
+#import <YQImageCompressTool/YQImageCompressTool.h>
+#else
+#import "YQImageCompressTool.h"
+#endif
 
-//WebSocket
-#import "GCDAsyncSocket.h" // for TCP
-#import "GCDAsyncUdpSocket.h" // for UDP
-//MQTT
+#if __has_include(<TXFileOperation/TXFileOperation.h>)
+#import <TXFileOperation/TXFileOperation.h>
+#else
+#import "TXFileOperation.h"
+#endif
+
+#if __has_include(<OpenUDID/OpenUDID.h>)
+#import <OpenUDID/OpenUDID.h>
+#else
+#import "OpenUDID.h"
+#endif
+
+#if __has_include(<AYCheckManager/AYCheckManager.h>)
+#import <AYCheckManager/AYCheckManager.h>
+#else
+#import "AYCheckManager.h"
+#endif
+
+#if __has_include(<BEMCheckBox/BEMCheckBox.h>)
+#import <BEMCheckBox/BEMCheckBox.h>
+#else
+#import "BEMCheckBox.h"
+#endif
+
+#if __has_include(<Shimmer/FBShimmering.h>)
+#import <Shimmer/FBShimmering.h>
+#else
+#import "FBShimmering.h"
+#endif
+
+#if __has_include(<DDProgressView/DDProgressView.h>)
+#import <DDProgressView/DDProgressView.h>
+#else
+#import "DDProgressView.h"
+#endif
+
+#if __has_include(<FMDB/FMDB.h>)
+#import <FMDB/FMDB.h>
+#else
+#import "FMDB.h"
+#endif
+
+#if __has_include(<HCSStarRatingView/HCSStarRatingView.h>)
+#import <HCSStarRatingView/HCSStarRatingView.h>
+#else
+#import "HCSStarRatingView.h"
+#endif
+
+#if __has_include(<BSYTextFiled/BSYTextFiled.h>)
+#import <BSYTextFiled/BSYTextFiled.h>
+#else
+#import "BSYTextFiled.h"
+#endif
+
+#if __has_include(<NJKWebViewProgress/NJKWebViewProgress.h>)
+#import <NJKWebViewProgress/NJKWebViewProgress.h>
+#else
+#import "NJKWebViewProgress.h"
+#endif
+
+#if __has_include(<pop/POP.h>)
+#import <pop/POP.h>
+#else
+#import "POP.h"
+#endif
+
+#if __has_include(<TXScrollLabelView/TXScrollLabelView.h>)
+#import <TXScrollLabelView/TXScrollLabelView.h>
+#else
+#import "TXScrollLabelView.h"
+#endif
+
+#if __has_include(<AwesomeMenu/AwesomeMenu.h>)
+#import <AwesomeMenu/AwesomeMenu.h>
+#else
+#import "AwesomeMenu.h"
+#endif
+
+#if __has_include(<YYKit/YYKit.h>)
+#import <YYKit/YYKit.h>
+#else
+#import "YYKit.h"
+#endif
+
+#if __has_include(<JJStockView/JJStockView.h>)
+#import <JJStockView/JJStockView.h>
+#else
+#import "JJStockView.h"
+#endif
+
+#if __has_include(<TKCarouselView/TKCarouselView.h>)
+#import <TKCarouselView/TKCarouselView.h>
+#else
+#import "TKCarouselView.h"
+#endif
+
+#if __has_include(<SZTextView/SZTextView.h>)
+#import <SZTextView/SZTextView.h>
+#else
+#import "SZTextView.h"
+#endif
+
+#if __has_include(<CWLateralSlide/UIViewController+CWLateralSlide.h>)
+#import <CWLateralSlide/UIViewController+CWLateralSlide.h>
+#else
+#import "UIViewController+CWLateralSlide.h"
+#endif
+
+#pragma mark —— WebSocket
+// for TCP
+#if __has_include(<GCDWebServer/GCDAsyncSocket.h>)
+#import <GCDWebServer/GCDAsyncSocket.h>
+#else
+#import "GCDAsyncSocket.h"
+#endif
+// for UDP
+#if __has_include(<GCDWebServer/GCDAsyncUdpSocket.h>)
+#import <GCDWebServer/GCDAsyncUdpSocket.h>
+#else
+#import "GCDAsyncUdpSocket.h"
+#endif
+#pragma mark —— MQTT
 #if __has_include(<MQTTClient/MQTTClient.h>)
 #import <MQTTClient/MQTTClient.h>
 #else
@@ -159,49 +293,101 @@
 
 #pragma mark —— ZFPlayer 播放器相关
 //Core
+#if __has_include(<ZFPlayer/ZFPlayer.h>)
+#import <ZFPlayer/ZFPlayer.h>
+#else
 #import "ZFPlayer.h"
+#endif
 //AVPlayer
+#if __has_include(<ZFPlayer/ZFAVPlayerManager.h>)
 #import <ZFPlayer/ZFAVPlayerManager.h>
+#else
+#import "ZFAVPlayerManager.h"
+#endif
 //ijkplayer
+#if __has_include(<ZFPlayer/ZFIJKPlayerManager.h>)
 #import <ZFPlayer/ZFIJKPlayerManager.h>
+#else
+#import "ZFIJKPlayerManager.h"
+#endif
 //ControlView
+#if __has_include(<ZFPlayer/UIImageView+ZFCache.h>)
 #import <ZFPlayer/UIImageView+ZFCache.h>
-#import <ZFPlayer/UIView+ZFFrame.h>
-#import <ZFPlayer/ZFLandScapeControlView.h>
-#import <ZFPlayer/ZFLoadingView.h>
-#import <ZFPlayer/ZFNetworkSpeedMonitor.h>
-#import <ZFPlayer/ZFPlayerControlView.h>
-#import <ZFPlayer/ZFPortraitControlView.h>
-#import <ZFPlayer/ZFSliderView.h>
-#import <ZFPlayer/ZFSmallFloatControlView.h>
-#import <ZFPlayer/ZFSpeedLoadingView.h>
-#import <ZFPlayer/ZFUtilities.h>
-#import <ZFPlayer/ZFVolumeBrightnessView.h>
+#else
+#import "UIImageView+ZFCache.h"
+#endif
 
-#import "AYCheckManager.h"
-#import "BEMCheckBox.h"
-#import "DDProgressView.h"
-#import "FLEX.h"
-#import "FMDB.h"
-#import "HCSStarRatingView.h"
-#import "BSYTextFiled.h"
-#import "NJKWebViewProgress.h"
-#import "OpenUDID.h"
-#import "POP.h"
-#import "TXScrollLabelView.h"
-#import "AwesomeMenu.h"
+#if __has_include(<ZFPlayer/UIView+ZFFrame.h>)
+#import <ZFPlayer/UIView+ZFFrame.h>
+#else
+#import "UIView+ZFFrame.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFLandScapeControlView.h>)
+#import <ZFPlayer/ZFLandScapeControlView.h>
+#else
+#import "ZFLandScapeControlView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFLoadingView.h>)
+#import <ZFPlayer/ZFLoadingView.h>
+#else
+#import "ZFLoadingView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFNetworkSpeedMonitor.h>)
+#import <ZFPlayer/ZFNetworkSpeedMonitor.h>
+#else
+#import "ZFNetworkSpeedMonitor.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFPlayerControlView.h>)
+#import <ZFPlayer/ZFPlayerControlView.h>
+#else
+#import "ZFPlayerControlView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFPortraitControlView.h>)
+#import <ZFPlayer/ZFPortraitControlView.h>
+#else
+#import "ZFPortraitControlView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFSliderView.h>)
+#import <ZFPlayer/ZFSliderView.h>
+#else
+#import "ZFSliderView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFSmallFloatControlView.h>)
+#import <ZFPlayer/ZFSmallFloatControlView.h>
+#else
+#import "ZFSmallFloatControlView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFSpeedLoadingView.h>)
+#import <ZFPlayer/ZFSpeedLoadingView.h>
+#else
+#import "ZFSpeedLoadingView.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFUtilities.h>)
+#import <ZFPlayer/ZFUtilities.h>
+#else
+#import "ZFUtilities.h"
+#endif
+
+#if __has_include(<ZFPlayer/ZFVolumeBrightnessView.h>)
+#import <ZFPlayer/ZFVolumeBrightnessView.h>
+#else
+#import "ZFVolumeBrightnessView.h"
+#endif
+
+#pragma mark —— Pod 不进去的
 #import "UINavigationController+FDFullscreenPopGesture.h"
-#import <HBDNavigationBar/HBDNavigationController.h>
-#import "TZImagePickerController.h"
-#import <YYKit/YYKit.h>
-#import "JJStockView.h"
-#import "TKCarouselView.h"
-#import "UIViewController+CWLateralSlide.h"
-#import "YQImageCompressTool.h"
-#import <TXFileOperation.h>
-#import "SZTextView.h"
 #import "XHLaunchAd.h"
 
+//暂时用不着的、重复的、过时的
 //#import "PureLayout.h"
 //#import "MyLayout.h"
 //#import "TRCustomAlert.h"

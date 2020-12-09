@@ -1650,6 +1650,15 @@
 			path = "使用范例";
 			sourceTree = "<group>";
 		};
+		C555655F2580A517004DB33A /* TimeModel */ = {
+			isa = PBXGroup;
+			children = (
+				C55695CD255BFC39005C1361 /* TimeModel.h */,
+				C55695CE255BFC39005C1361 /* TimeModel.m */,
+			);
+			path = TimeModel;
+			sourceTree = "<group>";
+		};
 		C557DC1724C8063700754760 /* MJExtension用法 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2825,6 +2834,7 @@
 		C5FE9B1A24B5F203007B9878 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C555655F2580A517004DB33A /* TimeModel */,
 				C534E282257F83CA00DBC3CE /* NSObject+Others */,
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
 			);
@@ -2856,8 +2866,6 @@
 				C55695CC255BFC39005C1361 /* NSString+Extras.m */,
 				C55695D2255BFC3A005C1361 /* NSString+Time.h */,
 				C55695D3255BFC3A005C1361 /* NSString+Time.m */,
-				C55695CD255BFC39005C1361 /* TimeModel.h */,
-				C55695CE255BFC39005C1361 /* TimeModel.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";

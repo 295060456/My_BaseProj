@@ -19,14 +19,11 @@
 
     [NSObject OpenURL:openModel
               options:@{}
-             showText:@""
-            superView:getMainWindow()
-            useAssert:NO
-    completionHandler:^{
-            //TODO
-    }];
-    
-    return YES;
+completionOpenSuccessHandler:^{
+        //TODO
+    } completionOpenFailHandler:^{
+        //TODO
+    }];return YES;
 }
 /// 跳过按钮点击回调(注意:自定义跳过按钮不会走此回调)
 /// @param launchAd launchAd

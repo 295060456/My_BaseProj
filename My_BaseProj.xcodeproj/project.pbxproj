@@ -48,8 +48,6 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
-		C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */; };
-		C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AB076255E5EED000A314D /* WhiteRightArrow@2x.png */; };
 		C54AB07D255E5EED000A314D /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AB077255E5EED000A314D /* WhiteRightArrow@3x.png */; };
 		C54AB07E255E5EED000A314D /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AB078255E5EED000A314D /* UITableViewCell+WhiteArrows.m */; };
@@ -431,10 +429,6 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
-		C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
-		C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
-		C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		C5470F1125309B5C00651ACE /* MacroDef_Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Size.h; sourceTree = "<group>"; };
 		C5470F1225309B5C00651ACE /* MacroDef_Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Func.h; sourceTree = "<group>"; };
 		C5470F1325309B5C00651ACE /* MacroDef_Cor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Cor.h; sourceTree = "<group>"; };
@@ -1511,6 +1505,7 @@
 		C544BCDB2583728A00C6CF2A /* UIViewController+BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				C5336FF424DB00280082847C /* BRPickerView */,
 				C5914ACB25384A2E007777A6 /* UIViewController+BRPickerView.h */,
 				C5914ADC25384A2F007777A6 /* UIViewController+BRPickerView.m */,
 			);
@@ -1613,17 +1608,6 @@
 			path = "MJRefresh + Lottie";
 			sourceTree = "<group>";
 		};
-		C546C449252C249A003694FF /* FDFullscreenPopGesture */ = {
-			isa = PBXGroup;
-			children = (
-				C546C44B252C24A7003694FF /* UINavigationController+FDFullscreenPopGesture.h */,
-				C546C44D252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m */,
-				C546C44C252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.h */,
-				C546C44A252C24A7003694FF /* UIScrollView+FDFullscreenPopGesture.m */,
-			);
-			path = FDFullscreenPopGesture;
-			sourceTree = "<group>";
-		};
 		C5470F0D25309B5200651ACE /* 各项宏定义 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1709,9 +1693,7 @@
 			children = (
 				C5767B9725470BD100C382C8 /* WMZBanner */,
 				C55D3C8B2538856100CFCF73 /* XHLaunchAd */,
-				C546C449252C249A003694FF /* FDFullscreenPopGesture */,
 				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
-				C5336FF424DB00280082847C /* BRPickerView */,
 			);
 			path = "Pod 不进去的";
 			sourceTree = "<group>";
@@ -4182,7 +4164,6 @@
 				C5914AE625384A2F007777A6 /* UIViewController+JXCategoryListContentViewDelegate.m in Sources */,
 				C5C67C6124FE4FAB000A26B8 /* CADisplayLink_TimerManager.m in Sources */,
 				C533701A24DB00280082847C /* BRAddressPickerView.m in Sources */,
-				C546C44E252C24A8003694FF /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
 				C5FE9D1724B5F29C007B9878 /* FSAppIconManager.m in Sources */,
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
 				C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */,
@@ -4307,7 +4288,6 @@
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */,
 				C572A29924FD2AA9000A1687 /* STSimplePing.m in Sources */,
-				C546C44F252C24A8003694FF /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				C5914AE425384A2F007777A6 /* UIViewController+JPImageresizerView.m in Sources */,
 				C544C0D02583758A00C6CF2A /* UIViewController+MJRefresh.m in Sources */,
 				C5013A8F2536CB6600F4E87D /* IrregularBtn.m in Sources */,

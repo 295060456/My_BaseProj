@@ -48,7 +48,6 @@
     [self keyboard];
     self.view.backgroundColor = kBlueColor;
 //    self.setupNavigationBarHidden = YES;
-    
     //标的值初始化
     self.logoContentViewY = 0;
     self.jobsAppDoorContentViewY = 0;
@@ -62,10 +61,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //无效？？？
-    self.navigationController.navigationBar.hidden = YES;
-    self.navigationController.navigationBarHidden = YES;
-    [self.navigationController setNavigationBarHidden:YES animated:true];
+    self.isHiddenNavigationBar = YES;//禁用系统的导航栏
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

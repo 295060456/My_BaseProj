@@ -384,7 +384,6 @@
 #endif
 
 #pragma mark —— Pod 不进去的
-#import "UINavigationController+FDFullscreenPopGesture.h"
 #import "XHLaunchAd.h"
 
 //暂时用不着的、重复的、过时的

@@ -85,9 +85,6 @@
 		C557ADBD2580FEF000F3FEED /* JobsAppDoorLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C557ADA72580FEF000F3FEED /* JobsAppDoorLoginContentView.m */; };
 		C557ADBE2580FEF000F3FEED /* JobsAppDoorVC_Style2.m in Sources */ = {isa = PBXBuildFile; fileRef = C557ADAA2580FEF000F3FEED /* JobsAppDoorVC_Style2.m */; };
 		C557DC1624C805DF00754760 /* MJExtension用法 in Resources */ = {isa = PBXBuildFile; fileRef = C557DC1524C805DF00754760 /* MJExtension用法 */; };
-		C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A2D253426BB0038E50C /* SuspendLab.m */; };
-		C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A32253426BB0038E50C /* SuspendBtn.m */; };
-		C55B2A39253426BC0038E50C /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B2A35253426BB0038E50C /* SuspendView.m */; };
 		C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */; };
 		C55D3C812538838C00CFCF73 /* AppDelegate+Func.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C7F2538838C00CFCF73 /* AppDelegate+Func.m */; };
 		C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C962538856100CFCF73 /* XHLaunchAdView.m */; };
@@ -174,6 +171,9 @@
 		C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADC25384A2F007777A6 /* UIViewController+BRPickerView.m */; };
 		C5914AEB25384A2F007777A6 /* UIViewController+BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */; };
 		C5914C6D253850B6007777A6 /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914C6B253850B6007777A6 /* UIViewController+Shake.m */; };
+		C595D10F258713CB002A4531 /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D107258713CB002A4531 /* SuspendView.m */; };
+		C595D110258713CB002A4531 /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10A258713CB002A4531 /* SuspendBtn.m */; };
+		C595D111258713CB002A4531 /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10E258713CB002A4531 /* SuspendLab.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
 		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
@@ -513,12 +513,6 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		C55B2A2C253426BB0038E50C /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
-		C55B2A2D253426BB0038E50C /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
-		C55B2A32253426BB0038E50C /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
-		C55B2A33253426BB0038E50C /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
-		C55B2A35253426BB0038E50C /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
-		C55B2A36253426BB0038E50C /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
 		C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XHLaunchAdDelegate.m"; sourceTree = "<group>"; };
 		C55D3C7D2538838C00CFCF73 /* AppDelegate+Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Func.h"; sourceTree = "<group>"; };
 		C55D3C7E2538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XHLaunchAdDelegate.h"; sourceTree = "<group>"; };
@@ -733,6 +727,12 @@
 		C5914C6B253850B6007777A6 /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
 		C5914C6C253850B6007777A6 /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Shake.h"; sourceTree = "<group>"; };
 		C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "同一应用设置不同图标和名称.docx"; sourceTree = "<group>"; };
+		C595D107258713CB002A4531 /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
+		C595D108258713CB002A4531 /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
+		C595D10A258713CB002A4531 /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
+		C595D10B258713CB002A4531 /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
+		C595D10D258713CB002A4531 /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
+		C595D10E258713CB002A4531 /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
 		C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
@@ -810,6 +810,7 @@
 		C5D6F2C625861D0300029AFF /* TimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeModel.h; sourceTree = "<group>"; };
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		C5DD6F6F25863865006DC533 /* InteractivePushGesture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InteractivePushGesture.md; sourceTree = "<group>"; };
 		C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置view的透明度影响子控件的解决方案.png"; sourceTree = "<group>"; };
 		C5E3C7752517869000F9A150 /* UIImage+screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+screenshot.h"; sourceTree = "<group>"; };
 		C5E3C7762517869000F9A150 /* UIImage+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+screenshot.m"; sourceTree = "<group>"; };
@@ -830,7 +831,6 @@
 		C5E7D9B624E1642200A38FAF /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
 		C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InteractivePushGesture.m"; sourceTree = "<group>"; };
 		C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
-		C5E7D9C624E17A4B00A38FAF /* Uses */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uses; sourceTree = "<group>"; };
 		C5EB98D6250A1736007660B3 /* UIView+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gradient.m"; sourceTree = "<group>"; };
 		C5EB98D7250A1736007660B3 /* UIView+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gradient.h"; sourceTree = "<group>"; };
 		C5F732D125138E4900216DEF /* LCRegExpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRegExpTool.h; sourceTree = "<group>"; };
@@ -1542,6 +1542,7 @@
 		C544BCF4258372B000C6CF2A /* UIViewController+MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				C544D2722525D7F1003C2A94 /* MJRefresh + Lottie */,
 				C544C0C92583758A00C6CF2A /* ConfigModel */,
 				C544C0CC2583758A00C6CF2A /* LOTAnimationMJRefreshHeader */,
 				C544C0C82583758A00C6CF2A /* UIViewController+MJRefresh.h */,
@@ -1710,6 +1711,7 @@
 		C54FE240257671B100937C11 /* UIViewController+Category */ = {
 			isa = PBXGroup;
 			children = (
+				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
 				C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */,
 				C5D78A0C257F7A120087FC92 /* UIViewController+Others */,
 				C5766CEF2546B6FD00C382C8 /* UIViewController+TZImagePickerController */,
@@ -2012,33 +2014,6 @@
 				C5FE9C8E24B5F29B007B9878 /* LXTagsView */,
 			);
 			path = "热词标签";
-			sourceTree = "<group>";
-		};
-		C55B2A2B253426BB0038E50C /* SuspendLab */ = {
-			isa = PBXGroup;
-			children = (
-				C55B2A2C253426BB0038E50C /* SuspendLab.h */,
-				C55B2A2D253426BB0038E50C /* SuspendLab.m */,
-			);
-			path = SuspendLab;
-			sourceTree = "<group>";
-		};
-		C55B2A31253426BB0038E50C /* SuspendBtn */ = {
-			isa = PBXGroup;
-			children = (
-				C55B2A33253426BB0038E50C /* SuspendBtn.h */,
-				C55B2A32253426BB0038E50C /* SuspendBtn.m */,
-			);
-			path = SuspendBtn;
-			sourceTree = "<group>";
-		};
-		C55B2A34253426BB0038E50C /* SuspendView */ = {
-			isa = PBXGroup;
-			children = (
-				C55B2A36253426BB0038E50C /* SuspendView.h */,
-				C55B2A35253426BB0038E50C /* SuspendView.m */,
-			);
-			path = SuspendView;
 			sourceTree = "<group>";
 		};
 		C55D3C742538832B00CFCF73 /* AppDelegate */ = {
@@ -2506,6 +2481,96 @@
 			path = JhtBannerCardView;
 			sourceTree = "<group>";
 		};
+		C595BA7625863F93002A4531 /* UIView+Animation */ = {
+			isa = PBXGroup;
+			children = (
+				C5AEEAC525384147000E1C5F /* UIView+Animation.h */,
+				C5AEEAC625384147000E1C5F /* UIView+Animation.m */,
+			);
+			path = "UIView+Animation";
+			sourceTree = "<group>";
+		};
+		C595BA7725863FBF002A4531 /* UIView+Chain */ = {
+			isa = PBXGroup;
+			children = (
+				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
+				C59C4A3924E297F6002C2104 /* UIView+Chain.m */,
+			);
+			path = "UIView+Chain";
+			sourceTree = "<group>";
+		};
+		C595BA7825863FC7002A4531 /* UIView+Extras */ = {
+			isa = PBXGroup;
+			children = (
+				C5AEEB3625384310000E1C5F /* UIView+Extras.h */,
+				C5AEEB3725384310000E1C5F /* UIView+Extras.m */,
+			);
+			path = "UIView+Extras";
+			sourceTree = "<group>";
+		};
+		C595BA7925863FD0002A4531 /* UIView+Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
+				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
+			);
+			path = "UIView+Gradient";
+			sourceTree = "<group>";
+		};
+		C595BA7A25863FD7002A4531 /* UIView+Measure */ = {
+			isa = PBXGroup;
+			children = (
+				C5C67C5124FE4E65000A26B8 /* UIView+Measure.h */,
+				C5C67C5224FE4E65000A26B8 /* UIView+Measure.m */,
+			);
+			path = "UIView+Measure";
+			sourceTree = "<group>";
+		};
+		C595BA7B25863FE2002A4531 /* UIView+SuspendView */ = {
+			isa = PBXGroup;
+			children = (
+				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
+				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
+			);
+			path = "UIView+SuspendView";
+			sourceTree = "<group>";
+		};
+		C595BA7C25863FF0002A4531 /* UIView+ZFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */,
+				C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */,
+			);
+			path = "UIView+ZFPlayer";
+			sourceTree = "<group>";
+		};
+		C595D106258713CB002A4531 /* SuspendView */ = {
+			isa = PBXGroup;
+			children = (
+				C595D107258713CB002A4531 /* SuspendView.m */,
+				C595D108258713CB002A4531 /* SuspendView.h */,
+			);
+			path = SuspendView;
+			sourceTree = "<group>";
+		};
+		C595D109258713CB002A4531 /* SuspendBtn */ = {
+			isa = PBXGroup;
+			children = (
+				C595D10A258713CB002A4531 /* SuspendBtn.m */,
+				C595D10B258713CB002A4531 /* SuspendBtn.h */,
+			);
+			path = SuspendBtn;
+			sourceTree = "<group>";
+		};
+		C595D10C258713CB002A4531 /* SuspendLab */ = {
+			isa = PBXGroup;
+			children = (
+				C595D10D258713CB002A4531 /* SuspendLab.h */,
+				C595D10E258713CB002A4531 /* SuspendLab.m */,
+			);
+			path = SuspendLab;
+			sourceTree = "<group>";
+		};
 		C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -2632,9 +2697,9 @@
 		C5CF70C824E51A3C000DB72D /* Suspend */ = {
 			isa = PBXGroup;
 			children = (
-				C55B2A31253426BB0038E50C /* SuspendBtn */,
-				C55B2A2B253426BB0038E50C /* SuspendLab */,
-				C55B2A34253426BB0038E50C /* SuspendView */,
+				C595D109258713CB002A4531 /* SuspendBtn */,
+				C595D10C258713CB002A4531 /* SuspendLab */,
+				C595D106258713CB002A4531 /* SuspendView */,
 			);
 			path = Suspend;
 			sourceTree = "<group>";
@@ -2840,14 +2905,14 @@
 			path = "水平进度条";
 			sourceTree = "<group>";
 		};
-		C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */ = {
+		C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */ = {
 			isa = PBXGroup;
 			children = (
-				C5E7D9C624E17A4B00A38FAF /* Uses */,
 				C5E7D9C324E179E600A38FAF /* UIViewController+InteractivePushGesture.h */,
 				C5E7D9C224E179E600A38FAF /* UIViewController+InteractivePushGesture.m */,
+				C5DD6F6F25863865006DC533 /* InteractivePushGesture.md */,
 			);
-			path = InteractivePushGesture;
+			path = "UIViewController+InteractivePushGesture";
 			sourceTree = "<group>";
 		};
 		C5F732D025138E4300216DEF /* 正则表达式 */ = {
@@ -3074,7 +3139,6 @@
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
 				C5013A8C2536CB5400F4E87D /* 不规则多边形按钮 */,
 				C55AAB5A2532B03500335ACC /* 热词标签 */,
-				C544D2722525D7F1003C2A94 /* MJRefresh + Lottie */,
 				C50ECAC82525884A000AE52F /* 音律跳动 */,
 				C54BB50D2518E53F001591C2 /* 网络请求 */,
 				C5F732D025138E4300216DEF /* 正则表达式 */,
@@ -3086,7 +3150,6 @@
 				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
 				C5CF70D924E51C9B000DB72D /* 网络数据实时监测 */,
 				C5CF70C824E51A3C000DB72D /* Suspend */,
-				C5E7D9C124E179DE00A38FAF /* InteractivePushGesture */,
 				C5DD001624D46B3C00307DFA /* LYEmptyView */,
 				C5D4FBAE24CEC5230024A292 /* 文件夹操作 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,
@@ -3318,20 +3381,13 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C5AEEAC525384147000E1C5F /* UIView+Animation.h */,
-				C5AEEAC625384147000E1C5F /* UIView+Animation.m */,
-				C59C4A3A24E297F6002C2104 /* UIView+Chain.h */,
-				C59C4A3924E297F6002C2104 /* UIView+Chain.m */,
-				C5AEEB3625384310000E1C5F /* UIView+Extras.h */,
-				C5AEEB3725384310000E1C5F /* UIView+Extras.m */,
-				C5EB98D7250A1736007660B3 /* UIView+Gradient.h */,
-				C5EB98D6250A1736007660B3 /* UIView+Gradient.m */,
-				C5C67C5124FE4E65000A26B8 /* UIView+Measure.h */,
-				C5C67C5224FE4E65000A26B8 /* UIView+Measure.m */,
-				C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */,
-				C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */,
-				C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */,
-				C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */,
+				C595BA7625863F93002A4531 /* UIView+Animation */,
+				C595BA7725863FBF002A4531 /* UIView+Chain */,
+				C595BA7825863FC7002A4531 /* UIView+Extras */,
+				C595BA7925863FD0002A4531 /* UIView+Gradient */,
+				C595BA7A25863FD7002A4531 /* UIView+Measure */,
+				C595BA7B25863FE2002A4531 /* UIView+SuspendView */,
+				C595BA7C25863FF0002A4531 /* UIView+ZFPlayer */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -4137,17 +4193,18 @@
 				C56BA7DC257892F400D054D0 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5FE9CE724B5F29C007B9878 /* BWItemCollectionViewCell.m in Sources */,
 				C56BA6D32578925500D054D0 /* UBLUrlConst.m in Sources */,
+				C595D10F258713CB002A4531 /* SuspendView.m in Sources */,
 				C5FE9CC024B5F29C007B9878 /* CFGradientLabel.m in Sources */,
 				C55D3CB32538856100CFCF73 /* XHLaunchAdConfiguration.m in Sources */,
 				C5727863254094C2002373D7 /* TransitionController.m in Sources */,
 				C55D3CAE2538856100CFCF73 /* XHLaunchAdConst.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
 				C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */,
-				C55B2A39253426BC0038E50C /* SuspendView.m in Sources */,
 				C5FE9D2124B5F29C007B9878 /* AnimateToSpecifiedDate_Init.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C572A29A24FD2AA9000A1687 /* STDPingServices.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
+				C595D111258713CB002A4531 /* SuspendLab.m in Sources */,
 				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C5767BA625470BD100C382C8 /* WMZBannerParam.m in Sources */,
@@ -4176,11 +4233,11 @@
 				C55D3CB12538856100CFCF73 /* XHLaunchAdDownloader.m in Sources */,
 				C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */,
 				C5FE9D2524B5F29C007B9878 /* UIColor+LXExpand.m in Sources */,
-				C55B2A37253426BC0038E50C /* SuspendLab.m in Sources */,
 				C5FE9D0B24B5F29C007B9878 /* WBTableViewDelegate.m in Sources */,
 				C557ADAE2580FEF000F3FEED /* JobsAppDoorConfig.m in Sources */,
 				C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */,
 				C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */,
+				C595D110258713CB002A4531 /* SuspendBtn.m in Sources */,
 				C56BA7DB257892F400D054D0 /* ZBRequestEngine.m in Sources */,
 				C5AA4907250C8C2D009F583F /* NSObject+SYSAlertController.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
@@ -4321,7 +4378,6 @@
 				C557ADB42580FEF000F3FEED /* JobsAppDoorInputViewBaseStyle.m in Sources */,
 				C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */,
 				C572785B254094C2002373D7 /* TabBarItem.m in Sources */,
-				C55B2A38253426BC0038E50C /* SuspendBtn.m in Sources */,
 				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C5FE9CD724B5F29C007B9878 /* PlaySound.m in Sources */,
 				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,

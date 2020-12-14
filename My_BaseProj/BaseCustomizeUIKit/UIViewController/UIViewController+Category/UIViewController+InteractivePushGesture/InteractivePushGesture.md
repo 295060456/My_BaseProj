@@ -1,3 +1,5 @@
+#  InteractivePushGesture
+
 https://github.com/xiaopin/InteractivePushGesture.git
 
 不能在基类里面写，哪个类需要这个功能再单独加上
@@ -14,4 +16,6 @@ https://github.com/xiaopin/InteractivePushGesture.git
     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     return vc;
 }
+
+
 

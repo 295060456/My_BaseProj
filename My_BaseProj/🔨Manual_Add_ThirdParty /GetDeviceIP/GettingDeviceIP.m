@@ -5,9 +5,11 @@
 //  Created by Kite on 2019/12/4.
 //  Copyright © 2019 朝花夕拾. All rights reserved.
 //
+
+#import "GettingDeviceIP.h"
+
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#import "GettingDeviceIP.h"
 #import <net/if.h>
 
 #define IOS_CELLULAR    @"pdp_ip0"
@@ -151,6 +153,5 @@
         freeifaddrs(interfaces);
     }return [addresses count] ? addresses : nil;
 }
-
 
 @end

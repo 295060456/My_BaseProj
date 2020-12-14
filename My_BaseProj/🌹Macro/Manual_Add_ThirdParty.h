@@ -24,8 +24,6 @@
 #import "XDSDropDownMenu.h"
 #import "XLSphereView.h"
 #import "UICountingLabel.h"//数字可以一直变化到指定值的UILable
-#import "AnimateToSpecifiedDateView.h"
-#import "PlaySound.h"//播放自定义声音关键代码
 #import "DeleteSystemUITabBarButton.h"//移除 系统自带的 UITabBarButton
 #import "ZFMRACNetworkTool.h"//网络请求 RAC+MVVM
 #import "XDTextBtnView.h"//自适应文字按钮

@@ -37,7 +37,7 @@ def longConnection
   # https://juejin.im/post/6844904062408720391#heading-0
   # https://www.jianshu.com/p/9153d5628363
   pod 'MQTTClient' # https://github.com/novastone-media/MQTT-Client-Framework
-  pod 'Socket.IO-Client-Swift', '~> 15.2.0' # https://github.com/socketio/socket.io-client-swift Socket.iO
+  pod 'Socket.IO-Client-Swift', # https://github.com/socketio/socket.io-client-swift Socket.iO
   end
 # 几乎每个App都用到的框架
 def appCommon

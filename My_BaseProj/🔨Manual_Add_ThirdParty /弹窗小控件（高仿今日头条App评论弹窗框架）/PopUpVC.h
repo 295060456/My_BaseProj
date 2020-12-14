@@ -6,6 +6,8 @@
 //  Copyright © 2020 Jobs. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, MoveDirection){
@@ -14,21 +16,31 @@ typedef NS_ENUM(NSUInteger, MoveDirection){
     MoveDirection_horizont_left,//水平方向(向左)滑动
     MoveDirection_horizont_right//水平方向(向右)滑动
 };
-
+//此类解耦手势
 @interface PopUpVC : UIViewController
 
-@property(nonatomic,assign)CGFloat liftingHeight;
-@property(nonatomic,copy)MKDataBlock block;
+@property(nonatomic,assign)CGFloat popUpHeight;//默认弹出高度300
 
-+ (instancetype)ComingFromVC:(UIViewController *)rootVC
-                 comingStyle:(ComingStyle)comingStyle
-           presentationStyle:(UIModalPresentationStyle)presentationStyle
-               requestParams:(nullable id)requestParams
-                     success:(MKDataBlock)block
-                    animated:(BOOL)animated;
--(void)popUpActionBlock:(MKDataBlock)block;
+-(void)actionBlockPopUpVC:(MKDataBlock)PopUpVCBlock;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
+/**
+
+    PopUpVC *popUpVC = PopUpVC.new;
+    @weakify(self)
+    [popUpVC actionBlockPopUpVC:^(id data) {
+        @strongify(self)
+        NSLog(@"您点击了关注");
+    }];
+    [UIViewController comingFromVC:self
+                              toVC:popUpVC
+                       comingStyle:ComingStyle_PUSH
+                 presentationStyle:UIModalPresentationAutomatic
+                     requestParams:@""
+                           success:^(id data) {}
+                          animated:YES];
+
+*/

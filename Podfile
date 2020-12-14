@@ -125,7 +125,7 @@ def ui
   pod 'ZFJTreeViewKit'
   pod 'PPBadgeView' #https://github.com/jkpang/PPBadgeView iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
   pod 'RDVTabBarController' # https://github.com/robbdimitrov/RDVTabBarController
-  #  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
+#  pod 'BRPickerView'  # https://github.com/91renb/BRPickerView 该组件封装的是iOS中常用的选择器组件，主要包括：日期选择器、时间选择器（DatePickerView）、地址选择器（AddressPickerView）、自定义字符串选择器（StringPickerView）。支持自定义主题样式，适配深色模式，支持将选择器组件添加到指定容器视图。
   #  pod 'DZNEmptyDataSet' # https://github.com/dzenbot/DZNEmptyDataSet 空白数据集显示框架
   #  pod 'HWPanModal'#HWPanModal 用于从底部弹出控制器（UIViewController），并用拖拽手势来关闭控制器。提供了自定义视图大小和位置，高度自定义弹出视图的各个属性。 https://github.com/HeathWang/HWPanModal
   #  pod 'SearchTextField'

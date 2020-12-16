@@ -148,6 +148,16 @@
 		C5767BA825470BD100C382C8 /* WMZBannerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9E25470BD100C382C8 /* WMZBannerControl.m */; };
 		C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */; };
 		C5767BAA25470BD100C382C8 /* WMZBannerOverLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */; };
+		C5778F962589FF4300FE51E3 /* GKLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */; };
+		C5778F972589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */; };
+		C5778F982589FF4300FE51E3 /* GKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */; };
+		C5778F992589FF4300FE51E3 /* GKPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F892589FF4300FE51E3 /* GKPhotoManager.m */; };
+		C5778F9A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */; };
+		C5778F9B2589FF4300FE51E3 /* GKPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */; };
+		C5778F9C2589FF4300FE51E3 /* GKPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */; };
+		C5778F9D2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md in Resources */ = {isa = PBXBuildFile; fileRef = C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */; };
+		C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */; };
+		C5778FA02589FF4300FE51E3 /* GKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
 		C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */; };
@@ -244,7 +254,7 @@
 		C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */; };
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
 		C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */; };
-		C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */; };
+		C5FE9B7524B5F204007B9878 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* NotificationManager.m */; };
 		C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */; };
 		C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */; };
 		C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B8024B5F298007B9878 /* ZHKeyChainManager.m */; };
@@ -520,6 +530,7 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C558E49A258A1FAA0078DB8F /* PodsManual.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PodsManual.h; sourceTree = "<group>"; };
 		C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XHLaunchAdDelegate.m"; sourceTree = "<group>"; };
 		C55D3C7D2538838C00CFCF73 /* AppDelegate+Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Func.h"; sourceTree = "<group>"; };
 		C55D3C7E2538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XHLaunchAdDelegate.h"; sourceTree = "<group>"; };
@@ -669,6 +680,28 @@
 		C5767BA225470BD100C382C8 /* WMZBannerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerParam.h; sourceTree = "<group>"; };
 		C5767BA325470BD100C382C8 /* WMZBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerView.h; sourceTree = "<group>"; };
 		C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerOverLayout.m; sourceTree = "<group>"; };
+		C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLoadingView.m; sourceTree = "<group>"; };
+		C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKGestureHandle.m"; sourceTree = "<group>"; };
+		C5778F812589FF4300FE51E3 /* GKWebImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWebImageProtocol.h; sourceTree = "<group>"; };
+		C5778F822589FF4300FE51E3 /* GKPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoManager.h; sourceTree = "<group>"; };
+		C5778F832589FF4300FE51E3 /* GKPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPanGestureRecognizer.h; sourceTree = "<group>"; };
+		C5778F842589FF4300FE51E3 /* GKPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoView.h; sourceTree = "<group>"; };
+		C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoBrowser.m; sourceTree = "<group>"; };
+		C5778F862589FF4300FE51E3 /* GKPhotoBrowserConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowserConfigure.h; sourceTree = "<group>"; };
+		C5778F872589FF4300FE51E3 /* UIScrollView+GKGestureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKGestureHandle.h"; sourceTree = "<group>"; };
+		C5778F882589FF4300FE51E3 /* GKLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLoadingView.h; sourceTree = "<group>"; };
+		C5778F892589FF4300FE51E3 /* GKPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoManager.m; sourceTree = "<group>"; };
+		C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoBrowserConfigure.m; sourceTree = "<group>"; };
+		C5778F8B2589FF4300FE51E3 /* GKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowser.h; sourceTree = "<group>"; };
+		C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoView.m; sourceTree = "<group>"; };
+		C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPanGestureRecognizer.m; sourceTree = "<group>"; };
+		C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "GKPhotoBrowser不用pod管理的情况说明.md"; sourceTree = "<group>"; };
+		C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSDWebImageManager.m; sourceTree = "<group>"; };
+		C5778F912589FF4300FE51E3 /* GKSDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSDWebImageManager.h; sourceTree = "<group>"; };
+		C5778F932589FF4300FE51E3 /* GKYYWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKYYWebImageManager.m; sourceTree = "<group>"; };
+		C5778F942589FF4300FE51E3 /* GKYYWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKYYWebImageManager.h; sourceTree = "<group>"; };
+		C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKPhotoBrowser.bundle; sourceTree = "<group>"; };
+		C5778FA42589FF5A00FE51E3 /* XHLaunchAd不用pod导入的情况说明.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "XHLaunchAd不用pod导入的情况说明.md"; sourceTree = "<group>"; };
 		C5788CA425592D14009D46E3 /* 关于响应链的一些研究成果.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于响应链的一些研究成果.md"; sourceTree = "<group>"; };
 		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
 		C57C229B2502550800FAAA3F /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
@@ -916,9 +949,9 @@
 		C5FE9B4A24B5F203007B9878 /* NSArray+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extend.h"; sourceTree = "<group>"; };
 		C5FE9B4B24B5F203007B9878 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
 		C5FE9B4C24B5F203007B9878 /* NSArray+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extend.m"; sourceTree = "<group>"; };
-		C5FE9B4F24B5F203007B9878 /* YBNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBNotificationManager.h; sourceTree = "<group>"; };
+		C5FE9B4F24B5F203007B9878 /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		C5FE9B5024B5F203007B9878 /* AABlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AABlock.h; sourceTree = "<group>"; };
-		C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBNotificationManager.m; sourceTree = "<group>"; };
+		C5FE9B5124B5F203007B9878 /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
 		C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteSystemUITabBarButton.m; sourceTree = "<group>"; };
 		C5FE9B5424B5F203007B9878 /* DeleteSystemUITabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteSystemUITabBarButton.h; sourceTree = "<group>"; };
 		C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "移除 系统自带的 UITabBarButton"; sourceTree = "<group>"; };
@@ -1673,14 +1706,15 @@
 			path = "播放器控制层";
 			sourceTree = "<group>";
 		};
-		C54F104424C471FD00EE1E67 /* Pod 不进去的 */ = {
+		C54F104424C471FD00EE1E67 /* PodsManual */ = {
 			isa = PBXGroup;
 			children = (
+				C5778F7D2589FF4300FE51E3 /* GKPhotoBrowser */,
 				C5767B9725470BD100C382C8 /* WMZBanner */,
 				C55D3C8B2538856100CFCF73 /* XHLaunchAd */,
 				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
 			);
-			path = "Pod 不进去的";
+			path = PodsManual;
 			sourceTree = "<group>";
 		};
 		C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */ = {
@@ -2091,6 +2125,78 @@
 			path = "MJExtension用法";
 			sourceTree = "<group>";
 		};
+		C558E46B258A1F3E0078DB8F /* 第三方头文件管理 */ = {
+			isa = PBXGroup;
+			children = (
+				C558E493258A1F920078DB8F /* Pods */,
+				C558E492258A1F890078DB8F /* 手动导入的第三方 */,
+			);
+			path = "第三方头文件管理";
+			sourceTree = "<group>";
+		};
+		C558E472258A1F450078DB8F /* 各项全局定义 */ = {
+			isa = PBXGroup;
+			children = (
+				C5470F0D25309B5200651ACE /* 各项宏定义 */,
+				C558E47C258A1F530078DB8F /* 其他的一些全局定义文件 */,
+				C5FE9B4E24B5F203007B9878 /* NotificationManager */,
+			);
+			path = "各项全局定义";
+			sourceTree = "<group>";
+		};
+		C558E47C258A1F530078DB8F /* 其他的一些全局定义文件 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9B5024B5F203007B9878 /* AABlock.h */,
+				C5FE9B0524B5F1F2007B9878 /* APIKey.h */,
+				C5FE9A7424B5F084007B9878 /* DefineStructure.h */,
+			);
+			path = "其他的一些全局定义文件";
+			sourceTree = "<group>";
+		};
+		C558E492258A1F890078DB8F /* 手动导入的第三方 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9A7024B5F084007B9878 /* Manual_Add_ThirdParty.h */,
+			);
+			path = "手动导入的第三方";
+			sourceTree = "<group>";
+		};
+		C558E493258A1F920078DB8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9A7124B5F084007B9878 /* Pods.h */,
+				C558E49A258A1FAA0078DB8F /* PodsManual.h */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C558E4F9258A1FD00078DB8F /* 其他杂项 */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9A7324B5F084007B9878 /* Other.h */,
+			);
+			path = "其他杂项";
+			sourceTree = "<group>";
+		};
+		C558E4FA258A1FDC0078DB8F /* Swift-OC桥接头文件 */ = {
+			isa = PBXGroup;
+			children = (
+				C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */,
+			);
+			path = "Swift-OC桥接头文件";
+			sourceTree = "<group>";
+		};
+		C558F0DA258A2E830078DB8F /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+				C56E3257252F4584004ACCC7 /* 🍌Manual_Add_ThirdFont */,
+				C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */,
+				C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */,
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
 		C55AAB5A2532B03500335ACC /* 热词标签 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2127,16 +2233,9 @@
 		C55D3C8B2538856100CFCF73 /* XHLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
-				C55D3C922538856100CFCF73 /* XHLaunchAd */,
-			);
-			path = XHLaunchAd;
-			sourceTree = "<group>";
-		};
-		C55D3C922538856100CFCF73 /* XHLaunchAd */ = {
-			isa = PBXGroup;
-			children = (
 				C55D3C942538856100CFCF73 /* XHLaunchAd.h */,
 				C55D3C9E2538856100CFCF73 /* XHLaunchAd.m */,
+				C5778FA42589FF5A00FE51E3 /* XHLaunchAd不用pod导入的情况说明.md */,
 				C55D3CA42538856100CFCF73 /* XHLaunchAdButton.h */,
 				C55D3C992538856100CFCF73 /* XHLaunchAdButton.m */,
 				C55D3C972538856100CFCF73 /* XHLaunchAdCache.h */,
@@ -2443,21 +2542,73 @@
 		C5767B9725470BD100C382C8 /* WMZBanner */ = {
 			isa = PBXGroup;
 			children = (
-				C5767B9825470BD100C382C8 /* WMZBannerFlowLayout.m */,
-				C5767B9925470BD100C382C8 /* WMZBannerControl.h */,
-				C5767B9A25470BD100C382C8 /* WMZBannerFadeLayout.h */,
-				C5767B9B25470BD100C382C8 /* WMZBannerParam.m */,
-				C5767B9C25470BD100C382C8 /* WMZBannerOverLayout.h */,
-				C5767B9D25470BD100C382C8 /* WMZBannerView.m */,
-				C5767B9E25470BD100C382C8 /* WMZBannerControl.m */,
-				C5767B9F25470BD100C382C8 /* WMZBannerFlowLayout.h */,
-				C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */,
 				C5767BA125470BD100C382C8 /* WMZBannerConfig.h */,
-				C5767BA225470BD100C382C8 /* WMZBannerParam.h */,
-				C5767BA325470BD100C382C8 /* WMZBannerView.h */,
+				C5767B9925470BD100C382C8 /* WMZBannerControl.h */,
+				C5767B9E25470BD100C382C8 /* WMZBannerControl.m */,
+				C5767B9A25470BD100C382C8 /* WMZBannerFadeLayout.h */,
+				C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */,
+				C5767B9F25470BD100C382C8 /* WMZBannerFlowLayout.h */,
+				C5767B9825470BD100C382C8 /* WMZBannerFlowLayout.m */,
+				C5767B9C25470BD100C382C8 /* WMZBannerOverLayout.h */,
 				C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */,
+				C5767BA225470BD100C382C8 /* WMZBannerParam.h */,
+				C5767B9B25470BD100C382C8 /* WMZBannerParam.m */,
+				C5767BA325470BD100C382C8 /* WMZBannerView.h */,
+				C5767B9D25470BD100C382C8 /* WMZBannerView.m */,
 			);
 			path = WMZBanner;
+			sourceTree = "<group>";
+		};
+		C5778F7D2589FF4300FE51E3 /* GKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C5778F7E2589FF4300FE51E3 /* Core */,
+				C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */,
+				C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */,
+				C5778F8F2589FF4300FE51E3 /* SDWebImage */,
+				C5778F922589FF4300FE51E3 /* YYWebImage */,
+			);
+			path = GKPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		C5778F7E2589FF4300FE51E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */,
+				C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */,
+				C5778F812589FF4300FE51E3 /* GKWebImageProtocol.h */,
+				C5778F822589FF4300FE51E3 /* GKPhotoManager.h */,
+				C5778F832589FF4300FE51E3 /* GKPanGestureRecognizer.h */,
+				C5778F842589FF4300FE51E3 /* GKPhotoView.h */,
+				C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */,
+				C5778F862589FF4300FE51E3 /* GKPhotoBrowserConfigure.h */,
+				C5778F872589FF4300FE51E3 /* UIScrollView+GKGestureHandle.h */,
+				C5778F882589FF4300FE51E3 /* GKLoadingView.h */,
+				C5778F892589FF4300FE51E3 /* GKPhotoManager.m */,
+				C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */,
+				C5778F8B2589FF4300FE51E3 /* GKPhotoBrowser.h */,
+				C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */,
+				C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C5778F8F2589FF4300FE51E3 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				C5778F912589FF4300FE51E3 /* GKSDWebImageManager.h */,
+				C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		C5778F922589FF4300FE51E3 /* YYWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				C5778F942589FF4300FE51E3 /* GKYYWebImageManager.h */,
+				C5778F932589FF4300FE51E3 /* GKYYWebImageManager.m */,
+			);
+			path = YYWebImage;
 			sourceTree = "<group>";
 		};
 		C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */ = {
@@ -3017,7 +3168,7 @@
 				C5FE9A5524B5EF2C007B9878 /* My_BaseProjTests */,
 				C5FE9A6024B5EF2C007B9878 /* My_BaseProjUITests */,
 				EE05B672768957DF208CC365 /* Frameworks */,
-				C54F104424C471FD00EE1E67 /* Pod 不进去的 */,
+				C54F104424C471FD00EE1E67 /* PodsManual */,
 				7100CEAC5EF9236FCDAA8DFF /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -3036,15 +3187,11 @@
 		C5FE9A3624B5EF2B007B9878 /* My_BaseProj */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */,
-				C5FE9ABB24B5F182007B9878 /* 🌹Macro */,
-				C56E3257252F4584004ACCC7 /* 🍌Manual_Add_ThirdFont */,
-				C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */,
-				C56BAADD2578AF2400D054D0 /* 项目资源 */,
-				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
-				C5379EAF24D149370078880F /* AppDelegate & SceneDelegate */,
-				C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */,
 				C5FE9A4B24B5EF2C007B9878 /* Info.plist */,
+				C5FE9ABB24B5F182007B9878 /* 🌹Macro */,
+				C558F0DA258A2E830078DB8F /* 3rd */,
+				C5379EAF24D149370078880F /* AppDelegate & SceneDelegate */,
+				C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */,
 				C5FE9A6F24B5F04A007B9878 /* Others */,
 			);
 			path = My_BaseProj;
@@ -3071,6 +3218,7 @@
 		C5FE9A6F24B5F04A007B9878 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C56BAADD2578AF2400D054D0 /* 项目资源 */,
 				C5FE9A3524B5EF2B007B9878 /* Products */,
 				C5FE9AA824B5F0EF007B9878 /* Log */,
 				C5FE9A9924B5F0EF007B9878 /* Sys */,
@@ -3301,17 +3449,12 @@
 		C5FE9ABB24B5F182007B9878 /* 🌹Macro */ = {
 			isa = PBXGroup;
 			children = (
-				C5470F0D25309B5200651ACE /* 各项宏定义 */,
-				C5FE9B4E24B5F203007B9878 /* Notification */,
-				C5A7CE9924C70AA600E502A9 /* URL_Manager */,
-				C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */,
 				C5FE9A7224B5F084007B9878 /* PrefixHeader.pch */,
-				C5FE9B5024B5F203007B9878 /* AABlock.h */,
-				C5FE9B0524B5F1F2007B9878 /* APIKey.h */,
-				C5FE9A7424B5F084007B9878 /* DefineStructure.h */,
-				C5FE9A7124B5F084007B9878 /* Pods.h */,
-				C5FE9A7024B5F084007B9878 /* Manual_Add_ThirdParty.h */,
-				C5FE9A7324B5F084007B9878 /* Other.h */,
+				C558E46B258A1F3E0078DB8F /* 第三方头文件管理 */,
+				C558E472258A1F450078DB8F /* 各项全局定义 */,
+				C558E4F9258A1FD00078DB8F /* 其他杂项 */,
+				C558E4FA258A1FDC0078DB8F /* Swift-OC桥接头文件 */,
+				C5A7CE9924C70AA600E502A9 /* URL_Manager */,
 			);
 			path = "🌹Macro";
 			sourceTree = "<group>";
@@ -3319,6 +3462,7 @@
 		C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
 				C5767B3F25470A1000C382C8 /* 广告或者公示弹出框 */,
 				C5D4FBD724CFE0740024A292 /* Common */,
 				C5FE9AC624B5F19E007B9878 /* ViewController@1.h */,
@@ -3482,13 +3626,13 @@
 			path = RedefineSys;
 			sourceTree = "<group>";
 		};
-		C5FE9B4E24B5F203007B9878 /* Notification */ = {
+		C5FE9B4E24B5F203007B9878 /* NotificationManager */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B4F24B5F203007B9878 /* YBNotificationManager.h */,
-				C5FE9B5124B5F203007B9878 /* YBNotificationManager.m */,
+				C5FE9B4F24B5F203007B9878 /* NotificationManager.h */,
+				C5FE9B5124B5F203007B9878 /* NotificationManager.m */,
 			);
-			path = Notification;
+			path = NotificationManager;
 			sourceTree = "<group>";
 		};
 		C5FE9B5224B5F203007B9878 /* DeleteSystemUITabBarButton */ = {
@@ -4037,6 +4181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C544D2E82525DC2F003C2A94 /* 123.json in Resources */,
+				C5778FA02589FF4300FE51E3 /* GKPhotoBrowser.bundle in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C56E3E0B2547122700B9F555 /* 资源文件 in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
@@ -4045,6 +4190,7 @@
 				C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */,
 				C544D2E72525DC2F003C2A94 /* 12345.json in Resources */,
 				C557ADAB2580FEF000F3FEED /* 尝试高仿蜜柚.md in Resources */,
+				C5778F9D2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md in Resources */,
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */,
 				C5727867254094C2002373D7 /* 参考demo in Resources */,
@@ -4208,6 +4354,7 @@
 				C5D0AA06258765F8002CA224 /* ZBURLRequest.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */,
+				C5778F972589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m in Sources */,
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
 				C5FE9CED24B5F29C007B9878 /* HAHandleDemoView.m in Sources */,
@@ -4222,7 +4369,7 @@
 				C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */,
 				C5727873254094C2002373D7 /* UITabBar+Ex.m in Sources */,
 				C5FE9D3F24B5F3C7007B9878 /* AppDelegate.m in Sources */,
-				C5FE9B7524B5F204007B9878 /* YBNotificationManager.m in Sources */,
+				C5FE9B7524B5F204007B9878 /* NotificationManager.m in Sources */,
 				C5FE9D1224B5F29C007B9878 /* GettingDeviceIP.m in Sources */,
 				C55391652572803A008BB60F /* SocketIOTools.m in Sources */,
 				C557ADBE2580FEF000F3FEED /* JobsAppDoorVC_Style2.m in Sources */,
@@ -4235,10 +4382,13 @@
 				C55D3CB32538856100CFCF73 /* XHLaunchAdConfiguration.m in Sources */,
 				C5727863254094C2002373D7 /* TransitionController.m in Sources */,
 				C55D3CAE2538856100CFCF73 /* XHLaunchAdConst.m in Sources */,
+				C5778F982589FF4300FE51E3 /* GKPhotoBrowser.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
 				C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
+				C5778F9C2589FF4300FE51E3 /* GKPanGestureRecognizer.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
+				C5778F992589FF4300FE51E3 /* GKPhotoManager.m in Sources */,
 				C595D111258713CB002A4531 /* SuspendLab.m in Sources */,
 				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
@@ -4302,6 +4452,7 @@
 				C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */,
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5C67C5B24FE4F9C000A26B8 /* Nanosecond_TimerManager.m in Sources */,
+				C5778F962589FF4300FE51E3 /* GKLoadingView.m in Sources */,
 				C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */,
 				C56BA6D22578925500D054D0 /* UBLNetWorkResult.m in Sources */,
 				C52E8958250F752E0070356F /* NSData+Base64.m in Sources */,
@@ -4415,6 +4566,7 @@
 				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */,
+				C5778F9B2589FF4300FE51E3 /* GKPhotoView.m in Sources */,
 				C5FE9D1424B5F29C007B9878 /* HWTextCodeView.m in Sources */,
 				C5D0AA04258765F8002CA224 /* ZBRequestEngine.m in Sources */,
 				C5FE9CE824B5F29C007B9878 /* LongPressToDeleteImageView.m in Sources */,
@@ -4424,6 +4576,7 @@
 				C55166642575202D00FF5217 /* ZYTextField.m in Sources */,
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
+				C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */,
 				C55D3CAF2538856100CFCF73 /* XHLaunchAd.m in Sources */,
 				C5727874254094C2002373D7 /* CustomTabBar.m in Sources */,
 				C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */,
@@ -4443,6 +4596,7 @@
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
+				C5778F9A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m in Sources */,
 				C557ADAD2580FEF000F3FEED /* JobsAppDoorVC_Style1.m in Sources */,
 				C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */,
 				C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */,

@@ -57,6 +57,7 @@ def appCommon
 def gk
   pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar GKNavigationBarViewController的分类实现方式，耦合度底，使用更加便捷
   pod 'GKPageScrollView' # https://github.com/QuintGao/GKPageScrollView iOS类似微博、抖音、网易云等个人详情页滑动嵌套效果
+  #  pod 'GKPhotoBrowser' # https://github.com/QuintGao/GKPhotoBrowser iOS仿微信、今日头条等图片浏览器 （与GKNavigationBar有冲突）
   end
 ## JX一族
 def jx

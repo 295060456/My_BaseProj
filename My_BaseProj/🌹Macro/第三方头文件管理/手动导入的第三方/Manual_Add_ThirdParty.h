@@ -37,6 +37,7 @@
 #import "UIView+Measure.h"
 #import "UIView+Animation.h"
 #import "UIView+Gradient.h"
+#import "UIView+EmptyData.h"
 //#import "UIView+JHGestureBlock.h"
 /// NSObject
 #import "NSObject+Extras.h"
@@ -96,6 +97,7 @@
 #import "UIViewController+NavigationBar.h"
 #import "UIViewController+TFPopup.h"
 #import "UIViewController+InteractivePushGesture.h"
+#import "UIViewController+EmptyData.h"
 /// UITableViewHeaderFooterView
 #import "ViewForTableViewFooter.h"
 #import "ViewForTableViewHeader.h"

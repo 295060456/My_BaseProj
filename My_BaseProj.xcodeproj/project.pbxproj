@@ -52,6 +52,8 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
+		C546E704258B2D7D0008928C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = C546E701258B2D7D0008928C /* KeychainIDFA.m */; };
+		C546E705258B2D7D0008928C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C546E703258B2D7D0008928C /* KeychainHelper.m */; };
 		C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AB076255E5EED000A314D /* WhiteRightArrow@2x.png */; };
 		C54AB07D255E5EED000A314D /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AB077255E5EED000A314D /* WhiteRightArrow@3x.png */; };
 		C54AB07E255E5EED000A314D /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AB078255E5EED000A314D /* UITableViewCell+WhiteArrows.m */; };
@@ -445,6 +447,10 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
+		C546E700258B2D7D0008928C /* KeychainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainHelper.h; sourceTree = "<group>"; };
+		C546E701258B2D7D0008928C /* KeychainIDFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainIDFA.m; sourceTree = "<group>"; };
+		C546E702258B2D7D0008928C /* KeychainIDFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainIDFA.h; sourceTree = "<group>"; };
+		C546E703258B2D7D0008928C /* KeychainHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainHelper.m; sourceTree = "<group>"; };
 		C5470F1125309B5C00651ACE /* MacroDef_Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Size.h; sourceTree = "<group>"; };
 		C5470F1225309B5C00651ACE /* MacroDef_Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Func.h; sourceTree = "<group>"; };
 		C5470F1325309B5C00651ACE /* MacroDef_Cor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Cor.h; sourceTree = "<group>"; };
@@ -1630,6 +1636,17 @@
 				C544D26D2525D7ED003C2A94 /* TestTableViewHeader.m */,
 			);
 			path = "MJRefresh + Lottie";
+			sourceTree = "<group>";
+		};
+		C546E6FF258B2D7D0008928C /* KeychainIDFA */ = {
+			isa = PBXGroup;
+			children = (
+				C546E700258B2D7D0008928C /* KeychainHelper.h */,
+				C546E703258B2D7D0008928C /* KeychainHelper.m */,
+				C546E702258B2D7D0008928C /* KeychainIDFA.h */,
+				C546E701258B2D7D0008928C /* KeychainIDFA.m */,
+			);
+			path = KeychainIDFA;
 			sourceTree = "<group>";
 		};
 		C5470F0D25309B5200651ACE /* 各项宏定义 */ = {
@@ -3387,6 +3404,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C546E6FF258B2D7D0008928C /* KeychainIDFA */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
 				C5013A8C2536CB5400F4E87D /* 不规则多边形按钮 */,
 				C5FE9B9624B5F298007B9878 /* 弹窗小控件（高仿今日头条App评论弹窗框架） */,
@@ -4587,6 +4605,7 @@
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
 				C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */,
+				C546E705258B2D7D0008928C /* KeychainHelper.m in Sources */,
 				C557ADB42580FEF000F3FEED /* JobsAppDoorInputViewBaseStyle.m in Sources */,
 				C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */,
 				C572785B254094C2002373D7 /* TabBarItem.m in Sources */,
@@ -4614,6 +4633,7 @@
 				C5D0AA05258765F8002CA224 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
 				C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */,
+				C546E704258B2D7D0008928C /* KeychainIDFA.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,
 				C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */,

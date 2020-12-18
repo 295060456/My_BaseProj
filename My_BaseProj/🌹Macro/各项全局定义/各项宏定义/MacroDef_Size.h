@@ -31,6 +31,9 @@ static inline CGFloat Top(){
 #pragma mark —— 状态栏高度：全面屏手机的状态栏高度为44pt，非全面屏手机的状态栏高度为20pt
 //方法一：
 static inline CGFloat rectOfStatusbar(){
+//    SuppressWdeprecatedDeclarationsWarning
+    
+    
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     CGFloat RectOfStatusbar = 0.0f;

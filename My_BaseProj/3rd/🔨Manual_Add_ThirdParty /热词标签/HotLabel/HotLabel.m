@@ -46,12 +46,14 @@
             UIButton *btn = UIButton.new;
             [btn setTitle:titleStr
                  forState:UIControlStateNormal];
-            [btn setBackgroundImage:[UIImage imageWithColor:RandomColor] forState:UIControlStateNormal];//直接赋值是不行的
+            [btn setBackgroundImage:[UIImage imageWithColor:RandomColor]
+                           forState:UIControlStateNormal];//直接赋值是不行的
             btn.titleLabel.font = self.btnTitleFont;
             btn.titleLabel.textColor = self.btnTitleColor;
             [btn.titleLabel sizeToFit];
             btn.titleLabel.adjustsFontSizeToFitWidth = YES;
-            [UIView cornerCutToCircleWithView:btn AndCornerRadius:3];
+            [UIView cornerCutToCircleWithView:btn
+                              andCornerRadius:3];
             
             btnSize = [UILabel sizeWithText:titleStr
                                        font:self.btnTitleFont

@@ -185,11 +185,11 @@
         button.tag = i;
         
         [UIView cornerCutToCircleWithView:button
-                            AndCornerRadius:self.cornerRadius];
+                            andCornerRadius:self.cornerRadius];
         
         [UIView colourToLayerOfView:button
-                           WithColour:self.borderColor
-                       AndBorderWidth:self.borderWidth];
+                           withColour:self.borderColor
+                       andBorderWidth:self.borderWidth];
         
         if (i == 0) {//设置默认
             
@@ -252,8 +252,8 @@
                  forState:UIControlStateNormal];
     
     [UIView colourToLayerOfView:sender
-                       WithColour:HEXCOLOR(borderColor)
-                   AndBorderWidth:borderWidth];
+                     withColour:HEXCOLOR(borderColor)
+                 andBorderWidth:borderWidth];
 }
 
 -(void)layoutItems{

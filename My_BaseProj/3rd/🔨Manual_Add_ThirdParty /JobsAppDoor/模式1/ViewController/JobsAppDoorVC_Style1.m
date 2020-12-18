@@ -234,7 +234,7 @@
                                                    JobsAppDoorContentViewRightHeight);
         self.jobsAppDoorContentViewY = _jobsAppDoorContentView.y;
         [UIView cornerCutToCircleWithView:_jobsAppDoorContentView
-                          AndCornerRadius:8];
+                          andCornerRadius:8];
     }return _jobsAppDoorContentView;
 }
 
@@ -256,10 +256,10 @@
             @strongify(self)
         }];
         [UIView cornerCutToCircleWithView:_customerServiceBtn
-                          AndCornerRadius:_customerServiceBtn.height / 2];
+                          andCornerRadius:_customerServiceBtn.height / 2];
         [UIView colourToLayerOfView:_customerServiceBtn
-                         WithColour:kWhiteColor
-                     AndBorderWidth:2];
+                         withColour:kWhiteColor
+                     andBorderWidth:2];
     }return _customerServiceBtn;
 }
 

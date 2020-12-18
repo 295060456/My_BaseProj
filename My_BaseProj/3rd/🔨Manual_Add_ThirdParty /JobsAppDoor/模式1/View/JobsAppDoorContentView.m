@@ -304,7 +304,8 @@
         _sendBtn.x = 20;
         _sendBtn.size = CGSizeMake(self.width - self.toRegisterBtn.width - 40, ThingsHeight);
         _sendBtn.bottom = self.abandonLoginBtn.top - 10;
-        [UIView cornerCutToCircleWithView:_sendBtn AndCornerRadius:_sendBtn.height / 2];
+        [UIView cornerCutToCircleWithView:_sendBtn
+                          andCornerRadius:_sendBtn.height / 2];
     }return _sendBtn;
 }
 

@@ -52,6 +52,8 @@
 		C544D2E72525DC2F003C2A94 /* 12345.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E42525DC2F003C2A94 /* 12345.json */; };
 		C544D2E82525DC2F003C2A94 /* 123.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E52525DC2F003C2A94 /* 123.json */; };
 		C544D2E92525DC2F003C2A94 /* 1234.json in Resources */ = {isa = PBXBuildFile; fileRef = C544D2E62525DC2F003C2A94 /* 1234.json */; };
+		C5460F51258C8F090008928C /* UIView+AOP.m in Sources */ = {isa = PBXBuildFile; fileRef = C5460F4F258C8F090008928C /* UIView+AOP.m */; };
+		C5460F5D258C8F1D0008928C /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5460F5B258C8F1C0008928C /* ZYTextField.m */; };
 		C546E704258B2D7D0008928C /* KeychainIDFA.m in Sources */ = {isa = PBXBuildFile; fileRef = C546E701258B2D7D0008928C /* KeychainIDFA.m */; };
 		C546E705258B2D7D0008928C /* KeychainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C546E703258B2D7D0008928C /* KeychainHelper.m */; };
 		C54AB07C255E5EED000A314D /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C54AB076255E5EED000A314D /* WhiteRightArrow@2x.png */; };
@@ -65,7 +67,6 @@
 		C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F854D252B609700EE3DD0 /* UITableView+WWFoldableTableView.m */; };
 		C54F8557252B60E500EE3DD0 /* HotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54F8555252B60E500EE3DD0 /* HotLabel.m */; };
 		C54FE244257671C900937C11 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54FE242257671C900937C11 /* BaseViewController.m */; };
-		C55166642575202D00FF5217 /* ZYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C55166562575202C00FF5217 /* ZYTextField.m */; };
 		C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */; };
 		C55166662575202D00FF5217 /* ZYTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C551665A2575202D00FF5217 /* ZYTextField.bundle */; };
 		C55166672575202D00FF5217 /* HQTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C551665D2575202D00FF5217 /* HQTextField.m */; };
@@ -447,6 +448,10 @@
 		C544D2E42525DC2F003C2A94 /* 12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 12345.json; sourceTree = "<group>"; };
 		C544D2E52525DC2F003C2A94 /* 123.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 123.json; sourceTree = "<group>"; };
 		C544D2E62525DC2F003C2A94 /* 1234.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1234.json; sourceTree = "<group>"; };
+		C5460F4F258C8F090008928C /* UIView+AOP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AOP.m"; sourceTree = "<group>"; };
+		C5460F50258C8F090008928C /* UIView+AOP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AOP.h"; sourceTree = "<group>"; };
+		C5460F5B258C8F1C0008928C /* ZYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
+		C5460F5C258C8F1C0008928C /* ZYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
 		C546E700258B2D7D0008928C /* KeychainHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainHelper.h; sourceTree = "<group>"; };
 		C546E701258B2D7D0008928C /* KeychainIDFA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainIDFA.m; sourceTree = "<group>"; };
 		C546E702258B2D7D0008928C /* KeychainIDFA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainIDFA.h; sourceTree = "<group>"; };
@@ -476,9 +481,7 @@
 		C54F8556252B60E500EE3DD0 /* HotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotLabel.h; sourceTree = "<group>"; };
 		C54FE242257671C900937C11 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		C54FE243257671C900937C11 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		C55166562575202C00FF5217 /* ZYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
 		C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZYTextField+HistoryDataList.m"; sourceTree = "<group>"; };
-		C55166582575202C00FF5217 /* ZYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
 		C55166592575202D00FF5217 /* ZYTextField+HistoryDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZYTextField+HistoryDataList.h"; sourceTree = "<group>"; };
 		C551665A2575202D00FF5217 /* ZYTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYTextField.bundle; sourceTree = "<group>"; };
 		C551665C2575202D00FF5217 /* HQTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQTextField.h; sourceTree = "<group>"; };
@@ -1638,6 +1641,15 @@
 			path = "MJRefresh + Lottie";
 			sourceTree = "<group>";
 		};
+		C5460F4E258C8F090008928C /* UIView+AOP */ = {
+			isa = PBXGroup;
+			children = (
+				C5460F50258C8F090008928C /* UIView+AOP.h */,
+				C5460F4F258C8F090008928C /* UIView+AOP.m */,
+			);
+			path = "UIView+AOP";
+			sourceTree = "<group>";
+		};
 		C546E6FF258B2D7D0008928C /* KeychainIDFA */ = {
 			isa = PBXGroup;
 			children = (
@@ -1774,8 +1786,8 @@
 			isa = PBXGroup;
 			children = (
 				C551665A2575202D00FF5217 /* ZYTextField.bundle */,
-				C55166582575202C00FF5217 /* ZYTextField.h */,
-				C55166562575202C00FF5217 /* ZYTextField.m */,
+				C5460F5C258C8F1C0008928C /* ZYTextField.h */,
+				C5460F5B258C8F1C0008928C /* ZYTextField.m */,
 				C55166592575202D00FF5217 /* ZYTextField+HistoryDataList.h */,
 				C55166572575202C00FF5217 /* ZYTextField+HistoryDataList.m */,
 			);
@@ -3641,6 +3653,7 @@
 			isa = PBXGroup;
 			children = (
 				C595BA7625863F93002A4531 /* UIView+Animation */,
+				C5460F4E258C8F090008928C /* UIView+AOP */,
 				C595BA7725863FBF002A4531 /* UIView+Chain */,
 				C5D1C01E258B1FF800784D2F /* UIView+EmptyData */,
 				C595BA7825863FC7002A4531 /* UIView+Extras */,
@@ -4387,6 +4400,7 @@
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
 				C55695D4255BFC3A005C1361 /* NSString+Extras.m in Sources */,
 				C534CD50258759BB001369FD /* BWItemCollectionViewCell.m in Sources */,
+				C5460F5D258C8F1D0008928C /* ZYTextField.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */,
@@ -4582,6 +4596,7 @@
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
 				C533701424DB00280082847C /* BRDatePickerView.m in Sources */,
 				C5727860254094C2002373D7 /* JobsPullListAutoSizeView.m in Sources */,
+				C5460F51258C8F090008928C /* UIView+AOP.m in Sources */,
 				C557ADAC2580FEF000F3FEED /* JobsAppDoorContentView.m in Sources */,
 				C55166672575202D00FF5217 /* HQTextField.m in Sources */,
 				C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */,
@@ -4620,7 +4635,6 @@
 				C56BBA842587994A0043C977 /* UIControl+XY.m in Sources */,
 				C533701124DB00280082847C /* BRStringPickerView.m in Sources */,
 				C5914AE125384A2F007777A6 /* UIViewController+TZImagePickerController.m in Sources */,
-				C55166642575202D00FF5217 /* ZYTextField.m in Sources */,
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
 				C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */,

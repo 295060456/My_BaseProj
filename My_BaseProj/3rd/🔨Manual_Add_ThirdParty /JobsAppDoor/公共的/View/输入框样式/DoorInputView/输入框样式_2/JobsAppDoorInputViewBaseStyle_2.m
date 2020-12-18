@@ -28,8 +28,8 @@ UITextFieldDelegate
     if (self = [super init]) {
 //        self.backgroundColor = kRedColor;
         [UIView colourToLayerOfView:self
-                         WithColour:kWhiteColor
-                     AndBorderWidth:1];
+                         withColour:kWhiteColor
+                     andBorderWidth:1];
     }return self;
 }
 

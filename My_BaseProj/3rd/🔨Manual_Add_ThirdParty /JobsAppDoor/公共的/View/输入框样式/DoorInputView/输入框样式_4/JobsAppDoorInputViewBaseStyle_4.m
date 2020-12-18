@@ -28,8 +28,8 @@ UITextFieldDelegate
     if (self = [super init]) {
 //        self.backgroundColor = kRedColor;
         [UIView colourToLayerOfView:self
-                         WithColour:kWhiteColor
-                     AndBorderWidth:1];
+                         withColour:kWhiteColor
+                     andBorderWidth:1];
     }return self;
 }
 
@@ -137,7 +137,7 @@ replacementString:(NSString *)string{
         }];
         [self layoutIfNeeded];
         [UIView cornerCutToCircleWithView:_imageCodeView
-                          AndCornerRadius:20];
+                          andCornerRadius:20];
     }return _imageCodeView;
 }
 

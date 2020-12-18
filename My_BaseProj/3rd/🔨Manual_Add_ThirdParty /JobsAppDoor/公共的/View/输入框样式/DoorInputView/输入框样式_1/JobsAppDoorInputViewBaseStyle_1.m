@@ -33,8 +33,8 @@ UITextFieldDelegate
         self.titleStr_1 = @"点击";
         self.titleStr_2 = @"发送验证码";
         [UIView colourToLayerOfView:self
-                         WithColour:kWhiteColor
-                     AndBorderWidth:1];
+                         withColour:kWhiteColor
+                     andBorderWidth:1];
     }return self;
 }
 

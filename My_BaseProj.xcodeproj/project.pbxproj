@@ -187,6 +187,8 @@
 		C595D10F258713CB002A4531 /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D107258713CB002A4531 /* SuspendView.m */; };
 		C595D110258713CB002A4531 /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10A258713CB002A4531 /* SuspendBtn.m */; };
 		C595D111258713CB002A4531 /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10E258713CB002A4531 /* SuspendLab.m */; };
+		C59A3D8F258DD1EF005F6260 /* UserDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59A3D8D258DD1EF005F6260 /* UserDefaultModel.m */; };
+		C59A3D90258DD1EF005F6260 /* UserDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C59A3D8E258DD1EF005F6260 /* UserDefaultManager.m */; };
 		C59C4A3B24E297F6002C2104 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C59C4A3924E297F6002C2104 /* UIView+Chain.m */; };
 		C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */; };
 		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
@@ -771,6 +773,10 @@
 		C595D10B258713CB002A4531 /* SuspendBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendBtn.h; sourceTree = "<group>"; };
 		C595D10D258713CB002A4531 /* SuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendLab.h; sourceTree = "<group>"; };
 		C595D10E258713CB002A4531 /* SuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendLab.m; sourceTree = "<group>"; };
+		C59A3D8B258DD1EF005F6260 /* UserDefaultManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultManager.h; sourceTree = "<group>"; };
+		C59A3D8C258DD1EF005F6260 /* UserDefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultModel.h; sourceTree = "<group>"; };
+		C59A3D8D258DD1EF005F6260 /* UserDefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultModel.m; sourceTree = "<group>"; };
+		C59A3D8E258DD1EF005F6260 /* UserDefaultManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultManager.m; sourceTree = "<group>"; };
 		C59C4A3924E297F6002C2104 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
 		C59C4A3A24E297F6002C2104 /* UIView+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Chain.h"; sourceTree = "<group>"; };
 		C59D9AAE24F8DF9200A74CE9 /* NSObject+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Random.m"; sourceTree = "<group>"; };
@@ -2829,6 +2835,17 @@
 			path = SuspendLab;
 			sourceTree = "<group>";
 		};
+		C59A3D8A258DD1EF005F6260 /* UserDefaultManager */ = {
+			isa = PBXGroup;
+			children = (
+				C59A3D8B258DD1EF005F6260 /* UserDefaultManager.h */,
+				C59A3D8C258DD1EF005F6260 /* UserDefaultModel.h */,
+				C59A3D8D258DD1EF005F6260 /* UserDefaultModel.m */,
+				C59A3D8E258DD1EF005F6260 /* UserDefaultManager.m */,
+			);
+			path = UserDefaultManager;
+			sourceTree = "<group>";
+		};
 		C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -3416,6 +3433,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C59A3D8A258DD1EF005F6260 /* UserDefaultManager */,
 				C546E6FF258B2D7D0008928C /* KeychainIDFA */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
 				C5013A8C2536CB5400F4E87D /* 不规则多边形按钮 */,
@@ -4398,6 +4416,7 @@
 			files = (
 				C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */,
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
+				C59A3D8F258DD1EF005F6260 /* UserDefaultModel.m in Sources */,
 				C55695D4255BFC3A005C1361 /* NSString+Extras.m in Sources */,
 				C534CD50258759BB001369FD /* BWItemCollectionViewCell.m in Sources */,
 				C5460F5D258C8F1D0008928C /* ZYTextField.m in Sources */,
@@ -4661,6 +4680,7 @@
 				C5778F9A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m in Sources */,
 				C557ADAD2580FEF000F3FEED /* JobsAppDoorVC_Style1.m in Sources */,
 				C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */,
+				C59A3D90258DD1EF005F6260 /* UserDefaultManager.m in Sources */,
 				C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

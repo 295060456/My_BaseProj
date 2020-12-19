@@ -111,12 +111,12 @@
 #import "UIDevice+XMUtils.h"
 
 #pragma mark —— 🔨Manual_Add_ThirdParty
+#import "UserDefaultManager.h"
 #import "LongPressToDeleteImageView.h"
 #import "RYCuteView.h"
 #import "XWCountryCodeController.h"
 #import "HAHandleDemoView.h"
 //#import "SDCycleScrollView.h"
-
 #import "LXTagsView.h"
 #import "TouchID.h"
 #import "UIButton+CountDownBtn.h"

@@ -1,31 +1,30 @@
 //
-//  JobsAppDoorInputViewBaseStyle_2.m
-//  My_BaseProj
+//  JobsAppDoorInputViewBaseStyle_6.m
+//  DouDong-II
 //
-//  Created by Jobs on 2020/12/4.
-//  Copyright © 2020 Jobs. All rights reserved.
+//  Created by Jobs on 2020/12/20.
 //
 
-#import "JobsAppDoorInputViewBaseStyle_2.h"
+#import "JobsAppDoorInputViewBaseStyle_6.h"
 
-@interface JobsAppDoorInputViewBaseStyle_2 ()
+@interface JobsAppDoorInputViewBaseStyle_6 ()
 <
 UITextFieldDelegate
 >
 //UI
 @property(nonatomic,strong)JobsMagicTextField *tf;
-@property(nonatomic,strong)ImageCodeView *imageCodeView;
+@property(nonatomic,strong)AuthCodeLab *authCodeLab;
 //Data
 @property(nonatomic,strong)JobsAppDoorInputViewBaseStyleModel *doorInputViewBaseStyleModel;
-@property(nonatomic,copy)MKDataBlock doorInputViewStyle_2Block;
+@property(nonatomic,copy)MKDataBlock doorInputViewStyle_6Block;
 
 @end
 
-@implementation JobsAppDoorInputViewBaseStyle_2
+@implementation JobsAppDoorInputViewBaseStyle_6
 
 - (instancetype)init{
     if (self = [super init]) {
-//        self.backgroundColor = kRedColor;
+        self.backgroundColor = kClearColor;
         [UIView colourToLayerOfView:self
                          withColour:kWhiteColor
                      andBorderWidth:1];
@@ -34,9 +33,13 @@ UITextFieldDelegate
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    [UIView appointCornerCutToCircleWithTargetView:self.imageCodeView
+    [UIView appointCornerCutToCircleWithTargetView:self.authCodeLab
                                  byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
-                                       cornerRadii:CGSizeMake(self.imageCodeView.height / 2, self.imageCodeView.height / 2)];
+                                       cornerRadii:CGSizeMake(self.authCodeLab.height / 2, self.authCodeLab.height / 2)];
+    [UIView setBorderWithView:self.authCodeLab
+                  borderColor:kWhiteColor
+                  borderWidth:1
+                   borderType:UIBorderSideTypeLeft];
 }
 
 -(void)block:(JobsMagicTextField *)textField
@@ -47,8 +50,8 @@ UITextFieldDelegate
     Ivar ivar = class_getInstanceVariable([JobsMagicTextField class], "_placeholderAnimationLbl");//必须是下划线接属性
     UILabel *label = object_getIvar(textField, ivar);
 
-    if (self.doorInputViewStyle_2Block) {
-        self.doorInputViewStyle_2Block(@{@"PlaceHolder":label.text,
+    if (self.doorInputViewStyle_6Block) {
+        self.doorInputViewStyle_6Block(@{@"PlaceHolder":label.text,
                                          @"TFResModel":InputViewTFModel});
     }
 }
@@ -126,27 +129,31 @@ replacementString:(NSString *)string{
 
 -(void)richElementsInViewWithModel:(JobsAppDoorInputViewBaseStyleModel *_Nullable)doorInputViewBaseStyleModel{
     self.doorInputViewBaseStyleModel = doorInputViewBaseStyleModel;
-    self.imageCodeView.alpha = 1;
+    self.authCodeLab.alpha = 1;
     self.tf.alpha = 1;
 }
 
--(void)actionBlockDoorInputViewStyle_2:(MKDataBlock)doorInputViewStyle_2Block{
-    self.doorInputViewStyle_2Block = doorInputViewStyle_2Block;
+-(void)actionBlockDoorInputViewStyle_6:(MKDataBlock)doorInputViewStyle_6Block{
+    self.doorInputViewStyle_6Block = doorInputViewStyle_6Block;
 }
 #pragma mark —— lazyLoad
--(ImageCodeView *)imageCodeView{
-    if (!_imageCodeView) {
-        _imageCodeView = ImageCodeView.new;
-        _imageCodeView.font = kFontSize(16);
-        _imageCodeView.alpha = 0.7;
-        _imageCodeView.bgColor = kWhiteColor;
-        [self addSubview:_imageCodeView];
-        [_imageCodeView mas_makeConstraints:^(MASConstraintMaker *make) {
+-(AuthCodeLab *)authCodeLab{
+    if (!_authCodeLab) {
+        _authCodeLab = AuthCodeLab.new;
+        _authCodeLab.textAlignment = NSTextAlignmentCenter;
+        _authCodeLab.text = @"ss";
+        _authCodeLab.font = kFontSize(16);
+        _authCodeLab.alpha = 0.7;
+        _authCodeLab.textColor = kWhiteColor;
+        _authCodeLab.backgroundColor = kBlackColor;
+
+        [self addSubview:_authCodeLab];
+        [_authCodeLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.equalTo(self);
             make.right.equalTo(self);
             make.width.mas_equalTo(80);
         }];
-    }return _imageCodeView;
+    }return _authCodeLab;
 }
 
 -(JobsMagicTextField *)tf{
@@ -167,9 +174,10 @@ replacementString:(NSString *)string{
         [self addSubview:_tf];
         [_tf mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.bottom.equalTo(self);
-            make.right.equalTo(self.imageCodeView.mas_left);
+            make.right.equalTo(self.authCodeLab.mas_left).offset(-3);
         }];
     }return _tf;
 }
+
 
 @end

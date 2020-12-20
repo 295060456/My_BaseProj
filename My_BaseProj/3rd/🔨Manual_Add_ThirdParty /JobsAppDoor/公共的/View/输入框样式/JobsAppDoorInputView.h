@@ -14,5 +14,7 @@
 #import "JobsAppDoorInputViewBaseStyle_2.h"
 #import "JobsAppDoorInputViewBaseStyle_3.h"
 #import "JobsAppDoorInputViewBaseStyle_4.h"
+#import "JobsAppDoorInputViewBaseStyle_5.h"
+#import "JobsAppDoorInputViewBaseStyle_6.h"
 
 #endif /* JobsAppDoorInputView_h */

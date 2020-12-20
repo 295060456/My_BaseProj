@@ -36,8 +36,8 @@
 +(void)autoLockedScreen:(BOOL)lockSwitch{
     [[UIApplication sharedApplication] setIdleTimerDisabled:lockSwitch];
 }
-
--(void)printRequestMessage:(NSURLSessionDataTask *)task{
+/// 打印请求体
++(void)printRequestMessage:(NSURLSessionDataTask *)task{
     
     /*
     // 请求URL

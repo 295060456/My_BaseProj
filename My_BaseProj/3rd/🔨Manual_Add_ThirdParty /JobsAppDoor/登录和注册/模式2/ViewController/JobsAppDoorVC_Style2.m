@@ -69,6 +69,14 @@
     [UIView animationAlert:self.registerContentView];
     [UIView animationAlert:self.logoContentView];
     [UIView animationAlert:self.customerServiceBtn];
+    
+    if ([self.requestParams integerValue] == JobsAppDoorBgType_Image) {
+        
+    }else if ([self.requestParams integerValue] == JobsAppDoorBgType_video){
+        if (!self.player.currentPlayerManager.isPlaying) {
+            [self.player.currentPlayerManager play];
+        }
+    }else{}
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -198,8 +206,26 @@
                     } completion:^(BOOL finished) {
                         
                     }];
+                }else if([btn.titleLabel.text isEqualToString:@"随便逛逛"]){
+                    [self backBtnClickEvent:btn];
+                }else if([btn.titleLabel.text isEqualToString:@"忘记密码"]){
+                    // 忘记密码
+                    [UIViewController comingFromVC:self
+                                              toVC:DDForgetCodeVC.new
+                                       comingStyle:ComingStyle_PUSH
+                                 presentationStyle:UIModalPresentationFullScreen//[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
+                                     requestParams:nil
+                          hidesBottomBarWhenPushed:YES
+                                          animated:YES
+                                           success:^(id data) {
+
+                    }];
                 }else{}
-            }
+            }else if ([data isKindOfClass:JobsMagicTextField.class]){
+                
+            }else if ([data isKindOfClass:NSString.class]){
+                
+            }else{}
         }];
         [UIView cornerCutToCircleWithView:_loginContentView
                           andCornerRadius:8];
@@ -241,8 +267,7 @@
                 }else{}
             }
         }];
-        [UIView cornerCutToCircleWithView:_registerContentView
-                          andCornerRadius:8];
+        [UIView cornerCutToCircleWithView:_registerContentView andCornerRadius:8];
     }return _registerContentView;
 }
 
@@ -332,6 +357,5 @@
         _bgImgV.userInteractionEnabled = YES;
     }return _bgImgV;
 }
-
 
 @end

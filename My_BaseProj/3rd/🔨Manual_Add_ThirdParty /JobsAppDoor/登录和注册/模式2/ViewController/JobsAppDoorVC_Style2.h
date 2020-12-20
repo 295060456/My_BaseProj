@@ -10,6 +10,7 @@
 #import "JobsAppDoorLogoContentView.h"
 #import "JobsAppDoorLoginContentView.h"
 #import "JobsAppDoorRegisterContentView.h"
+#import "DDForgetCodeVC.h"
 
 #pragma mark —— ZFPlayer 播放器相关
 //Core

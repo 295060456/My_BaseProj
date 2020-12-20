@@ -44,6 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.setupNavigationBarHidden = YES;//禁用系统的导航栏
     self.currentPage = CurrentPage_login;//默认页面是登录
     [self keyboard];
     self.view.backgroundColor = kBlueColor;
@@ -61,7 +62,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.isHiddenNavigationBar = YES;//禁用系统的导航栏
+    if ([self.requestParams integerValue] == JobsAppDoorBgType_Image) {
+        
+    }else if ([self.requestParams integerValue] == JobsAppDoorBgType_video){
+        if (!self.player.currentPlayerManager.isPlaying) {
+            [self.player.currentPlayerManager play];
+        }
+    }else{}
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -221,6 +228,22 @@
                     UIButton *abandonLoginBtn = (UIButton *)data;
                     [self backBtnClickEvent:abandonLoginBtn];
                 }
+                else if ([btn.titleLabel.text isEqualToString:@"记住密码"]){
+                    
+                }
+                else if ([btn.titleLabel.text isEqualToString:@"忘记密码"]){
+                    // 忘记密码
+                    [UIViewController comingFromVC:self
+                                              toVC:DDForgetCodeVC.new
+                                       comingStyle:ComingStyle_PUSH
+                                 presentationStyle:UIModalPresentationFullScreen//[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
+                                     requestParams:nil
+                          hidesBottomBarWhenPushed:YES
+                                          animated:YES
+                                           success:^(id data) {
+
+                    }];
+                }else{}
             }else if ([data isKindOfClass:JobsMagicTextField.class]){
                 
             }else if ([data isKindOfClass:NSString.class]){
@@ -310,6 +333,5 @@
         _bgImgV.userInteractionEnabled = YES;
     }return _bgImgV;
 }
-
 
 @end

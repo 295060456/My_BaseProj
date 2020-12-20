@@ -14,15 +14,15 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "AppDelegate.h"
+#import "SceneDelegate.h"
+
+#import "TabbarVC.h"
 #import "ViewController@1.h"
 #import "ViewController@2.h"
 #import "ViewController@3.h"
 #import "ViewController@4.h"
 #import "ViewController@5.h"
-
-#import "TabbarVC.h"
-
-#import "AppDelegate.h"
-#import "SceneDelegate.h"
+#import "DDForgetCodeVC.h"
 
 #endif /* Other_h */

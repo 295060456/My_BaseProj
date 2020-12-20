@@ -14,6 +14,8 @@
 @property(nonatomic,strong)UILabel *titleLab;//标题
 @property(nonatomic,strong)UIButton *abandonLoginBtn;//随便逛逛按钮
 @property(nonatomic,strong)UIButton *sendBtn;//登录
+@property(nonatomic,strong)UIButton *storeCodeBtn;//记住密码
+@property(nonatomic,strong)UIButton *findCodeBtn;//忘记密码
 
 @property(nonatomic,copy)MKDataBlock loginContentViewBlock;
 @property(nonatomic,strong)NSMutableArray <JobsAppDoorInputViewBaseStyleModel *>*loginDoorInputViewBaseStyleModelMutArr;
@@ -69,6 +71,8 @@
     [self makeInputView];
     self.abandonLoginBtn.alpha = 1;
     self.sendBtn.alpha = 1;
+    self.storeCodeBtn.alpha = 1;
+    self.findCodeBtn.alpha = 1;
 }
 
 -(void)actionBlockLoginContentView:(MKDataBlock)loginContentViewBlock{
@@ -161,9 +165,66 @@
         _sendBtn.x = 20;
         _sendBtn.size = CGSizeMake(self.width - self.toRegisterBtn.width - 40, ThingsHeight);
         _sendBtn.bottom = self.abandonLoginBtn.top - 10;
-        [UIView cornerCutToCircleWithView:_sendBtn
-                          andCornerRadius:_sendBtn.height / 2];
+        [UIView cornerCutToCircleWithView:_sendBtn andCornerRadius:_sendBtn.height / 2];
     }return _sendBtn;
+}
+/// 记住登录成功的账号和密码
+-(UIButton *)storeCodeBtn{
+    if (!_storeCodeBtn) {
+        _storeCodeBtn = UIButton.new;
+        [_storeCodeBtn setTitle:@"记住密码"
+                       forState:UIControlStateNormal];
+        _storeCodeBtn.titleLabel.font = [UIFont systemFontOfSize:10
+                                                          weight:UIFontWeightRegular];
+        _storeCodeBtn.selected = YES;// 默认记住密码
+        [_storeCodeBtn setImage:KIMG(@"没有记住密码")
+                       forState:UIControlStateNormal];
+        [_storeCodeBtn setImage:KIMG(@"记住密码")
+                       forState:UIControlStateSelected];
+        _storeCodeBtn.titleLabel.textColor = kWhiteColor;
+        [_storeCodeBtn.titleLabel sizeToFit];
+        [_storeCodeBtn.titleLabel adjustsFontSizeToFitWidth];
+        [self addSubview:_storeCodeBtn];
+        [_storeCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            JobsAppDoorInputViewBaseStyle *inputView = (JobsAppDoorInputViewBaseStyle *)self.loginDoorInputViewBaseStyleMutArr.lastObject;
+            make.left.equalTo(inputView).offset(20);
+            make.top.equalTo(inputView.mas_bottom).offset(20);
+        }];
+        @weakify(self)
+        [[_storeCodeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+            @strongify(self)
+            x.selected = !x.selected;
+            if (self.loginContentViewBlock) {
+                self.loginContentViewBlock(x);
+            }
+        }];
+    }return _storeCodeBtn;
+}
+
+-(UIButton *)findCodeBtn{
+    if (!_findCodeBtn) {
+        _findCodeBtn = UIButton.new;
+        [_findCodeBtn setTitle:@"忘记密码"
+                      forState:UIControlStateNormal];
+        _findCodeBtn.titleLabel.font = [UIFont systemFontOfSize:10
+                                                         weight:UIFontWeightRegular];
+        _findCodeBtn.titleLabel.textColor = kWhiteColor;
+        [_findCodeBtn.titleLabel sizeToFit];
+        [_findCodeBtn.titleLabel adjustsFontSizeToFitWidth];
+        [self addSubview:_findCodeBtn];
+        [_findCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            JobsAppDoorInputViewBaseStyle *inputView = (JobsAppDoorInputViewBaseStyle *)self.loginDoorInputViewBaseStyleMutArr.lastObject;
+            make.right.equalTo(inputView).offset(-20);
+            make.top.equalTo(inputView.mas_bottom).offset(15);
+        }];
+        @weakify(self)
+        [[_findCodeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+            @strongify(self)
+            if (self.loginContentViewBlock) {
+                self.loginContentViewBlock(x);
+            }
+        }];
+    }return _findCodeBtn;
 }
 
 -(NSMutableArray<JobsAppDoorInputViewBaseStyleModel *> *)loginDoorInputViewBaseStyleModelMutArr{

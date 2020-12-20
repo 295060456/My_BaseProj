@@ -14,4 +14,17 @@
 
 @implementation JobsAppDoorInputViewBaseStyleModel
 
+-(UIFont *)titleStrFont{
+    if (!_titleStrFont) {
+        _titleStrFont = [UIFont systemFontOfSize:14
+                                          weight:UIFontWeightRegular];
+    }return _titleStrFont;
+}
+
+-(UIColor *)titleStrCor{
+    if (!_titleStrCor) {
+        _titleStrCor = kBlackColor;
+    }return _titleStrCor;
+}
+
 @end

@@ -17,7 +17,6 @@ UITextFieldDelegate
 @property(nonatomic,strong)ImageCodeView *imageCodeView;
 //Data
 @property(nonatomic,strong)JobsAppDoorInputViewBaseStyleModel *doorInputViewBaseStyleModel;
-@property(nonatomic,assign)BOOL isOK;
 @property(nonatomic,copy)MKDataBlock doorInputViewStyle_2Block;
 
 @end
@@ -33,19 +32,23 @@ UITextFieldDelegate
     }return self;
 }
 
--(void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
-    if (!self.isOK) {
-        
-        self.isOK = YES;
+-(void)block:(JobsMagicTextField *)textField
+       value:(NSString *)value{
+    JobsAppDoorInputViewTFModel *InputViewTFModel = JobsAppDoorInputViewTFModel.new;
+    InputViewTFModel.resString = value;
+    
+    Ivar ivar = class_getInstanceVariable([JobsMagicTextField class], "_placeholderAnimationLbl");//必须是下划线接属性
+    UILabel *label = object_getIvar(textField, ivar);
+
+    if (self.doorInputViewStyle_2Block) {
+        self.doorInputViewStyle_2Block(@{@"PlaceHolder":label.text,
+                                         @"TFResModel":InputViewTFModel});
     }
 }
 #pragma mark —— UITextFieldDelegate
 //询问委托人是否应该在指定的文本字段中开始编辑
 - (BOOL)textFieldShouldBeginEditing:(JobsMagicTextField *)textField{
-    if (self.doorInputViewStyle_2Block) {
-        self.doorInputViewStyle_2Block(textField);
-    }return YES;
+    return YES;
 }
 //告诉委托人在指定的文本字段中开始编辑
 - (void)textFieldDidBeginEditing:(JobsMagicTextField *)textField{
@@ -58,6 +61,7 @@ UITextFieldDelegate
 //告诉委托人对指定的文本字段停止编辑
 - (void)textFieldDidEndEditing:(JobsMagicTextField *)textField{
     [self.tf isEmptyText];
+    //实时更新后就不需要捕获终值
 }
 //告诉委托人对指定的文本字段停止编辑
 //- (void)textFieldDidEndEditing:(UITextField *)textField
@@ -92,16 +96,17 @@ replacementString:(NSString *)string{
     }
 
     NSLog(@"SSSresString = %@",resString);
-    
-    if (self.doorInputViewStyle_2Block) {
-        self.doorInputViewStyle_2Block(resString);
-    }return YES;
+    [self block:textField
+          value:resString];
+    return YES;
 }
 //询问委托人是否应删除文本字段的当前内容
 //- (BOOL)textFieldShouldClear:(JobsMagicTextField *)textField
 //询问委托人文本字段是否应处理按下返回按钮
 - (BOOL)textFieldShouldReturn:(JobsMagicTextField *)textField{
     [self endEditing:YES];
+    [self block:textField
+          value:textField.text];
     return YES;
 }
 

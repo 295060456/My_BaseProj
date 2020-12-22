@@ -10,7 +10,6 @@
 @interface NoticePopupView ()
 
 @property(nonatomic,strong)UIImageView *imageView;
-@property(nonatomic,assign)BOOL isOK;
 
 @end
 
@@ -24,19 +23,16 @@
 
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-    if (!self.isOK) {
-        self.imageView.alpha = 1;
-        self.isOK = YES;
-    }
+}
+//外层数据渲染
+-(void)richElementsInViewWithModel:(id _Nullable)model{
+    self.imageView.alpha = 1;
 }
 
 -(UIImageView *)imageView{
     if (!_imageView) {
         _imageView = UIImageView.new;
-        _imageView.image = KBuddleIMG(@"⚽️PicResource",
-                                      @"开屏页面",
-                                      nil,
-                                      @"title4");
+        _imageView.image = KIMG(@"登录弹窗");
         [self addSubview:_imageView];
         [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);

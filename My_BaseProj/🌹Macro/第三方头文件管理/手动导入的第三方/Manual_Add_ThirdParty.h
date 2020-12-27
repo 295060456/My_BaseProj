@@ -98,6 +98,7 @@
 #import "UIViewController+TFPopup.h"
 #import "UIViewController+InteractivePushGesture.h"
 #import "UIViewController+EmptyData.h"
+#import "UIViewController+XLBubbleTransition.h"
 /// UITableViewHeaderFooterView
 #import "ViewForTableViewFooter.h"
 #import "ViewForTableViewHeader.h"

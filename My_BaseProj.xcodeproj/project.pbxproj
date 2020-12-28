@@ -149,6 +149,7 @@
 		C5778FA02589FF4300FE51E3 /* GKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
+		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
 		C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */; };
 		C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */; };
 		C58C61262532B3950092BF89 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C58C61232532B3950092BF89 /* RBCLikeButton.m */; };
@@ -698,6 +699,8 @@
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		C57F0D062533369F0080EEF0 /* NSObject+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+OpenURL.h"; sourceTree = "<group>"; };
 		C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OpenURL.m"; sourceTree = "<group>"; };
+		C584309B25999F2700D335F7 /* DDPostInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPostInputView.m; sourceTree = "<group>"; };
+		C584309C25999F2800D335F7 /* DDPostInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPostInputView.h; sourceTree = "<group>"; };
 		C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewHeader.m; sourceTree = "<group>"; };
 		C58509C125483CC1001E6676 /* ViewForTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForTableViewHeader.h; sourceTree = "<group>"; };
 		C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewFooter.m; sourceTree = "<group>"; };
@@ -2504,6 +2507,15 @@
 			path = "关于响应链的一些研究成果";
 			sourceTree = "<group>";
 		};
+		C584309725999F1C00D335F7 /* PostInputView */ = {
+			isa = PBXGroup;
+			children = (
+				C584309C25999F2800D335F7 /* DDPostInputView.h */,
+				C584309B25999F2700D335F7 /* DDPostInputView.m */,
+			);
+			path = PostInputView;
+			sourceTree = "<group>";
+		};
 		C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3558,6 +3570,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C584309725999F1C00D335F7 /* PostInputView */,
 				C59A3D8A258DD1EF005F6260 /* UserDefaultManager */,
 				C546E6FF258B2D7D0008928C /* KeychainIDFA */,
 				C54CC4162551456100C69C1F /* 播放器控制层 */,
@@ -4690,6 +4703,7 @@
 				C5CDD18F258F221D0045AA50 /* JobsAppDoorLoginContentView.m in Sources */,
 				C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */,
 				C5CDD19A258F221D0045AA50 /* JobsAppDoorInputViewBaseStyle.m in Sources */,
+				C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */,
 				C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */,
 				C55D3CAC2538856100CFCF73 /* XHLaunchAdButton.m in Sources */,
 				C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */,

@@ -11,6 +11,8 @@
 #import "AppDelegate+PopupView.h"
 
 API_AVAILABLE(ios(13.0))
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunguarded-availability-new"
 
 @interface SceneDelegate ()
 
@@ -87,5 +89,6 @@ willConnectToSession:(UISceneSession *)session
     return _window;
 }
 
-
 @end
+
+#pragma clang diagnostic pop

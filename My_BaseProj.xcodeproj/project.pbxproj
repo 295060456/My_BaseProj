@@ -181,6 +181,8 @@
 		C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C59D9AF124F8F19100A74CE9 /* ZZCircleProgress.bundle */; };
 		C59D9AF724F8F19100A74CE9 /* ZZCircleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF224F8F19100A74CE9 /* ZZCircleProgress.m */; };
 		C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */; };
+		C59F3A26259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F3A21259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m */; };
+		C59F3A27259B3B3C00E22F9B /* JobsBitsMonitorCore.m in Sources */ = {isa = PBXBuildFile; fileRef = C59F3A23259B3B3C00E22F9B /* JobsBitsMonitorCore.m */; };
 		C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */; };
 		C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */; };
 		C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75A25243B3C0096910D /* TableViewAnimationKit.m */; };
@@ -766,6 +768,12 @@
 		C59D9AF324F8F19100A74CE9 /* ZZCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZCountingLabel.m; sourceTree = "<group>"; };
 		C59D9AF424F8F19100A74CE9 /* ZZCircleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCircleProgress.h; sourceTree = "<group>"; };
 		C59D9AF524F8F19100A74CE9 /* ZZCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZCountingLabel.h; sourceTree = "<group>"; };
+		C59F2F1B259B2EDE00E22F9B /* 查找系统警告对应的编码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "查找系统警告对应的编码.png"; sourceTree = "<group>"; };
+		C59F3A20259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBitsMonitorSuspendLab.h; sourceTree = "<group>"; };
+		C59F3A21259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBitsMonitorSuspendLab.m; sourceTree = "<group>"; };
+		C59F3A23259B3B3C00E22F9B /* JobsBitsMonitorCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBitsMonitorCore.m; sourceTree = "<group>"; };
+		C59F3A24259B3B3C00E22F9B /* JobsBitsMonitorCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBitsMonitorCore.h; sourceTree = "<group>"; };
+		C59F3A25259B3B3C00E22F9B /* JobsBitsMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBitsMonitor.h; sourceTree = "<group>"; };
 		C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shake.h"; sourceTree = "<group>"; };
 		C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shake.m"; sourceTree = "<group>"; };
 		C5A6D75525243B3B0096910D /* TableViewAnimationKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitConfig.h; sourceTree = "<group>"; };
@@ -2714,6 +2722,42 @@
 			path = ZZCircleProgress;
 			sourceTree = "<group>";
 		};
+		C59F2F14259B2E9F00E22F9B /* 查找系统警告对应的编码 */ = {
+			isa = PBXGroup;
+			children = (
+				C59F2F1B259B2EDE00E22F9B /* 查找系统警告对应的编码.png */,
+			);
+			path = "查找系统警告对应的编码";
+			sourceTree = "<group>";
+		};
+		C59F3A1E259B3B3C00E22F9B /* JobsBitsMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				C59F3A25259B3B3C00E22F9B /* JobsBitsMonitor.h */,
+				C59F3A22259B3B3C00E22F9B /* JobsBitsMonitorCore */,
+				C59F3A1F259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab */,
+			);
+			path = JobsBitsMonitor;
+			sourceTree = "<group>";
+		};
+		C59F3A1F259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab */ = {
+			isa = PBXGroup;
+			children = (
+				C59F3A20259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.h */,
+				C59F3A21259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m */,
+			);
+			path = JobsBitsMonitorSuspendLab;
+			sourceTree = "<group>";
+		};
+		C59F3A22259B3B3C00E22F9B /* JobsBitsMonitorCore */ = {
+			isa = PBXGroup;
+			children = (
+				C59F3A24259B3B3C00E22F9B /* JobsBitsMonitorCore.h */,
+				C59F3A23259B3B3C00E22F9B /* JobsBitsMonitorCore.m */,
+			);
+			path = JobsBitsMonitorCore;
+			sourceTree = "<group>";
+		};
 		C5A6D75425243B2F0096910D /* TableViewAnimationKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -3441,6 +3485,7 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				C59F2F14259B2E9F00E22F9B /* 查找系统警告对应的编码 */,
 				C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */,
 				C5CF8946252AC328002499C6 /* UITableView */,
 				C5E3C79D25179B2100F9A150 /* FFmpeg */,
@@ -3570,6 +3615,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C59F3A1E259B3B3C00E22F9B /* JobsBitsMonitor */,
 				C584309725999F1C00D335F7 /* PostInputView */,
 				C59A3D8A258DD1EF005F6260 /* UserDefaultManager */,
 				C546E6FF258B2D7D0008928C /* KeychainIDFA */,
@@ -4559,6 +4605,7 @@
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
 				C533701024DB00280082847C /* BRResultModel.m in Sources */,
 				C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */,
+				C59F3A27259B3B3C00E22F9B /* JobsBitsMonitorCore.m in Sources */,
 				C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
 				C5767BA525470BD100C382C8 /* WMZBannerFlowLayout.m in Sources */,
@@ -4799,6 +4846,7 @@
 				C533701124DB00280082847C /* BRStringPickerView.m in Sources */,
 				C5914AE125384A2F007777A6 /* UIViewController+TZImagePickerController.m in Sources */,
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
+				C59F3A26259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
 				C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */,
 				C55D3CAF2538856100CFCF73 /* XHLaunchAd.m in Sources */,

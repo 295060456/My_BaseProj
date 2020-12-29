@@ -33,11 +33,15 @@
 #import "DoraemonManager.h"
 #endif
 
+#import "JobsBitsMonitor.h"
+
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate (Func)
+
+@property(nonatomic,strong)JobsBitsMonitorSuspendLab *bitsMonitorSuspendLab;
 
 #pragma mark —— 全局配置键盘
 -(void)makeIQKeyboardManagerConfigure;
@@ -45,6 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)makeGKNavigationBarConfigure;
 #pragma mark —— 网络环境监测
 -(void)makeReachabilityConfigure;
+#pragma mark —— 网络流量实时监控
+-(void)makeNetworkingBitsMonitor;
 #pragma mark —— 开屏广告
 -(void)makeXHLaunchAdConfigure;
 #pragma mark —— 滴滴打车团队出的一款小工具

@@ -9,6 +9,9 @@
 
 @implementation AppDelegate (Func)
 
+static char *AppDelegate_Func_bitsMonitorSuspendLab = "AppDelegate_Func_bitsMonitorSuspendLab";
+@dynamic bitsMonitorSuspendLab;
+
 -(void)reachabilityChanged:(NSNotification *)notify{
     
 }
@@ -63,6 +66,12 @@
          [[NSNotificationCenter defaultCenter] postNotificationName:kReachabilityChangedNotification
                                                              object:self];
      });
+}
+#pragma mark —— 网络流量实时监控
+-(void)makeNetworkingBitsMonitor{
+#ifdef DEBUG
+    self.bitsMonitorSuspendLab.alpha = 1;
+#endif
 }
 #pragma mark —— 开屏广告
 -(void)makeXHLaunchAdConfigure{
@@ -341,6 +350,35 @@
 //
 //    }];
 }
+#pragma mark SET | GET
+#pragma mark —— @property(nonatomic,strong)JobsBitsMonitorSuspendLab *bitsMonitorSuspendLab;
+-(JobsBitsMonitorSuspendLab *)bitsMonitorSuspendLab{
+    JobsBitsMonitorSuspendLab *BitsMonitorSuspendLab = objc_getAssociatedObject(self, AppDelegate_Func_bitsMonitorSuspendLab);
+    if (!BitsMonitorSuspendLab) {
+        BitsMonitorSuspendLab = JobsBitsMonitorSuspendLab.new;
+        BitsMonitorSuspendLab.font = [UIFont systemFontOfSize:10 weight:UIFontWeightBold];
+        BitsMonitorSuspendLab.backgroundColor = KLightGrayColor;
+        BitsMonitorSuspendLab.textColor = kRedColor;
+        @weakify(self)
+        BitsMonitorSuspendLab.vc = weak_self.tabBarVC;
+        BitsMonitorSuspendLab.isAllowDrag = YES;//悬浮效果必须要的参数
+        [self.tabBarVC.view addSubview:BitsMonitorSuspendLab];
+        BitsMonitorSuspendLab.frame = CGRectMake(20,
+                                                 SCREEN_HEIGHT - 200,
+                                                 80,
+                                                 30);
+        objc_setAssociatedObject(self,
+                                 AppDelegate_Func_bitsMonitorSuspendLab,
+                                 BitsMonitorSuspendLab,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }return BitsMonitorSuspendLab;
+}
 
+-(void)setBitsMonitorSuspendLab:(JobsBitsMonitorSuspendLab *)bitsMonitorSuspendLab{
+    objc_setAssociatedObject(self,
+                             AppDelegate_Func_bitsMonitorSuspendLab,
+                             bitsMonitorSuspendLab,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 @end

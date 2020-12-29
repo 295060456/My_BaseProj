@@ -11,6 +11,9 @@
 #import "AppDelegate+Func.h"
 #import "AppDelegate+PopupView.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunguarded-availability-new"
+
 @interface AppDelegate ()
 
 @end
@@ -180,3 +183,5 @@ didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
 }
 
 @end
+
+#pragma clang diagnostic pop

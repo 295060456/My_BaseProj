@@ -511,7 +511,7 @@
 		C552A08F2589CE5700A89501 /* UIView+JHGestureBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JHGestureBlock.m"; sourceTree = "<group>"; };
 		C552A6C32589D37E00A89501 /* UIImage+ScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScreenShot.m"; sourceTree = "<group>"; };
 		C552A6C42589D37E00A89501 /* UIImage+ScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScreenShot.h"; sourceTree = "<group>"; };
-		C552A6D12589D41200A89501 /* 专治UITableView相应链断裂.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "专治UITableView相应链断裂.md"; sourceTree = "<group>"; };
+		C552A6D12589D41200A89501 /* 专治UITableView响应链断裂.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "专治UITableView响应链断裂.md"; sourceTree = "<group>"; };
 		C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My_BaseProj-Bridging-Header.h"; sourceTree = "<group>"; };
 		C55391602572803A008BB60F /* SocketIOTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTools.m; sourceTree = "<group>"; };
 		C55391622572803A008BB60F /* UBLLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLivingVC.m; sourceTree = "<group>"; };
@@ -2771,14 +2771,14 @@
 			path = TableViewAnimationKit;
 			sourceTree = "<group>";
 		};
-		C5A6D76025243B440096910D /* 专治UITableView相应链断裂 */ = {
+		C5A6D76025243B440096910D /* 专治UITableView响应链断裂 */ = {
 			isa = PBXGroup;
 			children = (
 				C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */,
 				C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */,
-				C552A6D12589D41200A89501 /* 专治UITableView相应链断裂.md */,
+				C552A6D12589D41200A89501 /* 专治UITableView响应链断裂.md */,
 			);
-			path = "专治UITableView相应链断裂";
+			path = "专治UITableView响应链断裂";
 			sourceTree = "<group>";
 		};
 		C5A713C5258F76600013E3EF /* 输入框样式_6 */ = {
@@ -3753,7 +3753,7 @@
 		C5FE9B1224B5F203007B9878 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				C5A6D76025243B440096910D /* 专治UITableView相应链断裂 */,
+				C5A6D76025243B440096910D /* 专治UITableView响应链断裂 */,
 				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
 				C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */,
 			);

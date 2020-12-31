@@ -30,21 +30,19 @@ static char *AppDelegate_Func_bitsMonitorSuspendLab = "AppDelegate_Func_bitsMoni
 #pragma mark —— 全局配置GKNavigationBar
 -(void)makeGKNavigationBarConfigure{
     [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure * _Nonnull configure) {
-        configure.gk_translationX = 15;
-        configure.gk_translationY = 20;
-        configure.gk_scaleX = 0.90;
-        configure.gk_scaleY = 0.92;
         // 导航栏背景色
-        configure.backgroundColor = kClearColor;
+        configure.backgroundColor = kWhiteColor;
         // 导航栏标题颜色
         configure.titleColor = kWhiteColor;
         // 导航栏标题字体
-        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        configure.titleFont = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
         // 导航栏返回按钮样式
         configure.backStyle = GKNavigationBarBackStyleBlack;
         // 导航栏左右item间距
         configure.gk_navItemLeftSpace = 12.0f;
         configure.gk_navItemRightSpace = 12.0f;
+        
+        configure.gk_disableFixSpace = YES;
         
         configure.shiledItemSpaceVCs = @[@"PUPhotoPickerHostViewController"];
     }];

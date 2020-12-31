@@ -37,7 +37,7 @@ def longConnection
   # https://juejin.im/post/6844904062408720391#heading-0
   # https://www.jianshu.com/p/9153d5628363
   pod 'MQTTClient' # https://github.com/novastone-media/MQTT-Client-Framework
-  pod 'Socket.IO-Client-Swift', # https://github.com/socketio/socket.io-client-swift Socket.iO
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0' # https://github.com/socketio/socket.io-client-swift Socket.iO
   end
 # 几乎每个App都用到的框架
 def appCommon
@@ -93,7 +93,7 @@ def constraint
 
 # 一些UI层自定义的框架
 def ui
-  
+
   gk ## GK一族
   jx ## JX一族
   photoAlbum ## 相册选择
@@ -158,7 +158,7 @@ def qrCode
   end
 ## 视频相关框架
 def videoFunc
-  
+
   pod 'ZFPlayer'  # https://github.com/renzifeng/ZFPlayer Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)
   pod 'ZFPlayer/ControlView'
   pod 'ZFPlayer/AVPlayer'
@@ -176,12 +176,12 @@ def goodDemo
   end
 # 一些功能性的
 def func
-  
+
   constraint ## 约束框架
   database ## 数据库
   qrCode ## 二维码相关
   videoFunc ## 视频相关框架
-  
+
   pod 'SocketRocket'  # https://github.com/facebookarchive/SocketRocket 长连接
   pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具
@@ -203,17 +203,17 @@ def cocoPodsConfig
     inherit! :search_paths # abstract! 指示当前的target是抽象的，因此不会直接链接Xcode target。与其相对应的是 inherit！
     # Pods for testing
     end
-  
+
   target 'My_BaseProjUITests' do
     inherit! :search_paths
     # Pods for testing
     end
-  
+
   # 当我们下载完成，但是还没有安装之时，可以使用hook机制通过pre_install指定要做更改，更改完之后进入安装阶段。 格式如下：
   pre_install do |installer|
       # 做一些安装之前的更改
     end
-  
+
   # 这个是cocoapods的一些配置,官网并没有太详细的说明,一般采取默认就好了,也就是不写.
   post_install do |installer|
     installer.pods_project.targets.each do |target|
@@ -235,7 +235,7 @@ target 'My_BaseProj' do
   alert
   func
 
-  cocoPodsConfig
+#  cocoPodsConfig
 end
 
 #https://github.com/honcheng/PaperFold-for-iOS

@@ -129,7 +129,6 @@
 #import "TWPageViewController.h"//https://www.jianshu.com/p/25b1a3888bb8
 #import "WebViewJavascriptBridge.h"
 #import "XLChannelControl.h"//https://github.com/mengxianliang/XLChannelControl
-#import "ECAuthorizationTools.h"//https://github.com/EchoZuo/ECAuthorizationTools/blob/master/README.md
 #import "TBCityIconFont.h"
 #import "CountdownView.h"//圆形倒计时进度条（中间有字，可点击回调）
 #import "HWTextCodeView.h"

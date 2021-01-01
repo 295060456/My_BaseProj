@@ -13,6 +13,8 @@
 #import <VideoToolbox/VideoToolbox.h>//FFmpeg 需要
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
+#import <Photos/Photos.h>
 
 #import "AppDelegate.h"
 #import "SceneDelegate.h"

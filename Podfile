@@ -66,7 +66,8 @@ def jx
   end
 ## 相册选择
 def photoAlbum
-  pod 'TZImagePickerController' # https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
+  pod 'HXPhotoPicker' # 相册选择 https://github.com/SilenceLove/HXPhotoPicker
+  pod 'TZImagePickerController' # 【作者不维护了，慢慢就废弃了】https://github.com/banchichen/TZImagePickerController 一个支持多选，选原图和视频的图片选择器，同时有预览，裁剪功能，支持iOS6 +。一个UIImagePickerController的克隆，支持挑选多张照片，原始照片，视频，还允许预览照片和视频，支持iOS6 +
   #pod 'MWPhotoBrowser'#一个简单的iOS照片和视频浏览器，带有可选的网格视图，标题和选择
   end
 ## 富文本
@@ -181,7 +182,8 @@ def func
   database ## 数据库
   qrCode ## 二维码相关
   videoFunc ## 视频相关框架
-
+  
+  pod 'BMLongPressDragCellCollectionView' # https://github.com/liangdahong/BMLongPressDragCellCollectionView
   pod 'SocketRocket'  # https://github.com/facebookarchive/SocketRocket 长连接
   pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具

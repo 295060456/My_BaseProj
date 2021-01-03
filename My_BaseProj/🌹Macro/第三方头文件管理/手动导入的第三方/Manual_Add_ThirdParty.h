@@ -50,6 +50,7 @@
 #import "NSObject+SPAlertController.h"
 #import "NSObject+OpenURL.h"
 #import "NSObject+AFNReachability.h"
+#import "NSObject+DataSave.h"
 /// UITextField
 #import "JobsMagicTextField.h"
 #import "CJTextField.h"

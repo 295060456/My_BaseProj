@@ -40,6 +40,7 @@
 		C534CD4E258759BB001369FD /* BWShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = C534CD49258759BB001369FD /* BWShareView.m */; };
 		C534CD4F258759BB001369FD /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C534CD4A258759BB001369FD /* BWItemModel.m */; };
 		C534CD50258759BB001369FD /* BWItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C534CD4B258759BB001369FD /* BWItemCollectionViewCell.m */; };
+		C53C9E5625A1D0000007F58F /* NSObject+DataSave.m in Sources */ = {isa = PBXBuildFile; fileRef = C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */; };
 		C53D36042598C6BC00B48431 /* XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D36012598C6BC00B48431 /* XLBubbleTransition.m */; };
 		C53D36052598C6BC00B48431 /* UIViewController+XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D36022598C6BC00B48431 /* UIViewController+XLBubbleTransition.m */; };
 		C544C0D02583758A00C6CF2A /* UIViewController+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C544C0C72583758A00C6CF2A /* UIViewController+MJRefresh.m */; };
@@ -485,6 +486,8 @@
 		C534CD4B258759BB001369FD /* BWItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWItemCollectionViewCell.m; sourceTree = "<group>"; };
 		C534CD4C258759BB001369FD /* BWItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWItemCollectionViewCell.h; sourceTree = "<group>"; };
 		C534CD4D258759BB001369FD /* 分享控件的用法.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "分享控件的用法.md"; sourceTree = "<group>"; };
+		C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DataSave.m"; sourceTree = "<group>"; };
+		C53C9E5525A1D0000007F58F /* NSObject+DataSave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DataSave.h"; sourceTree = "<group>"; };
 		C53D35FF2598C6BC00B48431 /* XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleTransition.h; sourceTree = "<group>"; };
 		C53D36002598C6BC00B48431 /* UIViewController+XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XLBubbleTransition.h"; sourceTree = "<group>"; };
 		C53D36012598C6BC00B48431 /* XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubbleTransition.m; sourceTree = "<group>"; };
@@ -1659,6 +1662,15 @@
 				C55D3C752538833300CFCF73 /* SceneDelegate */,
 			);
 			path = "AppDelegate & SceneDelegate";
+			sourceTree = "<group>";
+		};
+		C53C9E5325A1D0000007F58F /* NSObject+DataSave */ = {
+			isa = PBXGroup;
+			children = (
+				C53C9E5525A1D0000007F58F /* NSObject+DataSave.h */,
+				C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */,
+			);
+			path = "NSObject+DataSave";
 			sourceTree = "<group>";
 		};
 		C53D35FE2598C6BC00B48431 /* UIViewController+XLBubbleTransition */ = {
@@ -3981,6 +3993,7 @@
 			children = (
 				C5D6F2C425861D0300029AFF /* NSObject (Time) */,
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
+				C53C9E5325A1D0000007F58F /* NSObject+DataSave */,
 				C534E282257F83CA00DBC3CE /* NSObject+Others */,
 				C5D6F2C125861D0300029AFF /* NSObject+Time */,
 			);
@@ -4973,6 +4986,7 @@
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5CDD18E258F221D0045AA50 /* JobsAppDoorRegisterContentView.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
+				C53C9E5625A1D0000007F58F /* NSObject+DataSave.m in Sources */,
 				C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */,
 				C5FE9CB124B5F29C007B9878 /* SearchView.m in Sources */,
 				C508964F257DD10E00B2A1F7 /* JobsMagicTextField.m in Sources */,

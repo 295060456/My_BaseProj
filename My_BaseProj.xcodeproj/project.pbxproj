@@ -12,6 +12,7 @@
 		C508964F257DD10E00B2A1F7 /* JobsMagicTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C508964D257DD10E00B2A1F7 /* JobsMagicTextField.m */; };
 		C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C50ECADC25258877000AE52F /* 音律跳动.bundle */; };
 		C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50ECADE25258878000AE52F /* GifLoopPlayView.m */; };
+		C515765425A350E50074D945 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C515765325A350E50074D945 /* UIView+Gesture.m */; };
 		C52261B425873F85004447FB /* PopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C52261B225873F85004447FB /* PopUpVC.m */; };
 		C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E8915250F75020070356F /* NSData+CommonCrypto.m */; };
 		C52E894A250F752E0070356F /* RSAUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E891D250F752D0070356F /* RSAUtil.m */; };
@@ -400,6 +401,8 @@
 		C50ECADC25258877000AE52F /* 音律跳动.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "音律跳动.bundle"; sourceTree = "<group>"; };
 		C50ECADD25258878000AE52F /* GifLoopPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GifLoopPlayView.h; sourceTree = "<group>"; };
 		C50ECADE25258878000AE52F /* GifLoopPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifLoopPlayView.m; sourceTree = "<group>"; };
+		C515765225A350E50074D945 /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
+		C515765325A350E50074D945 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
 		C52261B225873F85004447FB /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
 		C52261B325873F85004447FB /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
 		C52D2A5124E580790048FEFF /* JXCategoryView */ = {isa = PBXFileReference; lastKnownFileType = text; path = JXCategoryView; sourceTree = "<group>"; };
@@ -1307,6 +1310,15 @@
 				C50ECADE25258878000AE52F /* GifLoopPlayView.m */,
 			);
 			path = "音律跳动";
+			sourceTree = "<group>";
+		};
+		C515765125A350E50074D945 /* UIView+Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				C515765225A350E50074D945 /* UIView+Gesture.h */,
+				C515765325A350E50074D945 /* UIView+Gesture.m */,
+			);
+			path = "UIView+Gesture";
 			sourceTree = "<group>";
 		};
 		C52D2A5024E580670048FEFF /* JXCategoryView */ = {
@@ -4069,6 +4081,7 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C515765125A350E50074D945 /* UIView+Gesture */,
 				C595BA7625863F93002A4531 /* UIView+Animation */,
 				C5460F4E258C8F090008928C /* UIView+AOP */,
 				C595BA7725863FBF002A4531 /* UIView+Chain */,
@@ -4838,6 +4851,7 @@
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
 				C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
+				C515765425A350E50074D945 /* UIView+Gesture.m in Sources */,
 				C5778F9C2589FF4300FE51E3 /* GKPanGestureRecognizer.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C5778F992589FF4300FE51E3 /* GKPhotoManager.m in Sources */,

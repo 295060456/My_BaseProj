@@ -96,6 +96,7 @@
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
 		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
+		C565CB4825A4382D00848134 /* TwoVerticalArrangementLabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */; };
 		C5676443259F12F0006905A9 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */; };
 		C5676444259F12F0006905A9 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5676442259F12EF006905A9 /* CollectionViewCell.m */; };
 		C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */; };
@@ -606,6 +607,9 @@
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "_Nullable等的用法和总结"; sourceTree = "<group>"; };
+		C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoVerticalArrangementLabsView.m; sourceTree = "<group>"; };
+		C565CB4625A4382D00848134 /* TwoVerticalArrangementLabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoVerticalArrangementLabsView.h; sourceTree = "<group>"; };
+		C565CB4725A4382D00848134 /* TwoVerticalArrangementLabsView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoVerticalArrangementLabsView.png; sourceTree = "<group>"; };
 		C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ShakeAnimation.m"; sourceTree = "<group>"; };
 		C5676440259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+ShakeAnimation.h"; sourceTree = "<group>"; };
 		C5676441259F12EF006905A9 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -2296,6 +2300,16 @@
 			path = "签名上架";
 			sourceTree = "<group>";
 		};
+		C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */ = {
+			isa = PBXGroup;
+			children = (
+				C565CB4625A4382D00848134 /* TwoVerticalArrangementLabsView.h */,
+				C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */,
+				C565CB4725A4382D00848134 /* TwoVerticalArrangementLabsView.png */,
+			);
+			path = TwoVerticalArrangementLabsView;
+			sourceTree = "<group>";
+		};
 		C56BA6C82578925500D054D0 /* UBLNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -3842,6 +3856,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */,
 				C59F3A1E259B3B3C00E22F9B /* JobsBitsMonitor */,
 				C584309725999F1C00D335F7 /* PostInputView */,
 				C59A3D8A258DD1EF005F6260 /* UserDefaultManager */,
@@ -4873,6 +4888,7 @@
 				C533701A24DB00280082847C /* BRAddressPickerView.m in Sources */,
 				C5FE9D1724B5F29C007B9878 /* FSAppIconManager.m in Sources */,
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
+				C565CB4825A4382D00848134 /* TwoVerticalArrangementLabsView.m in Sources */,
 				C5E7D9B024E1640E00A38FAF /* NSObject+Extras.m in Sources */,
 				C5676444259F12F0006905A9 /* CollectionViewCell.m in Sources */,
 				C5CDD19B258F221D0045AA50 /* JobsAppDoorInputViewBaseStyleModel.m in Sources */,

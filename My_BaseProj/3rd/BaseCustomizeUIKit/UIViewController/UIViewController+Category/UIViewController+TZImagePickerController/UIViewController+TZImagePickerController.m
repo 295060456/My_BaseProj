@@ -84,9 +84,10 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
                                 btnTitleArr:@[@"去获取"]
                              alertBtnAction:@[@"pushToSysConfig"]
                                    targetVC:self
-                               alertVCBlock:^(id data) {
-                //DIY
-            }];
+                                     funcVC:nil
+                                   animated:YES
+                               alertVCBlock:nil
+                            completionBlock:nil];
         }
     }];
 }
@@ -111,9 +112,10 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
                                 btnTitleArr:@[@"去获取"]
                              alertBtnAction:@[@"pushToSysConfig"]
                                    targetVC:self
-                               alertVCBlock:^(id data) {
-                //DIY
-            }];
+                                     funcVC:nil
+                                   animated:YES
+                               alertVCBlock:nil
+                            completionBlock:nil];
         }
     }];
 }

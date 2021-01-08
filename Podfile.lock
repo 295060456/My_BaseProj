@@ -93,6 +93,12 @@ PODS:
   - GKNavigationBar/GestureHandle (1.4.0)
   - GKNavigationBar/NavigationBar (1.4.0)
   - GKPageScrollView (1.4.2)
+  - GKPhotoBrowser (2.1.4):
+    - GKPhotoBrowser/SD (= 2.1.4)
+  - GKPhotoBrowser/Core (2.1.4)
+  - GKPhotoBrowser/SD (2.1.4):
+    - GKPhotoBrowser/Core
+    - SDWebImage (~> 5.0)
   - GoogleAnalytics (3.17.0)
   - GoogleAppMeasurement (7.3.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
@@ -257,6 +263,7 @@ DEPENDENCIES:
   - FMDB
   - GKNavigationBar
   - GKPageScrollView
+  - GKPhotoBrowser
   - GoogleTagManager
   - HBDNavigationBar
   - HCSStarRatingView
@@ -341,6 +348,7 @@ SPEC REPOS:
     - GCDWebServer
     - GKNavigationBar
     - GKPageScrollView
+    - GKPhotoBrowser
     - GoogleAnalytics
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -433,6 +441,7 @@ SPEC CHECKSUMS:
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GKNavigationBar: fe87990bde3fb2b7ece3f81014c6d4bc654bef06
   GKPageScrollView: 66dac516085b96b77dcf90ac04e6864e0f16d0cf
+  GKPhotoBrowser: 1f7c0bdd21fc617f1c7cd18d15f26488abf0f973
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleAppMeasurement: 8d3c0aeede16ab7764144b5a4ca8e1d4323841b7
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
@@ -499,6 +508,6 @@ SPEC CHECKSUMS:
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 753d021eb9810249e2e4d74ad32439b081bd91b1
+PODFILE CHECKSUM: 14dbf9eecb6df4659f410453d6bb48c74514fb67
 
 COCOAPODS: 1.10.0

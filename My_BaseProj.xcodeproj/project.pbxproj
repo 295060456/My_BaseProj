@@ -139,16 +139,6 @@
 		C5767BA825470BD100C382C8 /* WMZBannerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9E25470BD100C382C8 /* WMZBannerControl.m */; };
 		C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */; };
 		C5767BAA25470BD100C382C8 /* WMZBannerOverLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */; };
-		C5778F962589FF4300FE51E3 /* GKLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */; };
-		C5778F972589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */; };
-		C5778F982589FF4300FE51E3 /* GKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */; };
-		C5778F992589FF4300FE51E3 /* GKPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F892589FF4300FE51E3 /* GKPhotoManager.m */; };
-		C5778F9A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */; };
-		C5778F9B2589FF4300FE51E3 /* GKPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */; };
-		C5778F9C2589FF4300FE51E3 /* GKPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */; };
-		C5778F9D2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md in Resources */ = {isa = PBXBuildFile; fileRef = C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */; };
-		C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */; };
-		C5778FA02589FF4300FE51E3 /* GKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
 		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
@@ -726,27 +716,6 @@
 		C5767BA225470BD100C382C8 /* WMZBannerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerParam.h; sourceTree = "<group>"; };
 		C5767BA325470BD100C382C8 /* WMZBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerView.h; sourceTree = "<group>"; };
 		C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerOverLayout.m; sourceTree = "<group>"; };
-		C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLoadingView.m; sourceTree = "<group>"; };
-		C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKGestureHandle.m"; sourceTree = "<group>"; };
-		C5778F812589FF4300FE51E3 /* GKWebImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWebImageProtocol.h; sourceTree = "<group>"; };
-		C5778F822589FF4300FE51E3 /* GKPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoManager.h; sourceTree = "<group>"; };
-		C5778F832589FF4300FE51E3 /* GKPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPanGestureRecognizer.h; sourceTree = "<group>"; };
-		C5778F842589FF4300FE51E3 /* GKPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoView.h; sourceTree = "<group>"; };
-		C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoBrowser.m; sourceTree = "<group>"; };
-		C5778F862589FF4300FE51E3 /* GKPhotoBrowserConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowserConfigure.h; sourceTree = "<group>"; };
-		C5778F872589FF4300FE51E3 /* UIScrollView+GKGestureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKGestureHandle.h"; sourceTree = "<group>"; };
-		C5778F882589FF4300FE51E3 /* GKLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLoadingView.h; sourceTree = "<group>"; };
-		C5778F892589FF4300FE51E3 /* GKPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoManager.m; sourceTree = "<group>"; };
-		C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoBrowserConfigure.m; sourceTree = "<group>"; };
-		C5778F8B2589FF4300FE51E3 /* GKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowser.h; sourceTree = "<group>"; };
-		C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoView.m; sourceTree = "<group>"; };
-		C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPanGestureRecognizer.m; sourceTree = "<group>"; };
-		C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "GKPhotoBrowser不用pod管理的情况说明.md"; sourceTree = "<group>"; };
-		C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKSDWebImageManager.m; sourceTree = "<group>"; };
-		C5778F912589FF4300FE51E3 /* GKSDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKSDWebImageManager.h; sourceTree = "<group>"; };
-		C5778F932589FF4300FE51E3 /* GKYYWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKYYWebImageManager.m; sourceTree = "<group>"; };
-		C5778F942589FF4300FE51E3 /* GKYYWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKYYWebImageManager.h; sourceTree = "<group>"; };
-		C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKPhotoBrowser.bundle; sourceTree = "<group>"; };
 		C5778FA42589FF5A00FE51E3 /* XHLaunchAd不用pod导入的情况说明.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "XHLaunchAd不用pod导入的情况说明.md"; sourceTree = "<group>"; };
 		C5788CA425592D14009D46E3 /* 关于响应链的一些研究成果.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于响应链的一些研究成果.md"; sourceTree = "<group>"; };
 		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
@@ -1931,7 +1900,6 @@
 			isa = PBXGroup;
 			children = (
 				C5C6512E259DF8AA00FD2F99 /* ECPrivacyCheckTools */,
-				C5778F7D2589FF4300FE51E3 /* GKPhotoBrowser */,
 				C5767B9725470BD100C382C8 /* WMZBanner */,
 				C55D3C8B2538856100CFCF73 /* XHLaunchAd */,
 				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
@@ -2590,58 +2558,6 @@
 				C5767B9D25470BD100C382C8 /* WMZBannerView.m */,
 			);
 			path = WMZBanner;
-			sourceTree = "<group>";
-		};
-		C5778F7D2589FF4300FE51E3 /* GKPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				C5778F7E2589FF4300FE51E3 /* Core */,
-				C5778F952589FF4300FE51E3 /* GKPhotoBrowser.bundle */,
-				C5778F8E2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md */,
-				C5778F8F2589FF4300FE51E3 /* SDWebImage */,
-				C5778F922589FF4300FE51E3 /* YYWebImage */,
-			);
-			path = GKPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		C5778F7E2589FF4300FE51E3 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C5778F7F2589FF4300FE51E3 /* GKLoadingView.m */,
-				C5778F802589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m */,
-				C5778F812589FF4300FE51E3 /* GKWebImageProtocol.h */,
-				C5778F822589FF4300FE51E3 /* GKPhotoManager.h */,
-				C5778F832589FF4300FE51E3 /* GKPanGestureRecognizer.h */,
-				C5778F842589FF4300FE51E3 /* GKPhotoView.h */,
-				C5778F852589FF4300FE51E3 /* GKPhotoBrowser.m */,
-				C5778F862589FF4300FE51E3 /* GKPhotoBrowserConfigure.h */,
-				C5778F872589FF4300FE51E3 /* UIScrollView+GKGestureHandle.h */,
-				C5778F882589FF4300FE51E3 /* GKLoadingView.h */,
-				C5778F892589FF4300FE51E3 /* GKPhotoManager.m */,
-				C5778F8A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m */,
-				C5778F8B2589FF4300FE51E3 /* GKPhotoBrowser.h */,
-				C5778F8C2589FF4300FE51E3 /* GKPhotoView.m */,
-				C5778F8D2589FF4300FE51E3 /* GKPanGestureRecognizer.m */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		C5778F8F2589FF4300FE51E3 /* SDWebImage */ = {
-			isa = PBXGroup;
-			children = (
-				C5778F912589FF4300FE51E3 /* GKSDWebImageManager.h */,
-				C5778F902589FF4300FE51E3 /* GKSDWebImageManager.m */,
-			);
-			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		C5778F922589FF4300FE51E3 /* YYWebImage */ = {
-			isa = PBXGroup;
-			children = (
-				C5778F942589FF4300FE51E3 /* GKYYWebImageManager.h */,
-				C5778F932589FF4300FE51E3 /* GKYYWebImageManager.m */,
-			);
-			path = YYWebImage;
 			sourceTree = "<group>";
 		};
 		C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */ = {
@@ -4672,7 +4588,6 @@
 				C544D2E82525DC2F003C2A94 /* 123.json in Resources */,
 				C5C65184259DF8AA00FD2F99 /* 运动与健身@2x.png in Resources */,
 				C5C65187259DF8AA00FD2F99 /* 健康@2x.png in Resources */,
-				C5778FA02589FF4300FE51E3 /* GKPhotoBrowser.bundle in Resources */,
 				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C56E3E0B2547122700B9F555 /* 资源文件 in Resources */,
 				C5C6518E259DF8AA00FD2F99 /* 通讯录@2x.png in Resources */,
@@ -4685,7 +4600,6 @@
 				C5C6519D259DF8AA00FD2F99 /* HomeKit@3x.png in Resources */,
 				C50ECADF25258878000AE52F /* 音律跳动.bundle in Resources */,
 				C544D2E72525DC2F003C2A94 /* 12345.json in Resources */,
-				C5778F9D2589FF4300FE51E3 /* GKPhotoBrowser不用pod管理的情况说明.md in Resources */,
 				C5C65194259DF8AA00FD2F99 /* 日历@2x.png in Resources */,
 				C5FE9CD224B5F29C007B9878 /* sortedNameEN.plist in Resources */,
 				C5C65197259DF8AA00FD2F99 /* 文件和文件夹@2x.png in Resources */,
@@ -4833,7 +4747,6 @@
 				C5D0AA06258765F8002CA224 /* ZBURLRequest.m in Sources */,
 				C5FE9CE324B5F29C007B9878 /* WaterMark.m in Sources */,
 				C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */,
-				C5778F972589FF4300FE51E3 /* UIScrollView+GKGestureHandle.m in Sources */,
 				C5D1C027258B200A00784D2F /* UIViewController+EmptyData.m in Sources */,
 				C533701324DB00280082847C /* NSDate+BRPickerView.m in Sources */,
 				C59D9AF824F8F19100A74CE9 /* ZZCountingLabel.m in Sources */,
@@ -4862,14 +4775,11 @@
 				C5C65180259DF8AA00FD2F99 /* ECPrivacyCheckHealth.m in Sources */,
 				C5727863254094C2002373D7 /* TransitionController.m in Sources */,
 				C55D3CAE2538856100CFCF73 /* XHLaunchAdConst.m in Sources */,
-				C5778F982589FF4300FE51E3 /* GKPhotoBrowser.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
 				C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C515765425A350E50074D945 /* UIView+Gesture.m in Sources */,
-				C5778F9C2589FF4300FE51E3 /* GKPanGestureRecognizer.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
-				C5778F992589FF4300FE51E3 /* GKPhotoManager.m in Sources */,
 				C595D111258713CB002A4531 /* SuspendLab.m in Sources */,
 				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
@@ -4940,7 +4850,6 @@
 				C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */,
 				C533701924DB00280082847C /* BRAddressModel.m in Sources */,
 				C5C67C5B24FE4F9C000A26B8 /* Nanosecond_TimerManager.m in Sources */,
-				C5778F962589FF4300FE51E3 /* GKLoadingView.m in Sources */,
 				C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */,
 				C56BA6D22578925500D054D0 /* UBLNetWorkResult.m in Sources */,
 				C52E8958250F752E0070356F /* NSData+Base64.m in Sources */,
@@ -5068,7 +4977,6 @@
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5CDD191258F221D0045AA50 /* JobsAppDoorConfig.m in Sources */,
 				C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */,
-				C5778F9B2589FF4300FE51E3 /* GKPhotoView.m in Sources */,
 				C5C65177259DF8AA00FD2F99 /* ECPrivacyCheckCamera.m in Sources */,
 				C5FE9D1424B5F29C007B9878 /* HWTextCodeView.m in Sources */,
 				C5D0AA04258765F8002CA224 /* ZBRequestEngine.m in Sources */,
@@ -5079,7 +4987,6 @@
 				C58F043524EBB63000B6D09C /* MKProxy.m in Sources */,
 				C59F3A26259B3B3C00E22F9B /* JobsBitsMonitorSuspendLab.m in Sources */,
 				C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */,
-				C5778F9E2589FF4300FE51E3 /* GKSDWebImageManager.m in Sources */,
 				C55D3CAF2538856100CFCF73 /* XHLaunchAd.m in Sources */,
 				C5727874254094C2002373D7 /* CustomTabBar.m in Sources */,
 				C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */,
@@ -5104,7 +5011,6 @@
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
-				C5778F9A2589FF4300FE51E3 /* GKPhotoBrowserConfigure.m in Sources */,
 				C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */,
 				C5C659F4259DFBC900FD2F99 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */,
 				C59A3D90258DD1EF005F6260 /* UserDefaultManager.m in Sources */,

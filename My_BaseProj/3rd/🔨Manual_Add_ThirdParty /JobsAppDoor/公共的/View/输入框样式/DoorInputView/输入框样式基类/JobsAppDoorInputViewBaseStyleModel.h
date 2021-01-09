@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIImage *selectedSecurityBtnIMG;
 @property(nonatomic,strong)UIImage *unSelectedSecurityBtnIMG;
 @property(nonatomic,strong)NSString *placeHolderStr;
+@property(nonatomic,strong)NSString *nickNamePlaceHolderStr;
 @property(nonatomic,strong)NSString *titleLabStr;
 @property(nonatomic,strong)UIFont *titleStrFont;
 @property(nonatomic,strong)UIColor *titleStrCor;

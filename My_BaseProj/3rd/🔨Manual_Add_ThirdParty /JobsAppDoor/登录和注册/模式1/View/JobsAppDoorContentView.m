@@ -270,11 +270,15 @@
             if (![NSString isNullString:self.registerInputTFValueMutDic[@"用户名"]] &&
                 [NSString isNullString:self.loginInputTFValueMutDic[@"用户名"]]) {
                 [self.loginInputTFValueMutDic setValue:self.registerInputTFValueMutDic[@"用户名"] forKey:@"用户名"];
+            }else{
+                [self.loginInputTFValueMutDic setValue:@"" forKey:@"用户名"];
             }
             
             if (![NSString isNullString:self.registerInputTFValueMutDic[@"密码"]] &&
                 [NSString isNullString:self.loginInputTFValueMutDic[@"密码"]]) {
                 [self.loginInputTFValueMutDic setValue:self.registerInputTFValueMutDic[@"密码"] forKey:@"密码"];
+            }else{
+                [self.loginInputTFValueMutDic setValue:@"" forKey:@"密码"];
             }
             
             [self sendBtnCheckWithDic:self.loginInputTFValueMutDic

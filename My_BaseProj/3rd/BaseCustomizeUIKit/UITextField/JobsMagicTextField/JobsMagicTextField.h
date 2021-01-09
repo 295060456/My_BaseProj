@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIFont *placeholderFont;
 @property(nonatomic,strong)UIColor *placeholderColor;
 
+@property(nonatomic,strong)NSString *placeHolderAnimationLblStr;
+@property(nonatomic,strong)NSString *placeHolder;
 
 @end
 

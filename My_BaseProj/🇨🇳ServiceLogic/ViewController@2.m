@@ -8,9 +8,6 @@
 
 #import "ViewController@2.h"
 
-#import "MJRefreshComponent+Lottie.h"
-#import "TestTableViewHeader.h"
-
 ///视频框架
 //#import <libavformat/avformat.h>
 //#import <libavcodec/avcodec.h>
@@ -63,8 +60,7 @@ UITableViewDataSource
         _tableView.backgroundColor = kGrayColor;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.mj_header = TestTableViewHeader.new;//self.mjRefreshGifHeader;//
-        _tableView.mj_header.jsonString = @"12345.json";
+        _tableView.mj_header = self.mjRefreshGifHeader;
         [self.view addSubview:_tableView];
     }return _tableView;
 }

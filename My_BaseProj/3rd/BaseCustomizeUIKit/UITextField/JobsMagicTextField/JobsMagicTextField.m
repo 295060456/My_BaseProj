@@ -35,6 +35,7 @@
 -(void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     if (!self.isOK) {
+        self.placeholder = self.placeHolder;
         self.placeholderAnimationLbl.alpha = 1;
         self.isOK = YES;
     }
@@ -59,7 +60,7 @@
 }
 
 - (BOOL)resignFirstResponder{
-    self.placeholder = self.placeholderAnimationLbl.text;
+    self.placeholder = self.placeHolder;
     [self restoreAnimation];
     return [super resignFirstResponder];
 }
@@ -75,6 +76,7 @@
             self.placeholderAnimationLbl.frame = targetFrame;
             self.placeholderAnimationLbl.textColor = self.animationColor;
             self.placeholderAnimationLbl.font = self.animationFont;
+            self.placeholderAnimationLbl.text = self.placeHolderAnimationLblStr;
         }];
     }
 }
@@ -95,6 +97,7 @@
             self.placeholderAnimationLbl.textColor = self.placeholderColor;
             self.placeholderAnimationLbl.font = self.placeholderFont;
             self.placeholderAnimationLbl.attributedText = self.attributedPlaceholder;
+            self.placeholderAnimationLbl.text = @"";
         }];
     }
 }
@@ -111,10 +114,10 @@
 -(UILabel *)placeholderAnimationLbl{
     if (!_placeholderAnimationLbl) {
         _placeholderAnimationLbl = UILabel.new;
-        _placeholderAnimationLbl.frame = CGRectMake(self.placeHolderOffset + self.leftViewOffsetX, self.mj_y, self.mj_w, self.mj_h);
+        _placeholderAnimationLbl.frame = CGRectMake(self.placeHolderOffset + self.leftViewOffsetX, self.y, self.width, self.height);
         _placeholderAnimationLbl.textColor = [UIColor blueColor];//[UIColor lightGrayColor];
         _placeholderAnimationLbl.textAlignment = NSTextAlignmentLeft;
-        _placeholderAnimationLbl.text = self.placeholder;
+        _placeholderAnimationLbl.text = self.placeHolderAnimationLblStr;
         _placeholderAnimationLbl.attributedText = self.attributedPlaceholder;
         _placeholderAnimationLbl.font = self.font;
         [self addSubview:_placeholderAnimationLbl];

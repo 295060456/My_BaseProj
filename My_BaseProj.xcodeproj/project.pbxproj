@@ -976,6 +976,7 @@
 		C5CF0A3F258734B800FDCC16 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		C5CF0A40258734B800FDCC16 /* 截获导航控制器系统返回按钮的点击pop及右滑pop事件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "截获导航控制器系统返回按钮的点击pop及右滑pop事件.md"; sourceTree = "<group>"; };
 		C5CF0A41258734B800FDCC16 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
+		C5CF155625AC7DDE00381935 /* 精确度量 iOS App 的启动时间.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "精确度量 iOS App 的启动时间.md"; sourceTree = "<group>"; };
 		C5CF70D524E51A69000DB72D /* UIView+SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SuspendView.h"; sourceTree = "<group>"; };
 		C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SuspendView.m"; sourceTree = "<group>"; };
 		C5CF8956252AC380002499C6 /* iOS 只刷新某一行或某一组的cell */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS 只刷新某一行或某一组的cell"; sourceTree = "<group>"; };
@@ -3719,37 +3720,38 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
-				C59F2F14259B2E9F00E22F9B /* 查找系统警告对应的编码 */,
-				C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */,
-				C5CF8946252AC328002499C6 /* UITableView */,
-				C5E3C79D25179B2100F9A150 /* FFmpeg */,
-				C56161C924EE743F001CD851 /* 签名上架 */,
-				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
-				C52D2A5024E580670048FEFF /* JXCategoryView */,
-				C557DC1724C8063700754760 /* MJExtension用法 */,
-				C5FE9A8824B5F0BE007B9878 /* Computer_Config */,
+				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
 				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
 				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
-				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
-				C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */,
-				C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */,
-				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
-				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
+				C52E88D4250F2CEF0070356F /* 加密流程 */,
+				C5D5B6302566447000C79CBF /* 权限 */,
+				C57AC05025120BA3009EE44D /* 网络请求写法 */,
+				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
+				C5633218252AFABD00699392 /* Block */,
 				C5FE9A7624B5F0B6007B9878 /* Jose */,
 				C5FE9A7824B5F0B6007B9878 /* readme */,
-				C5FE9A7924B5F0B6007B9878 /* Runtime 获取.m文件的属性（指针） */,
-				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
-				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
-				C52E88D4250F2CEF0070356F /* 加密流程 */,
-				C57AC05025120BA3009EE44D /* 网络请求写法 */,
-				C5633218252AFABD00699392 /* Block */,
-				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
 				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
-				C5D5B6302566447000C79CBF /* 权限 */,
+				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
+				C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */,
+				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
+				C5FE9A7924B5F0B6007B9878 /* Runtime 获取.m文件的属性（指针） */,
 				C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */,
 				C5765CEE256D426D004B3A96 /* 过滤删除.md */,
 				C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */,
+				C5CF155625AC7DDE00381935 /* 精确度量 iOS App 的启动时间.md */,
 				C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */,
+				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
+				C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */,
+				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
+				C59F2F14259B2E9F00E22F9B /* 查找系统警告对应的编码 */,
+				C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */,
+				C56161C924EE743F001CD851 /* 签名上架 */,
+				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
+				C5FE9A8824B5F0BE007B9878 /* Computer_Config */,
+				C5E3C79D25179B2100F9A150 /* FFmpeg */,
+				C52D2A5024E580670048FEFF /* JXCategoryView */,
+				C557DC1724C8063700754760 /* MJExtension用法 */,
+				C5CF8946252AC328002499C6 /* UITableView */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

@@ -105,7 +105,6 @@
 		C572785A254094C2002373D7 /* UITabBarItem+TLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */; };
 		C572785B254094C2002373D7 /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727818254094C2002373D7 /* TabBarItem.m */; };
 		C572785C254094C2002373D7 /* TabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C572781B254094C2002373D7 /* TabBarControllerConfig.m */; };
-		C572785D254094C2002373D7 /* TabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C572781E254094C2002373D7 /* TabbarVC.m */; };
 		C572785E254094C2002373D7 /* JobsPullListAutoSizeView in Resources */ = {isa = PBXBuildFile; fileRef = C5727821254094C2002373D7 /* JobsPullListAutoSizeView */; };
 		C572785F254094C2002373D7 /* JobsPullListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727824254094C2002373D7 /* JobsPullListTBVCell.m */; };
 		C5727860254094C2002373D7 /* JobsPullListAutoSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727826254094C2002373D7 /* JobsPullListAutoSizeView.m */; };
@@ -272,6 +271,7 @@
 		C5D0B9FC25878DEC002CA224 /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0B9F825878DEC002CA224 /* SoundBtn.m */; };
 		C5D1C021258B1FF800784D2F /* UIView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D1C01F258B1FF800784D2F /* UIView+EmptyData.m */; };
 		C5D1C027258B200A00784D2F /* UIViewController+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D1C026258B200A00784D2F /* UIViewController+EmptyData.m */; };
+		C5D24BD625AD6C9E008CD6E1 /* TabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D24BD425AD6C9E008CD6E1 /* TabbarVC.m */; };
 		C5D4FBB124CEC5400024A292 /* FileFolderHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */; };
 		C5D4FBDB24CFE0840024A292 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D4FBD924CFE0840024A292 /* BaseModel.m */; };
 		C5D6DB2725860E8B00029AFF /* NSTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D6DB2625860E8B00029AFF /* NSTimerManager.m */; };
@@ -643,8 +643,6 @@
 		C5727818254094C2002373D7 /* TabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		C572781A254094C2002373D7 /* TabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerConfig.h; sourceTree = "<group>"; };
 		C572781B254094C2002373D7 /* TabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarControllerConfig.m; sourceTree = "<group>"; };
-		C572781D254094C2002373D7 /* TabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarVC.h; sourceTree = "<group>"; };
-		C572781E254094C2002373D7 /* TabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarVC.m; sourceTree = "<group>"; };
 		C5727821254094C2002373D7 /* JobsPullListAutoSizeView */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JobsPullListAutoSizeView; sourceTree = "<group>"; };
 		C5727822254094C2002373D7 /* JobsPullListAutoSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsPullListAutoSizeView.h; sourceTree = "<group>"; };
 		C5727824254094C2002373D7 /* JobsPullListTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsPullListTBVCell.m; sourceTree = "<group>"; };
@@ -1002,6 +1000,9 @@
 		C5D1C020258B1FF800784D2F /* UIView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EmptyData.h"; sourceTree = "<group>"; };
 		C5D1C025258B200A00784D2F /* UIViewController+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EmptyData.h"; sourceTree = "<group>"; };
 		C5D1C026258B200A00784D2F /* UIViewController+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EmptyData.m"; sourceTree = "<group>"; };
+		C5D24BD425AD6C9E008CD6E1 /* TabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarVC.m; sourceTree = "<group>"; };
+		C5D24BD525AD6C9E008CD6E1 /* TabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarVC.h; sourceTree = "<group>"; };
+		C5D24BDA25AD6CAE008CD6E1 /* TabBarControllerConstruction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarControllerConstruction.h; sourceTree = "<group>"; };
 		C5D4FBAF24CEC5400024A292 /* FileFolderHandleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileFolderHandleTool.m; sourceTree = "<group>"; };
 		C5D4FBB024CEC5400024A292 /* FileFolderHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFolderHandleTool.h; sourceTree = "<group>"; };
 		C5D4FBD924CFE0840024A292 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
@@ -2373,6 +2374,7 @@
 		C5727819254094C2002373D7 /* 全局配置文件 */ = {
 			isa = PBXGroup;
 			children = (
+				C5D24BDA25AD6CAE008CD6E1 /* TabBarControllerConstruction.h */,
 				C572781A254094C2002373D7 /* TabBarControllerConfig.h */,
 				C572781B254094C2002373D7 /* TabBarControllerConfig.m */,
 			);
@@ -2382,8 +2384,8 @@
 		C572781C254094C2002373D7 /* UITabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				C572781D254094C2002373D7 /* TabbarVC.h */,
-				C572781E254094C2002373D7 /* TabbarVC.m */,
+				C5D24BD525AD6C9E008CD6E1 /* TabbarVC.h */,
+				C5D24BD425AD6C9E008CD6E1 /* TabbarVC.m */,
 			);
 			path = UITabBarController;
 			sourceTree = "<group>";
@@ -5002,11 +5004,11 @@
 				C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */,
 				C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */,
 				C572769925408AF1002373D7 /* NavigationBar.m in Sources */,
-				C572785D254094C2002373D7 /* TabbarVC.m in Sources */,
 				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5CDD18E258F221D0045AA50 /* JobsAppDoorRegisterContentView.m in Sources */,
+				C5D24BD625AD6C9E008CD6E1 /* TabbarVC.m in Sources */,
 				C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */,
 				C53C9E5625A1D0000007F58F /* NSObject+DataSave.m in Sources */,
 				C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */,

@@ -10,6 +10,7 @@
 #define Header_h
 
 #import "TabBarControllerConfig.h"//全局配置文件
+#import "TabBarControllerConstruction.h"//构造方法
 
 //在系统api基础上二次封装的功能性拓展
 #import "LoadingImage.h"

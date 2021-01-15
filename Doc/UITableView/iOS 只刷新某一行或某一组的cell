@@ -7,7 +7,7 @@ NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
 
 //一个cell刷新
 
-NSIndexPath *indexPath=[NSIndexPath indexPathForRow:3 inSection:0];
+NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
 
 [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
 

@@ -82,6 +82,7 @@
 		C55D3CB32538856100CFCF73 /* XHLaunchAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA32538856100CFCF73 /* XHLaunchAdConfiguration.m */; };
 		C55D3CB42538856100CFCF73 /* XHLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA52538856100CFCF73 /* XHLaunchAdCache.m */; };
 		C55D3CB52538856100CFCF73 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */; };
+		C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */; };
 		C56161C824EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 in Resources */ = {isa = PBXBuildFile; fileRef = C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */; };
 		C56161CB24EE7450001CD851 /* 签名上架 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CA24EE7450001CD851 /* 签名上架 */; };
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
@@ -582,6 +583,8 @@
 		C55D3CA62538856100CFCF73 /* XHLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdView.h; sourceTree = "<group>"; };
 		C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdImageManager.m; sourceTree = "<group>"; };
 		C55D3CA82538856100CFCF73 /* XHLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdConst.h; sourceTree = "<group>"; };
+		C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJRefresh.m"; sourceTree = "<group>"; };
+		C55FEB3625B4265F00D8C30D /* UIView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJRefresh.h"; sourceTree = "<group>"; };
 		C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "优秀的关于音视频处理的文献资料"; sourceTree = "<group>"; };
 		C56161CA24EE7450001CD851 /* 签名上架 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "签名上架"; sourceTree = "<group>"; };
 		C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "苹果开发者账号申请"; sourceTree = "<group>"; };
@@ -2251,6 +2254,15 @@
 				C55D3C9B2538856100CFCF73 /* XHLaunchImageView.m */,
 			);
 			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
+		C55FEB3425B4265F00D8C30D /* UIView+MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				C55FEB3625B4265F00D8C30D /* UIView+MJRefresh.h */,
+				C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */,
+			);
+			path = "UIView+MJRefresh";
 			sourceTree = "<group>";
 		};
 		C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */ = {
@@ -4110,15 +4122,16 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C515765125A350E50074D945 /* UIView+Gesture */,
 				C595BA7625863F93002A4531 /* UIView+Animation */,
 				C5460F4E258C8F090008928C /* UIView+AOP */,
 				C595BA7725863FBF002A4531 /* UIView+Chain */,
 				C5D1C01E258B1FF800784D2F /* UIView+EmptyData */,
 				C595BA7825863FC7002A4531 /* UIView+Extras */,
+				C515765125A350E50074D945 /* UIView+Gesture */,
 				C595BA7925863FD0002A4531 /* UIView+Gradient */,
 				C552A02C2589CE4B00A89501 /* UIView+JHGestureBlock */,
 				C595BA7A25863FD7002A4531 /* UIView+Measure */,
+				C55FEB3425B4265F00D8C30D /* UIView+MJRefresh */,
 				C595BA7B25863FE2002A4531 /* UIView+SuspendView */,
 				C595BA7C25863FF0002A4531 /* UIView+ZFPlayer */,
 			);
@@ -4880,6 +4893,7 @@
 				C515765425A350E50074D945 /* UIView+Gesture.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C595D111258713CB002A4531 /* SuspendLab.m in Sources */,
+				C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */,
 				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C5767BA625470BD100C382C8 /* WMZBannerParam.m in Sources */,

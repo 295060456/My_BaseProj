@@ -726,6 +726,7 @@
 		C58509C125483CC1001E6676 /* ViewForTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForTableViewHeader.h; sourceTree = "<group>"; };
 		C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewFooter.m; sourceTree = "<group>"; };
 		C58509C425483CC1001E6676 /* ViewForTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForTableViewFooter.h; sourceTree = "<group>"; };
+		C589F52925B472C700B83254 /* UICollectionView点击事件.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "UICollectionView点击事件.md"; sourceTree = "<group>"; };
 		C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于系统Nav.md"; sourceTree = "<group>"; };
 		C58C61232532B3950092BF89 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
 		C58C61242532B3950092BF89 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
@@ -3782,6 +3783,7 @@
 				C52D2A5024E580670048FEFF /* JXCategoryView */,
 				C557DC1724C8063700754760 /* MJExtension用法 */,
 				C5CF8946252AC328002499C6 /* UITableView */,
+				C589F52925B472C700B83254 /* UICollectionView点击事件.md */,
 			);
 			path = Doc;
 			sourceTree = "<group>";

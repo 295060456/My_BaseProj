@@ -89,18 +89,6 @@
         }
     }else{}
 }
-
--(void)keyboard{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillChangeFrameNotification:)
-                                                 name:UIKeyboardWillChangeFrameNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardDidChangeFrameNotification:)
-                                                 name:UIKeyboardDidChangeFrameNotification
-                                               object:nil];
-}
 //键盘 弹出 和 收回 走这个方法
 -(void)keyboardWillChangeFrameNotification:(NSNotification *)notification{}
 

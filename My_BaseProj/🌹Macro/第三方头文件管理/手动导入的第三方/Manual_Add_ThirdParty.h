@@ -78,7 +78,7 @@
 /// UICollectionReusableView
 #import "CollectionReusableView.h"
 /// UICollectionViewCell
-#import "CollectionViewCell.h"
+#import "BaseCollectionViewCell.h"
 /// UICollectionViewLayout
 #import "LMHWaterFallLayout.h"
 #import "KFZShopCatoryFlowLayput.h"//给UICollectionView每个section加背景

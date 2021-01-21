@@ -24,7 +24,7 @@
 		C530AC16254D983800EDEDC8 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC09254D983800EDEDC8 /* LMHWaterFallLayout.m */; };
 		C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC0C254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m */; };
 		C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */; };
-		C530AC1A254D983800EDEDC8 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC15254D983800EDEDC8 /* CollectionReusableView.m */; };
+		C530AC1A254D983800EDEDC8 /* BaseCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC15254D983800EDEDC8 /* BaseCollectionReusableView.m */; };
 		C530AD56254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */; };
 		C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD4F254D989000EDEDC8 /* CollectionView.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
@@ -453,8 +453,8 @@
 		C530AC0C254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFZShopCatoryFlowLayput.m; sourceTree = "<group>"; };
 		C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		C530AC0F254D983800EDEDC8 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		C530AC14254D983800EDEDC8 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
-		C530AC15254D983800EDEDC8 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		C530AC14254D983800EDEDC8 /* BaseCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionReusableView.h; sourceTree = "<group>"; };
+		C530AC15254D983800EDEDC8 /* BaseCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionReusableView.m; sourceTree = "<group>"; };
 		C530AD4E254D989000EDEDC8 /* CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
 		C530AD4F254D989000EDEDC8 /* CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
 		C530AD54254D98AE00EDEDC8 /* UICollectionView+RegisterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+RegisterClass.h"; sourceTree = "<group>"; };
@@ -1580,8 +1580,8 @@
 		C530AC13254D983800EDEDC8 /* UICollectionReusableView 用作基类 */ = {
 			isa = PBXGroup;
 			children = (
-				C530AC14254D983800EDEDC8 /* CollectionReusableView.h */,
-				C530AC15254D983800EDEDC8 /* CollectionReusableView.m */,
+				C530AC14254D983800EDEDC8 /* BaseCollectionReusableView.h */,
+				C530AC15254D983800EDEDC8 /* BaseCollectionReusableView.m */,
 			);
 			path = "UICollectionReusableView 用作基类";
 			sourceTree = "<group>";
@@ -3425,8 +3425,8 @@
 			children = (
 				C5FE9D4124B5FCC9007B9878 /* 详解UIScrollView 和UITabableView的滚动区域.png */,
 				C5FE9A7B24B5F0B6007B9878 /* cell重用.png */,
-				C5FE9A7E24B5F0B6007B9878 /* TableViewCell自适应 */,
 				C5CF8956252AC380002499C6 /* iOS 只刷新某一行或某一组的cell */,
+				C5FE9A7E24B5F0B6007B9878 /* TableViewCell自适应 */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -5003,7 +5003,7 @@
 				C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */,
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
 				C572785C254094C2002373D7 /* TabBarControllerConfig.m in Sources */,
-				C530AC1A254D983800EDEDC8 /* CollectionReusableView.m in Sources */,
+				C530AC1A254D983800EDEDC8 /* BaseCollectionReusableView.m in Sources */,
 				C552A6C52589D37E00A89501 /* UIImage+ScreenShot.m in Sources */,
 				C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */,
 				C530AC16254D983800EDEDC8 /* LMHWaterFallLayout.m in Sources */,

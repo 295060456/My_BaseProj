@@ -76,7 +76,7 @@
 /// UICollectionView
 #import "CollectionView.h"
 /// UICollectionReusableView
-#import "CollectionReusableView.h"
+#import "BaseCollectionReusableView.h"
 /// UICollectionViewCell
 #import "BaseCollectionViewCell.h"
 /// UICollectionViewLayout

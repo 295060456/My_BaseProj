@@ -117,6 +117,7 @@
 		C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727855254094C2002373D7 /* UITabBar+TLAnimation.m */; };
 		C5727873254094C2002373D7 /* UITabBar+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727856254094C2002373D7 /* UITabBar+Ex.m */; };
 		C5727874254094C2002373D7 /* CustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727857254094C2002373D7 /* CustomTabBar.m */; };
+		C572969625BB0A4E00726419 /* UIView+BackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C572969425BB0A4D00726419 /* UIView+BackgroundImage.m */; };
 		C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */; };
 		C572A28924FCBDDE000A1687 /* UIImage+Tailor.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A28624FCBDDE000A1687 /* UIImage+Tailor.m */; };
 		C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29F24FD2F99000A1687 /* GDFadeView.m */; };
@@ -671,6 +672,8 @@
 		C5727857254094C2002373D7 /* CustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBar.m; sourceTree = "<group>"; };
 		C5727858254094C2002373D7 /* UITabBar+TLAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+TLAnimation.h"; sourceTree = "<group>"; };
 		C5727859254094C2002373D7 /* UITabBar+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Ex.h"; sourceTree = "<group>"; };
+		C572969425BB0A4D00726419 /* UIView+BackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BackgroundImage.m"; sourceTree = "<group>"; };
+		C572969525BB0A4D00726419 /* UIView+BackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BackgroundImage.h"; sourceTree = "<group>"; };
 		C572A28424FCBDDD000A1687 /* UIImage+Overlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Overlay.h"; sourceTree = "<group>"; };
 		C572A28524FCBDDD000A1687 /* UIImage+Overlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Overlay.m"; sourceTree = "<group>"; };
 		C572A28624FCBDDE000A1687 /* UIImage+Tailor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tailor.m"; sourceTree = "<group>"; };
@@ -2487,6 +2490,15 @@
 			path = UITabBar;
 			sourceTree = "<group>";
 		};
+		C572969325BB0A4D00726419 /* UIView+BackgroundImage */ = {
+			isa = PBXGroup;
+			children = (
+				C572969425BB0A4D00726419 /* UIView+BackgroundImage.m */,
+				C572969525BB0A4D00726419 /* UIView+BackgroundImage.h */,
+			);
+			path = "UIView+BackgroundImage";
+			sourceTree = "<group>";
+		};
 		C572A29D24FD2F6E000A1687 /* 颜色渐变的View，GDFadeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4137,6 +4149,7 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C572969325BB0A4D00726419 /* UIView+BackgroundImage */,
 				C595BA7625863F93002A4531 /* UIView+Animation */,
 				C5460F4E258C8F090008928C /* UIView+AOP */,
 				C595BA7725863FBF002A4531 /* UIView+Chain */,
@@ -5007,6 +5020,7 @@
 				C552A6C52589D37E00A89501 /* UIImage+ScreenShot.m in Sources */,
 				C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */,
 				C530AC16254D983800EDEDC8 /* LMHWaterFallLayout.m in Sources */,
+				C572969625BB0A4E00726419 /* UIView+BackgroundImage.m in Sources */,
 				C534CD4F258759BB001369FD /* BWItemModel.m in Sources */,
 				C52E8957250F752E0070356F /* NSString+Base64.m in Sources */,
 				C54F854E252B609700EE3DD0 /* UITableView+WWFoldableTableView.m in Sources */,

@@ -26,7 +26,7 @@
 		C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC0E254D983800EDEDC8 /* HQCollectionViewFlowLayout.m */; };
 		C530AC1A254D983800EDEDC8 /* BaseCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AC15254D983800EDEDC8 /* BaseCollectionReusableView.m */; };
 		C530AD56254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */; };
-		C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD4F254D989000EDEDC8 /* CollectionView.m */; };
+		C530AD62254D98BF00EDEDC8 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C530AD4F254D989000EDEDC8 /* BaseCollectionView.m */; };
 		C533701024DB00280082847C /* BRResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF624DB00280082847C /* BRResultModel.m */; };
 		C533701124DB00280082847C /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FF924DB00280082847C /* BRStringPickerView.m */; };
 		C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */ = {isa = PBXBuildFile; fileRef = C5336FFC24DB00280082847C /* BRDatePickerView+BR.m */; };
@@ -456,8 +456,8 @@
 		C530AC0F254D983800EDEDC8 /* HQCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		C530AC14254D983800EDEDC8 /* BaseCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionReusableView.h; sourceTree = "<group>"; };
 		C530AC15254D983800EDEDC8 /* BaseCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionReusableView.m; sourceTree = "<group>"; };
-		C530AD4E254D989000EDEDC8 /* CollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionView.h; sourceTree = "<group>"; };
-		C530AD4F254D989000EDEDC8 /* CollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionView.m; sourceTree = "<group>"; };
+		C530AD4E254D989000EDEDC8 /* BaseCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionView.h; sourceTree = "<group>"; };
+		C530AD4F254D989000EDEDC8 /* BaseCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionView.m; sourceTree = "<group>"; };
 		C530AD54254D98AE00EDEDC8 /* UICollectionView+RegisterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+RegisterClass.h"; sourceTree = "<group>"; };
 		C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+RegisterClass.m"; sourceTree = "<group>"; };
 		C530AD5A254D98B200EDEDC8 /* 我为什么要这么做 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "我为什么要这么做"; sourceTree = "<group>"; };
@@ -1595,8 +1595,8 @@
 				C530AD5A254D98B200EDEDC8 /* 我为什么要这么做 */,
 				C530AD54254D98AE00EDEDC8 /* UICollectionView+RegisterClass.h */,
 				C530AD55254D98AE00EDEDC8 /* UICollectionView+RegisterClass.m */,
-				C530AD4E254D989000EDEDC8 /* CollectionView.h */,
-				C530AD4F254D989000EDEDC8 /* CollectionView.m */,
+				C530AD4E254D989000EDEDC8 /* BaseCollectionView.h */,
+				C530AD4F254D989000EDEDC8 /* BaseCollectionView.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -5005,7 +5005,7 @@
 				C5914AE725384A2F007777A6 /* UIViewController+GifImageView.m in Sources */,
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C530AC18254D983800EDEDC8 /* HQCollectionViewFlowLayout.m in Sources */,
-				C530AD62254D98BF00EDEDC8 /* CollectionView.m in Sources */,
+				C530AD62254D98BF00EDEDC8 /* BaseCollectionView.m in Sources */,
 				C54FE244257671C900937C11 /* BaseViewController.m in Sources */,
 				C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */,
 				C5E7D9C424E179E600A38FAF /* UIViewController+InteractivePushGesture.m in Sources */,

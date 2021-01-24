@@ -84,7 +84,7 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
                                 btnTitleArr:@[@"去获取"]
                              alertBtnAction:@[@"pushToSysConfig"]
                                    targetVC:self
-                                     funcVC:nil
+                                     funcInWhere:nil
                                    animated:YES
                                alertVCBlock:nil
                             completionBlock:nil];
@@ -112,7 +112,7 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
                                 btnTitleArr:@[@"去获取"]
                              alertBtnAction:@[@"pushToSysConfig"]
                                    targetVC:self
-                                     funcVC:nil
+                                     funcInWhere:nil
                                    animated:YES
                                alertVCBlock:nil
                             completionBlock:nil];

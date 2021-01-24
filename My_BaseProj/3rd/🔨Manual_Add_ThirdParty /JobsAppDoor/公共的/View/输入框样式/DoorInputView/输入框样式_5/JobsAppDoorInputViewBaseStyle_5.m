@@ -36,7 +36,7 @@ UITextFieldDelegate
     [super drawRect:rect];
     // 指定描边
     [UIView setBorderWithView:self
-                  borderColor:RGBA_COLOR(162, 162, 162, 0.2f)
+                  borderColor:COLOR_RGB(162, 162, 162, 0.2f)
                   borderWidth:1
                    borderType:UIBorderSideTypeBottom];
 }

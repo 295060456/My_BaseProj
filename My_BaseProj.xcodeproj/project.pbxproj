@@ -558,6 +558,7 @@
 		C557DC1824C8065C00754760 /* MyVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVCModel.h; sourceTree = "<group>"; };
 		C557DC1924C8065C00754760 /* MyVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVCModel.m; sourceTree = "<group>"; };
 		C557DC1A24C806AA00754760 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C558DB0E25BE8BA900FC6CA5 /* 网络返回值 ==> Json文件.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "网络返回值 ==> Json文件.md"; sourceTree = "<group>"; };
 		C558E49A258A1FAA0078DB8F /* PodsManual.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PodsManual.h; sourceTree = "<group>"; };
 		C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XHLaunchAdDelegate.m"; sourceTree = "<group>"; };
 		C55D3C7D2538838C00CFCF73 /* AppDelegate+Func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Func.h"; sourceTree = "<group>"; };
@@ -1330,6 +1331,7 @@
 				C512028525B00C8100FC7351 /* 模型解析01.jpg */,
 				C512028725B00C8200FC7351 /* 模型解析02.jpg */,
 				C512028625B00C8200FC7351 /* 模型解析03.jpg */,
+				C558DB0E25BE8BA900FC6CA5 /* 网络返回值 ==> Json文件.md */,
 			);
 			path = "模型解析";
 			sourceTree = "<group>";
@@ -5357,6 +5359,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};
 			name = Debug;
@@ -5387,6 +5390,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "My_BaseProj/My_BaseProj-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 				WARNING_CFLAGS = "-Wno-ambiguous-macro";
 			};
 			name = Release;

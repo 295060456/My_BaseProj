@@ -211,6 +211,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - Starscream (3.1.1)
   - SZTextView (1.3.0)
+  - TABAnimated (2.5.1)
   - TFPopup (1.3.0)
   - TKCarouselView (1.2.0)
   - TTTAttributedLabel (2.0.0)
@@ -299,6 +300,7 @@ DEPENDENCIES:
   - SocketRocket
   - SPAlertController
   - SZTextView
+  - TABAnimated
   - TFPopup
   - TKCarouselView
   - TTTAttributedLabel
@@ -395,6 +397,7 @@ SPEC REPOS:
     - SQLiteRepairKit
     - Starscream
     - SZTextView
+    - TABAnimated
     - TFPopup
     - TKCarouselView
     - TTTAttributedLabel
@@ -488,6 +491,7 @@ SPEC CHECKSUMS:
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
+  TABAnimated: f0bfba5c5c7d279b43cda503d9a5328e7e9891c8
   TFPopup: e1396132337290244668fdd8a7faf8ff461c481b
   TKCarouselView: 3fde35add8c169c6df14b7d7c5395383c6a51be4
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
@@ -508,6 +512,6 @@ SPEC CHECKSUMS:
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 14dbf9eecb6df4659f410453d6bb48c74514fb67
+PODFILE CHECKSUM: 76a7f46c64914a1449b2a1b61e64747a0a743941
 
 COCOAPODS: 1.10.0

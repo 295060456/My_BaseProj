@@ -52,6 +52,7 @@ def appCommon
   pod 'SDWebImage'  # https://github.com/SDWebImage/SDWebImage Asynchronous image downloader with cache support as a UIImageView category
   #  pod 'SDWebImageWebPCoder' # https://github.com/SDWebImage/SDWebImageWebPCoder
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
+  pod 'TABAnimated' # https://github.com/tigerAndBull/TABAnimated
   end
 ## GK一族
 def gk

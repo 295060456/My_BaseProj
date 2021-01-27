@@ -189,7 +189,6 @@
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
 		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
 		C5C243732541550E00CB55F5 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C243712541550E00CB55F5 /* BaseNavigationVC.m */; };
-		C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C65174259DF8AA00FD2F99 /* ECPrivacyCheckMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C65131259DF8AA00FD2F99 /* ECPrivacyCheckMicrophone.m */; };
 		C5C65175259DF8AA00FD2F99 /* ECPrivacyCheckHomeKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C65133259DF8AA00FD2F99 /* ECPrivacyCheckHomeKit.m */; };
@@ -851,9 +850,6 @@
 		C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */ = {isa = PBXFileReference; lastKnownFileType = text; path = "unknown class viewcontroller in interface builder file"; sourceTree = "<group>"; };
 		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
-		C5C2441425417C5A00CB55F5 /* UUMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUMarqueeView.h; sourceTree = "<group>"; };
-		C5C2441525417C5A00CB55F5 /* 跑马灯效果 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "跑马灯效果"; sourceTree = "<group>"; };
-		C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUMarqueeView.m; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
 		C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController@5.m"; sourceTree = "<group>"; };
 		C5C4FAE4255A594B002F407A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -2982,16 +2978,6 @@
 			path = "图形验证码";
 			sourceTree = "<group>";
 		};
-		C5C2441325417C5A00CB55F5 /* 跑马灯效果 */ = {
-			isa = PBXGroup;
-			children = (
-				C5C2441525417C5A00CB55F5 /* 跑马灯效果 */,
-				C5C2441425417C5A00CB55F5 /* UUMarqueeView.h */,
-				C5C2441625417C5A00CB55F5 /* UUMarqueeView.m */,
-			);
-			path = "跑马灯效果";
-			sourceTree = "<group>";
-		};
 		C5C6512E259DF8AA00FD2F99 /* ECPrivacyCheckTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -3922,7 +3908,6 @@
 				C5FE9BFF24B5F299007B9878 /* 分享控件 */,
 				C5FE9B9924B5F298007B9878 /* 加密体系 */,
 				C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */,
-				C5C2441325417C5A00CB55F5 /* 跑马灯效果 */,
 				C55AAB5A2532B03500335ACC /* 热词标签 */,
 				C56E3C3925470FD600B9F555 /* 扫一扫组件 */,
 				C5727812254094C2002373D7 /* 深度拓展系统UITabBar全家桶 */,
@@ -5086,7 +5071,6 @@
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5D1C021258B1FF800784D2F /* UIView+EmptyData.m in Sources */,
 				C5DF440425A8999F00E91985 /* LOTAnimationMJRefreshHeader.m in Sources */,
-				C5C2441825417C5A00CB55F5 /* UUMarqueeView.m in Sources */,
 				C5914AE425384A2F007777A6 /* UIViewController+JPImageresizerView.m in Sources */,
 				C5013A8F2536CB6600F4E87D /* IrregularBtn.m in Sources */,
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,

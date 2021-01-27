@@ -226,6 +226,8 @@ PODS:
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
   - WHToast (0.0.7)
+  - WMZBanner (1.1.9):
+    - SDWebImage
   - WSLNativeScanTool (1.0)
   - WXSTransition (1.2.1)
   - YQImageCompressor (1.0.0)
@@ -312,6 +314,7 @@ DEPENDENCIES:
   - WCDB
   - WebViewJavascriptBridge
   - WHToast
+  - WMZBanner
   - WSLNativeScanTool
   - WXSTransition
   - YQImageCompressor
@@ -410,6 +413,7 @@ SPEC REPOS:
     - WCDBOptimizedSQLCipher
     - WebViewJavascriptBridge
     - WHToast
+    - WMZBanner
     - WSLNativeScanTool
     - WXSTransition
     - YQImageCompressor
@@ -504,6 +508,7 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WHToast: 11a17a3f09f5f733e32bd6f3338919a448cbb719
+  WMZBanner: d4f2f5fe0c99e29d57d67530e42d2fb3f7f867ba
   WSLNativeScanTool: 1540f43317611d6cf948b5dff1cc1483bd39f8a5
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
@@ -512,6 +517,6 @@ SPEC CHECKSUMS:
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
   ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 76a7f46c64914a1449b2a1b61e64747a0a743941
+PODFILE CHECKSUM: 34bdcedcf616d3550202729a540aa8df75be99ac
 
 COCOAPODS: 1.10.0

@@ -125,12 +125,6 @@
 		C5767B32254709DC00C382C8 /* UIViewController+TFPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B31254709DC00C382C8 /* UIViewController+TFPopup.m */; };
 		C5767B3B254709FD00C382C8 /* AppDelegate+PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B3A254709FD00C382C8 /* AppDelegate+PopupView.m */; };
 		C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B4025470A1000C382C8 /* NoticePopupView.m */; };
-		C5767BA525470BD100C382C8 /* WMZBannerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9825470BD100C382C8 /* WMZBannerFlowLayout.m */; };
-		C5767BA625470BD100C382C8 /* WMZBannerParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9B25470BD100C382C8 /* WMZBannerParam.m */; };
-		C5767BA725470BD100C382C8 /* WMZBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9D25470BD100C382C8 /* WMZBannerView.m */; };
-		C5767BA825470BD100C382C8 /* WMZBannerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B9E25470BD100C382C8 /* WMZBannerControl.m */; };
-		C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */; };
-		C5767BAA25470BD100C382C8 /* WMZBannerOverLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
 		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
@@ -704,19 +698,6 @@
 		C5767B3A254709FD00C382C8 /* AppDelegate+PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PopupView.m"; sourceTree = "<group>"; };
 		C5767B4025470A1000C382C8 /* NoticePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticePopupView.m; sourceTree = "<group>"; };
 		C5767B4125470A1000C382C8 /* NoticePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticePopupView.h; sourceTree = "<group>"; };
-		C5767B9825470BD100C382C8 /* WMZBannerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerFlowLayout.m; sourceTree = "<group>"; };
-		C5767B9925470BD100C382C8 /* WMZBannerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerControl.h; sourceTree = "<group>"; };
-		C5767B9A25470BD100C382C8 /* WMZBannerFadeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerFadeLayout.h; sourceTree = "<group>"; };
-		C5767B9B25470BD100C382C8 /* WMZBannerParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerParam.m; sourceTree = "<group>"; };
-		C5767B9C25470BD100C382C8 /* WMZBannerOverLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerOverLayout.h; sourceTree = "<group>"; };
-		C5767B9D25470BD100C382C8 /* WMZBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerView.m; sourceTree = "<group>"; };
-		C5767B9E25470BD100C382C8 /* WMZBannerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerControl.m; sourceTree = "<group>"; };
-		C5767B9F25470BD100C382C8 /* WMZBannerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerFlowLayout.h; sourceTree = "<group>"; };
-		C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerFadeLayout.m; sourceTree = "<group>"; };
-		C5767BA125470BD100C382C8 /* WMZBannerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerConfig.h; sourceTree = "<group>"; };
-		C5767BA225470BD100C382C8 /* WMZBannerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerParam.h; sourceTree = "<group>"; };
-		C5767BA325470BD100C382C8 /* WMZBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerView.h; sourceTree = "<group>"; };
-		C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerOverLayout.m; sourceTree = "<group>"; };
 		C5778FA42589FF5A00FE51E3 /* XHLaunchAd不用pod导入的情况说明.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "XHLaunchAd不用pod导入的情况说明.md"; sourceTree = "<group>"; };
 		C5788CA425592D14009D46E3 /* 关于响应链的一些研究成果.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于响应链的一些研究成果.md"; sourceTree = "<group>"; };
 		C57AC05025120BA3009EE44D /* 网络请求写法 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "网络请求写法"; sourceTree = "<group>"; };
@@ -1910,7 +1891,6 @@
 				C5A4409E25ABFB16000F0CD2 /* JXCategoryView */,
 				C5A4409825ABFB16000F0CD2 /* WHToast */,
 				C5C6512E259DF8AA00FD2F99 /* ECPrivacyCheckTools */,
-				C5767B9725470BD100C382C8 /* WMZBanner */,
 				C55D3C8B2538856100CFCF73 /* XHLaunchAd */,
 				C59D9AF024F8F17C00A74CE9 /* ZZCircleProgress */,
 			);
@@ -2567,26 +2547,6 @@
 				C5767B4025470A1000C382C8 /* NoticePopupView.m */,
 			);
 			path = "广告或者公示弹出框";
-			sourceTree = "<group>";
-		};
-		C5767B9725470BD100C382C8 /* WMZBanner */ = {
-			isa = PBXGroup;
-			children = (
-				C5767BA125470BD100C382C8 /* WMZBannerConfig.h */,
-				C5767B9925470BD100C382C8 /* WMZBannerControl.h */,
-				C5767B9E25470BD100C382C8 /* WMZBannerControl.m */,
-				C5767B9A25470BD100C382C8 /* WMZBannerFadeLayout.h */,
-				C5767BA025470BD100C382C8 /* WMZBannerFadeLayout.m */,
-				C5767B9F25470BD100C382C8 /* WMZBannerFlowLayout.h */,
-				C5767B9825470BD100C382C8 /* WMZBannerFlowLayout.m */,
-				C5767B9C25470BD100C382C8 /* WMZBannerOverLayout.h */,
-				C5767BA425470BD100C382C8 /* WMZBannerOverLayout.m */,
-				C5767BA225470BD100C382C8 /* WMZBannerParam.h */,
-				C5767B9B25470BD100C382C8 /* WMZBannerParam.m */,
-				C5767BA325470BD100C382C8 /* WMZBannerView.h */,
-				C5767B9D25470BD100C382C8 /* WMZBannerView.m */,
-			);
-			path = WMZBanner;
 			sourceTree = "<group>";
 		};
 		C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */ = {
@@ -4865,7 +4825,6 @@
 				C5A440AE25ABFB16000F0CD2 /* WHToast+DDToast.m in Sources */,
 				C530AC17254D983800EDEDC8 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C5FE9D1624B5F29C007B9878 /* CountdownView.m in Sources */,
-				C5767BA525470BD100C382C8 /* WMZBannerFlowLayout.m in Sources */,
 				C5A440AF25ABFB16000F0CD2 /* GKPhotoBrowser+SaveBtn.m in Sources */,
 				C5CDD188258F221D0045AA50 /* DDForgetCodeVC.m in Sources */,
 				C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */,
@@ -4911,7 +4870,6 @@
 				C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */,
 				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
-				C5767BA625470BD100C382C8 /* WMZBannerParam.m in Sources */,
 				C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */,
 				C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */,
 				C5FE9CEC24B5F29C007B9878 /* UIImage+TBCityIconFont.m in Sources */,
@@ -4951,7 +4909,6 @@
 				C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */,
 				C5D0AA07258765F8002CA224 /* ZBRequestManager.m in Sources */,
 				C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */,
-				C5767BA725470BD100C382C8 /* WMZBannerView.m in Sources */,
 				C5A4395525AAF7D1000F0CD2 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
 				C572785F254094C2002373D7 /* JobsPullListTBVCell.m in Sources */,
 				C5D6DB2725860E8B00029AFF /* NSTimerManager.m in Sources */,
@@ -5021,11 +4978,9 @@
 				C55D3CAC2538856100CFCF73 /* XHLaunchAdButton.m in Sources */,
 				C5FE9CFA24B5F29C007B9878 /* TouchID.m in Sources */,
 				C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */,
-				C5767BA825470BD100C382C8 /* WMZBannerControl.m in Sources */,
 				C5767B32254709DC00C382C8 /* UIViewController+TFPopup.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
 				C52E894D250F752E0070356F /* AES.m in Sources */,
-				C5767BAA25470BD100C382C8 /* WMZBannerOverLayout.m in Sources */,
 				C533701824DB00280082847C /* NSBundle+BRPickerView.m in Sources */,
 				C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */,
 				C52E894F250F752E0070356F /* AESCipher.m in Sources */,
@@ -5130,7 +5085,6 @@
 				C54B3EB925529771003BE195 /* NSObject+RichText.m in Sources */,
 				C5D0AA05258765F8002CA224 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */,
-				C5767BA925470BD100C382C8 /* WMZBannerFadeLayout.m in Sources */,
 				C546E704258B2D7D0008928C /* KeychainIDFA.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,

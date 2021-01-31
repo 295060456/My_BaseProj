@@ -107,7 +107,7 @@ def ui
   pod 'TWPageViewController'  # https://github.com/Easence/TWPageViewController 一个支持懒加载的PageViewController，用于替换iOS系统的UIPageViewController。可以用来实现类似腾讯新闻、今日头条的效果
   pod 'UICountingLabel' # https://github.com/dataxpress/UICountingLabel Lable上的默认值持续变动到指定值 Adds animated counting support to UILabel.
   pod 'JJStockView' # https://github.com/jezzmemo/JJStockView Excel iOS股票,课程表,表格控件
-  pod 'ZWPullMenuView' # https://github.com/wangziwu/ZWPullMenuView 下拉选择视图、支持微信、支付宝等样式。自动计算最优显示位置、动画效果。
+#  pod 'ZWPullMenuView' # https://github.com/wangziwu/ZWPullMenuView 下拉选择视图、支持微信、支付宝等样式。自动计算最优显示位置、动画效果。
   pod 'WMZBanner' # https://github.com/wwmz/WMZBanner WMZBanner - 最好用的轻量级轮播图+卡片样式+自定义样式
   pod 'HBDNavigationBar'  # https://github.com/listenzz/HBDNavigationBar 自定义UINavigationBar，用于在各种状态之间平滑切换，包括条形样式，条形色调，背景图像，背景alpha，条形隐藏，标题文本属性，色调颜色，阴影隐藏...
   pod 'WXSTransition' # https://github.com/alanwangmodify/WXSTransition 这是一个界面转场动画集。 目前只支持纯代码 已支持手势返回

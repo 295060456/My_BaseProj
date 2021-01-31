@@ -245,7 +245,6 @@ PODS:
   - ZFPlayer/ijkplayer (4.0.1):
     - IJKMediaFramework
     - ZFPlayer/Core
-  - ZWPullMenuView (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -324,7 +323,6 @@ DEPENDENCIES:
   - ZFPlayer/AVPlayer
   - ZFPlayer/ControlView
   - ZFPlayer/ijkplayer
-  - ZWPullMenuView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -420,7 +418,6 @@ SPEC REPOS:
     - YYKit
     - ZFJTreeViewKit
     - ZFPlayer
-    - ZWPullMenuView
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -515,8 +512,7 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
-  ZWPullMenuView: dad96c2a9b0aa797145e255336047456cab3416c
 
-PODFILE CHECKSUM: 34bdcedcf616d3550202729a540aa8df75be99ac
+PODFILE CHECKSUM: 9b1d8dddab1fe6bc050b2f94b1e4e86dd340c192
 
 COCOAPODS: 1.10.0

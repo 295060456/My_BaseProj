@@ -40,6 +40,7 @@
 #import "UIView+EmptyData.h"
 #import "UIView+Gesture.h"
 #import "UIView+MJRefresh.h"
+#import "UIView+ViewController.h"
 //#import "UIView+JHGestureBlock.h"
 /// NSObject
 #import "NSObject+Extras.h"

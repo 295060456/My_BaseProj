@@ -113,6 +113,7 @@
 		C56161CB24EE7450001CD851 /* 签名上架 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CA24EE7450001CD851 /* 签名上架 */; };
 		C56161CD24EE7ACD001CD851 /* 苹果开发者账号申请 in Resources */ = {isa = PBXBuildFile; fileRef = C56161CC24EE7ACD001CD851 /* 苹果开发者账号申请 */; };
 		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
+		C562DD3A25C7C445004D1AEA /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C562DD3625C7C445004D1AEA /* UIView+ViewController.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
 		C565CB4825A4382D00848134 /* TwoVerticalArrangementLabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */; };
 		C5676443259F12F0006905A9 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */; };
@@ -665,6 +666,8 @@
 		C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNReachability.m"; sourceTree = "<group>"; };
 		C56207F02553FE8700FE435F /* 验证码按钮单例封装.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "验证码按钮单例封装.md"; sourceTree = "<group>"; };
 		C56207F22553FF1A00FE435F /* 高度自定义的按钮.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "高度自定义的按钮.md"; sourceTree = "<group>"; };
+		C562DD3525C7C445004D1AEA /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		C562DD3625C7C445004D1AEA /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
 		C5633218252AFABD00699392 /* Block */ = {isa = PBXFileReference; lastKnownFileType = text; path = Block; sourceTree = "<group>"; };
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
@@ -2600,6 +2603,15 @@
 			path = "签名上架";
 			sourceTree = "<group>";
 		};
+		C562DD2E25C7C43E004D1AEA /* UIView+ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C562DD3525C7C445004D1AEA /* UIView+ViewController.h */,
+				C562DD3625C7C445004D1AEA /* UIView+ViewController.m */,
+			);
+			path = "UIView+ViewController";
+			sourceTree = "<group>";
+		};
 		C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4421,6 +4433,7 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				C562DD2E25C7C43E004D1AEA /* UIView+ViewController */,
 				C572969325BB0A4D00726419 /* UIView+BackgroundImage */,
 				C595BA7625863F93002A4531 /* UIView+Animation */,
 				C5460F4E258C8F090008928C /* UIView+AOP */,
@@ -5395,6 +5408,7 @@
 				C5E7D9B724E1642200A38FAF /* UIImage+YBGIF.m in Sources */,
 				C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */,
 				C58D947E25B80CE900414ACB /* BaseTableViewCell.m in Sources */,
+				C562DD3A25C7C445004D1AEA /* UIView+ViewController.m in Sources */,
 				C5FE9CD624B5F29C007B9878 /* AESCrypt.m in Sources */,
 				C5D6F2C725861D0300029AFF /* NSObject+Time.m in Sources */,
 				C5D0B9FC25878DEC002CA224 /* SoundBtn.m in Sources */,

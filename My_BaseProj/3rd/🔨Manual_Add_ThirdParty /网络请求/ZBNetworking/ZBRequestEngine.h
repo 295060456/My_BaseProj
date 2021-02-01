@@ -6,9 +6,16 @@
 //  Copyright © 2017年 Suzhibin. All rights reserved.
 //
 
+#if __has_include(<AFNetworking/AFNetworking.h>)
 #import <AFNetworking/AFNetworking.h>
+#else
+#import "AFNetworking.h"
+#endif
+
 #import "ZBRequestConst.h"
+
 @class ZBConfig;
+
 
 @interface ZBRequestEngine : AFHTTPSessionManager
 NS_ASSUME_NONNULL_BEGIN

@@ -124,6 +124,8 @@
 		C56BA6D42578925500D054D0 /* UBLNetWorkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CC2578925500D054D0 /* UBLNetWorkClient.m */; };
 		C56BBA842587994A0043C977 /* UIControl+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBA822587994A0043C977 /* UIControl+XY.m */; };
 		C56BBEF325879B820043C977 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBEF225879B820043C977 /* NSObject+Sound.m */; };
+		C56D8A5825C82353001960CD /* UIColor+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C56D8A5325C82353001960CD /* UIColor+Gradient.m */; };
+		C56D8A5925C82353001960CD /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C56D8A5625C82353001960CD /* UIColor+Hex.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
 		C56E3E0B2547122700B9F555 /* 资源文件 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0A2547122700B9F555 /* 资源文件 */; };
@@ -332,7 +334,6 @@
 		C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC524B5F19E007B9878 /* ViewController@3.m */; };
 		C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */; };
 		C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1724B5F203007B9878 /* UIButton+Block.m */; };
-		C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2224B5F203007B9878 /* UIColor+Hex.m */; };
 		C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */; };
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
 		C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */; };
@@ -693,6 +694,10 @@
 		C56BBA822587994A0043C977 /* UIControl+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+XY.m"; sourceTree = "<group>"; };
 		C56BBEF125879B820043C977 /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		C56BBEF225879B820043C977 /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
+		C56D8A5325C82353001960CD /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
+		C56D8A5425C82353001960CD /* UIColor+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Gradient.h"; sourceTree = "<group>"; };
+		C56D8A5625C82353001960CD /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		C56D8A5725C82353001960CD /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		C56E29E0252EC32B004ACCC7 /* cocoapods_gem_ruby */ = {isa = PBXFileReference; lastKnownFileType = text; path = cocoapods_gem_ruby; sourceTree = "<group>"; };
 		C56E338D252F4A6C004ACCC7 /* UILabel+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extra.h"; sourceTree = "<group>"; };
 		C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extra.m"; sourceTree = "<group>"; };
@@ -1180,8 +1185,6 @@
 		C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewer.m; sourceTree = "<group>"; };
 		C5FE9B1724B5F203007B9878 /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		C5FE9B1824B5F203007B9878 /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
-		C5FE9B2224B5F203007B9878 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		C5FE9B2324B5F203007B9878 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Transition.m"; sourceTree = "<group>"; };
 		C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
 		C5FE9B2F24B5F203007B9878 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
@@ -2646,6 +2649,24 @@
 				C5FE9A4624B5EF2C007B9878 /* Assets.xcassets */,
 			);
 			path = "项目资源";
+			sourceTree = "<group>";
+		};
+		C56D8A5225C82353001960CD /* UIColor+Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				C56D8A5325C82353001960CD /* UIColor+Gradient.m */,
+				C56D8A5425C82353001960CD /* UIColor+Gradient.h */,
+			);
+			path = "UIColor+Gradient";
+			sourceTree = "<group>";
+		};
+		C56D8A5525C82353001960CD /* UIColor+Hex */ = {
+			isa = PBXGroup;
+			children = (
+				C56D8A5625C82353001960CD /* UIColor+Hex.m */,
+				C56D8A5725C82353001960CD /* UIColor+Hex.h */,
+			);
+			path = "UIColor+Hex";
 			sourceTree = "<group>";
 		};
 		C56E29DF252EC2BE004ACCC7 /* Cocoapods */ = {
@@ -4366,8 +4387,8 @@
 		C5FE9B2124B5F203007B9878 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B2324B5F203007B9878 /* UIColor+Hex.h */,
-				C5FE9B2224B5F203007B9878 /* UIColor+Hex.m */,
+				C56D8A5225C82353001960CD /* UIColor+Gradient */,
+				C56D8A5525C82353001960CD /* UIColor+Hex */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -5289,10 +5310,10 @@
 				C52E8958250F752E0070356F /* NSData+Base64.m in Sources */,
 				C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */,
 				C5E7D9B824E1642200A38FAF /* UIImage+Extras.m in Sources */,
-				C5FE9B6524B5F203007B9878 /* UIColor+Hex.m in Sources */,
 				C5CDD19C258F221D0045AA50 /* JobsAppDoorInputViewBaseStyle_4.m in Sources */,
 				C5A96E9325BD3451000077BC /* NSObject+SYSAlertController.m in Sources */,
 				C5FE9D3924B5F2E7007B9878 /* IsLogin.m in Sources */,
+				C56D8A5825C82353001960CD /* UIColor+Gradient.m in Sources */,
 				C5A440B225ABFB16000F0CD2 /* JXCategoryTitleBackgroundView.m in Sources */,
 				C5914AE725384A2F007777A6 /* UIViewController+GifImageView.m in Sources */,
 				C55D3CB22538856100CFCF73 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
@@ -5340,6 +5361,7 @@
 				C52E894F250F752E0070356F /* AESCipher.m in Sources */,
 				C5FE9D0C24B5F29C007B9878 /* WBTableViewCell.m in Sources */,
 				C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */,
+				C56D8A5925C82353001960CD /* UIColor+Hex.m in Sources */,
 				C55D3C812538838C00CFCF73 /* AppDelegate+Func.m in Sources */,
 				C5C65178259DF8AA00FD2F99 /* ECPrivacyCheckLocationServices.m in Sources */,
 				C5A716F0258F7DB70013E3EF /* AuthCodeLab.m in Sources */,

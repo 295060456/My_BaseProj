@@ -18,6 +18,7 @@
 #import "SoundBtn.h"
 /// UIColor
 #import "UIColor+Hex.h"
+#import "UIColor+Gradient.h"
 /// UIControl
 #import "UIControl+XY.h"
 /// NSString

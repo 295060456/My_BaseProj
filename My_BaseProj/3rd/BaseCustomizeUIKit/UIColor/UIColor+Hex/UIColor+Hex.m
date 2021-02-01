@@ -54,13 +54,13 @@
                            alpha:alpha];
 }
 
-// 默认alpha值为1
+//默认alpha值为1
 + (UIColor *)colorWithHexString:(NSString *)color{
     return [self colorWithHexString:color
                               alpha:1.0f];
 }
 
-// 颜色转换为背景图片
+//  颜色转换为背景图片
 + (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f,
                              0.0f,

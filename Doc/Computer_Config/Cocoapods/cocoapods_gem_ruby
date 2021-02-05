@@ -132,3 +132,6 @@ Cocoapods-Pod仓库dependency反向依赖查询{ //https://blog.csdn.net/xiaofei
 升级本地cocoapods库{
     pod repo update
 }
+
+pod repo update --verbose
+pod update   --no-repo-update

@@ -116,6 +116,7 @@
 		C562DD3A25C7C445004D1AEA /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C562DD3625C7C445004D1AEA /* UIView+ViewController.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
 		C565CB4825A4382D00848134 /* TwoVerticalArrangementLabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */; };
+		C567328425D77A1B008ABAF9 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567328225D77A1B008ABAF9 /* BaseView.m */; };
 		C5676443259F12F0006905A9 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */; };
 		C5676444259F12F0006905A9 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5676442259F12EF006905A9 /* BaseCollectionViewCell.m */; };
 		C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */; };
@@ -676,6 +677,8 @@
 		C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoVerticalArrangementLabsView.m; sourceTree = "<group>"; };
 		C565CB4625A4382D00848134 /* TwoVerticalArrangementLabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoVerticalArrangementLabsView.h; sourceTree = "<group>"; };
 		C565CB4725A4382D00848134 /* TwoVerticalArrangementLabsView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoVerticalArrangementLabsView.png; sourceTree = "<group>"; };
+		C567328225D77A1B008ABAF9 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		C567328325D77A1B008ABAF9 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ShakeAnimation.m"; sourceTree = "<group>"; };
 		C5676440259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+ShakeAnimation.h"; sourceTree = "<group>"; };
 		C5676441259F12EF006905A9 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2625,6 +2628,36 @@
 			path = TwoVerticalArrangementLabsView;
 			sourceTree = "<group>";
 		};
+		C567327425D77A08008ABAF9 /* UIView+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C562DD2E25C7C43E004D1AEA /* UIView+ViewController */,
+				C572969325BB0A4D00726419 /* UIView+BackgroundImage */,
+				C595BA7625863F93002A4531 /* UIView+Animation */,
+				C5460F4E258C8F090008928C /* UIView+AOP */,
+				C595BA7725863FBF002A4531 /* UIView+Chain */,
+				C5D1C01E258B1FF800784D2F /* UIView+EmptyData */,
+				C595BA7825863FC7002A4531 /* UIView+Extras */,
+				C515765125A350E50074D945 /* UIView+Gesture */,
+				C595BA7925863FD0002A4531 /* UIView+Gradient */,
+				C552A02C2589CE4B00A89501 /* UIView+JHGestureBlock */,
+				C595BA7A25863FD7002A4531 /* UIView+Measure */,
+				C55FEB3425B4265F00D8C30D /* UIView+MJRefresh */,
+				C595BA7B25863FE2002A4531 /* UIView+SuspendView */,
+				C595BA7C25863FF0002A4531 /* UIView+ZFPlayer */,
+			);
+			path = "UIView+Category";
+			sourceTree = "<group>";
+		};
+		C567327E25D77A15008ABAF9 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				C567328325D77A1B008ABAF9 /* BaseView.h */,
+				C567328225D77A1B008ABAF9 /* BaseView.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		C56BA6C82578925500D054D0 /* UBLNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -4454,20 +4487,8 @@
 		C5FE9B4024B5F203007B9878 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				C562DD2E25C7C43E004D1AEA /* UIView+ViewController */,
-				C572969325BB0A4D00726419 /* UIView+BackgroundImage */,
-				C595BA7625863F93002A4531 /* UIView+Animation */,
-				C5460F4E258C8F090008928C /* UIView+AOP */,
-				C595BA7725863FBF002A4531 /* UIView+Chain */,
-				C5D1C01E258B1FF800784D2F /* UIView+EmptyData */,
-				C595BA7825863FC7002A4531 /* UIView+Extras */,
-				C515765125A350E50074D945 /* UIView+Gesture */,
-				C595BA7925863FD0002A4531 /* UIView+Gradient */,
-				C552A02C2589CE4B00A89501 /* UIView+JHGestureBlock */,
-				C595BA7A25863FD7002A4531 /* UIView+Measure */,
-				C55FEB3425B4265F00D8C30D /* UIView+MJRefresh */,
-				C595BA7B25863FE2002A4531 /* UIView+SuspendView */,
-				C595BA7C25863FF0002A4531 /* UIView+ZFPlayer */,
+				C567327E25D77A15008ABAF9 /* BaseView */,
+				C567327425D77A08008ABAF9 /* UIView+Category */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -5355,6 +5376,7 @@
 				C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */,
 				C5767B32254709DC00C382C8 /* UIViewController+TFPopup.m in Sources */,
 				C5FE9D0624B5F29C007B9878 /* XDTextBtnView.m in Sources */,
+				C567328425D77A1B008ABAF9 /* BaseView.m in Sources */,
 				C52E894D250F752E0070356F /* AES.m in Sources */,
 				C533701824DB00280082847C /* NSBundle+BRPickerView.m in Sources */,
 				C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */,

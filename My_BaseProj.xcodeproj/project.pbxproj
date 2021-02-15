@@ -659,6 +659,7 @@
 		C55D3CA62538856100CFCF73 /* XHLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdView.h; sourceTree = "<group>"; };
 		C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdImageManager.m; sourceTree = "<group>"; };
 		C55D3CA82538856100CFCF73 /* XHLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdConst.h; sourceTree = "<group>"; };
+		C55E4BE325D806B60040692B /* Tableview 禁止下拉,允许上拉.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Tableview 禁止下拉,允许上拉.md"; sourceTree = "<group>"; };
 		C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJRefresh.m"; sourceTree = "<group>"; };
 		C55FEB3625B4265F00D8C30D /* UIView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJRefresh.h"; sourceTree = "<group>"; };
 		C56161C724EE60B6001CD851 /* 优秀的关于音视频处理的文献资料 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "优秀的关于音视频处理的文献资料"; sourceTree = "<group>"; };
@@ -3786,6 +3787,7 @@
 				C5FE9A7B24B5F0B6007B9878 /* cell重用.png */,
 				C5CF8956252AC380002499C6 /* iOS 只刷新某一行或某一组的cell */,
 				C5FE9A7E24B5F0B6007B9878 /* TableViewCell自适应 */,
+				C55E4BE325D806B60040692B /* Tableview 禁止下拉,允许上拉.md */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";

@@ -157,6 +157,8 @@
 		C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B4025470A1000C382C8 /* NoticePopupView.m */; };
 		C57C229D2502550800FAAA3F /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */; };
 		C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */; };
+		C583B94C25E4B3060054FD6E /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C583B94725E4B3050054FD6E /* UIImageView+GIF.m */; };
+		C583B94D25E4B3060054FD6E /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C583B94A25E4B3060054FD6E /* BaseImageView.m */; };
 		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
 		C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */; };
 		C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */; };
@@ -337,7 +339,6 @@
 		C5FE9B6024B5F203007B9878 /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1724B5F203007B9878 /* UIButton+Block.m */; };
 		C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */; };
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
-		C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */; };
 		C5FE9B7524B5F204007B9878 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* NotificationManager.m */; };
 		C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */; };
 		C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */; };
@@ -794,6 +795,10 @@
 		C57C229C2502550800FAAA3F /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		C57F0D062533369F0080EEF0 /* NSObject+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+OpenURL.h"; sourceTree = "<group>"; };
 		C57F0D072533369F0080EEF0 /* NSObject+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OpenURL.m"; sourceTree = "<group>"; };
+		C583B94725E4B3050054FD6E /* UIImageView+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GIF.m"; sourceTree = "<group>"; };
+		C583B94825E4B3050054FD6E /* UIImageView+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GIF.h"; sourceTree = "<group>"; };
+		C583B94A25E4B3060054FD6E /* BaseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseImageView.m; sourceTree = "<group>"; };
+		C583B94B25E4B3060054FD6E /* BaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseImageView.h; sourceTree = "<group>"; };
 		C584309B25999F2700D335F7 /* DDPostInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPostInputView.m; sourceTree = "<group>"; };
 		C584309C25999F2800D335F7 /* DDPostInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPostInputView.h; sourceTree = "<group>"; };
 		C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewHeader.m; sourceTree = "<group>"; };
@@ -1193,8 +1198,6 @@
 		C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
 		C5FE9B2F24B5F203007B9878 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
 		C5FE9B3024B5F203007B9878 /* CALayer+Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Transition.h"; sourceTree = "<group>"; };
-		C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GIF.m"; sourceTree = "<group>"; };
-		C5FE9B3324B5F203007B9878 /* UIImageView+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GIF.h"; sourceTree = "<group>"; };
 		C5FE9B4924B5F203007B9878 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		C5FE9B4A24B5F203007B9878 /* NSArray+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extend.h"; sourceTree = "<group>"; };
 		C5FE9B4B24B5F203007B9878 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
@@ -2957,6 +2960,24 @@
 			path = "关于响应链的一些研究成果";
 			sourceTree = "<group>";
 		};
+		C583B94625E4B3050054FD6E /* UIImageView+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C583B94725E4B3050054FD6E /* UIImageView+GIF.m */,
+				C583B94825E4B3050054FD6E /* UIImageView+GIF.h */,
+			);
+			path = "UIImageView+Category";
+			sourceTree = "<group>";
+		};
+		C583B94925E4B3060054FD6E /* BaseImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C583B94A25E4B3060054FD6E /* BaseImageView.m */,
+				C583B94B25E4B3060054FD6E /* BaseImageView.h */,
+			);
+			path = BaseImageView;
+			sourceTree = "<group>";
+		};
 		C584309725999F1C00D335F7 /* PostInputView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4458,8 +4479,8 @@
 		C5FE9B3124B5F203007B9878 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B3324B5F203007B9878 /* UIImageView+GIF.h */,
-				C5FE9B3224B5F203007B9878 /* UIImageView+GIF.m */,
+				C583B94925E4B3060054FD6E /* BaseImageView */,
+				C583B94625E4B3050054FD6E /* UIImageView+Category */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -5191,7 +5212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5FE9B6B24B5F203007B9878 /* UIImageView+GIF.m in Sources */,
 				C533701624DB00280082847C /* BRPickerStyle.m in Sources */,
 				C59A3D8F258DD1EF005F6260 /* UserDefaultModel.m in Sources */,
 				C5C65181259DF8AA00FD2F99 /* ECPrivacyCheckReminders.m in Sources */,
@@ -5432,12 +5452,14 @@
 				C5DF440425A8999F00E91985 /* LOTAnimationMJRefreshHeader.m in Sources */,
 				C5914AE425384A2F007777A6 /* UIViewController+JPImageresizerView.m in Sources */,
 				C5013A8F2536CB6600F4E87D /* IrregularBtn.m in Sources */,
+				C583B94C25E4B3060054FD6E /* UIImageView+GIF.m in Sources */,
 				C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */,
 				C533701424DB00280082847C /* BRDatePickerView.m in Sources */,
 				C5727860254094C2002373D7 /* JobsPullListAutoSizeView.m in Sources */,
 				C5460F51258C8F090008928C /* UIView+AOP.m in Sources */,
 				C55133B425C688A6007BCA82 /* NetworkingAPI+MsgApi.m in Sources */,
 				C55166672575202D00FF5217 /* HQTextField.m in Sources */,
+				C583B94D25E4B3060054FD6E /* BaseImageView.m in Sources */,
 				C5DF440625A8999F00E91985 /* UIViewController+MJRefresh.m in Sources */,
 				C54CC41F2551456800C69C1F /* CustomZFPlayerControlView.m in Sources */,
 				C5FE9CD424B5F29C007B9878 /* XWCountryCodeController.m in Sources */,

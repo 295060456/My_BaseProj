@@ -9,32 +9,32 @@
 #ifndef Manual_Add_ThirdParty_h
 #define Manual_Add_ThirdParty_h
 
-#pragma mark —— BaseCustomizeUIKit
-/// UIButton
+/// BaseCustomizeUIKit
+#pragma mark —— UIButton
 #import "UIButton+Block.h"
 #import "UIButton+ImageTitleSpacing.h"
 #import "UIButton+CountDownBtn.h"//验证码倒计时按钮
 #import "RBCLikeButton.h"//高仿抖音点赞动画
 #import "SoundBtn.h"
-/// UIColor
+#pragma mark —— UIColor
 #import "UIColor+Hex.h"
 #import "UIColor+Gradient.h"
-/// UIControl
+#pragma mark —— UIControl
 #import "UIControl+XY.h"
-/// NSString
+#pragma mark —— NSString
 #import "NSString+Extras.h"
-/// UIFont
+#pragma mark —— UIFont
 #import "UIFont+Extras.h"
-/// CALayer
+#pragma mark —— CALayer
 #import "CALayer+Anim.h"
 #import "CALayer+Transition.h"
-/// NSArray
+#pragma mark —— NSArray
 #import "NSArray+Extension.h"
 #import "NSArray+Extend.h"
-/// UIView
-// BaseView
+#pragma mark —— UIView
+/// BaseView
 #import "BaseView.h"
-// UIView+Category
+/// UIView+Category
 #import "UIView+Extras.h"
 #import "UIView+Chain.h"
 #import "UIView+SuspendView.h"
@@ -46,7 +46,7 @@
 #import "UIView+MJRefresh.h"
 #import "UIView+ViewController.h"
 //#import "UIView+JHGestureBlock.h"
-/// NSObject
+#pragma mark —— NSObject
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"
 #import "NSObject+Measure.h"
@@ -58,16 +58,19 @@
 #import "NSObject+OpenURL.h"
 #import "NSObject+AFNReachability.h"
 #import "NSObject+DataSave.h"
-/// UITextField
+#pragma mark —— UITextField
 #import "JobsMagicTextField.h"
 #import "CJTextField.h"
 #import "HQTextField.h"
 #import "UITextField+Extend.h"
 #import "ZYTextField.h"
 #import "ZYTextField+HistoryDataList.h"
-/// UIImageView
+#pragma mark —— UIImageView
+// BaseImageView
+#import "BaseImageView.h"
+// UIImageView+Category
 #import "UIImageView+GIF.h"//UIImageView支持GIF动画 https://github.com/pupboss/UIImageView-GIF
-/// UIImage
+#pragma mark —— UIImage
 #import "LoadingImage.h"
 #import "UIImage+YBGIF.h"
 #import "UIImage+Extras.h"
@@ -76,19 +79,19 @@
 #import "UIImage+Tailor.h"
 #import "UIImage+ScreenShot.h"
 #import "UIImage+TBCityIconFont.h"
-/// UICollectionView
+#pragma mark ——  UICollectionView
 #import "UICollectionView+RegisterClass.h"
-/// UICollectionView
+#pragma mark ——  UICollectionView
 #import "BaseCollectionView.h"
-/// UICollectionReusableView
+#pragma mark ——  UICollectionReusableView
 #import "BaseCollectionReusableView.h"
-/// UICollectionViewCell
+#pragma mark ——  UICollectionViewCell
 #import "BaseCollectionViewCell.h"
-/// UICollectionViewLayout
+#pragma mark ——  UICollectionViewLayout
 #import "LMHWaterFallLayout.h"
 #import "KFZShopCatoryFlowLayput.h"//给UICollectionView每个section加背景
 #import "HQCollectionViewFlowLayout.h"//UICollectionView 实现类似于UITableView的悬停效果
-/// UIViewController
+#pragma mark ——  UIViewController
 #import "UIViewController+BaseVC.h"
 #import "UIViewController+BackBtn.h"
 #import "UIViewController+BRPickerView.h"
@@ -107,16 +110,16 @@
 #import "UIViewController+InteractivePushGesture.h"
 #import "UIViewController+EmptyData.h"
 #import "UIViewController+XLBubbleTransition.h"
-/// UITableViewHeaderFooterView
+#pragma mark ——  UITableViewHeaderFooterView
 #import "ViewForTableViewFooter.h"
 #import "ViewForTableViewHeader.h"
-/// UITableViewCell
+#pragma mark ——  UITableViewCell
 #import "UITableViewCell+WhiteArrows.h"
-/// UINavigationController
+#pragma mark ——  UINavigationController
 #import "BaseNavigationVC.h"
-/// UINavigationBar
+#pragma mark ——  UINavigationBar
 #import "NavigationBar.h"
-/// UIDevice
+#pragma mark ——  UIDevice
 #import "UIDevice+XMUtils.h"
 
 #pragma mark —— 🔨Manual_Add_ThirdParty

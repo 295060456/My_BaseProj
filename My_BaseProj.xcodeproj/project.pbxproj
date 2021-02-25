@@ -179,6 +179,7 @@
 		C5914AE925384A2F007777A6 /* UIViewController+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADC25384A2F007777A6 /* UIViewController+BRPickerView.m */; };
 		C5914AEB25384A2F007777A6 /* UIViewController+BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914ADE25384A2F007777A6 /* UIViewController+BaseVC.m */; };
 		C5914C6D253850B6007777A6 /* UIViewController+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5914C6B253850B6007777A6 /* UIViewController+Shake.m */; };
+		C594338425E7AA87003BCA91 /* UITextView+IndicateWordLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = C594338125E7AA86003BCA91 /* UITextView+IndicateWordLimit.m */; };
 		C595D10F258713CB002A4531 /* SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D107258713CB002A4531 /* SuspendView.m */; };
 		C595D110258713CB002A4531 /* SuspendBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10A258713CB002A4531 /* SuspendBtn.m */; };
 		C595D111258713CB002A4531 /* SuspendLab.m in Sources */ = {isa = PBXBuildFile; fileRef = C595D10E258713CB002A4531 /* SuspendLab.m */; };
@@ -844,6 +845,9 @@
 		C5914C6B253850B6007777A6 /* UIViewController+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Shake.m"; sourceTree = "<group>"; };
 		C5914C6C253850B6007777A6 /* UIViewController+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Shake.h"; sourceTree = "<group>"; };
 		C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "同一应用设置不同图标和名称.docx"; sourceTree = "<group>"; };
+		C594338125E7AA86003BCA91 /* UITextView+IndicateWordLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+IndicateWordLimit.m"; sourceTree = "<group>"; };
+		C594338225E7AA86003BCA91 /* UITextView+IndicateWordLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+IndicateWordLimit.h"; sourceTree = "<group>"; };
+		C594338325E7AA86003BCA91 /* UITextView+IndicateWordLimit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UITextView+IndicateWordLimit.png"; sourceTree = "<group>"; };
 		C595D107258713CB002A4531 /* SuspendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendView.m; sourceTree = "<group>"; };
 		C595D108258713CB002A4531 /* SuspendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspendView.h; sourceTree = "<group>"; };
 		C595D10A258713CB002A4531 /* SuspendBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuspendBtn.m; sourceTree = "<group>"; };
@@ -3081,6 +3085,16 @@
 			path = JhtBannerCardView;
 			sourceTree = "<group>";
 		};
+		C594338025E7AA86003BCA91 /* UITextView+IndicateWordLimit */ = {
+			isa = PBXGroup;
+			children = (
+				C594338225E7AA86003BCA91 /* UITextView+IndicateWordLimit.h */,
+				C594338125E7AA86003BCA91 /* UITextView+IndicateWordLimit.m */,
+				C594338325E7AA86003BCA91 /* UITextView+IndicateWordLimit.png */,
+			);
+			path = "UITextView+IndicateWordLimit";
+			sourceTree = "<group>";
+		};
 		C595BA7625863F93002A4531 /* UIView+Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -4351,6 +4365,7 @@
 				C5FE9B3424B5F203007B9878 /* UITableViewCell */,
 				C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */,
 				C5FE9B3724B5F203007B9878 /* UITextField */,
+				C594338025E7AA86003BCA91 /* UITextView+IndicateWordLimit */,
 				C5FE9B4024B5F203007B9878 /* UIView */,
 				C5FE9B5624B5F203007B9878 /* UIViewController */,
 			);
@@ -5314,6 +5329,7 @@
 				C595D110258713CB002A4531 /* SuspendBtn.m in Sources */,
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
 				C5CDD19E258F221D0045AA50 /* JobsAppDoorInputViewBaseStyle_3.m in Sources */,
+				C594338425E7AA87003BCA91 /* UITextView+IndicateWordLimit.m in Sources */,
 				C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */,
 				C5D0AA07258765F8002CA224 /* ZBRequestManager.m in Sources */,
 				C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */,

@@ -124,9 +124,8 @@
 		C56BA6D32578925500D054D0 /* UBLUrlConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CB2578925500D054D0 /* UBLUrlConst.m */; };
 		C56BA6D42578925500D054D0 /* UBLNetWorkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CC2578925500D054D0 /* UBLNetWorkClient.m */; };
 		C56BBA842587994A0043C977 /* UIControl+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBA822587994A0043C977 /* UIControl+XY.m */; };
-		C56BBB7525E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBB7425E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.m */; };
-		C56BBB7C25E906FC001E1E69 /* UIView+CallBackInfoByBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBB7B25E906FC001E1E69 /* UIView+CallBackInfoByBlock.m */; };
 		C56BBEF325879B820043C977 /* NSObject+Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BBEF225879B820043C977 /* NSObject+Sound.m */; };
+		C56BD6BD25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BD6BC25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.m */; };
 		C56D8A5825C82353001960CD /* UIColor+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C56D8A5325C82353001960CD /* UIColor+Gradient.m */; };
 		C56D8A5925C82353001960CD /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C56D8A5625C82353001960CD /* UIColor+Hex.m */; };
 		C56E338F252F4A6C004ACCC7 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C56E338E252F4A6C004ACCC7 /* UILabel+Extra.m */; };
@@ -700,12 +699,10 @@
 		C56BBA802587994A0043C977 /* UIControl+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+XY.h"; sourceTree = "<group>"; };
 		C56BBA812587994A0043C977 /* iOS小技巧：用runtime 解决UIButton 重复点击问题.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS小技巧：用runtime 解决UIButton 重复点击问题.md"; sourceTree = "<group>"; };
 		C56BBA822587994A0043C977 /* UIControl+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+XY.m"; sourceTree = "<group>"; };
-		C56BBB7325E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CallBackInfoByBlock.h"; sourceTree = "<group>"; };
-		C56BBB7425E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CallBackInfoByBlock.m"; sourceTree = "<group>"; };
-		C56BBB7A25E906FC001E1E69 /* UIView+CallBackInfoByBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CallBackInfoByBlock.h"; sourceTree = "<group>"; };
-		C56BBB7B25E906FC001E1E69 /* UIView+CallBackInfoByBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CallBackInfoByBlock.m"; sourceTree = "<group>"; };
 		C56BBEF125879B820043C977 /* NSObject+Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sound.h"; sourceTree = "<group>"; };
 		C56BBEF225879B820043C977 /* NSObject+Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sound.m"; sourceTree = "<group>"; };
+		C56BD6BB25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CallBackInfoByBlock.h"; sourceTree = "<group>"; };
+		C56BD6BC25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CallBackInfoByBlock.m"; sourceTree = "<group>"; };
 		C56D8A5325C82353001960CD /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
 		C56D8A5425C82353001960CD /* UIColor+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Gradient.h"; sourceTree = "<group>"; };
 		C56D8A5625C82353001960CD /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
@@ -2009,7 +2006,6 @@
 			isa = PBXGroup;
 			children = (
 				C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */,
-				C56BBB7225E906F2001E1E69 /* UIViewController+CallBackInfoByBlock */,
 				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
 				C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */,
 				C5D78A0C257F7A120087FC92 /* UIViewController+Others */,
@@ -2649,7 +2645,6 @@
 				C595BA7625863F93002A4531 /* UIView+Animation */,
 				C5460F4E258C8F090008928C /* UIView+AOP */,
 				C572969325BB0A4D00726419 /* UIView+BackgroundImage */,
-				C56BBB7925E906FC001E1E69 /* UIView+CallBackInfoByBlock */,
 				C595BA7725863FBF002A4531 /* UIView+Chain */,
 				C5D1C01E258B1FF800784D2F /* UIView+EmptyData */,
 				C595BA7825863FC7002A4531 /* UIView+Extras */,
@@ -2700,22 +2695,13 @@
 			path = "项目资源";
 			sourceTree = "<group>";
 		};
-		C56BBB7225E906F2001E1E69 /* UIViewController+CallBackInfoByBlock */ = {
+		C56BD6BA25E938C4001E1E69 /* NSObject+CallBackInfoByBlock */ = {
 			isa = PBXGroup;
 			children = (
-				C56BBB7325E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.h */,
-				C56BBB7425E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.m */,
+				C56BD6BB25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.h */,
+				C56BD6BC25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.m */,
 			);
-			path = "UIViewController+CallBackInfoByBlock";
-			sourceTree = "<group>";
-		};
-		C56BBB7925E906FC001E1E69 /* UIView+CallBackInfoByBlock */ = {
-			isa = PBXGroup;
-			children = (
-				C56BBB7A25E906FC001E1E69 /* UIView+CallBackInfoByBlock.h */,
-				C56BBB7B25E906FC001E1E69 /* UIView+CallBackInfoByBlock.m */,
-			);
-			path = "UIView+CallBackInfoByBlock";
+			path = "NSObject+CallBackInfoByBlock";
 			sourceTree = "<group>";
 		};
 		C56D8A5225C82353001960CD /* UIColor+Gradient */ = {
@@ -4474,6 +4460,7 @@
 			children = (
 				C5D6F2C425861D0300029AFF /* NSObject (Time) */,
 				C5AA4902250C8C22009F583F /* NSObject+Alert */,
+				C56BD6BA25E938C4001E1E69 /* NSObject+CallBackInfoByBlock */,
 				C53C9E5325A1D0000007F58F /* NSObject+DataSave */,
 				C534E282257F83CA00DBC3CE /* NSObject+Others */,
 				C5D6F2C125861D0300029AFF /* NSObject+Time */,
@@ -5309,7 +5296,6 @@
 				C55D3CAE2538856100CFCF73 /* XHLaunchAdConst.m in Sources */,
 				C5FE9D4024B5F3C7007B9878 /* SceneDelegate.m in Sources */,
 				C55166652575202D00FF5217 /* ZYTextField+HistoryDataList.m in Sources */,
-				C56BBB7C25E906FC001E1E69 /* UIView+CallBackInfoByBlock.m in Sources */,
 				C5C67C5024FE4A37000A26B8 /* UIButton+CountDownBtn.m in Sources */,
 				C515765425A350E50074D945 /* UIView+Gesture.m in Sources */,
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
@@ -5371,6 +5357,7 @@
 				C5766CFB2546B72E00C382C8 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
 				C5C6517B259DF8AA00FD2F99 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
+				C56BD6BD25E938C4001E1E69 /* NSObject+CallBackInfoByBlock.m in Sources */,
 				C534CD4E258759BB001369FD /* BWShareView.m in Sources */,
 				C55133B625C688A6007BCA82 /* NetworkingAPI+FriendsRelationshipApi.m in Sources */,
 				C5676443259F12F0006905A9 /* UICollectionViewCell+ShakeAnimation.m in Sources */,
@@ -5572,7 +5559,6 @@
 				C5AEEAC925384147000E1C5F /* UIView+Animation.m in Sources */,
 				C52E8917250F75020070356F /* NSData+CommonCrypto.m in Sources */,
 				C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */,
-				C56BBB7525E906F2001E1E69 /* UIViewController+CallBackInfoByBlock.m in Sources */,
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
 				C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */,
 				C5C659F4259DFBC900FD2F99 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */,

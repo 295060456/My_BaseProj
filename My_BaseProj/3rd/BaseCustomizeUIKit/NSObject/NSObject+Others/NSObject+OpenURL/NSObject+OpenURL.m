@@ -11,21 +11,20 @@
 
 ///跳转系统设置
 +(void)pushToSysConfig{
-
-    [NSObject OpenURL:UIApplicationOpenSettingsURLString
-              options:@{}
-completionOpenSuccessHandler:^{
-        //TODO
-    }
-completionOpenFailHandler:^{
-        //TODO
-    }];
+    [NSObject OpenURL:UIApplicationOpenSettingsURLString];
 }
-
+//软性打开URL：【不会处理打开成功和打开失败两种情况】如果URL有误无法打开则就这样
++(void)OpenURL:(NSString *)URLStr{
+    [NSObject OpenURL:URLStr
+              options:@{}
+completionOpenSuccessHandler:nil
+completionOpenFailHandler:nil];
+}
+//硬性打开URL：【会处理打开成功和打开失败两种情况】如果URL有误，可以做其他事，比如打开一个备用URL
 +(BOOL)OpenURL:(NSString *)URLStr
        options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options
-completionOpenSuccessHandler:(NoResultBlock)openSuccessBlock
-completionOpenFailHandler:(NoResultBlock)openFailBlock{
+completionOpenSuccessHandler:(NoResultBlock _Nullable)openSuccessBlock
+completionOpenFailHandler:(NoResultBlock _Nullable)openFailBlock{
     
     BOOL canOpen = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:URLStr]];
     options = options ? options : @{};
@@ -53,10 +52,7 @@ completionOpenFailHandler:(NoResultBlock)openFailBlock{
         }
     }else {
         if (canOpen) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLStr]];
-#pragma clang diagnostic pop
+            SuppressWdeprecatedDeclarationsWarning([[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLStr]]);
             return YES;
         }else{
             if (openFailBlock) {

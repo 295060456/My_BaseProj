@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseNavigationBar : UINavigationBar
 
+-(void)actionBlockBaseNavigationBar:(MKDataBlock)baseNavigationBarBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,6 +9,8 @@
 
 @interface BaseNavigationBar ()
 
+@property(nonatomic,copy)MKDataBlock baseNavigationBarBlock;
+
 @end
 
 @implementation BaseNavigationBar
@@ -36,6 +38,10 @@
             }
         }
     }
+}
+
+-(void)actionBlockBaseNavigationBar:(MKDataBlock)baseNavigationBarBlock{
+    self.baseNavigationBarBlock = baseNavigationBarBlock;
 }
 
 @end

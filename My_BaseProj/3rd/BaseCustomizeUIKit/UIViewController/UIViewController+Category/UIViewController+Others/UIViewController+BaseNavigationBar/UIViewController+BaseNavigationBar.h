@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 // 自定义 NavigationBar
-@interface UIViewController (NavigationBar)
+@interface UIViewController (BaseNavigationBar)
 
 @property(nonatomic,strong)BaseNavigationBar *navigationBar;
 @property(nonatomic,strong)UIBarButtonItem *leftBarButtonItem_back;

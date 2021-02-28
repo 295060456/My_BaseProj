@@ -132,7 +132,7 @@
 		C56E3D842547116B00B9F555 /* ⚽️PicResource in Resources */ = {isa = PBXBuildFile; fileRef = C56E3D832547116B00B9F555 /* ⚽️PicResource */; };
 		C56E3E0B2547122700B9F555 /* 资源文件 in Resources */ = {isa = PBXBuildFile; fileRef = C56E3E0A2547122700B9F555 /* 资源文件 */; };
 		C56F8237257CE2FF00AD621C /* welcome_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C56F8236257CE2FF00AD621C /* welcome_video.mp4 */; };
-		C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */; };
+		C572768325408A1C002373D7 /* UIViewController+BaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572768125408A1C002373D7 /* UIViewController+BaseNavigationBar.m */; };
 		C572769925408AF1002373D7 /* BaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C572769725408AF1002373D7 /* BaseNavigationBar.m */; };
 		C572785A254094C2002373D7 /* UITabBarItem+TLAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727816254094C2002373D7 /* UITabBarItem+TLAnimation.m */; };
 		C572785B254094C2002373D7 /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5727818254094C2002373D7 /* TabBarItem.m */; };
@@ -161,8 +161,8 @@
 		C583B94C25E4B3060054FD6E /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C583B94725E4B3050054FD6E /* UIImageView+GIF.m */; };
 		C583B94D25E4B3060054FD6E /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C583B94A25E4B3060054FD6E /* BaseImageView.m */; };
 		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
-		C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */; };
-		C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */; };
+		C58509C525483CC1001E6676 /* TableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C025483CC1001E6676 /* TableViewHeaderView.m */; };
+		C58509C625483CC1001E6676 /* TableViewFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58509C325483CC1001E6676 /* TableViewFooterView.m */; };
 		C58C61262532B3950092BF89 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C58C61232532B3950092BF89 /* RBCLikeButton.m */; };
 		C58C61272532B3950092BF89 /* RBCLikeButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C58C61252532B3950092BF89 /* RBCLikeButton.bundle */; };
 		C58D947E25B80CE900414ACB /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C58D947C25B80CE900414ACB /* BaseTableViewCell.m */; };
@@ -337,7 +337,7 @@
 		C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC124B5F19E007B9878 /* ViewController@1.m */; };
 		C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC224B5F19E007B9878 /* ViewController@4.m */; };
 		C5FE9ACC24B5F19E007B9878 /* ViewController@3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AC524B5F19E007B9878 /* ViewController@3.m */; };
-		C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */; };
+		C5FE9B5F24B5F203007B9878 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B1524B5F203007B9878 /* BaseTableView.m */; };
 		C5FE9B6924B5F203007B9878 /* CALayer+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */; };
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
 		C5FE9B7524B5F204007B9878 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* NotificationManager.m */; };
@@ -728,8 +728,8 @@
 		C56E3E0F254714B900B9F555 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C56F8236257CE2FF00AD621C /* welcome_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = welcome_video.mp4; sourceTree = "<group>"; };
 		C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "谁说HTTP GET就不能通过Body来发送数据呢？.md"; sourceTree = "<group>"; };
-		C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
-		C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		C572768125408A1C002373D7 /* UIViewController+BaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BaseNavigationBar.m"; sourceTree = "<group>"; };
+		C572768225408A1C002373D7 /* UIViewController+BaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BaseNavigationBar.h"; sourceTree = "<group>"; };
 		C572769725408AF1002373D7 /* BaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationBar.m; sourceTree = "<group>"; };
 		C572769825408AF1002373D7 /* BaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationBar.h; sourceTree = "<group>"; };
 		C5727813254094C2002373D7 /* TabbarControllerSysEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarControllerSysEx.h; sourceTree = "<group>"; };
@@ -804,10 +804,10 @@
 		C583B94B25E4B3060054FD6E /* BaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseImageView.h; sourceTree = "<group>"; };
 		C584309B25999F2700D335F7 /* DDPostInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPostInputView.m; sourceTree = "<group>"; };
 		C584309C25999F2800D335F7 /* DDPostInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPostInputView.h; sourceTree = "<group>"; };
-		C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewHeader.m; sourceTree = "<group>"; };
-		C58509C125483CC1001E6676 /* ViewForTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForTableViewHeader.h; sourceTree = "<group>"; };
-		C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForTableViewFooter.m; sourceTree = "<group>"; };
-		C58509C425483CC1001E6676 /* ViewForTableViewFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForTableViewFooter.h; sourceTree = "<group>"; };
+		C58509C025483CC1001E6676 /* TableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderView.m; sourceTree = "<group>"; };
+		C58509C125483CC1001E6676 /* TableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderView.h; sourceTree = "<group>"; };
+		C58509C325483CC1001E6676 /* TableViewFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewFooterView.m; sourceTree = "<group>"; };
+		C58509C425483CC1001E6676 /* TableViewFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewFooterView.h; sourceTree = "<group>"; };
 		C589F52925B472C700B83254 /* UICollectionView点击事件.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "UICollectionView点击事件.md"; sourceTree = "<group>"; };
 		C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于系统Nav.md"; sourceTree = "<group>"; };
 		C58C61232532B3950092BF89 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
@@ -1196,8 +1196,8 @@
 		C5FE9AC624B5F19E007B9878 /* ViewController@1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController@1.h"; sourceTree = "<group>"; };
 		C5FE9AC724B5F19E007B9878 /* ViewController@4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController@4.h"; sourceTree = "<group>"; };
 		C5FE9B0524B5F1F2007B9878 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewer.h; sourceTree = "<group>"; };
-		C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewer.m; sourceTree = "<group>"; };
+		C5FE9B1324B5F203007B9878 /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		C5FE9B1524B5F203007B9878 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
 		C5FE9B2D24B5F203007B9878 /* CALayer+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Transition.m"; sourceTree = "<group>"; };
 		C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
 		C5FE9B2F24B5F203007B9878 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
@@ -1967,13 +1967,13 @@
 			path = "UIViewController+MJRefresh";
 			sourceTree = "<group>";
 		};
-		C544BCFB258372BA00C6CF2A /* UIViewController+NavigationBar */ = {
+		C544BCFB258372BA00C6CF2A /* UIViewController+BaseNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				C572768225408A1C002373D7 /* UIViewController+NavigationBar.h */,
-				C572768125408A1C002373D7 /* UIViewController+NavigationBar.m */,
+				C572768225408A1C002373D7 /* UIViewController+BaseNavigationBar.h */,
+				C572768125408A1C002373D7 /* UIViewController+BaseNavigationBar.m */,
 			);
-			path = "UIViewController+NavigationBar";
+			path = "UIViewController+BaseNavigationBar";
 			sourceTree = "<group>";
 		};
 		C544BD05258372C300C6CF2A /* UIViewController+Shake */ = {
@@ -2120,8 +2120,6 @@
 		C54FE240257671B100937C11 /* UIViewController+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */,
-				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
 				C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */,
 				C5D78A0C257F7A120087FC92 /* UIViewController+Others */,
 				C5766CEF2546B6FD00C382C8 /* UIViewController+TZImagePickerController */,
@@ -3119,28 +3117,28 @@
 		C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */ = {
 			isa = PBXGroup;
 			children = (
-				C58509BF25483CC1001E6676 /* ViewForTableViewHeader */,
-				C58509C225483CC1001E6676 /* ViewForTableViewFooter */,
+				C58509BF25483CC1001E6676 /* TableViewHeaderView */,
+				C58509C225483CC1001E6676 /* TableViewFooterView */,
 			);
 			path = UITableViewHeaderFooterView;
 			sourceTree = "<group>";
 		};
-		C58509BF25483CC1001E6676 /* ViewForTableViewHeader */ = {
+		C58509BF25483CC1001E6676 /* TableViewHeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				C58509C125483CC1001E6676 /* ViewForTableViewHeader.h */,
-				C58509C025483CC1001E6676 /* ViewForTableViewHeader.m */,
+				C58509C125483CC1001E6676 /* TableViewHeaderView.h */,
+				C58509C025483CC1001E6676 /* TableViewHeaderView.m */,
 			);
-			path = ViewForTableViewHeader;
+			path = TableViewHeaderView;
 			sourceTree = "<group>";
 		};
-		C58509C225483CC1001E6676 /* ViewForTableViewFooter */ = {
+		C58509C225483CC1001E6676 /* TableViewFooterView */ = {
 			isa = PBXGroup;
 			children = (
-				C58509C425483CC1001E6676 /* ViewForTableViewFooter.h */,
-				C58509C325483CC1001E6676 /* ViewForTableViewFooter.m */,
+				C58509C425483CC1001E6676 /* TableViewFooterView.h */,
+				C58509C325483CC1001E6676 /* TableViewFooterView.m */,
 			);
-			path = ViewForTableViewFooter;
+			path = TableViewFooterView;
 			sourceTree = "<group>";
 		};
 		C58D947B25B80CE900414ACB /* BaseTableViewCell */ = {
@@ -3448,8 +3446,8 @@
 		C5A6D76025243B440096910D /* 专治UITableView响应链断裂 */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9B1324B5F203007B9878 /* BaseTableViewer.h */,
-				C5FE9B1524B5F203007B9878 /* BaseTableViewer.m */,
+				C5FE9B1324B5F203007B9878 /* BaseTableView.h */,
+				C5FE9B1524B5F203007B9878 /* BaseTableView.m */,
 				C552A6D12589D41200A89501 /* 专治UITableView响应链断裂.md */,
 			);
 			path = "专治UITableView响应链断裂";
@@ -4109,10 +4107,12 @@
 		C5D78A0C257F7A120087FC92 /* UIViewController+Others */ = {
 			isa = PBXGroup;
 			children = (
+				C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */,
+				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
 				C5D1BB27258B0C9000784D2F /* UIViewController+EmptyData */,
 				C544BD09258372CA00C6CF2A /* UIViewController+TFPopup */,
 				C544BD05258372C300C6CF2A /* UIViewController+Shake */,
-				C544BCFB258372BA00C6CF2A /* UIViewController+NavigationBar */,
+				C544BCFB258372BA00C6CF2A /* UIViewController+BaseNavigationBar */,
 				C544BCF4258372B000C6CF2A /* UIViewController+MJRefresh */,
 				C544BCED258372A700C6CF2A /* UIViewController+JPImageresizerView */,
 				C544BCE62583729E00C6CF2A /* UIViewController+GifImageView */,
@@ -5408,7 +5408,7 @@
 				C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */,
 				C595D111258713CB002A4531 /* SuspendLab.m in Sources */,
 				C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */,
-				C58509C525483CC1001E6676 /* ViewForTableViewHeader.m in Sources */,
+				C58509C525483CC1001E6676 /* TableViewHeaderView.m in Sources */,
 				C5FE9CBE24B5F29C007B9878 /* LGiOSBtn.m in Sources */,
 				C57F0D082533369F0080EEF0 /* NSObject+OpenURL.m in Sources */,
 				C5AEEB3825384310000E1C5F /* UIView+Extras.m in Sources */,
@@ -5450,7 +5450,7 @@
 				C5FE9D0724B5F29C007B9878 /* WBTableViewDataSource.m in Sources */,
 				C5CDD19E258F221D0045AA50 /* JobsAppDoorInputViewBaseStyle_3.m in Sources */,
 				C594338425E7AA87003BCA91 /* UITextView+IndicateWordLimit.m in Sources */,
-				C572768325408A1C002373D7 /* UIViewController+NavigationBar.m in Sources */,
+				C572768325408A1C002373D7 /* UIViewController+BaseNavigationBar.m in Sources */,
 				C5D0AA07258765F8002CA224 /* ZBRequestManager.m in Sources */,
 				C5727872254094C2002373D7 /* UITabBar+TLAnimation.m in Sources */,
 				C5A4395525AAF7D1000F0CD2 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
@@ -5550,7 +5550,7 @@
 				C5FE9CCF24B5F29C007B9878 /* RYCuteView.m in Sources */,
 				C55131EC25C686A0007BCA82 /* ZWPullMenuConfig.m in Sources */,
 				C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */,
-				C5FE9B5F24B5F203007B9878 /* BaseTableViewer.m in Sources */,
+				C5FE9B5F24B5F203007B9878 /* BaseTableView.m in Sources */,
 				C5C6517F259DF8AA00FD2F99 /* ECPrivacyCheckContacts.m in Sources */,
 				C5D0AA08258765F8002CA224 /* ZBCacheManager.m in Sources */,
 				C5C659F3259DFBC900FD2F99 /* UIViewController+TZLocationManager.m in Sources */,
@@ -5620,7 +5620,7 @@
 				C5CDD186258F221C0045AA50 /* FindCodeFlowChartView.m in Sources */,
 				C5FE9D0A24B5F29C007B9878 /* WBPopMenuView.m in Sources */,
 				C5FE9D3A24B5F2E7007B9878 /* ModelLogin.m in Sources */,
-				C58509C625483CC1001E6676 /* ViewForTableViewFooter.m in Sources */,
+				C58509C625483CC1001E6676 /* TableViewFooterView.m in Sources */,
 				C55133AA25C688A6007BCA82 /* NetworkingAPI+CommentApi.m in Sources */,
 				C53D36042598C6BC00B48431 /* XLBubbleTransition.m in Sources */,
 				C546E705258B2D7D0008928C /* KeychainHelper.m in Sources */,

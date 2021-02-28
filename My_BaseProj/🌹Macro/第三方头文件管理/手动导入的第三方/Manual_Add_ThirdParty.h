@@ -111,8 +111,8 @@
 #import "UIViewController+EmptyData.h"
 #import "UIViewController+XLBubbleTransition.h"
 #pragma mark ——  UITableViewHeaderFooterView
-#import "ViewForTableViewFooter.h"
-#import "ViewForTableViewHeader.h"
+#import "TableViewFooterView.h"
+#import "TableViewHeaderView.h"
 #pragma mark ——  UITableViewCell
 #import "UITableViewCell+WhiteArrows.h"
 #pragma mark ——  UINavigationController

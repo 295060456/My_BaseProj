@@ -7,7 +7,7 @@
 
 #import "UIViewController+NavigationBar.h"
 
-@implementation UIViewController (NavigationBar)
+@implementation UIViewController (BaseNavigationBar)
 
 static char *UIViewController_NavigationBar_navigationBar = "UIViewController_NavigationBar_navigationBar";
 static char *UIViewController_NavigationBar_leftBarButtonItem_back = "UIViewController_NavigationBar_leftBarButtonItem_back";

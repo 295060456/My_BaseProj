@@ -118,7 +118,7 @@
 #pragma mark ——  UINavigationController
 #import "BaseNavigationVC.h"
 #pragma mark ——  UINavigationBar
-#import "NavigationBar.h"
+#import "BaseNavigationBar.h"
 #pragma mark ——  UIDevice
 #import "UIDevice+XMUtils.h"
 

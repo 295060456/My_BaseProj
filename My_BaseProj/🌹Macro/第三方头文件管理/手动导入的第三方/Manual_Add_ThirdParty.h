@@ -11,7 +11,6 @@
 
 /// BaseCustomizeUIKit
 #pragma mark —— UIButton
-#import "UIButton+Block.h"
 #import "UIButton+ImageTitleSpacing.h"
 #import "UIButton+CountDownBtn.h"//验证码倒计时按钮
 #import "RBCLikeButton.h"//高仿抖音点赞动画
@@ -105,7 +104,7 @@
 #import "UIViewController+TZImagePickerController.h"
 #import "UIViewController+TZImagePickerControllerDelegate.h"
 #import "UIViewController+TZLocationManager.h"
-#import "UIViewController+NavigationBar.h"
+#import "UIViewController+BaseNavigationBar.h"
 #import "UIViewController+TFPopup.h"
 #import "UIViewController+InteractivePushGesture.h"
 #import "UIViewController+EmptyData.h"

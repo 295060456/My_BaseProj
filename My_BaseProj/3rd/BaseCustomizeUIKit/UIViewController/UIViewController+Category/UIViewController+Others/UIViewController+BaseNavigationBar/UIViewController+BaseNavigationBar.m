@@ -1,11 +1,11 @@
 //
-//  UIViewController+NavigationBar.m
+//  UIViewController+BaseNavigationBar.m
 //  UBallLive
 //
 //  Created by Jobs on 2020/10/21.
 //
 
-#import "UIViewController+NavigationBar.h"
+#import "UIViewController+BaseNavigationBar.h"
 
 @implementation UIViewController (BaseNavigationBar)
 
@@ -160,7 +160,7 @@ static char *UIViewController_NavigationBar_shadowCor = "UIViewController_Naviga
         objc_setAssociatedObject(self,
                                  UIViewController_NavigationBar_navigationBarHeight,
                                  [NSNumber numberWithFloat:NavigationBarHeight],
-                                 OBJC_ASSOCIATION_ASSIGN);
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return NavigationBarHeight;
 }
 
@@ -168,7 +168,7 @@ static char *UIViewController_NavigationBar_shadowCor = "UIViewController_Naviga
     objc_setAssociatedObject(self,
                              UIViewController_NavigationBar_navigationBarHeight,
                              [NSNumber numberWithFloat:navigationBarHeight],
-                             OBJC_ASSOCIATION_ASSIGN);
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,assign)BOOL isHiddenNavigationBar
 -(BOOL)isHiddenNavigationBar{//默认不显示
@@ -181,7 +181,7 @@ static char *UIViewController_NavigationBar_shadowCor = "UIViewController_Naviga
     objc_setAssociatedObject(self,
                              UIViewController_NavigationBar_isHiddenNavigationBar,
                              [NSNumber numberWithBool:isHiddenNavigationBar],
-                             OBJC_ASSOCIATION_ASSIGN);
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,assign)BOOL isBarTranslucent;
 -(BOOL)isBarTranslucent{//默认
@@ -193,7 +193,7 @@ static char *UIViewController_NavigationBar_shadowCor = "UIViewController_Naviga
     objc_setAssociatedObject(self,
                              UIViewController_NavigationBar_isBarTranslucent,
                              [NSNumber numberWithBool:isBarTranslucent],
-                             OBJC_ASSOCIATION_ASSIGN);
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)NSShadow *shadow;
 -(void)setShadow:(NSShadow *)shadow{

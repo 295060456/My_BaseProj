@@ -342,7 +342,6 @@
 		C5FE9B6A24B5F203007B9878 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B2E24B5F203007B9878 /* CALayer+Anim.m */; };
 		C5FE9B7524B5F204007B9878 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5124B5F203007B9878 /* NotificationManager.m */; };
 		C5FE9B7624B5F204007B9878 /* DeleteSystemUITabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B5324B5F203007B9878 /* DeleteSystemUITabBarButton.m */; };
-		C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9B5524B5F203007B9878 /* 移除 系统自带的 UITabBarButton */; };
 		C5FE9CAD24B5F29C007B9878 /* ZHKeyChainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B8024B5F298007B9878 /* ZHKeyChainManager.m */; };
 		C5FE9CAF24B5F29C007B9878 /* XDSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B8524B5F298007B9878 /* XDSDropDownMenu.m */; };
 		C5FE9CB024B5F29C007B9878 /* XDSDropDownMenu+DelegateProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9B8624B5F298007B9878 /* XDSDropDownMenu+DelegateProtocol.m */; };
@@ -3017,6 +3016,36 @@
 			path = "颜色渐变的View，GDFadeView";
 			sourceTree = "<group>";
 		};
+		C575323E25EBD81E00070742 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
+				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
+				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
+				C52E88D4250F2CEF0070356F /* 加密流程 */,
+				C5D5B6302566447000C79CBF /* 权限 */,
+				C57AC05025120BA3009EE44D /* 网络请求写法 */,
+				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
+				C5633218252AFABD00699392 /* Block */,
+				C5FE9A7624B5F0B6007B9878 /* Jose */,
+				C5FE9A7824B5F0B6007B9878 /* readme */,
+				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
+				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
+				C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */,
+				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
+				C5FE9A7924B5F0B6007B9878 /* Runtime 获取.m文件的属性（指针） */,
+				C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */,
+				C5765CEE256D426D004B3A96 /* 过滤删除.md */,
+				C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */,
+				C5CF155625AC7DDE00381935 /* 精确度量 iOS App 的启动时间.md */,
+				C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */,
+				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
+				C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */,
+				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
+			);
+			path = "其他";
+			sourceTree = "<group>";
+		};
 		C5766CE82546B6F000C382C8 /* UIViewController+JXCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -4107,19 +4136,19 @@
 		C5D78A0C257F7A120087FC92 /* UIViewController+Others */ = {
 			isa = PBXGroup;
 			children = (
-				C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */,
-				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
-				C5D1BB27258B0C9000784D2F /* UIViewController+EmptyData */,
-				C544BD09258372CA00C6CF2A /* UIViewController+TFPopup */,
-				C544BD05258372C300C6CF2A /* UIViewController+Shake */,
-				C544BCFB258372BA00C6CF2A /* UIViewController+BaseNavigationBar */,
-				C544BCF4258372B000C6CF2A /* UIViewController+MJRefresh */,
-				C544BCED258372A700C6CF2A /* UIViewController+JPImageresizerView */,
-				C544BCE62583729E00C6CF2A /* UIViewController+GifImageView */,
-				C544BCDF2583729400C6CF2A /* UIViewController+BWShareView */,
-				C544BCDB2583728A00C6CF2A /* UIViewController+BRPickerView */,
-				C544BCCE2583728100C6CF2A /* UIViewController+BaseVC */,
 				C544BCC72583727600C6CF2A /* UIViewController+BackBtn */,
+				C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */,
+				C544BCFB258372BA00C6CF2A /* UIViewController+BaseNavigationBar */,
+				C544BCCE2583728100C6CF2A /* UIViewController+BaseVC */,
+				C544BCDB2583728A00C6CF2A /* UIViewController+BRPickerView */,
+				C544BCDF2583729400C6CF2A /* UIViewController+BWShareView */,
+				C5D1BB27258B0C9000784D2F /* UIViewController+EmptyData */,
+				C544BCE62583729E00C6CF2A /* UIViewController+GifImageView */,
+				C5E7D9C124E179DE00A38FAF /* UIViewController+InteractivePushGesture */,
+				C544BCED258372A700C6CF2A /* UIViewController+JPImageresizerView */,
+				C544BCF4258372B000C6CF2A /* UIViewController+MJRefresh */,
+				C544BD05258372C300C6CF2A /* UIViewController+Shake */,
+				C544BD09258372CA00C6CF2A /* UIViewController+TFPopup */,
 			);
 			path = "UIViewController+Others";
 			sourceTree = "<group>";
@@ -4273,40 +4302,18 @@
 		C5FE9A7524B5F0AA007B9878 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
-				C512027E25B00C6A00FC7351 /* 模型解析 */,
-				C563AE4124F28D4800A3B0AC /* _Nullable等的用法和总结 */,
-				C5FE9A7A24B5F0B6007B9878 /* 本地流服务器 */,
-				C5FE9A7724B5F0B6007B9878 /* 本地推送 */,
-				C52E88D4250F2CEF0070356F /* 加密流程 */,
-				C5D5B6302566447000C79CBF /* 权限 */,
-				C57AC05025120BA3009EE44D /* 网络请求写法 */,
-				C58C61982532B6FF0092BF89 /* 资源文件夹 */,
-				C5633218252AFABD00699392 /* Block */,
-				C5FE9A7624B5F0B6007B9878 /* Jose */,
-				C5FE9A7824B5F0B6007B9878 /* readme */,
-				C5BF2C2B254EA74500233A4E /* unknown class viewcontroller in interface builder file */,
-				C5AFBF05250B3D1200EC14B7 /* Xcode资料下载 */,
-				C5929B78254583810022C2CF /* 同一应用设置不同图标和名称.docx */,
-				C5FE9A7D24B5F0B6007B9878 /* 葵花宝典.m */,
-				C5FE9A7924B5F0B6007B9878 /* Runtime 获取.m文件的属性（指针） */,
-				C58AAFFD256CB0FA0026FF23 /* 关于系统Nav.md */,
-				C5765CEE256D426D004B3A96 /* 过滤删除.md */,
-				C5766040256E2D88004B3A96 /* 键盘方法生命周期.md */,
-				C5CF155625AC7DDE00381935 /* 精确度量 iOS App 的启动时间.md */,
-				C57103882571177F00D5F21F /* 谁说HTTP GET就不能通过Body来发送数据呢？.md */,
-				C5FE9A7C24B5F0B6007B9878 /* 获取当前视图控制器.png */,
-				C5E3C64F2515B69300F9A150 /* 设置view的透明度影响子控件的解决方案.png */,
-				C5E4C07524DFCF1C00D4862C /* Snip20200809_12.png */,
 				C59F2F14259B2E9F00E22F9B /* 查找系统警告对应的编码 */,
 				C5788C9D25592CEE009D46E3 /* 关于响应链的一些研究成果 */,
+				C512027E25B00C6A00FC7351 /* 模型解析 */,
+				C575323E25EBD81E00070742 /* 其他 */,
 				C56161C924EE743F001CD851 /* 签名上架 */,
 				C56161C624EE609D001CD851 /* 优秀的关于音视频处理的文献资料 */,
 				C5FE9A8824B5F0BE007B9878 /* Computer_Config */,
 				C5E3C79D25179B2100F9A150 /* FFmpeg */,
 				C52D2A5024E580670048FEFF /* JXCategoryView */,
 				C557DC1724C8063700754760 /* MJExtension用法 */,
-				C5CF8946252AC328002499C6 /* UITableView */,
 				C589F52925B472C700B83254 /* UICollectionView点击事件.md */,
+				C5CF8946252AC328002499C6 /* UITableView */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
@@ -5233,7 +5240,6 @@
 				C5C6518A259DF8AA00FD2F99 /* 麦克风@2x.png in Resources */,
 				C5C6518F259DF8AA00FD2F99 /* 日历@3x.png in Resources */,
 				C5D0B9FA25878DEC002CA224 /* Sound.wav in Resources */,
-				C5FE9B7724B5F204007B9878 /* 移除 系统自带的 UITabBarButton in Resources */,
 				C56F8237257CE2FF00AD621C /* welcome_video.mp4 in Resources */,
 				C59D9AF624F8F19100A74CE9 /* ZZCircleProgress.bundle in Resources */,
 				C5C65199259DF8AA00FD2F99 /* 相机@2x.png in Resources */,

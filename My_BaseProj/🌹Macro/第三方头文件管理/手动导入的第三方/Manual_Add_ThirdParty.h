@@ -164,6 +164,7 @@
 #pragma mark —— 以下是自定义的
 ///一些工具库
 #import "MKPublickDataManager.h"//数据管理
+#import "DDCacheTool.h"
 
 //#import "IsLogin.h"
 //#import "PersonalInfo.h"

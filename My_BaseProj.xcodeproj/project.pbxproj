@@ -536,6 +536,7 @@
 		C54B3BCA25525EF8003BE195 /* UIFont+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extras.h"; sourceTree = "<group>"; };
 		C54B3EB725529771003BE195 /* NSObject+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RichText.h"; sourceTree = "<group>"; };
 		C54B3EB825529771003BE195 /* NSObject+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RichText.m"; sourceTree = "<group>"; };
+		C54C634A25EFC2BF007DD043 /* DDCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCacheTool.h; sourceTree = "<group>"; };
 		C54CC4102551454B00C69C1F /* UIView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZFPlayer.h"; sourceTree = "<group>"; };
 		C54CC4112551454B00C69C1F /* UIView+ZFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFPlayer.m"; sourceTree = "<group>"; };
 		C54CC41A2551456800C69C1F /* CustomZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomZFPlayerControlView.h; sourceTree = "<group>"; };
@@ -2092,6 +2093,14 @@
 				C5D0A9FC258765F7002CA224 /* ZBURLRequest.m */,
 			);
 			path = ZBNetworking;
+			sourceTree = "<group>";
+		};
+		C54C634925EFC2BF007DD043 /* 清除缓存 */ = {
+			isa = PBXGroup;
+			children = (
+				C54C634A25EFC2BF007DD043 /* DDCacheTool.h */,
+			);
+			path = "清除缓存";
 			sourceTree = "<group>";
 		};
 		C54CC4162551456100C69C1F /* 播放器控制层 */ = {
@@ -4252,6 +4261,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C54C634925EFC2BF007DD043 /* 清除缓存 */,
 				C5A4394F25AAF7D1000F0CD2 /* 手势滑动返回 */,
 				C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */,
 				C59F3A1E259B3B3C00E22F9B /* JobsBitsMonitor */,

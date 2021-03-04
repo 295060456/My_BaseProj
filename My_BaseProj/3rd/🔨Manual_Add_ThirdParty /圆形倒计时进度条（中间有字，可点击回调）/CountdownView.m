@@ -70,7 +70,7 @@
     if (font) {
         self.label.font = font;
     }else{
-        self.label.font = [UIFont systemFontOfSize:12];
+        self.label.font = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
     }
 }
 

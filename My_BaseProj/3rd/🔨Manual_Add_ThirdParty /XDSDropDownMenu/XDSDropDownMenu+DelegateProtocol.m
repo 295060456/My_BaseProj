@@ -36,7 +36,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.textLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
     }
     if ([self.imageList count] == [self.titleList count]) {

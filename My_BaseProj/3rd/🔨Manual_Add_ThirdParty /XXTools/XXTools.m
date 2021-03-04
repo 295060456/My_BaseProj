@@ -44,7 +44,7 @@
     if (@available(iOS 8.2, *)) {
         self.lab2.font = [UIFont systemFontOfSize:10 weight:-0.4];
     } else {
-        self.lab2.font = [UIFont systemFontOfSize:10];
+        self.lab2.font = [UIFont systemFontOfSize:10 weight:UIFontWeightRegular];
     }
     self.lab2.backgroundColor = kClearColor;//lab2 不要颜色
     self.lab2.transform = CGAffineTransformMakeRotation(-M_PI_4);

@@ -120,7 +120,7 @@
     
     if (!self.tagFont) {
         
-        _tagFont  = [UIFont systemFontOfSize:15];
+        _tagFont  = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
     }
     
     if (self.allWidth == 0) {

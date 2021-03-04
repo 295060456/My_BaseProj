@@ -97,7 +97,7 @@ UITableViewDataSource>
 - (CGFloat)cacuateCellWidth{
     __block CGFloat maxTitleWidth = 0;
     [self.menuArray enumerateObjectsUsingBlock:^(ZWPullMenuModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat width = [obj.title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:self.zw_menuConfg.zw_menuTitleFontSize]}].width;
+        CGFloat width = [obj.title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:self.zw_menuConfg.zw_menuTitleFontSize weight:UIFontWeightRegular]}].width;
         if (obj.imageName.length) {
             width = width + self.zw_menuConfg.zw_menuContentMargin + self.zw_menuConfg.zw_menuImageWidth;
         }

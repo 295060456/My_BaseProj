@@ -39,7 +39,7 @@
     self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth + marginX, 0, labelWidth, self.bounds.size.height)];
     self.subtitleLabel.textColor = [UIColor lightGrayColor];
     self.subtitleLabel.textAlignment = NSTextAlignmentRight;
-    self.subtitleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.subtitleLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightRegular];
     [self addSubview:self.subtitleLabel];
 }
 

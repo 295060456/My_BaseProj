@@ -605,7 +605,7 @@ http://blog.csdn.net/tangaowen/article/details/43524815
     UILabel* pickerLabel = (UILabel*)view;
     if (!pickerLabel){
         pickerLabel = [[UILabel alloc] init];
-        pickerLabel.font=[UIFont systemFontOfSize:18 weight:1];
+        pickerLabel.font=[UIFont systemFontOfSize:18 weight:UIFontWeightRegular];
         pickerLabel.textColor=[UIColor whiteColor];
         pickerLabel.textAlignment=1;
         [pickerLabel setBackgroundColor:[UIColor clearColor]];
@@ -1031,7 +1031,7 @@ NSDictionary *attribute = @{NSFontAttributeName: label.font};
 CGSize labelsize = [label.text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
 
 //计算字符串的高度
-CGRect rect = [urlStr boundingRectWithSize:CGSizeMake(self.view.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil];
+CGRect rect = [urlStr boundingRectWithSize:CGSizeMake(self.view.frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15 weight:UIFontWeightRegular]} context:nil];
 
 
 /************************************************************/
@@ -1089,8 +1089,8 @@ NSMakeRange(0, 5)  第一个参数是位子  后面的字符长度  有几个字
 NSString *tStr = [NSString stringWithFormat:@"%d", data.transIncome];
 NSString *tStr1 = [NSString stringWithFormat:@"%d%@", data.transIncome, pasid];
 NSMutableAttributedString *tStr2 = [[NSMutableAttributedString alloc] initWithString:tStr1];
-[tStr2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20.0] range:NSMakeRange(0, tStr.length)];
-[tStr2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14.0] range:NSMakeRange(tStr.length, 1)];
+[tStr2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20.0 weight:UIFontWeightRegular] range:NSMakeRange(0, tStr.length)];
+[tStr2 addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular] range:NSMakeRange(tStr.length, 1)];
 _transIncome.attributedText = tStr2;
 
 

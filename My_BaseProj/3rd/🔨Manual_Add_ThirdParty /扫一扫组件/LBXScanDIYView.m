@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_END
         _labelReadying = UILabel.new;
         _labelReadying.backgroundColor = [UIColor clearColor];
         _labelReadying.textColor  = [UIColor whiteColor];
-        _labelReadying.font = [UIFont systemFontOfSize:18.];
+        _labelReadying.font = [UIFont systemFontOfSize:18 weight:UIFontWeightRegular];
         [_labelReadying sizeToFit];
         [self addSubview:_labelReadying];
         [_labelReadying mas_makeConstraints:^(MASConstraintMaker *make) {

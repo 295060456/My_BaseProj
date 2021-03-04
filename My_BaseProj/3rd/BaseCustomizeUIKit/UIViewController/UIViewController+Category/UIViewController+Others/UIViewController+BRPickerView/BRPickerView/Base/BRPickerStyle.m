@@ -93,7 +93,7 @@
 
 - (UIFont *)cancelTextFont {
     if (!_cancelTextFont) {
-        _cancelTextFont = [UIFont systemFontOfSize:16.0f];
+        _cancelTextFont = [UIFont systemFontOfSize:16.0f weight:UIFontWeightRegular];
     }
     return _cancelTextFont;
 }
@@ -132,7 +132,7 @@
 
 - (UIFont *)titleTextFont {
     if (!_titleTextFont) {
-        _titleTextFont = [UIFont systemFontOfSize:15.0f];
+        _titleTextFont = [UIFont systemFontOfSize:15.0f weight:UIFontWeightRegular];
     }
     return _titleTextFont;
 }
@@ -164,7 +164,7 @@
 
 - (UIFont *)doneTextFont {
     if (!_doneTextFont) {
-        _doneTextFont = [UIFont systemFontOfSize:16.0f];
+        _doneTextFont = [UIFont systemFontOfSize:16.0f weight:UIFontWeightRegular];
     }
     return _doneTextFont;
 }
@@ -220,7 +220,7 @@
 
 - (UIFont *)pickerTextFont {
     if (!_pickerTextFont) {
-        _pickerTextFont = [UIFont systemFontOfSize:18.0f];
+        _pickerTextFont = [UIFont systemFontOfSize:18.0f weight:UIFontWeightRegular];
     }
     return _pickerTextFont;
 }
@@ -262,7 +262,7 @@
 
 - (UIFont *)dateUnitTextFont {
     if (!_dateUnitTextFont) {
-        _dateUnitTextFont = [UIFont systemFontOfSize:18.0f];
+        _dateUnitTextFont = [UIFont systemFontOfSize:18.0f weight:UIFontWeightRegular];
     }
     return _dateUnitTextFont;
 }

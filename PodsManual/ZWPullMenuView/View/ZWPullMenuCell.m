@@ -39,7 +39,7 @@
         self.menuTitleLab.frame = CGRectMake(self.zw_menuConfg.zw_menuContentMargin * 2 + self.zw_menuConfg.zw_menuImageWidth, 0, CGRectGetWidth(self.bounds) - (self.zw_menuConfg.zw_menuContentMargin * 3 + self.zw_menuConfg.zw_menuImageWidth), CGRectGetHeight(self.bounds));
     }
     self.menuTitleLab.text = menuModel.title;
-    self.menuTitleLab.font = [UIFont systemFontOfSize:self.zw_menuConfg.zw_menuTitleFontSize];
+    self.menuTitleLab.font = [UIFont systemFontOfSize:self.zw_menuConfg.zw_menuTitleFontSize weight:UIFontWeightRegular];
 }
 -(void)setZwPullMenuStyle:(ZWPullMenuStyle)zwPullMenuStyle{
     _zwPullMenuStyle = zwPullMenuStyle;
@@ -53,7 +53,7 @@
             break;
         case PullMenuLightStyle:
         {
-            self.selectedBgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+            self.selectedBgView.backgroundColor = [UIColor systemGroupedBackgroundColor];
             self.menuTitleLab.textColor = [UIColor blackColor];
             self.lineColor = [UIColor lightGrayColor];
         }

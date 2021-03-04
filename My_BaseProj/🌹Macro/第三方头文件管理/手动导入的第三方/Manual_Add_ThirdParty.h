@@ -186,6 +186,5 @@
 
 ///Model
 #import "BaseModel.h"
-#import "MyVCModel.h"
 
 #endif /* Manual_Add_ThirdParty_h */

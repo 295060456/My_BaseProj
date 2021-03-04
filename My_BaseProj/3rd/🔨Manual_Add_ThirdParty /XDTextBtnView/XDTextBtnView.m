@@ -70,7 +70,7 @@ static NSInteger const kXDTextBtnViewBtnTagPlus = 90000000;
         
         NSString *text = textArr[i];
         
-        CGFloat textWidth = [text boundingRectWithSize:CGSizeMake(kAllBtnMaxWidth, self.btnHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:self.textFontSize + 0.5]} context:nil].size.width;
+        CGFloat textWidth = [text boundingRectWithSize:CGSizeMake(kAllBtnMaxWidth, self.btnHeight) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:self.textFontSize + 0.5 weight:UIFontWeightRegular]} context:nil].size.width;
         
         CGFloat btnWidth = textWidth + self.marginX * 2;
         

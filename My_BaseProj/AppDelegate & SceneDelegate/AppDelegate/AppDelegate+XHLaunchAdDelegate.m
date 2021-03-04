@@ -16,14 +16,8 @@
 - (BOOL)xhLaunchAd:(XHLaunchAd *)launchAd
   clickAtOpenModel:(id)openModel
         clickPoint:(CGPoint)clickPoint{
-
-    [NSObject OpenURL:openModel
-              options:@{}
-completionOpenSuccessHandler:^{
-        //TODO
-    } completionOpenFailHandler:^{
-        //TODO
-    }];return YES;
+    [NSObject openURL:openModel];
+    return YES;
 }
 /// 跳过按钮点击回调(注意:自定义跳过按钮不会走此回调)
 /// @param launchAd launchAd

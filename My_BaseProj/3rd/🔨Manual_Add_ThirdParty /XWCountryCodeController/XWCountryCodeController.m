@@ -149,7 +149,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:16.0];
+        cell.textLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightRegular];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [self showCodeStringIndex:indexPath jieQue:YES];

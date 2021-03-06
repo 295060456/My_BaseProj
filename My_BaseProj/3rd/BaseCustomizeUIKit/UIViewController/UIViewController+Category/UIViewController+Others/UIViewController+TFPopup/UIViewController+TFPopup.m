@@ -6,6 +6,7 @@
 //
 
 #import "UIViewController+TFPopup.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (TFPopup)
 

@@ -8,6 +8,7 @@
 
 #import "UIViewController+InteractivePushGesture.h"
 #import <objc/message.h>
+#import <objc/runtime.h>
 
 #pragma mark - 动画执行者
 

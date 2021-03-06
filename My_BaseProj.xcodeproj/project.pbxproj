@@ -93,6 +93,7 @@
 		C552A0902589CE5700A89501 /* UIView+JHGestureBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C552A08F2589CE5700A89501 /* UIView+JHGestureBlock.m */; };
 		C552A6C52589D37E00A89501 /* UIImage+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = C552A6C32589D37E00A89501 /* UIImage+ScreenShot.m */; };
 		C55391652572803A008BB60F /* SocketIOTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C55391602572803A008BB60F /* SocketIOTools.m */; };
+		C5542C8A25F324C6002D1CA6 /* CheckMemFreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5542C8925F324C6002D1CA6 /* CheckMemFreeVC.m */; };
 		C55695D4255BFC3A005C1361 /* NSString+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C55695CC255BFC39005C1361 /* NSString+Extras.m */; };
 		C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */; };
 		C55D3C812538838C00CFCF73 /* AppDelegate+Func.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C7F2538838C00CFCF73 /* AppDelegate+Func.m */; };
@@ -619,6 +620,8 @@
 		C55391622572803A008BB60F /* UBLLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLivingVC.m; sourceTree = "<group>"; };
 		C55391632572803A008BB60F /* UBLLivingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLLivingVC.h; sourceTree = "<group>"; };
 		C55391642572803A008BB60F /* SocketIOTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTools.h; sourceTree = "<group>"; };
+		C5542C8825F324C6002D1CA6 /* CheckMemFreeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckMemFreeVC.h; sourceTree = "<group>"; };
+		C5542C8925F324C6002D1CA6 /* CheckMemFreeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckMemFreeVC.m; sourceTree = "<group>"; };
 		C55695CB255BFC39005C1361 /* NSString+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extras.h"; sourceTree = "<group>"; };
 		C55695CC255BFC39005C1361 /* NSString+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extras.m"; sourceTree = "<group>"; };
 		C558E49A258A1FAA0078DB8F /* PodsManual.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PodsManual.h; sourceTree = "<group>"; };
@@ -2570,6 +2573,15 @@
 			path = "使用范例";
 			sourceTree = "<group>";
 		};
+		C5542C8725F324C6002D1CA6 /* CheckMemFreeVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5542C8825F324C6002D1CA6 /* CheckMemFreeVC.h */,
+				C5542C8925F324C6002D1CA6 /* CheckMemFreeVC.m */,
+			);
+			path = CheckMemFreeVC;
+			sourceTree = "<group>";
+		};
 		C557AD712580FEF000F3FEED /* JobsAppDoor */ = {
 			isa = PBXGroup;
 			children = (
@@ -4261,6 +4273,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C5542C8725F324C6002D1CA6 /* CheckMemFreeVC */,
 				C54C634925EFC2BF007DD043 /* 清除缓存 */,
 				C5A4394F25AAF7D1000F0CD2 /* 手势滑动返回 */,
 				C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */,
@@ -5496,6 +5509,7 @@
 				C546E704258B2D7D0008928C /* KeychainIDFA.m in Sources */,
 				C58F043424EBB63000B6D09C /* MKShootProxy.m in Sources */,
 				C5EB98D9250A1736007660B3 /* UIView+Gradient.m in Sources */,
+				C5542C8A25F324C6002D1CA6 /* CheckMemFreeVC.m in Sources */,
 				C5A715CC258F7B1B0013E3EF /* JobsAppDoorInputViewBaseStyle_6.m in Sources */,
 				C572A28824FCBDDE000A1687 /* UIImage+Overlay.m in Sources */,
 				C5FE9CB324B5F29C007B9878 /* FMARCNetwork.m in Sources */,

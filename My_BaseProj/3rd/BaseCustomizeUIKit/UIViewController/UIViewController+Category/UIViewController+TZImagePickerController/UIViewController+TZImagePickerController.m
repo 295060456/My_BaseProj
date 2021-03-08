@@ -78,16 +78,18 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
                              completion:nil];
         } else {
             NSLog(@"用户禁用该APP使用照片权限");
-            [NSObject showSYSAlertViewTitle:@"获取相册权限"
-                                    message:nil
-                            isSeparateStyle:YES
-                                btnTitleArr:@[@"去获取"]
-                             alertBtnAction:@[@"pushToSysConfig"]
-                                   targetVC:self
-                                     funcInWhere:nil
-                                   animated:YES
-                               alertVCBlock:nil
-                            completionBlock:nil];
+            SYSAlertControllerConfig *config = SYSAlertControllerConfig.new;
+            config.title = @"获取相册权限";
+            config.isSeparateStyle = YES;
+            config.btnTitleArr = @[@"去获取"];
+            config.alertBtnActionArr = @[@"pushToSysConfig"];
+            config.targetVC = self;
+            config.funcInWhere = self;
+            config.animated = YES;
+            
+            [NSObject showSYSAlertViewConfig:config
+                                alertVCBlock:nil
+                             completionBlock:nil];
         }
     }];
 }
@@ -106,16 +108,18 @@ imagePickerVCBlock:(MKDataBlock _Nullable)imagePickerVCBlock{
             }
         } else {
             NSLog(@"用户禁用该APP使用相机权限");
-            [NSObject showSYSAlertViewTitle:@"获取摄像头权限"
-                                    message:nil
-                            isSeparateStyle:YES
-                                btnTitleArr:@[@"去获取"]
-                             alertBtnAction:@[@"pushToSysConfig"]
-                                   targetVC:self
-                                     funcInWhere:nil
-                                   animated:YES
-                               alertVCBlock:nil
-                            completionBlock:nil];
+            SYSAlertControllerConfig *config = SYSAlertControllerConfig.new;
+            config.title = @"获取摄像头权限";
+            config.isSeparateStyle = YES;
+            config.btnTitleArr = @[@"去获取"];
+            config.alertBtnActionArr = @[@"pushToSysConfig"];
+            config.targetVC = self;
+            config.funcInWhere = self;
+            config.animated = YES;
+            
+            [NSObject showSYSAlertViewConfig:config
+                                alertVCBlock:nil
+                             completionBlock:nil];
         }
     }];
 }

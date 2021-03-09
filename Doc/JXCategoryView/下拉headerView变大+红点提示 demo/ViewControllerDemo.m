@@ -141,7 +141,7 @@ didSelectedItemAtIndex:(NSInteger)index {
         _categoryTitleView.indicators = @[self.lineView];
         _categoryTitleView.delegate = self;
         _categoryTitleView.dotStates = self.dotStatesMutArr;
-        _categoryTitleView.titleSelectedColor = RGBCOLOR(105,
+        _categoryTitleView.titleSelectedColor = COLOR_RGB(105,
                                                          144,
                                                          239);
         _categoryTitleView.titleColor = kBlackColor;
@@ -158,7 +158,7 @@ didSelectedItemAtIndex:(NSInteger)index {
 -(JXCategoryIndicatorLineView *)lineView{
     if (!_lineView) {
         _lineView = JXCategoryIndicatorLineView.new;
-        _lineView.indicatorColor = RGBCOLOR(105, 144, 239);
+        _lineView.indicatorColor = COLOR_RGB(105, 144, 239);
         _lineView.indicatorWidth = 30;
     }return _lineView;
 }

@@ -1,0 +1,45 @@
+{
+    "code": 200,
+    "msg": "",
+    "data": {
+        "isSign": false,
+        "nowGoldNum": "",
+        "data": [
+            {
+                "goldNum": 90,
+                "days": 1,
+                "isSign": false
+            },
+            {
+                "goldNum": 49,
+                "days": 2,
+                "isSign": false
+            },
+            {
+                "goldNum": 58,
+                "days": 3,
+                "isSign": false
+            },
+            {
+                "goldNum": 188,
+                "days": 4,
+                "isSign": false
+            },
+            {
+                "goldNum": 20,
+                "days": 5,
+                "isSign": false
+            },
+            {
+                "goldNum": 10,
+                "days": 6,
+                "isSign": false
+            },
+            {
+                "goldNum": 288,
+                "days": 7,
+                "isSign": false
+            }
+        ]
+    }
+}

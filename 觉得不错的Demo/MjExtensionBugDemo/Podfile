@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MjExtensionBugDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'YYModel'
+  pod 'MJExtension' # https://github.com/CoderMJLee/MJExtension A fast, convenient and nonintrusive conversion framework between JSON and model. Your model class doesn't need to extend any base class. You don't need to modify any model file.
+  # Pods for MjExtensionBugDemo
+
+  target 'MjExtensionBugDemoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MjExtensionBugDemoUITests' do
+    # Pods for testing
+  end
+
+end

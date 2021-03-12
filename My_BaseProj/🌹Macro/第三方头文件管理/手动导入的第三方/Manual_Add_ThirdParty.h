@@ -84,8 +84,12 @@
 #import "BaseCollectionView.h"
 #pragma mark ——  UICollectionReusableView
 #import "BaseCollectionReusableView.h"
-#pragma mark ——  UICollectionViewCell
+#pragma mark —— UICollectionViewCell
+/// BaseCollectionViewCell
 #import "BaseCollectionViewCell.h"
+/// UICollectionViewCell+Category
+#import "UICollectionViewCell+Default.h"
+#import "UICollectionViewCell+ShakeAnimation.h"
 #pragma mark ——  UICollectionViewLayout
 #import "LMHWaterFallLayout.h"
 #import "KFZShopCatoryFlowLayput.h"//给UICollectionView每个section加背景

@@ -108,6 +108,7 @@
 		C55D3CB32538856100CFCF73 /* XHLaunchAdConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA32538856100CFCF73 /* XHLaunchAdConfiguration.m */; };
 		C55D3CB42538856100CFCF73 /* XHLaunchAdCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA52538856100CFCF73 /* XHLaunchAdCache.m */; };
 		C55D3CB52538856100CFCF73 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */; };
+		C55E0CCF25F9CA3B00716A9B /* UICollectionViewCell+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E0CCE25F9CA3B00716A9B /* UICollectionViewCell+Default.m */; };
 		C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */; };
 		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
 		C562DD3A25C7C445004D1AEA /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C562DD3625C7C445004D1AEA /* UIView+ViewController.m */; };
@@ -651,6 +652,9 @@
 		C55D3CA62538856100CFCF73 /* XHLaunchAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdView.h; sourceTree = "<group>"; };
 		C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAdImageManager.m; sourceTree = "<group>"; };
 		C55D3CA82538856100CFCF73 /* XHLaunchAdConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAdConst.h; sourceTree = "<group>"; };
+		C55E0CCD25F9CA3B00716A9B /* UICollectionViewCell+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Default.h"; sourceTree = "<group>"; };
+		C55E0CCE25F9CA3B00716A9B /* UICollectionViewCell+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Default.m"; sourceTree = "<group>"; };
+		C55E29E425FB27C000716A9B /* MacroDef_SysWarning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDef_SysWarning.h; sourceTree = "<group>"; };
 		C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJRefresh.m"; sourceTree = "<group>"; };
 		C55FEB3625B4265F00D8C30D /* UIView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJRefresh.h"; sourceTree = "<group>"; };
 		C56206BE2553FD1000FE435F /* NSObject+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNReachability.h"; sourceTree = "<group>"; };
@@ -1656,8 +1660,8 @@
 		C530AC10254D983800EDEDC8 /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C542D55F25EB78D100D776D8 /* UICollectionViewCell+ShakeAnimation */,
 				C542D55E25EB78CB00D776D8 /* BaseCollectionViewCell */,
+				C55E0CC525F9CA2700716A9B /* UICollectionViewCell+Category */,
 			);
 			path = UICollectionViewCell;
 			sourceTree = "<group>";
@@ -2030,11 +2034,11 @@
 		C5470F0D25309B5200651ACE /* 各项宏定义 */ = {
 			isa = PBXGroup;
 			children = (
-				C56BA6C42578913D00D054D0 /* MacroDef_App.h */,
-				C5470F1325309B5C00651ACE /* MacroDef_Cor.h */,
-				C5470F1225309B5C00651ACE /* MacroDef_Func.h */,
-				C5470F1125309B5C00651ACE /* MacroDef_Size.h */,
-				C5470F1425309B5C00651ACE /* MacroDef_Sys.h */,
+				C55E29B525FB278D00716A9B /* MacroDef_App */,
+				C55E29BF25FB279E00716A9B /* MacroDef_Cor */,
+				C55E29C625FB27A500716A9B /* MacroDef_Func */,
+				C55E29D025FB27AD00716A9B /* MacroDef_Size */,
+				C55E29DA25FB27B400716A9B /* MacroDef_Sys */,
 			);
 			path = "各项宏定义";
 			sourceTree = "<group>";
@@ -2725,6 +2729,65 @@
 				C55D3C9B2538856100CFCF73 /* XHLaunchImageView.m */,
 			);
 			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
+		C55E0CC525F9CA2700716A9B /* UICollectionViewCell+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C55E0CCC25F9CA3B00716A9B /* UICollectionViewCell+Default */,
+				C542D55F25EB78D100D776D8 /* UICollectionViewCell+ShakeAnimation */,
+			);
+			path = "UICollectionViewCell+Category";
+			sourceTree = "<group>";
+		};
+		C55E0CCC25F9CA3B00716A9B /* UICollectionViewCell+Default */ = {
+			isa = PBXGroup;
+			children = (
+				C55E0CCD25F9CA3B00716A9B /* UICollectionViewCell+Default.h */,
+				C55E0CCE25F9CA3B00716A9B /* UICollectionViewCell+Default.m */,
+			);
+			path = "UICollectionViewCell+Default";
+			sourceTree = "<group>";
+		};
+		C55E29B525FB278D00716A9B /* MacroDef_App */ = {
+			isa = PBXGroup;
+			children = (
+				C56BA6C42578913D00D054D0 /* MacroDef_App.h */,
+			);
+			path = MacroDef_App;
+			sourceTree = "<group>";
+		};
+		C55E29BF25FB279E00716A9B /* MacroDef_Cor */ = {
+			isa = PBXGroup;
+			children = (
+				C5470F1325309B5C00651ACE /* MacroDef_Cor.h */,
+			);
+			path = MacroDef_Cor;
+			sourceTree = "<group>";
+		};
+		C55E29C625FB27A500716A9B /* MacroDef_Func */ = {
+			isa = PBXGroup;
+			children = (
+				C5470F1225309B5C00651ACE /* MacroDef_Func.h */,
+			);
+			path = MacroDef_Func;
+			sourceTree = "<group>";
+		};
+		C55E29D025FB27AD00716A9B /* MacroDef_Size */ = {
+			isa = PBXGroup;
+			children = (
+				C5470F1125309B5C00651ACE /* MacroDef_Size.h */,
+			);
+			path = MacroDef_Size;
+			sourceTree = "<group>";
+		};
+		C55E29DA25FB27B400716A9B /* MacroDef_Sys */ = {
+			isa = PBXGroup;
+			children = (
+				C5470F1425309B5C00651ACE /* MacroDef_Sys.h */,
+				C55E29E425FB27C000716A9B /* MacroDef_SysWarning.h */,
+			);
+			path = MacroDef_Sys;
 			sourceTree = "<group>";
 		};
 		C55FEB3425B4265F00D8C30D /* UIView+MJRefresh */ = {
@@ -5484,6 +5547,7 @@
 				C5DD001924D46B4800307DFA /* EmptyView.m in Sources */,
 				C55133A625C688A6007BCA82 /* NSObject+URLManager.m in Sources */,
 				C59D9AB024F8DF9200A74CE9 /* NSObject+Random.m in Sources */,
+				C55E0CCF25F9CA3B00716A9B /* UICollectionViewCell+Default.m in Sources */,
 				C533701224DB00280082847C /* BRDatePickerView+BR.m in Sources */,
 				C5CDD191258F221D0045AA50 /* JobsAppDoorConfig.m in Sources */,
 				C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */,

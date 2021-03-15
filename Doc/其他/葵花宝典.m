@@ -1746,7 +1746,7 @@ NSLog(@"%@",dic);
 //发短信
 - (IBAction)clickSmsBtn:(id)sender {
     if( [MFMessageComposeViewController canSendText] ){
-        MFMessageComposeViewController * controller = [[MFMessageComposeViewController alloc]init];;
+        MFMessageComposeViewController * controller = [[MFMessageComposeViewController alloc]init];
         controller.recipients = [NSArray arrayWithObject:self.myText.text];
         controller.body = @"测试发短信";
         controller.messageComposeDelegate = self;

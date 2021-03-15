@@ -216,7 +216,7 @@
                 [_colors addObject:(id)color.CGColor];
             }
         }
-    }return _colors;;
+    }return _colors;
 }
 
 -(CAGradientLayer *)gradLayer{
@@ -249,7 +249,7 @@
                                        self.mj_h);
         _fenceLayer.backgroundColor = self.fenceLayerColor.CGColor;
         [self.gradLayer addSublayer:_fenceLayer];
-    }return _fenceLayer;;
+    }return _fenceLayer;
 }
 
 -(CGFloat)fenceLayer_x{

@@ -169,7 +169,7 @@
         _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _cancelBtn.frame = self.pickerStyle.cancelBtnFrame;
         _cancelBtn.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
-        _cancelBtn.backgroundColor = self.pickerStyle.cancelColor;;
+        _cancelBtn.backgroundColor = self.pickerStyle.cancelColor;
         _cancelBtn.titleLabel.font = self.pickerStyle.cancelTextFont;
         [_cancelBtn setTitleColor:self.pickerStyle.cancelTextColor forState:UIControlStateNormal];
         if (self.pickerStyle.cancelBtnImage) {

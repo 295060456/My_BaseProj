@@ -152,7 +152,7 @@
     //动画类型：网格形式，模仿支付宝
     style.anmiationStyle = LBXScanViewAnimationStyle_NetGrid;
     
-    style.animationImage = [UIImage imageNamed:@"CodeScan.bundle/qrcode_scan_part_net"];;
+    style.animationImage = [UIImage imageNamed:@"CodeScan.bundle/qrcode_scan_part_net"];
     //码框周围4个角的颜色
     style.colorAngle = [UIColor colorWithRed:65./255. green:174./255. blue:57./255. alpha:1.0];
     //矩形框颜色

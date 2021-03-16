@@ -110,6 +110,7 @@
 		C55D3CB52538856100CFCF73 /* XHLaunchAdImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3CA72538856100CFCF73 /* XHLaunchAdImageManager.m */; };
 		C55E0CCF25F9CA3B00716A9B /* UICollectionViewCell+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = C55E0CCE25F9CA3B00716A9B /* UICollectionViewCell+Default.m */; };
 		C55FEB3725B4265F00D8C30D /* UIView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */; };
+		C561909626008EF600D4546E /* UITextView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = C561909526008EF500D4546E /* UITextView+Extend.m */; };
 		C56206C02553FD1000FE435F /* NSObject+AFNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */; };
 		C562DD3A25C7C445004D1AEA /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C562DD3625C7C445004D1AEA /* UIView+ViewController.m */; };
 		C563AE3924F24D9400A3B0AC /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */; };
@@ -657,6 +658,8 @@
 		C55E29E425FB27C000716A9B /* MacroDef_SysWarning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDef_SysWarning.h; sourceTree = "<group>"; };
 		C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJRefresh.m"; sourceTree = "<group>"; };
 		C55FEB3625B4265F00D8C30D /* UIView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJRefresh.h"; sourceTree = "<group>"; };
+		C561909426008EF500D4546E /* UITextView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extend.h"; sourceTree = "<group>"; };
+		C561909526008EF500D4546E /* UITextView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extend.m"; sourceTree = "<group>"; };
 		C56206BE2553FD1000FE435F /* NSObject+AFNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNReachability.h"; sourceTree = "<group>"; };
 		C56206BF2553FD1000FE435F /* NSObject+AFNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNReachability.m"; sourceTree = "<group>"; };
 		C56207F02553FE8700FE435F /* 验证码按钮单例封装.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "验证码按钮单例封装.md"; sourceTree = "<group>"; };
@@ -1911,7 +1914,7 @@
 		C542D56425EB792200D776D8 /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
-				C594338025E7AA86003BCA91 /* UITextView+IndicateWordLimit */,
+				C561908926008EEE00D4546E /* UITextView+Category */,
 			);
 			path = UITextView;
 			sourceTree = "<group>";
@@ -2797,6 +2800,24 @@
 				C55FEB3525B4265F00D8C30D /* UIView+MJRefresh.m */,
 			);
 			path = "UIView+MJRefresh";
+			sourceTree = "<group>";
+		};
+		C561908926008EEE00D4546E /* UITextView+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C561909326008EF500D4546E /* UITextView+Extend */,
+				C594338025E7AA86003BCA91 /* UITextView+IndicateWordLimit */,
+			);
+			path = "UITextView+Category";
+			sourceTree = "<group>";
+		};
+		C561909326008EF500D4546E /* UITextView+Extend */ = {
+			isa = PBXGroup;
+			children = (
+				C561909426008EF500D4546E /* UITextView+Extend.h */,
+				C561909526008EF500D4546E /* UITextView+Extend.m */,
+			);
+			path = "UITextView+Extend";
 			sourceTree = "<group>";
 		};
 		C562DD2E25C7C43E004D1AEA /* UIView+ViewController */ = {
@@ -5472,6 +5493,7 @@
 				C5C6517F259DF8AA00FD2F99 /* ECPrivacyCheckContacts.m in Sources */,
 				C5D0AA08258765F8002CA224 /* ZBCacheManager.m in Sources */,
 				C5C659F3259DFBC900FD2F99 /* UIViewController+TZLocationManager.m in Sources */,
+				C561909626008EF600D4546E /* UITextView+Extend.m in Sources */,
 				C5FE9AC924B5F19E007B9878 /* ViewController@1.m in Sources */,
 				C5CDD18B258F221D0045AA50 /* JobsAppDoorVC_Style1.m in Sources */,
 				C55166692575202D00FF5217 /* UITextField+Extend.m in Sources */,

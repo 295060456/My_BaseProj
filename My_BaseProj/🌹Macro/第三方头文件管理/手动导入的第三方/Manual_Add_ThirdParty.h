@@ -64,6 +64,10 @@
 #import "UITextField+Extend.h"
 #import "ZYTextField.h"
 #import "ZYTextField+HistoryDataList.h"
+#pragma mark —— UITextView
+/// UITextView+Category
+#import "UITextView+IndicateWordLimit.h"
+#import "UITextView+Extend.h"
 #pragma mark —— UIImageView
 // BaseImageView
 #import "BaseImageView.h"

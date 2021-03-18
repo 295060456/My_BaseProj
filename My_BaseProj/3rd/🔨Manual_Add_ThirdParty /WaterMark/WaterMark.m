@@ -46,13 +46,13 @@
 
 -(void)makeLabel{
     
-    int intNumRow =  MAINSCREEN_WIDTH / (self.lableWidth + self.lableOffset_level);
+    int intNumRow =  SCREEN_WIDTH / (self.lableWidth + self.lableOffset_level);
 
-    float floatNumRow = MAINSCREEN_WIDTH / (self.lableWidth + self.lableOffset_level);
+    float floatNumRow = SCREEN_WIDTH / (self.lableWidth + self.lableOffset_level);
     
-    int intNumList = MAINSCREEN_HEIGHT / (self.lableHeight + self.lableOffset_vertical);
+    int intNumList = SCREEN_HEIGHT / (self.lableHeight + self.lableOffset_vertical);
     
-    float floatNumList = MAINSCREEN_HEIGHT / (self.lableHeight + self.lableOffset_vertical);
+    float floatNumList = SCREEN_HEIGHT / (self.lableHeight + self.lableOffset_vertical);
     
     //定义一行有多少个
     intNumRow = (floatNumRow - intNumRow >= 0.5)?++intNumRow:intNumRow;

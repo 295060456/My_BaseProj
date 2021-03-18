@@ -1,3 +1,5 @@
+#  Weex_Config
+
 初始化配置 Weex
 请确保你已经安装了 Node.js，然后全局安装 weex-cli。
 

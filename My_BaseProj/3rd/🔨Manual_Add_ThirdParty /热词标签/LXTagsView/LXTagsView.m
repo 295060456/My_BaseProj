@@ -125,7 +125,7 @@
     
     if (self.allWidth == 0) {
         
-        self.allWidth = MAINSCREEN_WIDTH;
+        self.allWidth = SCREEN_WIDTH;
     }
     
     if (!_tagBgColor) {

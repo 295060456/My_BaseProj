@@ -1,3 +1,5 @@
+#  Cocoapods_Config
+
 升级Ruby环境，首先需要安装rvm
 curl -L get.rvm.io | bash -s stable
 source ~/.bashrc
@@ -76,7 +78,3 @@ brew install ruby
 echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 执行后，查看版本后，会判断已更新到最新版本。
-
-
-
-

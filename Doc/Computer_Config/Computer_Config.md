@@ -1,3 +1,5 @@
+#  Computer_Config
+
 显示Mac OS X上的隐藏文件和文件夹
 defaults write com.apple.Finder AppleShowAllFiles YES
 Xcode Command Line Tools
@@ -35,11 +37,6 @@ Wechat
 TeamViewer
 XCFormat
 PDF Reader
-
-
-
-
-
 
 
 

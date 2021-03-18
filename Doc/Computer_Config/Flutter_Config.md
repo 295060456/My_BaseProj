@@ -1,3 +1,5 @@
+#  Flutter_Config
+
 *配置Flutter
 git clone -b master https://github.com/flutter/flutter.git
 ./flutter/bin/flutter --version

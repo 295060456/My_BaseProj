@@ -413,6 +413,10 @@
 		C50ECADE25258878000AE52F /* GifLoopPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifLoopPlayView.m; sourceTree = "<group>"; };
 		C515765225A350E50074D945 /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
 		C515765325A350E50074D945 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
+		C51F87C22608618A00953C10 /* 安全区域.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "安全区域.png"; sourceTree = "<group>"; };
+		C51F87C42608618A00953C10 /* MacroDef_AppDeviceScreenSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_AppDeviceScreenSize.h; sourceTree = "<group>"; };
+		C51F87C52608618A00953C10 /* iPhone尺寸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone尺寸.png"; sourceTree = "<group>"; };
+		C51F87C62608618A00953C10 /* iPad尺寸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad尺寸.png"; sourceTree = "<group>"; };
 		C52261B225873F85004447FB /* PopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpVC.m; sourceTree = "<group>"; };
 		C52261B325873F85004447FB /* PopUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpVC.h; sourceTree = "<group>"; };
 		C526508125EF60F500C8AB2B /* My_BaseProjModelHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = My_BaseProjModelHeader.h; sourceTree = "<group>"; };
@@ -631,6 +635,9 @@
 		C56207F22553FF1A00FE435F /* 高度自定义的按钮.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "高度自定义的按钮.md"; sourceTree = "<group>"; };
 		C562DD3525C7C445004D1AEA /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		C562DD3625C7C445004D1AEA /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		C56320DD26084B4300822149 /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewControllerProtocol.h; sourceTree = "<group>"; };
+		C56320DE26084B4300822149 /* BaseCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCellProtocol.h; sourceTree = "<group>"; };
+		C56320DF26084B4300822149 /* BaseViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewProtocol.h; sourceTree = "<group>"; };
 		C563AE3724F24D9400A3B0AC /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C563AE3824F24D9400A3B0AC /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C565CB4525A4382D00848134 /* TwoVerticalArrangementLabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoVerticalArrangementLabsView.m; sourceTree = "<group>"; };
@@ -1306,6 +1313,104 @@
 			path = "UIView+Gesture";
 			sourceTree = "<group>";
 		};
+		C51F6D462608572F00953C10 /* BaseCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C530AC07254D983800EDEDC8 /* LMHWaterFallLayout */,
+				C530AC0A254D983800EDEDC8 /* 给UICollectionView每个section加背景 */,
+				C530AC0D254D983800EDEDC8 /* UICollectionView 实现类似于UITableView的悬停效果 */,
+			);
+			path = BaseCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		C51F6F2B2608580900953C10 /* UIColor+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C56D8A5225C82353001960CD /* UIColor+Gradient */,
+				C56D8A5525C82353001960CD /* UIColor+Hex */,
+			);
+			path = "UIColor+Category";
+			sourceTree = "<group>";
+		};
+		C51F6F35260858D100953C10 /* UIImage+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C552A6CF2589D3D800A89501 /* UIImage+Extras */,
+				C552A6C92589D38500A89501 /* UIImage+Overlay */,
+				C552A6C22589D37E00A89501 /* UIImage+ScreenShot */,
+				C552A6CE2589D3D000A89501 /* UIImage+SYS */,
+				C552A6CD2589D3C000A89501 /* UIImage+Tailor */,
+				C552A6D02589D3E100A89501 /* UIImage+YBGIF */,
+			);
+			path = "UIImage+Category";
+			sourceTree = "<group>";
+		};
+		C51F719D26085A6B00953C10 /* TableView+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
+				C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */,
+			);
+			path = "TableView+Category";
+			sourceTree = "<group>";
+		};
+		C51F71A426085A7600953C10 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE9B1324B5F203007B9878 /* BaseTableView.h */,
+				C5FE9B1524B5F203007B9878 /* BaseTableView.m */,
+				C552A6D12589D41200A89501 /* 专治UITableView响应链断裂.md */,
+			);
+			path = BaseTableView;
+			sourceTree = "<group>";
+		};
+		C51F764D26085BF800953C10 /* BaseTableViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				C58509BF25483CC1001E6676 /* TableViewHeaderView */,
+				C58509C225483CC1001E6676 /* TableViewFooterView */,
+			);
+			path = BaseTableViewHeaderFooterView;
+			sourceTree = "<group>";
+		};
+		C51F7BF926085D6900953C10 /* BaseTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C551665E2575202D00FF5217 /* CJTextField */,
+				C551665B2575202D00FF5217 /* HQTextField */,
+				C5089643257DD10000B2A1F7 /* JobsMagicTextField */,
+				C55166552575202C00FF5217 /* ZYTextField */,
+			);
+			path = BaseTextField;
+			sourceTree = "<group>";
+		};
+		C51F7C6726085D9100953C10 /* UITextField+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C55166612575202D00FF5217 /* UITextField+Extend */,
+			);
+			path = "UITextField+Category";
+			sourceTree = "<group>";
+		};
+		C51F822526085F3800953C10 /* UILabel+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C542D56225EB78FC00D776D8 /* UILabel+Extra */,
+			);
+			path = "UILabel+Category";
+			sourceTree = "<group>";
+		};
+		C51F87C32608618A00953C10 /* 苹果产品尺寸 */ = {
+			isa = PBXGroup;
+			children = (
+				C51F87C22608618A00953C10 /* 安全区域.png */,
+				C51F87C42608618A00953C10 /* MacroDef_AppDeviceScreenSize.h */,
+				C51F87C52608618A00953C10 /* iPhone尺寸.png */,
+				C51F87C62608618A00953C10 /* iPad尺寸.png */,
+			);
+			path = "苹果产品尺寸";
+			sourceTree = "<group>";
+		};
 		C526507925EF608500C8AB2B /* IsLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1591,9 +1696,7 @@
 		C530AC06254D983800EDEDC8 /* UICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				C530AC07254D983800EDEDC8 /* LMHWaterFallLayout */,
-				C530AC0A254D983800EDEDC8 /* 给UICollectionView每个section加背景 */,
-				C530AC0D254D983800EDEDC8 /* UICollectionView 实现类似于UITableView的悬停效果 */,
+				C51F6D462608572F00953C10 /* BaseCollectionViewFlowLayout */,
 			);
 			path = UICollectionViewFlowLayout;
 			sourceTree = "<group>";
@@ -2680,6 +2783,7 @@
 		C55E29D025FB27AD00716A9B /* MacroDef_Size */ = {
 			isa = PBXGroup;
 			children = (
+				C51F87C32608618A00953C10 /* 苹果产品尺寸 */,
 				C5470F1125309B5C00651ACE /* MacroDef_Size.h */,
 			);
 			path = MacroDef_Size;
@@ -2728,6 +2832,16 @@
 				C562DD3625C7C445004D1AEA /* UIView+ViewController.m */,
 			);
 			path = "UIView+ViewController";
+			sourceTree = "<group>";
+		};
+		C56320DC26084B4300822149 /* BaseProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				C56320DD26084B4300822149 /* BaseViewControllerProtocol.h */,
+				C56320DE26084B4300822149 /* BaseCellProtocol.h */,
+				C56320DF26084B4300822149 /* BaseViewProtocol.h */,
+			);
+			path = BaseProtocol;
 			sourceTree = "<group>";
 		};
 		C565CB4425A4382D00848134 /* TwoVerticalArrangementLabsView */ = {
@@ -2833,7 +2947,7 @@
 		C56E338C252F4A63004ACCC7 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
-				C542D56225EB78FC00D776D8 /* UILabel+Extra */,
+				C51F822526085F3800953C10 /* UILabel+Category */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -3059,8 +3173,7 @@
 		C58509BE25483CC1001E6676 /* UITableViewHeaderFooterView */ = {
 			isa = PBXGroup;
 			children = (
-				C58509BF25483CC1001E6676 /* TableViewHeaderView */,
-				C58509C225483CC1001E6676 /* TableViewFooterView */,
+				C51F764D26085BF800953C10 /* BaseTableViewHeaderFooterView */,
 			);
 			path = UITableViewHeaderFooterView;
 			sourceTree = "<group>";
@@ -3375,16 +3488,6 @@
 				C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */,
 			);
 			path = TableViewAnimationKit;
-			sourceTree = "<group>";
-		};
-		C5A6D76025243B440096910D /* 专治UITableView响应链断裂 */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9B1324B5F203007B9878 /* BaseTableView.h */,
-				C5FE9B1524B5F203007B9878 /* BaseTableView.m */,
-				C552A6D12589D41200A89501 /* 专治UITableView响应链断裂.md */,
-			);
-			path = "专治UITableView响应链断裂";
 			sourceTree = "<group>";
 		};
 		C5A713C5258F76600013E3EF /* 输入框样式_6 */ = {
@@ -4318,6 +4421,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C56320DC26084B4300822149 /* BaseProtocol */,
 				C5FE9B2C24B5F203007B9878 /* CALayer */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
 				C5FE9B4824B5F203007B9878 /* NSArray */,
@@ -4377,12 +4481,7 @@
 			isa = PBXGroup;
 			children = (
 				C5A6D84125244A330096910D /* LoadingImage.h */,
-				C552A6CF2589D3D800A89501 /* UIImage+Extras */,
-				C552A6C92589D38500A89501 /* UIImage+Overlay */,
-				C552A6C22589D37E00A89501 /* UIImage+ScreenShot */,
-				C552A6CE2589D3D000A89501 /* UIImage+SYS */,
-				C552A6CD2589D3C000A89501 /* UIImage+Tailor */,
-				C552A6D02589D3E100A89501 /* UIImage+YBGIF */,
+				C51F6F35260858D100953C10 /* UIImage+Category */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -4390,9 +4489,8 @@
 		C5FE9B1224B5F203007B9878 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				C5A6D76025243B440096910D /* 专治UITableView响应链断裂 */,
-				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
-				C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */,
+				C51F71A426085A7600953C10 /* BaseTableView */,
+				C51F719D26085A6B00953C10 /* TableView+Category */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -4425,8 +4523,7 @@
 		C5FE9B2124B5F203007B9878 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				C56D8A5225C82353001960CD /* UIColor+Gradient */,
-				C56D8A5525C82353001960CD /* UIColor+Hex */,
+				C51F6F2B2608580900953C10 /* UIColor+Category */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -4478,11 +4575,8 @@
 		C5FE9B3724B5F203007B9878 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
-				C551665E2575202D00FF5217 /* CJTextField */,
-				C551665B2575202D00FF5217 /* HQTextField */,
-				C5089643257DD10000B2A1F7 /* JobsMagicTextField */,
-				C55166612575202D00FF5217 /* UITextField+Extend */,
-				C55166552575202C00FF5217 /* ZYTextField */,
+				C51F7C6726085D9100953C10 /* UITextField+Category */,
+				C51F7BF926085D6900953C10 /* BaseTextField */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";

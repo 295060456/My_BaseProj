@@ -189,7 +189,7 @@ def func
   pod 'TXFileOperation' # https://github.com/xtzPioneer/TXFileOperation
   pod 'YQImageCompressor' # https://github.com/976431yang/YQImageCompressor iOS端简易图片压缩工具
   pod 'OpenUDID'  # https://github.com/ylechelle/OpenUDID Open source initiative for a universal and persistent UDID solution for iOS
-  pod 'GoogleTagManager'
+#  pod 'GoogleTagManager'
   pod 'JDStatusBarNotification' # 网络提示--> 网络监听显示，主要是展示状态
   pod 'AYCheckVersion'  # https://github.com/AYJk/AYCheckVersion 提示更新 Check version from AppStore / 从AppStore检查更新
   pod 'JPImageresizerView' # https://github.com/Rogue24/JPImageresizerView 一个专门裁剪图片、GIF、视频的轮子，简单易用，功能丰富（高自由度的参数设定、支持旋转和镜像翻转、蒙版、压缩等），能满足绝大部分裁剪的需求。

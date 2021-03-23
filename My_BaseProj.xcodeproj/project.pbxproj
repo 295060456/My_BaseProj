@@ -865,6 +865,7 @@
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
+		C5B7B9C92609994B00BFF168 /* UICollectionViewFlowLayout.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UICollectionViewFlowLayout.md; sourceTree = "<group>"; };
 		C5C243712541550E00CB55F5 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C5C243722541550E00CB55F5 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
@@ -1696,6 +1697,7 @@
 		C530AC06254D983800EDEDC8 /* UICollectionViewFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				C5B7B9C92609994B00BFF168 /* UICollectionViewFlowLayout.md */,
 				C51F6D462608572F00953C10 /* BaseCollectionViewFlowLayout */,
 			);
 			path = UICollectionViewFlowLayout;
@@ -3531,6 +3533,13 @@
 			path = "图形验证码";
 			sourceTree = "<group>";
 		};
+		C5B7BCD22609AA0700BFF168 /* UIButton+Timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UIButton+Timer";
+			sourceTree = "<group>";
+		};
 		C5C6512E259DF8AA00FD2F99 /* ECPrivacyCheckTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -4498,6 +4507,7 @@
 		C5FE9B1624B5F203007B9878 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				C5B7BCD22609AA0700BFF168 /* UIButton+Timer */,
 				C5FE9CA924B5F29B007B9878 /* 💰VerifyCodeButton */,
 				C5FE9CA324B5F29B007B9878 /* 高度自定义的按钮 */,
 				C5D4FBB224CEC5530024A292 /* 高仿抖音点赞动画 */,

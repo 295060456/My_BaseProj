@@ -296,6 +296,8 @@
 		C5D6DB2725860E8B00029AFF /* NSTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D6DB2625860E8B00029AFF /* NSTimerManager.m */; };
 		C5D6F2C725861D0300029AFF /* NSObject+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D6F2C325861D0300029AFF /* NSObject+Time.m */; };
 		C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D6F2C525861D0300029AFF /* TimeModel.m */; };
+		C5D8D21D260CC41000BDAF76 /* toastLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5D8D21C260CC41000BDAF76 /* toastLoading.gif */; };
+		C5D8D77A260CC85700BDAF76 /* NSObject+DefConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8D778260CC85700BDAF76 /* NSObject+DefConfig.m */; };
 		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
 		C5DF440325A8999F00E91985 /* MJRefreshConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DF43F625A8999E00E91985 /* MJRefreshConfigModel.m */; };
 		C5DF440425A8999F00E91985 /* LOTAnimationMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DF43F825A8999F00E91985 /* LOTAnimationMJRefreshHeader.m */; };
@@ -1041,6 +1043,9 @@
 		C5D6F2C325861D0300029AFF /* NSObject+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Time.m"; sourceTree = "<group>"; };
 		C5D6F2C525861D0300029AFF /* TimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeModel.m; sourceTree = "<group>"; };
 		C5D6F2C625861D0300029AFF /* TimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeModel.h; sourceTree = "<group>"; };
+		C5D8D21C260CC41000BDAF76 /* toastLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = toastLoading.gif; sourceTree = "<group>"; };
+		C5D8D778260CC85700BDAF76 /* NSObject+DefConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DefConfig.m"; sourceTree = "<group>"; };
+		C5D8D779260CC85700BDAF76 /* NSObject+DefConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DefConfig.h"; sourceTree = "<group>"; };
 		C5DD001724D46B4700307DFA /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		C5DD001824D46B4800307DFA /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
 		C5DD6F6F25863865006DC533 /* InteractivePushGesture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InteractivePushGesture.md; sourceTree = "<group>"; };
@@ -1760,6 +1765,7 @@
 		C534E282257F83CA00DBC3CE /* NSObject+Others */ = {
 			isa = PBXGroup;
 			children = (
+				C5D8D777260CC85700BDAF76 /* NSObject+DefConfig */,
 				C5D6C5CA2585EDA200029AFF /* NSObject+Shake */,
 				C5D6C5C92585ED9F00029AFF /* NSObject+Sound */,
 				C5D6C5C82585ED9700029AFF /* NSObject+RichText */,
@@ -3429,6 +3435,7 @@
 		C5A4409825ABFB16000F0CD2 /* WHToast */ = {
 			isa = PBXGroup;
 			children = (
+				C5D8D21C260CC41000BDAF76 /* toastLoading.gif */,
 				C5A4409925ABFB16000F0CD2 /* WHToast+DDToast.m */,
 				C5A4409A25ABFB16000F0CD2 /* WHToast+DDToast.h */,
 			);
@@ -4156,6 +4163,15 @@
 				C544BD09258372CA00C6CF2A /* UIViewController+TFPopup */,
 			);
 			path = "UIViewController+Others";
+			sourceTree = "<group>";
+		};
+		C5D8D777260CC85700BDAF76 /* NSObject+DefConfig */ = {
+			isa = PBXGroup;
+			children = (
+				C5D8D778260CC85700BDAF76 /* NSObject+DefConfig.m */,
+				C5D8D779260CC85700BDAF76 /* NSObject+DefConfig.h */,
+			);
+			path = "NSObject+DefConfig";
 			sourceTree = "<group>";
 		};
 		C5DD001624D46B3C00307DFA /* LYEmptyView */ = {
@@ -5187,6 +5203,7 @@
 				C5C6518C259DF8AA00FD2F99 /* 麦克风@3x.png in Resources */,
 				C5FE9D2324B5F29C007B9878 /* Masonry版动态流水标签、热词（从某种意义上可以完美替代UICollectionViewItem的特效功能） in Resources */,
 				C5C6518D259DF8AA00FD2F99 /* 提醒事项@2x.png in Resources */,
+				C5D8D21D260CC41000BDAF76 /* toastLoading.gif in Resources */,
 				C5C65190259DF8AA00FD2F99 /* 语音识别@2x.png in Resources */,
 				C5DF440725A8999F00E91985 /* JsonRes.bundle in Resources */,
 				C5C65186259DF8AA00FD2F99 /* 运动与健身@3x.png in Resources */,
@@ -5516,6 +5533,7 @@
 				C5C659F2259DFBC900FD2F99 /* UIViewController+TZImagePickerController.m in Sources */,
 				C52E894A250F752E0070356F /* RSAUtil.m in Sources */,
 				C5FE9D2624B5F29C007B9878 /* LXTagsView.m in Sources */,
+				C5D8D77A260CC85700BDAF76 /* NSObject+DefConfig.m in Sources */,
 				C56BBEF325879B820043C977 /* NSObject+Sound.m in Sources */,
 				C5C65179259DF8AA00FD2F99 /* ECPrivacyCheckFilesAndFolders.m in Sources */,
 				C55133B825C688A6007BCA82 /* NetworkingAPI.m in Sources */,

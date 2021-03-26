@@ -49,6 +49,7 @@
 #import "NSObject+Extras.h"
 #import "NSObject+Time.h"
 #import "NSObject+Measure.h"
+#import "NSObject+DefConfig.h"
 #import "NSObject+Sound.h"
 #import "NSObject+Shake.h"
 #import "NSObject+Random.h"

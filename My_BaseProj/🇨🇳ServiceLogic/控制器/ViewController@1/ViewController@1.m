@@ -18,7 +18,6 @@
 
 //http://devma.cn/blog/2016/04/01/ru-he-sheng-cheng-wen-zi-lou-kong-de-tu-pian/
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,28 +34,6 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
-//    尝试高仿蜜柚 登录注册忘记密码
-    [UIViewController comingFromVC:self
-                              toVC:JobsAppDoorVC_Style1.new
-                       comingStyle:ComingStyle_PUSH
-                 presentationStyle:UIModalPresentationFullScreen//[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
-                     requestParams:@(JobsAppDoorBgType_video)
-          hidesBottomBarWhenPushed:YES
-                          animated:YES
-                           success:^(id data) {
-
-    }];
-//    //我自己写的
-//    [UIViewController comingFromVC:self
-//                              toVC:JobsAppDoorVC_Style2.new
-//                       comingStyle:ComingStyle_PRESENT
-//                 presentationStyle:UIModalPresentationFullScreen//[UIDevice currentDevice].systemVersion.doubleValue >= 13.0 ? UIModalPresentationAutomatic : UIModalPresentationFullScreen
-//                     requestParams:@(JobsAppDoorBgType_video)
-//          hidesBottomBarWhenPushed:YES
-//                          animated:YES
-//                           success:^(id data) {
-//
-//    }];
 }
 
 

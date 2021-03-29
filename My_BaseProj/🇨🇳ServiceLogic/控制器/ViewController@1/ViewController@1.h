@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JobsAppDoorVC_Style1.h"
-#import "JobsAppDoorVC_Style2.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -258,6 +258,7 @@
 		C5C67C5E24FE4FA5000A26B8 /* GCD_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5C24FE4FA5000A26B8 /* GCD_TimerManager.m */; };
 		C5C67C6124FE4FAB000A26B8 /* CADisplayLink_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C5F24FE4FAB000A26B8 /* CADisplayLink_TimerManager.m */; };
 		C5C67C7224FF5868000A26B8 /* MovieCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C67C7124FF5868000A26B8 /* MovieCountDown.m */; };
+		C5C70C2326131AD600EA8207 /* DebugLogDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C70C2226131AD500EA8207 /* DebugLogDescription.m */; };
 		C5CF0A43258734B800FDCC16 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF0A41258734B800FDCC16 /* UIViewController+BackButtonHandler.m */; };
 		C5CF70D724E51A69000DB72D /* UIView+SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CF70D624E51A69000DB72D /* UIView+SuspendView.m */; };
 		C5D0AA04258765F8002CA224 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0A9F9258765F6002CA224 /* ZBRequestEngine.m */; };
@@ -298,8 +299,6 @@
 		C5FE9A4D24B5EF2C007B9878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9A4C24B5EF2C007B9878 /* main.m */; };
 		C5FE9A5724B5EF2C007B9878 /* My_BaseProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9A5624B5EF2C007B9878 /* My_BaseProjTests.m */; };
 		C5FE9A6224B5EF2C007B9878 /* My_BaseProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9A6124B5EF2C007B9878 /* My_BaseProjUITests.m */; };
-		C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AA524B5F0EF007B9878 /* LYLUnicode.m */; };
-		C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9AA624B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */; };
 		C5FE9AB524B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9AAA24B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 */; };
 		C5FE9AB624B5F0EF007B9878 /* NSlogToDocumentFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9AAB24B5F0EF007B9878 /* NSlogToDocumentFolder.m */; };
 		C5FE9AC824B5F19E007B9878 /* ViewController@2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9ABE24B5F19E007B9878 /* ViewController@2.m */; };
@@ -931,6 +930,8 @@
 		C5C67C6A24FF460E000A26B8 /* TimerManager_DefineStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerManager_DefineStructure.h; sourceTree = "<group>"; };
 		C5C67C7024FF5868000A26B8 /* MovieCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCountDown.h; sourceTree = "<group>"; };
 		C5C67C7124FF5868000A26B8 /* MovieCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCountDown.m; sourceTree = "<group>"; };
+		C5C70C2126131AD500EA8207 /* DebugLogDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugLogDescription.h; sourceTree = "<group>"; };
+		C5C70C2226131AD500EA8207 /* DebugLogDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugLogDescription.m; sourceTree = "<group>"; };
 		C5CDD797258F4F3A0045AA50 /* ZBNetworking.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ZBNetworking.md; sourceTree = "<group>"; };
 		C5CF0A3F258734B800FDCC16 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		C5CF0A40258734B800FDCC16 /* 截获导航控制器系统返回按钮的点击pop及右滑pop事件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "截获导航控制器系统返回按钮的点击pop及右滑pop事件.md"; sourceTree = "<group>"; };
@@ -1026,9 +1027,6 @@
 		C5FE9AA124B5F0EF007B9878 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.dylib"; sourceTree = "<group>"; };
 		C5FE9AA224B5F0EF007B9878 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libstdc++.dylib"; sourceTree = "<group>"; };
-		C5FE9AA524B5F0EF007B9878 /* LYLUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLUnicode.m; sourceTree = "<group>"; };
-		C5FE9AA624B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "解决打印日志对于Unicode编码不能正常显示中文的问题"; sourceTree = "<group>"; };
-		C5FE9AA724B5F0EF007B9878 /* LYLUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLUnicode.h; sourceTree = "<group>"; };
 		C5FE9AA924B5F0EF007B9878 /* NSlogToDocumentFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSlogToDocumentFolder.h; sourceTree = "<group>"; };
 		C5FE9AAA24B5F0EF007B9878 /* 调试时候添加日志时使用,上线需要去掉 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "调试时候添加日志时使用,上线需要去掉"; sourceTree = "<group>"; };
 		C5FE9AAB24B5F0EF007B9878 /* NSlogToDocumentFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSlogToDocumentFolder.m; sourceTree = "<group>"; };
@@ -1692,15 +1690,15 @@
 		C534E282257F83CA00DBC3CE /* NSObject+Others */ = {
 			isa = PBXGroup;
 			children = (
+				C5D6C5C32585ED6D00029AFF /* NSObject+AFNReachability */,
 				C5D8D777260CC85700BDAF76 /* NSObject+DefConfig */,
+				C5D6C5C42585ED7800029AFF /* NSObject+Extras */,
+				C5D6C5C52585ED8000029AFF /* NSObject+Measure */,
+				C5D6C5C62585ED8800029AFF /* NSObject+OpenURL */,
+				C5D6C5C72585ED8F00029AFF /* NSObject+Random */,
+				C5D6C5C82585ED9700029AFF /* NSObject+RichText */,
 				C5D6C5CA2585EDA200029AFF /* NSObject+Shake */,
 				C5D6C5C92585ED9F00029AFF /* NSObject+Sound */,
-				C5D6C5C82585ED9700029AFF /* NSObject+RichText */,
-				C5D6C5C72585ED8F00029AFF /* NSObject+Random */,
-				C5D6C5C62585ED8800029AFF /* NSObject+OpenURL */,
-				C5D6C5C52585ED8000029AFF /* NSObject+Measure */,
-				C5D6C5C42585ED7800029AFF /* NSObject+Extras */,
-				C5D6C5C32585ED6D00029AFF /* NSObject+AFNReachability */,
 			);
 			path = "NSObject+Others";
 			sourceTree = "<group>";
@@ -3629,6 +3627,15 @@
 			path = "电影倒计时特效";
 			sourceTree = "<group>";
 		};
+		C5C70C2026131AD500EA8207 /* DebugLogDescription */ = {
+			isa = PBXGroup;
+			children = (
+				C5C70C2126131AD500EA8207 /* DebugLogDescription.h */,
+				C5C70C2226131AD500EA8207 /* DebugLogDescription.m */,
+			);
+			path = DebugLogDescription;
+			sourceTree = "<group>";
+		};
 		C5CF0944258733D500FDCC16 /* UIViewController+BackButtonHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -3975,7 +3982,6 @@
 			isa = PBXGroup;
 			children = (
 				C5FE9A9A24B5F0EF007B9878 /* libstdc++ */,
-				C5FE9AA424B5F0EF007B9878 /* LYLUnicode */,
 			);
 			path = Sys;
 			sourceTree = "<group>";
@@ -4009,16 +4015,6 @@
 				C5FE9AA324B5F0EF007B9878 /* libstdc++.dylib */,
 			);
 			path = "iPhone-Simulator";
-			sourceTree = "<group>";
-		};
-		C5FE9AA424B5F0EF007B9878 /* LYLUnicode */ = {
-			isa = PBXGroup;
-			children = (
-				C5FE9AA624B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 */,
-				C5FE9AA724B5F0EF007B9878 /* LYLUnicode.h */,
-				C5FE9AA524B5F0EF007B9878 /* LYLUnicode.m */,
-			);
-			path = LYLUnicode;
 			sourceTree = "<group>";
 		};
 		C5FE9AA824B5F0EF007B9878 /* Log */ = {
@@ -4105,6 +4101,7 @@
 		C5FE9ABA24B5F17A007B9878 /* BaseCustomizeUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C5C70C2026131AD500EA8207 /* DebugLogDescription */,
 				C56320DC26084B4300822149 /* BaseProtocol */,
 				C5FE9B2C24B5F203007B9878 /* CALayer */,
 				C58F042F24EBB63000B6D09C /* MKProxy */,
@@ -4835,7 +4832,6 @@
 			files = (
 				C5C65184259DF8AA00FD2F99 /* 运动与健身@2x.png in Resources */,
 				C5C65187259DF8AA00FD2F99 /* 健康@2x.png in Resources */,
-				C5FE9AB424B5F0EF007B9878 /* 解决打印日志对于Unicode编码不能正常显示中文的问题 in Resources */,
 				C56E3E0B2547122700B9F555 /* 资源文件 in Resources */,
 				C5C6518E259DF8AA00FD2F99 /* 通讯录@2x.png in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
@@ -4967,6 +4963,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59A3D8F258DD1EF005F6260 /* UserDefaultModel.m in Sources */,
+				C5C70C2326131AD600EA8207 /* DebugLogDescription.m in Sources */,
 				C5C65181259DF8AA00FD2F99 /* ECPrivacyCheckReminders.m in Sources */,
 				C55133B225C688A6007BCA82 /* NetworkingAPI+WalletApi.m in Sources */,
 				C55695D4255BFC3A005C1361 /* NSString+Extras.m in Sources */,
@@ -5165,7 +5162,6 @@
 				C55133B025C688A6007BCA82 /* NetworkingAPI+StatisticsApi.m in Sources */,
 				C50ECAE025258878000AE52F /* GifLoopPlayView.m in Sources */,
 				C572769925408AF1002373D7 /* BaseNavigationBar.m in Sources */,
-				C5FE9AB324B5F0EF007B9878 /* LYLUnicode.m in Sources */,
 				C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */,
 				C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */,
 				C5D24BD625AD6C9E008CD6E1 /* TabbarVC.m in Sources */,

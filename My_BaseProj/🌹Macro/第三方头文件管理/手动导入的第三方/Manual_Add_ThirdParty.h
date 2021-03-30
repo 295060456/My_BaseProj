@@ -10,6 +10,8 @@
 #define Manual_Add_ThirdParty_h
 
 /// BaseCustomizeUIKit
+#pragma mark —— Log
+#import "DebugLogDescription.h"
 #pragma mark —— UIButton
 #import "UIButton+ImageTitleSpacing.h"
 #import "UIButton+CountDownBtn.h"//验证码倒计时按钮

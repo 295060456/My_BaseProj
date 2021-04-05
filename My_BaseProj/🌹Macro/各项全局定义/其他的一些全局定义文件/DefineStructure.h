@@ -10,5 +10,13 @@
 #define DefineStructure_h
 
 #import <UIKit/UIKit.h>
+typedef enum : NSInteger {
+    DevEnviron_Cambodia_Main = 0,/// 柬埔寨（主要）开发环境
+    DevEnviron_Cambodia_Minor,/// 柬埔寨（次要）开发环境
+    DevEnviron_Cambodia_Rally,/// 柬埔寨Rally（次要）开发环境
+    DevEnviron_China_Mainland,/// 中国大陆开发环境
+    TestEnviron,/// 测试环境
+    ProductEnviron/// 生产环境
+} NetworkingEnvir;
 
 #endif /* DefineStructure_h */

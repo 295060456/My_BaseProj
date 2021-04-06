@@ -31,6 +31,7 @@
 		C534CD4F258759BB001369FD /* BWItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C534CD4A258759BB001369FD /* BWItemModel.m */; };
 		C534CD50258759BB001369FD /* BWItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C534CD4B258759BB001369FD /* BWItemCollectionViewCell.m */; };
 		C53C9E5625A1D0000007F58F /* NSObject+DataSave.m in Sources */ = {isa = PBXBuildFile; fileRef = C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */; };
+		C53CAEA8261C4DDB00AC1891 /* NSObject+AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CAEA5261C4DDB00AC1891 /* NSObject+AppTools.m */; };
 		C53D36042598C6BC00B48431 /* XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D36012598C6BC00B48431 /* XLBubbleTransition.m */; };
 		C53D36052598C6BC00B48431 /* UIViewController+XLBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C53D36022598C6BC00B48431 /* UIViewController+XLBubbleTransition.m */; };
 		C5460F51258C8F090008928C /* UIView+AOP.m in Sources */ = {isa = PBXBuildFile; fileRef = C5460F4F258C8F090008928C /* UIView+AOP.m */; };
@@ -461,6 +462,9 @@
 		C534CD4D258759BB001369FD /* 分享控件的用法.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "分享控件的用法.md"; sourceTree = "<group>"; };
 		C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DataSave.m"; sourceTree = "<group>"; };
 		C53C9E5525A1D0000007F58F /* NSObject+DataSave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DataSave.h"; sourceTree = "<group>"; };
+		C53CAEA5261C4DDB00AC1891 /* NSObject+AppTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AppTools.m"; sourceTree = "<group>"; };
+		C53CAEA6261C4DDB00AC1891 /* NSObject+AppTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AppTools.h"; sourceTree = "<group>"; };
+		C53CAEA7261C4DDB00AC1891 /* 此类主要封装一些本App常用的、可以替换资源的函数调用或者是鉴权机制.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "此类主要封装一些本App常用的、可以替换资源的函数调用或者是鉴权机制.md"; sourceTree = "<group>"; };
 		C53D35FF2598C6BC00B48431 /* XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBubbleTransition.h; sourceTree = "<group>"; };
 		C53D36002598C6BC00B48431 /* UIViewController+XLBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XLBubbleTransition.h"; sourceTree = "<group>"; };
 		C53D36012598C6BC00B48431 /* XLBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBubbleTransition.m; sourceTree = "<group>"; };
@@ -1719,6 +1723,16 @@
 				C53C9E5425A1D0000007F58F /* NSObject+DataSave.m */,
 			);
 			path = "NSObject+DataSave";
+			sourceTree = "<group>";
+		};
+		C53CAEA4261C4DDB00AC1891 /* NSObject+AppTools */ = {
+			isa = PBXGroup;
+			children = (
+				C53CAEA7261C4DDB00AC1891 /* 此类主要封装一些本App常用的、可以替换资源的函数调用或者是鉴权机制.md */,
+				C53CAEA6261C4DDB00AC1891 /* NSObject+AppTools.h */,
+				C53CAEA5261C4DDB00AC1891 /* NSObject+AppTools.m */,
+			);
+			path = "NSObject+AppTools";
 			sourceTree = "<group>";
 		};
 		C53D35FE2598C6BC00B48431 /* UIViewController+XLBubbleTransition */ = {
@@ -3707,6 +3721,9 @@
 		C5D4FBD724CFE0740024A292 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5767B3F25470A1000C382C8 /* 广告或者公示弹出框 */,
+				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
+				C53CAEA4261C4DDB00AC1891 /* NSObject+AppTools */,
 				C55133A025C688A6007BCA82 /* 🇨🇳数据模型层(此文件夹存放全局的所有Model) */,
 				C551336125C688A6007BCA82 /* 网络请求 */,
 			);
@@ -4150,8 +4167,6 @@
 		C5FE9ABD24B5F194007B9878 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
-				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
-				C5767B3F25470A1000C382C8 /* 广告或者公示弹出框 */,
 				C5D4FBD724CFE0740024A292 /* Common */,
 				C526517B25EF614C00C8AB2B /* 控制器 */,
 			);
@@ -4971,6 +4986,7 @@
 				C534CD50258759BB001369FD /* BWItemCollectionViewCell.m in Sources */,
 				C5460F5D258C8F1D0008928C /* ZYTextField.m in Sources */,
 				C5FE9D0D24B5F29C007B9878 /* XLChannelControl.m in Sources */,
+				C53CAEA8261C4DDB00AC1891 /* NSObject+AppTools.m in Sources */,
 				C5A440B125ABFB16000F0CD2 /* JXCategoryTitleBackgroundCell.m in Sources */,
 				C55D3CAB2538856100CFCF73 /* XHLaunchAdView.m in Sources */,
 				C59F3A27259B3B3C00E22F9B /* JobsBitsMonitorCore.m in Sources */,

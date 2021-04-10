@@ -193,6 +193,7 @@
 		C5A440B425ABFB16000F0CD2 /* JXCategoryTimelineCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A440A925ABFB16000F0CD2 /* JXCategoryTimelineCellModel.m */; };
 		C5A440B525ABFB16000F0CD2 /* JXCategoryTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A440AA25ABFB16000F0CD2 /* JXCategoryTimelineCell.m */; };
 		C5A46BE224EF8FFD00158D1E /* NSObject+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */; };
+		C5A4F53226218C6100DF959C /* UITableView+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A4F53126218C6100DF959C /* UITableView+Expand.m */; };
 		C5A6D75B25243B3C0096910D /* UITableView+XSAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */; };
 		C5A6D75C25243B3C0096910D /* TableViewAnimationKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A6D75A25243B3C0096910D /* TableViewAnimationKit.m */; };
 		C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */; };
@@ -820,6 +821,8 @@
 		C5A440AD25ABFB16000F0CD2 /* JXCategoryTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCategoryTimelineCell.h; sourceTree = "<group>"; };
 		C5A46BE024EF8FFD00158D1E /* NSObject+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Shake.h"; sourceTree = "<group>"; };
 		C5A46BE124EF8FFD00158D1E /* NSObject+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Shake.m"; sourceTree = "<group>"; };
+		C5A4F53026218C6100DF959C /* UITableView+Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Expand.h"; sourceTree = "<group>"; };
+		C5A4F53126218C6100DF959C /* UITableView+Expand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Expand.m"; sourceTree = "<group>"; };
 		C5A6D75525243B3B0096910D /* TableViewAnimationKitConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewAnimationKitConfig.h; sourceTree = "<group>"; };
 		C5A6D75625243B3B0096910D /* UITableView+XSAnimationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XSAnimationKit.h"; sourceTree = "<group>"; };
 		C5A6D75725243B3C0096910D /* UITableView+XSAnimationKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XSAnimationKit.m"; sourceTree = "<group>"; };
@@ -1280,13 +1283,14 @@
 			path = "UIImage+Category";
 			sourceTree = "<group>";
 		};
-		C51F719D26085A6B00953C10 /* TableView+Category */ = {
+		C51F719D26085A6B00953C10 /* UITableView+Category */ = {
 			isa = PBXGroup;
 			children = (
 				C5A6D75425243B2F0096910D /* TableViewAnimationKit */,
 				C54F8545252B608D00EE3DD0 /* UITableView 折叠功能 */,
+				C5A4F52F26218C6100DF959C /* UITableView+Expand */,
 			);
-			path = "TableView+Category";
+			path = "UITableView+Category";
 			sourceTree = "<group>";
 		};
 		C51F71A426085A7600953C10 /* BaseTableView */ = {
@@ -3439,6 +3443,15 @@
 			path = JXCategoryTimelineView;
 			sourceTree = "<group>";
 		};
+		C5A4F52F26218C6100DF959C /* UITableView+Expand */ = {
+			isa = PBXGroup;
+			children = (
+				C5A4F53026218C6100DF959C /* UITableView+Expand.h */,
+				C5A4F53126218C6100DF959C /* UITableView+Expand.m */,
+			);
+			path = "UITableView+Expand";
+			sourceTree = "<group>";
+		};
 		C5A6D75425243B2F0096910D /* TableViewAnimationKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -4186,7 +4199,7 @@
 			isa = PBXGroup;
 			children = (
 				C51F71A426085A7600953C10 /* BaseTableView */,
-				C51F719D26085A6B00953C10 /* TableView+Category */,
+				C51F719D26085A6B00953C10 /* UITableView+Category */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -5272,6 +5285,7 @@
 				C5FE9CF024B5F29C007B9878 /* UIDevice+XMUtils.m in Sources */,
 				C5D6F2C825861D0300029AFF /* TimeModel.m in Sources */,
 				C5C659F4259DFBC900FD2F99 /* UIViewController+TZImagePickerControllerDelegate.m in Sources */,
+				C5A4F53226218C6100DF959C /* UITableView+Expand.m in Sources */,
 				C59A3D90258DD1EF005F6260 /* UserDefaultManager.m in Sources */,
 				C54AB07F255E5EED000A314D /* UITableViewCell+Margin.m in Sources */,
 				C55131ED25C686A0007BCA82 /* ZWPullMenuModel.m in Sources */,

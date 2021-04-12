@@ -2120,6 +2120,24 @@
 			path = BaseViewController;
 			sourceTree = "<group>";
 		};
+		C55022082624321F00487A54 /* NSObject+SYSAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				C5A96E9125BD3451000077BC /* NSObject+SYSAlertController.h */,
+				C5A96E8F25BD3451000077BC /* NSObject+SYSAlertController.m */,
+			);
+			path = "NSObject+SYSAlertController";
+			sourceTree = "<group>";
+		};
+		C550221A2624324300487A54 /* NSObject+SPAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				C5A96E9025BD3451000077BC /* NSObject+SPAlertController.h */,
+				C5A96E8E25BD3450000077BC /* NSObject+SPAlertController.m */,
+			);
+			path = "NSObject+SPAlertController";
+			sourceTree = "<group>";
+		};
 		C55131E125C686A0007BCA82 /* ZWPullMenuView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3477,10 +3495,8 @@
 		C5AA4902250C8C22009F583F /* NSObject+Alert */ = {
 			isa = PBXGroup;
 			children = (
-				C5A96E9025BD3451000077BC /* NSObject+SPAlertController.h */,
-				C5A96E8E25BD3450000077BC /* NSObject+SPAlertController.m */,
-				C5A96E9125BD3451000077BC /* NSObject+SYSAlertController.h */,
-				C5A96E8F25BD3451000077BC /* NSObject+SYSAlertController.m */,
+				C550221A2624324300487A54 /* NSObject+SPAlertController */,
+				C55022082624321F00487A54 /* NSObject+SYSAlertController */,
 			);
 			path = "NSObject+Alert";
 			sourceTree = "<group>";

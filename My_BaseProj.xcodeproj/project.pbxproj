@@ -108,6 +108,8 @@
 		C567328425D77A1B008ABAF9 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567328225D77A1B008ABAF9 /* BaseView.m */; };
 		C5676443259F12F0006905A9 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567643F259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.m */; };
 		C5676444259F12F0006905A9 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5676442259F12EF006905A9 /* BaseCollectionViewCell.m */; };
+		C569C80F2624807B009A1679 /* 上传中....md in Resources */ = {isa = PBXBuildFile; fileRef = C569C80D2624807B009A1679 /* 上传中....md */; };
+		C569C8102624807B009A1679 /* DDUploadingProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C569C80E2624807B009A1679 /* DDUploadingProgressView.m */; };
 		C56BA6D12578925500D054D0 /* UBLNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */; };
 		C56BA6D22578925500D054D0 /* UBLNetWorkResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CA2578925500D054D0 /* UBLNetWorkResult.m */; };
 		C56BA6D32578925500D054D0 /* UBLUrlConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C56BA6CB2578925500D054D0 /* UBLUrlConst.m */; };
@@ -634,6 +636,9 @@
 		C5676440259F12EF006905A9 /* UICollectionViewCell+ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+ShakeAnimation.h"; sourceTree = "<group>"; };
 		C5676441259F12EF006905A9 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		C5676442259F12EF006905A9 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		C569C80C2624807B009A1679 /* DDUploadingProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUploadingProgressView.h; sourceTree = "<group>"; };
+		C569C80D2624807B009A1679 /* 上传中....md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "上传中....md"; sourceTree = "<group>"; };
+		C569C80E2624807B009A1679 /* DDUploadingProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUploadingProgressView.m; sourceTree = "<group>"; };
 		C56BA6C42578913D00D054D0 /* MacroDef_App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_App.h; sourceTree = "<group>"; };
 		C56BA6C92578925500D054D0 /* UBLNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLNetWorkManager.m; sourceTree = "<group>"; };
 		C56BA6CA2578925500D054D0 /* UBLNetWorkResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLNetWorkResult.m; sourceTree = "<group>"; };
@@ -2840,6 +2845,16 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		C569C80B2624807B009A1679 /* DDUploadingProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				C569C80C2624807B009A1679 /* DDUploadingProgressView.h */,
+				C569C80D2624807B009A1679 /* 上传中....md */,
+				C569C80E2624807B009A1679 /* DDUploadingProgressView.m */,
+			);
+			path = DDUploadingProgressView;
+			sourceTree = "<group>";
+		};
 		C56BA6C82578925500D054D0 /* UBLNetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -4088,6 +4103,7 @@
 		C5FE9AB924B5F172007B9878 /* 🔨Manual_Add_ThirdParty  */ = {
 			isa = PBXGroup;
 			children = (
+				C569C80B2624807B009A1679 /* DDUploadingProgressView */,
 				C5542C8725F324C6002D1CA6 /* CheckMemFreeVC */,
 				C54C634925EFC2BF007DD043 /* 清除缓存 */,
 				C5A4394F25AAF7D1000F0CD2 /* 手势滑动返回 */,
@@ -4877,6 +4893,7 @@
 				C5C65184259DF8AA00FD2F99 /* 运动与健身@2x.png in Resources */,
 				C5C65187259DF8AA00FD2F99 /* 健康@2x.png in Resources */,
 				C56E3E0B2547122700B9F555 /* 资源文件 in Resources */,
+				C569C80F2624807B009A1679 /* 上传中....md in Resources */,
 				C5C6518E259DF8AA00FD2F99 /* 通讯录@2x.png in Resources */,
 				C5FE9A4A24B5EF2C007B9878 /* LaunchScreen.storyboard in Resources */,
 				C5C65196259DF8AA00FD2F99 /* 定位服务@2x.png in Resources */,
@@ -5226,6 +5243,7 @@
 				C5914AE825384A2F007777A6 /* UIViewController+BWShareView.m in Sources */,
 				C5FE9CB424B5F29C007B9878 /* FMHttpRequest.m in Sources */,
 				C5D1C021258B1FF800784D2F /* UIView+EmptyData.m in Sources */,
+				C569C8102624807B009A1679 /* DDUploadingProgressView.m in Sources */,
 				C5DF440425A8999F00E91985 /* LOTAnimationMJRefreshHeader.m in Sources */,
 				C5914AE425384A2F007777A6 /* UIViewController+JPImageresizerView.m in Sources */,
 				C5013A8F2536CB6600F4E87D /* IrregularBtn.m in Sources */,

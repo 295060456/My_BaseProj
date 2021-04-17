@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_END
 /**
  
  普通用法
-
+ 
  -(void)makeChannelURL:(SPAlertAction *)action{
      NSLog(@"1234");
  }
@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_END
  -(void)makeChannelURL{
      NSLog(@"1234");
  }
- 
+
  -(UIButton *)channelBtn{
      if (!_channelBtn) {
          _channelBtn = UIButton.new;

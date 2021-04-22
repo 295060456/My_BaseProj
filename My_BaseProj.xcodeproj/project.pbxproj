@@ -307,6 +307,7 @@
 		C5DD001924D46B4800307DFA /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DD001824D46B4800307DFA /* EmptyView.m */; };
 		C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C65525088EAD001E69DA /* WGradientProgress.m */; };
 		C5E5C6832509148C001E69DA /* WGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5C6812509148C001E69DA /* WGradientProgressView.m */; };
+		C5EA13EE2631200F00155822 /* UILabel+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA13EC2631200F00155822 /* UILabel+Gesture.m */; };
 		C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F732D225138E4900216DEF /* LCRegExpTool.m */; };
 		C5FE9A4224B5EF2B007B9878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FE9A4024B5EF2B007B9878 /* Main.storyboard */; };
 		C5FE9A4524B5EF2B007B9878 /* My_BaseProj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5FE9A4324B5EF2B007B9878 /* My_BaseProj.xcdatamodeld */; };
@@ -1023,6 +1024,8 @@
 		C5E5C65525088EAD001E69DA /* WGradientProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgress.m; sourceTree = "<group>"; };
 		C5E5C6812509148C001E69DA /* WGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGradientProgressView.m; sourceTree = "<group>"; };
 		C5E5C6822509148C001E69DA /* WGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGradientProgressView.h; sourceTree = "<group>"; };
+		C5EA13EC2631200F00155822 /* UILabel+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Gesture.m"; sourceTree = "<group>"; };
+		C5EA13ED2631200F00155822 /* UILabel+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Gesture.h"; sourceTree = "<group>"; };
 		C5F732D125138E4900216DEF /* LCRegExpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCRegExpTool.h; sourceTree = "<group>"; };
 		C5F732D225138E4900216DEF /* LCRegExpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCRegExpTool.m; sourceTree = "<group>"; };
 		C5FE9A3424B5EF2B007B9878 /* My_BaseProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My_BaseProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2313,34 +2316,34 @@
 		C58D72B02630490100966F5F /* JobsBaseCustomizeUIKitCore */ = {
 			isa = PBXGroup;
 			children = (
-				C58D72B12630490100966F5F /* UIImage */,
-				C58D72C62630490100966F5F /* UILabel */,
-				C58D72CB2630490100966F5F /* UITableViewCell */,
-				C58D72D82630490100966F5F /* UIButton */,
-				C58D72F22630490100966F5F /* UIColor */,
-				C58D72FB2630490100966F5F /* UIView */,
-				C58D732A2630490100966F5F /* UIFont */,
+				C58D74152630490200966F5F /* BaseProtocol */,
+				C58D73DA2630490200966F5F /* CALayer */,
+				C58D74192630490200966F5F /* DebugLogDescription */,
+				C58D73BF2630490100966F5F /* NSArray */,
+				C58D73E52630490200966F5F /* NSObject */,
+				C58D73622630490100966F5F /* NSString */,
 				C58D73302630490100966F5F /* RedefineSys */,
-				C58D73352630490100966F5F /* UITextView */,
-				C58D733E2630490100966F5F /* UIDevice */,
+				C58D72D82630490100966F5F /* UIButton */,
+				C58D73E12630490200966F5F /* UICollectionReusableView 用作基类 */,
 				C58D73442630490100966F5F /* UICollectionView */,
 				C58D734C2630490100966F5F /* UICollectionViewCell */,
+				C58D73CE2630490200966F5F /* UICollectionViewFlowLayout */,
+				C58D72F22630490100966F5F /* UIColor */,
+				C58D73B92630490100966F5F /* UIControl */,
+				C58D733E2630490100966F5F /* UIDevice */,
+				C58D732A2630490100966F5F /* UIFont */,
+				C58D72B12630490100966F5F /* UIImage */,
 				C58D73572630490100966F5F /* UIImageView */,
+				C58D72C62630490100966F5F /* UILabel */,
 				C58D735E2630490100966F5F /* UINavigationBar */,
-				C58D73622630490100966F5F /* NSString */,
-				C58D73662630490100966F5F /* UIViewController */,
 				C58D73A22630490100966F5F /* UINavigationController */,
 				C58D73A62630490100966F5F /* UITableView */,
-				C58D73B92630490100966F5F /* UIControl */,
-				C58D73BF2630490100966F5F /* NSArray */,
+				C58D72CB2630490100966F5F /* UITableViewCell */,
 				C58D73C62630490100966F5F /* UITableViewHeaderFooterView */,
-				C58D73CE2630490200966F5F /* UICollectionViewFlowLayout */,
-				C58D73DA2630490200966F5F /* CALayer */,
-				C58D73E12630490200966F5F /* UICollectionReusableView 用作基类 */,
-				C58D73E52630490200966F5F /* NSObject */,
-				C58D74152630490200966F5F /* BaseProtocol */,
-				C58D74192630490200966F5F /* DebugLogDescription */,
 				C58D741C2630490200966F5F /* UITextField */,
+				C58D73352630490100966F5F /* UITextView */,
+				C58D72FB2630490100966F5F /* UIView */,
+				C58D73662630490100966F5F /* UIViewController */,
 			);
 			path = JobsBaseCustomizeUIKitCore;
 			sourceTree = "<group>";
@@ -2433,6 +2436,7 @@
 			isa = PBXGroup;
 			children = (
 				C58D72C82630490100966F5F /* UILabel+Extra */,
+				C5EA13EB2631200F00155822 /* UILabel+Gesture */,
 			);
 			path = "UILabel+Category";
 			sourceTree = "<group>";
@@ -4198,6 +4202,15 @@
 			path = "水平进度条";
 			sourceTree = "<group>";
 		};
+		C5EA13EB2631200F00155822 /* UILabel+Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				C5EA13EC2631200F00155822 /* UILabel+Gesture.m */,
+				C5EA13ED2631200F00155822 /* UILabel+Gesture.h */,
+			);
+			path = "UILabel+Gesture";
+			sourceTree = "<group>";
+		};
 		C5F732D025138E4300216DEF /* 正则表达式 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5185,6 +5198,7 @@
 				C5FE9D2424B5F29C007B9878 /* NSString+Extension.m in Sources */,
 				C58D74332630490200966F5F /* UIImage+SYS.m in Sources */,
 				C5FE9ACA24B5F19E007B9878 /* ViewController@4.m in Sources */,
+				C5EA13EE2631200F00155822 /* UILabel+Gesture.m in Sources */,
 				C5F732D325138E4900216DEF /* LCRegExpTool.m in Sources */,
 				C58D743E2630490200966F5F /* UIButton+ImageTitleSpacing.m in Sources */,
 				C572785C254094C2002373D7 /* TabBarControllerConfig.m in Sources */,

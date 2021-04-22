@@ -124,6 +124,7 @@
 #pragma mark —— UILabel
 /// UILabel+Category
 #import "UILabel+Extra.h"
+#import "UILabel+Gesture.h"
 
 #pragma mark —— UINavigationBar
 #import "BaseNavigationBar.h"

@@ -219,6 +219,7 @@
 		C58D74A82630490200966F5F /* ZYTextField.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C58D742A2630490200966F5F /* ZYTextField.bundle */; };
 		C58D74A92630490200966F5F /* ZYTextField+HistoryDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = C58D742B2630490200966F5F /* ZYTextField+HistoryDataList.m */; };
 		C58D74AA2630490200966F5F /* JobsMagicTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C58D742F2630490200966F5F /* JobsMagicTextField.m */; };
+		C58E93A726312F7D00D1EDB8 /* UIButton+DataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = C58E93A626312F7D00D1EDB8 /* UIButton+DataBinding.m */; };
 		C58F044024EBCC4B00B6D09C /* JhtBannerCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */; };
 		C58F044424EBCC5300B6D09C /* JhtBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044224EBCC5300B6D09C /* JhtBannerScrollView.m */; };
 		C58F044724EBCC5C00B6D09C /* JhtBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F044624EBCC5C00B6D09C /* JhtBannerView.m */; };
@@ -862,6 +863,8 @@
 		C58D742F2630490200966F5F /* JobsMagicTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsMagicTextField.m; sourceTree = "<group>"; };
 		C58D74302630490200966F5F /* JobsMagicTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsMagicTextField.h; sourceTree = "<group>"; };
 		C58D74AE2630498200966F5F /* JobsBaseCustomizeUIKitCoreHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsBaseCustomizeUIKitCoreHeader.h; sourceTree = "<group>"; };
+		C58E93A526312F7D00D1EDB8 /* UIButton+DataBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DataBinding.h"; sourceTree = "<group>"; };
+		C58E93A626312F7D00D1EDB8 /* UIButton+DataBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DataBinding.m"; sourceTree = "<group>"; };
 		C58F043E24EBCC4B00B6D09C /* JhtBannerCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerCardView.h; sourceTree = "<group>"; };
 		C58F043F24EBCC4B00B6D09C /* JhtBannerCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBannerCardView.m; sourceTree = "<group>"; };
 		C58F044124EBCC5300B6D09C /* JhtBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBannerScrollView.h; sourceTree = "<group>"; };
@@ -2502,9 +2505,10 @@
 			children = (
 				C58D72D92630490100966F5F /* 高度自定义的按钮 */,
 				C58D72DD2630490100966F5F /* 高仿抖音点赞动画 */,
-				C58D72E12630490100966F5F /* UIButton+Timer */,
-				C58D72E82630490100966F5F /* SoundBtn */,
 				C58D72ED2630490100966F5F /* 高仿iOS长按删除+抖动 */,
+				C58D72E82630490100966F5F /* SoundBtn */,
+				C58E93A426312F7D00D1EDB8 /* UIButton+DataBinding */,
+				C58D72E12630490100966F5F /* UIButton+Timer */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -3760,6 +3764,15 @@
 				C58D74302630490200966F5F /* JobsMagicTextField.h */,
 			);
 			path = JobsMagicTextField;
+			sourceTree = "<group>";
+		};
+		C58E93A426312F7D00D1EDB8 /* UIButton+DataBinding */ = {
+			isa = PBXGroup;
+			children = (
+				C58E93A526312F7D00D1EDB8 /* UIButton+DataBinding.h */,
+				C58E93A626312F7D00D1EDB8 /* UIButton+DataBinding.m */,
+			);
+			path = "UIButton+DataBinding";
 			sourceTree = "<group>";
 		};
 		C58F043924EBCC1800B6D09C /* 卡片式滑动效果 */ = {
@@ -5346,6 +5359,7 @@
 				C58D749F2630490200966F5F /* NSObject+Time.m in Sources */,
 				C58D74732630490200966F5F /* UIViewController+BackBtn.m in Sources */,
 				C58D74822630490200966F5F /* UITableView+XSAnimationKit.m in Sources */,
+				C58E93A726312F7D00D1EDB8 /* UIButton+DataBinding.m in Sources */,
 				C55133B325C688A6007BCA82 /* NetworkingAPI+VideoApi.m in Sources */,
 				C58D74AA2630490200966F5F /* JobsMagicTextField.m in Sources */,
 			);

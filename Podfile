@@ -41,6 +41,7 @@ def longConnection
   end
 # 几乎每个App都用到的框架
 def appCommon
+  pod 'JobsGlobleDef'
   pod 'ReactiveObjC'  # https://github.com/ReactiveCocoa/ReactiveObjC 重量级框架
   pod 'Masonry' # https://github.com/SnapKit/Masonry 布局
   pod 'AFNetworking' # https://github.com/AFNetworking/AFNetworking A delightful networking framework for iOS, macOS, watchOS, and tvOS.

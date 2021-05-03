@@ -1,5 +1,5 @@
 //
-//  NetworkingAPI.h
+//  DDNetworkingAPI.h
 //  DouYin
 //
 //  Created by Jobs on 2020/9/24.
@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RequestTool.h"
+#import "DDResponseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,12 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— 特殊的上传文件的网络请求
 /// 上传【图片】文件的网络请求
 +(void)requestApi:(NSString *_Nonnull)requestApi
-uploadImagesParamArr:(NSArray *)uploadImagesParamArr
+uploadImagesParamArr:(NSArray *_Nullable)uploadImagesParamArr
      successBlock:(MKDataBlock)successBlock
      failureBlock:(MKDataBlock)failureBlock;
 /// 上传【视频】文件的网络请求
 +(void)requestApi:(NSString *_Nonnull)requestApi
-uploadVideosParamArr:(NSArray *)uploadVideosParamArr
+uploadVideosParamArr:(NSArray *_Nullable)uploadVideosParamArr
      successBlock:(MKDataBlock)successBlock
      failureBlock:(MKDataBlock)failureBlock;
 
@@ -41,13 +42,13 @@ NS_ASSUME_NONNULL_END
  示例代码：【一般的网络请求，只带body参数，最多也就是自定义header】
  -(void)networking_messageSecondClassListGET{
      NSLog(@"当前是否有网：%d 状态：%ld",[ZBRequestManager isNetworkReachable],(long)[ZBRequestManager networkReachability]);
-     [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSObject.messageSecondClassListGET.funcName];
-     [RequestTool initConfig];//公共配置、插件机制、证书设置
+     [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSStringFromSelector(_cmd)];
+     [RequestTool setupPublicParameters];//公共配置、插件机制、证书设置
      @weakify(self)
      NSDictionary *parameters = @{};
      [DDNetworkingAPI requestApi:NSObject.messageSecondClassListGET.funcName
                       parameters:parameters
-                    successBlock:^(DDResponseModel *data) {
+                    successBlock:^(id data) {
          @strongify(self)
      }failureBlock:^(id data) {
          @strongify(self)
@@ -109,9 +110,9 @@ NS_ASSUME_NONNULL_END
 /// 帖子图片上传 POST
 -(void)networking_postUploadImagePOST{
  NSLog(@"当前是否有网：%d 状态：%ld",[ZBRequestManager isNetworkReachable],(long)[ZBRequestManager networkReachability]);
- [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSObject.postUploadImagePOST.funcName];
+ [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSStringFromSelector(_cmd)];
 
- [RequestTool initConfig];//公共配置、插件机制、证书设置
+ [RequestTool setupPublicParameters];//公共配置、插件机制、证书设置
  @weakify(self)
  NSDictionary *parameters = @{};
  [DDNetworkingAPI requestApi:NSObject.postUploadImagePOST.funcName
@@ -181,9 +182,9 @@ NS_ASSUME_NONNULL_END
 /// 帖子视频上传 POST
 -(void)networking_postuploadVideoPOST{
  NSLog(@"当前是否有网：%d 状态：%ld",[ZBRequestManager isNetworkReachable],(long)[ZBRequestManager networkReachability]);
- [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSObject.postuploadVideoPOST.funcName];
+ [DataManager sharedInstance].tag = [ReuseIdentifier stringByAppendingString:NSStringFromSelector(_cmd)];
 
- [RequestTool initConfig];//公共配置、插件机制、证书设置
+ [RequestTool setupPublicParameters];//公共配置、插件机制、证书设置
  @weakify(self)
  NSDictionary *parameters = @{};
  
@@ -273,3 +274,35 @@ NS_ASSUME_NONNULL_END
 //}else{
 //    [WHToast toastMsg:[@"异常接口" stringByAppendingString:NSObject.userInfoSelectVideoCountPOST.funcName]];
 //}
+
+/**
+ 
+ -(void)基础的网络请求示例{
+     [AFHTTPSessionManager.manager GET:@"http://172.24.135.12/CommentData.json"
+                            parameters:nil
+                               headers:nil
+                              progress:^(NSProgress * _Nonnull downloadProgress) {
+     } success:^(NSURLSessionDataTask * _Nonnull task,
+                 id  _Nullable responseObject) {
+         NSLog(@"%@",responseObject);
+     } failure:^(NSURLSessionDataTask * _Nullable task,
+                 NSError * _Nonnull error) {
+         NSLog(@"%@",error);
+     }];
+ }
+ 
+ */
+
+/**
+ 
+ -(void)获取本地json文件数据:(BOOL)isLoadMore{
+     NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+     NSData *data = [NSData dataWithContentsOfFile:path];
+     NSError *err = nil;
+     NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:data
+                                                  options:NSJSONReadingAllowFragments
+                                                    error:&err];
+     NSLog(@"");
+ }
+ 
+ **/

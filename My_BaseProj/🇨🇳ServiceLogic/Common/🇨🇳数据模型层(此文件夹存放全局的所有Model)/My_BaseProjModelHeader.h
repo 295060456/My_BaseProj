@@ -10,5 +10,6 @@
 #define My_BaseProjModelHeader_h
 
 #import "BaseModel.h"
+#import "DDResponseModel.h"
 
 #endif /* My_BaseProjModelHeader_h */

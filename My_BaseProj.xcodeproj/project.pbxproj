@@ -54,6 +54,7 @@
 		C55133B825C688A6007BCA82 /* NetworkingAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C551339C25C688A6007BCA82 /* NetworkingAPI.m */; };
 		C55133B925C688A6007BCA82 /* RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C551339F25C688A6007BCA82 /* RequestTool.m */; };
 		C55133BB25C688A6007BCA82 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55133A225C688A6007BCA82 /* BaseModel.m */; };
+		C551374A26400C7900089A4C /* DDResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C551374826400C7900089A4C /* DDResponseModel.m */; };
 		C55391652572803A008BB60F /* SocketIOTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C55391602572803A008BB60F /* SocketIOTools.m */; };
 		C5542C8A25F324C6002D1CA6 /* CheckMemFreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5542C8925F324C6002D1CA6 /* CheckMemFreeVC.m */; };
 		C55D3C802538838C00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55D3C7C2538838B00CFCF73 /* AppDelegate+XHLaunchAdDelegate.m */; };
@@ -525,6 +526,8 @@
 		C551339F25C688A6007BCA82 /* RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTool.m; sourceTree = "<group>"; };
 		C55133A225C688A6007BCA82 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		C55133A425C688A6007BCA82 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		C551374826400C7900089A4C /* DDResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDResponseModel.m; sourceTree = "<group>"; };
+		C551374926400C7900089A4C /* DDResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDResponseModel.h; sourceTree = "<group>"; };
 		C553914D25727FE2008BB60F /* My_BaseProj-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My_BaseProj-Bridging-Header.h"; sourceTree = "<group>"; };
 		C55391602572803A008BB60F /* SocketIOTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTools.m; sourceTree = "<group>"; };
 		C55391622572803A008BB60F /* UBLLivingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLLivingVC.m; sourceTree = "<group>"; };
@@ -1886,8 +1889,9 @@
 		C55133A025C688A6007BCA82 /* 🇨🇳数据模型层(此文件夹存放全局的所有Model) */ = {
 			isa = PBXGroup;
 			children = (
-				C526508125EF60F500C8AB2B /* My_BaseProjModelHeader.h */,
 				C55133C225C688BB007BCA82 /* BaseModel */,
+				C551374726400C7900089A4C /* DDResponseModel */,
+				C526508125EF60F500C8AB2B /* My_BaseProjModelHeader.h */,
 			);
 			path = "🇨🇳数据模型层(此文件夹存放全局的所有Model)";
 			sourceTree = "<group>";
@@ -1899,6 +1903,15 @@
 				C55133A225C688A6007BCA82 /* BaseModel.m */,
 			);
 			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		C551374726400C7900089A4C /* DDResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				C551374926400C7900089A4C /* DDResponseModel.h */,
+				C551374826400C7900089A4C /* DDResponseModel.m */,
+			);
+			path = DDResponseModel;
 			sourceTree = "<group>";
 		};
 		C553915F2572803A008BB60F /* SocketTools */ = {
@@ -4177,11 +4190,11 @@
 		C5D4FBD724CFE0740024A292 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C55133A025C688A6007BCA82 /* 🇨🇳数据模型层(此文件夹存放全局的所有Model) */,
 				C5767B3F25470A1000C382C8 /* 广告或者公示弹出框 */,
+				C551336125C688A6007BCA82 /* 网络请求 */,
 				C5FE9AB724B5F15F007B9878 /* 用户信息 */,
 				C53CAEA4261C4DDB00AC1891 /* NSObject+AppTools */,
-				C55133A025C688A6007BCA82 /* 🇨🇳数据模型层(此文件夹存放全局的所有Model) */,
-				C551336125C688A6007BCA82 /* 网络请求 */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -5136,6 +5149,7 @@
 				C55133B525C688A6007BCA82 /* NetworkingAPI+UserInfoApi.m in Sources */,
 				C58D74582630490200966F5F /* UIView+MJRefresh.m in Sources */,
 				C58D74922630490200966F5F /* CALayer+Anim.m in Sources */,
+				C551374A26400C7900089A4C /* DDResponseModel.m in Sources */,
 				C5C65175259DF8AA00FD2F99 /* ECPrivacyCheckHomeKit.m in Sources */,
 				C55133B925C688A6007BCA82 /* RequestTool.m in Sources */,
 				C58D744E2630490200966F5F /* UIView+Gesture.m in Sources */,

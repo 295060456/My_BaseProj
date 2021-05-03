@@ -26,7 +26,7 @@ def debugPods
   pod 'CocoaLumberjack' # https://github.com/CocoaLumberjack/CocoaLumberjack A fast & simple, yet powerful & flexible logging framework for Mac and iOS
   pod 'Reveal-SDK',:configurations => ['Debug']
   pod 'JJException' # https://github.com/jezzmemo/JJException 保护App,一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录
-  pod 'FBRetainCycleDetector' # https://github.com/facebook/FBRetainCycleDetector
+#  pod 'FBRetainCycleDetector' # https://github.com/facebook/FBRetainCycleDetector
   #  pod 'CocoaDebug' # https://github.com/CocoaDebug/CocoaDebug
   #  pod 'MLeaksFinder'  # 在开发时在iOS应用中查找内存泄漏 https://github.com/Tencent/MLeaksFinder
   #  pod 'FBMemoryProfiler' # https://github.com/facebook/FBMemoryProfiler An iOS library providing developer tools for browsing objects in memory over time, using FBAllocationTracker and FBRetainCycleDetector.
@@ -54,6 +54,7 @@ def appCommon
   #  pod 'SDWebImageWebPCoder' # https://github.com/SDWebImage/SDWebImageWebPCoder
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'TABAnimated' # https://github.com/tigerAndBull/TABAnimated
+  pod 'ZLCollectionViewFlowLayout' # https://github.com/czl0325/ZLCollectionView 为应对类似淘宝首页，京东首页，国美首页等复杂布局而写的ZLCollectionview。基于UICollectionView实现，目前支持标签布局，列布局，百分比布局，定位布局，填充式布局，瀑布流布局等。支持纵向布局和横向布局，可以根据不同的section设置不同的布局，支持拖动cell，头部悬浮，设置section背景色和自定义section背景view，向自定义背景view传递自定义方法。实现了电影选座等高难度的布局。
   end
 ## GK一族
 def gk

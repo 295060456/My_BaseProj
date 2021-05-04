@@ -16,7 +16,7 @@
 #pragma mark —— APP登录信息相关接口
 /// 找回密码接口-重置密码
 +(void)changePasswordPOST:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock{
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -64,7 +64,7 @@
 }
 /// 找回密码接口-身份验证
 +(void)checkIdentityPOST:(id)parameters
-        withsuccessBlock:(MKDataBlock)successBlock{
+        withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -112,7 +112,7 @@
 }
 /// 登录
 +(void)appLoginPOST:(id)parameters
-   withsuccessBlock:(MKDataBlock)successBlock{
+   withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -160,7 +160,7 @@
 }
 /// 退出
 +(void)appLogoutGET:(id)parameters
-   withsuccessBlock:(MKDataBlock)successBlock{
+   withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -208,7 +208,7 @@
 }
 /// 随机生成4位随机数
 +(void)randCodeGET:(id)parameters
-  withsuccessBlock:(MKDataBlock)successBlock{
+  withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -256,7 +256,7 @@
 }
 /// 注册接口(new)
 +(void)appRegisterPOST:(id)parameters
-      withsuccessBlock:(MKDataBlock)successBlock{
+      withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -304,7 +304,7 @@
 }
 /// 修改密码接口
 +(void)resetPasswordPOST:(id)parameters
-        withsuccessBlock:(MKDataBlock)successBlock{
+        withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -352,7 +352,7 @@
 }
 /// 发送短信
 +(void)sendSmsCodePOST:(id)parameters
-      withsuccessBlock:(MKDataBlock)successBlock{
+      withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

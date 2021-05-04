@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— APP用户关注相关接口
 /// 添加
 +(void)userFocusAddPOST:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock;
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 删除
 +(void)userFocusDeleteGET:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock;
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 关注用户列表
 +(void)userFocusListGET:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock;
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 
 @end
 

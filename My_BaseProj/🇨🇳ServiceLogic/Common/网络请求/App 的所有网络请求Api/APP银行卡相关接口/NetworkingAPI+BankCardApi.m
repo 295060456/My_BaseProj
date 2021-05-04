@@ -16,7 +16,7 @@
 #pragma mark —— APP银行卡相关接口
 /// 添加银行卡
 +(void)bankAddPOST:(id)parameters
-  withsuccessBlock:(MKDataBlock)successBlock{
+  withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -64,7 +64,7 @@
 }
 /// 获取银行卡信息
 +(void)bankInfoGET:(id)parameters
-  withsuccessBlock:(MKDataBlock)successBlock{
+  withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -112,7 +112,7 @@
 }
 /// 删除
 +(void)bankDeleteGET:(id)parameters
-    withsuccessBlock:(MKDataBlock)successBlock{
+    withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -160,7 +160,7 @@
 }
 /// 银行卡列表
 +(void)bankListGET:(id)parameters
-  withsuccessBlock:(MKDataBlock)successBlock{
+  withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -208,7 +208,7 @@
 }
 /// 修改银行卡
 +(void)bankUpdatePOST:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock{
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

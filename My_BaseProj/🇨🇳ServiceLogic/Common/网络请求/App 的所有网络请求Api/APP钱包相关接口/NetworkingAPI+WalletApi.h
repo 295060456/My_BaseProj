@@ -18,28 +18,28 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— APP钱包相关接口
 /// 抖币兑换余额提示
 +(void)chargeBalanceTipsGET:(id)parameters
-           withsuccessBlock:(MKDataBlock)successBlock;
+           withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 金币兑换
 +(void)chargeGoldPOST:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock;
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 余额兑换会员
 +(void)chargeVipPOST:(id)parameters
-    withsuccessBlock:(MKDataBlock)successBlock;
+    withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 获取余额兑换会员类型下拉框
 +(void)getToMemTypeGET:(id)parameters
-      withsuccessBlock:(MKDataBlock)successBlock;
+      withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 获取提现兑换类型下拉框
 +(void)getWithdrawTypeGET:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock;
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 我的钱包流水
 +(void)myFlowsGET:(id)parameters
- withsuccessBlock:(MKDataBlock)successBlock;
+ withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 获取用户信息
 +(void)myWalletPOST:(id)parameters
-   withsuccessBlock:(MKDataBlock)successBlock;
+   withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 余额提现
 +(void)withdrawBalancePOST:(id)parameters
-          withsuccessBlock:(MKDataBlock)successBlock;
+          withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 
 @end
 

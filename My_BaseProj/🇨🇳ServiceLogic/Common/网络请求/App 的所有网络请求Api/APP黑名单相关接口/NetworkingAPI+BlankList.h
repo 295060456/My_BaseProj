@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— APP黑名单相关接口
 /// 添加
 +(void)blackListAddPOST:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock;
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 删除
 +(void)blackListDeleteGET:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock;
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 黑名单列表
 +(void)blackListGET:(id)parameters
-   withsuccessBlock:(MKDataBlock)successBlock;
+   withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 
 @end
 

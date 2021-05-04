@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— APP获取配置信息
 /// app启动参数
 +(void)initializePOST:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock;
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 
 @end
 

@@ -18,22 +18,22 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark —— APP看视频获得金币奖励
 /// 首页宝箱奖励
 +(void)boxRewardPOST:(id)parameters
-    withsuccessBlock:(MKDataBlock)successBlock;
+    withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 抖币领取开关
 +(void)goldSwitchGET:(id)parameters
-    withsuccessBlock:(MKDataBlock)successBlock;
+    withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 抖币领取开关
 +(void)goldSwitchPOST:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock;
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 首页看视频得抖币奖励
 +(void)randomRewardPOST:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock;
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 首页看视频得抖币配置
 +(void)rewardSnapshotGET:(id)parameters
-        withsuccessBlock:(MKDataBlock)successBlock;
+        withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 /// 首页看视频得抖币配置
 +(void)rewardSnapshotPOST:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock;
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock;
 
 @end
 

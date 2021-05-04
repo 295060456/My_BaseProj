@@ -16,7 +16,7 @@
 #pragma mark —— App消息状态相关接口
 /// 添加已读消息 POST
 +(void)messageStatusAddPOST:(id)parameters
-             withsuccessBlock:(MKDataBlock)successBlock{
+             withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

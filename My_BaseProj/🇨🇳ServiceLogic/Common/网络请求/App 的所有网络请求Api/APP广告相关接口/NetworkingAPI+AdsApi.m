@@ -16,7 +16,7 @@
 #pragma mark —— APP广告相关接口
 /// 查询开屏或视频广告
 +(void)adInfoGET:(id)parameters
-withsuccessBlock:(MKDataBlock)successBlock{
+withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

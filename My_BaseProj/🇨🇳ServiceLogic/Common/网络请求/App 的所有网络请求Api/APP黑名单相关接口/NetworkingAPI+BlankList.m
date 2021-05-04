@@ -16,7 +16,7 @@
 #pragma mark —— APP黑名单相关接口
 /// 添加
 +(void)blackListAddPOST:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock{
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -64,7 +64,7 @@
 }
 /// 删除
 +(void)blackListDeleteGET:(id)parameters
-         withsuccessBlock:(MKDataBlock)successBlock{
+         withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -112,7 +112,7 @@
 }
 /// 黑名单列表
 +(void)blackListGET:(id)parameters
-   withsuccessBlock:(MKDataBlock)successBlock{
+   withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

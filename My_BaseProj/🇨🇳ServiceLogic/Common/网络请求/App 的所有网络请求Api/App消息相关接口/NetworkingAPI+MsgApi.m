@@ -16,7 +16,7 @@
 #pragma mark —— App消息相关接口
 /// 获取用户粉丝详情
 +(void)fansInfoGET:(id)parameters
-  withsuccessBlock:(MKDataBlock)successBlock{
+  withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -64,7 +64,7 @@
 }
 /// 消息一级列表
 +(void)messageFirstClassListGET:(id)parameters
-               withsuccessBlock:(MKDataBlock)successBlock{
+               withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -112,7 +112,7 @@
 }
 /// 获取系统消息详情视频列表
 +(void)messageInfoGET:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock{
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -160,7 +160,7 @@
 }
 /// 消息二级级列表
 +(void)messageSecondClassListGET:(id)parameters
-                withsuccessBlock:(MKDataBlock)successBlock{
+                withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -208,7 +208,7 @@
 }
 /// 公告列表
 +(void)noticeListappGET:(id)parameters
-       withsuccessBlock:(MKDataBlock)successBlock{
+       withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -256,7 +256,7 @@
 }
 /// 消息开关列表
 +(void)turnOffListGET:(id)parameters
-     withsuccessBlock:(MKDataBlock)successBlock{
+     withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     
@@ -304,7 +304,7 @@
 }
 /// 修改消息开关
 +(void)updateOffPOST:(id)parameters
-    withsuccessBlock:(MKDataBlock)successBlock{
+    withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

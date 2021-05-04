@@ -16,7 +16,7 @@
 #pragma mark —— APP用户粉丝相关接口
 /// 用户粉丝列表
 +(void)userFansListGET:(id)parameters
-      withsuccessBlock:(MKDataBlock)successBlock{
+      withsuccessBlock:(MKDataBlock _Nullable)successBlock{
     NSDictionary *parameterss = @{};
     NSDictionary *headers = @{};
     

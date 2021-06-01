@@ -247,6 +247,7 @@
 		C5A7CE9E24C70B7600E502A9 /* MKLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9A24C70B7500E502A9 /* MKLoginModel.m */; };
 		C5A7CE9F24C70B7600E502A9 /* MKPublickDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7CE9C24C70B7600E502A9 /* MKPublickDataManager.m */; };
 		C5B1C72124B894E8001923FB /* URL_Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B1C72024B894E8001923FB /* URL_Manager.m */; };
+		C5B5CA4926665B9800264958 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5CA4826665B9800264958 /* BaseButton.m */; };
 		C5B5EF74250D247900DCDA93 /* ImageCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B5EF73250D247900DCDA93 /* ImageCodeView.m */; };
 		C5C4731224B6F3BB0003B6F2 /* ViewController@5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C4731124B6F3BB0003B6F2 /* ViewController@5.m */; };
 		C5C65174259DF8AA00FD2F99 /* ECPrivacyCheckMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C65131259DF8AA00FD2F99 /* ECPrivacyCheckMicrophone.m */; };
@@ -923,6 +924,9 @@
 		C5A7CE9D24C70B7600E502A9 /* MKPublickDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPublickDataManager.h; sourceTree = "<group>"; };
 		C5B1C71F24B894E8001923FB /* URL_Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL_Manager.h; sourceTree = "<group>"; };
 		C5B1C72024B894E8001923FB /* URL_Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URL_Manager.m; sourceTree = "<group>"; };
+		C5B5CA4526665B9200264958 /* BaseButtonProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseButtonProtocol.h; sourceTree = "<group>"; };
+		C5B5CA4726665B9800264958 /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
+		C5B5CA4826665B9800264958 /* BaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
 		C5B5EF72250D247900DCDA93 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C5B5EF73250D247900DCDA93 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
 		C5C4731024B6F3BB0003B6F2 /* ViewController@5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController@5.h"; sourceTree = "<group>"; };
@@ -2516,6 +2520,7 @@
 		C58D72D82630490100966F5F /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				C5B5CA4626665B9800264958 /* BaseButton */,
 				C58D72D92630490100966F5F /* 高度自定义的按钮 */,
 				C58D72DD2630490100966F5F /* 高仿抖音点赞动画 */,
 				C58D72ED2630490100966F5F /* 高仿iOS长按删除+抖动 */,
@@ -3687,6 +3692,7 @@
 		C58D74152630490200966F5F /* BaseProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				C5B5CA4526665B9200264958 /* BaseButtonProtocol.h */,
 				C58D74162630490200966F5F /* BaseViewControllerProtocol.h */,
 				C58D74172630490200966F5F /* BaseCellProtocol.h */,
 				C58D74182630490200966F5F /* BaseViewProtocol.h */,
@@ -4013,6 +4019,15 @@
 				C5B1C72024B894E8001923FB /* URL_Manager.m */,
 			);
 			path = URL_Manager;
+			sourceTree = "<group>";
+		};
+		C5B5CA4626665B9800264958 /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				C5B5CA4726665B9800264958 /* BaseButton.h */,
+				C5B5CA4826665B9800264958 /* BaseButton.m */,
+			);
+			path = BaseButton;
 			sourceTree = "<group>";
 		};
 		C5B5EF71250D246F00DCDA93 /* 图形验证码 */ = {
@@ -5195,6 +5210,7 @@
 				C5E5C65625088EAD001E69DA /* WGradientProgress.m in Sources */,
 				C58D74492630490200966F5F /* UIColor+Gradient.m in Sources */,
 				C5FE9CF424B5F29C007B9878 /* SocketRocketUtility.m in Sources */,
+				C5B5CA4926665B9800264958 /* BaseButton.m in Sources */,
 				C5C6517B259DF8AA00FD2F99 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
 				C534CD4E258759BB001369FD /* BWShareView.m in Sources */,
 				C55133B625C688A6007BCA82 /* NetworkingAPI+FriendsRelationshipApi.m in Sources */,

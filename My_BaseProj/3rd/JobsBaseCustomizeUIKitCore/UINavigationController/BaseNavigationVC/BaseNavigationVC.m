@@ -146,7 +146,7 @@
 -(NSShadow *)shadow{
     if (!_shadow) {
         _shadow = NSShadow.new;
-        _shadow.shadowColor = COLOR_RGBA(0,
+        _shadow.shadowColor = RGB_COLORA(0,
                                         0,
                                         0,
                                         0.8);

@@ -100,6 +100,7 @@
 		C572A2A024FD2F99000A1687 /* GDFadeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C572A29F24FD2F99000A1687 /* GDFadeView.m */; };
 		C5767B3B254709FD00C382C8 /* AppDelegate+PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B3A254709FD00C382C8 /* AppDelegate+PopupView.m */; };
 		C5767B4225470A1000C382C8 /* NoticePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5767B4025470A1000C382C8 /* NoticePopupView.m */; };
+		C57687C02674ABFE00379F34 /* DDRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C57687BF2674ABFE00379F34 /* DDRecord.m */; };
 		C58430A025999F2800D335F7 /* DDPostInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C584309B25999F2700D335F7 /* DDPostInputView.m */; };
 		C58D74312630490200966F5F /* UIImage+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = C58D72B52630490100966F5F /* UIImage+ScreenShot.m */; };
 		C58D74322630490200966F5F /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C58D72B82630490100966F5F /* UIImage+Extras.m */; };
@@ -639,6 +640,8 @@
 		C5767B3A254709FD00C382C8 /* AppDelegate+PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+PopupView.m"; sourceTree = "<group>"; };
 		C5767B4025470A1000C382C8 /* NoticePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticePopupView.m; sourceTree = "<group>"; };
 		C5767B4125470A1000C382C8 /* NoticePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticePopupView.h; sourceTree = "<group>"; };
+		C57687BE2674ABFE00379F34 /* DDRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRecord.h; sourceTree = "<group>"; };
+		C57687BF2674ABFE00379F34 /* DDRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRecord.m; sourceTree = "<group>"; };
 		C5778FA42589FF5A00FE51E3 /* XHLaunchAd不用pod导入的情况说明.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "XHLaunchAd不用pod导入的情况说明.md"; sourceTree = "<group>"; };
 		C584309B25999F2700D335F7 /* DDPostInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPostInputView.m; sourceTree = "<group>"; };
 		C584309C25999F2800D335F7 /* DDPostInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPostInputView.h; sourceTree = "<group>"; };
@@ -2387,6 +2390,15 @@
 			path = "广告或者公示弹出框";
 			sourceTree = "<group>";
 		};
+		C57687BD2674ABFE00379F34 /* DDRecord */ = {
+			isa = PBXGroup;
+			children = (
+				C57687BE2674ABFE00379F34 /* DDRecord.h */,
+				C57687BF2674ABFE00379F34 /* DDRecord.m */,
+			);
+			path = DDRecord;
+			sourceTree = "<group>";
+		};
 		C584309725999F1C00D335F7 /* PostInputView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3581,6 +3593,7 @@
 		C58D73E52630490200966F5F /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
+				C57687BD2674ABFE00379F34 /* DDRecord */,
 				C58D740C2630490200966F5F /* NSObject (Time) */,
 				C58D73E62630490200966F5F /* NSObject+Alert */,
 				C58D74122630490200966F5F /* NSObject+CallBackInfoByBlock */,
@@ -5247,6 +5260,7 @@
 				C5FE9CEA24B5F29C007B9878 /* TBCityIconFont.m in Sources */,
 				C58D74A32630490200966F5F /* DebugLogDescription.m in Sources */,
 				C58D74412630490200966F5F /* UIButton+Timer.m in Sources */,
+				C57687C02674ABFE00379F34 /* DDRecord.m in Sources */,
 				C565CB4825A4382D00848134 /* TwoVerticalArrangementLabsView.m in Sources */,
 				C52261B425873F85004447FB /* PopUpVC.m in Sources */,
 				C58D744B2630490200966F5F /* BaseView.m in Sources */,

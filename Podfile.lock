@@ -55,13 +55,13 @@ PODS:
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.16)
-  - DTFoundation/DTAnimatedGIF (1.7.16)
-  - DTFoundation/DTHTMLParser (1.7.16):
+  - DTFoundation/Core (1.7.17)
+  - DTFoundation/DTAnimatedGIF (1.7.17)
+  - DTFoundation/DTHTMLParser (1.7.17):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.16):
+  - DTFoundation/UIKit (1.7.17):
     - DTFoundation/Core
-  - FLAnimatedImage (1.0.15)
+  - FLAnimatedImage (1.0.16)
   - "FLAnimatedImageView+RGWrapper (1.0.0)":
     - FLAnimatedImage
   - FLEX (4.4.1)
@@ -75,25 +75,25 @@ PODS:
     - GCDWebServer/Core
   - GCDWebServer/WebUploader (3.5.4):
     - GCDWebServer/Core
-  - GKNavigationBar (1.5.2):
-    - GKNavigationBar/GestureHandle (= 1.5.2)
-    - GKNavigationBar/NavigationBar (= 1.5.2)
-  - GKNavigationBar/GestureHandle (1.5.2)
-  - GKNavigationBar/NavigationBar (1.5.2)
+  - GKNavigationBar (1.5.8):
+    - GKNavigationBar/GestureHandle (= 1.5.8)
+    - GKNavigationBar/NavigationBar (= 1.5.8)
+  - GKNavigationBar/GestureHandle (1.5.8)
+  - GKNavigationBar/NavigationBar (1.5.8)
   - GKPageScrollView (1.5.6):
     - GKPageScrollView/Objc (= 1.5.6)
   - GKPageScrollView/Objc (1.5.6)
-  - GKPhotoBrowser (2.1.9):
-    - GKPhotoBrowser/SD (= 2.1.9)
-  - GKPhotoBrowser/Core (2.1.9)
-  - GKPhotoBrowser/SD (2.1.9):
+  - GKPhotoBrowser (2.3.1):
+    - GKPhotoBrowser/SD (= 2.3.1)
+  - GKPhotoBrowser/Core (2.3.1)
+  - GKPhotoBrowser/SD (2.3.1):
     - GKPhotoBrowser/Core
     - SDWebImage (~> 5.0)
   - HBDNavigationBar (1.8.0)
   - HCSStarRatingView (1.5)
-  - HXPhotoPicker (3.1.9):
-    - HXPhotoPicker/Default (= 3.1.9)
-  - HXPhotoPicker/Default (3.1.9)
+  - HXPhotoPicker (3.2.1):
+    - HXPhotoPicker/Default (= 3.2.1)
+  - HXPhotoPicker/Default (3.2.1)
   - IJKMediaFramework (0.1.5)
   - IQKeyboardManager (6.5.6)
   - JDStatusBarNotification (1.6.1)
@@ -117,16 +117,16 @@ PODS:
   - JJException/Swizzle (0.2.9)
   - JJStockView (0.0.7)
   - JobsGlobleDef (1.0.0)
-  - JPImageresizerView (1.8.0)
+  - JPImageresizerView (1.8.3)
   - JSONModel (1.8.0)
-  - JXCategoryView (1.5.8)
-  - JXPagingView/Pager (2.0.13)
+  - JXCategoryView (1.5.9)
+  - JXPagingView/Pager (2.1.0)
   - lottie-ios (2.5.3)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - MGSwipeTableCell (1.6.11)
   - MJExtension (3.2.4)
-  - MJRefresh (3.5.0)
+  - MJRefresh (3.6.1)
   - MQTTClient (0.15.3):
     - MQTTClient/Core (= 0.15.3)
   - MQTTClient/Core (0.15.3):
@@ -147,11 +147,11 @@ PODS:
   - RDVTabBarController (1.3.0)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
-  - Reveal-SDK (28)
+  - Reveal-SDK (29)
   - RQShineLabel (1.0.0)
-  - SDWebImage (5.11.0):
-    - SDWebImage/Core (= 5.11.0)
-  - SDWebImage/Core (5.11.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - Shimmer (1.0.2)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
@@ -161,7 +161,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - Starscream (3.1.1)
   - SZTextView (1.3.0)
-  - TABAnimated (2.5.4)
+  - TABAnimated (2.5.7)
   - TFPopup (1.4.1)
   - TKCarouselView (1.2.0)
   - TTTAttributedLabel (2.0.0)
@@ -176,7 +176,7 @@ PODS:
   - WCDBOptimizedSQLCipher (1.2.1)
   - WebViewJavascriptBridge (6.0.3)
   - WHToast (0.0.8)
-  - WMZBanner (1.1.9):
+  - WMZBanner (1.2.0):
     - SDWebImage
   - WSLNativeScanTool (1.0)
   - WXSTransition (1.2.1)
@@ -195,7 +195,7 @@ PODS:
   - ZFPlayer/ijkplayer (4.0.1):
     - IJKMediaFramework
     - ZFPlayer/Core
-  - ZLCollectionViewFlowLayout (1.4.3)
+  - ZLCollectionViewFlowLayout (1.4.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -374,34 +374,34 @@ SPEC CHECKSUMS:
   DDProgressView: d5a8983e5585217ee58f4a046bb4038f6e1b6306
   DoraemonKit: 32fb97f3aa82efa133111d193080ca5462cef135
   DTCoreText: e92f4cf6b36d9d71ce4436d12cf089d74ab0596b
-  DTFoundation: e7781d9fd2f202bfd451fbbf8cab71ce83b46498
-  FLAnimatedImage: dd3db277b17e909ec3c7fd41adfce79b321d960e
+  DTFoundation: 989698be00d3f19438c38a49a8ebb3f6919dcac5
+  FLAnimatedImage: 8f3e854ebf9680b71f0b6e700939687fc4d82b4b
   "FLAnimatedImageView+RGWrapper": 01f3dc52abf32abf2cd854b442864d679a41465c
   FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  GKNavigationBar: 2b86f29aa7fafbda874247529d9fa50a8f7813b7
+  GKNavigationBar: f5b028f6c7705c996d6fbd20a3eda2dd070ba41f
   GKPageScrollView: 0708f8e27860b033195f0861ac278ee276a10c4c
-  GKPhotoBrowser: c45231edd9ec79f031c412c646af46419d997c97
+  GKPhotoBrowser: 3b87e4370b1e7bf83af5e6977d6d5db2be650eef
   HBDNavigationBar: 8a24d0348ad4371614569e3d015d46e41824b061
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
-  HXPhotoPicker: e1816ff27f17c3926f6e83aebbb9f4b329324f0b
+  HXPhotoPicker: ae88dd5b4e838e255b3fcd1143dc82a5fe1774f5
   IJKMediaFramework: f1119f6324c96bc4654f3045a5beaa95ba0596c0
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JDStatusBarNotification: 6052ca9a51ee0bb058f8dc09cf1d63554ef0f743
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JJStockView: 7921a6e05e06b217f10c7c36114bdb098f785cf7
   JobsGlobleDef: 46a851206c10dc3baaf248d6f283aac4dc7fb186
-  JPImageresizerView: 3bca9bc1c373695e376f9391e265338b8f171e5b
+  JPImageresizerView: 1eb5934ddf786dd8b26a83465599f1abb06112ab
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  JXCategoryView: 778a620f76070d6598fd8d7239991b8da8326170
-  JXPagingView: 821ed274f09eaf2843a96c3a74e9d138e27d9730
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
+  JXPagingView: ef48a5a2392252c68db7999de38f4761a2707e2a
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
@@ -411,9 +411,9 @@ SPEC CHECKSUMS:
   RDVTabBarController: 28a5c6546b9991cf2712d59947324c6b06603e14
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  Reveal-SDK: 1a2a678648fc4d277bad71c86d15530424324288
+  Reveal-SDK: 0ecda2395cf587e2f574c19a723b3dd27c90572e
   RQShineLabel: 17457abf7250d1220ddd99bc61323d57563344cd
-  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -421,7 +421,7 @@ SPEC CHECKSUMS:
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
-  TABAnimated: 82d934375ac3034ef4165e2a008413739355f19c
+  TABAnimated: fa165d5f4052c1070782f80f0a428fc82b6831e1
   TFPopup: 20c6d028b7255d67ada764b70f9f622c1a22c7e2
   TKCarouselView: 3fde35add8c169c6df14b7d7c5395383c6a51be4
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
@@ -434,14 +434,14 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WHToast: 5da5bb80bdd1fea9455d4215577d9c5be2c506b8
-  WMZBanner: d4f2f5fe0c99e29d57d67530e42d2fb3f7f867ba
+  WMZBanner: 42d02896dc7a67a4d7a2ebe1ef5b7a79f8d2c540
   WSLNativeScanTool: 1540f43317611d6cf948b5dff1cc1483bd39f8a5
   WXSTransition: 0bd758aaa1f5869a908b1bb103c4a9e26ad1d3eb
   YQImageCompressor: ed98546ca6aa0b4f4b3ed16067102911b8711531
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFJTreeViewKit: c3246cbdafa4034352104fdc81a73ac9185d5841
   ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
-  ZLCollectionViewFlowLayout: c3fce0c31adc326353c9de7d79d29d109dcad31c
+  ZLCollectionViewFlowLayout: 44629363b7413343cd61d153839bfc7888d76b85
 
 PODFILE CHECKSUM: f2f4f9d050a176e4fb2ce916dc6c298aa2e2949b
 
